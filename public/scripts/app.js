@@ -49,10 +49,11 @@ $(function() {
         data: $(this).serialize(),
         dataType: 'json'
       });
+      loadTweets(false);
     }
   });
 
-  function loadTweets() {
+  function loadTweets(allTweets) {
     var allOfTheTweets = $.ajax({
       method: 'get',
       url: '/tweets',
@@ -61,11 +62,20 @@ $(function() {
     });
 
     allOfTheTweets.done(function(data) {
+      var dL = data.length;
+      var start = dL-1;
+      var singleTweet = data.splice(data.length-1);
+      // console.log(singleTweet);
+      // console.log(data[dL-1]);
+      if (allTweets === true) {
       renderTweets(data);
+      } else if (allTweets === false){
+      renderTweets(singleTweet);
+      }
     });
   };
 
-  loadTweets();
+  loadTweets(true);
 
 });
 
