@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <!-- Feed CSS -->
+    <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <!-- Char Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/ee8ca1db71.js"></script>
   </head>
 
   <body>
@@ -39,6 +43,28 @@
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
           </form>
+        </section>
+        <section id="feed">
+
+          <article>
+
+            <header>
+              <img src="/images/cat.png" />
+              <span class="name">Tricky Cupcake</span>
+              <span class="handle">@cupcat</span>
+            </header>
+
+            <main>Mew meww meeeoww! Meow meow!</main>
+
+            <footer>
+              <p>10 mins ago...</p>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-flag" aria-hidden="true"></i>
+
+            </footer>
+          </article>
+
         </section>
       </div>
     </main>
