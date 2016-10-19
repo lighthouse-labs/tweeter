@@ -12,6 +12,7 @@
 }
 .new-tweet span.counter {
   float: right;
+  font-style: italic;
 }
 .new-tweet textarea {
   height: 5em;
