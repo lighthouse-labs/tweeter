@@ -5,7 +5,7 @@ $(function() {
     var maxLength = 140;
     var charCount = maxLength - length;
 
-    $(this).parent().find('.counter').html(charCount);
+    $(this).parent().find('.counter').text(charCount);
 
     if (charCount < 0){
       $(this).parent().find('.counter').css({ "color": "#ff0000"});

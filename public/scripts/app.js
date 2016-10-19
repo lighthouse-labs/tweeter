@@ -19,7 +19,7 @@ $(function() {
 
     $tweet = $tweet.append($header).append($content).append($footer);
 
-    return $tweet
+    return $tweet;
   }
 
 
@@ -27,34 +27,54 @@ $(function() {
     for (i in arr){
       tweetObj = arr[i];
       var $tweet = createTweetElement(tweetObj);
-      console.log(i);
-      $('#tweet-container').append($tweet);
+      $('#tweet-container').prepend($tweet);
     }
   }
 
 
-  $('form[action="/tweets"]').on("submit", function(event){
+  $('form[action="/tweets"]').on("submit", function(event) {
     event.preventDefault();
-    var $theTweet = $(this).find("textarea").serialize();
-    console.log($theTweet);
+
+    var tweetLength = $(this).find('textarea').val().length;
+
+    // refactor to resuse composer-char-counter.js?
+    if (tweetLength  === 0 ) { // may in future need to update to test for null content if we add images, etc.
+      $.flash('Your tweet is empty!'); //npm flash-message plugin
+    } else if (tweetLength > 140) {
+      $.flash('Your tweet is too long!');
+    } else {
+      var tweetSubmit = $.ajax({
+        method: 'post',
+        url: '/tweets',
+        data: $(this).serialize(),
+        dataType: 'json'
+      });
+    }
   });
 
-  (function loadTweets() {
+  function loadTweets() {
     var allOfTheTweets = $.ajax({
       method: 'get',
       url: '/tweets',
-      data: $(this).serialize(),
+      data: $(this).serialize(),//not sure what's up
       dataType: 'json'
     });
 
-    allOfTheTweets.done(function(data){
-      console.log(data);
+    allOfTheTweets.done(function(data) {
       renderTweets(data);
     });
-  })();
+  };
+
+  loadTweets();
 
 });
 
+  //validation
+    // console.log($(this).serialize());
+    // var $theTweet = $(this).find("textarea"); //.serialize()
+    // console.log($theTweet);
+    //
 
+    // console.log($theTweet);
 
 

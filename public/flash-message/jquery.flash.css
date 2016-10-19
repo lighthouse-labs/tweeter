@@ -1,0 +1,46 @@
+#flash {
+    cursor: pointer;
+    z-index: 10000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #111;
+    color: #FFF;
+    width: 915px;
+    padding: 25px 20px;
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    filter: alpha(opacity = 95);
+    -moz-opacity: 0.95;
+    -khtml-opacity: 0.95;
+    opacity: 0.95;
+    border-radius: 0 0 40px 40px;
+    -moz-border-radius: 0 0 40px 40px;
+    -webkit-border-bottom-left-radius: 40px;
+    -webkit-border-bottom-right-radius: 40px;
+    line-height: 24px;
+}
+
+#flash div.flash_close {
+    top: 3px;
+    right: 2px;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background: url('close.png') top left no-repeat;
+    cursor: pointer;
+    z-index: 181;
+}
+#flash div
+{
+    color: #fff;
+}
+
+#flash a
+{
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
+}

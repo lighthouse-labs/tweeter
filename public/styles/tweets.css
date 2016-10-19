@@ -4,6 +4,7 @@
   margin: 50px 2em 0px;
   background-color: #fff;
   opacity: 0.7;
+  word-wrap: break-word;
   /*padding: 10px;*/
 }
 

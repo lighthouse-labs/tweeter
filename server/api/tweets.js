@@ -19,7 +19,7 @@ module.exports = function(db) {
       res.status(400);
       return res.send("{'error': 'invalid request'}\n");
     }
-
+console.log(req.body);
     const user = req.body.user ? req.body.user : User.generateRandomUser();
     const tweet = {
       user: user,
