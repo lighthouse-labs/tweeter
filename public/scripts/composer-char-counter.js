@@ -1,5 +1,6 @@
-$(document).ready(function(){
-  $('.new-tweet').on('input', 'textarea', function(){
+$(function () {
+
+  $('.new-tweet').on('input', 'textarea', function () {
     var length = $(this).val().length;
     var maxLength = 140;
     var charCount = maxLength - length;
@@ -12,5 +13,6 @@ $(document).ready(function(){
       $(this).parent().find('.counter').css({ "color": ""});
     }
   });
+
 });
 
