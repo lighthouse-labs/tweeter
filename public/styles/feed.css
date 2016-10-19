@@ -1,10 +1,12 @@
-#feed article {
+#feed .tweet {
   margin: 2em;
-  border: 1.5px solid #777777;
+  border: 1.5px solid #cbcbcb;
   border-radius: 5px;
   background-color: #eee;
-  opacity: 0.8;
+  opacity: 0.9;
 }
+
+/*Header Styling */
 #feed header {
   padding: 10px;
   display: inline-block;
@@ -28,9 +30,11 @@
   color: #a2a2a2;
   margin-top: 10px;
 }
+
+/*Tweet Body Styling*/
 #feed main {
   background-color: #fff;
-  padding: 30px 15px;
+  padding: 15px 15px;
   font-size: 1.6em;
 }
 #feed footer {
@@ -43,17 +47,18 @@
 #feed footer p {
   display: inline-block;
 }
-#feed article i {
+#feed .tweet i {
   margin: 1em 0.5em;
   display: inline-block;
   font-size: 1.2em;
   float: right;
+  color: #00749f;
   visibility: hidden;
 }
-#feed article:hover i {
+#feed .tweet:hover i {
   visibility: visible;
-  color: #00a087;
 }
-#feed article:hover {
+#feed .tweet:hover {
+  border-color: #777777;
   opacity: 1;
 }

@@ -29,6 +29,6 @@ main.container {
   width: 450px;
   background: white;
   margin-top: 80px;
-  height: 800px;
+  height: auto;
   padding: 2px;
 }

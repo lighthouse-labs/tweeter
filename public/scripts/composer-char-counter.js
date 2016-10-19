@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(function() {
 
-  console.log('ready!');
-  document.getElementById("text").addEventListener("input", function(e) {
+  console.log('char-counter has loaded');
+  $("#text").on("input", function(e) {
 
     var max = 141;
     var current = this.value.length;
