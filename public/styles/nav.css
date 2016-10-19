@@ -7,6 +7,7 @@ color: #e8fdff;
 width: 100%;
 padding: 0px 2em;
 display: inline-block;
+z-index: 999;
 
 }
 
