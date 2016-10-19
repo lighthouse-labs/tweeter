@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
 
   $('.new-tweet').on('input', 'textarea', function () {
     var length = $(this).val().length;
