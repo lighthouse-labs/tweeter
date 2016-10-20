@@ -1,0 +1,43 @@
+.new-tweet {
+  border: 1px solid #bfbfbf;
+  /*https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms*/
+  padding: 5px;
+  border-radius: 7px;
+  /*https://developer.mozilla.org/en/docs/Web/CSS/border-radius*/
+  margin: 140px 2em 0px;
+  background-color: #eee;
+  
+}
+/* editing H2 and adding box with one line*/
+.new-tweet h2 {
+  border: 1px solid #000;
+  border-width: 0 0 1px 0;
+  margin: 5;
+}
+
+/* editing tweet form spacing */
+.new-tweet form textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+/* adding space on top of form in form*/
+.new-tweet form {
+  margin-top: 10px;
+}
+
+/* input button */
+.new-tweet form input {
+  float: left;
+}
+
+/* tweet counter 140 */
+.new-tweet .counter {
+  float: right;
+}
+/* adding space after the the tweeterblock*/
+.new-tweet:after {
+    content: "";
+    display: block;
+    clear: both;
+}
