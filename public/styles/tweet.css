@@ -67,4 +67,20 @@
   float: right;
   margin: 0px 5px 0px 0px;
 
+/*https://developer.mozilla.org/en/docs/Web/CSS/visibility*/
+  visibility: hidden;
 }
+
+.tweet:hover {
+/* Make a hover; http://www.w3schools.com/css/css_image_transparency.asp */  
+  opacity: 1.0;
+}
+
+.tweet:hover i {
+  background: #fff;
+  visibility: visible;
+}
+
+
+
+
