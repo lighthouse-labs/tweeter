@@ -28,6 +28,13 @@ main {
   display: block;
   width: 450px;
   background-color: #fff;
-  margin: 0px auto;
+  margin: 80px auto 0px auto;
+  height: auto;
+  padding: 10px;
+  /*padding-top: 140px*/
   /*position: relative;*/
 }
+
+/*main .nav-pad {
+  margin: 40px 0px;
+}*/

@@ -1,6 +1,6 @@
 $(function() {
 
-  $('.new-tweet').on('input', 'textarea', function () {
+  $('.new-tweet').on('input change', 'textarea', function () {
     var length = $(this).val().length;
     var maxLength = 140;
     var charCount = maxLength - length;

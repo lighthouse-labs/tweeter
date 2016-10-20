@@ -25,6 +25,8 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/toggle-composer.js"></script>
+
 
   </head>
 
@@ -34,12 +36,16 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <div class="compose">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <span>Compose</span>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>main .container top</p>
-
+    <!-- <p>tets</p> -->
+      <!-- <span class="nav-pad"></span> -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
@@ -50,8 +56,6 @@
       </section>
 
       <section id="tweet-container"></section>
-
-      <p>main .container bottom</p>
     </main>
 
   </body>

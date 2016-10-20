@@ -1,14 +1,13 @@
 nav {
-position: fixed;
-top: 0;
-height: 80px;
-background-color: #00a087;
-color: #e8fdff;
-width: 100%;
-padding: 0px 2em;
-display: inline-block;
-z-index: 999;
-
+  position: fixed;
+  top: 0;
+  height: 80px;
+  background-color: #00a087;
+  color: #e8fdff;
+  width: 100%;
+  padding: 0px 2em;
+  display: inline-block;
+  z-index: 999;
 }
 
 #nav-bar .logo {
@@ -19,7 +18,42 @@ z-index: 999;
 
 #nav-bar .header {
   float: left;
-  margin-left: 10px;
+  margin-right: 10px;
   font-size: 2em;
   line-height: 80px;
+}
+
+#nav-bar .compose {
+  float: right;
+  color: #244751;
+  text-align: center;
+  margin: 5px 5% 5px 0px;
+  font-size: 1.5em;
+  line-height: 50px;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  background-color: #fff;
+  opacity: 0.8;
+  width: auto;
+  padding: 5px;
+}
+
+#nav-bar .compose i{
+  float: left;
+  margin: 5px;
+  line-height: 50px;
+}
+#nav-bar .compose span{
+  float: left;
+  margin: 5px;
+}
+
+.#nav-bar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#nav-bar .compose:hover {
+  opacity: 1.0;
 }

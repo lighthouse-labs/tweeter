@@ -50,6 +50,7 @@ $(function() {
         dataType: 'json'
       });
       loadTweets(false);
+      $(this).find('textarea').val("").change();
     }
   });
 
