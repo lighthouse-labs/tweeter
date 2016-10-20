@@ -1,6 +1,19 @@
 [
   {
     "user": {
+      "name": "Tricky Cupcake",
+      "avatars": {
+        "regular": "/images/cat.png"
+      },
+      "handle": "@cupcat"
+    },
+    "content": {
+      "text": "Mew meww meeeoww! Meow meow!"
+    },
+    "created_at": 1476313796368
+  },
+  {
+    "user": {
       "name": "Newton",
       "avatars": {
         "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",

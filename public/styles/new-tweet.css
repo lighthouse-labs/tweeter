@@ -4,11 +4,16 @@
   border: 1.5px solid #cecece;
   padding: 1em;
   border-radius: 5px;
+  display: none;
 }
 .new-tweet > h2 {
   width: 100%;
   border-bottom: 1px solid black;
   margin-top: 0px;
+}
+.new-tweet #message {
+  visibility: hidden;
+  margin-left: 0.1em;
 }
 .new-tweet span.counter {
   float: right;

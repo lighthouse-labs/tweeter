@@ -17,3 +17,26 @@
   font-size: 200%;
   line-height: 80px;
 }
+#nav-bar .compose {
+  float: right;
+  line-height: 40px;
+  margin: 10px 30px;
+  background-color: white;
+  color: black;
+  font-size: 150%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#nav-bar .compose:hover {
+  background-color: #5297b1;
+  color: white;
+  cursor: pointer;
+}
+#nav-bar .delete {
+  float: right;
+  width: 10px;
+  height: 5em;
+  margin-right: -15em;
+  background-color: transparent;
+}

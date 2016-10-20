@@ -6,7 +6,7 @@
   opacity: 0.9;
 }
 
-/*Header Styling */
+/* Header Styling */
 #feed header {
   padding: 10px;
   display: inline-block;
@@ -31,13 +31,16 @@
   margin-top: 10px;
 }
 
-/*Tweet Body Styling*/
+/* Tweet Body Styling */
 #feed main {
   background-color: #fff;
-  padding: 15px 15px;
-  font-size: 1.6em;
+  padding: 13px;
+  font-size: 1.3em;
+  word-wrap: break-word;
 }
+/* Tweet Footer Styling */
 #feed footer {
+  font-size: 0.8em;
   padding: 0px 10px;
   background-color: #fff;
   border-top: 0.8px solid #eee;
