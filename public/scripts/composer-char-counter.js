@@ -22,9 +22,12 @@ console.log(countLength);
 
 $(this).parent().find(".counter").html(countLength);
 
-
+if (countLength < 0){
+  $(this).parent().find('.counter').css({ "color": "#ff0000"});
+  } else {
+  $(this).parent().find('.counter').css({ "color": ""});
+  }
 });
-
 });
 
 
