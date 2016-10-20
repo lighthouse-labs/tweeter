@@ -38,7 +38,7 @@ $(function() {
     var tweetLength = $(this).find('textarea').val().length;
 
     // refactor to resuse composer-char-counter.js?
-    if (tweetLength  === 0 ) { // may in future need to update to test for null content if we add images, etc.
+    if (tweetLength  === 0 ) { //fix: spaces can be entereed and will be posted; may in future need to update to test for null content if we add images, etc.
       $.flash('Your tweet is empty!'); //npm flash-message plugin
     } else if (tweetLength > 140) {
       $.flash('Your tweet is too long!');
