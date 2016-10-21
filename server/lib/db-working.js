@@ -1,12 +1,24 @@
 "use strict";
 
+// const initialTweets = require("./tweets");
+// const db = { tweets: initialTweets };
+
+// Mongo DB code
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://127.0.0.1:27017/tweeter";
+
+
+
+
+
+
+
 
 const dbMethods = {
 
   saveTweet: (data) => {
-
+    // db.tweets.push(data);
+    // return true;
     MongoClient.connect(MONGODB_URI, (err, db) => {
 
       if (err) {
@@ -25,8 +37,10 @@ const dbMethods = {
 
   },
 
+  // receives a function as a parameter
+  // this function will be called with the database results
   getTweets: (cb) => {
-
+    // return db.tweets.sort(function(a, b) { return a.created_at - b.created_at });
 
     MongoClient.connect(MONGODB_URI, (err, db) => {
 
@@ -49,12 +63,17 @@ const dbMethods = {
       });
 
     });
+
+    // function cb(result) {
+    //   return result;
+    // }
+
   }
 
 }
 
 module.exports = {
-//onConnect is an arbitrary name for a callback function
+
   connect: (onConnect) => {
 
     onConnect(dbMethods);
