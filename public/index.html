@@ -2,32 +2,80 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
-
+    <title>Tweeter | Home Page</title>
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <!-- Feed CSS -->
+    <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- Char Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- Compose Button JS -->
+    <script type="text/javascript" src="/scripts/compose.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/ee8ca1db71.js"></script>
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <span class="compose"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Compose</span>
+      <input class="delete"></input>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-    </main>
+      <div>
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets">
+            <textarea id="text" name="text" placeholder="Type the thing here!"></textarea>
+            <input type="submit" value="Tweet" />
+            <span id="message">Message</span>
+            <span class="counter">141</span>
+          </form>
+        </section>
+        <section id="feed">
 
+        </section>
+      </div>
+    </main>
   </body>
 </html>
+
+
+
+
+
+<!-- <article class="tweet">
+
+  <header>
+    <img src="/images/cat.png" />
+    <span class="name">Tricky Cupcake</span>
+    <span class="handle">@cupcat</span>
+  </header>
+
+  <main>Mew meww meeeoww! Meow meow!</main>
+
+  <footer>
+    <p>10 mins ago...</p>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-retweet" aria-hidden="true"></i>
+    <i class="fa fa-flag" aria-hidden="true"></i>
+  </footer>
+
+</article> -->

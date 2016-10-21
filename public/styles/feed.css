@@ -1,0 +1,67 @@
+#feed .tweet {
+  margin: 2em;
+  border: 1.5px solid #cbcbcb;
+  border-radius: 5px;
+  background-color: #eee;
+  opacity: 0.9;
+}
+
+/* Header Styling */
+#feed header {
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+#feed img {
+  width: 70px;
+  border-radius: 5px;
+  float: left;
+}
+#feed .name {
+  margin: 0.5em;
+  color: #667e85;
+  font-size: 1.8em;
+  font-weight: bold;
+  clear: both;
+}
+#feed .handle {
+  float: right;
+  font-size: 1.2em;
+  color: #a2a2a2;
+  margin-top: 10px;
+}
+
+/* Tweet Body Styling */
+#feed main {
+  background-color: #fff;
+  padding: 13px;
+  font-size: 1.3em;
+  word-wrap: break-word;
+}
+/* Tweet Footer Styling */
+#feed footer {
+  font-size: 0.8em;
+  padding: 0px 10px;
+  background-color: #fff;
+  border-top: 0.8px solid #eee;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#feed footer p {
+  display: inline-block;
+}
+#feed .tweet i {
+  margin: 1em 0.5em;
+  display: inline-block;
+  font-size: 1.2em;
+  float: right;
+  color: #00749f;
+  visibility: hidden;
+}
+#feed .tweet:hover i {
+  visibility: visible;
+}
+#feed .tweet:hover {
+  border-color: #777777;
+  opacity: 1;
+}
