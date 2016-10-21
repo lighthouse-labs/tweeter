@@ -45,7 +45,7 @@ $(function() {
   }
 
   function validateForm(formData) {
-    formData = formData.trim()
+    formData = formData.trim();
     if(formData.length > maxLength) {
     message = "Message too long!";
       return false;
