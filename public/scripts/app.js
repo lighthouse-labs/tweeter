@@ -24,6 +24,7 @@ $(function() {
 
 
   function renderTweets(arr) {
+    // console.log(arr);
     for (i in arr){
       tweetObj = arr[i];
       var $tweet = createTweetElement(tweetObj);
@@ -64,10 +65,11 @@ $(function() {
 
     allOfTheTweets.done(function(data) {
       var dL = data.length;
-      var start = dL-1;
-      var singleTweet = data.splice(data.length-1);
-      // console.log(singleTweet);
-      // console.log(data[dL-1]);
+      console.log(data);
+      // var start = dL-1;
+      var singleTweet = [data[data.length-1]];
+      console.log('single tweet', singleTweet);
+      console.log("the data",data);
       if (allTweets === true) {
       renderTweets(data);
       } else if (allTweets === false){
