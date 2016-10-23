@@ -52,6 +52,14 @@ console.log('DOM fully loaded and parsed');
     } console.log(Number($('.counter').text()))
 
 
+    $('.button').click(function() {
+      $('.new-tweet').slideToggle();
+      $('#tweet-field').focus();
+    });
+
+
+
+
     $.ajax({
       method: "POST",
       url: "/tweets",
