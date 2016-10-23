@@ -40,6 +40,20 @@ console.log('DOM fully loaded and parsed');
 
   $('#newTweet').on("submit", function(event) {
     event.preventDefault();
+    if ($('#tweet-field').val() === "") {
+      console.log('textfield is empty')
+      return
+    } else if ($('#tweet-field').val() === null) {
+      console.log('textfield is null')
+      return
+    } else if (Number($('.counter').text()) < 0) {
+      console.log('textfield to long')
+
+    } console.log(Number($('.counter').text()))
+
+
+
+
     $.ajax({
       method: "POST",
       url: "/tweets",
