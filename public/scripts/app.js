@@ -41,13 +41,13 @@ console.log('DOM fully loaded and parsed');
   $('#newTweet').on("submit", function(event) {
     event.preventDefault();
     if ($('#tweet-field').val() === "") {
-      console.log('textfield is empty')
+      $('#flashmessage').html('Error no text')
       return
     } else if ($('#tweet-field').val() === null) {
-      console.log('textfield is null')
+      $('#flashmessage').html('Error null')
       return
     } else if (Number($('.counter').text()) < 0) {
-      console.log('textfield to long')
+      $('#flashmessage').html('Error text over limit')
 
     } console.log(Number($('.counter').text()))
 
