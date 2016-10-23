@@ -52,13 +52,14 @@ console.log('DOM fully loaded and parsed');
     } console.log(Number($('.counter').text()))
 
 
-
-
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: $(this).serialize()
+    }).done(function(data) {
+      loadTweets()
     })
+
   });
 
   function loadTweets(){
