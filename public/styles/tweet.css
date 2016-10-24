@@ -1,0 +1,86 @@
+
+/*border around tweet*/
+.tweet {
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  margin: 40px 2em 0px;
+  background-color: #fff;
+/* https://developer.mozilla.org/de/docs/Web/CSS/word-wrap */  
+  word-wrap: break-word;
+
+}
+
+/* style for header*/
+.tweet header {
+  background-color: #FA8B23;
+  border-radius: 5px 5px 0px 0px;
+  height: 70px;
+  width: 100%;
+}
+
+/* style for avatar */
+.tweet header .avatar {
+  width:  60px;
+  height: 60px;
+  float: left;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid #FA8B23;
+  margin: 5px;
+}
+
+/*header formating*/
+.tweet header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*handle formating*/
+.tweet header .handle {
+  line-height: 30px;
+  float: right;
+  margin: 5px;
+  color: #FFFFFF;
+}
+/*user formating*/
+.tweet header .user {
+  float: left;
+  line-height: 10px;
+}
+
+/*tweet formating*/
+.tweet div {
+  padding: 20px 10px;
+  font-size: 1.2em;
+}
+
+/* style for footer */
+.tweet footer{
+  border-top: 1px solid #eee;
+  padding: 8px 5px;
+  font-size: 0.8em;
+}
+
+/*style for fontawesome icons*/
+.tweet footer i {
+  float: right;
+  margin: 0px 5px 0px 0px;
+
+/*https://developer.mozilla.org/en/docs/Web/CSS/visibility*/
+  visibility: hidden;
+}
+
+.tweet:hover {
+/* Make a hover; http://www.w3schools.com/css/css_image_transparency.asp */  
+  opacity: 1.0;
+}
+
+.tweet:hover i {
+  background: #fff;
+  visibility: visible;
+}
+
+
+
+
