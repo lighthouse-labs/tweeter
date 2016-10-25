@@ -5,8 +5,8 @@ const express     = require("express");
 const bodyParser  = require("body-parser");
 const app         = express();
 
-const tweetsApi  = require('./api/tweets');
-const db         = require('./lib/db');
+const tweetsApi  = require('./api/tweets'); //rtn's function
+const db         = require('./lib/db'); // rtn's object
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));

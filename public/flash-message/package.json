@@ -1,0 +1,87 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "flash-message",
+        "scope": null,
+        "escapedName": "flash-message",
+        "name": "flash-message",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/vagrant/week3day1/tweetr"
+    ]
+  ],
+  "_from": "flash-message@latest",
+  "_id": "flash-message@2.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/flash-message",
+  "_nodeVersion": "0.10.33",
+  "_npmUser": {
+    "name": "widen",
+    "email": "rnicholus+widennpm@widen.com"
+  },
+  "_npmVersion": "2.1.17",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "flash-message",
+    "scope": null,
+    "escapedName": "flash-message",
+    "name": "flash-message",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/flash-message/-/flash-message-2.0.0.tgz",
+  "_shasum": "b99d8e1ed8ff31243420822e117d2dd317b0f83c",
+  "_shrinkwrap": null,
+  "_spec": "flash-message",
+  "_where": "/vagrant/week3day1/tweetr",
+  "author": {
+    "name": "Widen Enterprises, Inc.",
+    "url": "originally Joel Moss"
+  },
+  "bugs": {
+    "url": "https://github.com/Widen/flash-message/issues"
+  },
+  "dependencies": {},
+  "description": "A tiny plug-in to show flash messages at the top of the page that auto-hide.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "b99d8e1ed8ff31243420822e117d2dd317b0f83c",
+    "tarball": "https://registry.npmjs.org/flash-message/-/flash-message-2.0.0.tgz"
+  },
+  "gitHead": "b134e1201f5fab4787e8d499865bc09e8f27ee59",
+  "homepage": "https://github.com/Widen/flash-message",
+  "keywords": [
+    "jquery",
+    "messages",
+    "alert",
+    "ui"
+  ],
+  "license": "unknown",
+  "main": "jquery.flash.js",
+  "maintainers": [
+    {
+      "name": "widen",
+      "email": "rnicholus+widennpm@widen.com"
+    }
+  ],
+  "name": "flash-message",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Widen/flash-message.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.0"
+}

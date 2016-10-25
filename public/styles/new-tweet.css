@@ -1,0 +1,42 @@
+.new-tweet {
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  margin: 0px 2em 0px;
+  background-color: #eee;
+  padding: 10px;
+  display: none;
+}
+
+.new-tweet h2 {
+  border: 1px solid #000;
+  border-width: 0 0 1px 0;
+  margin: 0;
+}
+
+.new-tweet form {
+  margin-top: 20px;
+}
+
+.new-tweet form textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.new-tweet form input {
+  float: left;
+  /*line-height: 30px;*/
+}
+
+.new-tweet .counter {
+  float: right;
+  padding-top: 2px;
+  /*line-height: 30px;
+  margin: auto 0px;*/
+}
+
+/* clearfix for floats */
+.new-tweet:after {
+    content: "";
+    display: block;
+    clear: both;
+}
