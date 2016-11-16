@@ -5,10 +5,10 @@ const userHelper    = require("../lib/util/user-helper")
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
-module.exports = function(TweetData) {
+module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
-    TweetData.getTweets((err, tweets) => {
+    DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
@@ -32,7 +32,7 @@ module.exports = function(TweetData) {
       created_at: Date.now()
     };
 
-    TweetData.saveTweet(tweet, (err) => {
+    DataHelpers.saveTweet(tweet, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
