@@ -13,7 +13,9 @@ app.use(express.static("public"));
 
 db.connect((dbInstance) => {
   app.use('/tweets', tweetsApi(dbInstance));
+console.log(dbInstance);
 });
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

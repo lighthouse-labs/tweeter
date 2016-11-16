@@ -18,6 +18,17 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+main {
+  width: 450px;
+  margin: auto;
+  background-color: white;
+  height: 1000px;
+  margin-top: 80px;
+  padding-top: 50px;
+
 }
 
 /*
