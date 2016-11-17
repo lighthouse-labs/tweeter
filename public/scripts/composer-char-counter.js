@@ -14,7 +14,7 @@
 //=========IF COUNTER OVER 140 TEXT IS RED============//
 //=============ELSE TEXT IS GREY==================//
 $(function() {
-  $(".new-tweet").keyup(function(){
+  var countCharacters = function() {
     var entered = $("textarea", this).val().length;
     $(".counter", this).html(140 - entered);
     if(entered > 140) {
@@ -22,5 +22,7 @@ $(function() {
     } else {
       $(".counter", this).css('color', 'grey');
     }
-  });
+  };
+
+  $(".new-tweet").on('input', countCharacters);
 });
