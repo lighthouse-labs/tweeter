@@ -14,6 +14,21 @@ $(document).ready(function () {
     var content = tweet.content.text;
     var created = tweet.created_at;
 
+    var today = Date.now();
+    var millisElapsed = today - created;
+    var daysElapsed = millisElapsed/86400000;
+    var roundedDays = Math.round(daysElapsed);
+    console.log(roundedDays);
+
+    if(roundedDays === 0) {
+      var day = "Tweeted today."
+    } else if (roundedDays === 1) {
+      var day = "Tweeted yesteday."
+    } else {
+      var day = "Tweeted " + roundedDays + " days ago."
+    }
+
+
 
     //to be appended to #tweet-container
     var $tweet = $("<article>").addClass("tweet");//.append(tweetData.context.text);
@@ -26,7 +41,7 @@ $(document).ready(function () {
     var $avatar = $("<img>").attr("src", avatar);  //.addClass("img").append(tweetData.user.avatars);
     var $user_name = $("<text>").append(name);
     //to be appended to $footer
-    var $date = $("<p>").append(created)
+    var $date = $("<p>").append(day)
     var $icon1 = $("<i class='fa fa-heart' aria-hidden='true'>");
     var $icon2 = $("<i class='fa fa-retweet' aria-hidden='true'>");
     var $icon3 = $("<i class='fa fa-flag' aria-hidden='true'>");

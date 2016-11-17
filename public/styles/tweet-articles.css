@@ -10,10 +10,12 @@ article.tweet {
   width: 410px;
   margin: auto;
   margin-top: 10px;
+  opacity: .5;
 }
 
 article.tweet:hover {
   border: 1px solid black;
+  opacity: 1.0
 }
 
 article.tweet header {
@@ -82,12 +84,22 @@ article.tweet footer {
 article.tweet footer i {
   float: right;
   padding: 5px;
+  color: white;
 }
 
-article.tweet footer i:hover {
+article.tweet:hover i {
   color: #00a087;
-  float: right;
 }
-article.tweet footer i .fa fa-heart:hover {
+
+article.tweet footer i.fa-flag:hover {
+  color: gold;
+}
+article.tweet footer i.fa-retweet:hover {
+  color: green;
+}
+article.tweet footer i.fa-heart:hover {
   color: red;
 }
+
+
+
