@@ -26,10 +26,25 @@
 .new-tweet .counter {
   float: right;
   font-style: italic;
-  .negative { color: red; }
 }
 
 .new-tweet input {
   margin-left:2px;
   margin-bottom: 5px;
 }
+
+#id {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #eee;
+    width: 410px;
+    margin: auto;
+    margin-top: 20px;
+    height: 100px;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+
+
+
