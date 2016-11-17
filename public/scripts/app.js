@@ -1,54 +1,9 @@
-$(function () {
-  var data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": {
-          "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-          "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-          "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-        },
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": {
-          "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-          "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-          "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-        },
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Johann von Goethe",
-        "avatars": {
-          "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-          "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-          "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-        },
-        "handle": "@johann49"
-      },
-      "content": {
-        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-      },
-      "created_at": 1461113796368
-    }
-  ];
+$(document).ready(function () {
 
   function renderTweets(tweets) {
     tweets.forEach(function (tweet) {
-      createTweetElement(tweet);
+      var element = createTweetElement(tweet);
+      $('#tweets-container').prepend(element);
     })
   }
 
@@ -58,8 +13,8 @@ $(function () {
     var handle = tweet.user.handle;
     var content = tweet.content.text;
     var created = tweet.created_at;
-    console.log(name);
-    console.log(avatar);
+
+
     //to be appended to #tweet-container
     var $tweet = $("<article>").addClass("tweet");//.append(tweetData.context.text);
     //to be appended to $tweet
@@ -70,7 +25,7 @@ $(function () {
     var $tweet_handle = $("<span>").append(handle); //.addClass("handle").append(tweetData.user.handle);
     var $avatar = $("<img>").attr("src", avatar);  //.addClass("img").append(tweetData.user.avatars);
     var $user_name = $("<text>").append(name);
-    //append be to $footer
+    //to be appended to $footer
     var $date = $("<p>").append(created)
     var $icon1 = $("<i class='fa fa-heart' aria-hidden='true'>");
     var $icon2 = $("<i class='fa fa-retweet' aria-hidden='true'>");
@@ -89,9 +44,35 @@ $(function () {
     ($body).appendTo($tweet);
     ($footer).appendTo($tweet);
 
-    $('#tweets-container').append($tweet);
+    return $tweet;
+  };
+
+
+  $('form[action="/tweets"]').on('submit', function (event) {
+    event.preventDefault();
+    var tweetInput = $(this);
+
+    $.ajax({
+      method: 'POST',
+      url: tweetInput.attr('action'),
+      data: tweetInput.find("textarea").serialize()
+    }).done(function () {
+      loadTweets();
+    });
+  });
+
+  function loadTweets() {
+    $.ajax({
+      method: 'GET',
+      url:'/tweets',
+      dataType: 'json',
+      success: function(tweetData) {
+        renderTweets(tweetData);
+      }
+    });
   }
 
+  loadTweets();
 
-  renderTweets(data);
-})
+});
+

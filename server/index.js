@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 db.connect((dbInstance) => {
   app.use('/tweets', tweetsApi(dbInstance));
-console.log(dbInstance);
+  console.log(dbInstance);
 });
 
 

@@ -2,9 +2,10 @@
   width: 410px;
 }
 
+
 article.tweet {
-  background-color: white;
-  border: 1px solid grey;
+  background-color: #fff;
+  border: 1px solid gray;
   border-radius: 10px;
   width: 410px;
   margin: auto;
@@ -12,19 +13,19 @@ article.tweet {
 }
 
 article.tweet:hover {
-  background-color: white;
   border: 1px solid black;
 }
 
-article.tweet footer {
+article.tweet header {
+  background-color: #fff;
+  border-radius: 10px 10px 0px 0px;
   padding: 10px;
-  color:  #757575;
 }
 
-article.tweet header {
+article.tweet:hover header {
   background-color: #eee;
   border-radius: 10px 10px 0px 0px;
-  padding: 15px;
+  padding: 10px;
 }
 
 article.tweet header img {
@@ -33,15 +34,27 @@ article.tweet header img {
   width: 80px;
 }
 
-article.tweet header img:hover {
-  height: 100px;
-  width: 100px;
+article.tweet header text {
+    color: #757575;
+    vertical-align: top;
+    padding-left: 10px;
+    font-size: 150%;
 }
 
-article.tweet footer p {
-  display: inline-block;
-  margin: 0px;
+article.tweet:hover header text {
+    color: #00a087;
+    vertical-align: top;
+    padding-left: 10px;
+    font-size: 150%;
 }
+
+article.tweet span {
+  color: grey;
+  vertical-align: top;
+  float: right;
+  font-size: 100%;
+}
+
 
 article.tweet > p {
   border-bottom: 1px solid grey;
@@ -55,26 +68,26 @@ article.tweet > p:hover {
   border-top: 1px solid black;
 }
 
-article.tweet span {
-  vertical-align: top;
-  padding-left: 10px;
-  float: right;
-  font-size: 100%;
+article.tweet footer p {
+  display: inline-block;
+  margin: 0px;
 }
 
-article.tweet header text {
-    color: #757575;
-    vertical-align: top;
-    padding-left: 10px;
-    font-size: 200%;
+article.tweet footer {
+  padding: 10px;
+  color:  #757575;
 }
+
 
 article.tweet footer i {
   float: right;
   padding: 5px;
 }
 
-article.tweet:hover footer i {
-  color: #757575;
+article.tweet footer i:hover {
+  color: #00a087;
   float: right;
+}
+article.tweet footer i .fa fa-heart:hover {
+  color: red;
 }
