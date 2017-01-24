@@ -1,4 +1,4 @@
-/*
+e/*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
@@ -18,8 +18,18 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  margin: 80px auto 0px auto;
+  padding-top: 125px;
+  width: 450px;
+  min-height: 900px;
+  background-color: #ffffff;
+}
+

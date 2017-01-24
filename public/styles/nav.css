@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+#nav-bar {
+  position: fixed;
+  padding: 0 2em 0;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #00a087;
+  font-color: #e8fdff;
+}
+
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  float: left;
+}
+
+#nav-bar .header {
+  font-size: 2em;
+  line-height: 80px;
+  float: left;
+}
