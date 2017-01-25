@@ -1,5 +1,5 @@
 $(document).ready(function() {
-const charCounter = $('.new-tweet').find('.counter');
+  const charCounter = $('.new-tweet').find('.counter');
 
   function checkCounter(counter) {
     if (counter < 0) {
