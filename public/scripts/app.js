@@ -147,6 +147,7 @@ $(function(){
       }).then(function(tweet) {
           $('.new-tweet form')[0].reset();
           $('.flash').text('').hide();
+          $('.counter').text('140');
           renderTweets([tweet], true);
       });
     }
