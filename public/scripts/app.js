@@ -131,7 +131,7 @@ $(function(){
   loadTweets();
 
   $('#nav-bar button').on('click', function(e) {
-    $('.new-tweet').slideToggle('slow').focus();
+    $('.new-tweet').slideToggle().find('textarea').focus();
     return false;
   });
 
