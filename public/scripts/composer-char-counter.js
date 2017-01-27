@@ -1,10 +1,3 @@
-$(document).ready(function() {
-  
-  $('.new-tweet form textarea').on('keyup', charCounting);
-
-
-});
-
 const charCounting = (e)=> {
   let self = $(e.target);
   let counter = self.closest('form').find('.counter');
