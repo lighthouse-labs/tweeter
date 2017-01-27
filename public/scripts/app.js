@@ -32,10 +32,15 @@ function createTweetElement(tweetData) {
   return $(html);
 }
 
-function renderTweets(tweetsArr) {
+function renderTweets(tweetsArr, current) {
   tweetsArr.forEach((tweetObj) => {
     const $tweet = createTweetElement(tweetObj);
-    $('#tweets').prepend($tweet);
+    if(current) {
+      $('#tweets').prepend($tweet);
+    } else {
+        $('#tweets').append($tweet);
+    }
+    updateTime();
   })
 }
 
@@ -43,7 +48,8 @@ function formatTime(date) {
   if (typeof date !== 'object') {
     date = new Date(date);
   }
-  let seconds = Math.floor((new Date() - date) / 1000);
+  let seconds = Math.floor((Date.now() - date) / 1000); // TODO: figure out why -1 seconds
+  seconds = seconds >= 0 ? seconds : 0;
   let intervalType;
   let interval = Math.floor(seconds / 31536000);
   if (interval >= 1) {
@@ -59,14 +65,14 @@ function formatTime(date) {
           } else {
               interval = Math.floor(seconds / 3600);
               if (interval >= 1) {
-                intervalType = "hour";
+                intervalType = 'hour';
               } else {
                   interval = Math.floor(seconds / 60);
                   if (interval >= 1) {
-                    intervalType = "minute";
+                    intervalType = 'minute';
                   } else {
                       interval = seconds;
-                      intervalType = "second";
+                      intervalType = 'second';
                   }
               }
           }
@@ -77,6 +83,13 @@ function formatTime(date) {
   }
   return `${interval} ${intervalType} ago`;
 };
+
+function updateTime() {
+  $('time').each(function() {
+    let dateStr = $(this).attr('datetime');
+    $(this).text(formatTime(dateStr));
+  });
+}
 
 function validateTweet(content) {
   if (content && content.length < 141 && content.match(/\w/)) {
@@ -89,22 +102,33 @@ function validateTweet(content) {
   }
 }
 
-function loadTweets(all) {
-  $.ajax({
-    url: '/tweets',
-    type: 'get',
-    contentType: 'json'
-  }).then(function(response) {
-    if (all) {
-      renderTweets(response);
-    } else {
-      const lastTweet = response[response.length - 1];
-      renderTweets([lastTweet]);
-    }
-  });
+function paginate() {
+  let page = 1;
+  return function() {
+    $.ajax({
+      url: `/tweets?page=${page}`,
+      type: 'get',
+      contentType: 'json'
+    }).then(function(response) {
+        renderTweets(response);
+    });
+    page++;
+    $(window).on('scroll', bindScroll);
+  }
+}
+const loadTweets = paginate();
+
+function bindScroll () {
+  if ($(window).scrollTop() + $(window).height() >= 
+    $('main').offset().top + $('main').height() ) { 
+    
+    $(window).off('scroll');
+    loadTweets();
+  } 
 }
 
 $(function(){
+  loadTweets();
 
   $('#nav-bar button').on('click', function(e) {
     $('.new-tweet').slideToggle('slow').focus();
@@ -120,13 +144,13 @@ $(function(){
         type: 'post',
         data: $(this).serialize(),
         contentType: 'application/x-www-form-urlencoded'
-      }).then(function() {
+      }).then(function(tweet) {
           $('.new-tweet form')[0].reset();
           $('.flash').text('').hide();
-          loadTweets();
+          renderTweets([tweet], true);
       });
     }
   });
 
-  loadTweets('all');
+  $(window).on('scroll', bindScroll);
 })

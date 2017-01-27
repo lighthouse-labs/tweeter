@@ -8,13 +8,14 @@ const tweetsRoutes  = express.Router();
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
+    let pagenum = req.query.page; //my edit used for infinite scrolling
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
         res.json(tweets);
       }
-    });
+    }, pagenum);
   });
 
   tweetsRoutes.post("/", function(req, res) {
@@ -36,7 +37,7 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.status(201).send();
+        res.status(201).send(tweet); // my edit performance tweaking to avoid loading the whole db everytime a new tweet is created
       }
     });
   });
