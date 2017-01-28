@@ -1,17 +1,17 @@
 const renderTweets = (tweetsArr, current) => {
   tweetsArr.forEach((tweetObj) => {
     const $tweet = createTweetElement(tweetObj);
-    if(current) {
+    if (current) {
       $('#tweets').prepend($tweet);
     } else {
-        $('#tweets').append($tweet);
+      $('#tweets').append($tweet);
     }
     updateTime();
-  })
-}
+  });
+};
 
 const validateTweet = (content) => {
-  if (content && content.length < 141 && content.match(/\w/)) {
+  if (content && (content.length < 141) && (content.match(/\w/))) {
     return true;
   }
   if (content.length > 140) {
@@ -19,10 +19,11 @@ const validateTweet = (content) => {
   } else {
     $('.flash').text('too little words :(').show();
   }
-}
+};
 
 const paginate = () => {
   let page = 1;
+  
   return function() {
     $.ajax({
       url: `/tweets?page=${page}`,
@@ -33,6 +34,6 @@ const paginate = () => {
     });
     page++;
   }
-}
+};
 
 const loadTweets = paginate();

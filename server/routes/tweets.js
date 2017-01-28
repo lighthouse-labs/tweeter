@@ -5,7 +5,24 @@ const userHelper    = require("../lib/util/user-helper");
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
+const cookieSession = require("cookie-session");
+tweetsRoutes.use(cookieSession({signed: false}));
+
 module.exports = function(DataHelpers) {
+
+  tweetsRoutes.post("/:tweet/likes", function(req, res) {
+    const userID = req.userID || (`u-${userHelper.generateRandomString()}`);
+    console.log(req.params.tweet);
+    const tweetID = req.body.tweet;
+    console.log(req.session.userID);
+    if (!req.session.userID) {
+      req.session.userID = userID;
+    }
+    
+    DataHelpers.updateTweetAction(tweetID, 'u-1ae1ea', function(err, arr) {
+      res.status(200).send(`${arr[0]['likes'].length}`);
+    })
+  })
 
   tweetsRoutes.get("/", function(req, res) {
     let pagenum = req.query.page; //my edit used for infinite scrolling

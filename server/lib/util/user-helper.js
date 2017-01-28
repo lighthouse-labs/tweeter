@@ -39,5 +39,31 @@ module.exports = {
       handle: userHandle,
       avatars: avatars
     };
+  },
+
+  // my funcs
+  generateRandomString: function () {
+    return Math.floor((1 + Math.random()) * 0x100000).toString(16);
+  },
+
+  generateUniqueKey: function (obj) {
+    let key;
+    do {
+      key = generateRandomString();
+    } while(obj[key]);
+    return key;
+  },
+
+  logVisit: function (req, shortObj) {
+    let id = req.session.visitor_id;
+    shortObj.totalVisits += 1;
+    if(!shortObj.visits[id]) {
+      let visitor_id = "v-" + generateUniqueKey(shortObj.visits);
+      req.session.visitor_id = visitor_id;
+      shortObj.visits[visitor_id] = [(new Date()).toUTCString()];
+      shortObj.totalVisitors += 1;
+    } else {
+      shortObj.visits[id].push((new Date()).toUTCString());
+    }
   }
 };

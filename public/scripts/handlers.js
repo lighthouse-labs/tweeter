@@ -1,12 +1,12 @@
-const bindScroll = () => {
-  if ($(window).scrollTop() + $(window).height() >= 
-    $('main').offset().top + $('main').height() ) { 
-    
+const bindScroll = function() {
+  let windowsDimension = $(window).scrollTop() + $(window).height();
+  let contentDimension = $('main').offset().top + $('main').height();
+  if (windowsDimension >= contentDimension) {    
     loadTweets();
   } 
-}
+};
 
-const newTweetHandler = (e) => {
+const newTweetHandler = function(e) {
   e.preventDefault();
   const content = $(this).find('textarea').val();
   if (validateTweet(content)) {
@@ -20,11 +20,25 @@ const newTweetHandler = (e) => {
         $('.flash').text('').hide();
         $('.counter').text('140');
         renderTweets([tweet], true);
-    })
+    });
   }
-}
+};
 
-const composeToggler = (e) => {
+const composeToggler = function() {
   $('.new-tweet').slideToggle().find('textarea').focus();
   return false;
-}
+};
+
+const charCounting = function(e) {
+  const $this = $(this)
+  let counter = $this.closest('form').find('.counter');
+  let remainingChar = 140 - $this.val().length;
+  counter.text(remainingChar);
+  if (remainingChar < 0 )  {
+   counter.css('color','red');
+   $('.flash').text('too much words :()').show();
+  } else {
+   counter.css('color','inherit');
+   $('.flash').hide();
+  }
+};

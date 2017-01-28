@@ -1,3 +1,8 @@
+/** formatTime function pretty formats timestamp string to the format: xx `intervalType` ago
+ examples 10 hours ago, 1 year ago,
+ NOTE: to complete comment
+
+**/
 const formatTime = (date) => {
   if (typeof date !== 'object') {
     date = new Date(date);
@@ -40,7 +45,7 @@ const formatTime = (date) => {
 
 const updateTime = () => {
   $('time').each(function() {
-    let dateStr = $(this).attr('datetime');
+    const dateStr = $(this).attr('datetime');
     $(this).text(formatTime(dateStr));
   });
-}
+};
