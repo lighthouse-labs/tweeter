@@ -22,33 +22,49 @@ module.exports = function makeDataHelpers(db) {
       }); 
     },
 
+    // saves a user to `users` collection
+    saveUser: function(user) {
+      db.collection('users').insert(user);
+    },
+
+    // checks the USERS db if property and value exists
+    // takes value (val) to look up in property (prop)
+    // pass the found user in a callback
+    hasHandle: function(value, callback) {
+      db.collection('users').find({'handle': `${value}`})
+      .toArray(function(err, arr) {
+        if (arr && (arr.length > 0)) {
+          const existingMatch = arr.find(user => user.handle === value);
+          callback(existingMatch);
+        }
+      });
+    },
+
+    // Updates tweet's likes: queries the db to validate
+    // if user has liked the tweet before, this determines
+    // whether to decrement or increment the likes array
     updateTweetAction: function(tweetID, userID, callback) {
       db.collection('tweets').find({_id: ID(tweetID)}).toArray(function(err, actionArr) {
-          if (actionArr[0]['likes']) {
-            console.log('likes exists');
-            if (actionArr[0]['likes'].includes(userID)) {
-              console.log('likes exists and includes user',userID);
-              db.collection('tweets').update(
-              { _id: ID(tweetID) },
-              { $pull: { likes: userID } }
-              )
-            } else {
-              console.log('likes exists but doesnt include the user');
-              db.collection('tweets').update(
-              { _id: ID(tweetID) },
-              { $push: { likes: userID } }
-              )
-            }
-          } else {
-            console.log('likes does not exist so creating it');
+        if (actionArr[0]['likes']) {
+          if (actionArr[0]['likes'].includes(userID)) {
             db.collection('tweets').update(
-              { _id: ID(tweetID) },
-              { $set : {likes: [userID] } }
-              )
+            { _id: ID(tweetID) },
+            { $pull: { likes: userID } }
+            )
+          } else {
+            db.collection('tweets').update(
+            { _id: ID(tweetID) },
+            { $push: { likes: userID } }
+            )
           }
-          db.collection('tweets').find({_id: ID(tweetID)}).toArray(callback);
-        });
-      // 
+        } else {
+          db.collection('tweets').update(
+            { _id: ID(tweetID) },
+            { $set : {likes: [userID] } }
+            )
+        }
+        db.collection('tweets').find({_id: ID(tweetID)}).toArray(callback);
+      });
     }
 
   };

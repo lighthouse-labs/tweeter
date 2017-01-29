@@ -1,39 +1,69 @@
 /* nav sass */
+$navbar_height: 5rem
+$border_radius: 5px
+$shadow_color: #333
+$primary_color: #00a087
+$light_color: #e8fdff
 
-#nav-bar 
-  height: 80px
-  width: 100%
-  padding: 0 2em
-  color: #e8fdff
+#nav-bar
+  align-items: center
   background-color: #00a087
+  box-shadow: 0 0 0.5rem $shadow_color
+  color: #e8fdff
+  display: flex
+  flex-wrap: wrap
+  height: $navbar-height
+  padding: 0 2rem
+  position: fixed
+  width: 100%
+  z-index: 10
 
+  .brand
+    flex: 3
+    flex-wrap: nowrap
+    .header
+      color: $light_color
+      display: inline-block
+      font-size: 2.5em
+      font-weight: normal
+      line-height: 2
+      margin: 0 10px
+      vertical-align: top
 
-#nav-bar .logo 
-  height: 80px
-  width: 80px
+    .logo 
+      height: $navbar_height
+      width: $navbar_height
+  
+  .login,
+  .register,
+  button
+    border-radius: $border_radius
+    font-size: 1.5em
+    marigin-left: auto
+    padding: 0.6em 1.5em
 
+  .login
+    background-color: darken($primary_color, 0.5)
+    border: none
+    box-shadow: 0 0 0.3em $light_color
+    color: $light_color
 
-#nav-bar .header 
-  display: inline-block
-  margin: 0 10px
-  font-size: 2.5em
-  font-weight: normal
-  vertical-align: top
-  line-height: 2
+  .login:hover,
+  .register:hover,
+  button:hover 
+    color: #333
+    background-color: #eee
+    box-shadow: 0 0 0.8em #333
 
+  .register,
+  button
+    background-color: $light_color
+    border: none
+    box-shadow: 0 0 0.3em $shadow_color
+    color: $primary_color
 
-#nav-bar button 
-  height: 3em
-  width: 8em
-  margin: 0.15em 0
-  font-size: 1.5em
-  color: #00a087
-  background-color: #e8fdff
-  border: none
-  box-shadow: 0 0 0.3em #333
+  .register
+    margin-right: 0.8rem
 
-
-#nav-bar button:hover 
-  color: #333
-  background-color: #eee
-  box-shadow: 0 0 0.8em #333
+  button
+    display: none

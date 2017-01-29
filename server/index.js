@@ -13,7 +13,6 @@ app.use(express.static("public"));
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
-// let dbase;
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
@@ -37,8 +36,15 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   // so it can define routes that use it to interact with the data layer.
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
+  // `usersRoutes works similar to tweetsRoutes unless its for user related stuff
+  // register, login and logout
+  const usersRoutes = require("./routes/users")(DataHelpers);
+
   // Mount the tweets routes at the "/tweets" path prefix:
   app.use("/tweets", tweetsRoutes);
+
+  // Mount the tweets routes at the "/tweets" path prefix:
+  app.use("/", usersRoutes);
 });
 
 

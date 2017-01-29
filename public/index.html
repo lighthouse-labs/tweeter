@@ -21,14 +21,48 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img alt="logo" class="logo" src="./index_files/bird.png">
-      <h1 class="header">Tweeter</h1>
+      <a class="brand" href="#0">
+        <img alt="logo" class="logo" src="./index_files/bird.png">
+        <h1 class="header">Tweeter</h1>
+      </a>
+      <a href="#0" class="register">Register</a>
+      <a href="#0" class="login">Log in</a>
       <button class="radius-general float-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-       <section class="new-tweet radius-general">
+      <section id="modal" class="no-display" >
+        <form method="post" action="/register" class="form-register">
+          <h2 class="form-title">Register</h2>
+          <label class="no-display" for="name">Your handle here</label>
+          <input type="text" name="name" placeholder="full name here" id="name" required>
+          <label class="no-display" for="handle">Your handle here</label>
+          <input type="text" name="handle" placeholder="@yourHandle" id="handle" required>
+          <label class="no-display" for="password">Password here</label>
+          <input type="password" placeholder="***" name="password" id="password" required>
+          <button>Register</button>
+          <span class="form-info">
+            No account yet?
+            <a href="#0">Register</a>
+          </span>
+        </form>
+        <form method="post" action="/login" class="form-login">
+          <h2 class="form-title">Login</h2>
+          <label class="no-display" for="handle">Your handle here</label>
+          <input type="text" name="handle" placeholder="@yourHandle" id="handle" required>
+          <label class="no-display" for="password">Password here</label>
+          <input type="password" placeholder="p455W0rD" name="password" id="password" required>
+          <input type="checkbox" id="remember" checked>
+          <label for="remember">Remember me</label>
+          <button>Login</button>
+          <span class="form-info">
+            No account yet?
+            <a href="#0">Register</a>
+          </span>
+        </form>
+      </section>
+      <section class="new-tweet radius-general">
         <h2>Compose Tweet</h2>
         <form method="POST" action="http://localhost:8080/tweets">
           <label for="tweet-text">New tweet textarea</label>

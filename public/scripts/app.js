@@ -19,24 +19,20 @@ $(function(){
   // New tweet submit event handler
   $('.new-tweet form').on('submit', newTweetHandler);
 
-  $('#tweets').on('click', '.tweet-actions i', function(e) {
-    const $this = $(e.target);
-    const tweetID = $this.closest('article').data('this-tweet');
-    const actionType = $this.data('tweetr-action-type');
-    const actionState = $this.data('tweetr-action-state');
+  // Liking Tweets
+  $('#tweets').on('click', '.fa-heart', likesHandler);
 
-    // const [action, newState] = actionState === 'on' ? ['increment', 'off'] : ['decrement', 'on'];
-    $.ajax({
-      url: `/tweets/${tweetID}/likes`,
-      type: 'post',
-      data: `tweet=${tweetID}`
-    }).then(function(currentCount) {
-      console.log($this); //REMEBER to remove
-      $this.text(currentCount);
-    });
+  // Show registration form
+  $('.register').on('click', showRegistration);
 
-    $(e.target).toggleClass('off');
-  })
+  // Show login form
+  $('.login').on('click', showLogin);
+
+  $('#modal').on('click', function(e) {
+    if (this === e.target) {
+      $(this).hide();
+    }
+  });
 
   // for pagination
   $(window).on('scroll', bindScroll);

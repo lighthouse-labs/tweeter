@@ -9,17 +9,16 @@ const cookieSession = require("cookie-session");
 tweetsRoutes.use(cookieSession({signed: false}));
 
 module.exports = function(DataHelpers) {
-
+  
+  // updating tweet's likes counter
   tweetsRoutes.post("/:tweet/likes", function(req, res) {
     const userID = req.userID || (`u-${userHelper.generateRandomString()}`);
-    console.log(req.params.tweet);
-    const tweetID = req.body.tweet;
-    console.log(req.session.userID);
+    const tweetID = req.params.tweet;
     if (!req.session.userID) {
       req.session.userID = userID;
     }
     
-    DataHelpers.updateTweetAction(tweetID, 'u-1ae1ea', function(err, arr) {
+    DataHelpers.updateTweetAction(tweetID, userID, function(err, arr) {
       res.status(200).send(`${arr[0]['likes'].length}`);
     })
   })
