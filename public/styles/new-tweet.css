@@ -21,7 +21,7 @@ input {
 .new-tweet {
   margin-left: 2em;
   margin-right: 2em;
-  background-color: lightgrey;
+  background-color: #eeeeee;
   border-radius: 10px;
   border-style: solid;
   border-width: 1px;
@@ -31,7 +31,7 @@ input {
 }
 
 /*Text at top*/
-section h2 {
+section h2.compose {
   border-bottom: 1px solid black;
   margin-top: 10px;
   margin-left: 10px;
