@@ -1,22 +1,3 @@
-/*text inside Textbox*/
-textarea[name="text"] {
-  padding: 5px;
-}
-
-/*Textbox*/
-section textarea {
-  width: 100%;
-}
-
-
-.counter {
-  float: right;
-}
-
-input {
-  float: left;
-}
-
 /*The Container section box for new Tweets*/
 .new-tweet {
   margin-left: 2em;
@@ -37,6 +18,28 @@ section h2.compose {
   margin-left: 10px;
 }
 
+/*Textbox*/
+section textarea {
+  width: 100%;
+  height: 100px;
+}
+
+/*text inside Textbox*/
+textarea[name="text"] {
+  padding: 5px;
+}
+
+/*Char counter*/
+.counter {
+  float: right;
+}
+
+/*Submit button*/
+input {
+  float: left;
+}
+
+/*Jquery creates class for '-' char counter*/
 .negRed {
   color: red;
 }

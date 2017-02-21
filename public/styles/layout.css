@@ -13,11 +13,12 @@ html {
 /*
  * Global layout stuff
  */
-
+  /**/
 body {
   margin-top: 140px;
   color: #244751;
-  background-color: #eee;
+  /*background-color: #eee;*/
+  background-color: black;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -27,7 +28,7 @@ body {
 
 main {
   width: 450px;
-  height: 450px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   background-color: white;

@@ -17,7 +17,6 @@ header.header-tweet {
   border-top-right-radius: 10px;
 }
 
-
 /*User Full Name*/
 header h3.header-text {
   color: slategrey;
@@ -57,8 +56,24 @@ footer.footer-tweet {
 footer p.footer-tweet-text {
   padding: 25px 10px 25px 10px;
 }
+
+/*Day Ago Text*/
 footer p.footer-status {
   border-top: 1px solid lightgrey;
-  padding: 15px 5px 5px 5px;
+  padding: 15px 0px 0px 5px;
   font-size: 12px;
+}
+
+/*Edit Hover State*/
+
+article.hover {
+  opacity: 0.75;
+}
+article.hover:hover {
+  opacity: 2;
+}
+
+i.fa {
+  float: right;
+  margin: 2px 2px 2px 2px;
 }

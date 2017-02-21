@@ -30,6 +30,9 @@
 
     <!-- Tweet Char Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Load Font-Awesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -50,19 +53,23 @@
           <span class="counter">140</span>
         </form>
       </section>
+      <!-- NEW TWEET SECTION -->
       <section class="prev-tweet">
-        <article class="tweet">
-          <header class="header-tweet">
-            <img class="header-pic" src="/images/pic.png">
-            <h3 class="header-text">Billy Joel</h3>
-            <p class="header-user">@username</p>
+        <!--<article class="hover tweet">
+          <header class="hover header-tweet">
+            <img class="hover header-pic" src="/images/pic.png">
+            <h3 class="hover header-text">Billy Joel</h3>
+            <p class="hover header-user">@username</p>
           </header>
-          <footer class="footer-tweet">
-            <p class="footer-tweet-text">Some text goes here...</p>
-            <p class="footer-status">10 days ago</p>
+          <footer class="hover footer-tweet">
+            <p class="hover footer-tweet-text">Some text goes here...</p>
+            <p class="hover footer-status">10 days ago</p>
+            <i class="fa fa-flag"></i>
+            <i class="fa fa-refresh"></i>
+            <i class="fa fa-heart"></i>
           </footer>
-        </article>
-        
+        </article>-->
+        <p id='tweets-container'></p>
       </section>
     </main>
   </body>
