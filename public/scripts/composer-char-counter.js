@@ -6,9 +6,10 @@ $(document).ready(function(e){
   function counterCounter(){
     let maxValue = 140;
     let count = maxValue - Number($(this).val().length);
-    $(this).closest('.new-tweet').find('.counter').text(count);
-    $(this).closest('.new-tweet').find(".counter").removeClass('negRed');
-    $(this).closest('.new-tweet').find(".counter:contains('-')").addClass('negRed');
+    let what = $(this).closest('.new-tweet');
+    what.find('.counter').text(count);
+    what.find('.counter').removeClass('negRed');
+    what.find('.counter:contains("-")').addClass('negRed');
   }
   
   let textbox = $('form').closest('.new-tweet').find('textarea');
