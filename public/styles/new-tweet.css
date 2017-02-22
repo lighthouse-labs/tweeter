@@ -1,9 +1,8 @@
-
 .container {
   background-color: white;
   margin: 0 auto;
-    width: 450px;
   padding: 3em 2em 6em;
+  width: 450px;
 }
 
 .counter {
@@ -11,7 +10,7 @@
 }
 
 form {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .negative-chars-remaining {
@@ -19,23 +18,25 @@ form {
 }
 
 .new-tweet {
-  border-radius: 10px;
   background-color: #eee;
-  padding: 1em;
+  border-radius: 10px;
   margin: 2em;
+  padding-top: 0;
+  padding: 1em;
 }
 
 textarea {
   width: 100%;
 }
 
-.new-tweet h2{
-    border-bottom: thin solid black;
+.new-tweet h2 {
+  border-bottom: thin solid black;
 }
 
 .negative-chars-remaining {
   color: red;
 }
+
 
 /*.new-tweet {
   border-radius: 10px;
@@ -55,4 +56,3 @@ textarea {
 textarea {
   width: 100%;
 }*/
-

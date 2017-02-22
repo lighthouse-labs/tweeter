@@ -1,3 +1,4 @@
-@import url('./nav.css');
-@import url('./layout.css');
-@import url('./new-tweet.css');
+@import url('nav.css');
+@import url('layout.css');
+@import url('new-tweet.css');
+@import url('tweet.css');
