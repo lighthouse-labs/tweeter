@@ -18,7 +18,7 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.post("/", function (req, res) {
-    res.status(404).json({ error: 'POST is not accepted' })
+    res.status(404).json({ error: 'POST is not accepted' });
   });
 
   tweetsRoutes.put("/", function(req, res) {
@@ -45,6 +45,7 @@ module.exports = function(DataHelpers) {
 
     DataHelpers.saveTweet(tweet, (err) => {
       if (err) {
+        console.log(err);
         res.status(500).json({ error: err.message });
       } else {
         res.status(201).send();

@@ -1,3 +1,7 @@
+/*
+$ These are posts read from MongoDB
+*/
+
 article.tweet {
   margin-top: 1em;
   margin-left: 2em;
@@ -17,7 +21,6 @@ header.header-tweet {
   border-top-right-radius: 10px;
 }
 
-/*User Full Name*/
 header h3.header-text {
   color: slategrey;
   margin-top: 10px;
@@ -25,7 +28,6 @@ header h3.header-text {
   float: left;
 }
 
-/*User Pic*/
 img.header-pic {
   margin-top: 10px;
   margin-left: 10px;
@@ -35,7 +37,6 @@ img.header-pic {
   float: left;
 }
 
-/*Username Top Right Corner*/
 header p.header-user {
   top: 0;
   margin-right: 10px;
@@ -44,7 +45,6 @@ header p.header-user {
   color: lightslategrey;
 }
 
-/*Footer*/
 footer.footer-tweet {
   background-color: white;
   border-style: 1px solid black;
@@ -57,14 +57,12 @@ footer p.footer-tweet-text {
   padding: 25px 10px 25px 10px;
 }
 
-/*Day Ago Text*/
 footer p.footer-status {
   border-top: 1px solid lightgrey;
   padding: 15px 0px 0px 5px;
   font-size: 12px;
 }
 
-/*Edit Hover State*/
 article.hover {
   opacity: 0.75;
 }

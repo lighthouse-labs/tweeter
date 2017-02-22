@@ -1,4 +1,7 @@
-/*Compose Outter Box*/
+/*
+$ Compose button in the Nav Bar
+*/
+
 #nav-comp-box {
   right: 0;
   float: right;
@@ -11,9 +14,7 @@
   margin-bottom: 20px;
 }
 
-/*Compose Text*/
 #nav-comp-box .nav-comp-text {
-  /*color: #00a087;*/
   color: black;
   font-size: 0.25em;
   float: right;

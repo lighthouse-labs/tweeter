@@ -1,3 +1,9 @@
+/*
+$ajax.js
+$ Blocks Form submission checks input for char length and PUT's it to the backend.
+$ maxLength +5 = "text=" in the form submit.
+*/
+
 $(document).ready(function(){
   $('#form').submit(function(e){
     e.preventDefault();

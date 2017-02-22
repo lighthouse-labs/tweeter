@@ -1,5 +1,8 @@
-// Function calculates the current value of the textbox input and displays it in reverse
-// on the Counter display, for the user.
+/*
+$ Function calculates the current value of the textbox input and displays it in reverse
+$ on the Counter display, for the user.
+*/
+
 function counterCounter(){
   let maxValue = 140;
   let count = maxValue - Number($(this).val().length);
