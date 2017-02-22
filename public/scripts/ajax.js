@@ -18,7 +18,7 @@ $(document).ready(function(){
       }
       let url = "/tweets";
       $.ajax({
-        type: "POST",
+        type: "PUT",
         url: url,
         data: data
       });

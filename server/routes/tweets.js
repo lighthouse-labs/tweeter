@@ -17,9 +17,13 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  tweetsRoutes.post("/", function(req, res) {
+  tweetsRoutes.post("/", function (req, res) {
+    res.status(404).json({ error: 'POST is not accepted' })
+  });
+
+  tweetsRoutes.put("/", function(req, res) {
     if (!req.body.text) {
-      res.status(400).json({ error: 'invalid request: no data in POST body'});
+      res.status(400).json({ error: 'invalid request: no data in PUT body'});
       return;
     }
     let textData = req.body.text;
