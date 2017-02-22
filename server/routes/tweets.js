@@ -22,7 +22,14 @@ module.exports = function(DataHelpers) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
-
+    let textData = req.body.text;
+    if(!textData || textData.length <= 0){
+      res.status(400).json({ error: 'Text input is <= 0 or Null'});
+      return;
+    } else if (textData.length > 140){
+      res.status(400).json({error: 'input was greater then 140 characters'});
+      return;
+    }
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
