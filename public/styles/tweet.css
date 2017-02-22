@@ -65,15 +65,15 @@ footer p.footer-status {
 }
 
 /*Edit Hover State*/
-
 article.hover {
   opacity: 0.75;
 }
-article.hover:hover {
-  opacity: 2;
-}
 
-i.fa {
+article.hover i.fa {
   float: right;
   margin: 2px 2px 2px 2px;
+}
+
+article.hover:hover {
+  opacity: 2;
 }
