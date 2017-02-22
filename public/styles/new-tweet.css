@@ -6,7 +6,38 @@
   padding: 3em 2em 6em;
 }
 
+.counter {
+  float: right;
+}
+
+form {
+    padding-top: 50px;
+}
+
+.negative-chars-remaining {
+  color: red;
+}
+
 .new-tweet {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 1em;
+  margin: 2em;
+}
+
+textarea {
+  width: 100%;
+}
+
+.new-tweet h2{
+    border-bottom: thin solid black;
+}
+
+.negative-chars-remaining {
+  color: red;
+}
+
+/*.new-tweet {
   border-radius: 10px;
   background-color: #eee;
   padding: 1em;
@@ -23,12 +54,5 @@
 
 textarea {
   width: 100%;
-}
+}*/
 
-.new-tweet h2{
-    border-bottom: thin solid black;
-}
-
-form {
-    padding-top: 50px
-}
