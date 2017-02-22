@@ -22,6 +22,9 @@
     <!--New Tweet CSS-->
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
+    <!--New Tweet CSS-->
+    <link rel="stylesheet" href="/styles/compose.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -30,6 +33,9 @@
 
     <!-- Ajax Labs W3D3 JS -->
     <script type="text/javascript" src="/scripts/ajax.js"></script>
+
+      <!-- Ajax Labs W3D3 JS -->
+    <script type="text/javascript" src="/scripts/nav-comp.js"></script>
 
     <!-- Tweet Char Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -44,6 +50,10 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <section id="nav-comp-box" class="nav-comp">
+        <i class="nav-comp fa-pencil-square-o"></i>
+        <span class="nav-comp nav-comp-text">Compose</span>
+      </section>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -51,7 +61,7 @@
       <section class="new-tweet">
         <h2 class="compose">Compose Tweet</h2>
         <form id="form" action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea name="text" placeholder="What are you humming about?" autofocus></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
