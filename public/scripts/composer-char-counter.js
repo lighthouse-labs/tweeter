@@ -1,11 +1,7 @@
 $(document).ready(function () {
 // changed to from id to class to the id isnt used
-    $(".tweet-input").on('keyup', function (event) {
-        const charsLeft = 140 - $(this).val().length;
-        // Array.from is used for emojis that are not converted into unicode
-        // const charsLeft = 140 - Array.from(this.value).length;
-        // const charsLeft = 140 - ($(event.currentTarget.val()).length;
-
+    $(".tweet-input").on('input', function (event) {
+        const charsLeft = TWEET_MAX_LENGTH - $(this).val().length;
         var $cntSearch = $(this).parent().find('.counter')
         $cntSearch.html(charsLeft);
         if (charsLeft > -1) {

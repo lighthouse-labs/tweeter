@@ -19,8 +19,40 @@
     line-height: 80px;
     padding-left: 10px;
 }
+#compose-button img{
+    float: left;
+    margin-top: 5px;
+    position: relative;
+    width: 45px;
+    color: #00a087;
+}
+
+#compose-button {
+  float: right;
+  height: 2em;
+  font-size: 2em;
+  border-radius: 0.5em;
+  color: #00a087;
+  background-color: #E4FFFF;
+}
+#compose-button .compose{
+    font-size: 0.7em;
+}
+#compose-button img{
+    color: #00a087;
+}
 
 #compose-button:hover {
   background-color: white;
-  color: black;
+  /*border-radius: 2px;
+  border: 1px solid;*/
+  border-color: black;
+}
+
+#compose-button img:hover{
+    color: black;
+}
+
+#compose-button .compose:hover{
+    color: black;
 }

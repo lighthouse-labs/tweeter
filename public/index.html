@@ -23,8 +23,6 @@
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/create-tweet-element.js"></script>
-  <!--<script type="text/javascript" src="/scripts/create-tweet-element.js"></script>-->
-
 
 </head>
 
@@ -34,6 +32,14 @@
   <nav id="nav-bar">
     <img class="logo" src="/images/bird.png">
     <span class="header">Tweeter</span>
+    <!--ARIA (Accesible Rich Internet Applications) for people with disabilities-->
+    <button id="compose-button">
+        <i class="fa-fa-pencil-square-o" aria-hidden="true" src= >
+        <img src="/images/pencil-square.png">
+        </img>
+        </i>
+        <span class="compose">Compose</span>
+      </button>
   </nav>
 
   <!-- Page-specific (main) content here -->
@@ -48,25 +54,11 @@
         <span class="counter">140</span>
       </form>
     </section>
-    <section>
-      <article class="tweet">
-        <header class="tweet-header">
-          <img class="profile-pic" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png" alt="User Avatar">
-          <h2 class="name">Bill Fields</h2>
-          <p class="username">@MrFields</p>
-        </header>
-        <div>
-          <p>Test</p>
-        </div>
-        <footer class="tweet-footer">
-          <p>10 days ago</p>
-        </footer>
-      </article>
 
-    </section>
     <section id="tweets-container">
     </section>
   </main>
 
 </body>
+
 </html>

@@ -9,10 +9,6 @@
   float: right;
 }
 
-form {
-  padding-top: 50px;
-}
-
 .negative-chars-remaining {
   color: red;
 }
@@ -21,8 +17,9 @@ form {
   background-color: #eee;
   border-radius: 10px;
   margin: 2em;
-  padding-top: 0;
-  padding: 1em;
+  margin-top: 70px;
+  padding: 0.5em;
+  padding-top: 4px
 }
 
 textarea {
@@ -31,4 +28,6 @@ textarea {
 
 .new-tweet h2 {
   border-bottom: thin solid black;
+  margin-bottom: 10px;
+  margin-top: 0px;
 }
