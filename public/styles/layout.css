@@ -21,13 +21,27 @@ body {
   margin: 0;
 }
 
-main {
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  float: left;
+}
+
+#nav-bar .header {
+  float: left;
+  font-size: 2em;
+  line-height: 80px;
+  vertical-align: middle
+}
+
+ main {
   margin-left: auto;
   margin-right: auto;
   padding-top: 140px;
   width: 450px; 
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

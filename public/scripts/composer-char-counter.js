@@ -1,6 +1,6 @@
 $(document).ready(function () {
 // changed to from id to class to the id isnt used
-    $(".js-tweet-input").on('keyup', function (event) {
+    $(".tweet-input").on('keyup', function (event) {
         const charsLeft = 140 - $(this).val().length;
         // Array.from is used for emojis that are not converted into unicode
         // const charsLeft = 140 - Array.from(this.value).length;

@@ -32,27 +32,3 @@ textarea {
 .new-tweet h2 {
   border-bottom: thin solid black;
 }
-
-.negative-chars-remaining {
-  color: red;
-}
-
-
-/*.new-tweet {
-  border-radius: 10px;
-  background-color: #eee;
-  padding: 1em;
-  margin: 2em;
-}
-
-.negative-chars-remaining {
-  color: red;
-}
-
-.counter {
-  float: right;
-}
-
-textarea {
-  width: 100%;
-}*/

@@ -19,3 +19,8 @@
     line-height: 80px;
     padding-left: 10px;
 }
+
+#compose-button:hover {
+  background-color: white;
+  color: black;
+}

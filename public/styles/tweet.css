@@ -6,7 +6,7 @@
   visibility: visible;
 }*/
 
-.profilepic {
+.profile-pic {
   height: 50px;
   width: 50px;
   float: left;
@@ -14,27 +14,11 @@
   filter: brightness(90%);
 }
 
-.tweet:hover .profilepic {
-  height: 50px;
-  width: 50px;
-  float: left;
-  padding: 5px;
-  filter: brightness(100%);
-}
-
 .tweet {
   background-color: white;
   border-radius: 10px;
   border: 1px solid #EEE;
   margin: 2em
-}
-
-.tweet:hover {
-  background-color: white;
-  border-radius: 10px;
-  margin: 2em;
-  border: 1px solid;
-  border-color: black;
 }
 
 .tweet-header {
@@ -49,7 +33,7 @@
   font-family: 'Roboto Condensed Bold', sans-serif;
 }
 
-.footer-tweet {
+.tweet-footer {
 border-top: 1px solid;
     padding: 0px;
     height: 30px;
@@ -59,7 +43,7 @@ border-top: 1px solid;
     color: #8f9698;
 }
 
-.footer-tweet .footer_logo {
+.tweet-footer .footer_logo {
   height: 15px;
   width: 15px;
   float: right;
@@ -68,26 +52,8 @@ border-top: 1px solid;
   display: none;
 }
 
-.tweet:hover .footer-tweet .footer_logo {
-  height: 15px;
-  width: 15px;
-  float: right;
-  padding: 1 px;
-  margin-right: 5px;
-  display: block;
-}
-
 .username {
   color: #8f9698;
-  float: right;
-  font-size: 12px;
-  padding: 5px;
-  position: relative;
-  top: -60px;
-}
-
-.tweet:hover .username {
-  color: black;
   float: right;
   font-size: 12px;
   padding: 5px;
@@ -101,6 +67,35 @@ border-top: 1px solid;
   color: #8f9698;
 }
 
+p {
+    font-size: 15px;
+    color: #8f9698;
+    padding-left: 10px;    
+}
+
+.tweet-footer p{
+      margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+/* On Hover*/
+.tweet:hover {
+  background-color: white;
+  border-radius: 10px;
+  margin: 2em;
+  border: 1px solid;
+  border-color: black;
+}
+
+.tweet:hover .tweet-footer .footer_logo {
+  height: 15px;
+  width: 15px;
+  float: right;
+  padding: 1 px;
+  margin-right: 5px;
+  display: block;
+}
+
 .tweet:hover .name {
   font-size: 20px;
   font-style: bold;
@@ -108,14 +103,19 @@ border-top: 1px solid;
   color: black;
 }
 
-p {
-    font-size: 15px;
-    color: #8f9698;
-    padding-left: 10px;
-    
+.tweet:hover .profile-pic {
+  height: 50px;
+  width: 50px;
+  float: left;
+  padding: 5px;
+  filter: brightness(100%);
 }
 
-.footer-tweet p{
-      margin-top: 5px;
-    margin-bottom: 0px;
+.tweet:hover .username {
+  color: black;
+  float: right;
+  font-size: 12px;
+  padding: 5px;
+  position: relative;
+  top: -60px;
 }
