@@ -1,0 +1,63 @@
+
+/* ------ TWEET POSTING ------ */
+/* TOP OF POST */
+header {
+  background-color: #E9E9E9;
+  color: #6c8884;
+  padding-bottom: 75px;
+  padding-top: 4px;
+  padding-left: 4px;
+  opacity: 0.7;
+  border-radius: 5px 5px 0 0;
+
+}
+
+/* FOOTER */
+.feets {
+  border-top: 1px solid #E9E9E9;
+  padding: 5px;
+  padding-left: 8px;
+  font-size: 14px;
+  color: #506764;
+}
+
+/* PROFILE PHOTO */
+.profile {
+  border-radius: 8px;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 5px;
+  opacity: .7%;
+}
+
+/* @NAME */
+.handler {
+  float: right;
+  margin: 16px;
+}
+
+/* TOP NAME BIT */
+h3 {
+  margin: 0px;
+  padding: 6px;
+  padding-top: 10px;
+  float: left;
+  font-size: 28px;
+  color: #244751;
+}
+
+/* TEXT OF TWEET */
+.tweetBody {
+  margin-left: 8px;
+  color: #506764;
+  font-size: 23px;
+}
+
+.tweeter:hover header{
+  opacity: 1.0;
+}
+
+.tweeter:hover {
+  border-color: #244751;
+}

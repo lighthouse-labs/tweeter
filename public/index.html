@@ -12,6 +12,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -32,29 +33,16 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form action="/tweets/" method="POST">
-        <textarea name="text" placeholder="What are you humming about?"></textarea>
-        <input type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
       </section>
-      <!-- <section class="tweeter" id="tweet-container"> -->
+      <!-- Container for DYNAMIC Tweets -->
       <section id="tweet-container">
-        <article class="tweeter">
-          <header>
-            <img src="https://s-media-cache-ak0.pinimg.com/736x/74/96/50/749650c0305bb0b5133e42a97a2dd567.jpg" class="profile">
-            <h3>NAME</h3>
-            <span class="handler">@merrr</span>
-          </header>
-            <p class="tweetBody">I luh dat tweeting</p>
-          <footer class ="feets">
-            <span>10 Years Old
-            </span>
-          </footer>
-        </article>
       </section>
     </main>
-
   </body>
 </html>

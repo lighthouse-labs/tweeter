@@ -22,7 +22,6 @@ var tweetData = {
   "created_at": 1461116232227
 }
 
-
 var data = [
   {
     "user": {
@@ -70,10 +69,7 @@ var data = [
   }
 ];
 
-
-
  function createdTweetElement (tweetData) {
-
   var name = tweetData.user.name;
   var avatars = tweetData.user.avatars.small;
   var handle = tweetData.user.handle;
@@ -81,17 +77,16 @@ var data = [
   var date = tweetData.created_at;
 
   var $tweet = ($("<article>").addClass("tweeter"))
-   .append($("<header>")
-   .append($("<img>").attr("src", avatars).addClass("profile"))
-   .append($("<h3>").text(name))
-   .append($("<span>").addClass("handler").text(handle))
-   )
-   .append($("<p>").addClass("tweetBody").text(content)
-   )
-   .append($("<footer>").addClass("feets")
-   .append($("<span>").text(date))
-   )
-    return $tweet;
+    .append($("<header>")
+      .append($("<img>").attr("src", avatars).addClass("profile"))
+      .append($("<h3>").text(name))
+      .append($("<span>").addClass("handler").text(handle))
+    )
+    .append($("<p>").addClass("tweetBody").text(content))
+    .append($("<footer>").addClass("feets")
+      .append($("<span>").text(date))
+  );
+  return $tweet;
 }
 
 function renderTweets(tweets) {
