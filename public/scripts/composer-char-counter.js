@@ -7,9 +7,12 @@ $(document).ready(function () {
     let remaining = 140 - $('.text-area').val().length;
     console.log(remaining);
     let charCounter = $(this).parent().children('span.counter')
-    charCounter.text(remaining);
-    if (remaining < 0) {
+    if (remaining > 0) {
+      charCounter.css('color', 'black');
+      charCounter.text(remaining);
+    } else if (remaining < 0) {
       charCounter.css('color', 'red');
+      charCounter.text(remaining);
     }
   });
 });

@@ -21,9 +21,7 @@
   padding: 1%;
   height: 100%;
   width: 100%;
-  border-color: #DCDCDC;
-  border-width: 3px;
-  border-style: groove;
+  border: 3px groove #DCDCDC;
 }
 
 .counter {
