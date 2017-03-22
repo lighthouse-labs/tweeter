@@ -33,7 +33,7 @@ body {
   top: 106px;
   padding-top: 40px;
   padding-right: 2em;
-    padding-left: 2em;
+  padding-left: 2em;
   padding-bottom: 150px;
 }
 
@@ -66,10 +66,16 @@ input {
 }
 
 h2 {
-border-bottom: 2px solid #495d63;
-margin: 0px;
-padding: 6px;
-padding-top: 10px;
+  border-bottom: 2px solid #495d63;
+  margin: 0px;
+  padding: 6px;
+  padding-top: 10px;
 }
 
+.belowZero {
+  colour: #C0392B;
+}
 
+.aboveZero {
+  colour: #595a5c;
+}
