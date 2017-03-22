@@ -23,3 +23,7 @@
 .error{
   color: red;
 }
+
+.new-tweet .flash {
+  color: red;
+}
