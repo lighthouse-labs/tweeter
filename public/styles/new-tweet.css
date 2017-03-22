@@ -19,3 +19,7 @@
 .counter{
   float: right;
 }
+
+.error{
+  color: red;
+}

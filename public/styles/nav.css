@@ -5,6 +5,7 @@
 
 #nav-bar {
   position: fixed;
+  overflow: auto;
   top: 0;
   width: 100%;
   height: 80px;
@@ -14,6 +15,7 @@
   padding-left: 2em;
   padding-right: 2em;
   font-family: 'Roboto Condensed', sans-serif;
+  z-index: 5;
 }
 
 #nav-bar .logo {
