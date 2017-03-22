@@ -1,0 +1,36 @@
+
+.new-tweet {
+  width: 430px;
+  height: 200px;
+  background-color: #D3D3D3;
+  margin: 100px auto;
+  border: 2px solid #C0C0C0;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+#tweet-form {
+  width:80%;
+  height:50%;
+  margin: 10px;
+}
+
+.text-area {
+  display: block;
+  margin: 0;
+  padding: 1%;
+  height: 100%;
+  width: 100%;
+  border-color: #DCDCDC;
+  border-width: 3px;
+  border-style: groove;
+}
+
+.counter {
+  float: right;
+}
+
+#tweet-button {
+  margin-top: 5px;
+}
+

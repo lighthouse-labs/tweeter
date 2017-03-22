@@ -14,6 +14,8 @@
     "body-parser": "^1.15.2",
     "chance": "^1.0.2",
     "express": "^4.13.4",
+    "jquery": "file:node_modules/jquery",
+    "jsdom": "file:node_modules/jsdom",
     "md5": "^2.1.0"
   },
   "devDependencies": {
