@@ -32,8 +32,6 @@ function renderTweets(data){
     $output = $('#tweets-container').prepend($tweet);
   });
     hoverstate();
- // });
-  //return $output;
 }
 
 //Loads all initial tweets
@@ -63,6 +61,8 @@ function hoverstate(){
   });
 }
 
+
+
 $(document).ready(function(){
   loadTweets();
   $('.new-tweet').on('submit', function(event) {
@@ -84,5 +84,18 @@ $(document).ready(function(){
       });
     }
   });
+
+  $("#nav-bar .compose").hover(function() {
+    $(this).addClass('button');
+  },function(){
+    $(this).removeClass('button');
+  });
+
+  $("#nav-bar .compose").click(function(e) {
+    e.preventDefault();
+    $(".new-tweet").slideToggle('click', false);
+    $(".new-tweet form textarea").focus();
+  });
+
 });
 
