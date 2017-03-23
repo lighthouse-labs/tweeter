@@ -92,11 +92,45 @@ var data = [
 function renderTweets(tweets) {
   tweets.forEach(function(tweet) {
     let $tweet = createdTweetElement(tweet);
-    $('#tweet-container').append($tweet);
+    $('#tweet-container').prepend($tweet);
   });
 }
 
 renderTweets(data);
 
 
+
+// $.ajax({
+//   method: 'GET',
+//   url: '/tweets'
+// }).done(function(tweets) {
+//    renderTweets(tweets);
+// });
+
+
+
+
+$('#tweet-form').on('submit', function(event) {
+  event.preventDefault();
+  var newTweetsText = $('#new-tweet-input').val();
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: {
+      text: newTweetsText
+    }
+  }).done(function (tweet) {
+    let newTweet = createdTweetElement(tweet);
+    $('#tweet-container').prepend(newTweet);
+  });
+  $('#new-tweet-input').val('');
 });
+
+
+
+
+
+
+
+
+}) //end of $ready

@@ -61,3 +61,7 @@ h3 {
 .tweeter:hover {
   border-color: #244751;
 }
+
+.error {
+  color: tomato;
+}
