@@ -6,7 +6,8 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,700,700i" rel="stylesheet">
+
 
 
     <!-- App CSS -->
@@ -14,10 +15,11 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+    <script src="https://use.fontawesome.com/a7a2408b2b.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
@@ -28,15 +30,17 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button type="submit" value="Compose" id="compose-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Compose </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+         <h4 id="alert-message"> </h4>
         <form action="/tweets/" method="POST" id="tweet-form">
           <textarea name="text" id="new-tweet-input" placeholder="What are you humming about?"></textarea>
-          <input type="submit"  value="input" disabled ="disabled">
+          <input type="submit"  value="Submit" id="button">
           <span class="counter">140</span>
         </form>
       </section>

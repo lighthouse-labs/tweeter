@@ -62,6 +62,41 @@ h3 {
   border-color: #244751;
 }
 
-.error {
-  color: tomato;
+#alert-message {
+  color: #ca2727;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin-bottom: 0px;
+  margin-top: 15px;
 }
+
+#compose-button {
+  float: right;
+  opacity: 0.8;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 6px;
+  font-size: 21px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #00a087;
+}
+
+
+#compose-button:hover {
+  float: right;
+  opacity: 1;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 6px;
+  font-size: 21px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #212b2a;
+
+}
+

@@ -40,10 +40,12 @@ body {
  textarea {
   padding: 6px;
   width: 98%;
-  margin-top: 20px;
+  margin-top: 10px;
  }
 
 .new-tweet {
+  display: none;
+  height: 180px;
   width: 90%;
   margin: auto;
   border-radius: 8px;
