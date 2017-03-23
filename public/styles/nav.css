@@ -22,3 +22,11 @@
   line-height: 250%;
   font-size: 200%;
 }
+
+.toggle {
+  border-radius: 10px;
+  background-color: grey;
+  height: 80;
+  float: right;
+  margin: 15px;
+}

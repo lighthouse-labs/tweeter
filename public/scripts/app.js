@@ -94,8 +94,6 @@ $(document).ready(function () {
     return article;
   }
 
-// $('.text-area').val().length
-
   $.ajax({
     method: 'GET',
     url: '/',
@@ -105,9 +103,17 @@ $(document).ready(function () {
 
   $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
-
     var newTweet = $('.text-area');
     var newTweetText = newTweet.val();
+
+    if (newTweetText.length > 140) {
+      $('.warning p').text('Tweet is too long.')
+      return;
+    } else if (newTweetText.length === 0) {
+      $('.warning p').text('Goddamn it')
+      return;
+    }
+
     $.ajax({
       url: '/tweets',
       method: 'POST',
@@ -116,14 +122,13 @@ $(document).ready(function () {
       }
 
     }).done(function () {
-      console.log('newTweetText', newTweetText);
+      $('warning p').text('this');
       newTweet.val('');
       newTweet.focus();
       $.ajax({
         url: '/tweets',
         dataType: 'json',
         success: function(data){
-          console.log('data', data);
           renderTweets([data[data.length - 1]]);
         }
       });

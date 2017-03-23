@@ -32,3 +32,8 @@
   margin-top: 5px;
 }
 
+.warning {
+  color: tomato;
+  text-align: center;
+}
+
