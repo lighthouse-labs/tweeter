@@ -52,6 +52,7 @@ $(function () {
 
   $('#compose-button').click(function() {
     $('.new-tweet').slideToggle(2000, function() {
+      $('#new-tweet-input').focus();
     });
   });
 
