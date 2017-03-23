@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 function createTweetElement(tweetData) {
   var $tweet = $("<article>").addClass("tweet");
   var $header = $("<header>");
@@ -13,9 +12,11 @@ function createTweetElement(tweetData) {
   $header.append($("<span>").text(tweetData.user.handle));
   $tweet.append($header);
 
+  let time = new Date(tweetData.created_at).toJSON();
+
   $tweet.append($("<p>").addClass("tweettext").text(tweetData.content.text));
   var $footer = $("<footer>");
-  $footer.append($("<span>").text(tweetData.created_at));
+  $footer.append($("<time>").addClass("timeago").attr("datetime", time))
   $footer.append($("<div>").addClass("social")
           .append($("<i>").addClass("fa fa-flag").attr('aria-hidden', "true"))
           .append($("<i>").addClass("fa fa-retweet").attr('aria-hidden', "true"))
@@ -30,8 +31,10 @@ function renderTweets(data){
   data.forEach(function(elm){
     var $tweet = createTweetElement(elm);
     $output = $('#tweets-container').prepend($tweet);
+    $("time.timeago").timeago();
   });
     hoverstate();
+
 }
 
 //Loads all initial tweets
@@ -61,10 +64,10 @@ function hoverstate(){
   });
 }
 
-
-
 $(document).ready(function(){
   loadTweets();
+
+
   $('.new-tweet').on('submit', function(event) {
     event.preventDefault();
 
