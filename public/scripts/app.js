@@ -1,5 +1,6 @@
 
-var data = [
+
+var sampleData = [
   {
     "user": {
       "name": "Newton",
@@ -52,7 +53,7 @@ $(document).ready(function () {
   function renderTweets (tweetArray) {
     tweetArray.forEach(function(element) {
       let currentTweet = $(createTweetElement(element));
-      $('.tweet').append(currentTweet);
+      $('.tweet').prepend(currentTweet);
     });
     return $('.tweet');
   }
@@ -93,38 +94,41 @@ $(document).ready(function () {
     return article;
   }
 
-    $('#donut-form').on('submit', function (event) {
+// $('.text-area').val().length
+
+  $.ajax({
+    method: 'GET',
+    url: '/',
+  }).done(function (tweets) {
+    renderTweets(sampleData);
+  });
+
+  $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
-    var donutType = $('#donut-type');
-    var donutTypeText = donutType.val();
+
+    var newTweet = $('.text-area');
+    var newTweetText = newTweet.val();
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: {
-        //Fill this in
+        text: newTweetText
       }
-    }).done(function (newDonut) {
-      $('#donut-form').removeClass('error');
-      donutType.val('');
-      donutType.focus();
-      addDonut(newDonut);
-    }).fail(function (err) {
-      $('#donut-form').addClass('error');
+
+    }).done(function () {
+      console.log('newTweetText', newTweetText);
+      newTweet.val('');
+      newTweet.focus();
+      $.ajax({
+        url: '/tweets',
+        dataType: 'json',
+        success: function(data){
+          console.log('data', data);
+          renderTweets([data[data.length - 1]]);
+        }
+      });
     });
   });
-
-
-
-
-
-
-
-
-
-
-
-
-  renderTweets(data);
 });
 
 
