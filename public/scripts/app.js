@@ -1,5 +1,3 @@
-
-
 var sampleData = [
   {
     "user": {
@@ -47,6 +45,17 @@ var sampleData = [
   }
 ];
 
+//Load sample objects into Mongo
+function mongoLoad (array) {
+  array.forEach(function(element) {
+    db.tweets.insertOne(element);
+  });
+}
+
+mongoLoad(sampleData);
+let found = db.tweets.find('Newton');
+console.log(found);
+
 
 //Should create the entire tweet DOM structure
 $(document).ready(function () {
@@ -57,6 +66,7 @@ $(document).ready(function () {
     });
     return $('.tweet');
   }
+
 
   function createTweetElement (input) {
     let userName = input.user.name;
@@ -93,6 +103,13 @@ $(document).ready(function () {
     $(article).append(header, tweet_body, footer);
     return article;
   }
+
+  $('.toggle').on('click',function () {
+    console.log('click');
+    $('.new-tweet').slideToggle("slow", function() {
+      $('.text-area').focus();
+    });
+  });
 
   $.ajax({
     method: 'GET',
