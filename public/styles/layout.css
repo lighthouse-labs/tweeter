@@ -5,8 +5,7 @@
  */
 html {
   box-sizing: border-box;
-}
-*, *:before, *:after {
+}*, *:before, *:after {
   box-sizing: inherit;
 }
 
@@ -25,7 +24,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .container {
+.container {
   width: 600px;
   background-color: white;
   position: relative;
@@ -37,7 +36,7 @@ body {
   padding-bottom: 150px;
 }
 
- textarea {
+#new-tweet-input {
   padding: 6px;
   width: 98%;
   margin-top: 10px;

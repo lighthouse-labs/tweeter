@@ -5,7 +5,6 @@
  */
 
 $(function () {
-
   var tweetData = {
     "user": {
       "name": "Newton",
@@ -22,13 +21,13 @@ $(function () {
     "created_at": 1461116232227
   };
 
-
   function createdTweetElement (tweetData) {
     var name = tweetData.user.name;
     var avatars = tweetData.user.avatars.small;
     var handle = tweetData.user.handle;
     var content = tweetData.content.text;
-    var date = tweetData.created_at;
+    var date = new Date(tweetData.created_at);
+    var newDate = date.toLocaleString();
 
     var $tweet = ($("<article>").addClass("tweeter"))
       .append($("<header>")
@@ -38,7 +37,7 @@ $(function () {
       )
       .append($("<p>").addClass("tweetBody").text(content))
       .append($("<footer>").addClass("feets")
-        .append($("<span>").text(date))
+        .append($("<span>").text(newDate))
   );
     return $tweet;
   }
@@ -60,7 +59,7 @@ $(function () {
     event.preventDefault();
     var input = $('#new-tweet-input').val();
     var alertMessage = $('#alert-message');
-    if(input === '' || input === null) {
+    if(input === '' || input === null || input === " ") {
       alertMessage.html('You post appears to be empty. Please enter a TWEET').fadeTo(5000, 0);
       setTimeout(function() { alertMessage.html('').fadeTo(0, 1); }, 5000);
     } else if (input.length > 140) {
