@@ -16,7 +16,8 @@
     "express": "^4.13.4",
     "jquery": "file:node_modules/jquery",
     "jsdom": "file:node_modules/jsdom",
-    "md5": "^2.1.0"
+    "md5": "^2.1.0",
+    "mongodb": "^2.2.25"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
