@@ -71,6 +71,7 @@ h3 {
 }
 
 #compose-button {
+  cursor: pointer;
   float: right;
   opacity: 0.8;
   border-radius: 5px;
@@ -86,6 +87,7 @@ h3 {
 
 
 #compose-button:hover {
+  cursor: pointer;
   float: right;
   opacity: 1;
   border-radius: 5px;
@@ -97,6 +99,9 @@ h3 {
   padding-left: 8px;
   padding-right: 8px;
   color: #212b2a;
+}
 
+#button {
+    cursor: pointer;
 }
 
