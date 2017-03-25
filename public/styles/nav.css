@@ -25,8 +25,14 @@
 
 .toggle {
   border-radius: 5px;
-  background-color: white;
-  height: 100;
+  background-color: #FFFAFA;
+  height: 2em;
+  width : 7em;
   float: right;
   margin: 25px;
+}
+
+.toggle:hover {
+  background-color: #F0FFF0;
+  font-weight: bold;
 }

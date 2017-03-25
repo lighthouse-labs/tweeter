@@ -1,17 +1,12 @@
-
-
-
 $(document).ready(function () {
+
   function renderTweets (tweetArray) {
-    console.log(tweetArray);
     tweetArray.forEach(function(element) {
       let currentTweet = $(createTweetElement(element));
       $('.tweet').prepend(currentTweet);
     });
     return $('.tweet');
   }
-
-
 
   function createTweetElement (input) {
 
@@ -68,27 +63,26 @@ $(document).ready(function () {
     } else if (newTweetText.length === 0) {
       $('.warning p').text('Goddamn it')
       return;
-    }
-
-    $.ajax({
+    } else {
+      $('.warning p').text('');
+      $.ajax({
       url: '/tweets',
       method: 'POST',
       data: {
         text: newTweetText
       }
-
-    }).done(function () {
-      $('warning p').text('this');
+      }).done(function () {
       newTweet.val('');
       newTweet.focus();
       $.ajax({
         url: '/tweets',
         dataType: 'json',
-        success: function(data){
+        success: function(data) {
           renderTweets([data[data.length - 1]]);
         }
       });
     });
+    }
   });
 });
 
