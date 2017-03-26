@@ -5,6 +5,7 @@
  */
 
 $(function () {
+
   var tweetData = {
     "user": {
       "name": "Newton",
@@ -21,6 +22,14 @@ $(function () {
     "created_at": 1461116232227
   };
 
+  $("#tweet-form").keypress(function (e) {
+      if(e.which == 13 && !e.shiftKey) {
+          $(this).closest("form").submit();
+          e.preventDefault();
+          return false;
+      }
+  });
+
   function createdTweetElement (tweetData) {
     var name = tweetData.user.name;
     var avatars = tweetData.user.avatars.small;
@@ -28,6 +37,7 @@ $(function () {
     var content = tweetData.content.text;
     var date = new Date(tweetData.created_at);
     var newDate = date.toLocaleString();
+
 
     var $tweet = ($("<article>").addClass("tweeter"))
       .append($("<header>")
@@ -38,7 +48,12 @@ $(function () {
       .append($("<p>").addClass("tweetBody").text(content))
       .append($("<footer>").addClass("feets")
         .append($("<span>").text(newDate))
-  );
+        .append($('<div>').addClass('icons')
+          .append($('<i>').addClass('fa fa-flag').attr('aria-hidden', 'true'))
+          .append($('<i>').addClass('fa fa-retweet').attr('aria-hidden', 'true'))
+          .append($('<i>').addClass('fa fa-heart').attr('aria-hidden', 'true'))
+          )
+    );
     return $tweet;
   }
 
@@ -50,7 +65,7 @@ $(function () {
   }
 
   $('#compose-button').click(function() {
-    $('.new-tweet').slideToggle(2000, function() {
+    $('.new-tweet').slideToggle(990, function() {
       $('#new-tweet-input').focus();
     });
   });

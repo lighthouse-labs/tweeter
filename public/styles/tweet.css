@@ -21,6 +21,12 @@ header {
   color: #506764;
 }
 
+.icons {
+  float:right;
+  margin: 2px;
+  cursor: pointer;
+}
+
 /* PROFILE PHOTO */
 .profile {
   border-radius: 8px;
