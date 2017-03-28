@@ -1,5 +1,6 @@
 
 .new-tweet {
+  display: none;
   width: 430px;
   height: 200px;
   background-color: #D3D3D3;
@@ -37,6 +38,7 @@
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
+
+
+/*find hide status for hidden toggle*/
+/*var d = new Date(timestamp * 1000)*/

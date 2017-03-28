@@ -10,14 +10,20 @@
   padding-left: 2em;
 }
 
-#nav-bar .logo {
+.logo {
   float: left;
   height: 80px;
   width: 80px;
   margin-right: 10px;
 }
 
-#nav-bar .header {
+.logo:hover {
+   -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+
+.header {
   float: left;
   line-height: 250%;
   font-size: 200%;

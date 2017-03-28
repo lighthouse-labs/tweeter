@@ -23,19 +23,3 @@ module.exports = function makeDataHelpers(db) {
   };
 }
 
-
-
-
-    // getTweets: function(callback) {
-    //   console.log(db);
-    //   db.collection("tweets").find().toArray((err,tweets){
-    //     console.log(docs);
-
-    //       callback(null, docs);
-
-    //   });
-    // }
-
-
-        // });
-          // const sortNewestFirst = (a, b) => a.created_at - b.created_at;

@@ -9,33 +9,18 @@ $(document).ready(function () {
   }
 
   function createTweetElement (input) {
-
-    let header_username = $('<div></div>').addClass('username');
-    let header_username_p = $('<p></p>');
-    $(header_username_p).text(input.user.name);
-    $(header_username).append(header_username_p);
-    let header_handle = $('<div></div>').addClass('handle');
-    let header_handle_p = $('<p></p>');
-    $(header_handle_p).append(input.user.handle);
-    $(header_handle).append(header_handle_p);
+    let postDate = new Date(input.created_at).toDateString();
+    let header_username = $('<div></div>').addClass('username').append('<p>' + input.user.name + '</p>');
+    let header_handle = $('<div></div>').addClass('handle').append('<p>' + input.user.handle + '</p>');
     let header_image = $('<img></img>').attr('src', input.user.avatars.small);
-    let header = $('<header></header>');
-    $(header).append(header_image, header_username, header_handle);
+    let header = $('<header></header>').append(header_image, header_username, header_handle);
 
-    let tweet_body = $('<div></div>').addClass('tweet-body');
-    let tweet_body_p = $('<p></p>');
-    $(tweet_body_p).text(input.content.text);
-    $(tweet_body).append(tweet_body_p);
+    let tweet_body = $('<div></div>').addClass('tweet-body').append('<p>' + input.content.text + '</p>')
 
-    let footer_timestamp_p = $('<p></p>');
-    $(footer_timestamp_p).text(input.created_at);
-    let footer_timestamp = $('<div></div>');
-    $(footer_timestamp).append(footer_timestamp_p);
-    let footer = $('<footer></footer>');
-    $(footer).append(footer_timestamp);
+    let footer_timestamp = $('<div></div>').append('<p>' + postDate + '</p>');
+    let footer = $('<footer></footer>').append(footer_timestamp);
 
-    let article = $('<article></article>');
-    $(article).append(header, tweet_body, footer);
+    let article = $('<article></article>').append(header, tweet_body, footer);
     return article;
   }
 
@@ -60,8 +45,8 @@ $(document).ready(function () {
     if (newTweetText.length > 140) {
       $('.warning p').text('Tweet is too long.')
       return;
-    } else if (newTweetText.length === 0) {
-      $('.warning p').text('Goddamn it')
+    } else if (newTweetText.length === 0 || newTweetText.trim() === '') {
+      $('.warning p').text('Uh, nothing here...')
       return;
     } else {
       $('.warning p').text('');
