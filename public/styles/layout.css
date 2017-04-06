@@ -15,11 +15,33 @@ html {
  */
 
 body {
-  margin: 0;
-  color: #244751;
   background-color: #eee;
+  color: #244751;
+  font-family: Roboto Condensed, sans-serif;
+  margin: 0;
 }
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  float: left;
+}
+
+#nav-bar .header {
+  float: left;
+  font-size: 2em;
+  line-height: 80px;
+  vertical-align: middle
+}
+
+ main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 140px;
+  width: 450px; 
+}
