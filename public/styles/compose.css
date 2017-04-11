@@ -1,0 +1,36 @@
+/*
+$ Compose button in the Nav Bar
+*/
+
+#nav-comp-box {
+  right: 0;
+  float: right;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  overflow: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#nav-comp-box .nav-comp-text {
+  color: black;
+  font-size: 0.25em;
+  float: right;
+  margin-left: 10px;
+}
+
+#nav-comp-box .fa-pencil-square-o {
+  color: black;
+  font-size: 0.25em;
+  float: left;
+}
+
+.nav-comp {
+  opacity: 0.75;
+}
+
+.nav-comp:hover {
+  opacity: 2;
+}
