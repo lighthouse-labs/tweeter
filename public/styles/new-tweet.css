@@ -1,0 +1,28 @@
+.new-tweet {
+  border: 1px solid #ccc;
+  margin: auto 2em auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.new-tweet h2 {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.new-tweet textarea {
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.new-tweet .counter {
+  float: right;
+  padding: 2px;
+}
+
+#invalid.counter {
+  color: red;
+}

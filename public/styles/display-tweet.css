@@ -1,0 +1,77 @@
+article.tweet {
+  border: 1px solid #ccc;
+  margin: 20px 2em auto;
+  padding: 0px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+article.tweet:hover .buttons {
+  visibility: visible;
+}
+
+article.tweet:hover header {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+article.tweet header {
+  background-color: #eee;
+  height: 70px;
+  padding: 10px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  opacity: 0.80;
+  filter: alpha(opacity=80);
+}
+
+article.tweet .tweet-content {
+  width: 100%;
+  min-height: 90px;
+  padding: 10px;
+  display: table;
+  border-bottom: 1px solid #eee;
+}
+
+article.tweet .tweet-content span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+article.tweet .avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  float: left;
+}
+
+article.tweet .username {
+  font-size: 1.3em;
+  font-weight: bold;
+  float: left;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+article.tweet .handle {
+  color: #808080;
+  font-size: .9em;
+  float: right;
+  line-height: 30px;
+
+}
+
+article.tweet footer {
+  padding: 7px;
+  font-size: .75em;
+}
+
+article.tweet .buttons {
+  float: right;
+  color: #24cec1;
+  visibility: hidden;
+}
+
+article.tweet .buttons i {
+  margin-left: 3px;
+}
