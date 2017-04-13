@@ -1,0 +1,44 @@
+
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #00a087;
+  color: #fff;
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.logo {
+  float: left;
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.logo:hover {
+   -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+
+.header {
+  float: left;
+  line-height: 250%;
+  font-size: 200%;
+}
+
+.toggle {
+  border-radius: 5px;
+  background-color: #FFFAFA;
+  height: 2em;
+  width : 7em;
+  float: right;
+  margin: 25px;
+}
+
+.toggle:hover {
+  background-color: #F0FFF0;
+  font-weight: bold;
+}
