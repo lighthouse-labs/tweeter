@@ -1,0 +1,27 @@
+ section {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  box-shadow: 0 0 2px #333;
+ }
+
+ section > h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #333;
+ }
+
+ form > textarea {
+  width: 100%;
+  padding: 5px;
+ }
+
+ form > input[type="submit"] {
+  
+ }
+
+ form > .counter {
+  float: right;
+  padding: 5px;
+  font-style: italic;
+ }

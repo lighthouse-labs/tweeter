@@ -1,33 +1,89 @@
 <!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
+     <!-- External CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <link rel="stylesheet" href="/styles/app.css" type="text/css" />
   </head>
 
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
+      <a class="brand" href="#0">
+        <img alt="logo" class="logo" src="./index_files/bird.png">
+        <h1 class="header">Tweeter</h1>
+      </a>
+      <a href="#0" class="register">Register</a>
+      <a href="#0" class="login">Log in</a>
+      <button class="radius-general float-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section id="modal" class="no-display" >
+        <form method="post" action="/register" class="form-register">
+          <h2 class="form-title">Register</h2>
+          <label class="no-display" for="name">Your handle here</label>
+          <input type="text" name="name" placeholder="full name here" id="name" required>
+          <label class="no-display" for="handle">Your handle here</label>
+          <input type="text" name="handle" placeholder="@yourHandle" id="handle" required>
+          <label class="no-display" for="password">Password here</label>
+          <input type="password" placeholder="***" name="password" id="password" required>
+          <button>Register</button>
+          <span class="form-info">
+            No account yet?
+            <a href="#0">Register</a>
+          </span>
+        </form>
+        <form method="post" action="/login" class="form-login">
+          <h2 class="form-title">Login</h2>
+          <label class="no-display" for="handle">Your handle here</label>
+          <input type="text" name="handle" placeholder="@yourHandle" id="handle" required>
+          <label class="no-display" for="password">Password here</label>
+          <input type="password" placeholder="p455W0rD" name="password" id="password" required>
+          <input type="checkbox" id="remember" checked>
+          <label for="remember">Remember me</label>
+          <button>Login</button>
+          <span class="form-info">
+            No account yet?
+            <a href="#0">Register</a>
+          </span>
+        </form>
+      </section>
+      <section class="new-tweet radius-general">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="http://localhost:8080/tweets">
+          <label for="tweet-text">New tweet textarea</label>
+          <textarea id="tweet-text" name="text" placeholder="What are you humming about?"  required></textarea>
+          <button>Tweet</button>
+          <span class="flash red"></span>
+          <span class="counter float-right">140</span>
+        </form>
+      </section>
+      <section id="tweets">
+      </section>
     </main>
+   
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
+    <!-- App JS -->
+    <script src="/scripts/time_functions.js"></script>
+    <script src="/scripts/handlers.js"></script>
+    <script src="/scripts/templating.js"></script>
+    <script src="/scripts/tweetpage.js"></script>
+    <script src="/scripts/app.js"></script>
   </body>
 </html>

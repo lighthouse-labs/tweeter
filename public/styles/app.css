@@ -1,0 +1,260 @@
+@charset "UTF-8";
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* Global layout stuff
+ */
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; }
+
+/* Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  width: 450px;
+  margin: 0 auto;
+  padding: 140px 2em 2em 2em;
+  background-color: #fff; }
+
+/* General component styles */
+a {
+  text-decoration: none; }
+
+button {
+  cursor: pointer; }
+
+.radius-general {
+  border-radius: 5px; }
+
+.float-right {
+  float: right; }
+
+.no-display {
+  display: none; }
+
+/* nav sass */
+#nav-bar {
+  align-items: center;
+  background-color: #00a087;
+  box-shadow: 0 0 0.5rem #333;
+  color: #e8fdff;
+  display: flex;
+  flex-wrap: wrap;
+  height: 5rem;
+  padding: 0 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10; }
+  #nav-bar .brand {
+    flex: 3;
+    flex-wrap: nowrap; }
+    #nav-bar .brand .header {
+      color: #e8fdff;
+      display: inline-block;
+      font-size: 2.5em;
+      font-weight: normal;
+      line-height: 2;
+      margin: 0 10px;
+      vertical-align: top; }
+    #nav-bar .brand .logo {
+      height: 5rem;
+      width: 5rem; }
+  #nav-bar .login,
+  #nav-bar .register,
+  #nav-bar button {
+    border-radius: 5px;
+    font-size: 1.5em;
+    marigin-left: auto;
+    padding: 0.6em 1.5em; }
+  #nav-bar .login {
+    background-color: #009d85;
+    border: none;
+    box-shadow: 0 0 0.3em #e8fdff;
+    color: #e8fdff; }
+  #nav-bar .login:hover,
+  #nav-bar .register:hover,
+  #nav-bar button:hover {
+    color: #333;
+    background-color: #eee;
+    box-shadow: 0 0 0.8em #333; }
+  #nav-bar .register,
+  #nav-bar button {
+    background-color: #e8fdff;
+    border: none;
+    box-shadow: 0 0 0.3em #333;
+    color: #00a087; }
+  #nav-bar .register {
+    margin-right: 0.8rem; }
+  #nav-bar button {
+    display: none; }
+
+.new-tweet {
+  width: 100%;
+  padding: 10px;
+  background-color: #eee;
+  box-shadow: 0 0 2px #333; }
+
+.new-tweet > h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #333; }
+
+#tweet-text {
+  width: 100%;
+  padding: 5px; }
+
+.counter {
+  padding: 5px;
+  font-style: italic; }
+
+.flash {
+  padding: 0 30px; }
+
+.red {
+  color: #ff0000; }
+
+.new-tweet,
+.new-tweet label,
+.flash {
+  display: none; }
+
+#tweets > article {
+  margin: 40px 0 0;
+  box-shadow: 0 0 2px #aaa;
+  opacity: 0.8; }
+
+#tweets > article:hover {
+  box-shadow: 0 0 2px #888;
+  opacity: 1; }
+
+#tweets header {
+  display: flex;
+  height: 100px;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #eee; }
+
+#tweets .tweet-avatar {
+  margin-right: 10px;
+  border-radius: 5px; }
+
+.author {
+  flex: 4;
+  margin: 0;
+  color: #389384;
+  font-size: 1.5em;
+  font-weight: bolder;
+  vertical-align: top; }
+
+.author-handle {
+  flex: 3;
+  color: grey;
+  text-align: right;
+  line-height: 2; }
+
+#tweets .tweet-body {
+  margin: 0;
+  padding: 0 1em; }
+
+#tweets footer {
+  padding: 1em;
+  border-top: 1px solid #eee;
+  font-size: 0.8em; }
+
+.tweet-actions {
+  margin: -0.3em;
+  color: teal;
+  font-size: 2em; }
+
+.tweet-actions li {
+  display: inline-block;
+  cursor: pointer;
+  max-width: 60px;
+  font-size: 0.7em; }
+  .tweet-actions li .off {
+    color: #ccc; }
+
+#modal {
+  align-items: center;
+  background-color: rgba(0, 2, 1, 0.5);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100; }
+  #modal .form-login,
+  #modal .form-register {
+    background-color: #e8fdff;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem #333;
+    font-size: 1.2em;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 1rem;
+    width: 100%;
+    z-index: 200; }
+  #modal .form-title {
+    border-bottom: 1px solid #00a087;
+    color: #00a087;
+    font-size: 3.5em;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    margin: 1rem 0; }
+  #modal button {
+    background-color: #00a087;
+    box-shadow: 0 0 0.3em #333;
+    color: #e8fdff;
+    font-size: 1.5em;
+    margin: 1rem 0; }
+  #modal button:hover {
+    background-color: #e8fdff;
+    box-shadow: 0 0 0.8em #333;
+    color: #00a087;
+    font-size: 2em; }
+  #modal button:focus {
+    outline: none; }
+  #modal button,
+  #modal input[type="text"],
+  #modal input[type="password"] {
+    border: none;
+    border-radius: 5px;
+    height: 3.5rem;
+    width: 100%; }
+  #modal input[type="text"],
+  #modal input[type="password"] {
+    box-shadow: inset 0 0 0.15em #333;
+    margin-top: 1rem;
+    padding: 1rem; }
+  #modal input[type="text"]:focus,
+  #modal input[type="password"]:focus {
+    border-left: 0.3rem solid #00a087;
+    box-shadow: 0 0 0.15rem #00a087;
+    outline: none; }
+  #modal input[type=checkbox] {
+    display: none; }
+  #modal input[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    display: inline-block; }
+  #modal input[type=checkbox] + label:before {
+    content: ""; }
+  #modal input[type=checkbox] + label:before {
+    letter-spacing: 10px; }
+  #modal input[type=checkbox]:checked + label:before {
+    content: ""; }
+  #modal input[type=checkbox]:checked + label:before {
+    letter-spacing: 7.6px; }
+  #modal label {
+    line-height: 2; }
+
+/*# sourceMappingURL=app.css.map */

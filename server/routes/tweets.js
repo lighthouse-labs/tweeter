@@ -1,20 +1,37 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper    = require("../lib/util/user-helper");
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
+const cookieSession = require("cookie-session");
+tweetsRoutes.use(cookieSession({signed: false}));
+
 module.exports = function(DataHelpers) {
+  
+  // updating tweet's likes counter
+  tweetsRoutes.post("/:tweet/likes", function(req, res) {
+    const userID = req.userID || (`u-${userHelper.generateRandomString()}`);
+    const tweetID = req.params.tweet;
+    if (!req.session.userID) {
+      req.session.userID = userID;
+    }
+    
+    DataHelpers.updateTweetAction(tweetID, userID, function(err, arr) {
+      res.status(200).send(`${arr[0]['likes'].length}`);
+    })
+  })
 
   tweetsRoutes.get("/", function(req, res) {
+    let pagenum = req.query.page; //my edit used for infinite scrolling
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
         res.json(tweets);
       }
-    });
+    }, pagenum);
   });
 
   tweetsRoutes.post("/", function(req, res) {
@@ -36,7 +53,7 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.status(201).send();
+        res.status(201).send(tweet); // my edit performance tweaking to avoid loading the whole db everytime a new tweet is created
       }
     });
   });
