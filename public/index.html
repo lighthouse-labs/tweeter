@@ -7,26 +7,82 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!--Include external font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!--nav-bar CSS-->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <!--new-tweet CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!--tweet CSS-->
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!--Char Counter JS-->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!--Link to Font Awesome-->
+    <script src="https://use.fontawesome.com/e652c986a6.js"></script>
+
+    <!--Load in timeago-->
+    <script src="/scripts/jquery.timeago.js" type="text/javascript"></script>
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <a class= "compose">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <span>Compose</span>
+      </a>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action= "/tweets">
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <input type="submit" value="Tweet">
+        <span class="flash"></span>
+        <span class="counter">140</span>
+      </form>
+    </section>
+
+    <section id="tweets-container">
+<!--       <article class="tweet">
+        <header>
+          <img class="profile" src="/images/smiley-face.png">
+          <h2>Leanne</h2>
+          <span>@leanne</span>
+        </header>
+        <p class="tweettext">This is my first tweet!
+        </p>
+        <footer>
+          <span> 10 days ago </span>
+          <div class="social">
+            <i class="fa fa-flag" aria-hidden="true"></i>
+            <i class="fa fa-retweet" aria-hidden="true"></i>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </div>
+        </footer>
+      </article> -->
+    </section>
+
     </main>
 
   </body>
