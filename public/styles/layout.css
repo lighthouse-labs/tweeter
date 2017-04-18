@@ -17,9 +17,21 @@ html {
 body {
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background-color: mintcream;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ .container{
+    background-color: white;
+    margin: 100px auto;
+    padding: 50px 0 100px;
+    vertical-align: middle;
+    width: 450px;
+}
+
+.container p{
+  padding: 0 10px;
+}
