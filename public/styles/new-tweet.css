@@ -1,5 +1,5 @@
 .new-tweet{
-  background-color: #EEE;
+  background-color: #EEF6EE;
   border: 1px solid #cbcbcb;
   border-radius: 5px;
   margin: 0 2em;
@@ -21,4 +21,8 @@
   float: right;
   font-size: 0.8em;
   margin-top: 5px;
+}
+
+.new-tweet .error{
+  color: red;
 }
