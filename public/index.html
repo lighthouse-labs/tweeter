@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -27,7 +28,7 @@
     </nav>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section>
+      <section id="tweets-container">
         <article class="tweet">
           <header>
             <img class="avatar" src="/images/bunny.jpg">
@@ -35,7 +36,14 @@
             <span class="username">@MrFields</span>
           </header>
           <p>My first tweet!!!!!!!!</p>
-          <footer><span>10 days ago</span></footer>
+          <footer>
+            <span>10 days ago</span>
+            <div class="actions">
+              <img src="/images/symbol.png">
+              <img src="/images/arrows.png">
+              <img src="/images/shapes.png">
+            </div>
+          </footer>
         </article>
         <article class="tweet">
           <header>
@@ -44,7 +52,14 @@
             <span class="username">@MrFields</span>
           </header>
           <p>My first tweet!!!!!!!! My first tweet!!!!!!!! My first tweet!!!!!!!! My first tweet!!!!!!!! My first tweet!!!!!!!!</p>
-          <footer><span>10 days ago</span></footer>
+          <footer>
+            <span>10 days ago</span>
+            <div class="actions">
+              <img src="/images/symbol.png">
+              <img src="/images/arrows.png">
+              <img src="/images/shapes.png">
+            </div>
+          </footer>
         </article>
       </section>
       <section class="new-tweet">
