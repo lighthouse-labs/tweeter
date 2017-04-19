@@ -24,6 +24,7 @@
   <script src="https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg="
     crossorigin="anonymous"></script>
 
+
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -32,9 +33,10 @@
 <body>
 
   <!-- Top nav bar (fixed) -->
-  <nav id="nav-bar">
+  <nav class="nav-bar">
     <img class="logo" src="/images/bird.png">
     <span class="header">Tweeter</span>
+    <button class="compose button is-success">Compose</button>
   </nav>
 
   <!-- Page-specific (main) content here -->
@@ -45,8 +47,8 @@
       <h2>Compose Tweet</h2>
       <form action="/tweets/" method="POST">
         <textarea name="text" placeholder="What are you humming about?"></textarea>
-        <input class="clearfix submit-btn" type="submit" value="Tweet">
-        <span class='error'></span>
+        <input class="clearfix submit-btn" type="submit" disabled='disabled' value="Tweet">
+        <span class='error'>Write something!</span>
         <span class="clearfix counter">140</span>
       </form>
     </section>

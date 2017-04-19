@@ -4,23 +4,23 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-function createTweetElement(tData) {
+$(document).ready(function () {
   // handle XSS
   function escape(str) {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
-  let tweet = '';
+  function createTweetElement(tData) {
 
-  const user = tData.user.name;
-  const handle = tData.user.handle;
-  const avatar = tData.user.avatars.small;
-  const content = escape(tData.content.text);
-  const dateAgo = moment(tData.created_at).fromNow();
-  // console.log(dateago);
-  tweet = `<article>
+    const user = tData.user.name;
+    const handle = tData.user.handle;
+    const avatar = tData.user.avatars.small;
+    const content = escape(tData.content.text);
+    const dateAgo = moment(tData.created_at).fromNow();
+
+    return `<article>
             <header>
               <span class='avatar'><img src='${avatar}' width='55px' height='55px'></span>
               <h2>${user}</h2>
@@ -36,19 +36,17 @@ function createTweetElement(tData) {
               </div>
             </footer>
           </article>`;
+  }
 
-  return tweet;
-}
-
-function renderTweets(tweets) {
+  function renderTweets(tweets) {
     $('.tweets-container').empty();
-  tweets.forEach(function (element) {
-    let tweet = createTweetElement(element);
-    $('.tweets-container').prepend(tweet);
-  });
-}
+    tweets.forEach(function (element) {
+      let tweet = createTweetElement(element);
+      $('.tweets-container').prepend(tweet);
+    });
+  }
 
-$(document).ready(function () {
+
   function loadTweets() {
     $.ajax({
       url: '/tweets',
@@ -58,16 +56,24 @@ $(document).ready(function () {
     });
   }
 
+  // initial load
   loadTweets();
 
-  $("form").on("submit", function (event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $(this).serialize(),
-      success: loadTweets
+      success: function () {
+        loadTweets();
+        $('textarea').val('');
+      }
     });
   });
 
+  $('.compose').on('click', function (event) {
+    $('.new-tweet').slideToggle();
+    $("textarea").focus();
+  });
 });

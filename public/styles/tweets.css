@@ -1,6 +1,7 @@
 .tweets-container {
   position: relative;
   margin: 0 2em 3em;
+  top: 20px;
 }
 
 .tweets-container header {

@@ -9,7 +9,7 @@
 }
 
 .new-tweet h2 {
-  border-bottom: 2px black solid;
+  border-bottom: 2px #000 solid;
 }
 
 .new-tweet form{
@@ -41,7 +41,7 @@
 }
 
 .new-tweet .error {
-  color: red;
+  color: #ff0000;
   margin-left: 20px;
   line-height: 3;
 }
