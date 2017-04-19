@@ -10,12 +10,14 @@ A simple single page AJAX webpage resembling Twitter. Utilized jQuery, HMTL5 and
 * CSS3
 * Virtual Machine
 
+
 ## Getting Started
 
-1. Fork and clone your fork of this repository.
-2. Install dependencies: `npm install` or `npm i` for short.
-3. Start the web server from the command line: `npm run local`
-4. Open the app on <http://localhost:8080/> and make sure that it's loading.
+1. Fork this repository, then clone your fork of this repository.
+2. Install dependencies using the `npm install` command.
+3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+4. Go to <http://localhost:8080/> in your browser.
+
 
 ## Example Code
 
@@ -36,4 +38,3 @@ $(document).ready(function() {
 
 
 ```
-
