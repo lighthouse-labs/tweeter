@@ -12,12 +12,17 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js" integrity="sha256-rMOSOM5HDzVEMoVZTv2189+RKSTSgY5ZKfTfap7q2zE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg=" crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/flash.js"></script>
   </head>
 
   <body>
@@ -28,48 +33,36 @@
     </nav>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section id="tweets-container">
-        <article class="tweet">
-          <header>
-            <img class="avatar" src="/images/bunny.jpg">
-            <span class="name">Bill Fields</span>
-            <span class="username">@MrFields</span>
-          </header>
-          <p>My first tweet!!!!!!!!</p>
-          <footer>
-            <span>10 days ago</span>
-            <div class="actions">
-              <img src="/images/symbol.png">
-              <img src="/images/arrows.png">
-              <img src="/images/shapes.png">
-            </div>
-          </footer>
-        </article>
-        <article class="tweet">
-          <header>
-            <img class="avatar" src="/images/bunny.jpg">
-            <span class="name">Bill Fields</span>
-            <span class="username">@MrFields</span>
-          </header>
-          <p>My first tweet!!!!!!!! My first tweet!!!!!!!! My first tweet!!!!!!!! My first tweet!!!!!!!! My first tweet!!!!!!!!</p>
-          <footer>
-            <span>10 days ago</span>
-            <div class="actions">
-              <img src="/images/symbol.png">
-              <img src="/images/arrows.png">
-              <img src="/images/shapes.png">
-            </div>
-          </footer>
-        </article>
-      </section>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
+          <span id="status"></span>
           <span class="counter">140</span>
         </form>
       </section>
+      <section id="tweets-container">
+
+      </section>
     </main>
+    <script id="tweet-template" type="x-template/handlebars">
+      <article class="tweet">
+        <header>
+          <img class="avatar" src="{{user.avatars.small}}" />
+          <span class="name">{{user.name}}</span>
+          <span class="username">{{user.handle}}</span>
+        </header>
+        <p>{{content.text}}</p>
+        <footer>
+          <span>{{time_ago created_at}}</span>
+          <div class="actions">
+            <img src="/images/symbol.png" />
+            <img src="/images/arrows.png" />
+            <img src="/images/shapes.png" />
+          </div>
+        </footer>
+      </article>
+    </script>
   </body>
 </html>

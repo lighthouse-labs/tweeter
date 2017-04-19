@@ -27,6 +27,7 @@
 
 .tweet .avatar{
   align-self: center;
+  border-radius: 5px;
   float: left;
   height: 50px;
   margin-right: 15px;

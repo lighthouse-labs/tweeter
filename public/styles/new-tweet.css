@@ -26,3 +26,7 @@
 .new-tweet .error{
   color: red;
 }
+
+.new-tweet .flash_message{
+  color: red;
+}
