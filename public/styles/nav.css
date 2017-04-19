@@ -4,14 +4,13 @@
   justify-content: space-between;
   position: fixed;
   padding: 0em 2em;
-  width: 100%;
   background-color: #00a087;
   color: #e8fdff;
   height: 80px;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 1;
 }
 
 #nav-bar .logo{

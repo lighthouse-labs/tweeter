@@ -10,29 +10,26 @@
   Handlebars.registerHelper('time_ago', (timestamp) => moment(timestamp).fromNow());
   const templateText = $('#tweet-template').text();
   // because is a function we can call it in map directly
-  const template = Handlebars.compile(templateText);
+  const tweetTemplate = Handlebars.compile(templateText);
 
   function renderTweets(tweets) {
-    $('#tweets-container').empty();
-    $('#tweets-container').append(tweets.reverse().map(template));
+    $('#tweets-container').empty()
+                          .append(tweets.reverse().map(tweetTemplate));
   }
 
   function loadTweets(){
      $.ajax({
         url: '/tweets',
-        method: 'GET',
-        success: function (tweets) {
-          renderTweets(tweets);
-        }
-      });
+        method: 'GET'
+      }).then(renderTweets);
   }
 
   loadTweets();
 
   // SHOW FORM FOR CREATING NEW TWEETS
   $('.compose').on('click', function(event){
-    $('.new-tweet').slideToggle();
-    $('.new-tweet').find('textarea').focus();
+    $('.new-tweet').slideToggle()
+                   .find('textarea').focus();
   });
 
   // CREATE
@@ -41,13 +38,6 @@
       const $form  = $(this);
       const $tweetText = $form.find('textarea');
       const $tweetCounter = $form.find('.counter');
-      if($tweetCounter.hasClass('error')){
-        $('#status').flash_message({
-            text: "Too many characters",
-            how: 'append'
-        });
-       return;
-      }
       if(!$tweetText.val()){
         $('#status').flash_message({
             text: "The tweet can't be empty",
@@ -55,19 +45,20 @@
         });
         return;
       }
+      if($tweetText.val().length > 140){
+        $('#status').flash_message({
+            text: "Too many characters",
+            how: 'append'
+        });
+       return;
+      }
       $.ajax({
         url: '/tweets',
         method: 'POST',
-        data: $form.serialize(),
-        success: function(){
-          $form.each(function(){
-              this.reset();
-          });
+        data: $form.serialize()
+      }).then(() => {
+          $form[0].reset();
           loadTweets();
-        },
-        error: function () {
-          console.log('error');
-        }
       });
   });
 });
