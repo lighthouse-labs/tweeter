@@ -5,14 +5,23 @@
  */
 
 function createTweetElement(tData) {
+  // handle XSS
+  function escape(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   let tweet = '';
 
   const user = tData.user.name;
   const handle = tData.user.handle;
   const avatar = tData.user.avatars.small;
-  const content = tData.content.text;
-  const createdAt = new Date(tData.created_at); 
+  const content = escape(tData.content.text);
+  const created = new Date(tData.created_at);
+  const createdYY = created.getFullYear();
+  const createdMM = created.getMonth();
+  const createdDD = created.getDate();
 
   tweet = `<article>
             <header>
@@ -20,10 +29,9 @@ function createTweetElement(tData) {
               <h2>${user}</h2>
               <span class='twt-acct'>${handle}</span>
             </header>
-
             <div class='content'>${content}</div>
-            
-            <footer><span class='postdate'>${createdAt}</span>
+            <footer>
+              <span class='postdate'>${createdYY}/${createdMM}/${createdDD}</span>
               <div class='social'>
                 <span><i class='fa fa-flag' aria-hidden='true'></i></span>
                 <span><i class='fa fa-retweet' aria-hidden='true'></i></span>
@@ -36,22 +44,21 @@ function createTweetElement(tData) {
 }
 
 function renderTweets(tweets) {
-  tweets.forEach(function(element) {
-    let $tweet = createTweetElement(element);
-    $('.tweets-container').append($tweet);
+  tweets.forEach(function (element) {
+    let tweet = createTweetElement(element);
+    $('.tweets-container').append(tweet);
   });
 }
 
 // Test / driver code (temporary). Eventually will get this from the server.
 // Fake data taken from tweets.json
-var data = [
-  {
+var data = [{
     "user": {
       "name": "Newton",
       "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+        "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+        "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
       },
       "handle": "@SirIsaac"
     },
@@ -64,11 +71,12 @@ var data = [
     "user": {
       "name": "Descartes",
       "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "small": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+        "large": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
       },
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -78,9 +86,9 @@ var data = [
     "user": {
       "name": "Johann von Goethe",
       "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "small": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
         "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+        "large": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
       },
       "handle": "@johann49"
     },
