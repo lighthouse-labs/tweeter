@@ -29,6 +29,12 @@
 
   loadTweets();
 
+  // SHOW FORM FOR CREATING NEW TWEETS
+  $('.compose').on('click', function(event){
+    $('.new-tweet').slideToggle();
+    $('.new-tweet').find('textarea').focus();
+  });
+
   // CREATE
   $('.new-tweet form').on('submit', function(event) {
       event.preventDefault();

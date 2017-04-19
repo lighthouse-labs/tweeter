@@ -4,6 +4,7 @@
   border-radius: 5px;
   margin: 0 2em;
   padding: 1em;
+  display: none;
 }
 
 .new-tweet h2{

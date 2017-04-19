@@ -1,4 +1,7 @@
 #nav-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: fixed;
   padding: 0em 2em;
   width: 100%;
@@ -18,8 +21,27 @@
 }
 
 #nav-bar .header{
-  float: left;
+  align-self: center;
+  margin-right: auto;
   padding-left: 10px;
   line-height: 80px;
   font-size: 2em;
+}
+
+#nav-bar .actions{
+  align-self: center;
+}
+
+#nav-bar button{
+  border : 2px solid black;
+  border-radius: 5px;
+  font-size: 1.3em;
+  padding: 15px 5px;
+  background-color: #E7FDFF;
+  color: #00A086;
+}
+
+#nav-bar button:hover{
+  background-color: white;
+  color: black;
 }
