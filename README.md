@@ -1,20 +1,14 @@
 # Tweeter Project
 
-A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain ol' CSS3 to help web bootcamp students get comfortable with their front-end chops with those technologies.
+A simple single page AJAX webpage resembling Twitter. Utilized jQuery, HMTL5 and CSS3 to familiarize with front end technologies. Given framework of code to be able to implement styling and jQuery; learning how to traverse the DOM.
 
-## Technical Approach & Objectives
-
-This project is starter (incomplete) code for students to fork and clone, located here.
-
-The server is built with Node and Express and allows users to request and submit tweets via a JSON end-point. The server/express code should not require any change from the student.
-
-Students must work with and implement the HTML, CSS and client-side JS to bring this project to life.
-
-## Final Product
-
-The end result should look and function like this:
-
-!["End Result"](https://d.pr/i/1eyEY/4MEH16BY+)
+## Stack
+* Express
+* Node
+* HTML5
+* jQuery
+* CSS3
+* Virtual Machine
 
 ## Getting Started
 
@@ -23,17 +17,23 @@ The end result should look and function like this:
 3. Start the web server from the command line: `npm run local`
 4. Open the app on <http://localhost:8080/> and make sure that it's loading.
 
-## Dependencies & Troubleshooting
+## Example Code
 
-Dependencies:
+```javascript
 
-- Express
-- Node 5.10.x or above
+$(document).ready(function() {
+  $('.new-tweet form').on('keydown', 'textarea', function(event) {
+    var count = $(this).parent().find('.counter');
+    var counter = 140 - $(this).val().length;
+    count.html(counter);
+      if(counter >= 0) {
+        $(count).css('color', 'black');
+         } else {
+           $(count).css('color', 'red');
+        }
+  });
+});
 
-**This project assumes that:**
 
-- It is running in our Vagrant machine (and therefore...)
-- It is Running with Node 5.10.x or above
-
-
+```
 

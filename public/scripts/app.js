@@ -23,10 +23,10 @@ $(function () {
   };
 
   $("#tweet-form").keypress(function (e) {
-      if(e.which == 13 && !e.shiftKey) {
-          $(this).closest("form").submit();
-          e.preventDefault();
-          return false;
+    e.preventDefault();
+    if(e.which == 13 && !e.shiftKey) {
+      $(this).closest("form").submit();
+      return false;
       }
   });
 
@@ -72,9 +72,9 @@ $(function () {
 
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
-    var input = $('#new-tweet-input').val();
+    var input = $('#new-tweet-input').val().trim();
     var alertMessage = $('#alert-message');
-    if(input === '' || input === null || input === " ") {
+    if(input === '' || input === null) {
       alertMessage.html('You post appears to be empty. Please enter a TWEET').fadeTo(5000, 0);
       setTimeout(function() { alertMessage.html('').fadeTo(0, 1); }, 5000);
     } else if (input.length > 140) {

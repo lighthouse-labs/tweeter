@@ -62,7 +62,7 @@ body {
   font-size: 14px;
  }
 
-input {
+.new-tweet input {
   margin-bottom: 10px;
   float: left;
 }
