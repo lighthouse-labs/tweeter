@@ -5,8 +5,7 @@
  */
 html {
   box-sizing: border-box;
-}
-*, *:before, *:after {
+}*, *:before, *:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +17,84 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  width: 600px;
+  background-color: white;
+  position: relative;
+  margin: 0 auto;
+  top: 75px;
+  padding-top: 40px;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-bottom: 150px;
+}
+
+#new-tweet-input {
+  padding: 6px;
+  width: 98%;
+  margin-top: 10px;
+ }
+
+.new-tweet {
+  display: none;
+  height: 180px;
+  width: 90%;
+  margin: auto;
+  border-radius: 8px;
+  border: 2px solid #DBDFE0;
+  background: #EEF0F1;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 35px;
+}
+ .counter {
+  float: right;
+  padding-right: 25px;
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+ }
+
+.new-tweet input {
+  margin-bottom: 10px;
+  float: left;
+}
+
+h2 {
+  border-bottom: 2px solid #495d63;
+  margin: 0px;
+  padding: 6px;
+  padding-top: 10px;
+}
+
+.tweeter {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #DBDFE0;
+  background: #EEF0F1;
+  background-color: white;
+}
+/* *****  RED CHAR COUNT ******* */
+.belowZero {
+  color: #C0392B;
+}
+
+.aboveZero {
+  color: #595a5c;
+}
+
+
+
+
+
+
+
