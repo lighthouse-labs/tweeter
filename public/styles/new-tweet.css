@@ -36,10 +36,19 @@
   padding: 10px;
 }
 
-.new-tweet span{
-  display: block;
+.new-tweet .counter {
   float: right;
+}
+
+.new-tweet .error {
+  color: red;
+  margin-left: 20px;
+  line-height: 3;
+}
+
+.new-tweet span{
+  display: inline;
   margin-top: 5px;
-  line-height: 40px;
+  line-height: 38px;
   font-style: italic;
 }
