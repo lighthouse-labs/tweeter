@@ -1,0 +1,82 @@
+.tweets-container {
+  position: relative;
+  margin: 0 2em 3em;
+}
+
+.tweets-container header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: rgb(216, 216, 216);
+  height: 65px;
+}
+
+.tweets-container article {
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 0 0 30px 0;
+  border: 1px rgb(150, 150, 150) solid;
+}
+
+.tweets-container header .avatar {
+  box-sizing: border-box;
+  float: left;
+  padding: 5px;
+}
+
+.tweets-container .avatar img {
+  border-radius: 15px;
+}
+
+.tweets-container header h2 {
+  display: inline;
+  float: left;
+  margin-top: 10px;
+  padding: 0 10px;
+  line-height: 0.7;
+}
+
+.tweets-container header .twt-acct {
+  float: right;
+  padding: 10px;
+}
+
+.tweets-container header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tweets-container .content {
+  border-bottom: 1px solid rgb(180, 180, 180);
+  padding: 20px;
+}
+
+.tweets-container footer {
+  height: 40px;
+}
+
+.tweets-container footer .postdate {
+  float: left;
+  padding: 10px;
+}
+
+.tweets-container footer .social {
+  display: none;
+  color: rgb(7, 178, 132);
+  float: right;
+  padding: 10px;
+}
+
+.tweets-container article:hover footer .social {
+  display: inline;
+}
+
+.tweets-container footer .social span {
+  padding: 5px;
+}
+
+.tweets-container footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
