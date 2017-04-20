@@ -35,7 +35,7 @@ $(document).ready(function () {
     $('.tweets-container').empty();
     tweets.forEach((element) => {
       const tweet = createTweetElement(element);
-      $('.tweets-container').prepend(tweet);
+      $('.tweets-container').append(tweet);
     });
   }
 
