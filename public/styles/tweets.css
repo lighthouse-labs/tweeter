@@ -50,6 +50,7 @@
 .tweets-container .content {
   border-bottom: 1px solid rgb(180, 180, 180);
   padding: 20px;
+  overflow-wrap: break-word;
 }
 
 .tweets-container footer {
