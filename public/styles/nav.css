@@ -32,10 +32,11 @@
 }
 
 #nav-bar button{
+  background: url('/images/icon.png') left center no-repeat;
   border : 2px solid black;
   border-radius: 5px;
   font-size: 1.3em;
-  padding: 15px 5px;
+  padding: 15px 5px 15px 20px;
   background-color: #E7FDFF;
   color: #00A086;
 }
