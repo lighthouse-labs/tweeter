@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function () {
   // handle XSS
   function escape(str) {
@@ -13,7 +7,6 @@ $(document).ready(function () {
   }
 
   function createTweetElement(tData) {
-
     const user = tData.user.name;
     const handle = tData.user.handle;
     const avatar = tData.user.avatars.small;
@@ -40,8 +33,8 @@ $(document).ready(function () {
 
   function renderTweets(tweets) {
     $('.tweets-container').empty();
-    tweets.forEach(function (element) {
-      let tweet = createTweetElement(element);
+    tweets.forEach((element) => {
+      const tweet = createTweetElement(element);
       $('.tweets-container').prepend(tweet);
     });
   }
@@ -51,7 +44,7 @@ $(document).ready(function () {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-      dataType: "json",
+      dataType: 'json',
       success: renderTweets
     });
   }
@@ -65,15 +58,18 @@ $(document).ready(function () {
       url: '/tweets',
       method: 'POST',
       data: $(this).serialize(),
-      success: function () {
+      success: () => {
         loadTweets();
         $('textarea').val('');
+        $('.counter').text(140);
+        // $this.siblings('.submit-btn').attr('disabled', 'disabled');
+        $this.siblings('.error').text('Write something!');
       }
     });
   });
 
-  $('.compose').on('click', function (event) {
+  $('.compose').on('click', () => {
     $('.new-tweet').slideToggle();
-    $("textarea").focus();
+    $('textarea').focus();
   });
 });
