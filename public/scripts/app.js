@@ -39,7 +39,6 @@ $(document).ready(function () {
     });
   }
 
-
   function loadTweets() {
     $.ajax({
       url: '/tweets',
@@ -62,7 +61,7 @@ $(document).ready(function () {
         loadTweets();
         $('textarea').val('');
         $('.counter').text(140);
-        // $this.siblings('.submit-btn').attr('disabled', 'disabled');
+        $this.siblings('.submit-btn').attr('disabled', 'disabled');
         $this.siblings('.error').text('Write something!');
       }
     });
