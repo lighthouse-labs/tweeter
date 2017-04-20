@@ -3,31 +3,67 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <link rel="icon" type="image/png" href="/images/icon.png"/>
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet"/>
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js" integrity="sha256-rMOSOM5HDzVEMoVZTv2189+RKSTSgY5ZKfTfap7q2zE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg=" crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/flash.js"></script>
   </head>
 
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <div class="actions"><button class="compose">Compose</button></div>
     </nav>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
-    </main>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span id="status"></span>
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section id="tweets-container">
 
+      </section>
+    </main>
+    <script id="tweet-template" type="x-template/handlebars">
+      <article class="tweet">
+        <header>
+          <img class="avatar" src="{{user.avatars.small}}" />
+          <span class="name">{{user.name}}</span>
+          <span class="username">{{user.handle}}</span>
+        </header>
+        <p>{{content.text}}</p>
+        <footer>
+          <span>{{time_ago created_at}}</span>
+          <div class="actions">
+            <img src="/images/symbol.png" />
+            <img src="/images/arrows.png" />
+            <img src="/images/shapes.png" />
+          </div>
+        </footer>
+      </article>
+    </script>
   </body>
 </html>

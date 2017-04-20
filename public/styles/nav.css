@@ -1,0 +1,47 @@
+#nav-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0em 2em;
+  background-color: #00a087;
+  color: #e8fdff;
+  height: 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#nav-bar .logo{
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+#nav-bar .header{
+  align-self: center;
+  margin-right: auto;
+  padding-left: 10px;
+  line-height: 80px;
+  font-size: 2em;
+}
+
+#nav-bar .actions{
+  align-self: center;
+}
+
+#nav-bar button{
+  background: url('/images/icon.png') left center no-repeat;
+  border : 2px solid black;
+  border-radius: 5px;
+  font-size: 1.3em;
+  padding: 15px 5px 15px 20px;
+  background-color: #E7FDFF;
+  color: #00A086;
+}
+
+#nav-bar button:hover{
+  background-color: white;
+  color: black;
+}
