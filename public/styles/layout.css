@@ -1,8 +1,8 @@
 /*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+* https://css-tricks.com/international-box-sizing-awareness-day/
+* Do not modify these two selectors, please
+*/
 html {
   box-sizing: border-box;
 }
@@ -11,8 +11,11 @@ html {
 }
 
 /*
- * Global layout stuff
- */
+* Global layout stuff
+*/
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
 body {
   margin: 0;
@@ -21,5 +24,12 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+* Additional CSS can be defined below or in other CSS files, as per instructions
+*/
+
+main {
+  background: white;
+  width: 450px;
+  height: 100%;
+  margin: 80px auto 0;
+}
