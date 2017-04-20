@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
     console.error(`Failed to connect: ${MONGODB_URI}`);
@@ -17,10 +15,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     db.collection("tweets").find().toArray(callback);
   }
 
-  // ==> Later it can be invoked. Remember even if you pass
-  //     `getTweets` to another scope, it still has closure over
-  //     `db`, so it will still work. Yay!
-
   getTweets((err, tweets) => {
     if (err) throw err;
 
@@ -31,5 +25,4 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
     db.close();
   });
-
 });
