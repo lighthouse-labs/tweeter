@@ -1,0 +1,29 @@
+#nav-bar{
+    background-color: #00a087 ;
+    box-sizing: border-box;
+    color: #e8fdff;
+    height: 80px;
+    padding-left: 2em; 
+    padding-right: 2em;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#nav-bar .compose-action{
+    float: right;
+    font-size: 200%;
+    line-height: 220%;
+    padding-left: 10px;
+}
+
+#nav-bar .header{
+    font-size: 200%;
+    line-height: 220%;
+    padding-left: 10px;
+}
+
+#nav-bar .logo{
+    float: left;
+    height: 80px;
+    width: 80px;
+}
