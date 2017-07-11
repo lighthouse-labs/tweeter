@@ -10,6 +10,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" >
 
     <!-- App CSS -->
@@ -29,7 +30,7 @@
       <nav id="nav-bar">
         <img class="logo" src="/images/bird.png">
         <span class="header">Tweeter</span>
-        <span class="compose-action">Compose</span>
+        <span class="compose-action"><input type="submit" value="Compose"></span>
       </nav>
     </div>
 
@@ -40,18 +41,18 @@
 
     <div>
       <main class="container">
-      <section class="new-tweet content-section">
-    <h2 class="form-section-heading">Compose Tweet</h2>
-    <form class="form">
-      <div>
-        <textarea class="primary-input" placeholder="What are you humming about?"></textarea>
-      </div>
-      <div class="form-meta">
-        <button>Tweet</button>
-        <span class="form-meta-secondary">140</span>
-      </div>
-    </form>
-  </section>
+      
+   <section class="new-tweet">
+  <span><h2 class="compose-tweet">Compose Tweet</h2></span>
+  <form class="form-layout" action="/tweets/" method="POST">
+    <textarea class ="text-box" name="text" placeholder="What are you humming about?"></textarea>
+    <div class="tweet-controls">
+      <input class ="tweet-button" type="submit" value="Tweet">
+      <span class="counter">140</span>
+    </div>
+  </form>
+</section>
+  
   <section class="tweets-list content-section">
     <article class="tweet">
       <header class="tweet-header">
