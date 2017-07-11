@@ -1,0 +1,37 @@
+.counter {  
+ display: inline-block;
+ font-size: .8em;
+ padding-left: 292px;
+}
+
+.tweet-new {
+  background-color: #cbdedb;
+  border-radius: 5px;
+  padding: .5em;
+  margin: 0 2em;
+}
+
+.tweet-new h2 {
+  text-align: left;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.tweet-new textarea {
+  width: 100%;
+  display: block;
+  background-color: white;
+  padding: 5px 0 0 5px;
+}
+
+.tweet-new input {
+  display: inline-block;
+  margin-top: 5px;
+  
+}
+
+.tweet-new form {
+  text-align: left;
+}
