@@ -11,14 +11,14 @@
 
 #nav-bar .compose-action{
     float: right;
-    font-size: 200%;
+    font-size: 100%;
     line-height: 220%;
-    padding-left: 10px;
+    padding-top: 17px
 }
 
 #nav-bar .header{
     font-size: 200%;
-    line-height: 220%;
+    line-height: 260%;
     padding-left: 10px;
 }
 
