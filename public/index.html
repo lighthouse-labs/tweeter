@@ -4,11 +4,20 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!--Navbar CSS-->
+    <link rel="stylesheet" href="/styles/nav.css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -21,13 +30,87 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <div class="nav-bar-section">
+        <button class="nav-button">Compose</button>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <section class="tweet-compose">
+        <h2>Compose Tweet</h2>
+        <form class="tweet-input">
+          <div>
+            <textarea rows="5" ></textarea>
+          </div>
+          <div>
+            <button class="tweet-send-button">Tweet</button>
+            <p class="tweet-length">140</p>
+          </div>
+        </form>
+
+      </section>
+
+      <section class="tweets-list">
+        <article>
+          <header>
+            <div>
+              <img src="" alt="">
+              <h3>Some name here</h3>
+              <p>twitter_handle</p>
+            </div>
+          </header>
+          <main>
+            <p>This is a tweet.</p>
+          </main>
+          <footer>
+            <p>23 hours ago</p>
+          </footer>
+        </article>
+
+        <article>
+          <header>
+            <div>
+              <img src="" alt="">
+              <h3>Some name here</h3>
+              <p>twitter_handle</p>
+            </div>
+          </header>
+          <main>
+            <p>This is a tweet.</p>
+          </main>
+          <footer>
+            <p>23 hours ago</p>
+          </footer>
+        </article>
+
+        <article>
+          <header>
+            <div>
+              <img src="" alt="">
+              <h3>Some name here</h3>
+              <p>twitter_handle</p>
+            </div>
+          </header>
+          <main>
+            <p>This is a tweet.</p>
+          </main>
+          <footer>
+            <p>23 hours ago</p>
+          </footer>
+        </article>
+       
+      </section>
+
     </main>
+
+    <footer>
+      <p>Poppywrite 2017 Marshall</p>
+      <p><small>Fight for the right to write.<small></p>
+    </footer>
 
   </body>
 </html>
