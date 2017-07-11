@@ -19,6 +19,9 @@
     <!--Navbar CSS-->
     <link rel="stylesheet" href="/styles/nav.css" />
 
+    <!--New Tweet CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -40,21 +43,16 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <section class="tweet-compose">
+      <section class="tweet-new">
         <h2>Compose Tweet</h2>
-        <form class="tweet-input">
-          <div>
-            <textarea rows="5" ></textarea>
-          </div>
-          <div>
-            <button class="tweet-send-button">Tweet</button>
-            <p class="tweet-length">140</p>
-          </div>
+        <form method="POST" action="/tweets/">
+          <textarea name="text" placeholder="Chirp at me!" ></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
         </form>
-
       </section>
 
-      <section class="tweets-list">
+      <section>
         <article>
           <header>
             <div>
