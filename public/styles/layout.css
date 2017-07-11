@@ -26,5 +26,13 @@ body {
 
  body {
    font-family: "Roboto Condensed", sans-serif;
-   padding-top: 100px;
+   padding-top: 80px;
+ }
+
+ main {
+   width: 450px;
+   text-align: center;
+   background-color: white;
+   margin: 0 auto;
+   padding-top: 2em;
  }
