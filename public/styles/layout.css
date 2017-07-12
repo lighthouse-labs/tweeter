@@ -15,27 +15,72 @@ html {
  */
 
 body {
-  margin: 0;
+  background-color: #eee;  
   color: #244751;
-  background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .container {
+.container {
    box-sizing: border-box;
    background-color: #fff; 
    margin: auto;
    overflow: auto;
-   position: relative;
+   padding-top: 80px;
    text-align: center;
    width: 450px;
  }
-
- .container-header{
-   position: relative;
-   text-align: center;
- }
+.tweet{
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin: 2em; 
+    padding: 5px;
+}
+.tweet:hover{
+   border: 1px solid black;
+}
+article.tweet header{
+  background-color: gainsboro;  
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  -webkit-margin-before: 0px;
+  -webkit-margin-before: 0px;
+}
+.profile-pic{
+  border-radius: 5px;
+  margin: 5px;
+}
+.tweet-body{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+  -webkit-margin-after: 0px;
+  -webkit-margin-before: 0px;
+}
+.tweet-name{
+  margin-top: 7px;
+  width: 50%;
+}
+.tweet-footer{
+  border-top: solid 1px silver;
+}
+.tweet-handle {
+  margin-right: 5px;
+  margin-top: 13.5px;
+  text-align: right;
+  width: 30%;
+}
+.tweet-timestamp{
+  font-size: 10px;
+  padding: 10px;
+  text-align: left;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
