@@ -1,20 +1,20 @@
 #nav-bar {
+  align-items: center;
   background-color: #00a087;
   color: #e8fdff;
+  display: flex;
   height: 80px;
+  justify-content: space-between;
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 #nav-bar .header {
-  font-size: 2em;
   flex-grow: 1;
+  font-size: 2em;
   padding-left: 10px;
 }
 
@@ -25,17 +25,16 @@
 }
 
 #nav-bar .nav-button {
+  background-color: #e8fdff;
   border: 1px solid #013a31;
   border-radius: 5px;
   color: #00a087;
-  background-color: #e8fdff;
+  font-size: 1.5em;
   height: 40px;
   top: 0;
-  font-size: 1.5em;
 }
 
 #nav-bar .nav-bar-section {
-  right: 2em;
-  display: inline-block;
   padding-right: 2em;
+  right: 2em;
 }
