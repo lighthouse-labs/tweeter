@@ -54,7 +54,7 @@ var data = [
   }
 ];
 
-$(document).ready(function () {
+$(() => {
 
   function escape(str) {
     var div = document.createElement('div');
@@ -83,13 +83,32 @@ $(document).ready(function () {
       </article>`;
     return html;
   }
+
   function renderTweets(data) {
     data.forEach((tweet) => {
       $('#tweets').prepend(createTweetElement(tweet));
     });
   }
+
   renderTweets(data);
+
+  function submitTweet(event) {
+    event.preventDefault();
+    const $form = $(this);
+
+    var data = $form.serialize();
+    $.ajax({
+      type: 'POST',
+      url:  $form.attr('action'),
+      data: $form.serialize()
+    })
+      .done(() => {
+        console.log('success');
+      });
+  }
+  
+  const $form = $('#newTweet');
+
+  $form.on('submit', submitTweet);
+  
 });
-
-
-
