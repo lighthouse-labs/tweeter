@@ -1,7 +1,7 @@
 .counter {  
  display: inline-block;
  font-size: .8em;
- padding-left: 292px;
+ padding-left: 290px;
 }
 
 .tweet-new {
@@ -29,7 +29,6 @@
 .tweet-new input {
   display: inline-block;
   margin-top: 5px;
-  
 }
 
 .tweet-new form {

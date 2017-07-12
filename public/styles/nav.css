@@ -29,9 +29,9 @@
   border-radius: 5px;
   color: #00a087;
   background-color: #e8fdff;
-  height: 30px;
+  height: 40px;
   top: 0;
-  
+  font-size: 1.5em;
 }
 
 #nav-bar .nav-bar-section {
