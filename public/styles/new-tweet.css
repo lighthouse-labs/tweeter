@@ -5,7 +5,8 @@
 }
 
 .tweet-new {
-  background-color: #cbdedb;
+  background-color: #F3F3F3;
+  border: solid 1px lightgrey;
   border-radius: 5px;
   padding: .5em;
   margin: 0 2em;
@@ -14,6 +15,7 @@
 .tweet-new h2 {
   text-align: left;
   border-bottom: 1px solid black;
+  color: #244751;
   margin: 0 auto;
   margin-bottom: 10px;
   font-size: 1.5em;
@@ -29,6 +31,9 @@
 .tweet-new input {
   display: inline-block;
   margin-top: 5px;
+  background:none;
+  border: solid 1px grey;
+  font-size:.8em;
 }
 
 .tweet-new form {
