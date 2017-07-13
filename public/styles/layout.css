@@ -125,4 +125,9 @@ article.tweets footer span {
   color: #66C5B7;
   font-size: .8em;
   padding: 0 5px;
+  visibility: hidden;
+}
+
+article.tweets:hover footer span {
+  visibility: visible;
 }
