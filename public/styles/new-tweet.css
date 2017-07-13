@@ -4,6 +4,7 @@
   background-color: #eee;
   margin-left: 2em;
   margin-right: 2em;
+  display: none;
 }
 
 .counter {

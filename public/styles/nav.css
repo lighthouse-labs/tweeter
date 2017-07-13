@@ -22,3 +22,24 @@
   font-size: 200%;
   line-height: 80px;
 }
+
+#nav-bar .button #composeIcon{
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}
+
+#nav-bar .button {
+  float: right;
+  width: 140px;
+  height: 60px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #e7fdff;
+  font-size: 150%;
+}
+
+#nav-bar .button:hover {
+  background-color: white;
+}
