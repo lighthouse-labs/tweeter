@@ -49,7 +49,7 @@
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
       <div class="nav-bar-section">
-        <button class="nav-button">Compose</button>
+        <button class="nav-button"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Compose</button>
       </div>
     </nav>
 
@@ -59,9 +59,10 @@
       <section class="tweet-new">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" id="newTweet">
-          <textarea name="text" placeholder="Chirp at me!" ></textarea>
-          <input type="submit" value="Tweet">
+          <textarea name="text" placeholder="Chirp at me!" id="tweetBox" ></textarea>
+          <input type="submit" value="Tweet" id="submitTweet">
           <span class="counter">140</span>
+          <p class='error'>Tweets must be 1 to 140 characters long!</p>
         </form>
       </section>
 
