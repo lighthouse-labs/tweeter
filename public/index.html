@@ -22,7 +22,8 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+  <script src="https://use.fontawesome.com/c4dbde0f76.js"></script>
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
 </head>
 
 <body>
@@ -32,14 +33,11 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <span class="compose-action"><input type="submit" value="Compose"></span>
+      <button class="compose-action"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose</button>
     </nav>
   </div>
 
   <!-- Page-specific (main) content here -->
-  <!--<div>
-    <h1 class="container-header">This is my Tweetr page!</h1>
-  </div>-->
 
   <div>
     <main class="container">
@@ -50,19 +48,19 @@
           <textarea class="text-box" name="text" placeholder="What are you humming about?"></textarea>
           <div class="tweet-controls">
             <input class="tweet-button" type="submit" value="Tweet">
-            <span class="counter">140</span>
+            <span class="counter"></span>
           </div>
         </form>
       </section>
 
       <section id="tweets-container">
       </section>
-          </main>
+    </main>
   </div>
-<footer class="page-footer">
-  <p class="copyright">Copyright 2017 JV Cortez</p>
-  <p><small>I love sushi</small></p>
-</footer>
+  <footer class="page-footer">
+    <p>Lighthouse Labs Web Dev Student © 2017 JV Cortez</p>
+  </footer>
+
 </body>
 
 </html>
