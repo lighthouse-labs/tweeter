@@ -29,9 +29,19 @@
   border: 1px solid #013a31;
   border-radius: 5px;
   color: #00a087;
-  font-size: 1.5em;
-  height: 40px;
+  font-size: 1em;
+  height: 50px;
   top: 0;
+}
+
+#nav-bar .nav-button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+#nav-bar .nav-button span {
+  padding-right: 5px;
 }
 
 #nav-bar .nav-bar-section {
