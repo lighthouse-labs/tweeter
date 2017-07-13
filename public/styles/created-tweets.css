@@ -1,0 +1,83 @@
+#tweets-container > .tweet{
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 3em;
+}
+
+.tweet > header {
+  display: flex;
+  border: 1px;
+  height: 70px;
+  background-color: #f3f3f3;
+  color: #6a7d84;
+
+}
+.tweet:hover > header {
+  color: #2b4751;
+  background-color: #eee;
+
+}
+
+
+.tweet > article {
+  height: 120px;
+  background-color: white;
+  padding-left: 15px;
+  padding-top: 10%;
+  /*percetnage based alignement based on height calc or padding and overflow*/
+}
+
+.tweet header img {
+  width: 58px;
+  height: 58px;
+  border: 1px solid black;
+  border-radius: 5px;
+  align-content: center;
+  opacity: 0.6;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.tweet:hover header img {
+  opacity: 1;
+}
+
+
+
+.tweet h3 {
+  /*display: inline;*/
+  font-size: 180%;
+  margin: 0;
+  padding-left: 10px;
+  width: 100%;
+
+}
+
+.tweet .shortUsername {
+  padding-top: 10px;
+  width: 100%;
+  text-align: right;
+  padding-right: 5%
+}
+
+.tweet > footer {
+  border-top: 1px solid #eee;
+  background-color: white;
+  line-height: 50px;
+  padding-left: 15px;
+}
+
+.tweet footer .hoverIcons {
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: 14px;
+  margin-right: 10px;
+  visibility: hidden;
+}
+
+.tweet:hover footer .hoverIcons {
+  visibility: visible;
+}
