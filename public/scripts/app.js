@@ -62,9 +62,12 @@ $(() => {
   }
 
   function renderTweets(data) {
-    data.forEach((tweet) => {
-      $("#tweets").prepend(createTweetElement(tweet));
-    });
+    let allTweets = '';
+    for (const tweet in data) {
+      const renderedTweet = createTweetElement(data[tweet]);
+      allTweets = renderedTweet + allTweets;
+    }
+    $('#tweets').empty().append(allTweets);
   }
 
   function loadTweets() {
@@ -90,7 +93,7 @@ $(() => {
     let $textArea = $(".tweet-new > form > textarea");
     $(".tweet-new").slideToggle("slow", function () {
       if ($(".tweet-new").is(":visible")) {
-        $textArea.focus();
+        $textArea.select();
       }
     });
   });
@@ -102,9 +105,11 @@ $(() => {
 
     if (tweetLength() === true) {
       $(".error").show();
+      
       setTimeout(function() {
+        $(".tweet-new > form > textarea").focus();
         $(".error").hide();
-      }, 2000);
+      }, 1000);
     } else {
       $.ajax({
         type: "POST",
@@ -112,16 +117,16 @@ $(() => {
         data: $form.serialize()
       })
         .done(() => {
+          loadTweets(data);
           $("#tweetBox").val("");
           $(".counter").text(140);
-          loadTweets(data);
         });
     }
   }
   
   const $form = $("#newTweet");
 
-  $form.submit(submitTweet);
+  $form.on("submit", submitTweet);
 
   loadTweets();
 });
