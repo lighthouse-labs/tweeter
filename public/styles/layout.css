@@ -24,6 +24,7 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/*fix blue border around compose button and have page open with closed tweet box  */
 
 .container {
    box-sizing: border-box;
@@ -38,10 +39,14 @@ body {
   border: 1px solid silver;
   border-radius: 5px;
   margin: 2em; 
-    padding: 5px;
+  overflow: hidden;
 }
 .tweet:hover{
    border: 1px solid black;
+}
+
+.tweet:hover .icons {
+  visibility: visible;
 }
 article.tweet header{
   background-color: gainsboro;  
@@ -52,7 +57,7 @@ article.tweet header{
   -webkit-margin-before: 0px;
 }
 .profile-pic{
-  border-radius: 5px;
+  border-radius: 50%;
   margin: 5px;
 }
 .tweet-body{
@@ -65,22 +70,46 @@ article.tweet header{
   -webkit-margin-before: 0px;
 }
 .tweet-name{
-  margin-top: 7px;
-  width: 50%;
+  padding-top: 16px;
+  width: 53%;
+  -webkit-margin-after: 0px;
+  -webkit-margin-before: 0px;
+}
+.tweet-content {
+  max-width:375px;
+  word-wrap:break-word;
 }
 .tweet-footer{
   border-top: solid 1px silver;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
 }
 .tweet-handle {
-  margin-right: 5px;
-  margin-top: 13.5px;
+  margin-right: 7px;
+  padding-top: 20px;
   text-align: right;
   width: 30%;
+  -webkit-margin-after: 0px;
+  -webkit-margin-before: 0px;
 }
 .tweet-timestamp{
   font-size: 10px;
-  padding: 10px;
   text-align: left;
+  padding-top: 5px;
+  padding-left: 5px;
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
+}
+.icons{
+  visibility: hidden;
+}
+.icons > i{
+  margin-left: 20px;
+}
+
+.page-footer > p{
+  padding: 70px; 
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px; 
 }
