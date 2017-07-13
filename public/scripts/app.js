@@ -40,6 +40,7 @@ $(function () {
         
     // }
     function renderData(tweets) {
+        $('#tweets-container').empty();
         tweets.forEach((tweet) => {
             $('#tweets-container').prepend(createTweetElement(tweet))
         })
