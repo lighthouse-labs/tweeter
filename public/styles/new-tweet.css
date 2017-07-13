@@ -36,6 +36,19 @@
   font-size:.8em;
 }
 
+.tweet-new input:hover {
+  border: solid 1px black;
+}
+
 .tweet-new form {
   text-align: left;
+}
+
+.tweet-new p {
+  color: red;
+  margin: 0;
+  display: none;
+  font-size: .7em;
+  padding: 0;
+  text-align: center;
 }
