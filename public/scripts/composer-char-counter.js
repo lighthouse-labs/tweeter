@@ -5,5 +5,3 @@ $(function () {
     $(counter).css('color', (value > 0 ) ? 'black' : 'red');
   });
 });
-
-//keydown can change what happens 
