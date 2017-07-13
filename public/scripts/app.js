@@ -93,7 +93,7 @@ $(() => {
     let $textArea = $(".tweet-new > form > textarea");
     $(".tweet-new").slideToggle("slow", function () {
       if ($(".tweet-new").is(":visible")) {
-        $textArea.select();
+        $textArea.focus();
       }
     });
   });
