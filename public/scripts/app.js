@@ -1,33 +1,58 @@
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * Reminder: Use (and do all your DOM work in) jQuery"s document ready function
  */
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
 $(() => {
-  
+
   function escape(str) {
-    var div = document.createElement('div');
+    var div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  function timeDifference(current, previous) {
+
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerHour) {
+      return Math.round(elapsed / msPerMinute) + "minutes ago";
+    } else if (elapsed < msPerDay) {
+      return Math.round(elapsed / msPerHour) + "hours ago";
+    } else if (elapsed < msPerMonth) {
+      return Math.round(elapsed / msPerDay) + "days ago";
+    } else if (elapsed < msPerYear) {
+      return Math.round(elapsed / msPerMonth) + "months ago";
+    } else {
+      return Math.round(elapsed / msPerYear ) + "year ago";
+    }
+  }
+
   function createTweetElement(tweet) {
-    const newTime = new Date(tweet.created_at * 1000);
+    const currentDate = (new Date());
+    const createdAt = tweet.created_at;
+    const newTime = timeDifference(currentDate, createdAt);
     const html = `
       <article class="tweets">
         <header>
           <img src=${tweet.user.avatars.small} alt="profile pic">
-          <h3>${tweet.user.name}</h3>
-          <p>${tweet.user.handle}</p>
+          <h3>${escape(tweet.user.name)}</h3>
+          <p>${escape(tweet.user.handle)}</p>
         </header>
         <main>
           <p>${escape(tweet.content.text)}</p>
         </main>
         <footer>
-          <p>${newTime.toUTCString()}</p>
+          <p>${newTime}</p>
           <span class="fa fa-flag" aria-hidden="true"></span>
           <span class="fa fa-retweet" aria-hidden="true"></span>
           <span class="fa fa-heart" aria-hidden="true"></span>
@@ -38,14 +63,14 @@ $(() => {
 
   function renderTweets(data) {
     data.forEach((tweet) => {
-      $('#tweets').prepend(createTweetElement(tweet));
+      $("#tweets").prepend(createTweetElement(tweet));
     });
   }
 
   function loadTweets() {
     $.ajax({
-      type: 'GET',
-      url: '/tweets'
+      type: "GET",
+      url: "/tweets"
     })
       .done((data) => {
         renderTweets(data);
@@ -53,7 +78,7 @@ $(() => {
   }
 
   function tweetLength(data) {
-    let value = $('.tweet-new > form > textarea').val().length;
+    let value = $(".tweet-new > form > textarea").val().length;
     if (value < 1 || value > 140) {
       return true;
     } else {
@@ -61,12 +86,11 @@ $(() => {
     }
   }
 
-  $('.nav-button').on('click', function () {
-    let $textArea = $('.tweet-new > form > textarea');
-    $('.tweet-new').slideToggle('slow', function () {
-      if ($('.tweet-new').is(':visible')) {
+  $(".nav-button").on("click", function () {
+    let $textArea = $(".tweet-new > form > textarea");
+    $(".tweet-new").slideToggle("slow", function () {
+      if ($(".tweet-new").is(":visible")) {
         $textArea.focus();
-        $textArea.select();
       }
     });
   });
@@ -77,27 +101,27 @@ $(() => {
     const data = $form.serialize();
 
     if (tweetLength() === true) {
-      $('.error').show();
+      $(".error").show();
       setTimeout(function() {
-        $('.error').hide();
+        $(".error").hide();
       }, 2000);
     } else {
       $.ajax({
-        type: 'POST',
-        url: $form.attr('action'),
+        type: "POST",
+        url: $form.attr("action"),
         data: $form.serialize()
       })
         .done(() => {
-          $('#tweetBox').val('');
-          $('.counter').text(140);
+          $("#tweetBox").val("");
+          $(".counter").text(140);
           loadTweets(data);
         });
     }
   }
   
-  const $form = $('#newTweet');
+  const $form = $("#newTweet");
 
-  $form.on('submit', submitTweet);
+  $form.submit(submitTweet);
 
   loadTweets();
 });
