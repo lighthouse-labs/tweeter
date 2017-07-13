@@ -16,8 +16,8 @@
     border: 1px solid silver;
     border-radius: 5px;
     margin: 2em;
+    margin-top: 3em;
     padding: 5px;
-
 }
 .text-box{
     background-color: white;  
@@ -30,6 +30,9 @@
 
 .tweet-button{
    flex-grow: 0;
+}
+.tweet-button:hover{
+    border-color: dimgray;
 }
 .counter{
     flex-grow: 0.05;
