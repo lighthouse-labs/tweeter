@@ -2,32 +2,84 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+    <title>Tweeter</title>
+
+    <!--Tab Icon-->
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!--Navbar CSS-->
+    <link rel="stylesheet" href="/styles/nav.css" />
+
+    <!--New Tweet CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" />
+
+    <!--FooterCSS-->
+    <link rel="stylesheet" href="/styles/footer.css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!--Char Count JS-->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!--Tweet Icons JS-->
+    <script src="https://use.fontawesome.com/de21fc91fa.js"></script>
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <div class="nav-bar-section">
+        <button class="nav-button"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Compose</button>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <section class="tweet-new">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/" id="newTweet">
+          <textarea name="text" placeholder="Chirp at me!" id="tweetBox" ></textarea>
+          <input type="submit" value="Tweet" id="submitTweet">
+          <span class="counter">140</span>
+          <p class="error">Tweets must be 1 to 140 characters long!</p>
+        </form>
+
+      </section>
+
+      <section id="tweets">
+        
+      </section>
+
     </main>
+
+    <footer id="footer">
+
+      <p>Hoppywrite 2017 MSD</p>
+      <span class="fa fa-copyright" aria-hidden="true"></span>
+      <p>fight for the right to write</p>
+
+    </footer>
 
   </body>
 </html>

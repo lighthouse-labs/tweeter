@@ -23,3 +23,111 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+body {
+   font-family: "Roboto Condensed", sans-serif;
+   padding-top: 80px;
+}
+
+.container { 
+   background-color: white;
+   margin: 0 auto;
+   padding: 2em 0;
+   text-align: center;
+   width: 450px;
+}
+
+article.tweets {
+  border: solid 1px lightgrey;  
+  border-radius: 8px;
+  margin: 1em 2em;
+ }
+
+article.tweets:hover {
+  border: solid 1px black;
+}
+
+article.tweets header {
+  background-color: #F3F3F3;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  color: #667E84;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+article.tweets:hover header {
+  background-color: #EEEEEE;
+}
+
+article.tweets header h3 {
+  margin-top: 10px;
+  text-align: left;
+  width: 80%;
+}
+
+article.tweets:hover header h3 {
+  color: #244751;
+}
+
+article.tweets header img {
+  border-radius: 20px;
+  padding: 8px;
+  opacity: .7;
+}
+
+article.tweets:hover header img {
+  opacity: 1;
+}
+
+article.tweets header p {
+  font-size: .8em;
+  margin-right: 10px;
+}
+
+article.tweets:hover header p {
+  color: #244751;
+}
+
+article.tweets main {
+  padding: 1em 0;
+}
+
+article.tweets main p {
+  color: #45636B;
+  font-size: 1em;
+  padding-left: 10px;
+  text-align: left;
+}
+
+article.tweets:hover main p {
+  color: #244751;
+}
+
+article.tweets footer {
+  align-items: center;
+  border-top: solid 1px lightgrey;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 5px 0;
+}
+
+article.tweets footer p {
+  font-size: .7em;
+  margin: 0;
+  text-align: left;
+  width: 80%;
+}
+
+article.tweets footer span {
+  color: #66C5B7;
+  font-size: .8em;
+  padding: 0 5px;
+  visibility: hidden;
+}
+
+article.tweets:hover footer span {
+  visibility: visible;
+}
