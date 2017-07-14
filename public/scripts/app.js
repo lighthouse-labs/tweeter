@@ -1,7 +1,8 @@
 $(function () {
 
     function createTweetElement(tweetData) {
-        const timeRead = new Date(tweetData.created_at);
+        const sevenMinutesBefore = (tweetData.created_at + 420000);
+        const newTimeRead = moment(sevenMinutesBefore)
         const html = `
     <article class="tweet">
         <header class="tweet-header">
@@ -13,7 +14,7 @@ $(function () {
         <p class="tweet-body">${escape(tweetData.content.text)}</p>
         </main>
         <footer class="tweet-footer">
-        <p class="tweet-timestamp">${timeRead}</p>
+        <p class="tweet-timestamp">${newTimeRead.fromNow()}</p>
         <div class="icons">
         <i class="fa fa-flag" aria-hidden="true"></i>
         <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -30,15 +31,6 @@ $(function () {
         return div.innerHTML;
     }
 
-//all tweets are retweeted along with new tweet
-    //  let allTweets = "";
-    //     for (const oneTweet in tweets) {
-    //         const renderedTweet = createTweetElement(tweets[tweet])
-    //         allTweets = renderedTweet + allTweets
-    //     }
-    //         $('#tweets-container').append(createTweetElement(allTweets))
-        
-    // }
     function renderData(tweets) {
         $('#tweets-container').empty();
         tweets.forEach((tweet) => {
