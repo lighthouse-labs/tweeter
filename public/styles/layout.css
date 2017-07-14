@@ -14,7 +14,9 @@ html {
  * Global layout stuff
  */
 
+
 body {
+  font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
   color: #244751;
   background-color: #eee;
@@ -23,3 +25,10 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+main {
+  background-color: white;
+  margin: auto;
+  padding-top: 80px;
+  width: 450px;
+
+}
