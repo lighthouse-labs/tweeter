@@ -1,83 +1,83 @@
 #tweets-container > .tweet{
   border: 1px solid grey;
   border-radius: 5px;
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-top: 3em;
+  margin: 2em;
+  margin-bottom: 0;
 }
 
-.tweet > header {
-  display: flex;
-  border: 1px;
-  height: 70px;
+#tweets-container .tweet > header {
   background-color: #f3f3f3;
+  border-radius: 5px;
   color: #6a7d84;
-
+  display: flex;
+  height: 76px;
+  justify-content: space-between;
 }
-.tweet:hover > header {
-  color: #2b4751;
+
+#tweets-container .tweet:hover > header {
   background-color: #eee;
-
+  color: #2b4751;
 }
 
 
-.tweet > article {
-  height: 120px;
+#tweets-container .tweet > article {
   background-color: white;
+  height: 120px;
   padding-left: 15px;
   padding-top: 10%;
   /*percetnage based alignement based on height calc or padding and overflow*/
 }
 
-.tweet header img {
-  width: 58px;
-  height: 58px;
+#tweets-container .tweet header .userlogo {
+  align-self: center;
   border: 1px solid black;
   border-radius: 5px;
-  align-content: center;
+  height: 58px;
+  margin-left: 9px;
   opacity: 0.6;
-  margin-left: 5px;
-  margin-top: 5px;
+  width: 58px;
+
 }
 
-.tweet:hover header img {
+#tweets-container .tweet:hover header img {
   opacity: 1;
 }
 
 
 
-.tweet h3 {
-  /*display: inline;*/
+#tweets-container .tweet h3 {
   font-size: 180%;
-  margin: 0;
-  padding-left: 10px;
-  width: 100%;
-
+  margin: 0px;
+  padding-left: 2%;
+  padding-top: 2%;
+  width: 80%;
 }
 
-.tweet .shortUsername {
-  padding-top: 10px;
-  width: 100%;
-  text-align: right;
-  padding-right: 5%
+#tweets-container .tweet .shortUsername {
+  padding-right: 2%;
+  padding-top: 3%;
 }
 
-.tweet > footer {
-  border-top: 1px solid #eee;
+#tweets-container .tweet > footer {
   background-color: white;
+  border-top: 1px solid #eee;
+  border-radius: 5px;
+  display: flex;
   line-height: 50px;
   padding-left: 15px;
 }
 
-.tweet footer .hoverIcons {
-  width: 20px;
-  height: 20px;
-  float: right;
-  margin-top: 14px;
-  margin-right: 10px;
+#tweets-container .tweet #createdTime{
+  width: 75%;
+}
+
+#tweets-container .tweet footer i {
+  align-self: center;
+  color: #00a087;
+  margin-left: 10px;
   visibility: hidden;
 }
 
-.tweet:hover footer .hoverIcons {
+#tweets-container .tweet:hover footer i {
   visibility: visible;
 }

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 function createTweetElement (data) {
-  const createdTime = new Date(data.created_at*1000)
+  const createdTime = moment(data.created_at);
 
   function escape(str) {
   var div = document.createElement('div');
@@ -20,10 +20,11 @@ function createTweetElement (data) {
                 <article class="tweetMessage">${escape(data.content.text)}
                 </article>
                 <footer>
-                  ${'Created on ' + escape(createdTime.toUTCString(data.created_at))}
-                  <img class="hoverIcons" src="/images/Bolt.png">
-                  <img class="hoverIcons" src="/images/Reload.png">
-                  <img class="hoverIcons" src="/images/Heart.png">
+
+                  <span id="createdTime">${(createdTime.fromNow())}</span>
+                  <i class="fa fa-flag" aria-hidden="true"></i>
+                  <i class="fa fa-retweet" aria-hidden="true"></i>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
                 </footer>
               </article>
               `

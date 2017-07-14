@@ -1,45 +1,44 @@
 #nav-bar {
-  position: fixed;
-  height: 80px;
-  width: 100%;
   background-color: #00a087;
   color: #e8fdff;
+  display: flex;
+  height: 80px;
+  position: fixed;
   padding-left: 2em;
-  padding-top: 0;
-  padding-bottom: 0;
   padding-right: 2em;
+  width: 100%;
+  z-index: 99999;
+
 }
 
 #nav-bar .logo {
-  width: 80px;
   height: 80px;
-  float: left;
   margin-right: 10px;
+  width: 80px;
 }
 
 #nav-bar .header {
-  float: left;
+  align-self: center;
   font-size: 200%;
-  line-height: 80px;
+  width: 70%;
 }
 
-#nav-bar .button #composeIcon{
-  width: 20px;
-  height: 20px;
-  margin-right: 7px;
+#nav-bar .button .fa {
+  margin-right: 5px;
 }
 
 #nav-bar .button {
-  float: right;
-  width: 140px;
-  height: 60px;
-  margin-top: 10px;
+  background-color: #e7fdff;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: #e7fdff;
+  color: #00a087;
   font-size: 150%;
+  height: 60px;
+  margin-top: 10px;
+  width: 140px;
 }
 
 #nav-bar .button:hover {
   background-color: white;
+  color: black;
 }

@@ -1,10 +1,10 @@
 .new-tweet {
+  background-color: #eee;
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: #eee;
-  margin-left: 2em;
-  margin-right: 2em;
   display: none;
+  margin: 2em;
+
 }
 
 .counter {
@@ -21,14 +21,15 @@
 
 
 form > textarea {
-  width: 350px;
-  padding-bottom: 2em;
   display: block;
   margin-left: 1em;
+  padding-bottom: 2em;
+  width: 350px;
 }
 
 .new-tweet input {
-  margin-top: 5px;
-  margin-left: 13px;
   margin-bottom: 13px;
+  margin-left: 13px;
+  margin-top: 5px;
+
 }
