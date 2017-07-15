@@ -1,0 +1,49 @@
+#nav-bar{
+    background-color: #00a087 ;
+    border-bottom: solid 1px dimgrey; 
+    box-sizing: border-box;
+    color: #e8fdff;
+    height: 80px;
+    overflow: hidden;
+    padding-left: 2em; 
+    padding-right: 2em;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+#nav-bar .compose-action{
+    background-color: lightblue;
+    border: solid 1px black;
+    border-radius: 5px;
+    font-weight: bold;
+    float: right;
+    font-size: 100%;
+    height: 40px;
+    margin-top: 17px;
+    width: 110px;
+}
+#nav-bar i{
+    padding-right: 5px;
+}
+#nav-bar .compose-action:hover{
+    background-color: cornflowerblue;
+    border: solid 2px dimgray;
+    color: cornsilk;
+    cursor: pointer;
+    float: right;
+    font-size: 17px;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+#nav-bar .header{
+    font-size: 200%;
+    line-height: 260%;
+    padding-left: 10px;
+}
+#nav-bar .logo{
+    float: left;
+    height: 80px;
+    width: 80px;
+}

@@ -1,0 +1,103 @@
+$eliminateWebkitMargin: 0px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #eee;  
+  color: #244751;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+}
+.container {
+   box-sizing: border-box;
+   background-color: #fff; 
+   margin: auto;
+   overflow: auto;
+   padding-top: 80px;
+   text-align: center;
+   width: 450px;
+
+  .tweet{
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin: 2em; 
+    overflow: hidden;
+  }
+  .tweet:hover{
+    border: 1px solid black;
+  }
+  .tweet:hover .icons {
+    visibility: visible;
+  }
+  article.tweet header{
+    background-color: gainsboro;  
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    -webkit-margin-before: $eliminateWebkitMargin;
+  }
+  .profile-pic{
+    border-radius: 50%;
+    margin: 5px;
+  }
+  .tweet-body{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    -webkit-margin-after:  $eliminateWebkitMargin;
+    -webkit-margin-before:  $eliminateWebkitMargin;
+  }
+  .tweet-name{
+    padding-top: 16px;
+    width: 53%;
+    -webkit-margin-after:  $eliminateWebkitMargin;
+    -webkit-margin-before:  $eliminateWebkitMargin;
+  }
+  .tweet-content {
+    max-width:375px;
+    word-wrap:break-word;
+  }
+  .tweet-footer{
+    border-top: solid 1px silver;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+  }
+  .tweet-handle {
+    margin-right: 7px;
+    padding-top: 20px;
+    text-align: right;
+    width: 30%;
+    -webkit-margin-after:  $eliminateWebkitMargin;
+    -webkit-margin-before:  $eliminateWebkitMargin;
+  }
+  .tweet-hand:hover{
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .tweet-timestamp{
+    font-size: 10px;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+    -webkit-margin-before:  $eliminateWebkitMargin;
+    -webkit-margin-after:  $eliminateWebkitMargin;
+  }
+  .icons{
+    visibility: hidden;
+  }
+  .icons > i{
+    margin-left: 20px;
+  }
+  .page-footer > p{
+    padding: 70px; 
+    -webkit-margin-before:  $eliminateWebkitMargin;
+    -webkit-margin-after:  $eliminateWebkitMargin; 
+  }
+}
