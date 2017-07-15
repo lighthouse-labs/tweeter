@@ -6,17 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
+    "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js",
+    "sass": "./node_modules/node-sass/bin/node-sass assets/sass/styles.scss public/styles/styles.css -w assets/sass/styles.scss"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
     "chance": "^1.0.2",
+    "eslint": "^4.2.0",
     "express": "^4.13.4",
-    "md5": "^2.1.0"
+    "hover.css": "^2.2.0",
+    "md5": "^2.1.0",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.30"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "eslint-config-airbnb": "^15.0.2",
+    "nodemon": "^1.9.2",
+    "node-sass": "^4.5.3"
   }
 }
