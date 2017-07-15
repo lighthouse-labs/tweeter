@@ -53,7 +53,7 @@ $(function () {
         event.preventDefault()
         const charValidation = charIsInvalid($form)
         if (charValidation === true) {
-            alert("Error! Too long or too short")
+            alert("Error! Text entered is either too long or nothng at all!")
         } else {
             $.ajax({
                 type: 'POST',
