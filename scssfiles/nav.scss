@@ -8,7 +8,6 @@
   padding-right: 2em;
   width: 100%;
   z-index: 99999;
-
 }
 
 #nav-bar .logo {
@@ -23,10 +22,6 @@
   width: 70%;
 }
 
-#nav-bar .button .fa {
-  margin-right: 5px;
-}
-
 #nav-bar .button {
   background-color: #e7fdff;
   border: 1px solid black;
@@ -36,6 +31,10 @@
   height: 60px;
   margin-top: 10px;
   width: 140px;
+
+  .fa {
+    margin-right: 5px;
+  }
 }
 
 #nav-bar .button:hover {
