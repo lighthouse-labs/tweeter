@@ -31,23 +31,15 @@ function createTweetElement (data) {
 
 
 return $tweet;
-
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
 }
 
 
 function renderTweets(tweets) {
   $('tweets-container').children().remove();
   tweets.forEach(function(item){
-  $('#tweets-container').prepend(createTweetElement(item)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  $('#tweets-container').prepend(createTweetElement(item));
 })
 }
-
-// document.getElementById("tweetSubmit").addEventListener("click", function(event) {
-//   event.preventDefault()
-// });
-
 
 
 function loadTweets () {
@@ -103,8 +95,3 @@ $( ".button" ).click(function() {
 
 
 });
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
