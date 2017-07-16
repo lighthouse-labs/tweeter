@@ -83,9 +83,9 @@ function createTweets () {
       url: '/tweets',
       data: $form.serialize()
     })
-    .done(() => {
-      loadTweets()
-    })
+  .done(() => {
+    loadTweets()
+  })
   }
 }
 
