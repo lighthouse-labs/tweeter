@@ -1,0 +1,65 @@
+
+.containerTweet header {
+
+  height: 60px;
+  background-color : #D1DDE0;
+  font-size: 25px;
+  border-bottom: 2px groove;
+}
+
+.containerTweet article {
+
+  margin-top: 10px;
+  height: 110px;
+  background-color : white;
+  font-size: 30px;
+  margin-bottom: -30px;
+}
+
+.containerTweet footer{
+
+  margin-bottom: 5px;
+  border-top: 2px groove;
+  background-color : white;
+  margin-top: 5px;
+}
+
+.tweetImg{
+
+  padding-top: 10px;
+  padding-bottom: 25px;
+  height: 60px;
+  margin-right: 10px;
+  background-color: #D1DDE0;
+  float: left;
+
+}
+
+.tweetImg img {
+
+  height: 45px;
+  width: 60px;
+  margin-left: 10px;
+
+}
+
+.name{
+
+  padding-top: 10px;
+  font-size: 25px;
+
+}
+.hashName{
+
+  padding-top: 10px;
+  padding-right: 10px;
+  float: right;
+  font-size: 20px;
+}
+.containerTweet {
+
+  margin-top: 15px;
+  border: 2px groove;
+  background-color: white;
+}
+
