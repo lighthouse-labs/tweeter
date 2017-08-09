@@ -21,6 +21,7 @@
 
   border-top: 2px groove;
   background-color : white;
+  height: 20px;
 
 
 }
@@ -29,6 +30,10 @@
   display: none;
   float: right;
 
+}
+
+.timeago {
+  float: left;
 }
 
 .tweetImg{
@@ -52,9 +57,10 @@
 
 .name{
 
-  float: left;
+
   padding-top: 10px;
   font-size: 25px;
+
 
 }
 .hashName{

@@ -13,6 +13,10 @@ $( document ).ready(function() {
     else {
       $('.counter').css('color', 'black');
     }
+  });
+  tweets.forEach(function (tweet) {
+      $('section.containerTweet').append(createTweetElement(tweet));
+ });
 });
-});
+
 
