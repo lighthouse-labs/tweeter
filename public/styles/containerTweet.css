@@ -27,6 +27,12 @@
 
 }
 
+.containerTweet div{
+
+  padding-left: 10px;
+  font-family: copperplate;
+}
+
 .icon {
   display: none;
   float: right;
@@ -58,9 +64,10 @@
 
 .name{
 
-
+  font family: copperplate;
   padding-top: 10px;
-  font-size: 25px;
+  font-size: 18px;
+  font-family: Monaco;
 
 
 }
@@ -69,7 +76,7 @@
   padding-top: 10px;
   padding-right: 10px;
   float: right;
-  font-size: 20px;
+  font-size: 15px;
 }
 .containerTweet {
 
@@ -85,11 +92,13 @@
 article{
   border: 2px groove;
   margin-top: 30px;
+  opacity : 0.65;
 
 }
 
 article:hover .icon {
    display: inline;
+   opacity: 1;
 }
 
 article.tweet:hover {
