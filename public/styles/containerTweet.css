@@ -7,21 +7,28 @@
   border-bottom: 2px groove;
 }
 
-.containerTweet article {
+.tweet-body{
 
-  margin-top: 10px;
-  height: 110px;
-  background-color : white;
-  font-size: 30px;
-  margin-bottom: -30px;
+  width: 382px;
+  height: 60px;
+  border-radius: 0px;
+  background-color: white;
+
 }
 
 .containerTweet footer{
 
-  margin-bottom: 5px;
+
   border-top: 2px groove;
   background-color : white;
-  margin-top: 5px;
+
+
+}
+
+.icon {
+  display: none;
+  float: right;
+
 }
 
 .tweetImg{
@@ -45,6 +52,7 @@
 
 .name{
 
+  float: left;
   padding-top: 10px;
   font-size: 25px;
 
@@ -59,7 +67,24 @@
 .containerTweet {
 
   margin-top: 15px;
-  border: 2px groove;
-  background-color: white;
+
 }
 
+.containerTweet i{
+
+  padding-left:10px;
+}
+
+article{
+  border: 2px groove;
+  margin-top: 30px;
+  opacity: 0.65;
+}
+
+article:hover .icon {
+   display: inline;
+}
+
+article.tweet:hover {
+  opacity: 1.0;
+}
