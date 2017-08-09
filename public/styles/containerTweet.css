@@ -5,6 +5,7 @@
   background-color : #D1DDE0;
   font-size: 25px;
   border-bottom: 2px groove;
+
 }
 
 .tweet-body{
@@ -84,7 +85,7 @@
 article{
   border: 2px groove;
   margin-top: 30px;
-  opacity: 0.65;
+
 }
 
 article:hover .icon {

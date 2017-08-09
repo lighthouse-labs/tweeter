@@ -24,7 +24,7 @@ function tweetHeaderTemplate(tweet = {}) {
 }
 
 function tweetFooterTemplate(tweet) {
-  // let $tweetFooter = $('<footer>');
+  // // let $tweetFooter = $('<footer>');
   // let $days = $('<class>').attr('class','timeago').text(tweetUser.created_at)
   // let $icons = $('<i>').attr('class','fa fa-heart icon').attr('aria-hidden', 'true');
   // let $icons2 = $('<i>').attr('class','fa fa-retweet icon').attr('aria-hidden', 'true');
@@ -54,9 +54,23 @@ function createTweetElement(tweet){
  $tweet.append($('<div>').attr('class','tweet-body').text(tweet.content.text));
  $tweet.append(tweetFooterTemplate(tweet));
 
-
  return $tweet;
 }
+
+$( document ).ready(function() {
+
+  tweets.forEach(function renderTweets (tweet) {
+    $('section.containerTweet').append(createTweetElement(tweet));
+  });
+
+  $( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  console.log( $( this ).serialize() );
+  });
+});
+
+
+
 
 
 var tweets = [

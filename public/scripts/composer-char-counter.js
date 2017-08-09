@@ -1,6 +1,7 @@
 
 $( document ).ready(function() {
 
+
   var maxLength = 140;
   $('textarea').keyup(function() {
     var length = $(this).val().length;
@@ -14,9 +15,7 @@ $( document ).ready(function() {
       $('.counter').css('color', 'black');
     }
   });
-  tweets.forEach(function (tweet) {
-      $('section.containerTweet').append(createTweetElement(tweet));
- });
+
 });
 
 
