@@ -1,17 +1,30 @@
-# Tweeter Project
+Project Title
 
-Tweeter is a simple, single-page Twitter clone.
+Project Tweeter is a rclient-side Single Page App (SPA) which communicates with a server via AJAX to post their tweets on the website. It allows user to browse through their old tweets while being able to post a tweet on the page without locating to the new page. Features include compose button, which allows toggling/focusing of the form, and real-time updates.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Prerequisites
 
-## Getting Started
+Please refer to package.json file for details. Required dependencies include body-parser, chance, express, md5, and mongoDB. Dependencies can be installed via command npm install.
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
 
-## Dependencies
+Running the tests
 
-- Express
-- Node 5.10.x or above
+1. Tweeter Test
+
+Fill out a form within 140 words. Check to see if the number counter drops with every character. Pressing submit button enables tweeter to be added. Should the form be blank or exceeds 140 words, submission of the tweeter is disabled and will not be stored in the database.
+
+2. Compose Button Test
+
+Check if Toggling works. ( Press the Compose button to see if the form hides/shows with respective clicks) Check if when the form is revealed, it enables the user to type the tweeter right away.
+
+Versioning
+
+GitHub for versioning.
+
+Authors
+
+Ricky Lee - Initial work
+
+Acknowledgments
+
+Lighthouse Labs and all their wonderful staff.
