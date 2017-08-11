@@ -14,9 +14,9 @@ body .container{
 }
 
 textarea {
-  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  width: 95%;
 }
 
 body .counter{
@@ -26,3 +26,9 @@ body .counter{
 h2 {
   border-bottom: 1px solid black
 }
+
+
+
+/*
+ * Enables Design of the "new-tweet"
+ */

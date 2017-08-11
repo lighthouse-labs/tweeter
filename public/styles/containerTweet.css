@@ -1,42 +1,34 @@
 
 .containerTweet header {
-
-  height: 60px;
+  border-bottom: 2px groove;
   background-color : #D1DDE0;
   font-size: 25px;
-  border-bottom: 2px groove;
-
+  height: 60px;
 }
 
 .tweet-body{
-
-  width: 382px;
-  height: 60px;
   border-radius: 0px;
   background-color: white;
-
+  width: 382px;
+  height: 60px;
 }
 
 .containerTweet footer{
-
-
   border-top: 2px groove;
   background-color : white;
   height: 20px;
-
-
 }
 
 .containerTweet div{
-
-  padding-left: 10px;
   font-family: copperplate;
+  padding-left: 10px;
+  width: auto;
+
 }
 
 .icon {
   display: none;
   float: right;
-
 }
 
 .timeago {
@@ -44,13 +36,10 @@
 }
 
 .tweetImg{
-
-  padding-top: 10px;
-  padding-bottom: 25px;
-  height: 60px;
-  margin-right: 10px;
   background-color: #D1DDE0;
   float: left;
+  height: 50px;
+  margin-right: 10px;
 
 }
 
@@ -63,29 +52,23 @@
 }
 
 .name{
-
   font family: copperplate;
-  padding-top: 10px;
   font-size: 18px;
   font-family: Monaco;
-
+  padding-top: 10px;
 
 }
 .hashName{
-
-  padding-top: 10px;
-  padding-right: 10px;
   float: right;
   font-size: 15px;
+  padding-top: 10px;
+  padding-right: 10px;
 }
 .containerTweet {
-
   margin-top: 15px;
-
 }
 
 .containerTweet i{
-
   padding-left:10px;
 }
 
@@ -93,7 +76,6 @@ article{
   border: 2px groove;
   margin-top: 30px;
   opacity : 0.65;
-
 }
 
 article:hover .icon {
@@ -104,3 +86,8 @@ article:hover .icon {
 article.tweet:hover {
   opacity: 1.0;
 }
+
+
+/*
+ * Enables Design of the container section
+ */

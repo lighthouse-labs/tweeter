@@ -1,4 +1,4 @@
-
+//Counts Character of the form input
 $( document ).ready(function() {
 
 
