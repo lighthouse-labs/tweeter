@@ -79,7 +79,7 @@ $( "form" ).on( "submit", function( event ) {
 
 //Enables hide/show and focus feature of the Compose Tweet
 $('.buttonNav').click(function(){
-   $('.new-tweet').toggle();
+   $('.new-tweet').slideToggle();
    $('textarea').focus();
 });
 
