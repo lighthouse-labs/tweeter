@@ -2,7 +2,7 @@ Project Title
 
 
 Project Tweeter is a rclient-side Single Page App (SPA) which communicates with a server via AJAX to post their tweets on the website. It allows user to browse through their old tweets while being able to post a tweet on the page without locating to the new page. Features include compose button, which allows toggling/focusing of the form, and real-time updates.
-
+https://github.com/Naricky/tweetr/blob/master/doc/TweetOverall.png?raw=true
 
 Prerequisites
 
