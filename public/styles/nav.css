@@ -1,0 +1,68 @@
+
+
+#nav-bar {
+  background-color: #00a087;
+  font-color: #e8fdff;
+  height: 80px;
+  position: fixed;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 95%;
+  z-index: 1;
+}
+
+#nav-bar .logo{
+  float: left;
+  height: 80px;
+  padding-right: 10px;
+  width:  80px;
+
+}
+
+#nav-bar .header {
+  float:left;
+  font-size: 200%;
+  line-height: 80px;
+}
+
+
+#nav-bar button {
+  border-radius: 5px;
+  border: 2px solid #2E8B57 ;
+  border: 2px solid black;
+  float:right;
+  height: 60px;
+  margin-top: 5px;
+}
+
+#nav-bar button i{
+
+  color: green;
+  float:left;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 10px;
+}
+
+#nav-bar button div {
+
+  color: #2E8B57 ;
+  font-size: 25px;
+  float:right;
+  padding-right: 8px;
+}
+
+#nav-bar button:hover div{
+  color: black;
+}
+
+#nav-bar button:hover i{
+  color: black;
+}
+
+
+
+
+/*
+ * Enables Design of the navigation bar and the button
+ */
