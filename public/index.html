@@ -6,27 +6,66 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/containerTweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="vendor/moment.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png" alt="bird" >
       <span class="header">Tweeter</span>
+      <button type="button" class="buttonNav"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <div>Compose</div>
+      </button>
+
     </nav>
+
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+       <h2>Compose Tweet</h2>
+      <form method="POST", action="/tweets">
+      <textarea name="text" placeholder="What are you humming about?"></textarea>
+      <input type="submit" value="Tweet">
+      <span class="counter">140</span>
+      </form>
+      </section>
+
+      <section class="containerTweet">
+        <article class="tweet">
+          <header>
+            <section class="hashName"><div>EdmondLive<div></section>
+            <section class="tweetImg"><img src="/images/smile.png" alt="smile" /></section>
+            <section class="name"> NAME HERE PLZ </section>
+          </header>
+          <div class="tweet-body">Edmond Leeeeeee</div>
+          <footer>
+           <section class="timeago">10 days</section>
+           <i class="fa fa-heart icon" aria-hidden="true"></i>
+           <i class="fa fa-retweet icon" aria-hidden="true"></i>
+           <i class="fa fa-flag icon" aria-hidden="true"></i>
+          </footer>
+        </article>
+
+      </section>
+
     </main>
 
   </body>

@@ -1,0 +1,93 @@
+
+.containerTweet header {
+  border-bottom: 2px groove;
+  background-color : #D1DDE0;
+  font-size: 25px;
+  height: 60px;
+}
+
+.tweet-body{
+  border-radius: 0px;
+  background-color: white;
+  width: 382px;
+  height: 60px;
+}
+
+.containerTweet footer{
+  border-top: 2px groove;
+  background-color : white;
+  height: 20px;
+}
+
+.containerTweet div{
+  font-family: copperplate;
+  padding-left: 10px;
+  width: auto;
+
+}
+
+.icon {
+  display: none;
+  float: right;
+}
+
+.timeago {
+  float: left;
+}
+
+.tweetImg{
+  background-color: #D1DDE0;
+  float: left;
+  height: 50px;
+  margin-right: 10px;
+
+}
+
+.tweetImg img {
+
+  height: 45px;
+  width: 60px;
+  margin-left: 10px;
+
+}
+
+.name{
+  font family: copperplate;
+  font-size: 18px;
+  font-family: Monaco;
+  padding-top: 10px;
+
+}
+.hashName{
+  float: right;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.containerTweet {
+  margin-top: 15px;
+}
+
+.containerTweet i{
+  padding-left:10px;
+}
+
+article{
+  border: 2px groove;
+  margin-top: 30px;
+  opacity : 0.65;
+}
+
+article:hover .icon {
+   display: inline;
+   opacity: 1;
+}
+
+article.tweet:hover {
+  opacity: 1.0;
+}
+
+
+/*
+ * Enables Design of the container section
+ */
