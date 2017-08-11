@@ -22,6 +22,7 @@ Fill out a form within 140 words. Check to see if the number counter drops with 
 Check if Toggling works. ( Press the Compose button to see if the form hides/shows with respective clicks) Check if when the form is revealed, it enables the user to type the tweeter right away.
 
 !["Usage of Compose Button"]https://github.com/Naricky/tweetr/blob/master/doc/BtnBefore.png?raw=true
+
 !["Usage of Compose Button"]https://github.com/Naricky/tweetr/blob/master/doc/BtnAfter.png?raw=true
 
 
