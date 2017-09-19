@@ -1,9 +1,11 @@
 #nav-bar {
   position: fixed;
+  top: 0;
   width: 100%;
   padding: 0px 32px;
   background-color: #00a087;
   color: #e8fdff;
+  z-index: 1;
 }
 
 #nav-bar .logo {
