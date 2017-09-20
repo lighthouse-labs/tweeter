@@ -48,6 +48,7 @@ body {
   border-radius: 10px;
   position: relative;
   opacity: 0.6;
+  margin-bottom: 20px;
 }
 
 .tweet:hover {
@@ -100,7 +101,7 @@ body {
 
 .tweet-action {
   text-decoration: none;
-  color: red;
+  color: #66C5B7;
   float: right;
   padding-right:10px;
   visibility: hidden;
