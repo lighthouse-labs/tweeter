@@ -5,66 +5,61 @@
  */
 // Test / driver code (temporary). Eventually will get this from the server.
 $(function() {
+  $(".composeButton").on("click", function(event) {
+    $(".new-tweet").slideToggle();
+    $(".new-tweet").focus();
+  });
 
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    $(this).serialize();
+
+    if ($('.charCount').val() === ""){
+    alert("Please enter text =)");
+    } else if ($('.charCount').val().length > 140) {
+    alert("You have gone over the character limit =(")
+    return;
+    }
+
+    $(".composeButton").on("click", function(event) {
+      $(".new-tweet").slideToggle([400]);
+    });
+      // $(".charCount").focus();
+
+  $.ajax({
+    url: "/tweets/",
+    method: "POST",
+    data: ($(this).serialize()),
+    success: function(data) {
+      loadTweets();
+    },
+    failure: function(err) {
+    }
+  });
+});
+
+function loadTweets() {
+    $.ajax({
+      url: "/tweets/",
+      method: "GET",
+      dataType: "json",
+      success: function(tweets) {
+        renderTweets(tweets);
+      },
+      failure: function(err) {
+      }
+    });
+  }
+  loadTweets();
 
 function renderTweets(tweets) {
   var tweetContainer = $("section.all-tweets");
-
+  tweetContainer.empty()
   tweets.forEach(function (tweet) {
     var tweetElement = createTweetElement(tweet);
-      tweetContainer.append(tweetElement);
+      tweetContainer.prepend(tweetElement);
   })
 }
-
-  var tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": {
-          "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-          "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-          "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-        },
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": {
-          "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-          "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-          "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-        },
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Johann von Goethe",
-        "avatars": {
-          "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-          "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-          "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-        },
-        "handle": "@johann49"
-      },
-      "content": {
-        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-      },
-      "created_at": 1461113796368
-    }
-  ];
-
-
-renderTweets(tweetData);
 
   function createTweetElement(tweet) {
       return $(`<article class="tweet">
@@ -92,7 +87,8 @@ renderTweets(tweetData);
             </div>
           </footer>
         </article>`);
-
+  }
+})
 
       // let $article = $("section.all-tweets").append("<article#tweet>")
       // $article.append("")
@@ -101,12 +97,3 @@ renderTweets(tweetData);
       // var $img = $('<img>').addClass('user-avatar').attr('src', tweetData.user.avatars.small);
       // $(".tweet-content").append(user.content);
       // $(".tweet-timestamp").append(user.created_at);
-
-    // return $tweet;
-  }
-// Test / driver code (temporary)
- // console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-//  var $tweet = createTweetElement(tweetData[2]);
-})

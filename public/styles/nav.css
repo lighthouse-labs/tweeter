@@ -21,8 +21,20 @@
   vertical-align: middle;
 }
 
-#nav-bar .compose {
+#nav-bar .composeButton {
   float: right;
-  border: 2px;
+  text-align: center;
+  line-height: 20px;
+  padding: 20px;
+  margin-top: 8px;
+  border: 1px solid black;
   border-radius: 10px;
+  color: #2C8E81;
+  background-color: #E7FDFF;
+  font-size: 20px;
+}
+
+#nav-bar .composeButton:hover {
+  color: black;
+  background-color: white;
 }
