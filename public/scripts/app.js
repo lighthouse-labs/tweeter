@@ -16,7 +16,6 @@ function safeString(strings, ...replacements) {
   }).join('');
 
   return ret;
-  // console.log(strings, replacements.map(escape));
 }
 
 $(function() {
@@ -105,11 +104,3 @@ $(function() {
       </article>`);
   }
 })
-
-      // let $article = $("section.all-tweets").append("<article#tweet>")
-      // $article.append("")
-      // $(".user-name").append(tweet.user.name);
-      // $(".user-handle").append(user.handle);
-      // var $img = $('<img>').addClass('user-avatar').attr('src', tweetData.user.avatars.small);
-      // $(".tweet-content").append(user.content);
-      // $(".tweet-timestamp").append(user.created_at);
