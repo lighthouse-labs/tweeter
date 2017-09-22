@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700i" rel="stylesheet">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <link rel="stylesheet" href="/styles/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-  <body>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
-    </nav>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <img class="logo" src="/images/bird.png">
+    <span class="header">Tweeter</span>
+    <button class="composeButton"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Compose</button>
+  </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
 
-  </body>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="post">
+          <textarea name="text" class="charCount" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+    </section>
+
+        <h1>All Tweets</h1>
+
+    <section class="all-tweets">
+      <article class="tweet">
+        <header class="tweet-header">
+          <a href="#">
+            <img class="user-avatar" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png" alt="Newton">
+          </a>
+          <a class="user-name" href="#">Newton</a>
+          <a class="user-handle" href="#">@SirIsaac</a>
+        </header>
+        <main class="tweet-content">
+            <p class="insert">"If I have seen further it is by standing on the shoulders of giants."</p>
+        </main>
+        <footer class="tweet-footer">
+          <div class="tweet-timestamp">Created 2 days ago
+            <a class="tweet-action" href="#">
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </a>
+            <a class="tweet-action" href="#">
+            <i class="fa fa-flag" aria-hidden="true"></i>
+            </a>
+            <a class="tweet-action" href="#">
+            <i class="fa fa-retweet" aria-hidden="true"></i>
+            </a>
+          </div>
+        </footer>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
