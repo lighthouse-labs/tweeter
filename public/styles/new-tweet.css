@@ -1,0 +1,30 @@
+section {
+  margin: 2em;
+  background-color: #eee;
+  border: 1px solid silver;
+  border-radius: 3px;
+  padding: 10px;
+  overflow: auto;
+}
+
+section h2 {
+  margin: 0;
+  border-bottom: 1px solid black;
+}
+
+section textarea {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  padding: 5px;
+}
+
+section input {
+  float: left;
+}
+
+section .counter {
+  font-style: italic;
+  float: right;
+}
