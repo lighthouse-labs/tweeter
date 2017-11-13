@@ -26,7 +26,7 @@ body {
  */
 main {
   width: 450px;
-  height: 1000px;
+  height: auto;
   margin: auto;
   background-color: white;
   margin-top: 140px;
