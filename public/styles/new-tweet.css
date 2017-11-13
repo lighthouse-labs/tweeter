@@ -27,4 +27,6 @@ section input {
 section .counter {
   font-style: italic;
   float: right;
+  font-size: 0.9em;
+  margin-top: 5px;
 }
