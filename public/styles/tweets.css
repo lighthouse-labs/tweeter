@@ -1,0 +1,44 @@
+section.tweets {
+  background-color: #FFF;
+  padding: 0px;
+}
+
+article.tweet header {
+  color: #C0C0C0;
+  background-color: #EEE;
+  overflow: auto;
+  height: 80px;
+  color: SlateGrey;
+}
+
+article.tweet .avatar {
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  float: left
+}
+
+article.tweet .user-name {
+  margin: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  float: left;
+}
+
+article.tweet .screen-name {
+  margin: 10px;
+  margin-top: 20px;
+  float: right;
+}
+
+article.tweet .tweet-content {
+  border-bottom: 1px solid #C0C0C0;
+  padding: 15px;
+}
+
+article.tweet footer {
+  font-size: 0.8em;
+  padding: 10px;
+  float: left;
+}
