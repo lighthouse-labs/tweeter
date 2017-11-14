@@ -4,12 +4,13 @@ padding-left: 2em;
 padding-bottom: 2em;
 margin-left: 2em;
 margin-right: 2em;
+margin-bottom: 2em;
 background-color: #eeeeee;
 border: 2px solid rgba(218, 217, 217, 0.94);
 border-radius: 5px;
 }
 
-main h2 {
+.new-tweet h2 {
   border-bottom: #244852 1px solid
 }
 

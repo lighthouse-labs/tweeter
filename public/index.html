@@ -11,7 +11,11 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -40,15 +44,29 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets/">
-        <textarea name="text" placeholder="What are you humming about?""></textarea>
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
         <input type="submit" value="Tweet">
         <span class="counter">140</span>
       </form>
     </section>
-
-
-
+    <section id="tweet-container">
+      <article class="tweet">
+      <header class="tweet-header">
+      <img class="tweet-logo" src="http://fillmurray.com/200/300">
+      <div class="tweet-username">Bill Murray</div>
+      <div class="tweet-tag">@bmurray</div>
+      </header>
+      <p class="tweet-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <footer>
+        <p>10 days ago</p>
+        <div class="tweet-icons">
+          <i class="fa fa-flag" aria-hidden="true"></i>
+          <i class="fa fa-retweet" aria-hidden="true"></i>
+          <i class="fa fa-heart" aria-hidden="true"></i>
+         </div>
+      </footer>
+      </article>
+    </section>
     </main>
-
   </body>
 </html>
