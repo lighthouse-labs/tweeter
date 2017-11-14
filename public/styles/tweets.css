@@ -63,7 +63,9 @@ article.tweet {
 .tweet:hover .tweet-icons {
   float: right;
   display: block;
-
+  margin-top: 15px;
+  margin-right: 5px;
+  color: #62c6b8;
 }
 
 
