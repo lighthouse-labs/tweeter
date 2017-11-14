@@ -30,3 +30,7 @@ section .counter {
   font-size: 0.9em;
   margin-top: 5px;
 }
+
+.too-many-chars {
+  color: #FF0000;
+}
