@@ -31,6 +31,6 @@ section .counter {
   margin-top: 5px;
 }
 
-.too-many-chars {
+.error {
   color: #FF0000;
 }
