@@ -55,8 +55,13 @@ $(document).ready(() => {
     }
   ];
 
+  function convertTime(ms) {
+    return Math.floor((Date.now() - ms) / (1000*60*60*24));
+  }
+
   function createTweetElement(tweetData) {
     let newTweet = $("<article class='tweet'>").append($("<header>"));
+    let time = convertTime(tweetData.created_at);
 
     let header = newTweet.children("header");
     header.append($("<img />", { src: tweetData.user.avatars.small, class: "avatar", alt: "avatar" }));
@@ -67,7 +72,7 @@ $(document).ready(() => {
     // create footer
     newTweet.append($("<footer class='tweet-footer'>"));
     let footer = newTweet.children("footer");
-    footer.append($("<p>").text(tweetData.created_at));
+    footer.append($("<p>").text(`${time} days ago`));
     footer.append($("<div class='icons'>"));
     // create icons
     let icons = footer.children("div");
