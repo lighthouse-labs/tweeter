@@ -24,3 +24,19 @@
   font-size: 2em;
   line-height: 80px;
 }
+
+#nav-bar .compose {
+  background-color: LightCyan;
+  color: SeaGreen;
+  float: right;
+  line-height: 55px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  vertical-align: text-bottom;
+}
+
+#nav-bar .compose:hover {
+  background-color: White;
+}
