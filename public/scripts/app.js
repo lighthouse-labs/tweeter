@@ -28,6 +28,7 @@ function createTweetElement(tweet) {
 
 // takes input from textarea and appends all data from createTweetElement function
 function renderTweets(tweets) {
+  $("#tweets-container").text('')
   for (tweet of tweets) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
@@ -68,10 +69,15 @@ $(document).ready(function() {
   //loadTweets()
   let userInput = $('#tweet-box').val().length;
 
+
   // compose tweet slide toggle
   $("#nav-bar button").click(function() {
     $(".new-tweet").slideToggle();
   });
+  // auto select textarea
+  $("#nav-bar button").click(function() {
+  $("#tweet-box").select();
+});
 
 
   // when a new tweet is submitted post the result to /tweets, but do not leave page
