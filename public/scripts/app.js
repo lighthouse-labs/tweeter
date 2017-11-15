@@ -66,7 +66,7 @@ function validateTweets(form) {
 
 // on document load
 $(document).ready(function() {
-  //loadTweets()
+  loadTweets()
   let userInput = $('#tweet-box').val().length;
 
 
