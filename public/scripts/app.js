@@ -30,7 +30,7 @@ function createTweetElement(tweet) {
 // takes input from textarea and appends all data from createTweetElement function
 function renderTweets(tweets) {
   for (tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet));
+    $('#tweets-container').prepend(createTweetElement(tweet));
   }
 }
 
@@ -67,7 +67,7 @@ function validateTweets(form) {
 // on document load
 $(document).ready(function() {
   //loadTweets()
-  let userInput = $('#tweet-box').val().length
+  let userInput = $('#tweet-box').val().length;
   // when a new tweet is submitted post the result to /tweets, but do not leave page
   $("form").on("submit", function(event) {
     event.preventDefault();
@@ -81,7 +81,7 @@ $(document).ready(function() {
       success: function () {
         loadTweets()
         $("#tweet-box").val('');
-        $('form.counter').val('140')
+        $('form .counter').text(140);
       }
     });
   };
