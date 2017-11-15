@@ -55,35 +55,35 @@ $(document).ready(() => {
     }
   ];
 
- function createTweetElement(tweetData) {
-   let newTweet = $("<article class='tweet'>").append($("<header>"));
-   let header = newTweet.children("header");
-   header.append($("<img />", { src: tweetData.user.avatars.small, class: "avatar", alt: "avatar" }));
-   header.append($("<div class='user-name'>").text(tweetData.user.name));
-   header.append($("<div class='handle'>").text(tweetData.user.handle));
-   // create content
-   newTweet.append($("<div class='tweet-content'>").text(tweetData.content.text));
-   // create footer
-   newTweet.append($("<footer class='tweet-footer'>"));
-   let footer = newTweet.children("footer");
-   footer.append($("<p>").text(tweetData.created_at));
-   footer.append($("<div class='icons'>"));
-   // create icons
-   let icons = footer.children("div");
-   icons.append($("<i class='flag fa fa-flag-o'>"));
-   icons.append($("<i class='retweet fa fa-retweet'>"));
-   icons.append($("<i class='heart fa fa-heart-o'>"));
+  function createTweetElement(tweetData) {
+    let newTweet = $("<article class='tweet'>").append($("<header>"));
 
-   return newTweet;
- }
+    let header = newTweet.children("header");
+    header.append($("<img />", { src: tweetData.user.avatars.small, class: "avatar", alt: "avatar" }));
+    header.append($("<div class='user-name'>").text(tweetData.user.name));
+    header.append($("<div class='handle'>").text(tweetData.user.handle));
+    // create content
+    newTweet.append($("<div class='tweet-content'>").text(tweetData.content.text));
+    // create footer
+    newTweet.append($("<footer class='tweet-footer'>"));
+    let footer = newTweet.children("footer");
+    footer.append($("<p>").text(tweetData.created_at));
+    footer.append($("<div class='icons'>"));
+    // create icons
+    let icons = footer.children("div");
+    icons.append($("<i class='flag fa fa-flag-o'>"));
+    icons.append($("<i class='retweet fa fa-retweet'>"));
+    icons.append($("<i class='heart fa fa-heart-o'>"));
 
- function renderTweets(array) {
-   array.forEach((item) => {
-     let tweet = createTweetElement(item);
-     $("#tweets").append(tweet);
-   });
- }
+    return newTweet;
+  }
 
+  function renderTweets(array) {
+    array.forEach((item) => {
+      let tweet = createTweetElement(item);
+      $("#tweets").append(tweet);
+    });
+  }
 
   renderTweets(data);
 });
