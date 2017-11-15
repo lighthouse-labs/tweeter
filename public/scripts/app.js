@@ -26,13 +26,14 @@ function createTweetElement(tweet) {
 }
 
 function renderTweets(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
   for (tweet of tweets) {
     $('#tweets-container').append(createTweetElement(tweet));
   }
 }
+
+
+
+
 
 var data = [
   {
@@ -83,4 +84,16 @@ var data = [
 
 $(document).ready(function() {
   renderTweets(data);
+
+$("form").on("submit", function(event) {
+  event.preventDefault();
+  console.log($(this).serialize());
+  $.ajax({
+    url: "/tweets",
+    method: "POST",
+    data: $(this).serialize(),
+    success: renderTweets
+  });
+  });
+
 });
