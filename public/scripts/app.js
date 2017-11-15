@@ -54,7 +54,7 @@
 function createTweetElement(tweetData) {
   let newTweet = $("<article class='tweet'>").append($("<header>"));
   let header = newTweet.children("header");
-  header.append($("<img />", { src: tweetData.user.avatars.small, class: "avatar", alt: "avatar"}));
+  header.append($("<img />", { src: tweetData.user.avatars.small, class: "avatar", alt: "avatar" }));
   header.append($("<div class='user-name'>").text(tweetData.user.name));
   header.append($("<div class='handle'>").text(tweetData.user.handle));
   // create content
@@ -74,13 +74,13 @@ function createTweetElement(tweetData) {
 }
 
 function renderTweets(array) {
-  array.forEach(function(item) {
+  array.forEach((item) => {
     let tweet = createTweetElement(item);
     $("#tweets").append(tweet);
   });
 }
 
 
-$(document).ready(function() {
+$(document).ready(() => {
   renderTweets(data);
 });
