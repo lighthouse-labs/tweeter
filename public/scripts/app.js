@@ -43,6 +43,19 @@ $(document).ready(() => {
     });
   }
 
+  function validateTweet() {
+    // remove old error messages
+    $("div.error-message").remove();
+
+    let tweet = $("#tweet-field").val();
+    if (!tweet) {
+      $(".new-tweet").after($("<div class='error-message'>").text("Tweet is empty!"));
+    }
+    if (tweet.length > 140) {
+      $(".new-tweet").after($("<div class='error-message'>").text("Tweet exceeds character limit!"));
+    }
+  }
+
   function loadTweets() {
     $.ajax({
       url: 'tweets',
@@ -52,15 +65,17 @@ $(document).ready(() => {
       }
     });
   }
-  loadTweets();
 
   function submitTweet() {
     let $button = $("#submit-tweet");
     $button.on("click", (event) => {
       event.preventDefault();
+      validateTweet();
       console.log($("#tweet-field").serialize());
     });
   }
+
+  loadTweets();
   submitTweet();
 
 });
