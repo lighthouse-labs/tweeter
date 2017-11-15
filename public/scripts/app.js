@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 function createTweetElement(tweet) {
   let $tweet = `
   <article class="tweet">
@@ -68,6 +67,13 @@ function validateTweets(form) {
 $(document).ready(function() {
   //loadTweets()
   let userInput = $('#tweet-box').val().length;
+
+  // compose tweet slide toggle
+  $("#nav-bar button").click(function() {
+    $(".new-tweet").slideToggle();
+  });
+
+
   // when a new tweet is submitted post the result to /tweets, but do not leave page
   $("form").on("submit", function(event) {
     event.preventDefault();
