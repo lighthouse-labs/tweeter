@@ -46,13 +46,33 @@ function loadTweets(arr) {
   });
 }
 
+
+// validation function
+function validateTweets(form) {
+  let input = $("textarea[name='text']", form).val()
+  $(".error-message").val('')
+  if (input.length > 140) {
+    $('.error-message').text("Please remove some characters!");
+    return false;
+  } else if (input.length === 0) {
+    $('.error-message').text("Please input something!")
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
+
 // on document load
 $(document).ready(function() {
-  loadTweets()
+  //loadTweets()
+  let userInput = $('#tweet-box').val().length
   // when a new tweet is submitted post the result to /tweets, but do not leave page
   $("form").on("submit", function(event) {
     event.preventDefault();
-    console.log($(this).serialize());
+   // console.log(this)
+   if (validateTweets(this)) {
     $.ajax({
       url: "/tweets",
       method: "POST",
@@ -61,7 +81,9 @@ $(document).ready(function() {
       success: function () {
         loadTweets()
         $("#tweet-box").val('');
+        $('form.counter').val('140')
       }
     });
-  });
+  };
+});
 });
