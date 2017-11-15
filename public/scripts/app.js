@@ -28,7 +28,7 @@ function createTweetElement(tweet) {
 
 // takes input from textarea and appends all data from createTweetElement function
 function renderTweets(tweets) {
-  $("#tweets-container").text('')
+  $("#tweets-container").text('');
   for (tweet of tweets) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
@@ -41,7 +41,7 @@ function loadTweets(arr) {
     method: 'GET',
     format: 'json',
     success: function (tweets) {
-      renderTweets(tweets)
+      renderTweets(tweets);
     }
   });
 }
@@ -49,13 +49,13 @@ function loadTweets(arr) {
 
 // validation function
 function validateTweets(form) {
-  let input = $("textarea[name='text']", form).val()
-  $(".error-message").val('')
+  let input = $("textarea[name='text']", form).val();
+  $(".error-message").val('');
   if (input.length > 140) {
     $('.error-message').text("Please remove some characters!");
     return false;
   } else if (input.length === 0) {
-    $('.error-message').text("Please input something!")
+    $('.error-message').text("Please input something!");
     return false;
   } else {
     return true;
@@ -66,10 +66,8 @@ function validateTweets(form) {
 
 // on document load
 $(document).ready(function() {
-  loadTweets()
+  loadTweets();
   let userInput = $('#tweet-box').val().length;
-
-
   // compose tweet slide toggle
   $("#nav-bar button").click(function() {
     $(".new-tweet").slideToggle();
@@ -78,8 +76,6 @@ $(document).ready(function() {
   $("#nav-bar button").click(function() {
   $("#tweet-box").select();
 });
-
-
   // when a new tweet is submitted post the result to /tweets, but do not leave page
   $("form").on("submit", function(event) {
     event.preventDefault();
@@ -91,11 +87,11 @@ $(document).ready(function() {
       data: $(this).serialize(),
       // on success, pass in the loadTweets function and remove text from the textarea
       success: function () {
-        loadTweets()
+        loadTweets();
         $("#tweet-box").val('');
         $('form .counter').text(140);
       }
     });
-  };
+  }
 });
 });

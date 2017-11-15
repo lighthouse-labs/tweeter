@@ -16,12 +16,10 @@ main .new-tweet {
 
 main textarea {
   width: 100%;
-
 }
 
 .counter {
   float: right;
-
 }
 
 .red {
