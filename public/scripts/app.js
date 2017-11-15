@@ -4,12 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(document).ready(() => {
 
   function convertTime(ms) {
-    return Math.floor((Date.now() - ms) / (1000*60*60*24));
+    return Math.floor((Date.now() - ms) / (1000 * 60 * 60 * 24));
   }
 
   function createTweetElement(tweetData) {
@@ -37,6 +35,7 @@ $(document).ready(() => {
   }
 
   function renderTweets(array) {
+    $("#tweets").empty();
     array.forEach((item) => {
       let tweet = createTweetElement(item);
       $("#tweets").append(tweet);
@@ -60,7 +59,7 @@ $(document).ready(() => {
     $.ajax({
       url: 'tweets',
       method: 'GET',
-      success: function (tweets) {
+      success: (tweets) => {
         renderTweets(tweets);
       }
     });
@@ -71,7 +70,13 @@ $(document).ready(() => {
     $button.on("click", (event) => {
       event.preventDefault();
       validateTweet();
-      console.log($("#tweet-field").serialize());
+      let serializedData = $("#tweet-field").serialize();
+      $.ajax({
+        url: 'tweets',
+        method: 'POST',
+        data: serializedData
+      })
+        .then(function() { loadTweets(); });
     });
   }
 
