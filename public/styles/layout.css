@@ -41,3 +41,11 @@ footer .page-footer {
    padding-left: 2em;
    padding-right: 2em;
 }
+
+.error-message {
+  background-color: Khaki;
+  border: 1px solid Orange;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 10px;
+}
