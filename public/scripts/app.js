@@ -52,11 +52,9 @@
  ];
 
 function createTweetElement(tweetData) {
-  let newTweet = $("<article class='tweet'>");
-  // create header
-  newTweet.append($("<header>"));
+  let newTweet = $("<article class='tweet'>").append($("<header>"));
   let header = newTweet.children("header");
-  header.append($("<img />", { src: tweetData.user.avatars.small }).addClass("avatar"));
+  header.append($("<img />", { src: tweetData.user.avatars.small, alt: "avatar"}).addClass("avatar"));
   header.append($("<div class='user-name'>").text(tweetData.user.name));
   header.append($("<div class='handle'>").text(tweetData.user.handle));
   // create content
