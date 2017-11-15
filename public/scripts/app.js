@@ -22,21 +22,17 @@ function createTweetElement(tweet) {
       </footer>
       </article>
   `;
-    return $tweet;
+  return $tweet;
 }
-
 
 function renderTweets(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   for (tweet of tweets) {
-    console.log(`tweet is : ${tweet}`)
     $('#tweets-container').append(createTweetElement(tweet));
   }
 }
-
-
 
 var data = [
   {
@@ -85,8 +81,6 @@ var data = [
   }
 ];
 
-
-
 $(document).ready(function() {
   renderTweets(data);
-})
+});

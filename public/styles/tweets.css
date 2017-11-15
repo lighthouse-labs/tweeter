@@ -1,10 +1,10 @@
 #tweets-container {
-padding-right: 1em;
-padding-left: 1em;
-padding-bottom: 0em;
-margin-left: 1em;
-margin-right: 1em;
-background-color: white;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-bottom: 0em;
+  margin-left: 1em;
+  margin-right: 1em;
+  background-color: white;
 }
 
 article.tweet {
@@ -39,6 +39,7 @@ article.tweet {
   font-size: 2em;
   padding-left: 2.5px;
   font-weight: bold;
+  width: 150px;
 }
 
 .tweet:hover .tweet-username {
@@ -61,6 +62,7 @@ article.tweet {
 .tweet-icons {
   display: none;
 }
+
 .tweet:hover .tweet-icons {
   float: right;
   display: block;
