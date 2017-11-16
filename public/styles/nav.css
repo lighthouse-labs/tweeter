@@ -29,7 +29,7 @@
   background-color: LightCyan;
   color: SeaGreen;
   float: right;
-  line-height: 55px;
+  line-height: 56px;
   width: 100px;
   margin: 10px;
   border: 1px solid black;
@@ -39,4 +39,5 @@
 
 #nav-bar .compose:hover {
   background-color: White;
+  cursor: pointer;
 }
