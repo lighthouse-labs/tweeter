@@ -4,7 +4,9 @@ Tweeter is a simplified single-page Twitter clone using HTML, CSS, JS, jQuery an
 
 ## Final Product
 
-pictures
+!["Main Page"](https://github.com/MattEmond/tweeter/blob/master/docs/full-page.png?raw=true)
+!["Nav-Bar"](https://github.com/MattEmond/tweeter/blob/master/docs/nav-bar.png?raw=true)
+!["Compose Tweet Box"](https://github.com/MattEmond/tweeter/blob/master/docs/compose-tweet.png?raw=true)
 
 ## Dependencies
 
