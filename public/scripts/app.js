@@ -55,10 +55,13 @@ $(document).ready(() => {
     let tweet = $("#tweet-field").val();
     if (!tweet) {
       $(".new-tweet").after($("<div class='error-message'>").text("Tweet is empty!"));
+      return false;
     }
     if (tweet.length > 140) {
       $(".new-tweet").after($("<div class='error-message'>").text("Tweet exceeds character limit!"));
+      return false;
     }
+    return true;
   }
 
   function loadTweets() {
@@ -75,15 +78,16 @@ $(document).ready(() => {
     let $button = $("#submit-tweet");
     $button.on("click", (event) => {
       event.preventDefault();
-      validateTweet();
-      // post new tweet
-      let serializedData = $("#tweet-field").serialize();
-      $.ajax({
-        url: 'tweets',
-        method: 'POST',
-        data: serializedData
-      })
+      if (validateTweet()) {
+        // post new tweet
+        let serializedData = $("#tweet-field").serialize();
+        $.ajax({
+          url: 'tweets',
+          method: 'POST',
+          data: serializedData
+        })
         .then(function() { loadTweets(); });
+      }
     });
   }
 
