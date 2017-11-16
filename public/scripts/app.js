@@ -37,14 +37,11 @@ $(document).ready(() => {
   function renderTweets(array) {
     // remove loaded tweets
     $("#tweets").empty();
-    // sort tweets array
-    array.sort((a, b) => {
-      return b.created_at - a.created_at;
-    });
+
     // render each tweet in array
     array.forEach((item) => {
       let tweet = createTweetElement(item);
-      $("#tweets").append(tweet);
+      $("#tweets").prepend(tweet);
     });
   }
 
