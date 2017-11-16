@@ -83,10 +83,10 @@ $(document).ready(() => {
           method: 'POST',
           data: serializedData
         })
-        .then(function() {
-          $("#tweet-field").val("");
-          loadTweets();
-        });
+          .then(function() {
+            $("#tweet-field").val("");
+            loadTweets();
+          });
       }
     });
   }
