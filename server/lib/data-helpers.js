@@ -19,4 +19,5 @@ module.exports = function makeDataHelpers(db) {
     }
 
   };
+  db.close();
 }
