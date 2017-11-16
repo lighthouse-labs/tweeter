@@ -30,7 +30,7 @@ function createTweetElement(tweet) {
 function renderTweets(tweets) {
   $("#tweets-container").text('');
   for (tweet of tweets) {
-    $('#tweets-container').prepend(createTweetElement(tweet));
+    $('#tweets-container').append(createTweetElement(tweet));
   }
 }
 
@@ -75,11 +75,10 @@ $(document).ready(function() {
   // auto select textarea
   $("#nav-bar button").click(function() {
   $("#tweet-box").select();
-});
+  });
   // when a new tweet is submitted post the result to /tweets, but do not leave page
   $("form").on("submit", function(event) {
     event.preventDefault();
-   // console.log(this)
    if (validateTweets(this)) {
     $.ajax({
       url: "/tweets",
@@ -90,8 +89,8 @@ $(document).ready(function() {
         loadTweets();
         $("#tweet-box").val('');
         $('form .counter').text(140);
-      }
-    });
-  }
-});
+        }
+      });
+    }
+  });
 });
