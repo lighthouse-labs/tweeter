@@ -16,6 +16,7 @@ main .new-tweet {
 
 main textarea {
   width: 100%;
+  height: 60px;
 }
 
 .counter {
