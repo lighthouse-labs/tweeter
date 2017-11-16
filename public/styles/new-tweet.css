@@ -18,6 +18,7 @@ section textarea {
   margin-top: 20px;
   margin-bottom: 4px;
   padding: 5px;
+  resize: vertical;
 }
 
 section input {
