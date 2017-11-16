@@ -39,4 +39,5 @@ float: left;
 
 #nav-bar button:hover {
   background-color: white;
+  cursor: pointer;
 }

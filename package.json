@@ -15,6 +15,7 @@
     "chance": "^1.0.2",
     "express": "^4.13.4",
     "md5": "^2.1.0",
+    "moment": "^2.19.2",
     "mongodb": "^2.2.33"
   },
   "devDependencies": {

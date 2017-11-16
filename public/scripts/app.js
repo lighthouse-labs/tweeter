@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 function createTweetElement(tweet) {
   let $tweet = `
   <article class="tweet">
@@ -19,7 +20,7 @@ function createTweetElement(tweet) {
           <i class="fa fa-retweet" aria-hidden="true"></i>
           <i class="fa fa-heart" aria-hidden="true"></i>
          </div>
-        <p>${tweet.created_at}</p>
+        <p>${moment(tweet.created_at).fromNow()}</p>
       </footer>
       </article>
   `;
