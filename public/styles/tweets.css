@@ -29,6 +29,7 @@ article.tweet {
   float: right;
   color: #667d85;
   line-height: 0em;
+  padding-top: 5px
 }
 
 .tweet-username {

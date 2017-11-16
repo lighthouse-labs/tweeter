@@ -4,7 +4,7 @@
   overflow: hidden;
   height: 80px;
   width: 100%;
-  background-color: #00a087;
+  background-color: #3597da;
   color: #e8fdff;
   padding-right: 2em;
   padding-left: 2em;
@@ -23,6 +23,7 @@
 font-size: 2em;
 line-height: 2.5em;
 float: left;
+color: white;
 }
 
 #nav-bar button {
