@@ -31,7 +31,8 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: Date.now(),
+      liked : 0
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
@@ -39,6 +40,18 @@ module.exports = function(DataHelpers) {
         res.status(500).json({ error: err.message });
       } else {
         res.status(201).send();
+      }
+    });
+  });
+
+// get likes
+// Get Tweets
+  tweetsRoutes.post("/:id", function(req, res) {
+    DataHelpers.getTweets((err, tweets) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.json(tweets);
       }
     });
   });

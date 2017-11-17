@@ -16,9 +16,10 @@ function createTweetElement(tweet) {
       <p class="tweet-text">${tweet.content.text}</p>
       <footer class="tweet-footer">
         <div class="tweet-icons">
-          <i class="fa fa-flag" aria-hidden="true"></i>
-          <i class="fa fa-retweet" aria-hidden="true"></i>
-          <i class="fa fa-heart" aria-hidden="true"></i>
+          <i class="unactivated fa fa-flag" aria-hidden="true"></i>
+          <i class="unactivated fa fa-retweet" aria-hidden="true"></i>
+          <i class="unactivated like fa fa-heart" aria-hidden="true"></i>
+          <span class="like-counter">0</span>
          </div>
         <p>${moment(tweet.created_at).fromNow()}</p>
       </footer>

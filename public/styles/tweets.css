@@ -69,10 +69,18 @@ article.tweet {
   display: block;
   margin-top: 15px;
   margin-right: 5px;
-  color: #62c6b8;
 }
 
+.unactivated {
+  color: #62c6b8;
 
+}
 
+.like:hover {
+  cursor: pointer;
+}
 
+.activated {
+  color: #e17878;
+}
 
