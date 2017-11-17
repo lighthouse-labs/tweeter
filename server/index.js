@@ -1,5 +1,5 @@
 "use strict";
-
+/*jshint esversion: 6 */
 // Basic express setup:
 
 const PORT          = 8080;
@@ -46,6 +46,3 @@ app.listen(PORT, () => {
 
 });
 });
-
-
-
