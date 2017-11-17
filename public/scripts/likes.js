@@ -1,22 +1,24 @@
 $(document).ready(function() {
-  // $("#tweets-container").on("click", ".like", function(e) {
-
 
 
   $("#tweets-container").on("click",".like", function(event) {
     event.preventDefault();
-    if (getlikes(this)) {
+    var id = $(this).data('id')
+    console.log(id)
+    // if (getlikes(this)) {
       $.ajax({
-      url: "/:id",
+      url: `/tweets/${id}`,
       method: "POST",
       data: $(this).serialize(),
       // on success, pass in the loadTweets function and remove text from the textarea
-      success: function () {
+      success: function (tweet) {
+        console.log("Made it back to likes.js")
         $(".like").toggleClass("activated").toggleClass("unactivated")
+        $(`.like-counter[data-id=${tweet._id}]`).text(tweet.likes);
         }
       });
-      }
+      // }
     });
   })
-// })
+
 

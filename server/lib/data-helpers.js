@@ -1,5 +1,10 @@
 "use strict";
 
+// Get the objectID type
+var ObjectID = require('mongodb').ObjectID;
+
+
+
 // Simulates the kind of delay we see with network or filesystem operations
 const simulateDelay = require("./util/simulate-delay");
 
@@ -13,12 +18,16 @@ module.exports = function makeDataHelpers(db) {
         callback(null, true);
     },
 
-      getLikes: function(id, callback) {
-        var like = db.collection("tweets").findOne({'_id':id});
-        console.log(like)
-        callback(null, true);
+  getLikes: function(id, callback) {
+    console.log("Made it to data helpers")
+    db.collection("tweets").findOneAndUpdate({'_id': new ObjectID(id)}, {$inc: {likes: 1}}, true)
+    .then((tweet, err) => {
+      callback(err, tweet);
+    })
+  },
 
-    },
+
+
 
 
 

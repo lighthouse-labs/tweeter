@@ -6,8 +6,10 @@
 
 
 function createTweetElement(tweet) {
+  console.log(tweet)
+  var id = tweet._id
   let $tweet = `
-  <article class="tweet">
+  <article data-id="${id}" class="tweet">
       <header class="tweet-header">
       <img class="tweet-logo" src="${tweet.user.avatars.small}">
       <div class="tweet-username">${tweet.user.name}</div>
@@ -18,8 +20,8 @@ function createTweetElement(tweet) {
         <div class="tweet-icons">
           <i class="unactivated fa fa-flag" aria-hidden="true"></i>
           <i class="unactivated fa fa-retweet" aria-hidden="true"></i>
-          <i class="unactivated like fa fa-heart" aria-hidden="true"></i>
-          <span class="like-counter">0</span>
+          <i data-id="${id}" class="unactivated like fa fa-heart" aria-hidden="true"></i>
+          <span data-id="${id}" class="like-counter">${tweet.likes}</span>
          </div>
         <p>${moment(tweet.created_at).fromNow()}</p>
       </footer>

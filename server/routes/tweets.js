@@ -1,4 +1,5 @@
 "use strict";
+/*jshint esversion: 6 */
 
 const userHelper    = require("../lib/util/user-helper")
 
@@ -44,14 +45,19 @@ module.exports = function(DataHelpers) {
     });
   });
 
+
+
 // get likes
-// Get Tweets
   tweetsRoutes.post("/:id", function(req, res) {
-    DataHelpers.getTweets((err, tweets) => {
+    console.log("params is :", req.params.id)
+    console.log("Made it to tweets.js")
+    DataHelpers.getLikes(req.params.id, (err, tweet) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.json(tweets);
+        console.log("err is :", err)
+        console.log("Just before responding", tweet.value)
+        res.json(tweet.value);
       }
     });
   });
