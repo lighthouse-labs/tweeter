@@ -1,0 +1,73 @@
+@import "colors";
+
+#tweets {
+  background-color: $tweet-primary;
+  padding: 0px;
+
+  .tweet {
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    margin: 10px;
+
+    header {
+      background-color: $tweet-secondary;
+      overflow: auto;
+      height: 80px;
+      color: $header-text;
+    }
+
+    .avatar {
+      margin: 8px;
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      float: left
+    }
+
+    .user-name {
+      margin: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      float: left;
+    }
+
+    .handle {
+      margin: 10px;
+      margin-top: 20px;
+      float: right;
+    }
+
+    .tweet-content {
+      border-bottom: 1px solid $border-color;
+      padding: 15px;
+    }
+
+    .tweet-footer {
+      font-size: 0.8em;
+      overflow: auto;
+      margin-bottom: 10px;
+
+      p {
+        float: left;
+        margin: 10px;
+      }
+
+      .icons {
+        margin: 6px;
+        float: right;
+        display: none;
+      }
+
+      .fa {
+        padding: 5px;
+        color: $brand-primary;
+      }
+    }
+
+    &:hover {
+      .icons {
+        display: flex;
+      }
+    }
+  }
+}

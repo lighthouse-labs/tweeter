@@ -1,0 +1,45 @@
+@import "colors";
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: block;
+  background-color: $brand-primary;
+  color: $brand-secondary;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-bottom: 2em;
+  z-index: 1;
+
+  .logo {
+    float: left;
+    height: 80px;
+    width: 80px;
+  }
+
+  .header {
+    float: left;
+    font-size: 2em;
+    line-height: 80px;
+  }
+
+  .compose {
+    background-color: $brand-secondary;
+    color: $brand-primary;
+    float: right;
+    line-height: 56px;
+    width: 100px;
+    margin: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    vertical-align: text-bottom;
+
+    &:hover {
+      background-color: $tweet-primary;
+      cursor: pointer;
+    }
+  }
+}
