@@ -42,4 +42,26 @@
       cursor: pointer;
     }
   }
+
+}
+
+@media screen and (max-width: 600px) {
+  #nav-bar {
+    padding-left: 1em;
+    padding-right: 1em;
+
+    .logo {
+      height: 60px;
+      width: 60px;
+    }
+
+    .header {
+      font-size: 1.5em;
+    }
+
+    .compose {
+      line-height: 40px;
+      vertical-align: middle;
+    }
+  }
 }

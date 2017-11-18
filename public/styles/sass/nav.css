@@ -33,4 +33,17 @@
       background-color: White;
       cursor: pointer; }
 
+@media screen and (max-width: 600px) {
+  #nav-bar {
+    padding-left: 1em;
+    padding-right: 1em; }
+    #nav-bar .logo {
+      height: 60px;
+      width: 60px; }
+    #nav-bar .header {
+      font-size: 1.5em; }
+    #nav-bar .compose {
+      line-height: 40px;
+      vertical-align: middle; } }
+
 /*# sourceMappingURL=nav.css.map */

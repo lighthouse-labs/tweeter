@@ -7,10 +7,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   margin: 0;
   color: $tweet-text;
@@ -47,4 +43,16 @@ footer .page-footer {
 
 .error {
   color: $error-primary;
+}
+
+@media (max-width: 1024px) {
+  main {
+    width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
 }

@@ -4,9 +4,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-/*
- * Global layout stuff
- */
 body {
   margin: 0;
   color: #244751;
@@ -39,5 +36,12 @@ footer .page-footer {
 
 .error {
   color: #FF0000; }
+
+@media (max-width: 1024px) {
+  main {
+    width: 75%; } }
+@media (max-width: 600px) {
+  main {
+    width: 100%; } }
 
 /*# sourceMappingURL=layout.css.map */
