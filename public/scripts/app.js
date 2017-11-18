@@ -29,7 +29,7 @@ $(document).ready(() => {
     let icons = footer.children("div");
     icons.append($("<i class='flag fa fa-flag-o'>"));
     icons.append($("<i class='retweet fa fa-retweet'>"));
-    icons.append($("<i class='heart fa fa-heart-o'>"));
+    icons.append($(`<span data-like='${tweetData._id}' class='heart'><i class='heart fa fa-heart-o'><span class="likes-count">${tweetData.likes}</span></span>`));
 
     return newTweet;
   }
