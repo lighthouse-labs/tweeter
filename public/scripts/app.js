@@ -79,7 +79,7 @@ $(document).ready(() => {
         // post new tweet
         let serializedData = $("#tweet-field").serialize();
         $.ajax({
-          url: 'tweets',
+          url: '/tweets',
           method: 'POST',
           data: serializedData
         })
@@ -91,7 +91,22 @@ $(document).ready(() => {
     });
   }
 
+  function likeTweet() {
+    setTimeout(() => {
+      $("span.heart").click((event) => {
+        let likes = parseInt($(event.currentTarget).children(".heart").text()) + 1;
+        let id = event.currentTarget.getAttribute("data-id");
+        $.ajax({
+          url: `/tweets/${id}`,
+          method: "PUT",
+          data: { likes: likes }
+        });
+      });
+    });
+  }
+
   loadTweets();
   submitTweet();
+  likeTweet();
 
 });
