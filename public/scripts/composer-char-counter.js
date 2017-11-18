@@ -3,7 +3,7 @@ $(document).ready(function() {
   $(".new-tweet form").on("keyup", "textarea", function(event) {
     const counter = $(".new-tweet .counter");
     counter.text(charLength - $(this).val().length);
-    if ($(this).val().length >= charLength) {
+    if ($(this).val().length > charLength) {
       console.log("too long!");
       counter.addClass("error");
     } else {
