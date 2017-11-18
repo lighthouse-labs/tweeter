@@ -11,17 +11,6 @@ $(document).ready(() => {
         heart.children(".heart").removeClass("fa-heart").addClass("fa-heart-o");
         heart.children(".heart").text(likes - 1);
       }
-
-      // $.ajax({
-      //   url: 'tweets/likes',
-      //   method: 'POST',
-      //   data: likes
-      // })
-      //   .then(function() {
-      //     $("#tweet-field").val("");
-      //     loadTweets();
-      //   });
-
     });
   }, 500);
 })
