@@ -1,0 +1,35 @@
+@import "colors";
+
+section.new-tweet {
+  margin: 2em;
+  background-color: $tweet-secondary;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  padding: 10px;
+  overflow: auto;
+
+  h2 {
+    margin: 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  textarea {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    padding: 5px;
+    resize: vertical;
+  }
+
+  input {
+    float: left;
+  }
+
+  .counter {
+    font-style: italic;
+    float: right;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+}

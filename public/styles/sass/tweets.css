@@ -1,0 +1,48 @@
+#tweets {
+  background-color: White;
+  padding: 0px; }
+  #tweets .tweet {
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    margin: 10px; }
+    #tweets .tweet header {
+      background-color: #EEE;
+      overflow: auto;
+      height: 80px;
+      color: SlateGrey; }
+    #tweets .tweet .avatar {
+      margin: 8px;
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      float: left; }
+    #tweets .tweet .user-name {
+      margin: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      float: left; }
+    #tweets .tweet .handle {
+      margin: 10px;
+      margin-top: 20px;
+      float: right; }
+    #tweets .tweet .tweet-content {
+      border-bottom: 1px solid #C0C0C0;
+      padding: 15px; }
+    #tweets .tweet .tweet-footer {
+      font-size: 0.8em;
+      overflow: auto;
+      margin-bottom: 10px; }
+      #tweets .tweet .tweet-footer p {
+        float: left;
+        margin: 10px; }
+      #tweets .tweet .tweet-footer .icons {
+        margin: 6px;
+        float: right;
+        display: none; }
+      #tweets .tweet .tweet-footer .fa {
+        padding: 5px;
+        color: #00A087; }
+    #tweets .tweet:hover .icons {
+      display: flex; }
+
+/*# sourceMappingURL=tweets.css.map */

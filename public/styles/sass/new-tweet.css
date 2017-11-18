@@ -1,0 +1,26 @@
+section.new-tweet {
+  margin: 2em;
+  background-color: #EEE;
+  border: 1px solid #C0C0C0;
+  border-radius: 3px;
+  padding: 10px;
+  overflow: auto; }
+  section.new-tweet h2 {
+    margin: 0;
+    border-bottom: 1px solid #C0C0C0; }
+  section.new-tweet textarea {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    padding: 5px;
+    resize: vertical; }
+  section.new-tweet input {
+    float: left; }
+  section.new-tweet .counter {
+    font-style: italic;
+    float: right;
+    font-size: 0.9em;
+    margin-top: 5px; }
+
+/*# sourceMappingURL=new-tweet.css.map */
