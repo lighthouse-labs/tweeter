@@ -18,8 +18,18 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ body main {
+  width: 450px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 80px
+ }

@@ -1,4 +1,5 @@
 "use strict";
+/*jshint esversion: 6 */
 
 const userHelper    = require("../lib/util/user-helper")
 
@@ -7,6 +8,7 @@ const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
 
+  // Get Tweets
   tweetsRoutes.get("/", function(req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
@@ -17,6 +19,7 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  // Create a new tweet
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
@@ -29,7 +32,8 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: Date.now(),
+      liked : 0
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
@@ -41,6 +45,23 @@ module.exports = function(DataHelpers) {
     });
   });
 
+
+
+// get likes
+  tweetsRoutes.post("/:id", function(req, res) {
+    console.log("params is :", req.params.id)
+    console.log("Made it to tweets.js")
+    DataHelpers.getLikes(req.params.id, (err, tweet) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        console.log("err is :", err)
+        console.log("Just before responding", tweet.value)
+        res.json(tweet.value);
+      }
+    });
+  });
+
   return tweetsRoutes;
 
-}
+};
