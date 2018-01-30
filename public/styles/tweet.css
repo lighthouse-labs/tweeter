@@ -1,9 +1,6 @@
 main .tweets {
-  background-color:  #EEE;
+
   margin: 1em 2em;
-  border-radius: 4px;
-  border: 1px solid darkgrey;
-  padding: 0.5em 0em 0em 0em;
 
 }
 
@@ -12,6 +9,10 @@ main .tweets {
   background-color: #eee;
   margin: 0;
   opacity: 0.618;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  border: 1px solid darkgrey;
+
 }
 
 .tweets .tweet:hover {
