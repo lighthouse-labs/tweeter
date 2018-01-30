@@ -1,5 +1,5 @@
 .tweet-section {
-  height: 800px;
+  height: 2000px;
   padding: 10px;
 }
 
@@ -40,8 +40,8 @@
 
 #display-tweets {
   margin: 80px 2em;
-  border-radius: 5px;
-  border: solid #ccc 1px;
+  /*border-radius: 5px;*/
+  /*border: solid #ccc 1px;*/
 }
 
 #display-tweets .header {
@@ -49,6 +49,7 @@
   padding: 5px;
   margin-right: 0px;
   background-color: #f6f6f6;
+  border-radius: 5px;
 }
 
 #display-tweets header span {
@@ -62,12 +63,12 @@
   float: left;
 }
 
-#display-tweets:hover .full-name { color: #219fa5; }
-#display-tweets:hover .at-name { color: #2F4F4F; }
-#display-tweets:hover .header { background-color: #eee; }
+#tweet-container:hover .full-name { color: #219fa5; }
+#tweet-container:hover .at-name { color: #2F4F4F; }
+#tweet-container:hover .header { background-color: #eee; }
 
-#display-tweets:hover .icons { color: #219fa5; }
-#display-tweets:hover .mini-icons { opacity: 1; }
+#tweet-container:hover .icons { color: #219fa5; }
+#tweet-container:hover .mini-icons { opacity: 1; }
 /*display none
 oppacity 0
 height 0*/
@@ -105,4 +106,10 @@ height 0*/
 #display-tweets .mini-icons {
   padding-right: 5px;
   opacity: 0.1;
+}
+
+#display-tweets #tweet-container {
+  margin: 10px;
+  border: solid #ccc 1px;
+  border-radius: 5px;
 }
