@@ -4,7 +4,7 @@
 }
 
 .new-tweet {
-  margin: 80px 2em;
+  margin: 40px 2em 20px;
   background-color: #eee;
   border-radius: 5px;
   padding: 0 10px 10px;
@@ -39,7 +39,7 @@
 }
 
 #display-tweets {
-  margin: 80px 2em;
+  margin: 40px 2em 40px;
   /*border-radius: 5px;*/
   /*border: solid #ccc 1px;*/
 }
@@ -113,3 +113,9 @@ height 0*/
   border: solid #ccc 1px;
   border-radius: 5px;
 }
+
+/*used for error message*/
+.new-tweet .flash {
+  color: red;
+}
+
