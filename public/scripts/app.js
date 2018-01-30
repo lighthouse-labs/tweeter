@@ -69,7 +69,7 @@ $( document ).ready(function() {
     let atName = tweet.user.handle;
     let tweetContent = tweet.content.text;
 
-    let utcSeconds = tweet.created_at;
+    // let utcSeconds = tweet.created_at;
     let timeStamp = Date(tweet.created_at).toString();
 
 
