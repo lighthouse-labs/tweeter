@@ -6,9 +6,9 @@ function charCount() {
     let text = $(this).val();
     let length = text.length;
     let counter = $(this).siblings('.counter');
-    $(counter).html(140 - length)
+    $(counter).html(140 - length);
     if ((140 - length) < 0) {
-      $(counter).css({ 'color': 'red' })
+      $(counter).css({ 'color': 'red' });
     }
 
   });
@@ -17,5 +17,5 @@ function charCount() {
 
 
 $(document).ready(function() {
-  charCount()
-})
+  charCount();
+});
