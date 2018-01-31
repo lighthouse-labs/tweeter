@@ -31,14 +31,13 @@ $(form).on('submit', function(event) {
   $.ajax({
     type: 'POST',
     url: '/tweets',
-    data: str,
-    success:
-      $.get('/tweets', function(data) {
+    data: str
+  }).done( $.get('/tweets', function(data) {
         console.log(data)
         let post = data[data.length - 1]
         let newTweet = createTweetElement(post)
         $('.tweets').prepend(newTweet)
-      })
-  })
+      }))
+
 })
 })
