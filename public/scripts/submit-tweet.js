@@ -32,7 +32,13 @@ $(form).on('submit', function(event) {
     type: 'POST',
     url: '/tweets',
     data: str,
+    success:
+      $.get('/tweets', function(data) {
+        console.log(data)
+        let post = data[data.length - 1]
+        let newTweet = createTweetElement(post)
+        $('.tweets').prepend(newTweet)
+      })
   })
-
 })
 })

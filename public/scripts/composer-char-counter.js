@@ -10,6 +10,9 @@ function charCount() {
     if ((140 - length) < 0) {
       $(counter).css({ 'color': 'red' });
     }
+    if ((140 - length) >= 0) {
+      $(counter).css({'color': 'black'})
+    }
 
   });
 }
