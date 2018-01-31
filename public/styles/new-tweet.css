@@ -1,10 +1,15 @@
 .container .new-tweet {
+  display:none;
   background-color:  #EEE;
   margin: 0 2em;
   border-radius: 4px;
   border: 1px solid darkgrey;
   padding: 0 1em 1em 1em;
 
+}
+
+.container .new-tweet.down {
+  display: block;
 }
 
 .container .new-tweet h2 {
