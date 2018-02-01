@@ -7,11 +7,11 @@ nav {
   color: #e8fdff;
   padding: 0 2em 0;
 }
+
 #nav-bar .logo {
    width: 80px;
    height: 80px;
    float:left;
-
 }
 
 #nav-bar .header {
@@ -20,7 +20,6 @@ nav {
   float:left;
   margin-left: 10px;
   line-height: 80px;
-
 }
 
 #nav-bar #compose {
@@ -41,8 +40,6 @@ nav {
 #nav-bar #compose:hover {
   opacity: 1;
 }
-
-
 
 #nav-bar:after {
   content: '';
