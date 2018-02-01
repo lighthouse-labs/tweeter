@@ -41,6 +41,7 @@ nav {
   opacity: 1;
 }
 
+/*Clear fix for nav floats*/
 #nav-bar:after {
   content: '';
   display: table;

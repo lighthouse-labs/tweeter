@@ -1,7 +1,8 @@
+/*css for individual tweets*/
 main .tweets {
-
   margin: 1em 2em;
 }
+
 
 .tweets .tweet {
   background-color: #eee;
@@ -10,16 +11,18 @@ main .tweets {
   margin-bottom: 1em;
   border-radius: 4px;
   border: 1px solid darkgrey;
-
 }
+
 
 .tweets .tweet:hover {
   opacity: 1;
 }
 
+
 .tweet-header {
   padding: 0 0.5em 0.25em 0.5em;
 }
+
 
 .tweets .tweet .tweet-header .image-box {
   width: 75px;
@@ -28,12 +31,12 @@ main .tweets {
   display: inline-block
 }
 
+
 .tweets .tweet .tweet-header .pp {
   max-width: 100%;
   max-height: 100%;
-
-
 }
+
 
 .tweets .tweet .tweet-header h2 {
   display: inline-block;
@@ -43,18 +46,19 @@ main .tweets {
   vertical-align: middle;
 }
 
+
 .tweets .tweet .tweet-header .at {
   display: inline-block;
   float: right;
   line-height: 28px;
 }
 
+
 .tweet-header:after {
   content: '';
   display: table;
   clear: both;
 }
-
 
 
 .tweets .tweet .text {
@@ -69,6 +73,8 @@ main .tweets {
   background-color: white;
   padding: 0.25em 0.25em 0.25em 0.25em;
 }
+
+
 .tweets .tweet .tweet-footer .date {
   display: inline-block;
   margin: 0;
@@ -78,8 +84,8 @@ main .tweets {
 
 .tweets .tweet .tweet-footer .options {
   float: right;
-
 }
+
 
 .tweets .tweet .tweet-footer .options .buttons {
   list-style-type: none;
@@ -92,13 +98,13 @@ main .tweets {
   list-style-type: none;
   margin: 0;
   opacity: 1;
-
 }
+
 
 .tweets .tweet .tweet-footer .options .buttons li {
   display: inline;
-
 }
+
 
 .options:after {
   content: '';

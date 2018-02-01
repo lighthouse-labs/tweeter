@@ -1,3 +1,4 @@
+/*Css for new tweet Div*/
 .container .new-tweet {
   display: none;
   background-color:  #EEE;
@@ -8,21 +9,17 @@
 
 }
 
-/*.container .new-tweet.down {
-  display: block;
-}*/
-
 
 .container .new-tweet h2 {
   border-bottom: 1px solid black;
 }
 
 
-
 .container .new-tweet textarea {
   width: 100%;
   padding: 0.5em;
 }
+
 
 .container .new-tweet .counter {
   float:right;

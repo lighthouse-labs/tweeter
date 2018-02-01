@@ -38,6 +38,7 @@ function createHeader(tweetObj) {
   return header;
 }
 
+
 function createText(tweetObj) {
   let text = $('<p/>', {
     'class': 'text'
@@ -47,19 +48,20 @@ function createText(tweetObj) {
   return text;
 }
 
+
 function timeElapsed(time) {
   let currentTime = new Date();
   let msCurrTime = currentTime.getTime();
-  console.log(msCurrTime)
-  let ago = msCurrTime - time
-  console.log(ago)
+  console.log(msCurrTime);
+  let ago = msCurrTime - time;
+  console.log(ago);
   if (ago < 0) {
     return 0;
   } else {
 
-  let days = Math.floor(ago / 86400000)
-  console.log(days)
-  return days
+    let days = Math.floor(ago / 86400000);
+    console.log(days);
+    return days;
   }
 }
 
@@ -71,7 +73,7 @@ function createFooter(tweetObj) {
     'class': 'date'
   });
 
-  let days = timeElapsed(tweetObj['created_at'])
+  let days = timeElapsed(tweetObj['created_at']);
   $(date).append(document.createTextNode(days + ' days ago'));
   $(footer).append(date);
   let options = $('<div/>', {
@@ -81,10 +83,12 @@ function createFooter(tweetObj) {
     'class': 'buttons'
   });
 
-  let flag = $('<i class="far fa-flag"/>')
+  //uses font-awesome glyphs for flag, retweet and like buttons
+  let flag = $('<i class="far fa-flag"/>');
   let retweet = $('<i class="fas fa-retweet"/>');
-  let like = $('<i class="far fa-heart"/>')
+  let like = $('<i class="far fa-heart"/>');
   let logoButtons = [flag, retweet, like];
+
   logoButtons.forEach((logo) => {
     let li = $('<li/>');
     $(li).append(logo);
@@ -94,6 +98,7 @@ function createFooter(tweetObj) {
   $(footer).append(options);
   return footer;
 }
+
 
 function createTweetElement(tweetObj) {
   let tweet = $('<article/>', {
@@ -121,20 +126,17 @@ function renderTweets(tweets) {
 }
 
 /**
-  * Fetch Tweets from /tweets page
-*/
+ * Fetch Tweets from /tweets page
+ */
 
 function loadTweets() {
   $.get('/tweets', function(data) {
-    data.reverse()
-    renderTweets(data)
+    data.reverse();
+    renderTweets(data);
   });
 }
 
 
-
 $(document).ready(function() {
-  loadTweets()
-
+  loadTweets();
 });
-

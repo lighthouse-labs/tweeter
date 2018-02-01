@@ -1,17 +1,6 @@
-
-
-
 function getForm() {
-  let form = $(' .new-tweet [name="tweet"]')
-return form
-}
-
-
-
-
-
-function postTweet(form) {
-
+  let form = $(' .new-tweet [name="tweet"]');
+  return form;
 }
 
 $(document).ready(function() {
@@ -21,6 +10,7 @@ $(document).ready(function() {
     let str = $(form).serialize();
     let text = $(' .new-tweet [name="tweet"] [name="text"]').val();
 
+    // fail form submission for empty tweets or ones that are too long.
     if (text === '') {
       alert('Sorry, no Bumping or Saging the thread');
       return false;
@@ -29,7 +19,7 @@ $(document).ready(function() {
       alert('Sorry, our tweets are limited to 140 characters');
       return false;
     }
-    //
+    // post tweet to mongodb and when finished insert it into the tweet sections.
     $.ajax({
       type: 'POST',
       url: '/tweets',
@@ -42,4 +32,3 @@ $(document).ready(function() {
     }));
   });
 });
-
