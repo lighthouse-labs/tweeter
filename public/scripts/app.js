@@ -38,7 +38,7 @@ function createHeader(tweetObj) {
   return header;
 }
 
-
+// creates main body of tweet
 function createText(tweetObj) {
   let text = $('<p/>', {
     'class': 'text'
@@ -48,7 +48,8 @@ function createText(tweetObj) {
   return text;
 }
 
-
+//takes time tweet was made
+//returns difference between now and then in days
 function timeElapsed(time) {
   let currentTime = new Date();
   let msCurrTime = currentTime.getTime();
@@ -86,11 +87,15 @@ function createFooter(tweetObj) {
   //uses font-awesome glyphs for flag, retweet and like buttons
   let flag = $('<i class="far fa-flag"/>');
   let retweet = $('<i class="fas fa-retweet"/>');
-  let like = $('<i class="far fa-heart"/>');
+  let like = $('<span class="far fa-heart"/>');
+
   let logoButtons = [flag, retweet, like];
 
-  logoButtons.forEach((logo) => {
+  logoButtons.forEach((logo, i) => {
     let li = $('<li/>');
+    if (i === 2) {
+      $(li).addClass('like')
+    }
     $(li).append(logo);
     $(ul).append(li);
   });
@@ -99,7 +104,7 @@ function createFooter(tweetObj) {
   return footer;
 }
 
-
+//puts all the other functions together for one div
 function createTweetElement(tweetObj) {
   let tweet = $('<article/>', {
     'class': 'tweet'
@@ -117,6 +122,7 @@ function createTweetElement(tweetObj) {
   return tweet;
 }
 
+// creates full divs for all tweets
 function renderTweets(tweets) {
   tweets.forEach((tweet) => {
     let $tweet = createTweetElement(tweet);
