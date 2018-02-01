@@ -47,6 +47,22 @@ function createText(tweetObj) {
   return text;
 }
 
+function timeElapsed(time) {
+  let currentTime = new Date();
+  let msCurrTime = currentTime.getTime();
+  console.log(msCurrTime)
+  let ago = msCurrTime - time
+  console.log(ago)
+  if (ago < 0) {
+    return 0;
+  } else {
+
+  let days = Math.floor(ago / 86400000)
+  console.log(days)
+  return days
+  }
+}
+
 function createFooter(tweetObj) {
   let footer = $('<footer/>', {
     'class': 'tweet-footer'
@@ -55,7 +71,8 @@ function createFooter(tweetObj) {
     'class': 'date'
   });
 
-  $(date).append(document.createTextNode(tweetObj['created_at']));
+  let days = timeElapsed(tweetObj['created_at'])
+  $(date).append(document.createTextNode(days + ' days ago'));
   $(footer).append(date);
   let options = $('<div/>', {
     'class': 'options'
@@ -64,10 +81,13 @@ function createFooter(tweetObj) {
     'class': 'buttons'
   });
 
-  let logoButtons = ['Flag', 'Re', 'Heart'];
+  let flag = $('<i class="far fa-flag"/>')
+  let retweet = $('<i class="fas fa-retweet"/>');
+  let like = $('<i class="far fa-heart"/>')
+  let logoButtons = [flag, retweet, like];
   logoButtons.forEach((logo) => {
     let li = $('<li/>');
-    $(li).append(document.createTextNode(logo));
+    $(li).append(logo);
     $(ul).append(li);
   });
   $(options).append(ul);
@@ -106,6 +126,7 @@ function renderTweets(tweets) {
 
 function loadTweets() {
   $.get('/tweets', function(data) {
+    data.reverse()
     renderTweets(data)
   });
 }
