@@ -13,6 +13,11 @@ module.exports = function makeDataHelpers(db) {
       db.collection("tweeter").find().toArray((err, res) => {
         callback(null, res);
       });
+    },
+
+    addLike: function(name, like, callback) {
+      let document = db.collection("tweeter").find({user: {'name': name}})
+      db.collection("tweeter").updateOne({});
     }
   };
 };

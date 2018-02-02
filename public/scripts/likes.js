@@ -1,16 +1,12 @@
-
-
-
 $(document).ready(function() {
-  console.log($('.like'))
+  console.log($('.like'));
   $(document).on('click', '.like', function() {
-    $('.like').toggleClass('liked')
+    $(this).toggleClass('liked');
 
-    if ($('.like').hasClass('liked')) {
-      $('.like').css({ 'background-color': 'red' })
+    if ($(this).hasClass('liked')) {
+      $(this).css({ 'background-color': 'red' });
     } else {
-      $('.like').css({'background-color': 'transparent'})
+      $(this).css({ 'background-color': 'transparent' });
     }
-
-  })
+  });
 });
