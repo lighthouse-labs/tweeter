@@ -28,10 +28,10 @@ body {
 
  html main.container {
   position: relative;
-  top: 60px;
+  top: 80px;
+  padding-top: 50px;
   margin: auto;
   width: 450px;
   background-color: #ffffff;
-  z-index: -1;
   min-height: 600px;
  }
