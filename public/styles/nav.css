@@ -1,0 +1,26 @@
+#nav-bar {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  top: 0px;
+  background-color: #00a087;
+  color: #e8fdff;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  padding-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+#nav-bar .header {
+
+  font-size: 200%;
+}
