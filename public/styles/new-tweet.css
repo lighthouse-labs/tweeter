@@ -1,19 +1,29 @@
-.container section.new-tweet {
+.container section.new-tweet, .container section article.tweet {
   margin-left: 2em;
   margin-right: 2em;
+  margin-top: 10px;
   box-sizing: border-box;
   background-color: #eee;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 5px;
   border-width: 1px;
   border-style: solid;
 }
 
+.container section article.tweet {
+  background-color: #ffffff;
+  padding: 0px;
+  margin-top: 30px;
+/*  padding-left: 0px;
+  padding:right: 0px;*/
+}
+
+
 .container .new-tweet h2 {
   margin-bottom: 0px;
 }
 
-.container .new-tweet textarea {
+.container .new-tweet textarea{
   box-sizing: border-box;
   padding: 3px;
   width: 100%;
@@ -23,3 +33,52 @@
   float: right;
 }
 
+
+.container section article.tweet header.tweet-header {
+  background-color: #eee;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+
+  box-sizing: border-box;
+  padding: 3px;
+}
+
+.container section article.tweet footer {
+  border-top-style: solid;
+  border-top-width: 1px;
+
+  box-sizing: border-box;
+  padding: 3px;
+}
+
+
+.container section article.tweet header.tweet-header i,
+.container section article.tweet header.tweet-header label {
+  height: 50px;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+
+.container section article.tweet p.tweetslist {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+
+.container section article.tweet header.tweet-header span.tweetid,
+.container section article.tweet footer span.tweetstats  {
+  float: right;
+}
+
+
+
+.container section article.tweet footer span.tweetstats i {
+ /* padding-left: 4px;
+  padding:right: 4px;*/
+  color: #eee;
+}
+
+.container section article.tweet footer span.tweetstats i:hover{
+  color: #00a087;
+}
