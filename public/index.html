@@ -23,9 +23,15 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+
+    <!-- composer-char-counter.js -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
+
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
@@ -39,12 +45,13 @@
           <h2>Compose Tweet</h2>
           <hr>
           <form action="/tweets" method="POST">
-            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <textarea name="text" id="text" placeholder="What are you humming about?"></textarea>
             <br>
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
           </form>
         </section>
+        <h1 id="head1"></h1>
     </main>
 
   </body>
