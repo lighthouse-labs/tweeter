@@ -124,8 +124,6 @@ $('document').ready(function() {
   }
 
 
-  //calling function to generate and rendering dynamic tweets
-  renderTweets(data);
 
 
   $('#tweetform').on('submit', (event) => {
@@ -148,5 +146,17 @@ $('document').ready(function() {
   });
 
 
+  function loadTweets() {
+    $.ajax({
+        url: '/tweets',
+        type: 'GET',
+        success: function( tweetsReceived){
+          renderTweets(tweetsReceived);
+        }
+    });
+  }
+
+
+  //loadTweets();
 
 });   //ready() ends here
