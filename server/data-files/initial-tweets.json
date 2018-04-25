@@ -42,5 +42,20 @@
       "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
     },
     "created_at": 1461113796368
+  },
+  {
+    "user": {
+      "name": "John Taylor",
+      "avatars": {
+        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
+        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+      },
+      "handle": "@johntaylor23"
+    },
+    "content": {
+      "text": "Today is a sunny day after a long winter...wow!"
+    },
+    "created_at": 1461113798368
   }
 ]

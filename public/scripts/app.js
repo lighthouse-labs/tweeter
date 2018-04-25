@@ -54,6 +54,7 @@ $('document').ready(function() {
     }
   ];
 
+
   //function that creates a dynamic tweet for the single tweet object
   function createTweetElement(tweetObj) {
     let $tweet = $('<article>').addClass('tweet');
@@ -125,5 +126,27 @@ $('document').ready(function() {
 
   //calling function to generate and rendering dynamic tweets
   renderTweets(data);
+
+
+  $('#tweetform').on('submit', (event) => {
+    event.preventDefault();
+
+   /* var $form = $(this),
+    term = $form.find("textarea[")*/
+    if($("#text").val().trim() == "") {
+      alert("Invalid Tweet...Write some tweet please!");
+    } else {
+      $.ajax({
+        url: '/tweets',
+        type: 'POST',
+        data: $("form#tweetform").serialize(),
+        success: function( datareceived, status, jQxhr ){
+          alert("Tweet Sent");
+        }
+      });
+    }
+  });
+
+
 
 });   //ready() ends here
