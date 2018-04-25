@@ -131,9 +131,7 @@ $('document').ready(function() {
 
    /* var $form = $(this),
     term = $form.find("textarea[")*/
-    if($("#text").val().trim() == "") {
-      alert("Invalid Tweet...Write some tweet please!");
-    } else {
+    if(validateTweetForm()) {
       $.ajax({
         url: '/tweets',
         type: 'POST',
@@ -142,6 +140,8 @@ $('document').ready(function() {
           alert("Tweet Sent");
         }
       });
+    } else {
+      $('#text').focus();
     }
   });
 
@@ -156,6 +156,31 @@ $('document').ready(function() {
     });
   }
 
+
+
+  function validateTweetForm() {
+    let result = true;
+    let tweetText = $("#text").val();
+    let $li = "";
+
+    $('#errList').html("");
+
+    if(tweetText == null || tweetText.trim() == "") {
+      $li = ('<li>No tweet!...Tweet please!</li>');
+
+      $("#errList").append($li);
+      result = false;
+    }
+
+
+    if(tweetText.length > 140) {
+      $li = ('<li>Tweet limit is 140 characters only!</li>');
+      $("#errList").append($li);
+      result = false;
+    }
+
+    return result;
+  }
 
   //loadTweets();
 

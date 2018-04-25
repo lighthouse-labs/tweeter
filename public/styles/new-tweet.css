@@ -1,3 +1,8 @@
+.errorsList {
+  color: #ff0000;
+  font-weight: bold;
+}
+
 .container section.new-tweet, .container section article.tweet {
   margin-left: 2em;
   margin-right: 2em;
