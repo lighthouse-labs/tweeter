@@ -33,12 +33,10 @@
   float: right;
 }
 
-
 .container section article.tweet header.tweet-header {
   background-color: #eee;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-
   box-sizing: border-box;
   padding: 3px;
 }
@@ -46,7 +44,6 @@
 .container section article.tweet footer {
   border-top-style: solid;
   border-top-width: 1px;
-
   box-sizing: border-box;
   padding: 3px;
 }
@@ -66,13 +63,10 @@
   padding-right: 3px;
 }
 
-
 .container section article.tweet header.tweet-header span.tweetid,
 .container section article.tweet footer span.tweetstats  {
   float: right;
 }
-
-
 
 .container section article.tweet footer span.tweetstats i {
  /* padding-left: 4px;

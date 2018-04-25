@@ -13,6 +13,4 @@ $(document).ready(function() {
 
     $('.counter').text(remainChars);
   });
-
-
 });
