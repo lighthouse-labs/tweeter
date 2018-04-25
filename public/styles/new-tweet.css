@@ -53,6 +53,7 @@
 
 
 .container section article.tweet header.tweet-header i,
+.container section article.tweet header.tweet-header img,
 .container section article.tweet header.tweet-header label {
   height: 50px;
   font-size: 200%;
