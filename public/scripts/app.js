@@ -7,7 +7,7 @@
 $('document').ready(function() {
 
   // Fake data taken from tweets.json
-  const data = [
+ /* const data = [
     {
       "user": {
         "name": "Newton",
@@ -52,7 +52,7 @@ $('document').ready(function() {
       },
       "created_at": 1461123796368
     }
-  ];
+  ];*/
 
 
   //function that creates a dynamic tweet for the single tweet object
@@ -119,7 +119,7 @@ $('document').ready(function() {
       //takes return value and appends it to the tweets container
       for(let tweetObj of tweets) {
         let $tweet = createTweetElement(tweetObj);
-        $('#realtweets').append($tweet);
+        $('#realtweets').prepend($tweet);
       }
   }
 
@@ -137,7 +137,11 @@ $('document').ready(function() {
         type: 'POST',
         data: $("form#tweetform").serialize(),
         success: function( datareceived, status, jQxhr ){
-          alert("Tweet Sent");
+          //alert("Tweet Sent");
+          //alert(datareceived + ", status: " + status );
+          loadTweets();
+          $("#text").val("");
+          $("#text").focus();
         }
       });
     } else {
@@ -182,6 +186,7 @@ $('document').ready(function() {
     return result;
   }
 
-  //loadTweets();
+  loadTweets();
+
 
 });   //ready() ends here
