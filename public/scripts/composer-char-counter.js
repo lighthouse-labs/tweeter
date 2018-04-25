@@ -13,4 +13,17 @@ $(document).ready(function() {
 
     $('.counter').text(remainChars);
   });
+
+
+
+  //function to toggle slide compose tweet area
+  $('#nav-bar #btnCompose').on('click', (event) => {
+    $(".new-tweet").slideToggle("fast");
+    $("#text").focus();
+  });
+
+
 });
+
+
+

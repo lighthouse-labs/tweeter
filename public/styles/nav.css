@@ -24,3 +24,23 @@
 #nav-bar .header {
   font-size: 200%;
 }
+
+#nav-bar #btnCompose {
+  height: 60px;
+  width: 160px;
+  margin-left: 600px;
+  position: fixed;
+  border-radius: 8px;
+  background-color: #eff;
+  font-size: 150%;
+  font-weight: bold;
+  margin-top: 10px;
+  border-style: inset;
+  color: #00a087;
+}
+
+
+#nav-bar #btnCompose:hover {
+  background-color: #ffe;
+  color: #000;
+}
