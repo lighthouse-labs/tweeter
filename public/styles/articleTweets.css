@@ -1,4 +1,28 @@
+    article.w3-container {
+      border: 1px solid silver;
+    }
 
+    article .tweetBanner {
+      border-bottom: 1px solid silver;
+    }
+
+    article .logo {
+      width: 80px;
+      height: 80px;
+      float: left;
+    }
+
+    article .tweetHeader {
+      float: left;
+    }
+
+    article p.tweetHandle {
+      float: right;
+    }
+
+
+
+/*
 .w3-container {
     width: 400px;
     height: 180px;
@@ -17,7 +41,7 @@
     height: 45px;
     float: left;
     padding-right: 10px;
-    border-radius: 6px;
+    border-radius: 15px;
     margin-top: 0px;
 
   }
@@ -42,8 +66,9 @@
 
 
 .tweetFoot {
-    margin-top: 55px;
+    margin-top: 40px;
     font-size: 0.9em;
+    border-top: 1px solid #cacace;
 }
 
 
@@ -55,5 +80,4 @@
 
 
 
-
-
+*/

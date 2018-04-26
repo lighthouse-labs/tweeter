@@ -20,16 +20,16 @@
 
 
 .boxingContent {
-    width: 400px;
+    width: 418px;
     height: 180px;
     border: 1px solid #cacace;
     padding-right: 2em;
     padding-left: 2em;
     background-color: #e5e5e6;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
-h2 {
+/*h2 {
   width: 300px;
   height: 10px;
-}
+}*/

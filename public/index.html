@@ -3,34 +3,31 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
-
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
   <!-- GOOGLE FONTS-->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
-
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layoutTest.css" type="text/css" />
-
   <!-- NAV CSS -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-
   <!-- NEW-TWEET CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
   <!-- TWEET DATABASE -->
   <link rel="stylesheet" href="/styles/articleTweets.css" type="text/css" />
-
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
-
   <!-- CHAR COUNTER CSS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+
 </head>
+
 
 <body>
 
@@ -40,6 +37,7 @@
     <span class="header">Tweeter</span>
   </nav>
 
+
   <!-- Page-specific (main) content here -->
   <main class="container">
 
@@ -47,7 +45,7 @@
       <div class='boxingContent'>
         <div><h2>Compose Tweet</h2></div>
         <hr>
-        <form action="/tweets" method="POST">
+        <form class='clearfix' action="/tweets" method="POST">
           <textarea id="textarea" name="text" placeholder="What are you humming about?"></textarea>
           <input id="tweetButton" type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -55,31 +53,37 @@
       </form>
     </section>
 
+    <!-- Body containing tweets -->
+    <section id='tweet-container'>
 
-<article class="w3-container">
-  <style>
+      <article class="w3-container">
 
-.w3-container:hover {
-  color: black;
-}
-</style>
-  <img class="logo" src="/images/happyBear.jpg">
-  <header class='tweetBanner'>
-    <h2 class='tweetHeader'>Jerry</h2>
-    <p class='tweetHandle'>@Jerry</p>
-  </header>
-  <p>My name is Brian, I like to skateboard</p>
-  <footer class='tweetFoot'>
-    <hr>
-    <p>10 days ago</p>
-  </footer>
-</article>
+        <header class='tweetBanner clearfix'>
+          <img class="logo" src="/images/happyBear.jpg">
+          <h2 class='tweetHeader'>Jerry</h2>
+          <p class='tweetHandle'>@Jerry</p>
+        </header>
 
+        <div class='content'>
+        My name is Brian, I like to skateboard
+      </div>
 
+        <footer class='tweetFoot'>
+          <p>10 days ago</p>
+          <div class='icons'>
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-retweet"></i>
+          </div>
 
-</main>
+        </footer>
 
-<!-- Container for Tweet Data-->
+      </article>
+
+    </section>
+
+  </main>
+
 
 
 </body>
