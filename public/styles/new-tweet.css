@@ -1,8 +1,6 @@
-.new-tweets {
+.new-tweet {
     padding-top: 5px;
-    padding-bottom: 5px;
-
-
+    padding-bottom: 15px;
 }
 
 #textarea  {
@@ -23,10 +21,15 @@
 
 .boxingContent {
     width: 400px;
-    height: 200px;
+    height: 180px;
     border: 1px solid #cacace;
     padding-right: 2em;
     padding-left: 2em;
     background-color: #e5e5e6;
     border-radius: 6px;
+}
+
+h2 {
+  width: 300px;
+  height: 10px;
 }

@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- TWEET DATABASE -->
-  <link rel="stylesheet" href="/styles/TweetDatabase.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/articleTweets.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -45,24 +45,36 @@
 
     <section class="new-tweet">
       <div class='boxingContent'>
-      <div><h2>Compose Tweet</h2></div>
-      <form action="/tweets" method="POST">
-        <textarea id="textarea" name="text" placeholder="What are you humming about?"></textarea>
-        <input id="tweetButton" type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </div>
+        <div><h2>Compose Tweet</h2></div>
+        <hr>
+        <form action="/tweets" method="POST">
+          <textarea id="textarea" name="text" placeholder="What are you humming about?"></textarea>
+          <input id="tweetButton" type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </div>
       </form>
     </section>
 
-    <!-- Container for Tweet Data-->
-    <section id="tweetStorm" class="tweetContainer">
-      <article>
-          <div class="box"></div>
-      </article>
-    </section>
+
+<article class="w3-container">
+  <img class="logo" src="/images/happyBear.jpg">
+  <header class='tweetBanner'>
+    <h2 class='tweetHeader'>Jerry</h2>
+    <p class='tweetHandle'>@Jerry</p>
+  </header>
+  <p>My name is Brian, I like to skateboard</p>
+  <footer class='tweetFoot'>
+    <hr>
+    <p>10 days ago</p>
+  </footer>
+</article>
 
 
-  </main>
+
+</main>
+
+<!-- Container for Tweet Data-->
+
 
 </body>
 </html>
