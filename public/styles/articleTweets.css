@@ -1,13 +1,4 @@
 
-.w3-container .logo {
-    width: 60px;
-    height: 60px;
-    float: left;
-    padding-right: 10px;
-    margin-top: 0px;
-
-  }
-
 .w3-container {
     width: 400px;
     height: 180px;
@@ -17,7 +8,20 @@
     margin-top: 7px
     padding-right: 0px;
     padding-left: 0px;
+    transition: 0.1s;
 }
+
+
+.w3-container .logo {
+    width: 55px;
+    height: 45px;
+    float: left;
+    padding-right: 10px;
+    border-radius: 6px;
+    margin-top: 0px;
+
+  }
+
 
 .tweetBanner {
     background-color: #e5e5e6;
@@ -41,3 +45,15 @@
     margin-top: 55px;
     font-size: 0.9em;
 }
+
+
+
+
+
+
+
+
+
+
+
+
