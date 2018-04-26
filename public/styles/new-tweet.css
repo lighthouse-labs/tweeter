@@ -1,0 +1,32 @@
+.new-tweets {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+
+}
+
+#textarea  {
+  border: groove;
+  width: -webkit-fill-available;
+}
+
+#tweetButton {
+  position: static;
+  float: left;
+}
+
+.counter {
+  float: right;
+  color: black;
+}
+
+
+.boxingContent {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #cacace;
+    padding-right: 2em;
+    padding-left: 2em;
+    background-color: #e5e5e6;
+    border-radius: 6px;
+}

@@ -11,12 +11,12 @@
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.18.2",
     "chance": "^1.0.2",
     "express": "^4.13.4",
     "md5": "^2.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.17.3"
   }
 }
