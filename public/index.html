@@ -25,25 +25,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 
-<!-- <script>
-$(function() {
-  var $form = $('#tweetButton');
-  $form.on('click', function () {
-    event.preventDefault();
-    $.ajax({
-      url: '../data-files/initial-tweets.json',
-      method: 'GET',
-      success: function (initial-tweets.json) {
-        console.log('Success: ', initial-tweets);
-        $form.replaceWith(initial-tweets);
-      }
-    });
-  });
-});
-
-</script> -->
-
-
 </head>
 
 
@@ -63,7 +44,7 @@ $(function() {
       <div class='boxingContent'>
         <div><h2>Compose Tweet</h2></div>
         <hr>
-        <form class='clearfix' action="/tweets" method="POST">
+        <form id="tweetForm" class='clearfix' action="/tweets" method="POST">
           <textarea id="textarea" name="text" placeholder="What are you humming about?"></textarea>
           <input id="tweetButton" type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -73,30 +54,6 @@ $(function() {
 
     <!-- Body containing tweets -->
     <section id='tweet-container'>
-
-      <article class="w3-container">
-
-        <header class='tweetBanner clearfix'>
-          <img class="logo" src="/images/happyBear.jpg">
-          <h2 class='tweetHeader'>Jerry</h2>
-          <p class='tweetHandle'>@Jerry</p>
-        </header>
-
-        <div class='content'>
-        My name is Brian, I like to skateboard
-      </div>
-
-        <footer class='tweetFoot clearfix'>
-          <p>10 days ago</p>
-          <div class='icons'>
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-retweet"></i>
-          </div>
-
-        </footer>
-
-      </article>
 
     </section>
 

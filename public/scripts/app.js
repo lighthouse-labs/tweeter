@@ -49,13 +49,57 @@ const data = [
 $(document).ready(function() {
 
 
+  $(function() {
+    var $form = $('#tweetForm');
+    var $textarea = $('#textarea');
+
+    $form.on('submit', function (event) {
+
+      if (($textarea).val() === "" ) {
+
+        alert('Cannot post empty tweet!')
+
+      } else if (($textarea).val().length > 140 ) {
+
+        alert('Tweets must be less than 140 characters!')
+
+
+      } else {
+
+
+        let $formData = $(this).serialize();
+
+        $.ajax({
+          url: '/tweets',
+          method: 'POST',
+          data: $formData,
+          success: function () {
+            console.log('Success')
+          }
+        });
+      };
+      event.preventDefault();
+    });
+  });
+
+  function loadTweets () {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function (fetchedData) {
+        renderTweets(fetchedData);
+      }
+    });
+  }
+
+loadTweets();
+
+
 function renderTweets(tweets) {
 
-  data.forEach(function( tweet) {
-  createTweetElement(tweet).appendTo('.w3-container');
-
-});
-
+  tweets.forEach(function( tweet) {
+    $('#tweet-container').append(createTweetElement(tweet));
+  });
 }
 
 renderTweets(data);
