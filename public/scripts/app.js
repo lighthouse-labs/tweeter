@@ -92,6 +92,10 @@ $('document').ready(function() {
 
     dt = Math.floor(dt / (1000 * 60 * 60 * 24));
 
+    if(dt < 0) {
+      dt = 0;
+    }
+
     //let dt = todayDate - createdDate;
     //let dt = new Date().getDate() - new Date(tweetObj.created_at).getDate();
     $footer.text(dt + " days ago");
@@ -139,7 +143,10 @@ $('document').ready(function() {
         success: function( datareceived, status, jQxhr ){
           //alert("Tweet Sent");
           //alert(datareceived + ", status: " + status );
-          loadTweets();
+          //loadTweets();
+          loadMostRecentTweet();
+
+
           $("#text").val("");
           $("#text").focus();
         }
@@ -148,6 +155,19 @@ $('document').ready(function() {
       $('#text').focus();
     }
   });
+
+
+  function loadMostRecentTweet() {
+    $.ajax({
+        url: '/tweets',
+        type: 'GET',
+        success: function( tweetsReceived){
+          let len = tweetsReceived.length;
+          let $tweet = createTweetElement(tweetsReceived[len-1]);
+          $('#realtweets').prepend($tweet);
+        }
+    });
+  }
 
 
   function loadTweets() {
@@ -159,7 +179,6 @@ $('document').ready(function() {
         }
     });
   }
-
 
 
   function validateTweetForm() {
