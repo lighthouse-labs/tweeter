@@ -1,83 +1,52 @@
     article.w3-container {
       border: 1px solid silver;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 10px;
+
     }
 
     article .tweetBanner {
       border-bottom: 1px solid silver;
+      background-color: lightgrey;
+      /*overflow: hidden;*/
+      border-radius: 10px 10px 0 0;
+
     }
 
     article .logo {
       width: 80px;
       height: 80px;
       float: left;
+      border-radius: 10px;
+
     }
 
     article .tweetHeader {
       float: left;
+
     }
 
     article p.tweetHandle {
       float: right;
+      margin-right: 5px;
     }
 
+    article .tweetFoot {
+        border-top: 1px solid black;
+        padding: 5px;
 
+    }
 
-/*
-.w3-container {
-    width: 400px;
-    height: 180px;
-    border: 1px solid #cacace;
-    background-color: white;
-    border-radius: 6px;
-    margin-top: 7px
-    padding-right: 0px;
-    padding-left: 0px;
-    transition: 0.1s;
-}
+    article .tweetFoot p {
+        float: left;
+        margin: 0;
+    }
 
+    article .icons {
+        float: right;
 
-.w3-container .logo {
-    width: 55px;
-    height: 45px;
-    float: left;
-    padding-right: 10px;
-    border-radius: 15px;
-    margin-top: 0px;
+    }
 
-  }
-
-
-.tweetBanner {
-    background-color: #e5e5e6;
-    height: 3em;
-}
-
-
-.tweetHeader {
-    margin-top: 0px;
-}
-
-.tweetHandle {
-    float: right;
-    color: grey;
-    margin-top: 0px;
-    margin-right: 5px;
-}
-
-
-.tweetFoot {
-    margin-top: 40px;
-    font-size: 0.9em;
-    border-top: 1px solid #cacace;
-}
-
-
-
-
-
-
-
-
-
-
-*/
+    article .content {
+        padding: 5px;
+    }

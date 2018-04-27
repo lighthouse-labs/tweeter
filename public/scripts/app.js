@@ -1,5 +1,4 @@
-
- const tweetData = {
+const tweetData = {
   "user": {
     "name": "Newton",
     "avatars": {
@@ -19,59 +18,68 @@
 $(document).ready(function() {
 
 
-let $tweet = $("<article>").addClass("tweet")
+function renderTweets(tweets) {
 
-
-function createTweetElement (tweetObject) {
-
-
-  const $article = $('<article>').addClass('w3-container');
-
-
-  $('<img>').addClass('logo').attr("src", tweetObject.user.avatars.small).appendTo($article);
-
-
-  const $header = $('<header>').addClass('tweetBanner');
-  $('<h2>').addClass('tweetHeader').text(tweetObject.user.name).appendTo($header);
-  $('<p>').addClass('tweetHandle').text(tweetObject.user.handle).appendTo($header);
-
-
-  const $footer = $('<footer>').addClass('tweetFoot');
-
-  $('<hr>').appendTo($footer);
-  $('<p>').text(tweetObject.created_at).appendTo($footer)
-
-
-  $article.append($header);
-
-  $('<p>').text(tweetObject.content.text).appendTo($article);
-  $article.append($footer);
-
-  return $article;
-
-}
-
-const $createdTweet = createTweetElement(tweetData);
-// $('#tweet-container').append($createdTweet); // line 58 - <section id='tweet-container'>
-
-
-function renderTweets(cb) {
-  console.log("tweets are rendered!");
-
-}
-
-// renderTweets(createTweetElement());
-
+  data.forEach(function( tweet) {
+  console.log(tweet);
 });
 
+}
+  // loops through tweets
+  //   calls createTweetElement for each tweet
+  //   takes return value and appends it to the tweets container
+
+  function createTweetElement (tweetObject) {
+
+      let $tweet = $("<article>").addClass("tweet")
+
+    console.log("logging inside: ", tweetObject);
+    const $article = $('<article>').addClass('w3-container');
 
 
- // <div class='icons'>
- //            <i class="fas fa-flag"></i>
- //            <i class="fas fa-heart"></i>
- //            <i class="fas fa-retweet"></i>
- //          </div>
 
+    const $header = $('<header>').addClass('tweetBanner').addClass('clearfix');
+
+
+    $('<img>').addClass('logo').attr("src", tweetObject.user.avatars.small).appendTo($header);
+    $('<h2>').addClass('tweetHeader').text(tweetObject.user.name).appendTo($header);
+    $('<p>').addClass('tweetHandle').text(tweetObject.user.handle).appendTo($header);
+
+
+    const $footer = $('<footer>').addClass('tweetFoot').addClass('clearfix');
+
+    $('<p>').text(tweetObject.created_at).appendTo($footer)
+
+    const $icons = $('<div>').addClass('icons');
+
+
+    $('<i>').addClass('fas').addClass('fa-flag').appendTo($icons);
+    $('<i>').addClass('fas').addClass('fa-heart').appendTo($icons);
+    $('<i>').addClass('fas').addClass('fa-retweet').appendTo($icons);
+
+    $article.append($header);
+
+    $('<div>').addClass('content').text(tweetObject.content.text).appendTo($article);
+    $footer.append($icons)
+    $article.append($footer);
+
+    return $article;
+
+  }
+
+const $createdTweet = createTweetElement(tweetData);
+$('#tweet-container').append($createdTweet); // line 58 - <section id='tweet-container'>
+
+
+var $tweet = createTweetElement(tweetData);
+
+// Test / driver code (temporary)
+console.log($tweet); // to see what it looks like
+$('#tweets-container').append($tweet);
+
+ // renderTweets(data);
+
+});
 
 
 

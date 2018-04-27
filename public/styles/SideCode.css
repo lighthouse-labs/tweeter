@@ -49,3 +49,61 @@ body {
   clear: both;
 }
 
+
+
+
+/*
+.w3-container {
+    width: 400px;
+    height: 180px;
+    border: 1px solid #cacace;
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 7px
+    padding-right: 0px;
+    padding-left: 0px;
+    transition: 0.1s;
+}
+
+
+.w3-container .logo {
+    width: 55px;
+    height: 45px;
+    float: left;
+    padding-right: 10px;
+    border-radius: 15px;
+    margin-top: 0px;
+
+  }
+
+
+.tweetBanner {
+    background-color: #e5e5e6;
+    height: 3em;
+}
+
+
+.tweetHeader {
+    margin-top: 0px;
+}
+
+.tweetHandle {
+    float: right;
+    color: grey;
+    margin-top: 0px;
+    margin-right: 5px;
+}
+
+
+.tweetFoot {
+    margin-top: 40px;
+    font-size: 0.9em;
+    border-top: 1px solid #cacace;
+}
+
+
+
+
+
+
+

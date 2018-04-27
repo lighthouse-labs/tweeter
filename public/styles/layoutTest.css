@@ -30,3 +30,9 @@ body {
 }
 
 
+
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both;
+}
