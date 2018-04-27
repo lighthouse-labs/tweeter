@@ -146,7 +146,7 @@ $('document').ready(function() {
           //loadTweets();
           loadMostRecentTweet();
 
-
+          $("#tweetform #counter").text("140");
           $("#text").val("");
           $("#text").focus();
         }
