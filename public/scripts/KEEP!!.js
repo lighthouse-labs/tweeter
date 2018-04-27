@@ -45,21 +45,23 @@ const data = [
   }
 ];
 
-
 $(document).ready(function() {
 
 
 function renderTweets(tweets) {
 
-  data.forEach(function( tweet) {
-  createTweetElement(tweet).appendTo('.w3-container');
+for (var i=0; i<data.length; i++)
+    for (var tweet in data[i]) {
+      // createTweetElement(data[i]);
+      console.log(data[i]));
 
-});
+    }
 
 }
 
-renderTweets(data);
-
+  // loops through tweets
+  //   calls createTweetElement for each tweet
+  //   takes return value and appends it to the tweets container
 
   function createTweetElement (tweetObject) {
 
@@ -68,7 +70,6 @@ renderTweets(data);
     const $article = $('<article>').addClass('w3-container');
 
     const $header = $('<header>').addClass('tweetBanner').addClass('clearfix');
-
 
     $('<img>').addClass('logo').attr("src", tweetObject.user.avatars.small).appendTo($header);
     $('<h2>').addClass('tweetHeader').text(tweetObject.user.name).appendTo($header);
@@ -94,8 +95,21 @@ renderTweets(data);
 
     return $article;
 
-  }  // createTweetElement
+  }
+
+const $createdTweet = createTweetElement(data); // Where my const createdTweet is my function which creates the HTML for my tweet database
+$('#tweet-container').append($createdTweet); // line 58 - <section id='tweet-container'>
+
+
+let $tweet = createTweetElement(data);
+
+// Test / driver code (temporary)
+console.log($tweet); // to see what it looks like
+$('#tweets-container').append($tweet);
+
+renderTweets(createTweetElement);
 
 });
+
 
 
