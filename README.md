@@ -11,9 +11,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 
 ## Final Product
-!["screenshot description"](#)
+!["Home Page"](https://github.com/camueljackson/tweeter/blob/master/Home%20Page.jpeg)
 
-!["screenshot description"](#)
+!["Uploaded Tweet"](https://github.com/camueljackson/tweeter/blob/master/Uploaded%20Tweets.jpeg)
 
 ## Dependencies
 
