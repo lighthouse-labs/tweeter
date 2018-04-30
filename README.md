@@ -11,17 +11,17 @@ Tweeter is a simple, single-page Twitter clone.
 
 
 ## Final Product
-![Login page](https://github.com/camueljackson/TinyApp-2/blob/master/LoginPage.pdf)
 !["screenshot description"](#)
 
-![Login page](https://github.com/camueljackson/TinyApp-2/blob/master/loginPage.png?raw=true)
-![Page showing shortened URL and long URL, available for edit.](https://github.com/camueljackson/TinyApp-2/blob/master/URLShowPage.png?raw=true)
-
-![URLs database once URLs have been entered. Available delete or update.](https://github.com/camueljackson/TinyApp-2/blob/master/URLDatabase.png?raw=true)
->>>>>>> 0be06b55532227359d0bc4a41fcbb6c8faf2a4ce
+!["screenshot description"](#)
 
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
 
+- body-parser
+- chance: 1.0.2
+- express: 4.13.4
+- md5: 2.1.0
+- nodemon: 1.17.3
