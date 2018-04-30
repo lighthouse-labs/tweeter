@@ -68,19 +68,21 @@ $(document).ready(function() {
 
 
         let $formData = $(this).serialize();
-
         $.ajax({
           url: '/tweets',
           method: 'POST',
           data: $formData,
           success: function () {
+            loadTweets();
             console.log('Success')
+
           }
         });
       };
       event.preventDefault();
     });
   });
+
 
   function loadTweets () {
     $.ajax({
@@ -92,13 +94,15 @@ $(document).ready(function() {
     });
   }
 
+
+
 loadTweets();
 
 
 function renderTweets(tweets) {
 
   tweets.forEach(function( tweet) {
-    $('#tweet-container').append(createTweetElement(tweet));
+    $('#tweet-container').prepend(createTweetElement(tweet));
   });
 }
 
