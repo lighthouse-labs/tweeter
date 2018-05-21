@@ -12,6 +12,7 @@ nav {
   left: 0px;
   padding: 0em 2em;
   top: 0px;
+  z-index: 1;
 }
 
 #nav-bar .logo {

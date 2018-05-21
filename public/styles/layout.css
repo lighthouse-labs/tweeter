@@ -31,7 +31,8 @@ main {
   position: absolute;
   left: 50%;
   margin-left: -225px;
-  margin-top: 140px;
+  padding-top: 140px;
+  height: 100%;
 }
 
 /*
