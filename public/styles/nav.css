@@ -10,7 +10,8 @@ nav {
   position: fixed;
   right: 0px;
   left: 0px;
-  padding: 0em 2em
+  padding: 0em 2em;
+  top: 0px;
 }
 
 #nav-bar .logo {
@@ -20,7 +21,7 @@ nav {
 }
 
 #nav-bar .header {
-  font-size: 200%;
+  font-size: 2em;
   line-height: 80px;
   margin-left: 10px;
 }
