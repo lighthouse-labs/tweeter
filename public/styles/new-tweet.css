@@ -11,6 +11,7 @@
 
 h2 {
   border-bottom-style: solid;
+  border-width: 2px;
   width: 96%;
   margin-left: 2%;
   margin-right: 2%;
@@ -21,6 +22,14 @@ textarea {
   width: 96%;
   margin: auto;
   margin-bottom: 1%;
+}
+
+textarea.invalid{
+  display: block;
+  width: 96%;
+  margin: auto;
+  margin-bottom: 1%;
+  color: #ff0000 
 }
 
 input {
