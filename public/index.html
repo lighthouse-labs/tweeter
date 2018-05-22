@@ -8,6 +8,7 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <!-- font-family: 'Roboto', sans-serif; -->
 
   <!-- App CSS -->
@@ -47,11 +48,23 @@
 
       <article class="tweet">
         <header>
-          headertext avatar name handle
+          <span class="avatar">
+          <img src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png" class="avatar">
+          <!-- <span class="avatar"> avatar</span> -->
+          </span>
+          <span class="name">Bill Fields</span>
+          <span class="handle">@MrFields</span>
         </header>
-        <section>tweet</section>
+        <section class="tweet">
+          <p>Little tweet here</p>
+        </section>
         <footer>
-          footertext date and icons
+          <span class="date">10 days ago</span>
+          <span class="icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
         </footer>
       </article>
 

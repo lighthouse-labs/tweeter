@@ -11,17 +11,13 @@
  */
 
 $(document).ready(function () {
+  let maxChar = 140;
   $(".new-tweet").find("textarea").keyup(function () {
-    // $(".counter").text(140 - $(this).val().length);
-    ($(this).parent().children(".counter")).text(140 - $(this).val().length);
-    if (($(this).val().length) > 140) {
-      // $(".new-tweet").find("textarea").addClass("invalid")
+    ($(this).siblings(".counter")).text(maxChar - $(this).val().length);
+    if (($(this).val().length) > maxChar) {
       $(this).addClass("invalid")
     } else {
-      // $(".new-tweet").find("textarea").removeClass()
       $(this).removeClass()
     }
-  });
+  })
 })
-
-// this.parent().children(".counter")
