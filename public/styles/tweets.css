@@ -1,0 +1,55 @@
+.tweet {
+    background: white;
+    border-radius: 5px;
+    border: solid 1px lightgrey;
+    margin: 1em 0 0;
+}
+
+.tweet header {
+    width: 100%;
+    background: #eee;
+    border-radius: 5px 5px 0 0;
+}
+
+.tweet img{
+    float: left;
+    padding: .5em;
+    border-radius: .75em;
+}
+
+.tweet h2 {
+    margin: 0px;
+    float: left;
+    padding: .3em 0
+
+}
+
+.tweet p {
+    float:right;
+    margin: 0px;
+    font-size: .75em;
+    padding: 1em;
+}
+
+.tweet header::after {
+    content: " ";
+    display: block;
+    clear:both;
+}
+
+.tweet div {
+    height: 100px;
+    width: 100%;
+    background: white;
+    border-top: solid 1px lightgrey;
+    border-bottom: solid 1px lightgrey;
+    padding: 2em 1em;
+
+}
+
+.tweet footer {
+    padding: 10px;
+    background: white;
+    border-radius:inherit;
+    font-size: .75em;
+}
