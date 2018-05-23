@@ -26,3 +26,19 @@ nav {
   line-height: 80px;
   margin-left: 10px;
 }
+
+#compose {
+  float: right;
+  position: relative;
+  height: 85%;
+  top: 7.5%;
+  border-radius: 5px;
+  background-color: #e7fdff;
+  color: #62c5b6;
+  border: 2px solid black;
+}
+
+#compose:hover{
+  color: black;
+  background-color: white;
+}
