@@ -1,33 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+  <link rel="stylesheet" href="/styles/tweeters.css" type="text/css"/>
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+</head>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+<body>
 
-  <body>
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <img class="logo" src="/images/bird.png">
+    <span class="header" ;>Tweeter</span>
+  </nav>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets">
+        <textarea name="text" placeholder="What are you tweetering about?"></textarea>
+        <input type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
+    <section class="all-tweets">
+      <!-- <div class="tweet">
+          <header>
+            <img class="profile-pic" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png">
+            <h3>user.name</h3>
+            <p>user.handle</p>
+          </header>
+          <article>req.body.text</article>
+          <footer>
+            <p class="clock"> time since </p>
+            <span class="icons">
+            <i class="fa fa-thumbs-o-up"></i>
+            <i class="fa fa-share" style="font-size:24px"></i>
+            <i class="fa fa-frown-o"></i>
+           </span>
+          </footer>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
-    </nav>
+<div class="tweet"><header><img src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png"><h3>Newton</h3><p>@SirIsaac</p></header><article></article><footer><p></p><span></span><i class="fa fa-thumbs-o-up fa-share fa-frown-o"></i></footer></div>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
-
+      </div> -->
+    </section>
+   </main>
   </body>
 </html>
+
+
+

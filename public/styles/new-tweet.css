@@ -1,0 +1,33 @@
+.new-tweet {
+background-color:#eee;
+border-radius: 10px;
+margin-left: 30px;
+margin-right:30px;
+text-align: left;
+
+}
+
+.counter{
+  margin-left: 310px;
+
+
+}
+
+ h2{
+  text-decoration: underline;
+  padding:10px;
+}
+
+ textarea {
+  margin:10px;
+  margin-bottom:5px;
+  margin-top:-20px;
+  width: 460px;
+  height: 70px;
+}
+
+input {
+  margin:15px;
+}
+
+
