@@ -5,7 +5,6 @@
  */
 
 $(document).ready(function () {
-
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -58,7 +57,6 @@ $(document).ready(function () {
 
   $("form").submit(function (event) {
     event.preventDefault();
-    // console.log(this)
     let tweetLen = $(this).children("textarea").val().length
     if (tweetLen === 0) {
       alert("Tweets can't be empty")
