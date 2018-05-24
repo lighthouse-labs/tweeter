@@ -1,0 +1,41 @@
+h2 {
+  border-bottom-style: solid;
+  border-width: 2px;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+textarea {
+  display: block;
+  width: 96%;
+  margin: auto;
+  margin-bottom: 1%;
+}
+
+textarea.invalid{
+  display: block;
+  width: 96%;
+  margin: auto;
+  margin-bottom: 1%;
+  color: #ff0000 
+}
+
+input {
+  margin-left: 2%;
+  margin-bottom: 2%
+}
+
+.new-tweet {
+  background-color: #eee;
+  margin: 0em 2em;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+.new-tweet .counter {
+  font-style: italic;
+  position: relative;
+  left: 73%;
+}
