@@ -10,26 +10,13 @@ $(() => {
       $(".new-tweet .counter")
         .css("color", charCountColor)
     });
-  const $submit = $(".new-tweet form");
-
-  $submit.on('submit', function (event) {
-    event.preventDefault();
-    const charCount = Number($(".new-tweet .counter")
-      .text())
-    if (charCount < 0) {
-      return alert('Tweets must be under 140 characters long... srry.')
-    }
-    if (charCount === 140) {
-      return alert('you have to enter something...')
-    }
-    $.post('/tweets', $(this)
-      .serialize(),
-      () => {
-        console.log('success')
-      });
-      $.getJSON('/tweets', (data)=>{
-      
-      })
-  });
-
+    let hidden = 'not started';
+    $("#nav-bar .compose")
+    .click( function () {
+      $(".new-tweet").slideToggle( 'slow' );
+      hidden = hidden ? false : true;
+      if(hidden){
+        $(".new-tweet textarea").focus()
+      }
+    });
 });
