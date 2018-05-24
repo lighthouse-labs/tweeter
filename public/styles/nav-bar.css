@@ -17,3 +17,24 @@
     float: left;
     margin: 0px 0px 0px 10px
 }
+#nav-bar .compose {
+    opacity: .9;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    background: white;
+    float: right;
+    margin: 10px;
+    font-size: .5em;
+    line-height: 3.4;
+    padding: 0 1.5em;
+    border: unset;
+    border: solid 1px;
+}
+#nav-bar .compose:hover {
+    opacity: 1
+}
+
+#nav-bar .compose:click {
+    
+}
