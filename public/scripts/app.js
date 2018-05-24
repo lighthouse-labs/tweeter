@@ -2,8 +2,7 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
-$(document)
-  .ready(function () {
+$(() => {
 
     const createTweetElement = (database) => {
       const avatar = `<img src=${database.user.avatars.small}></img>`,
@@ -16,22 +15,47 @@ $(document)
       return $(`<article class='tweet'>${header}${content}${footer}</article>`)
     }
 
-    const renderTweets = (data)=> {
-      data.forEach(function (tweet) {
+    const latestTweet = (tweetInfo) => {
+      return [tweetInfo[tweetInfo.length -1]];
+    }
+
+    const renderTweets = (data) => {
+      data.reverse().forEach(function (tweet) {
         $tweet = createTweetElement(tweet);
         $('#tweets-container')
-          .append($tweet);
+          .prepend($tweet);
       });
     }
 
-    const getTweets = (cb) => {
-      $.getJSON('/tweets', function (data) {
-        cb(data);
+    const getTweets = (cb, update) => {
+      $.getJSON('/tweets', function (tweetInfo) {
+        if(update === 'update'){
+          cb(latestTweet(tweetInfo));
+        } else {
+        cb(tweetInfo);
+        }
       });
     }
+
+    $(".new-tweet form").on('submit', function (event) {
+
+      event.preventDefault();
+      const charCount = Number($(".new-tweet .counter")
+        .text())
+      if (charCount < 0) {
+        return alert('Tweets must be under 140 characters long... srry.')
+      }
+      if (charCount === 140) {
+        return alert('you have to enter something...')
+      }
+      $.post('/tweets', $(this)
+        .serialize(),
+        () => {
+          console.log('success')
+        });
+        getTweets(renderTweets, 'update');
+        
+        });
 
     getTweets(renderTweets);
-
-    // Test / driver code (temporary)
-    //$('#tweets-container').append($tweet); // to add it to the pag so we can make sure it's got all the right elements, classes, etc.
   });
