@@ -23,30 +23,7 @@
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/all-tweets.js"></script>
-  <script> 
-  $(function() {
-    const $submit = $(".new-tweet form");
 
-    $submit.on('submit', function(event){
-      event.preventDefault();
-      const charCount = Number($(".new-tweet .counter").text())
-      if(charCount < 0){
-        return alert('Tweets must be under 140 characters long... srry.')
-      }
-      if(charCount === 140){
-        return alert('you have to enter something...')
-      }
-      $.post('/tweets', $(this).serialize(), function (){
-          console.log('success')
-        });
-      $.getJSON('/tweets', function (data) {
-        cb(data);
-      });
-
-      });
-
-    });
-  </script>
 </head>
 
 <body>
