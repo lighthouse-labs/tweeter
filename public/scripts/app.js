@@ -1,15 +1,22 @@
 //import { get } from "http";
 
 // Test / driver code (temporary). Eventually will get this from the server.
-
 $(() => {
+   const safe = (str) => {
+     return str
+    .replace('&', `&amp;`)
+    .replace('<', `&lt;`)
+    .replace('>', `&gt;`)
+    .replace(`'`, `&qout;`)
+    .replace("'", `&#039;`);
+   }
 
     const createTweetElement = (database) => {
+      console.log(safe(database.content.text))
       const avatar = `<img src=${database.user.avatars.small}></img>`,
         user_name = `<h2>${database.user.name}</h2>`,
         header = `<header>${avatar}${user_name}<p>${database.user.handle}</p></header>`,
-
-        content = `<div>${database.content.text}</div>`,
+        content = `<div>${safe(database.content.text)}</div>`,
         footer = `<footer>${database.created_at}</footer>`
 
       return $(`<article class='tweet'>${header}${content}${footer}</article>`)
