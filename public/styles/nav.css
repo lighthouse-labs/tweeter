@@ -7,7 +7,7 @@
   height:80px;
   padding-left:60px;
   padding-right:60px;
-  opacity: 1;
+
 }
 
 #nav-bar .logo {
@@ -22,4 +22,10 @@
  font-size:35px;
  margin-left:10px;
 }
+
+#nav-bar .compose {
+float:right;
+margin:10px;
+}
+
 

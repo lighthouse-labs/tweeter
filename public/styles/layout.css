@@ -23,13 +23,13 @@ body {
   color: #244751;
   background-color: #eee;
   font-family: 'Roboto', sans-serif;
+  opacity: 1;
 
 }
 
 .container {
   width: 550px;
   margin: auto;
-  text-align: center;
   background-color: white;
   padding-top: 70px;
   padding-bottom:100%;
