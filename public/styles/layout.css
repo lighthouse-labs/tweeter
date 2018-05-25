@@ -1,29 +1,17 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   margin: 0;
   color: #244751;
   background-color: #eee;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
 .container {
   margin: auto;
@@ -31,12 +19,11 @@ body {
   padding: 8em 2em 2em;
   background: white;
 }
-
-
-
 @media screen and (max-width: 500px) {
-.container {
+  .container {
     padding: 12em 2em 2em;
     width: 100%;
   }
 }
+
+/*# sourceMappingURL=layout.css.map */

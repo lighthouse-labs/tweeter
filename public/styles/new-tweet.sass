@@ -1,0 +1,35 @@
+.err 
+    color: red;
+
+.new-tweet 
+    background: #eee;
+    border-radius: 5px;
+    padding: .5em .5em;
+    border: solid 1px lightgrey;
+    clear: left;
+
+    & > h2 
+        border-bottom: solid;
+        width: 100%;
+        margin: 0px 0px 1em;
+
+    textarea 
+        width: 100%;
+        resize: none;
+
+    input 
+        float: left;
+
+    span 
+        float: right;
+        font-size: .75em;
+
+    p 
+        padding: 0em 4em;
+        line-height: 0;
+        margin-bottom: 0;
+
+    p::after 
+        content: "";
+        display: block;
+        clear: both;

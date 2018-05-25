@@ -1,59 +1,52 @@
 .tweet {
-    opacity: .9;
-    background: white;
-    border-radius: 5px;
-    border: solid .075em lightgrey;
-    margin: 1em 0 0;
+  opacity: 0.9;
+  background: white;
+  border-radius: 5px;
+  border: solid 0.075em lightgrey;
+  margin: 1em 0 0;
 }
 .tweet:hover {
-    opacity: 1;
+  opacity: 1;
 }
-
 .tweet header {
-    width: 100%;
-    background: #eee;
-    border-radius: .2em .2em 0 0;
+  width: 100%;
+  background: #eee;
+  border-radius: 0.2em 0.2em 0 0;
 }
-
-.tweet img{
-    float: left;
-    padding: .5em;
-    border-radius: .75em;
+.tweet img {
+  float: left;
+  padding: 0.5em;
+  border-radius: 0.75em;
 }
-
 .tweet h2 {
-    margin: 0;
-    float: left;
-    padding: .3em;
-
+  margin: 0;
+  float: left;
+  padding: 0.3em;
 }
-
 .tweet p {
-    float:right;
-    margin: 0px;
-    font-size: .75em;
-    padding: 1em;
+  float: right;
+  margin: 0px;
+  font-size: 0.75em;
+  padding: 1em;
 }
-
 .tweet header::after {
-    content: " ";
-    display: block;
-    clear:both;
+  content: " ";
+  display: block;
+  clear: both;
 }
-
 .tweet div {
-    height: fit-content;
-    width: 100%;
-    background: white;
-    border-top: solid .08em lightgrey;
-    border-bottom: solid 0.07em lightgrey;
-    padding: 2em 1em;
-
+  height: fit-content;
+  width: 100%;
+  background: white;
+  border-top: solid 0.08em lightgrey;
+  border-bottom: solid 0.07em lightgrey;
+  padding: 2em 1em;
 }
-
 .tweet footer {
-    padding: .5em;
-    background: white;
-    border-radius:inherit;
-    font-size: .75em;
+  padding: 0.5em;
+  background: white;
+  border-radius: inherit;
+  font-size: 0.75em;
 }
+
+/*# sourceMappingURL=tweets.css.map */
