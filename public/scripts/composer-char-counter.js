@@ -1,15 +1,16 @@
-$(() => {
+$(() => { // character counter
   $(".new-tweet textarea")
     .keyup(function () {
       const charCount = 140 - $(this)
         .val()
         .length;
-      let charCountColor = (charCount < 0) ? "red" : "";
+const $counter = $(".new-tweet .counter")
+      charCount < 0 ? $counter.addClass('err') : $counter.removeClass('err')
       $(".new-tweet .counter")
         .text(charCount)
-      $(".new-tweet .counter")
-        .css("color", charCountColor)
     });
+
+//compose button toggle
     let hidden = 'not started';
     $("#nav-bar .compose")
     .click( function () {
