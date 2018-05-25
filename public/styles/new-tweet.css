@@ -1,0 +1,55 @@
+.new-tweet {
+  background-color: #72C278;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 100px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border-color: #E6B8FF
+
+
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.textInput {
+  height: 100px;
+  width: 400px;
+  text-align: left
+  margin:10px;
+  margin-bottom:5px;
+  margin-top:-20px;
+  margin-left: 40px;
+
+
+}
+
+.button {
+  border-radius:5px;
+  padding:10px 10px;
+  margin-left: 20px;
+  margin-top:10px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color:lightgray;
+
+}
+
+.counter {
+  font-size: 30px;
+  float:right;
+  margin-right: 20PX;
+  margin-top: 30px;
+  color:white;
+}
+
+
