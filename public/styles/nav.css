@@ -1,12 +1,13 @@
 #nav-bar {
-  background-color:#00a087;
+  background-color:#337F39;
   position: fixed;
-  top: 0;
+  top: 0px;
   width:100%;
-  color:#e8fdff;
+  color:white;
   height:80px;
   padding-left:60px;
   padding-right:60px;
+  z-index: 2;
 
 }
 
@@ -16,7 +17,7 @@
   height: 80px;
 }
 
-#nav-bar .header {
+#nav-bar .webName {
  float:left;
  line-height: 2.4;
  font-size:35px;
@@ -24,8 +25,21 @@
 }
 
 #nav-bar .compose {
+background-color: white;
+color:#337F39;
 float:right;
 margin:10px;
+height:60px;
+width:135px;
+border-radius: 7px;
+font-size: 20px;
+cursor: pointer;
+padding-left:5px;
+}
+
+#nav-bar .compose:hover {
+  background-color:lightgray;
+  color:black;
 }
 
 

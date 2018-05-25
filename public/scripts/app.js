@@ -3,11 +3,12 @@ $(document).ready(function() {
 
 function createTweetElement(tweet) {
   var $tweet = $("<div>").addClass("tweet");
-  var $header = $("<header>").appendTo($tweet);
+  var $header = $("<header>").addClass("header").appendTo($tweet);
   $("<img>").addClass("profile-pic").attr("src", tweet.user.avatars.small).appendTo($header);
   $("<h3>").text(tweet.user.name).appendTo($header)
   $("<p>").text(tweet.user.handle).appendTo($header)
   var $article = $("<article>").text(tweet.content.text).appendTo($tweet)
+  var $line = $("<hr>").appendTo($tweet)
   var $footer = $("<footer>").appendTo($tweet);
   $("<p>").addClass("clock").text(tweet.created_at).appendTo($footer)
   var $span = $("<span>").addClass("icons").appendTo($footer);
@@ -36,7 +37,7 @@ $(".inputField").on("submit",function(event) {
    var $sendTweet = $(this);
    event.preventDefault();
    var $tweetMessage = $("textarea").val();
-   if ($tweetMessage.length > 0 && $tweetMessage.length <140){
+   if ($tweetMessage.length > 0 && $tweetMessage.length <141){
     var serializedMessage = $(this).serialize();
     $.post("/tweets", serializedMessage, function() {
       renderPage();
@@ -56,7 +57,7 @@ $(window).load(function(){
 
 $(document).ready(function(){
     $(".compose").click(function(){
-        $(".new-tweet").toggle(1000);
+        $(".new-tweet").slideToggle(750);
     });
  });
 
@@ -66,6 +67,9 @@ $(document).ready(function(){
     $('.textInput').select()
 });
 });
+
+
+
 
 
 

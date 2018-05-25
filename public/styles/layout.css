@@ -21,9 +21,9 @@ body {
 
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background-color: #B8FFBD;
   font-family: 'Roboto', sans-serif;
-  opacity: 1;
+
 
 }
 
@@ -33,6 +33,7 @@ body {
   background-color: white;
   padding-top: 70px;
   padding-bottom:100%;
+  border-top:140px;
 }
 
 

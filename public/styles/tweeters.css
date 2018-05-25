@@ -4,44 +4,48 @@
   border-color: lightgray;
   margin-left: 30px;
   margin-right:30px;
-  margin:30px;
+  margin-top:30px;
 }
 
 .tweet {
   margin-top:20px;
-  margin-bottom: 20px;
-   border-style: solid;
+  margin-bottom: 30px;
+  border-style: solid;
   border-width: 2px;
-  border-radius: 5px;
-  margin-left:30px;
-  margin-right:30px;
+  border-radius: 10px;
+  margin-left:40px;
+  margin-right:40px;
+  opacity: 0.8;
 }
 
-section:hover.tweet{
-  opacity: .5;
-}
 
 .profile-pic {
   float:left;
-  padding: 10px;
   border-radius: 20px;
+  border-style:solid;
+  border-width:medium;
+  margin:7px;
 
 }
 
 header {
-  background-color: #eee;
+  background-color: #72C278;
   height: 70px;
+  border-radius: 8px;
 }
 
 h3 {
-  border-top:30px;
-  right: 150px;
-  display:inline;
+  float:left;
+  color:white;
+  text-shadow: 2px 2px black;
 }
 
 header p {
+  margin-top: 30px;
+  float:right;
   display: inline;
-  padding-left:20px;
+  color:white;
+  margin-right:10px;
 }
 
 article {
@@ -51,7 +55,6 @@ article {
 }
 
 footer {
-  border-style:ridge;
   border-radius: 10px;
 }
 
@@ -62,10 +65,20 @@ footer {
 }
 
 .icons {
+  display:none;
   margin:0px;
   float:right;
   position: relative;
   bottom:26px;
   right:2px
+}
+
+.tweet:hover {
+  opacity: 1;
+}
+
+
+.span:hover {
+  display:block;
 }
 
