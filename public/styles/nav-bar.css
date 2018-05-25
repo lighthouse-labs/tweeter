@@ -2,9 +2,9 @@
     z-index: 1;
     position: fixed;
     box-sizing: border-box;
-    height: 80px;
+    height: fit-content;
     width: 100%;
-    line-height: 80px;
+    line-height: 2.3em;
     padding: 0 2em;
     font-size: 2em;
     color: #e8fdff;
@@ -12,29 +12,45 @@
 }
 #nav-bar .logo {
     float: left;
+    box-sizing:border-box;
+
 }
 #nav-bar .header {
     float: left;
-    margin: 0px 0px 0px 10px
+    margin: 0 0 0 1em
 }
 #nav-bar .compose {
     opacity: .9;
     width: fit-content;
     height: fit-content;
-    border-radius: 5px;
+    border-radius: .4em;
     background: white;
     float: right;
-    margin: 10px;
+    margin: .6em;
     font-size: .5em;
-    line-height: 3.4;
+    line-height: 3.5em;
     padding: 0 1.5em;
-    border: unset;
-    border: solid 1px;
+    border: solid .1em;
 }
 #nav-bar .compose:hover {
     opacity: 1
 }
 
-#nav-bar .compose:click {
-    
+@media screen and (max-width: 500px){
+  #nav-bar .compose {
+    width: 100%
+  }
+  #nav-bar {
+    padding: 0 10%
+  }
+  #nav-bar .header {
+    font-size: 60%;
+    padding: 0;
+    margin: 0;
+  }
+  #nav-bar .logo {
+      margin: 0 0% 0 10%;
+      padding: 0;
+  }
+     
 }

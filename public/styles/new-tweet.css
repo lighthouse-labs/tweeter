@@ -15,9 +15,22 @@
     resize: none;
 }
 .new-tweet input {
-    clear: left;
+    float: left;
 }
 .new-tweet span {
     float: right;
     font-size: .75em;
+}
+.new-tweet p {
+    padding-left: 4em;
+    line-height: 0;
+}
+.new-tweet p:after {
+    content: " "
+    display: block;
+    clear:both;
+}
+
+.err {
+    color: red;
 }
