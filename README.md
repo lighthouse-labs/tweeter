@@ -16,3 +16,4 @@ This project shows my understanding of Express, node.js, ajax, jquery, MongoDB, 
 
 !["Screenshot of Main page"](https://github.com/Matt-Greff/tweeter/blob/forshow/docs/main.png?raw=true)
 !["Screenshot tweet send protection"](https://github.com/Matt-Greff/tweeter/blob/forshow/docs/stoppingTweet.png?raw=true)
+*note images show like feature which is not yet implemented
