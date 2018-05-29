@@ -1,0 +1,49 @@
+.tweet
+    opacity: .9;
+    background: white;
+    border-radius: 5px;
+    border: solid .075em lightgrey;
+    margin: 1em 0 0;
+
+    &:hover 
+        opacity: 1;
+
+    header 
+        width: 100%;
+        background: #eee;
+        border-radius: .2em .2em 0 0;
+
+    img
+        float: left;
+        padding: .5em;
+        border-radius: .75em;
+
+    h2
+        margin: 0;
+        float: left;
+        padding: .3em;
+
+    p
+        float: right;
+        margin: 0px;
+        font-size: .75em;
+        padding: 1em;
+
+    header::after
+        content: " ";
+        display: block;
+        clear: both;
+
+    div
+        height: fit-content;
+        width: 100%;
+        background: white;
+        border-top: solid .08em lightgrey;
+        border-bottom: solid 0.07em lightgrey;
+        padding: 2em 1em;
+
+    footer
+        padding: .5em;
+        background: white;
+        border-radius: inherit;
+        font-size: .75em;
