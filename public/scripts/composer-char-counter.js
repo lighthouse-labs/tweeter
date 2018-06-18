@@ -1,3 +1,5 @@
 $(document).ready(function() {
-  console.log("testing");
+  $("#newTweet").on("keypress", function() {
+    console.log(this);
+  });
 });
