@@ -1,0 +1,40 @@
+.new-tweet {
+margin-left: 2em;
+margin-right: 2em;
+background-color: #eeeeee;
+border: 1px solid #adabab99;
+border-radius: 5px;
+padding-bottom: .5em;
+}
+
+.hrline {
+  border-top: 0px;
+}
+
+
+#compose {
+  border-bottom: 1.1px solid;
+  margin-right: .5em;
+  margin-left: .5em;
+  color: #234651;
+}
+
+
+textarea {
+  width:  -webkit-fill-available;
+  margin-left: .5em;
+  margin-right: .5em;
+  padding-right: 5em;
+}
+
+
+.counter {
+  float: right;
+  padding-right: 1em;
+}
+
+
+#tweet {
+  align-items: left;
+  margin-left: .5em;
+}
