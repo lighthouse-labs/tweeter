@@ -4,7 +4,7 @@ h2 {
   padding: 10px 0px 2px 0px;
 }
 
-section {
+section.new-tweet {
   background-color: rgb(232, 232, 232);
   padding: 0em 2em 1em 2em;
   border-radius: 5px;
