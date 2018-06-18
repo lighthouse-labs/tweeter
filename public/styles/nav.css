@@ -1,0 +1,24 @@
+#nav-bar {
+  overflow: auto;
+  position: fixed;
+  height: 80px;
+  background-color: #00a087;
+  width:  -webkit-fill-available;
+  color: #e8fdff;
+  padding-left: 2em;
+  padding-right: 2em;
+
+}
+
+#nav-bar .logo {
+  float: left;
+  height: 80px;
+  width: 80px;
+}
+
+#nav-bar .header {
+  padding-left: 10px;
+  float: left;
+  font-size: 2em;
+  line-height: 2em;
+}
