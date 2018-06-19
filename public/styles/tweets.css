@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #c0c7ce;
+  margin-top: 20px;
 
 }
 
@@ -82,7 +83,7 @@
 
 
 #tweet-feed .tweet footer div :hover{
-  color: red;
+  color: #df81db;
 }
 
 
