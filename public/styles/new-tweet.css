@@ -7,7 +7,6 @@
   border-radius: 5px;
 
 }
-
  .tweet-header {
   border-bottom: 1.3px solid black;
   margin-top: 0;
@@ -43,6 +42,7 @@
   border: 1px solid lightgrey;
   border-radius: 5px;
   margin-top: 15px;
+  opacity: 0.6;
 }
 .tweet-container header {
   background-color: #F8F8F8;
@@ -66,7 +66,6 @@
 }
 .tweet-text {
   border-bottom: 1px solid lightgrey;
-  margin-left: 10px;
 
   }
 .tweet-container footer {
@@ -86,9 +85,14 @@ article p {
 }
 .tweet-icons i {
   padding-right: 15px;
+  opacity: 0;
+  cursor: pointer;
 }
-article:hover {
-
+.tweet-container:hover .tweet-icons i {
+  opacity: 1;
+}
+.tweet-container:hover {
+  opacity: 1;
 }
 
 
