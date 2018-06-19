@@ -9,18 +9,23 @@ $(document).ready(function() {
     //if the key is backspace, text length is minus 1 (unless length is 0)
 
     if(event.key === "Backspace"){
-      textLength = $(this).val().length - 1;
+      textLength = $(this)
+                    .val()
+                    .length - 1;
+
       if(textLength < 0){
         textLength = 0;
       }
     } else {
 
-      textLength = $(this).val().length + 1;
+      textLength = $(this)
+                    .val()
+                    .length + 1;
     }
 
     //update value of the counter
 
-    let element = $(this).parent().children('.counter');
+    let element = $(this).siblings('.counter');
     newCount = 140 - textLength;
 
     element.text(newCount);
