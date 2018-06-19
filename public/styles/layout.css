@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -25,9 +25,93 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+main {
   background-color: white;
   margin: 80px 450px 0px 450px;
   padding-top: 10px;
   vertical-align: middle;
- }
+}
+
+section.newTweetBox {
+  display: flex;
+  margin: 30px 20px 20px 20px;
+  height: 260px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+header.newTweetHeader {
+  display: flex;
+  height: 90px;
+  width: 100%;
+  background-color: rgb(233, 233, 233);
+  border-radius: 15px 15px 0px 0px;
+
+}
+
+img.newProfile {
+  display: flex;
+  padding: 9px 0px 9px 20px;
+}
+
+h2.newTweeth2 {
+  display: flex;
+  margin: 10px 20px 20px 10px;
+}
+
+p.newTweetId {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 125px;
+}
+
+/*
+header.newTweetHeader {
+  overflow: auto;
+  height: 90px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 15px 15px 0px 0px;
+
+}
+
+img.newProfile {
+  padding-top: 9px;
+  padding-left: 20px;
+  float: left;
+  /*border-radius: 8px;
+}
+
+h2.newTweeth2 {
+  float: left;
+  overflow: auto;
+  margin: 10px 20px 20px 10px;
+}
+
+p.newTweetId {
+  float: right;
+  overflow: auto;
+  top: 10px;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
