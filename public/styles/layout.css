@@ -81,8 +81,28 @@ p.newTweetContent {
 }
 
 p.newTweetPostTime {
+  float: left;
+  overflow: auto;
   padding-left: 10px;
 }
+
+div.hiddenIcons{
+  display: none;
+  margin-top: 15px;
+  margin-right: 10px;
+  float: right;
+  overflow: auto;
+}
+
+section.newTweetBox:hover footer div{
+  display: inline;
+}
+
+section.newTweetBox:hover header{
+ background-color: rgb(220, 220, 220);
+}
+
+
 
 
 
