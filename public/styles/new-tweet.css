@@ -33,6 +33,72 @@
 .color {
   color: #EA1616;
 }
+.tweet-container img {
+  height: 75px;
+  width: 75px;
+}
+.tweet-container {
+  margin-left: 2em;
+  margin-right: 2em;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.tweet-container header {
+  background-color: #F8F8F8;
+  padding: 5px;
+  display: flex;
+  align-items: flex-start;
+}
+.tweet-container .handle {
+  font-size: 12px;
+  padding-left: 10px;
+  margin-left: 100px;
+}
+.tweet-text p {
+  margin-left: 5px;
+
+}
+.tweet-container h1 {
+  position: relative;
+  bottom: 20px;
+  margin-left: 10px;
+}
+.tweet-text {
+  border-bottom: 1px solid lightgrey;
+  margin-left: 10px;
+
+  }
+.tweet-container footer {
+
+}
+article p {
+  margin-left: 10px;
+}
+.tweet-container footer {
+  display: flex;
+}
+ .tweet-icons {
+
+  display: flex;
+  margin-top: 15px;
+  margin-left: 200px;
+}
+.tweet-icons i {
+  padding-right: 15px;
+}
+article:hover {
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
