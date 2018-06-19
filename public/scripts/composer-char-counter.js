@@ -1,9 +1,12 @@
 $(document).ready(function() {
-  let counter = 140;
+
+  //change character count when a key is pressed in the tweet text area
 
   $(".new-tweet form #tweetBox").keydown(function(event) {
     let textLength = 0;
     let newCount;
+
+    //if the key is backspace, text length is minus 1 (unless length is 0)
 
     if(event.key === "Backspace"){
       textLength = $(this).val().length - 1;
@@ -11,23 +14,26 @@ $(document).ready(function() {
         textLength = 0;
       }
     } else {
+
       textLength = $(this).val().length + 1;
     }
-    console.log($(this).val().length);
 
-    if(textLength === 0){
-      newCount = 140;
-    } else {
-    newCount = 140 - textLength;
-    }
+    //update value of the counter
+
     let element = $(this).parent().children('.counter');
+    newCount = 140 - textLength;
 
     element.text(newCount);
 
+
+    //if counter goes negative, add class to make it red
+
     if(newCount < 0){
+
       console.log("HERE")
       element.addClass('overLimit');
     } else {
+
       element.removeClass('overLimit');
     }
   })
