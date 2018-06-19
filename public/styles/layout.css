@@ -10,6 +10,10 @@ html {
   box-sizing: inherit;
 }
 
+*{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 /*
  * Global layout stuff
  */
@@ -18,6 +22,21 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+}
+
+.container{
+  width: 450px;
+  background-color: #ffffff;
+  margin-left: 415px;
+  margin-right: 415px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /*

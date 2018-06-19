@@ -1,0 +1,41 @@
+.new-tweet{
+  background-color: #eee;
+  border: 1px solid #A9A9A9;
+  border-radius: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-bottom: 5px;
+
+}
+
+.new-tweet h2{
+  margin-top: 10px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border-bottom: 1px solid #000000;
+}
+
+.new-tweet form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.new-tweet .button{
+  float: right;
+  margin-top: 5px;
+}
+
+.new-tweet .counter{
+  float: left;
+  margin-top: 5px;
+}
+
+.new-tweet textarea{
+  flex-basis: 100%;
+  padding: 3px;
+}
