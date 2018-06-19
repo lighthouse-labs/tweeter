@@ -27,13 +27,16 @@ body {
 
 main {
   background-color: white;
-  margin: 80px 450px 0px 450px;
+  margin: 80px 450px 80px 450px;
   padding-top: 10px;
-  vertical-align: middle;
+  max-width: 450px;
+  min-width: 250px;
+/*  vertical-align: middle;
+  min-width: 350px;
+  max-width: 850px;*/
 }
 
 section.newTweetBox {
-  display: flex;
   margin: 30px 20px 20px 20px;
   height: 260px;
   border-radius: 15px;
@@ -49,61 +52,37 @@ header.newTweetHeader {
 
 }
 
-img.newProfile {
-  display: flex;
-  padding: 9px 0px 9px 20px;
+div.imageContainer {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 9px 0px 9px 20px;
 }
 
 h2.newTweeth2 {
-  display: flex;
   margin: 10px 20px 20px 10px;
 }
 
 p.newTweetId {
-  display: flex;
+  float: left;
   margin-top: 30px;
-  margin-left: 125px;
+  margin-left: 110px;
+  color: rgb(160, 160, 160);
 }
 
-/*
-header.newTweetHeader {
+article.newTweetArticle {
+  border-bottom: 0.5px solid rgb(230, 230, 230);
+  height: 40%;
+}
+
+p.newTweetContent {
+  padding: 25px 50px 35px 10px;
   overflow: auto;
-  height: 90px;
-  background-color: rgb(233, 233, 233);
-  border-radius: 15px 15px 0px 0px;
-
+  overflow-wrap: break-word;
 }
 
-img.newProfile {
-  padding-top: 9px;
-  padding-left: 20px;
-  float: left;
-  /*border-radius: 8px;
+p.newTweetPostTime {
+  padding-left: 10px;
 }
-
-h2.newTweeth2 {
-  float: left;
-  overflow: auto;
-  margin: 10px 20px 20px 10px;
-}
-
-p.newTweetId {
-  float: right;
-  overflow: auto;
-  top: 10px;
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
 
 
 
