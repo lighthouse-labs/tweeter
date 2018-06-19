@@ -1,0 +1,108 @@
+#tweet-feed .tweet {
+  height: 200px;
+  background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c0c7ce;
+
+}
+
+#tweet-feed .tweet header{
+  width: 100%;
+  background-color: #e5e8eb;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 80px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+#tweet-feed .tweet .avatar {
+  width: 70px;
+  height: 70px;
+  align-self: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: blue;
+  border-radius: 7px;
+
+
+}
+
+#tweet-feed .tweet header p {
+  margin-left: auto;
+  margin-top: 15px;
+  padding-right: 10px;
+}
+
+#tweet-feed .tweet header h1 {
+  margin-top: 10px;
+}
+
+#tweet-feed .tweet div p {
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+
+
+#tweet-feed .tweet footer {
+  background-color: #fff;
+  border-top: 1px solid #c0c7ce;
+  height: 30px;
+  margin-top: auto;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#tweet-feed .tweet footer p{
+  margin-top: 7px;
+  margin-left: 7px;
+  font-size: 12px;
+
+
+
+}
+
+#tweet-feed .tweet footer div {
+  color: teal;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+
+#tweet-feed .tweet footer div :hover{
+  color: red;
+}
+
+
+#tweet-feed .tweet:hover > header{
+  background-color: #d0d6dc;
+}
+
+#tweet-feed .tweet:hover {
+  border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

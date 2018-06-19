@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/responses.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -27,7 +29,7 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" >
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
@@ -40,6 +42,27 @@
           <input type="submit" name="Tweet" value="Tweet">
           <span class="counter">140</span>
         </form>
+      </section>
+      <section id="tweet-feed">
+        <article class='tweet'>
+          <header>
+            <img class="avatar" src="/images/bird.png">
+            <h1>NAME</h1>
+            <p> @handle </p>
+          </header>
+          <div>
+            <p>Here is my Tweet. Tweet ---</p>
+          </div>
+          <footer>
+            <p class="time-stap">2 hours ago</p>
+            <div>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+
       </section>
 
     </main>
