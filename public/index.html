@@ -28,8 +28,14 @@
     <!-- NEW-TWEET CSS -->
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css">
 
+    <!-- ARTICLE-TWEET CSS -->
+    <link rel="stylesheet" href="styles/article-tweet.css" type="text/css">
+
     <!-- JS CHARACTER COUNT -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 
 
@@ -45,17 +51,36 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+     <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST">
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <input type="submit" value="Tweet">
+        <span class="counter">10</span>
+      </form>
+    </section>
 
-       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">10</span>
-        </form>
-      </section>
 
+    <!-- HISTORIC TWEET SECTION -->
+    <section>
+      <article class='boxTweet'>
+        <header>
+          <img src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png">
+        <h2>Bill field</h2>
+        <p class='handle'>@MrField</p>
+      </header>
+        <div class='content'>Sugar plum chupa chups candy canes sesame snaps jelly-o lollipop chocolate. Jelly beans candy jelly. Pastry dragée icing. Jujubes sweet chocolate bar soufflé candy canes oat cake. </div>
+        <footer>
+          <p>10 days ago</p>
+          <div class='logos'>
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+    </section>
 
-    </main>
+  </main>
 </body>
 </html>
