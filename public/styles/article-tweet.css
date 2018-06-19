@@ -6,10 +6,13 @@ border-radius: 5px;
 opacity: 50%;
 }
 
+article h2{
+  opacity: 0.5;
+}
 
-article:hover header{
-  opacity: 100%;
-  background-color: red;
+
+article:hover h2{
+  opacity: 1;
 }
 
 article header {
@@ -42,10 +45,15 @@ article .content {
 }
 
 
-article p .handle {
+article .handle {
   justify-content: right;
   margin-bottom: 15px;
   padding-left: 1em;
+  opacity: 0.3;
+}
+
+article:hover .handle {
+  opacity: 1;
 }
 
 article img {
@@ -53,4 +61,12 @@ article img {
   height: 60px;
   width: 60px;
   border-radius: 15px;
+}
+
+article .logos {
+  visibility: hidden;
+}
+
+article:hover .logos {
+  visibility: visible;
 }
