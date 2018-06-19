@@ -1,4 +1,4 @@
-.new-tweet{
+.new-tweet {
   background-color: #eee;
   border: 1px solid #A9A9A9;
   border-radius: 5px;
@@ -8,14 +8,14 @@
 
 }
 
-.new-tweet h2{
+.new-tweet h2 {
   margin-top: 10px;
   margin-left: 0.5em;
   margin-right: 0.5em;
   border-bottom: 1px solid #000000;
 }
 
-.new-tweet form{
+.new-tweet form {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,17 +25,17 @@
   padding-left: 1em;
 }
 
-.new-tweet .button{
+.new-tweet .button {
   float: right;
   margin-top: 5px;
 }
 
-.new-tweet .counter{
+.new-tweet .counter {
   float: left;
   margin-top: 5px;
 }
 
-.new-tweet textarea{
+.new-tweet textarea {
   flex-basis: 100%;
   padding: 3px;
 }

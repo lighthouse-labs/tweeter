@@ -24,7 +24,7 @@ body {
   background-color: #eee;
 }
 
-.container{
+.container {
   width: 450px;
   background-color: #ffffff;
   margin-left: 415px;
@@ -38,6 +38,7 @@ body {
     clear: both;
     display: table;
 }
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
