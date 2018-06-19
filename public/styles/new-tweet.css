@@ -5,36 +5,31 @@ background-color: #eeeeee;
 border: 1px solid #adabab99;
 border-radius: 5px;
 padding-bottom: .5em;
+padding-right: 1em;
+padding-left: 1em;
 }
 
-.hrline {
-  border-top: 0px;
-}
 
-
-#compose {
+.new-tweet h2  {
   border-bottom: 1.1px solid;
-  margin-right: .5em;
-  margin-left: .5em;
   color: #234651;
 }
 
+.new-tweet form {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
 
-textarea {
-  width:  -webkit-fill-available;
-  margin-left: .5em;
-  margin-right: .5em;
-  padding-right: 5em;
+.new-tweet textarea {
+  flex-basis: 100%;
+  border: 1px solid ;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 
-.counter {
-  float: right;
-  padding-right: 1em;
-}
-
-
-#tweet {
-  align-items: left;
-  margin-left: .5em;
+.redCounter {
+  color: red;
 }
