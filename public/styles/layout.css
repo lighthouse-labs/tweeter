@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -23,3 +24,72 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  width: 500px;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 50px;
+  height: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.new-tweet {
+  background-color: lightgrey;
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+}
+
+.new-tweet h2 {
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 15px;
+
+}
+
+.new-tweet form {
+  padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  justify-content: space-between;
+
+}
+
+
+.new-tweet form textarea {
+  width: 140%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+
+}
+
+.new-tweet form .counter {
+  margin-right: 20px;
+}
+
+.new-tweet form input {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
