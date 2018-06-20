@@ -9,16 +9,15 @@
 }
 
 .tweets header {
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-flow: wrap;
   justify-content: space-between;
-  padding-top: 5px;
-  padding-bottom: 5px;
   background-color: #eee;
-  padding-left: 10px
+  padding: 10px
 }
 
 .tweets header div {
@@ -41,6 +40,13 @@
   color: #A9A9A9;
 }
 
+.tweets .text {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 .tweets footer {
   border-top: 1px solid #eee;
   font-size: 0.5em;
@@ -49,18 +55,23 @@
 
 }
 
-.tweets p {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+.tweets footer p {
+  float: left;
 }
 
 .tweets footer div {
   color: #3db5a1;
   visibility: hidden;
-  float: right;
   margin-right: 10px;
+  margin-top: 10px;
+
+  float: right;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 article:hover footer div {
