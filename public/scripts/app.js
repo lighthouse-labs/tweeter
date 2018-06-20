@@ -8,19 +8,19 @@
 $('document').ready(function () {
 
 
-function validateForm(){
-  let $formTweet = $('#formTweet');
+// function validateForm(){
 
-  if ($formTweet.text() === "") {
-    alert("We're sure you're not trying to post an empty tweet! Try again")
-  } else if ($formTweet.val().length > 140 ){
-    alert("Oops! Too many characters in that tweet.  Maybe summarize your story in less than 140 characters")
-  } else {
-    loadTweets();
-  }
-}
 
-validateForm();
+//   } else if ($formTweet.val().length > 140 ) {
+
+//   ("Oops! Too many characters in that tweet.  Maybe summarize your story in less than 140 characters")
+
+//   } else {
+//     loadTweets();
+//   }
+// }
+
+// validateForm();
 
 
 // RENDER TWEETS
@@ -67,16 +67,26 @@ function createTweetElement(tweetData){
 
 
 //POST TWEETS on same page
-  $('#formTweet').on('submit', event => {
-    event.preventDefault();
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(event.target).serialize(),
-      success: function () {
+
+
+$('#formTweet').on('submit', event => {
+  event.preventDefault();
+
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: $(event.target).serialize(),
+    success: function () {
+      let $formTweet = $('#formTweet');
+      let $main = $('main');
+      if ($formTweet.text() === "" || $formTweet.text() === null) {
         console.log('Success');
+        $('<div>').addClass('errorMessage').text("We're sure you're not trying to post an empty tweet! Try again").prepend($main);
+      } else {
+        loadTweets();
       }
-    });
+    }
+  });
 }); // END OF POST AJAX
 
 
@@ -86,7 +96,7 @@ function loadTweets() {
       url: '/tweets',
       method: 'GET',
       success: function (response) {
-        renderTweets(response);
+        renderTweets(response)
       }
     });
 }  // END OF GET AJAX
