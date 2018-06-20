@@ -42,6 +42,12 @@ $(document).ready(function() {
 
   function createTweetElement(tweet) {
 
+    function escape(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
     const icon = tweet['user']['avatars']['small'];
 
     const name = tweet['user']['name'];
@@ -60,7 +66,7 @@ $(document).ready(function() {
                         </div>
                         <p class="handle">${handle}</p>
                       </header>
-                      <p class="text">${text}</p>
+                      <p class="text">${escape(text)}</p>
                       <footer class='clearfix'>
                         <p class="timestamp">${timestamp}</p>
                         <div>
