@@ -36,11 +36,12 @@ main {
   max-width: 850px;*/
 }
 
-section.newTweetBox {
+div.singleBox {
   margin: 30px 20px 20px 20px;
-  height: 260px;
+  height: 250px;
   border-radius: 15px;
   border: 1px solid black;
+  overflow: auto;
 }
 
 header.newTweetHeader {
@@ -49,29 +50,36 @@ header.newTweetHeader {
   width: 100%;
   background-color: rgb(233, 233, 233);
   border-radius: 15px 15px 0px 0px;
-
+  overflow: auto;
 }
 
 div.imageContainer {
   border-radius: 10px;
+  margin: 17px 0px 9px 25px;
+  height: 52px;
   overflow: hidden;
-  margin: 9px 0px 9px 20px;
 }
 
 h2.newTweeth2 {
-  margin: 10px 20px 20px 10px;
+  margin: 15px 20px 20px 15px;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 p.newTweetId {
   float: left;
   margin-top: 30px;
-  margin-left: 110px;
+  margin-left: 105px;
   color: rgb(160, 160, 160);
+  overflow: auto;
 }
 
 article.newTweetArticle {
   border-bottom: 0.5px solid rgb(230, 230, 230);
   height: 40%;
+  overflow: auto;
 }
 
 p.newTweetContent {
@@ -94,11 +102,11 @@ div.hiddenIcons{
   overflow: auto;
 }
 
-section.newTweetBox:hover footer div{
+div.singleBox:hover footer div{
   display: inline;
 }
 
-section.newTweetBox:hover header{
+div.singleBox:hover header{
  background-color: rgb(220, 220, 220);
 }
 
