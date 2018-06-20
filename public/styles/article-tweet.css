@@ -12,7 +12,6 @@ article header {
   background-color: #f3f3f3;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 article img {
@@ -20,11 +19,13 @@ article img {
   height: 60px;
   width: 60px;
   border-radius: 15px;
+  float: left;
 }
 
 article h2{
   opacity: 0.5;
-  padding-right: 160px;
+
+  float: left;
 }
 
 article:hover h2{
@@ -32,7 +33,7 @@ article:hover h2{
 }
 
 article .handle {
-  justify-content: right;
+  align-items: right;
   margin-bottom: 15px;
   padding-left: 1em;
   opacity: 0.3;
@@ -47,6 +48,7 @@ article .content {
   padding-bottom: 1.5em;
   padding-left: .5em;
   border-bottom: 1px solid #eeeeee;
+  margin-bottom: 0px;
 }
 
 
@@ -56,8 +58,7 @@ article footer {
   border-color: black;
   border-top: 2px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
 }
 
 article .logos {

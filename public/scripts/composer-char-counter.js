@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  let charCount = 10;
+  let charCount = 140;
 
   $('textarea').on('keyup', function (event) {
 
