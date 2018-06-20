@@ -51,6 +51,8 @@ $(function() {
   $('input').on('click', function (event) {
     event.preventDefault();
 
+    $("#newTweet").val().innerHTML = escape($("#newTweet").val().innerHTML);
+
     if($("#newTweet").val().length > 0 || $("#newTweet").val().length < 140){
       let data = $('form').serialize();
       $.ajax('http://localhost:8080/tweets', {
@@ -62,6 +64,17 @@ $(function() {
     }
   });
 
+
+  $('section[id="toggle"]').hide();
+  $("button").click( function () {
+    $('section[id="toggle"]').slideToggle();
+  });
+
+  function escape (str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 });
 
 

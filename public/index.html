@@ -38,13 +38,16 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png">
-      <span class="header">Tweeter</span>
+        <img class="logo" src="/images/bird.png">
+        <span class="header">Tweeter</span>
+        <div class="compose">
+            <button class="composeBtn"> <i class="far fa-edit"></i>Compose</button>
+        </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
+        <section class="new-tweet" id="toggle">
             <h2>Compose Tweet</h2>
             <form>
                 <textarea name="text" placeholder="What are you humming about?" id="newTweet"></textarea>

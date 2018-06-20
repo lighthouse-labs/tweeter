@@ -35,6 +35,19 @@ main {
   min-width: 350px;
   max-width: 850px;*/
 }
+div.compose{
+  display: inline;
+}
+
+button.composeBtn{
+  float: right;
+  overflow: auto;
+  height: 60px;
+  width: 120px;
+  margin: 10px 0px 20px 0px;
+  text-align: middle;
+}
+
 
 div.singleBox {
   margin: 30px 20px 20px 20px;
