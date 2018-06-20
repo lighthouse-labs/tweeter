@@ -58,6 +58,8 @@ $(function() {
         data: data
       }).done(function (data){
         $(".newTweetBox").load(loadTweets());
+        $("form textarea").val("");
+        $('section[id="toggle"]').hide();
       });
     }
   });
@@ -66,6 +68,7 @@ $(function() {
   $('section[id="toggle"]').hide();
   $("button").click( function () {
     $('section[id="toggle"]').slideToggle();
+    $("textarea").focus();
   });
 
   function escape (str) {
