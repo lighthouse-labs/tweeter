@@ -7,21 +7,15 @@
 
 $('document').ready(function () {
 
+  $('.new-tweet').hide();
 
-// function validateForm(){
 
+  $('.compose').on('click', function (event) {
 
-//   } else if ($formTweet.val().length > 140 ) {
+  $('.new-tweet').slideToggle(200);
+  $('textarea').focus();
 
-//   ("Oops! Too many characters in that tweet.  Maybe summarize your story in less than 140 characters")
-
-//   } else {
-//     loadTweets();
-//   }
-// }
-
-// validateForm();
-
+});
 
 // RENDER TWEETS
 function renderTweets(tweetData) {
@@ -117,6 +111,7 @@ function loadTweets() {
 }  // END OF GET AJAX
 
 loadTweets()
+
 
 }); // END OF GET READY
 

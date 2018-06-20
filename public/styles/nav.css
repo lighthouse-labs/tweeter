@@ -22,3 +22,20 @@
   font-size: 2em;
   line-height: 2em;
 }
+
+#nav-bar .compose{
+  float: right;
+  opacity: 1;
+
+}
+
+
+.compose{
+  float: right;
+  opacity: 1;
+}
+
+ .compose:hover {
+  opacity: .5;
+  background-color: red;
+}
