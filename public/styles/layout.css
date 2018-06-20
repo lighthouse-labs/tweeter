@@ -39,6 +39,22 @@ body {
     display: table;
 }
 
+.container .alert {
+  height: 20px;
+  text-align: right;
+  margin-right: 2em;
+  color: red;
+  animation-name: disappear;
+  animation-duration: 2s;
+}
+
+@keyframes disappear {
+  from {visibility: visible;}
+  to {visibility: hidden;}
+}
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
