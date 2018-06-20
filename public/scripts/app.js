@@ -72,21 +72,31 @@ function createTweetElement(tweetData){
 $('#formTweet').on('submit', event => {
   event.preventDefault();
 
+
+  let $container = $('.appendHere')
+  let $formTweet = $('textarea').val().length; // to check textarea
+  let $newDiv = $('<div>').addClass('messageContainer'); // adding this DIV if either things happen
+
+  let emptyTweet = "We're sure you're not trying to post an empty tweet! Try again"; //message for empty
+  let overChar = 'too many characters'; // message for too many
+
+
+  if ($formTweet === 0) {
+    console.log(emptyTweet)
+
+    $($newDiv).text(emptyTweet).appendTo($container);
+
+      } else {
+
   $.ajax({
     url: '/tweets',
     method: 'POST',
     data: $(event.target).serialize(),
     success: function () {
-      let $formTweet = $('#formTweet');
-      let $main = $('main');
-      if ($formTweet.text() === "" || $formTweet.text() === null) {
-        console.log('Success');
-        $('<div>').addClass('errorMessage').text("We're sure you're not trying to post an empty tweet! Try again").prepend($main);
-      } else {
-        loadTweets();
-      }
+      loadTweets()
     }
   });
+}
 }); // END OF POST AJAX
 
 
