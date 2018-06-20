@@ -57,16 +57,27 @@
 //Form Submission using AJAX to load tweets dynamically
 $('#tweet-form').on('submit', event => {
   event.preventDefault();
-  console.log('hello');
+  const tweetLength = $('textarea').val();
+  const $divError = $('<div>').addClass('error');
+  const $errorMsg = $('<p>').text('Please enter some text to continue.');
+  const $errorMsg2 = $('<p>').text('Your tweet may not exceed 140 characters.');
+
+  if (tweetLength.length === 0) {
+     $('#tweet-form').append($divError).append($errorMsg);
+  } else if (tweetLength.length > 140) {
+     $('#tweet-form').append($divError).append($errorMsg2);
+    console.log('Your tweet may not exceed 140 characters.');
+  } else {
   $.ajax({
     url: '/tweets',
     method: 'POST',
     data: $(event.target).serialize(),
     success: function () {
-      console.log('success!');
+      loadTweets();
+      $('textarea').val(null);
     }
-
   });
+  }
 });
 
 function loadTweets() {
@@ -74,18 +85,17 @@ function loadTweets() {
     url: '/tweets',
     method: 'GET',
     success: function (content) {
-      renderTweets(content[0]);
-      $('.tweet-container').prepend(createTweetElement(content[0]));
-      $('.tweet-container').prepend(createTweetElement(content[1]));
-
-
+      renderTweets(content);
+      $('textarea').val(null);
     }
   });
 }
 
 loadTweets();
 
-
+$('.nav-button').click(function () {
+  $('.new-tweet').slideToggle(150);
+});
 
 
 });
