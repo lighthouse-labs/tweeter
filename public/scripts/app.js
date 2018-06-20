@@ -82,9 +82,12 @@ $('#formTweet').on('submit', event => {
 
 
   if ($formTweet === 0) {
-    console.log(emptyTweet)
 
     $($newDiv).text(emptyTweet).appendTo($container);
+
+     } else if ($formTweet > 140) {
+
+      $($newDiv).text(overChar).appendTo($container);
 
       } else {
 
@@ -94,6 +97,7 @@ $('#formTweet').on('submit', event => {
     data: $(event.target).serialize(),
     success: function () {
       loadTweets()
+      $('textarea').val(null)
     }
   });
 }
@@ -107,11 +111,12 @@ function loadTweets() {
       method: 'GET',
       success: function (response) {
         renderTweets(response)
+        $('textarea').val(null)
       }
     });
 }  // END OF GET AJAX
 
-
+loadTweets()
 
 }); // END OF GET READY
 
