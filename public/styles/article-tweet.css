@@ -4,10 +4,12 @@ margin-right: 2em;
 border: 1px solid #adabab99;
 border-radius: 5px;
 opacity: 50%;
+margin-bottom: 1em;
 }
 
 article h2{
   opacity: 0.5;
+  padding-right: 160px;
 }
 
 
@@ -31,10 +33,6 @@ article footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-article h2 {
-  padding-right: 185px;
 }
 
 article .content {
