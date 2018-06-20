@@ -7,16 +7,6 @@ opacity: 50%;
 margin-bottom: 1em;
 }
 
-article h2{
-  opacity: 0.5;
-  padding-right: 160px;
-}
-
-
-article:hover h2{
-  opacity: 1;
-}
-
 article header {
   border-radius: 5px 5px 0px 0px;
   background-color: #f3f3f3;
@@ -25,23 +15,21 @@ article header {
   justify-content: space-between;
 }
 
-article footer {
-  border-radius: 5px;
-  border-radius: 0px 0px 5px 5px;
-  border-color: black;
-  border-top: 2px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+article img {
+  padding: 3px;
+  height: 60px;
+  width: 60px;
+  border-radius: 15px;
 }
 
-article .content {
-  margin-top: 1.5em;
-  padding-bottom: 1.5em;
-  padding-left: .5em;
-  border-bottom: 1px solid #eeeeee;
+article h2{
+  opacity: 0.5;
+  padding-right: 160px;
 }
 
+article:hover h2{
+  opacity: 1;
+}
 
 article .handle {
   justify-content: right;
@@ -54,11 +42,22 @@ article:hover .handle {
   opacity: 1;
 }
 
-article img {
-  padding: 3px;
-  height: 60px;
-  width: 60px;
-  border-radius: 15px;
+article .content {
+  margin-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: .5em;
+  border-bottom: 1px solid #eeeeee;
+}
+
+
+article footer {
+  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
+  border-color: black;
+  border-top: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 article .logos {

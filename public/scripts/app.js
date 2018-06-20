@@ -29,6 +29,9 @@ function createTweetElement(tweetData){
 
 const $article  = $('<article>').addClass('boxTweet');
 const $header   = $ ('<header>').appendTo($article);
+const $p_content = $('<p>').addClass('content').appendTo($article)
+const $footer   = $('<footer>').appendTo($article);
+
 
 const src = tweetData.user.avatars.small;
 $('<img>').attr('src', src).appendTo($header);
@@ -42,21 +45,18 @@ $('<p>').addClass('handle').text(handle).appendTo($header);
 
 // ****************
 
-// const $div = $('<div>').addClass('content').appendTo($article);
-
-// const content = tweetData.content;
-// $('<div>').addClass('content').text(content).appendTo($div);
+const content = tweetData.content.text;
+$('<p>').addClass('content').text(content).appendTo($p_content);
 
 
 // ****************
-  const $footer   = $('<footer>').appendTo($article);
 
 
   const created_at = tweetData.created_at;
   const realTime = new Date(created_at);
   $('<p>').addClass('date').text(realTime).appendTo($footer);
 
-//
+
 
   return $article
 
