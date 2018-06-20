@@ -6,14 +6,19 @@
   padding-right: 2em;
 }
 
-#nav-bar .logo{
+#nav-bar .right {
+  float: right;
+  padding-top: 28px;
+}
+
+#nav-bar .left .logo{
   height: 80px;
   width: 80px;
   line-height: 250%;
   float: left;
 }
 
-#nav-bar .header{
+#nav-bar .left .header{
   font-size: 2em;
   float: left;
   padding-left: 10px;

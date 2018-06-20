@@ -6,6 +6,15 @@
 
 $(document).ready(function() {
 
+  $(".right").on('click', function() {
+    $(".new-tweet").slideToggle();
+    $("textarea").focus();
+  })
+
+
+
+
+
   const frown = `<i class="far fa-frown"></i>`
   const cringe = `<i class="far fa-meh"></i>`
 
@@ -19,21 +28,22 @@ $(document).ready(function() {
 
 
 
-    $("form").on( "submit", function(data) {
-      event.preventDefault();
-      if ($('textarea').val().length === 0) {
-        $(".alert").append(`Hey! You gotta type something before you can tweet it ${frown}`).fadeOut(7000);
-      } else if ($('textarea').val().length > 140) {
-        $(".alert").append(`Uh oh... looks like you've got too much to say ${cringe}`).fadeOut(7000)
-      } else {
-        $.ajax ({
+  $("form").on( "submit", function(data) {
+    event.preventDefault();
+    if ($('textarea').val().length === 0) {
+      $(".alert").append(`Hey! You gotta type something before you can tweet it ${frown}`).fadeOut(7000);
+      $(".alert").val('').delay(7000);
+    } else if ($('textarea').val().length > 140) {
+      $(".alert").append(`Uh oh... looks like you've got too much to say ${cringe}`).fadeOut(7000)
+      $(".alert").val('').delay(7000);
+    } else {
+      $.ajax ({
         type: 'POST',
         url: '/tweets',
         data: $(this).serialize(),
         success: function(data) {
-          loadTweets();
+          $('#tweets-container').prepend(createTweetElement(data));
           $('textarea').val('');
-          //$(".alert").append(`Tweet Tweet!`).animate({color: 'green'});
         }
       });
     }
@@ -58,6 +68,8 @@ $(document).ready(function() {
 
     const timestamp = tweet['created_at'];
 
+    const timeAgo = Math.round(((((Date.now() - timestamp) / 1000) / 60) / 60) /24)
+
     const article = `<article class='tweets'>
                       <header>
                         <div>
@@ -68,7 +80,7 @@ $(document).ready(function() {
                       </header>
                       <p class="text">${escape(text)}</p>
                       <footer class='clearfix'>
-                        <p class="timestamp">${timestamp}</p>
+                        <p class="timestamp">${timeAgo} days ago</p>
                         <div>
                           <i class="fas fa-flag"></i>
                           <i class="fas fa-retweet"></i>
@@ -81,7 +93,7 @@ $(document).ready(function() {
   };
 
   function renderTweets(tweets) {
-    $('#tweets-container').empty();
+    //$('#tweets-container').empty();
     for (tweet of tweets) {
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
