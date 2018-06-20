@@ -12,7 +12,7 @@ $(function() {
 
     returningHTML += "<img src=\"" + tweetObject.user.avatars.small + "\" class=\"newProfile\"></div><h2 class=\"newTweeth2\">" +
             tweetObject.user.name + "</h2><p class=\"newTweetId\">" + tweetObject.user.handle + "</p></header><article class=\"newTweetArticle\">" +
-            "<p class=\"newTweetContent\">" + tweetObject.content.text + "</p></article><footer class=\"newTweetFooter\"><p class=\"newTweetPostTime\">" + tweetObject.created_at +
+            "<p class=\"newTweetContent\">" + escape(tweetObject.content.text) + "</p></article><footer class=\"newTweetFooter\"><p class=\"newTweetPostTime\">" + tweetObject.created_at +
             "</p><div class=\"hiddenIcons\"><i class=\"fas fa-flag\"></i><i class=\"fas fa-retweet\"></i><i class=\"fas fa-heart\"></i>" +
             "</div></footer></div>";
 
@@ -50,8 +50,6 @@ $(function() {
 
   $('input').on('click', function (event) {
     event.preventDefault();
-
-    $("#newTweet").val().innerHTML = escape($("#newTweet").val().innerHTML);
 
     if($("#newTweet").val().length > 0 || $("#newTweet").val().length < 140){
       let data = $('form').serialize();
