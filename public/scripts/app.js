@@ -49,9 +49,12 @@ $('<p>').addClass('handle').text(handle).appendTo($header);
 
 
 // ****************
-  const $footer   = $('<footer>').appendTo($article)
+  const $footer   = $('<footer>').appendTo($article);
+
+
   const created_at = tweetData.created_at;
-  $('<p>').addClass('date').text(created_at).appendTo($footer);
+  const realTime = new Date(created_at);
+  $('<p>').addClass('date').text(realTime).appendTo($footer);
 
 //
 
