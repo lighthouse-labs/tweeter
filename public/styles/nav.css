@@ -4,17 +4,11 @@
   height: 80px;
   width: 100%;
   background-color: #00a087;
-  font: #e8fdff;
+  color: #e8fdff;
   padding: 0px 2em;
-  float: left;
-}
-
-.fixed-top {
   position: fixed;
   top: 0;
-  right: 0;
   left: 0;
-  z-index: 1000;
 }
 
 #nav-bar .logo {
@@ -25,8 +19,7 @@
 
 #nav-bar .header {
   font-size: 2em;
-  line-height: 2;
-  vertical-align: text-bottom;
+  line-height:
 }
 
 

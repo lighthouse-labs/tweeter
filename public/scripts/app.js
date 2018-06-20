@@ -6,57 +6,11 @@
 
  $('document').ready(function () {
 
- const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
 
  function renderTweets(tweets) {
 
-    for(singleUser of tweets) {
-      $('.tweet-container').prepend(createTweetElement(singleUser));
+    for(singleTweet of tweets) {
+      $('.tweet-container').prepend(createTweetElement(singleTweet));
     }
  }
 
@@ -66,20 +20,23 @@
   const $header = $('<header>');
   const $avatar = $('<img>').attr('src', tweetData.user.avatars.small);
   const $user = $('<h1>').text(tweetData.user.name);
-  const $handle = $('<p class="handle">').text(tweetData.user.handle);
-  const $textBody = $('<div class="tweet-text">');
+  const $handle = $('<p>').addClass("handle").text(tweetData.user.handle);
+  const $textBody = $('<div>').addClass("tweet-text");
   const $actualTweet = $('<p>').text(tweetData.content.text);
   const $footer = $('<footer>');
-  const $icons = $('<div class="tweet-icons">')
-                  .append($('<img>').html('i class="fas fa-retweet"'))
-                  .append($('<img>').html('i class="fab fa-font-awesome-flag"'))
-                  .append($('<img>').html('i class="fas fa-heart"'));
+  const $icons = $('<div>').addClass("tweet-icons");
+  const $retweet = $('<i class="fas fa-retweet">');
+  const $flag = $('<i class="fab fa-font-awesome-flag">');
+  const $heart = $('<i class="fas fa-heart">');
   const $footerDate = $('<p>').text(tweetData.created_at);
 
-  $article.append($header).append($textBody).append($footer);
-  $textBody.append($actualTweet);
+
   $header.append($avatar).append($user).append($handle);
-  $footer.append($icons).append($footerDate);
+  $textBody.append($actualTweet);
+  $icons.append($retweet).append($flag).append($heart);
+  $footer.append($footerDate).append($icons);
+  $article.append($header).append($textBody).append($footer);
+
 
   return $article;
  }
@@ -90,9 +47,61 @@
 
  // $('.tweet-container').append($tweet);
 
- renderTweets(data);
+    //****Date - TimeStamp
+ // const created_at = tweetData.created_at;
+ //  const realTime = new Date(created_at).toUTCString().split(' ').slice(0, 4).join(' ');
+ //  $('<p>').addClass('date').text(realTime).appendTo($footer);
+
+ //renderTweets(data[0]);
+
+//Form Submission using AJAX to load tweets dynamically
+$('#tweet-form').on('submit', event => {
+  event.preventDefault();
+  console.log('hello');
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: $(event.target).serialize(),
+    success: function () {
+      console.log('success!');
+    }
+
+  });
+});
+
+function loadTweets() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    success: function (content) {
+      renderTweets(content[0]);
+      $('.tweet-container').prepend(createTweetElement(content[0]));
+      $('.tweet-container').prepend(createTweetElement(content[1]));
+
+
+    }
+  });
+}
+
+loadTweets();
+
+
+
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

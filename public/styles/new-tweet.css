@@ -1,12 +1,12 @@
 .container .new-tweet {
   background-color: #eee;
-  margin-top: 140px;
   margin-left: 2em;
   margin-right: 2em;
   padding: 1em;
   border-radius: 5px;
 
 }
+
  .tweet-header {
   border-bottom: 1.3px solid black;
   margin-top: 0;
@@ -32,7 +32,7 @@
 .color {
   color: #EA1616;
 }
-.tweet-container img {
+article header img {
   height: 75px;
   width: 75px;
 }
@@ -44,56 +44,56 @@
   margin-top: 15px;
   opacity: 0.6;
 }
-.tweet-container header {
+article header {
   background-color: #F8F8F8;
   padding: 5px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
-.tweet-container .handle {
+article .handle {
   font-size: 12px;
   padding-left: 10px;
-  margin-left: 100px;
+  /*margin-left: 100px;*/
 }
 .tweet-text p {
   margin-left: 5px;
 
 }
-.tweet-container h1 {
-  position: relative;
+article h1 {
   bottom: 20px;
   margin-left: 10px;
+  font-size: 1.5em;
 }
 .tweet-text {
   border-bottom: 1px solid lightgrey;
 
   }
-.tweet-container footer {
-
-}
-article p {
+footer p {
   margin-left: 10px;
 }
-.tweet-container footer {
+article footer {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
  .tweet-icons {
-
   display: flex;
-  margin-top: 15px;
-  margin-left: 200px;
 }
 .tweet-icons i {
   padding-right: 15px;
   opacity: 0;
   cursor: pointer;
 }
-.tweet-container:hover .tweet-icons i {
+article:hover .tweet-icons i {
   opacity: 1;
 }
-.tweet-container:hover {
+article:hover {
   opacity: 1;
 }
+article {
+  margin-bottom: 10px;
+}
+
 
 
 

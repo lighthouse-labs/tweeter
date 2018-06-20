@@ -29,7 +29,7 @@
   <body>
 
     <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar" class="fixed-top">
+    <nav id="nav-bar" class="fixed-top clearfix">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
@@ -39,7 +39,7 @@
 
       <section class="new-tweet">
         <h2 class="tweet-header">Compose Tweet</h2>
-        <form class="clearfix">
+        <form class="clearfix" id="tweet-form">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input action="/tweets" type="submit" method="POST"  value="Tweet">
           <span class="counter">140</span>
@@ -47,7 +47,7 @@
       </section>
 
         <section class="tweet-container">
-          <article>
+          <!-- <article>
             <header>
               <img src="/images/pic.png">
                 <h1>Bill Fields</h1>
@@ -66,7 +66,7 @@
                <i class="fas fa-heart"></i>
               </div>
             </footer>
-          </article>
+          </article> -->
       </section>
     </main>
   </body>

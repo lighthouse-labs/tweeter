@@ -28,13 +28,10 @@ body {
 }
 
 .container {
-  position: absolute;
   width: 450px;
-  height: 100%;
   background-color: white;
-  left: 32.5%;
-
-
+  margin: 0 auto;
+  padding-top: 100px;
 }
 
 
