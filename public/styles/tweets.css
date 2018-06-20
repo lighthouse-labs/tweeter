@@ -31,8 +31,9 @@
   padding-left: 5px;
 }
 
-.tweets header div img {
+.tweets header .icon {
   margin-top: 2px;
+  border-radius: 5px;
 }
 
 .tweets header p {
@@ -58,6 +59,8 @@
 .tweets footer div {
   color: #3db5a1;
   visibility: hidden;
+  float: right;
+  margin-right: 10px;
 }
 
 article:hover footer div {
