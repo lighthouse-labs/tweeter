@@ -25,17 +25,14 @@ $(function() {
     let $div = $("<div></div>");
     tweetObjArr.forEach(element => {
       $div = $div.prepend(createTweetElement(element));
-      return $div;
+      //return $div;
     });
-    // for(var i = 0; i < tweetObjArr.length){
-
-    // }
     $(".newTweetBox").prepend($div);
   }
 
   function loadTweets () {
     $.ajax({
-      url: 'http://localhost:8080/tweets',
+      url: '/tweets',
       method: 'GET',
       success: function(tweet){
         renderTweets(tweet);
@@ -53,7 +50,7 @@ $(function() {
 
     if($("#newTweet").val().length > 0 || $("#newTweet").val().length < 140){
       let data = $('form').serialize();
-      $.ajax('http://localhost:8080/tweets', {
+      $.ajax('/tweets', {
         method: 'POST',
         data: data
       }).done(function (data){
