@@ -15,7 +15,8 @@
     "chance": "^1.0.2",
     "express": "^4.13.4",
     "flash-message": "^2.0.1",
-    "md5": "^2.1.0"
+    "md5": "^2.1.0",
+    "mongodb": "^2.2.35"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
