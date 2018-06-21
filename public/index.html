@@ -7,26 +7,52 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- custom font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/responses.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- jQuery -->
+  <!--   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <div id="composeBtn"><i class="far fa-edit"></i>Compose</div>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <textarea id="tweetBox" name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" name="Tweet" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section id="tweet-feed">
+
+      </section>
+
     </main>
 
   </body>

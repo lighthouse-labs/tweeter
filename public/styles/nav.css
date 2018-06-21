@@ -1,0 +1,65 @@
+#nav-bar {
+  position: fixed;
+  top: 0px;
+  left: 2em;
+  right: 2em;
+  height: 80px;
+  background-color: #00a087;
+  color: #e8fdff;
+
+}
+
+
+#nav-bar .logo {
+  width: 80px;
+  height: 80px;
+  float: left;
+
+}
+
+
+#nav-bar .header {
+  float: left;
+  font-size: 200%;
+  display: inline;
+  /*line-height: 220%;*/
+  line-height: 75px;
+  padding-left: 10px;
+
+}
+
+#nav-bar #composeBtn {
+  position: relative;
+  font-size: 1.25em;
+  line-height: 50px;
+  text-align: center;
+  top: 15px;
+  right: 50px;
+  float: right;
+  width: 120px;
+  height: 50px;
+  background: linear-gradient(#e6f5f2, #f3edaf);
+  color: #000;
+  border-radius: 20px;
+  border: 1pt solid #000;
+}
+
+#nav-bar #composeBtn:hover {
+  border: 1pt solid #0e443b;
+  color: #0e443b;
+  font-weight: bold;
+  background: linear-gradient(#f3edaf, #e6f5f2);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
