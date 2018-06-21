@@ -46,10 +46,12 @@
   margin-top: 10px;
 }
 
-#tweet-feed .tweet div p {
+#tweet-feed .tweet div {
   margin-top: 25px;
   margin-left: 10px;
+  word-wrap: break-word;
 }
+
 
 
 

@@ -33,10 +33,9 @@ const createTweetElement = function(tweet) {
 
 
 
-
   //create tweet div
 
-  const newDiv = $("<div><p>" + tweet['content']['text'] + "</p></div>")
+  const newDiv = $("<div><p>" + escape(tweet['content']['text']) + "</p></div>")
                  .appendTo($(newTweet));
 
 
@@ -109,6 +108,17 @@ const renderTweets = function(arrTweets) {
 
 }
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
+
+
+//event handler for new tweet / form submission
+
 const $submitTweet = $('.new-tweet input');
 $submitTweet.on('click', function(event) {
 
@@ -134,7 +144,7 @@ $submitTweet.on('click', function(event) {
         console.log('success OVER HERE' + tweet);
         loadTweets();
         $('.new-tweet textarea').val("");
-        $('.new-tweet .counter') = 140;
+        $('.new-tweet .counter').text(140);
       },
       error: function(errormessage){
         console.log('error', errormessage);
@@ -145,12 +155,19 @@ $submitTweet.on('click', function(event) {
 })
 
 
-// const $submitTweet = $('.new-tweet input');
-// $submitTweet.on('click', function(event) {
-//   loadTweets();
-// });
 
-// renderTweets(data);
+
+//compose button event listener to toggle the new tweet form display
+
+const $compose = $('#nav-bar #composeBtn');
+const $tweetForm = $('.new-tweet');
+
+$compose.on('click', function() {
+  $tweetForm.slideToggle(300);
+  $('.new-tweet textarea').focus();
+
+})
+
 
 
 });
