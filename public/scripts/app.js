@@ -6,14 +6,13 @@
 
 $(document).ready(function() {
 
+  // let conn = new Mongo();
+  // let db = conn.getDB("tweeter")
+
   $(".right").on('click', function() {
     $(".new-tweet").slideToggle();
     $("textarea").focus();
   })
-
-
-
-
 
   const frown = `<i class="far fa-frown"></i>`
   const cringe = `<i class="far fa-meh"></i>`
@@ -44,6 +43,7 @@ $(document).ready(function() {
         success: function(data) {
           $('#tweets-container').prepend(createTweetElement(data));
           $('textarea').val('');
+          conn.db.tweets.insert(createTweetElement(data));
         }
       });
     }
