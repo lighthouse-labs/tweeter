@@ -25,9 +25,15 @@ $(function() {
     let $div = $("<div></div>");
     tweetObjArr.forEach(element => {
       $div = $div.prepend(createTweetElement(element));
-      //return $div;
     });
-    $(".newTweetBox").prepend($div);
+
+    $(".newTweetBox").html($div);
+
+
+    // for(let i = 0; i < tweetObjArr.length; i++){
+    //   let $div = createTweetElement(tweetObjArr[i]);
+    //   $(".newTweetBox").prepend($div);
+    // }
   }
 
   function loadTweets () {

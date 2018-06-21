@@ -27,13 +27,10 @@ body {
 
 main {
   background-color: white;
-  margin: 80px 450px 80px 450px;
+  margin: 80px auto;
   padding-top: 10px;
   max-width: 450px;
   min-width: 250px;
-/*  vertical-align: middle;
-  min-width: 350px;
-  max-width: 850px;*/
 }
 div.compose{
   display: inline;
