@@ -5,7 +5,6 @@
   margin-left: 2em;
   margin-right: 2em;
   padding-bottom: 5px;
-
 }
 
 .new-tweet h2 {
@@ -25,10 +24,29 @@
   padding-left: 1em;
 }
 
+.new-tweet textarea {
+  outline: none;
+  border: 1px solid #000000;
+}
+
 .new-tweet .button {
   float: right;
   margin-top: 5px;
+  color: #00a087;
+  background-color: #deefed;
+  border: 1.25px solid #000000;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  height: 30px;
+  outline: none;
 }
+
+.new-tweet .button:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+
 
 .new-tweet .counter {
   float: left;

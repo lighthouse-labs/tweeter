@@ -8,7 +8,7 @@
 
 #nav-bar .right {
   float: right;
-  padding-top: 28px;
+  padding-top: 10px;
 }
 
 #nav-bar .left .logo{
@@ -24,3 +24,20 @@
   padding-left: 10px;
   line-height: 250%;
 }
+
+#nav-bar .button {
+  font-size: 20px;
+  color: #00a087;
+  background-color: #deefed;
+  border: 1.25px solid #000000;
+  padding-bottom: 2px;
+  border-radius: 10px;
+  height: 60px;
+  outline: none;
+}
+
+#nav-bar .button:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
