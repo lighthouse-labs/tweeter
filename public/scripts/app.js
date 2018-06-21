@@ -8,7 +8,7 @@
 
 
  function renderTweets(tweets) {
-
+    $('.tweet-container').empty();
     for(singleTweet of tweets) {
       $('.tweet-container').prepend(createTweetElement(singleTweet));
     }
@@ -95,6 +95,7 @@ loadTweets();
 
 $('.nav-button').click(function () {
   $('.new-tweet').slideToggle(150);
+  $('textarea').focus();
 });
 
 

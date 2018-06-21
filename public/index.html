@@ -29,10 +29,14 @@
   <body>
 
     <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar" class="fixed-top clearfix">
-      <img class="logo" src="/images/bird.png">
-      <span class="header">Tweeter</span>
-    </nav>
+    <div class="nav-container">
+      <nav id="nav-bar" class="fixed-top clearfix">
+        <img class="logo" src="/images/bird.png">
+        <span class="header">Tweeter</span>
+        <button class="nav-button">Compose</button>
+      </nav>
+    </div>
+
 
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -40,7 +44,7 @@
       <section class="new-tweet">
         <h2 class="tweet-header">Compose Tweet</h2>
         <form class="clearfix" id="tweet-form">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea name="text" placeholder="What would Rihanna do?"></textarea>
           <input action="/tweets" type="submit" method="POST"  value="Tweet">
           <span class="counter">140</span>
         </form>

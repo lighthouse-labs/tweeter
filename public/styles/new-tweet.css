@@ -4,7 +4,7 @@
   margin-right: 2em;
   padding: 1em;
   border-radius: 5px;
-
+  display: none;
 }
 
  .tweet-header {
@@ -39,10 +39,8 @@ article header img {
 .tweet-container {
   margin-left: 2em;
   margin-right: 2em;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
   margin-top: 15px;
-  opacity: 0.6;
+
 }
 article header {
   background-color: #F8F8F8;
@@ -92,8 +90,17 @@ article:hover {
 }
 article {
   margin-bottom: 10px;
+  opacity: 0.6;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
 }
-
+.nav-button {
+  margin-left: 55em;
+  width: 6em;
+  border-radius: 8px;
+  height: 3em;
+  border: 1px solid;
+}
 
 
 
