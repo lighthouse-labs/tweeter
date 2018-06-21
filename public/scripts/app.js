@@ -10,6 +10,7 @@ $(document).ready(function() {
 const createTweetElement = function(tweet) {
 
 
+
   const newTweet = $("<article>").addClass("tweet")
 
 
@@ -95,16 +96,23 @@ const createTweetElement = function(tweet) {
       })
     }
 
+    loadTweets();
+
 // })
 
 const renderTweets = function(arrTweets) {
 
-  $('#tweet-feed').empty();
+  //$('#tweet-feed').empty();
 
-  arrTweets.forEach(function(tweet) {
-    let tweetToAdd = createTweetElement(tweet);
+  for (let tweet in arrTweets){
+    let tweetToAdd = createTweetElement(arrTweets[tweet])
     $(tweetToAdd).prependTo($('#tweet-feed'));
-  });
+  }
+
+  // arrTweets.forEach(function(tweet) {
+  //   let tweetToAdd = createTweetElement(tweet);
+  //   $(tweetToAdd).prependTo($('#tweet-feed'));
+  // });
 
 }
 
