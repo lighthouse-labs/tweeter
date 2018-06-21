@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 
 $('document').ready(function () {
 
@@ -79,22 +73,22 @@ $('#formTweet').on('submit', event => {
 
     $($newDiv).text(emptyTweet).appendTo($container);
 
-     } else if ($formTweet > 140) {
+  } else if ($formTweet > 140) {
 
-      $($newDiv).text(overChar).appendTo($container);
+    $($newDiv).text(overChar).appendTo($container);
 
-      } else {
+  } else {
 
-  $.ajax({
-    url: '/tweets',
-    method: 'POST',
-    data: $(event.target).serialize(),
-    success: function () {
-      loadTweets()
-      $('textarea').val(null)
-    }
-  });
-}
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(event.target).serialize(),
+      success: function () {
+        loadTweets()
+        $('textarea').val(null)
+      }
+    });
+  }
 }); // END OF POST AJAX
 
 
