@@ -32,12 +32,11 @@
 
 .compose{
   float: right;
-  opacity: .5;
   border: 1px solid grey;
-  background-color: grey;
+  transform: scale(1);
+  transition: all 0.5s;
 }
 
  .compose:hover {
-  opacity: 1;
-  background-color: red;
+  transform: scale(1.2);
 }

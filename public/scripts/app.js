@@ -3,13 +3,10 @@ $('document').ready(function () {
 
   $('.new-tweet').hide();
 
-
   $('.compose').on('click', function (event) {
-
   $('.new-tweet').slideToggle(200);
   $('textarea').focus();
-
-});
+  });
 
 // RENDER TWEETS
 function renderTweets(tweetData) {
@@ -22,10 +19,10 @@ for ( let user of tweetData) {
 // CREATE TWEET
 function createTweetElement(tweetData){
 
-  const $article  = $('<article>').addClass('boxTweet');
-  const $header   = $ ('<header>').appendTo($article);
+  const $article   = $('<article>').addClass('boxTweet');
+  const $header    = $ ('<header>').appendTo($article);
   const $p_content = $('<p>').addClass('content').appendTo($article);
-  const $footer = $('<footer>').appendTo($article);
+  const $footer    = $('<footer>').appendTo($article);
 
   // HEADER
   const src = tweetData.user.avatars.small;
@@ -39,11 +36,14 @@ function createTweetElement(tweetData){
   const content = tweetData.content.text;
   $('<p>').text(content).appendTo($p_content);
 
+
   // FOOTER
+  // TIME STAMP
   const created_at = tweetData.created_at;
   const realTime = new Date(created_at).toUTCString().split(' ').slice(0, 4).join(' ');
   $('<p>').addClass('date').text(realTime).appendTo($footer);
 
+  // LOGOS
   $('<div>').addClass('logos').appendTo($footer);
   $('<i>').addClass('logos').addClass('fas fa-flag').appendTo($footer);
   $('<i>').addClass('logos').addClass('fas fa-retweet').appendTo($footer);
@@ -54,38 +54,34 @@ function createTweetElement(tweetData){
 } // END OF CREATE TWEET
 
 
-//POST TWEETS on same page
-
-
+// POST TWEETS ON SAME PAGE. (Using Ajax)
 $('#formTweet').on('submit', event => {
   event.preventDefault();
 
+  let $container = $('.errorMessage')
+  let $formTweet = $('textarea').val().length; // Checking value of textarea to make sure no more than 140 characters, and not empty tweet
 
-  let $container = $('.appendHere')
-  let $formTweet = $('textarea').val().length; // to check textarea
-  let $newDiv = $('<div>').addClass('messageContainer'); // adding this DIV if either things happen
+  let emptyTweet = "We're sure you're not trying to post an empty tweet! Try again";
+  let overChar   = 'Too many characters!';
 
-  let emptyTweet = "We're sure you're not trying to post an empty tweet! Try again"; //message for empty
-  let overChar = 'too many characters'; // message for too many
-
+  $('.errorMessage').remove();
 
   if ($formTweet === 0) {
 
-    $($newDiv).text(emptyTweet).appendTo($container);
+    $('<div>').addClass('errorMessage').text(emptyTweet).appendTo('.new-tweet');
 
   } else if ($formTweet > 140) {
-
-    $($newDiv).text(overChar).appendTo($container);
+    $('<div>').addClass('errorMessage').text(overChar).appendTo('.new-tweet');
 
   } else {
-
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $(event.target).serialize(),
       success: function () {
         loadTweets()
-        $('textarea').val(null)
+        $('textarea').val(null);
+        resetCounter(event.target);
       }
     });
   }
@@ -98,14 +94,18 @@ function loadTweets() {
       url: '/tweets',
       method: 'GET',
       success: function (response) {
-        renderTweets(response)
-        $('textarea').val(null)
+        renderTweets(response);
       }
     });
 }  // END OF GET AJAX
 
 loadTweets()
 
+
+function resetCounter(form) {
+  $('#formTweet').val(null);
+  $(form).find('.counter').text(140);
+}
 
 }); // END OF GET READY
 

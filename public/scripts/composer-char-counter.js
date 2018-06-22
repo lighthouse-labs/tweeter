@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     let counter = charCount - charAmount;
 
+
     $(this).siblings('.counter').text(counter);
 
     if (counter <= 0) {
