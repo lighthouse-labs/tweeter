@@ -11,7 +11,8 @@ article header {
   border-radius: 5px 5px 0px 0px;
   background-color: #f3f3f3;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 article img {
@@ -32,7 +33,6 @@ article:hover h2{
 }
 
 article .handle {
-  align-items: right;
   margin-bottom: 15px;
   padding-left: 1em;
   opacity: 0.3;
@@ -50,14 +50,15 @@ article .content {
   margin-bottom: 0px;
 }
 
-
 article footer {
   border-radius: 5px;
   border-radius: 0px 0px 5px 5px;
   border-color: black;
   border-top: 2px;
+  padding-left: .5em;
   display: flex;
-
+  align-items: center;
+  justify-content: space-between;
 }
 
 article .logos {

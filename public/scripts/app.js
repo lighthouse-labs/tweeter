@@ -23,6 +23,7 @@ function createTweetElement(tweetData){
   const $header    = $ ('<header>').appendTo($article);
   const $p_content = $('<p>').addClass('content').appendTo($article);
   const $footer    = $('<footer>').appendTo($article);
+  const $logoDiv    = $('<div>').appendTo($footer)
 
   // HEADER
   const src = tweetData.user.avatars.small;
@@ -42,13 +43,12 @@ function createTweetElement(tweetData){
   const created_at = tweetData.created_at;
   //let realTime = moment(created_at).format();
   const realTime = new Date(created_at).toUTCString().split(' ').slice(0, 4).join(' ');
-  $('<p>').addClass('date').text(realTime).appendTo($footer);
+  $('<p>').addClass('date').text(realTime).prependTo($footer);
 
   // LOGOS
-  $('<div>').addClass('logos').appendTo($footer);
-  $('<i>').addClass('logos').addClass('fas fa-flag').appendTo($footer);
-  $('<i>').addClass('logos').addClass('fas fa-retweet').appendTo($footer);
-  $('<i>').addClass('logos').addClass('fas fa-heart').appendTo($footer);
+  $('<i>').addClass('logos').addClass('fas fa-flag').appendTo($logoDiv);
+  $('<i>').addClass('logos').addClass('fas fa-retweet').appendTo($logoDiv);
+  $('<i>').addClass('logos').addClass('fas fa-heart').appendTo($logoDiv);
 
   return $article;
 
@@ -69,10 +69,10 @@ $('#formTweet').on('submit', event => {
 
   if ($formTweet === 0) {
 
-    $('<div>').addClass('errorMessage').text(emptyTweet).appendTo('.new-tweet');
+    $('<div>').addClass('errorMessage').text(emptyTweet).fadeIn().appendTo('.new-tweet');
 
   } else if ($formTweet > 140) {
-    $('<div>').addClass('errorMessage').text(overChar).appendTo('.new-tweet');
+    $('<div>').addClass('errorMessage').text(overChar).fadeIn().appendTo('.new-tweet');
 
   } else {
     $.ajax({
