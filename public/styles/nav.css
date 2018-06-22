@@ -31,8 +31,14 @@
 
 
 .compose{
+  margin-top: 10px;
   float: right;
-  border: 1px solid grey;
+  border: 1.5px solid black;
+  color: #00a087;
+  height: 3.5em;
+  width: 7em;
+  background-color: #f3f3f3;
+  border-radius: 5px;
   transform: scale(1);
   transition: all 0.5s;
 }

@@ -37,7 +37,7 @@ margin-bottom: 2em;
 
 main .errorMessage {
   background-color: #f3f3f3;
-
+  border: 1px solid black;
   margin: 2em;
   text-align: center;
   border-radius: 5px;

@@ -40,6 +40,7 @@ function createTweetElement(tweetData){
   // FOOTER
   // TIME STAMP
   const created_at = tweetData.created_at;
+  //let realTime = moment(created_at).format();
   const realTime = new Date(created_at).toUTCString().split(' ').slice(0, 4).join(' ');
   $('<p>').addClass('date').text(realTime).appendTo($footer);
 
