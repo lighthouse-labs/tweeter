@@ -1,0 +1,33 @@
+
+
+ 
+  
+#nav-bar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color:#00a087;
+    height: 80px;
+    width: 100%;
+    font-size :2em;
+  }
+  
+  .left-header {
+    display: flex;
+  }
+  
+  .right-header .left-header {
+    background-color: green;
+    height: 80px;
+    width: 10%;
+  }
+
+.lhead{
+  align-items: center;
+  display: flex;
+}
+.tweeter-name{
+  margin-left: 10px;
+
+}

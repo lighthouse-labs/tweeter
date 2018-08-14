@@ -1,3 +1,4 @@
+
 # Tweeter Project
 
 Tweeter is a simple, single-page Twitter clone.
@@ -15,3 +16,4 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- main page top color: #00A187 (the green)

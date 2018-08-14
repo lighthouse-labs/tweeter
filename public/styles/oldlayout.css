@@ -1,0 +1,67 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+.img-right {
+  
+  position:relative;
+  right:top;
+}
+.img-left {
+  float:left;
+}
+.toprow{
+  border: 2px solid #00A187;
+  background-color:#00A187;
+  width: 960px;
+  display: flex;
+  justify-content: flex-start
+
+}
+
+.topitem1{
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-end;
+}
+.topitem2{
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+
+.top-container{
+  margin: 10px 10px 0 0;  
+  border:5px solid #333;
+}
+.page-container {
+  display:flex;
+  justify-context: center;
+  align-items: center;
+}
+
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
