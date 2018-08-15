@@ -1,0 +1,71 @@
+.tweetposts{
+    display: grid;
+    grid-template-rows:min-content 1fr min-content;
+    background: white;
+    border-radius: 10px;
+    border : solid lightgray 1px;
+
+}
+.tweetposts-userinfo{
+    display:grid;
+    grid-template-columns: min-content 1fr 1fr;
+    padding:10px;
+    border-radius: 10px;
+    background-color: #eee;
+    
+
+}
+tweetposts-userinfo-img {
+    display:grid;
+    padding: 15px;
+
+}
+
+.tweetposts-userinfo-username{
+    display:grid;
+    font-size: 1.6em;
+    margin-left: 10px;
+    margin-top: 20px;
+    
+    align-self: top;
+    justify-content: top;
+}
+
+.tweetposts-userinfo-tweetname{
+    display:grid;
+    margin-right: 20px;
+    justify-self:right;
+    align-self:top;
+    
+    margin-top:20px;
+    
+}
+.tweetposts-postmessage{
+    display:grid;
+    width: 100%;
+    justify-self: left;
+    font-size: 1.5em;
+    margin: 60px 20px;
+
+}
+.tweetposts-timeline {
+    display:flex;
+    border-top : solid lightgray;
+    
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.tweetposts-timeline-hover{
+    display: grid;
+    justify-self: right;
+    align-self: top;
+
+}
+.tweetposts-timeline-activity{
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    /*! -left: 10px; */
+    /*! margin-top: 30px; */
+
+}

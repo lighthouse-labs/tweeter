@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweetposts.css" type="text/css" />
-
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,700,700i" rel="stylesheet">
 
@@ -42,16 +40,16 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
- <main class="container">
-<div class = "body">
-     <section class="new-tweet">
-       <h2>Compose Tweet</h2>
+    <main class="container">
+      <div class = "body">
+          <section class="new-tweet">
+            <h2>Compose Tweet</h2>
             <div class="h2item"> </div>
                <form action = "/tweets" method = "POST" class = "theform">
                 <div class="txtarea">
                   <textarea name="text" placeholder="What are you humming about?"></textarea>
                 </div>
-           <div class = "tweetlabel">
+                <div class = "tweetlabel">
                   <input type="submit"  value="Tweet">
                 </div>
                 <span class="counter">140</span>
@@ -59,21 +57,20 @@
             </div>
           </section>
           <section class="container2">
-            <div class="tweetposts">
-              <div class="tweetposts-userinfo">  
-                <img class="tweetposts-userinfo-img" src="/images/smiley.png" width="80px" height="80px">
-                <label for ="userName" class = "tweetposts-userinfo-username" > Bill Fields </label>
-                <label for ="tweetName" class = "tweetposts-userinfo-tweetname" > @MrFields </label>
-              </div>       
-              <div>
-                  <p class = "tweetposts-postmessage"> Little tweet here... </p>
-                
+              <div class="tweetposts">
+                  <div class="tweetposts-userinfo">  
+                    <img class="tweetposts-userinfo-img" src="/images/smiley.png" width="80px" height="80px">
+                    <input type="text" name = "name" class="tweetposts-userinfo-rname"> 
+                    <input type="text" name = "tweetname" class="tweetposts-userinfo-tweetname">
+                  <div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div class="div2">
+                    <textarea  readonly name="text" placeholder="Little tweet here..."></textarea> 
+                  </div>
+                  <div class="div3">10 Days ago</div>
               </div>
-              <div class = "tweetposts-timeline">
-                <label for = "timeline" class="tweetposts-timeline-activity"> 10 Days</label>  
-                <label for = "hoverarea" class = "tweetposts-timeline-hover">Hover</label>
-              </div>
-            </div>
           </section>
         </div>
        </main>

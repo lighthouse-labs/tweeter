@@ -1,7 +1,4 @@
 
-
- 
-  
 #nav-bar {
     position: fixed;
     top: 0;
@@ -29,5 +26,14 @@
 }
 .tweeter-name{
   margin-left: 10px;
+  color: white;
 
+}
+.resp-name {
+  margin-left: 20px;
+  color: blue;
+}
+.resp-handle {
+  color:lightgray;
+  font-style: italic;
 }
