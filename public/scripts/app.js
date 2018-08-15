@@ -79,6 +79,12 @@ $(document).ready(function() {
     return data;
   }
 
+  function loadTweets(){
+    $.get("/tweets", function(tweets){
+      renderTweets(tweets);
+    });
+  }
+
   $("form").on("submit", function(event){
     event.preventDefault();
     const tweet = validateForm($(this).serialize());
@@ -95,11 +101,14 @@ $(document).ready(function() {
     }
   });
 
-  function loadTweets(){
-    $.get("/tweets", function(tweets){
-      renderTweets(tweets);
+  $("#compose").on("click", function(){
+    $(".new-tweet").toggle(function(){
+      if($(this).is(":visible")){
+        $(this).children("form").children("textarea").focus();
+      }
     });
-  }
+  });
+
 
   loadTweets();
 
