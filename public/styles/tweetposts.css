@@ -1,11 +1,13 @@
-.tweetposts{
+.tweetposts {
     display: grid;
     grid-template-rows:min-content 1fr min-content;
     background: white;
     border-radius: 10px;
-    border : solid lightgray 1px;
-
+    border : solid rgba(238, 234, 234, 0.753) 1px;
+    opacity: 0.95;
+    
 }
+
 .tweetposts-userinfo{
     display:grid;
     grid-template-columns: min-content 1fr 1fr;
@@ -50,18 +52,34 @@ tweetposts-userinfo-img {
 }
 .tweetposts-timeline {
     display:flex;
-    border-top : solid lightgray;
+    border-top : 1px solid lightgray;
     
     align-items: center;
     justify-content: space-between;
     padding: 10px;
 }
 .tweetposts-timeline-hover{
-    display: grid;
-    justify-self: right;
+    display: flex;
+    /* justify-self: center; */
     align-self: top;
+    visibility:hidden;
 
 }
+
+.fas{
+    margin-right : 10px;
+}
+
+
+.tweetposts:hover .tweetposts-timeline-hover {
+    visibility : visible;
+} 
+
+.tweetposts:hover  {
+    border-color: black;
+
+}
+
 .tweetposts-timeline-activity{
     display: grid;
     font-family: Arial, Helvetica, sans-serif;
