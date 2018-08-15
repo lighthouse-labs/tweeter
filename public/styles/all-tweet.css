@@ -77,7 +77,7 @@ article.tweet footer > i {
   padding: 10px;
 }
 
-.tweet-feed:hover{
+article.tweet:hover{
   opacity: 1;
 }
 
