@@ -45,6 +45,9 @@ $(document).ready(function() {
   }
 
   function renderTweets(data){
+    data.sort((first, second)=>{
+      return second.created_at - first.created_at;
+    });
     data.forEach((item) => {
       let $tweet = createTweetElement(item);
       $(".tweets-container").append($tweet);
@@ -65,6 +68,8 @@ $(document).ready(function() {
     const tweet = validateForm($(this).serialize());
     if(typeof tweet === "string"){
       $.post("/tweets", tweet)
+        .done($(this).children("textarea").val(""))
+        .done(console.log($(this).children(".counter").text("140")))
         .done($(".tweet").remove())
         .done(loadTweets);
     } else if(tweet === -1){
