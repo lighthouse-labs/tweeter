@@ -14,12 +14,29 @@ html {
  * Global layout stuff
  */
 
+
 body {
   margin: 0;
   color: #244751;
-  background-color: #eee;
+
+  font-family: "Roboto Condensed", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 450px 1fr;
+  grid-template-rows: 30px max-content 1fr;
+  background: #eeeeee;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main{
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  margin-top: 140px;
+  background: #ffffff;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-row-gap: 20px;
+ }
