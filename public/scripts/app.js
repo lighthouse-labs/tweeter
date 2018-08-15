@@ -5,6 +5,7 @@
  */
 $(document).ready(function() {
 
+  // code snippet from https://gist.github.com/flangofas/714f401b63a1c3d84aaa
   function calculateDateStamp(milliseconds) {
     let today = new Date().getTime();
     let timeDifference = today - new Date(milliseconds).getTime();
@@ -50,10 +51,27 @@ $(document).ready(function() {
     });
   }
 
+  function validateForm(data){
+    if(!data || data === "text="){
+      return -1;
+    } else if(data.slice(5).length > 140){
+      return -2;
+    }
+    return data;
+  }
+
   $("form").on("submit", function(event){
     event.preventDefault();
-    $.post("/tweets", $(this).serialize());
-    loadTweets();
+    const tweet = validateForm($(this).serialize());
+    if(typeof tweet === "string"){
+      $.post("/tweets", tweet)
+        .done($(".tweet").remove())
+        .done(loadTweets);
+    } else if(tweet === -1){
+      alert("Input invalid");
+    } else if(tweet === -2){
+      alert("Input too long");
+    }
   });
 
   function loadTweets(){
@@ -63,8 +81,6 @@ $(document).ready(function() {
   }
 
   loadTweets();
-
-  console.log("app.js ran");
 
 });
 
