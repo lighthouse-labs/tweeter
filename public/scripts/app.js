@@ -24,23 +24,39 @@ $(document).ready(function() {
   function createTweetElement(tweetData){
     let dateDifference = calculateDateStamp(tweetData.created_at);
 
-    let element = `<article class="tweet">
-            <header>
-              <img src="${tweetData.user.avatars.small}">
-              <h2>${tweetData.user.name}</h2>
-              <p>${tweetData.user.handle}</p>
-            </header>
-            <p>${tweetData.content.text}</p>
-            <footer>
-              <p>${dateDifference} days ago</p>
-              <div class="icons">
-                <i class="fas fa-flag"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="fas fa-heart"></i>
-              </div>
-            </footer>
-          </article>`;
-    return element;
+    let $article = $("<article>").addClass("tweet");
+
+    let $header = $("<header>");
+    let $img = $("<img>").attr("src", tweetData.user.avatars.small);
+    let $userName = $("<h2>").text(tweetData.user.name);
+    let $handle = $("<p>").text(tweetData.user.handle);
+
+    let $text = $("<p>").text(tweetData.content.text);
+
+    let $footer = $("<footer>");
+    let $daysAgo = $("<p>").text(`${dateDifference} days ago`);
+
+    let $icons = $("<div>").addClass("icons");
+    let $flag = $("<i>").addClass("fas fa-flag");
+    let $retweet = $("<i>").addClass("fas fa-retweet");
+    let $heart = $("<i>").addClass("fas fa-heart");
+
+    $header.append($img);
+    $header.append($userName);
+    $header.append($handle);
+
+    $icons.append($flag);
+    $icons.append($retweet);
+    $icons.append($heart);
+
+    $footer.append($daysAgo);
+    $footer.append($icons);
+
+    $article.append($header);
+    $article.append($text);
+    $article.append($footer);
+
+    return $article;
 
   }
 
