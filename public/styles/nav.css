@@ -34,7 +34,7 @@
   grid-column: 6;
   align-self: center;
 
-  border-radius: 15%;
+  border-radius: 0.5em;
   height: 50px;
   width: 150px;
   color: #00a087;

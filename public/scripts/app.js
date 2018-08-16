@@ -71,12 +71,12 @@ $(document).ready(function() {
   }
 
   function validateForm(data){
-    if(!data || data === "text="){
-      return -1;
-    } else if(data.slice(5).length > 140){
-      return -2;
+    if(!data || data === ""){
+      return "Please fill in text for your tweet.";
+    } else if(data.length > 140){
+      return "Text is greater than 140.";
     }
-    return data;
+    return null;
   }
 
   function loadTweets(){
@@ -87,22 +87,22 @@ $(document).ready(function() {
 
   $("form").on("submit", function(event){
     event.preventDefault();
-    const tweet = validateForm($(this).serialize());
-    if(typeof tweet === "string"){
-      $.post("/tweets", tweet)
+    const tweetValidation = validateForm($(this).children("textarea").val());
+
+    if(!tweetValidation){
+      $.post("/tweets", $(this).serialize())
         .done($(this).children("textarea").val(""))
-        .done(console.log($(this).children(".counter").text("140")))
+        .done($(this).children(".counter").text("140"))
         .done($(".tweet").remove())
+        .done($(this).siblings(".is_error").text(tweetValidation).slideUp())
         .done(loadTweets);
-    } else if(tweet === -1){
-      alert("Input invalid");
-    } else if(tweet === -2){
-      alert("Input too long");
+    } else {
+      $(this).siblings(".is_error").text(tweetValidation).slideDown();
     }
   });
 
   $("#compose").on("click", function(){
-    $(".new-tweet").toggle(function(){
+    $(".new-tweet").slideToggle(function(){
       if($(this).is(":visible")){
         $(this).children("form").children("textarea").focus();
       }

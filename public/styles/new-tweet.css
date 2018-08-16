@@ -1,6 +1,6 @@
 .new-tweet{
   background: #EEEEEE;
-  border-radius: 8%;
+  border-radius: .5em;
   padding: 10px;
   border: 2px solid #CDCDCD;
 
@@ -41,4 +41,15 @@ input {
   grid-column: 2;
   grid-row: 2;
   text-align: right;
+}
+
+/* styling from https://isabelcastillo.com/error-info-messages-css*/
+div.is_error{
+  margin: 10px 0px;
+  padding:12px;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  display: none;
+  border-radius:.5em;
+  grid-column: 1 / 3;
 }

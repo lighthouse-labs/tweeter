@@ -5,7 +5,7 @@
 }
 
 article.tweet{
-  border-radius: 8%;
+  border-radius: 0.5em;
   border: 2px solid #CDCDCD;
 
   padding: 0;
@@ -22,7 +22,7 @@ article.tweet header{
   grid-template-rows: 10px 1fr 1fr 10px;
 
   background: #EEEEEE;
-  border-radius: 13% 13% 0 0;
+  border-radius: 0.5em 0.5em 0 0;
 }
 
 header > img{
