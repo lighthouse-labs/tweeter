@@ -54,9 +54,9 @@ container {
       grid-column: span 2;
   }
   
-  .tweetlabel {
+  .tweetButton {
       display: grid;
-      width: 80px;
+      width: 120px;
   }
   
   .counter  {

@@ -6,7 +6,8 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet"> 
+    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -33,11 +34,12 @@
     <nav id="nav-bar">
         <div class="lhead">
           <img class="logo" src="/images/bird.png" width="80px" height="80px">
-          <span class="tweeter-name">
-            Tweeter</span>
+          <span class="tweeter-name">Tweeter</span>
         </div>
-       
-      
+        <div class = "nav-bar-compose">
+            <i class="fas fa-edit"></i>
+            <span class="nav-bar-compose-name">Compose</span>
+        </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -46,11 +48,12 @@
      <section class="new-tweet">
        <h2>Compose Tweet</h2>
             <div class="h2item"> </div>
-               <form action = "/tweets" method = "POST" class = "theform">
+               <!-- <form action = "/tweets" method = "POST"  -->
+               <form class = "theform">
                 <div class="txtarea">
-                  <textarea name="text" placeholder="What are you humming about?"></textarea>
+                  <textarea  id = "theText" name="text" placeholder="What are you humming about?"></textarea>
                 </div>
-                  <input type="submit"  class="tweetlabel" value="Tweet">
+                  <input type="submit"  class="tweetButton" value="Tweet"> </input>
                   <span class="counter">140</span>
               </form>
             </div>

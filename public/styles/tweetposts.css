@@ -68,9 +68,15 @@ tweetposts-userinfo-img {
 
 .fas{
     margin-right : 10px;
+    
 }
 
+.fas.fa-edit
+{
+    display: inline-block;
+    padding-left: 10px;
 
+}
 .tweetposts:hover .tweetposts-timeline-hover {
     visibility : visible;
 } 

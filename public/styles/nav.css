@@ -27,8 +27,31 @@
 .tweeter-name{
   margin-left: 10px;
   color: white;
-
 }
+
+
+.nav-bar-compose {
+  display:flex;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color:white;
+  align-items:center;
+  border-radius: 5px;
+  border : 1px solid black;
+}
+
+.nav-bar-compose:hover{
+  color: green; 
+}
+
+
+.nav-bar-compose-name {
+margin-right: 10px;
+font-size: .7em;
+}
+
+
 .resp-name {
   margin-left: 20px;
   color: blue;

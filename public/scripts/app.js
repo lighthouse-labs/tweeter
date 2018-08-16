@@ -57,30 +57,36 @@ function serializeData()
 
 }
 
+// $('.tweetButton').click(function (e) {
+//   e.preventDefault();   // Let us run some validation on the textarea before submitting
+//                         // to the server
+//   console.log("got the label....")
+//   var txtlen = $("txtarea").val();
+//   alert(txtlen);
+// });
 
 function loadTweets(){
-  $.ajax('more-posts.html', { method: 'GET' })
-  .then(function (renderTweets) {
-    console.log('Success: ', renderTweets);
-    $button.replaceWith(renderTweets);
+  $.ajax('/tweets', { method: 'GET' })
+  .then(function  (tweets) {
+    console.log('Success: ', tweets);
+    //$button.replaceWith(renderTweets);
+    renderTweets(tweets); // has to be done within the scope of the ajax call
+    // note to self: multiple calls to load tweets will require that the view be cleared
   });
 };
 
-var $button = $('.tweetlabel');
+// var $button = $('.tweetlabel');
 
-  $button.on('click', function () {
-    console.log('Button clicked, performing ajax call...');
+//   $button.on('click', function () {
+//     console.log('Button clicked, performing ajax call...');
     loadTweets();
-  });
-
-
-
+//  });
 
 function createTweetElement(tweetObject){
-    /*------------------------------------------------------------
+    /*------------------------------------------------------------------------
     *This function receives a tweet object and returns an article element
     * with the entire HTML structure of the tweet
-    * -----------------------------------------------------------*/
+    * ------------------------------------------------------------------------*/
     //let $tweet = $('<article>').addClass('tweet');
     //...
     let thename = tweetObject.user.name;
@@ -96,7 +102,7 @@ function createTweetElement(tweetObject){
           <label for ="tweetName" class = "tweetposts-userinfo-tweetname" >${usrHandle}  </label>
         </div>       
         <div>
-            <p class = "tweetposts-postmessage"> ${msg} </p>
+          <p class = "tweetposts-postmessage"> ${msg} </p>
         </div>
         <div class = "tweetposts-timeline">
           <label for = "timeline" class="tweetposts-timeline-activity"> ${datecreated}</label>  
@@ -118,16 +124,30 @@ function renderTweets(tweets) {
   });
 };
 
-//var $tweet = createTweetElement(tweet);
+  $('.theform').submit(function (e) {
+    e.preventDefault();
+    //$("textarea").on("click" , function (e) {
+    // var size = $(this).parent().siblings(".counter").val();
+    //var size = $(this).children
+    let  size = $("#theText").val().length;
+    if (size > 140) {
+      alert("The tweet content is too long. Please shorten and resubmit.")
+    } else  if (size === 0) {
+      alert("Nothing was entered or the tweet is not present.")
+    }
+    else{
+      var tweetmsg = $("#theText").val();
+      $('.tweetposts-postmessage').text(tweetmsg);
+    }
+  });
+  $('.nav-bar-compose').on("click", function (e)  {
+    $("section.new-tweet").slideToggle(function(){
+      $("#theText").focus();
+    })
+  });
 
-// Test / driver code (temporary)
-//console.log($tweet); // to see what it looks like
 
-// to add it to the page so we can make sure it's 
-// got all the right elements, classes, etc.
-/* var $tweet=createTweetElement(tweetObject);
-$('.container2').append($tweet);  */
 
- renderTweets(data);
+
 
 });
