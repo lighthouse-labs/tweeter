@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("textarea").keyup(function(){
+  $("textarea").keyup(function(event){
 
    let counter = 140 - $(this).val().length;
 
@@ -10,6 +10,10 @@ $(document).ready(function() {
     $counterNode.css("color", "#ff0000");
    } else {
     $counterNode.css("color", "#000000");
+   }
+
+   if(event.which === 13){
+    $(this).parent("form").submit();
    }
 
   });
