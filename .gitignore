@@ -1,3 +1,8 @@
 node_modules/
 .env
 .DS_Store
+oldstyles/
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map

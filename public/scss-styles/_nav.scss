@@ -1,0 +1,50 @@
+#nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+
+  height: 80px;
+  width: 100%;
+
+  background-color: #00a087;
+  padding-left: 2em;
+  padding-right: 2em;
+
+  color: #e8fdff;
+
+  display: grid;
+  grid-template-columns: 20px min-content 10px min-content 1fr min-content 20px;
+}
+
+#nav-bar .logo{
+  width: 80px;
+  height: 80px;
+  grid-column: 2;
+}
+
+#nav-bar .header{
+  font-size: 2em;
+  line-height: 1em;
+  line-height: 2.5em;
+  grid-column: 4;
+}
+
+#nav-bar > button{
+  grid-column: 6;
+  align-self: center;
+
+  border-radius: 0.5em;
+  height: 50px;
+  width: 150px;
+  color: #00a087;
+  background: #f0f0f0;
+  border: 1px solid black;
+
+}
+
+#nav-bar > button:hover{
+  color: black;
+}
