@@ -25,7 +25,7 @@ tweetposts-userinfo-img {
 
 .tweetposts-userinfo-username{
     display:grid;
-    font-size: 1.6em;
+     font-size: 1.6em; 
     margin-left: 10px;
     margin-top: 20px;
     
@@ -46,7 +46,7 @@ tweetposts-userinfo-img {
     display:grid;
     width: 100%;
     justify-self: left;
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
     margin: 60px 20px;
 
 }
@@ -88,7 +88,7 @@ tweetposts-userinfo-img {
 
 .tweetposts-timeline-activity{
     display: grid;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     /*! -left: 10px; */
     /*! margin-top: 30px; */
 

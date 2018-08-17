@@ -130,13 +130,24 @@ function renderTweets(tweets) {
     // var size = $(this).parent().siblings(".counter").val();
     //var size = $(this).children
     let  size = $("#theText").val().length;
+    let largeMsgErr = " The tweet exceeds 140 characters.Please redo.";
+    let shortMsgErr = " The tweet is too short. Please redo.";
     if (size > 140) {
-      alert("The tweet content is too long. Please shorten and resubmit.")
-    } else  if (size === 0) {
-      alert("Nothing was entered or the tweet is not present.")
-    }
+      $(".new-tweet-validation").css('color','white');
+      $(".new-tweet-validation").css('visibility', 'visible');
+      $(".new-tweet-validation").text(largeMsgErr);
+
+    } else  if (size <= 0) {
+       //alert("Nothing was entered or the tweet is nost present.")
+       // $(".tweetButton").slideToggle(function(){s
+          $(".new-tweet-validation").css('color','white');
+          $(".new-tweet-validation").css('visibility', 'visible');
+          $(".new-tweet-validation").text(shortMsgErr);
+       // });
+      }
     else{
       var tweetmsg = $("#theText").val();
+      $(".new-tweet-validation").css('visibility','hidden');
       $('.tweetposts-postmessage').text(tweetmsg);
     }
   });

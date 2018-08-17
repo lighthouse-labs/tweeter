@@ -49,6 +49,25 @@ container {
     width: 100%
  }
 
+.new-tweet-validation {
+  display:flex;
+  visibility: hidden;
+  width: 180px;
+  height: 40px;
+  align-self: center;  
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: rgb(206, 65, 65); 
+  font-weight: bold;
+  font-color: white;
+} 
+.new-tweet-lower{
+    display: grid;
+    grid-template-columns: min-content 1fr 1fr;
+    grid-column: span 2;
+
+}
+
 
   .txtarea {
       grid-column: span 2;
@@ -67,21 +86,22 @@ container {
   .new-tweet {
     display: grid;
     grid-template-rows: min-content 1fr;
+    /* grid-template-columns: min-content 1fr 1fr; */
     padding: 10px;
     border-radius:10px;
 
     background-color:lightgray;
 }
-
-.toprow {
+ 
+/* .toprow {
     display:grid;
     background-color:blue;
   }
   .mid{
     display:grid;
-    background-color:green;
-    
-  }
+   background-color:green; 
+  } 
+*/
   .footer{
     display: grid;
     background-color:gray;
@@ -89,7 +109,6 @@ container {
   .wrapper {
     display: grid;
     width: 100%;
-    grid-auto-rows;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr ;
 

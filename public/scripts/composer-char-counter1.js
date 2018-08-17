@@ -5,11 +5,11 @@ $(document).ready(function () {
     // let eventList = ['keypressed','keyup'];
     $("textarea").on("keypress keyup keydown", function () {
         var charsLeft = 140 - $("textarea").val().length;
-        $(this).parent().siblings(".counter").text(charsLeft);
+        $(this).parent(".txtarea").siblings(".new-tweet-lower").children(".counter").text(charsLeft);
         if (charsLeft < 0){
-            $(this).parent().siblings(".counter").css("color","red");
+            $(this).parent(".txtarea").siblings(".new-tweet-lower").children(".counter").css("color","red");
         }else{
-          $(this).parent().siblings(".counter").css("color","black");
+          $(this).parent(".txtarea").siblings(".new-tweet-lower").children(".counter").css("color","black");
         }
     });
     
