@@ -4,6 +4,7 @@
   "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz",
   "main": "server/index.js",
   "scripts": {
+    "compile:sass": "node-sass public/scss-styles/main.scss public/styles/main.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
