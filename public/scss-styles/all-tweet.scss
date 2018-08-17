@@ -1,0 +1,105 @@
+$borderStyle: 2px solid #CDCDCD;
+$gridBorders: 10px;
+
+.tweets-container{
+  grid-row-start: 2 / 3;
+  display: grid;
+  grid-row-gap: $gridBorders;
+}
+
+article.tweet{
+  border-radius: 0.5em;
+  border: $borderStyle;
+
+  padding: 0;
+
+  display: grid;
+  grid-template-rows: 1fr 5em 3em;
+
+  opacity: 0.70;
+}
+
+
+article.tweet {
+  header {
+    display: grid;
+    grid-template-columns: $gridBorders 1fr 5fr 1fr $gridBorders;
+    grid-template-rows: $gridBorders 1fr 1fr $gridBorders;
+
+    background: #EEEEEE;
+    border-radius: 0.5em 0.5em 0 0;
+  }
+
+  header > p {
+    grid-column: 4 / 5;
+    margin: 0;
+    padding-right: 5px;
+    grid-row: 2 / span 1;
+    align-self: start;
+  }
+
+  footer{
+    grid-template-columns: $gridBorders 1fr 1fr $gridBorders;
+    grid-template-rows: min-content $gridBorders;
+    display: grid;
+    border-top: $borderStyle;
+  }
+
+  footer > p {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  > p {
+    padding: 10px;
+  }
+
+  .icons{
+    visibility: hidden;
+
+    justify-self: end;
+    align-self: center;
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  footer > i {
+    padding: 10px;
+  }
+
+  :hover{
+    opacity: 1;
+  }
+
+  :hover .icons{
+    visibility: visible;
+  }
+}
+
+
+header > img{
+  grid-column: 2 / 3;
+  margin: 0;
+  grid-row: 2 / span 2;
+  align-self: center;
+}
+
+header > h2{
+  grid-column: 3 / 4;
+  grid-row: 2 / span 1;
+  align-self: start;
+
+  margin: 0;
+  padding-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
