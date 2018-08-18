@@ -8,6 +8,7 @@
     height: 80px;
     width: 100%;
     font-size :2em;
+    padding: 0 20px;
     z-index: 2;
   }
   
@@ -24,7 +25,7 @@
 .lhead{
   align-items: center;
   display: flex;
-}
+} 
 
 .tweeter-name{
   margin-left: 10px;
