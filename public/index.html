@@ -22,68 +22,42 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter1.js"></script>
-    <script type="text/javascript" src="/scripts/hover.js"></script>
-
+  
   </head>
-
-
   <body>
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <div class="lhead">
+      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <span class="tweeter-name">Tweeter</span>
+    </div>
+    <div class = "nav-bar-compose">
+      <i class="fas fa-edit"></i>
+      <span class="nav-bar-compose-name">Compose</span>
+    </div>
+  </nav>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-        <div class="lhead">
-          <img class="logo" src="/images/bird.png" width="80px" height="80px">
-          <span class="tweeter-name">Tweeter</span>
-        </div>
-        <div class = "nav-bar-compose">
-            <i class="fas fa-edit"></i>
-            <span class="nav-bar-compose-name">Compose</span>
-        </div>
-    </nav>
-
-    <!-- Page-specific (main) content here -->
+  <!-- Page-specific (main) content here -->
  <main class="container">
 <div class = "body">
-    <section class="new-tweet">
+  <section class="new-tweet">
     <h2>Compose Tweet</h2>
-      <div class="h2item"> </div>
-        <form class = "theform" action = "/tweets" method = "POST" >
-          <div class="txtarea">
-            <textarea  id = "theText" name="text" placeholder="What are you humming about?"></textarea>
-          </div>
-          <div class = new-tweet-lower>
-            <input type="submit"  class="tweetButton" value="Tweet"> </input>
-            <span class = "new-tweet-validation">>></span>
-            <span class="counter">140</span>
-          </div>
-        </form>
-        </div>
-          </section>
-          <section class="container2">
-            <!-- <div class="tweetposts">
-              <div class="tweetposts-userinfo">  
-                <img class="tweetposts-userinfo-img" src="/images/smiley.png" width="80px" height="80px">
-                <label for ="userName" class = "tweetposts-userinfo-username" > Bill Fields </label>
-                <label for ="tweetName" class = "tweetposts-userinfo-tweetname" > @MrFields </label>
-              </div>       
-              <div>
-                  <p class = "tweetposts-postmessage"> Little tweet here... </p>
-                
-              </div>
-              <div class = "tweetposts-timeline">
-                <label for = "timeline" class="tweetposts-timeline-activity"> 10 Days</label>  
-                <label for = "hoverarea" class = "tweetposts-timeline-hover">
-                      <i class="fas fa-flag"> </i>
-                      <i class="fas fa-retweet"></i>
-                      <i class="fas fa-heart"></i>
-                    
-                </label>
-              </div>
-            </div> -->
-          </section>
-        </div>
-       </main>
-
-  </body>
+    <div class="h2item"> </div>
+    <form class = "theform" action = "/tweets" method = "POST" >
+      <div class="txtarea">
+        <textarea  id = "theText" name="text" placeholder="What are you humming about?"></textarea>
+      </div>
+      <div class = new-tweet-lower>
+        <input type="submit"  class="tweetButton" value="Tweet">
+        <span class = "new-tweet-validation">>></span>
+        <span class="counter">140</span>
+      </div>
+    </form>
+    </div>
+    </section>
+    <section class="container2">
+      </div>
+  </section>
+</main>
+</body>
 </html>

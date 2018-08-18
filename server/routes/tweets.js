@@ -1,7 +1,6 @@
 "use strict";
 
 const userHelper    = require("../lib/util/user-helper")
-
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
@@ -12,7 +11,6 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        console.log('got into tweets');
         res.json(tweets);
       }
     });
@@ -24,6 +22,7 @@ module.exports = function(DataHelpers) {
       return;
     }
 
+    /* Create new user to be inserted into the DB */
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,

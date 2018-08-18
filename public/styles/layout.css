@@ -16,11 +16,8 @@ html {
 
 body {
   margin: 0;
-  /* color: #eee; */
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
-
-
 }
 
 /*
@@ -32,13 +29,3 @@ body {
   margin-top: 140px;
   background-color: white;
 } 
-
-
-  validation {
-    color: #D63301;
-    display: flex;
-    background-color: #FFCCBA;
-    background-image: url('validation.png');
-    position: relative;
-    
-    }

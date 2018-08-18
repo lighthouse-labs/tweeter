@@ -8,6 +8,7 @@
     height: 80px;
     width: 100%;
     font-size :2em;
+    z-index: 2;
   }
   
   .left-header {
@@ -24,12 +25,14 @@
   align-items: center;
   display: flex;
 }
+
 .tweeter-name{
   margin-left: 10px;
   color: white;
+  font-size: 1.5em;
 }
 
-
+/* rules for the compose tweet top box */
 .nav-bar-compose {
   display:flex;
   margin-right: 10px;
@@ -45,18 +48,8 @@
   color: green; 
 }
 
-
+/* rules for the compose text in the navigation bar */
 .nav-bar-compose-name {
 margin-right: 10px;
 font-size: .7em;
-}
-
-
-.resp-name {
-  margin-left: 20px;
-  color: blue;
-}
-.resp-handle {
-  color:lightgray;
-  font-style: italic;
 }

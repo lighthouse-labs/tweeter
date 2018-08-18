@@ -5,20 +5,15 @@ container {
     background-color: white;
     padding: 10px;
   }
- div.body{
-    padding:10px;
- }
-  
+
+  /* rules for the new tweet container */
   .new-tweet {
-      display: grid;
-      grid-template-rows: min-content 1fr;
-      padding: 10px;
-      border-radius:10px;
-
-      background-color:lightgray;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    padding: 10px;
+    border-radius:10px;
+    background-color:lightgray;
   }
-
-  
   .container2{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -32,9 +27,7 @@ container {
       border-bottom: 1px solid black;
       align-self: center;
   }
-  
- 
-  .theform { 
+   .theform { 
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
@@ -49,6 +42,7 @@ container {
     width: 100%
  }
 
+ /* rules for the validation element */
 .new-tweet-validation {
   display:flex;
   visibility: hidden;
@@ -67,8 +61,6 @@ container {
     grid-column: span 2;
 
 }
-
-
   .txtarea {
       grid-column: span 2;
   }
@@ -77,39 +69,20 @@ container {
       display: grid;
       width: 120px;
   }
-  
+  /* Counter item */
   .counter  {
       align-self: center;
       justify-self: end;
-  }
+      margin-right: 10px;
+      font-style:italic;
+      color: rgb(14, 66, 59);
 
+  }
+/* new tweet container */
   .new-tweet {
     display: grid;
     grid-template-rows: min-content 1fr;
-    /* grid-template-columns: min-content 1fr 1fr; */
     padding: 10px;
     border-radius:10px;
-
     background-color:lightgray;
 }
- 
-/* .toprow {
-    display:grid;
-    background-color:blue;
-  }
-  .mid{
-    display:grid;
-   background-color:green; 
-  } 
-*/
-  .footer{
-    display: grid;
-    background-color:gray;
-  }
-  .wrapper {
-    display: grid;
-    width: 100%;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr ;
-
-  }
