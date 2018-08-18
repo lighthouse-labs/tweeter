@@ -12,8 +12,17 @@ This repository is for the project, the objective of which was for us to practic
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
-## Dependencies
 
+## Screenshots
+!["Main Screen"] https://github.com/dmgibbs/tweeter/blob/master/docs/mainScreen.png
+!["![Error message with 140+ length Tweets"]"] (https://github.com/dmgibbs/tweeter/blob/master/docs/140pluslengthTweet.png)
+!["Error with Tweets of 0 Length Tweets"]  https://github.com/dmgibbs/tweeter/blob/master/docs/zeroLengthtweet.png
+![" New Tweet Added "] https://github.com/dmgibbs/tweeter/blob/master/docs/New%20Tweet%20inserted.png
+!["Results of pressing Screen Button"]  https://github.com/dmgibbs/tweeter/blob/master/docs/ResultAfterpressTweetButton.png
+
+
+
+## Dependencies
 - Express
 - Node 5.10.x or above
 - body-parser  1.15.2
