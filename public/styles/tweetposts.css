@@ -33,10 +33,11 @@ tweetposts-userinfo-img {
 
 .tweetposts-userinfo-tweetname{
     display:grid;
-    margin-right: 20px;
+    margin-right: 5px;
     justify-self:right;
     align-self:top;
-    margin-top:20px;
+    margin-top:10px;
+    color: gray;
 }
 
 .tweetposts-postmessage{
