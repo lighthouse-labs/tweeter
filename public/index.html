@@ -16,23 +16,56 @@
     <!-- Nav CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Character Counter -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2 class="compose-box">Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <textarea class="text-area" name="text" placeholder="What are you humming about?"></textarea>
+          <div class="tweet-button">
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>
+        </form>
+      </section>
+
+      <!-- old tweets -->
+
+      <article class="tweet-container">
+        <header class="tweet-header">
+          <img class="avatar" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png">
+          <h3 class="full-name">Bill Fields</h3>
+          <span class="handle">@MrFields</span>
+        </header>
+        <section class="middle">
+          <p class="tweet-content">Little tweet here</p>
+        </section>
+        <footer class="tweet-footer">
+          <span class="date-stamp">10 days ago</span>
+        </footer>
+      </article>
     </main>
 
   </body>

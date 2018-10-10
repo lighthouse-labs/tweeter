@@ -1,0 +1,106 @@
+main.container {
+  width: 450px;
+  background-color: white;
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.new-tweet {
+  width: 80%;
+  background-color: #eeeeee;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-box {
+  margin: 1rem;
+  border-bottom: solid;
+  border-bottom-width: 1.5px;
+  border-bottom-color: #535454;
+}
+
+.text-area {
+  margin: .5rem 1rem;
+  margin-bottom: 0;
+  overflow: auto;
+  width: 91%;
+  max-width: 91%;
+}
+
+.tweet-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.counter-negative {
+  color: red;
+}
+
+.tweet-content {
+  color: #6D6E71;
+}
+
+.tweet-container {
+  margin: 2rem;
+  width: 80%;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  opacity: .5;
+}
+
+.tweet-container:hover {
+  opacity: 1;
+}
+
+.tweet-container .tweet-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #eeeeee;
+}
+
+.tweet-container .avatar {
+  width: 80px;
+  height: 80px;
+  padding: 12px;
+  border-radius: 1rem;
+}
+
+.tweet-container .full-name {
+  color: #627E84;
+}
+
+.tweet-container .handle {
+  margin-left: auto;
+  color: #6D6E71;
+  padding: .75rem;
+}
+
+.tweet-container .middle {
+  margin: .5rem 1rem;
+  margin-bottom: 0;
+  width: 91%;
+  max-width: 91%;
+  min-height: 5rem;
+  color: #627E84;
+}
+
+.tweet-container .tweet-footer {
+  padding: .75rem;
+  border-top: 1px solid darkgrey;
+  color: #627E84;
+}
+
+.tweet-container .date-stamp {
+  color: #627E84;
+}
+
