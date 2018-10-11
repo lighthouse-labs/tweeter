@@ -10,7 +10,7 @@ main.container {
 
 
 .new-tweet {
-  width: 80%;
+  width: 85%;
   background-color: #eeeeee;
   border: 1px solid darkgrey;
   border-radius: 5px;
@@ -51,7 +51,7 @@ main.container {
 
 .tweet-container {
   margin: 2rem;
-  width: 80%;
+  width: 85%;
   border: 1px solid darkgrey;
   border-radius: 5px;
   display: flex;
@@ -67,6 +67,7 @@ main.container {
   display: flex;
   flex-direction: row;
   background-color: #eeeeee;
+  border-radius: 5px 5px 0 0;
 }
 
 .tweet-container .avatar {
