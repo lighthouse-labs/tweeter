@@ -52,23 +52,11 @@ $(()=> {
   ];
   
   function renderTweets(tweets) {
-    
-     tweets.forEach(function(tweet) {
+    $("#tweets").empty();
+    tweets.forEach(function(tweet) {
       $("#all-tweets").prepend(createTweetElement(tweet)) 
-     })
-      
-    // }
-    // return appendedTweet
-    
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-  }
-
-  renderTweets(tweetData)
-
-
-  // var $tweet = createTweetElement(tweetData);
+    })
+  };
   
   function createTweetElement(tweetData) {
     let $img = $(`<img class="avatar">`).attr("src", tweetData.user.avatars.regular);
@@ -88,10 +76,27 @@ $(()=> {
     .append($footer)
   
     return $tweet;
+  };
+  
+  // AJAX request to submit tweets asynchonously
+  $("#tweetform").on("submit", function (event) {
+    event.preventDefault();
+    let data = $("#tweetform").serialize(); // convert object to string
+
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: data,
+      success: function (result) {
+        loadTweets();
+      },
+    })
+  });
+
+  function loadTweets() {
+    $.get("/tweets", function (tweets) {
+      renderTweets(tweets)
+    })
   }
-  
-  // console.log($tweet);
-  // $("#all-tweets").append($tweet);
-  
-  
-})
+  loadTweets()
+});
