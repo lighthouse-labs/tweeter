@@ -1,5 +1,6 @@
 main.container {
   width: 450px;
+  height: 100%;
   background-color: white;
   padding-top: 140px;
   display: flex;
@@ -55,7 +56,7 @@ main.container {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  opacity: .5;
+  opacity: .6;
 }
 
 .tweet-container:hover {
