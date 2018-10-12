@@ -52,7 +52,7 @@ $(()=> {
   ];
   
   function renderTweets(tweets) {
-    $("#tweets").empty();
+    $("#all-tweets").empty();
     tweets.forEach(function(tweet) {
       $("#all-tweets").prepend(createTweetElement(tweet)) 
     })
@@ -74,14 +74,22 @@ $(()=> {
     .append($header)
     .append($section)
     .append($footer)
-  
+    
     return $tweet;
   };
-  
+
+  $(".compose-button").on("click", (function() {
+    $(".new-tweet").slideToggle();
+    $(".text-area").focus();
+  }));
+
   // AJAX request to submit tweets asynchonously
-  $("#tweetform").on("submit", function (event) {
+  $("#tweetform").on("submit", function(event) {
     event.preventDefault();
     let data = $("#tweetform").serialize(); // convert object to string
+    if ($("textarea").val() === "") {
+      alert("Error: please enter tweet before submitting")
+    }
 
     $.ajax({
       url: "/tweets",
@@ -98,5 +106,6 @@ $(()=> {
       renderTweets(tweets)
     })
   }
-  loadTweets()
+  loadTweets();
 });
+

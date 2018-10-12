@@ -29,3 +29,13 @@
   margin: auto;
   
 }
+
+.compose-button {
+  float: right;
+  margin-top: 12px;
+  padding: 18px;
+  border-radius: .3em;
+  border-color: black;
+  color: #00a087;
+  background-color: #e8fdff;
+}
