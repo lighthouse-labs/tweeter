@@ -88,9 +88,14 @@ $(()=> {
     event.preventDefault();
     let data = $("#tweetform").serialize(); // convert object to string
     let empty = $(".text-area").val() === "";
+    let overCharacterCount = ($(".text-area").val() > 140);
     if (empty) {
       $("#error, #errormessage").slideDown(400, function() {
           $("#errormessage").text("Got nothin' to say?");
+      })
+    } else if (overCharacterCount) {
+      $("#error, #errormessage").slideDown(400, function() {
+        $("#errormessage").text("Exceed character limit: Ain't nobody got time for that!");
       })
     } else {
       $.ajax({
@@ -105,11 +110,6 @@ $(()=> {
       })
     }
   });
-
-
-
-
-
   function loadTweets() {
     $.get("/tweets", function (tweets) {
       renderTweets(tweets)

@@ -6,13 +6,11 @@ $(document).ready(function() {
     $(".counter").text(charLength);
     if (charLength < 0) {
       $(".counter").addClass("counter-negative"); // don't need . if not a selector
-
     } else {
       $(".counter").removeClass("counter-negative");
       $("#error, #errormessage").slideUp()
     }
   });
-
 });
 
 // } else if($(".text-area").val().length > 140){
@@ -26,6 +24,10 @@ $(document).ready(function() {
 //     $("#errormessage")
 //   });
     
-
+    // if (overCharCount) {
+    //   $("#error, #errormessage").slideDown(400, function() {
+    //     $("#errormessage").text("Exceed character limit: Ain't nobody got time for that!");
+    //   })
+    // }
       
     
