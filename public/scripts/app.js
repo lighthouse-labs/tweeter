@@ -87,19 +87,32 @@ $(()=> {
   $("#tweetform").on("submit", function(event) {
     event.preventDefault();
     let data = $("#tweetform").serialize(); // convert object to string
-    if ($("textarea").val() === "") {
-      alert("Error: please enter tweet before submitting")
+    if ($(".text-area").val() === "") {
+      $('#error, #errormessage').slideDown(400, function() {
+          $('#errormessage').text("Please compose a tweet");
+      })
+    } else if($(".text-area").val().length > 140){
+      $('#error').show({complete: function() {
+        $('#errormessage').text("You're over character limit")
+        }
+      });
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: data,
+        success: function (result) {
+          $('#error').slideUp(500);
+          loadTweets();
+          $(".text-area").val("")
+        }
+      })
     }
-
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: data,
-      success: function (result) {
-        loadTweets();
-      },
-    })
   });
+
+
+
+
 
   function loadTweets() {
     $.get("/tweets", function (tweets) {

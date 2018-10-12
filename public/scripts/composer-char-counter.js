@@ -5,7 +5,6 @@ $(document).ready(function() {
     $(".counter").text(charLength);
     if (charLength < 0) {
       $(".counter").addClass("counter-negative"); // don't need . if not a selector
-      alert("Error: Over character count");
     } else {
       $(".counter").removeClass("counter-negative");
     }

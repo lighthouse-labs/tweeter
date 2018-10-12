@@ -42,6 +42,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div id="error">
+          <p class="error-message" id="errormessage"></p>
+        </div>
         <h2 class="compose-box">Compose Tweet</h2>
         <form method="POST" action="/tweets" id="tweetform">
           <textarea class="text-area" name="text" placeholder="What are you humming about?"></textarea>
