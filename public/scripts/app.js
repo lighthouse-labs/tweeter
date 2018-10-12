@@ -87,15 +87,11 @@ $(()=> {
   $("#tweetform").on("submit", function(event) {
     event.preventDefault();
     let data = $("#tweetform").serialize(); // convert object to string
-    if ($(".text-area").val() === "") {
-      $('#error, #errormessage').slideDown(400, function() {
-          $('#errormessage').text("Please compose a tweet");
+    let empty = $(".text-area").val() === "";
+    if (empty) {
+      $("#error, #errormessage").slideDown(400, function() {
+          $("#errormessage").text("Got nothin' to say?");
       })
-    } else if($(".text-area").val().length > 140){
-      $('#error').show({complete: function() {
-        $('#errormessage').text("You're over character limit")
-        }
-      });
     } else {
       $.ajax({
         url: "/tweets",
