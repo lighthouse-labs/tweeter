@@ -1,6 +1,6 @@
 "use strict";
 
-const MongoClient = require("mongodb").MongoClient;
+const {MongoClient} = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
@@ -12,17 +12,30 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   // ==> We have a connection to the "tweeter" db, starting here.
   console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
-  // ==> Let's "get all the tweets". In Mongo-speak, we "find" them.
-  db.collection("tweets").find({}, (err, result) => {
-    // Lazy error handling:
+  // ==> Refactored and wrapped as new, tweet-specific function:
+
+  function getTweets(callback) {
+    db.collection("tweets").find().toArray((err, tweets) => {
+      if (err) {
+        return callback(err);
+      }
+      callback(null, tweets);
+    });
+  }
+
+  // ==> Later it can be invoked. Remember even if you pass
+  // `getTweets` to another scope, it still has closure over
+  // `db`, so it will still work. Yay!
+
+  getTweets((err, tweets) => {
     if (err) throw err;
 
-    // ==> Fair warning: This is going to log a lot of stuff...
-    console.log("find result: ", result);
-    console.log("type of find result: ", typeof result);
+    console.log("Logging each tweet:");
+    for (let tweet of tweets) {
+      console.log(tweet);
+    }
 
-    // ==> This is inside this callback now. Think about it:
-    // This is now the "end of the program", right?
-  db.close();
-  })
+    db.close();
+  });
+
 });
