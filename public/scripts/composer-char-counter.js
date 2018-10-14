@@ -6,9 +6,11 @@ $(document).ready(function() {
     $(".counter").text(charLength);
     if (charLength < 0) {
       $(".counter").addClass("counter-negative"); // don't need . if not a selector
+      $("#tweet-button").attr("disabled", true);
     } else {
       $(".counter").removeClass("counter-negative");
       $("#error, #errormessage").slideUp()
+      $("#tweet-button").attr("disabled", false);
     }
   });
 });

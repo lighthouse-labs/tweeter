@@ -19,6 +19,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Old Tweet CSS -->
+    <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -49,7 +52,7 @@
         <form method="POST" action="/tweets" id="tweetform">
           <textarea class="text-area" name="text" placeholder="What are you humming about?"></textarea>
           <div class="tweet-button">
-            <input type="submit" value="Tweet">
+            <input id="tweet-button" type="submit" value="Tweet">
             <span class="counter">140</span>
           </div>
         </form>
@@ -57,6 +60,22 @@
 
       <!-- old tweets -->
       <section id="all-tweets">
+        <!-- <article class="tweet-container">
+            <header class="tweet-header">
+              <img class="avatar" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png">
+              <h3 class="full-name">Bill Fields</h3>
+              <span class="handle">@MrFields</span>
+            </header>
+            <section class="middle">
+              <p class="tweet-content">Little tweet here</p>
+            </section>
+            <footer class="tweet-footer">
+              <span class="date-stamp">10 days ago</span>
+              <img class="footer-icons" src="/images/footer-icons/share.svg">
+              <img class="footer-icons" src="/images/footer-icons/flag-star.svg">
+              <img class="footer-icons" src="/images/footer-icons/heart.svg">
+            </footer>
+          </article> -->
       </section>
     </main>
 
