@@ -3,16 +3,22 @@ $(document).ready(function() {
   $( ".text-area" ).on("input", function() {
     event.preventDefault();
     let charLength = 140 - ($(this).val().length);
+    let overCharacterCount = ($(".text-area").val() > 140);
     $(".counter").text(charLength);
     if (charLength < 0) {
-      $(".counter").addClass("counter-negative"); // don't need . if not a selector
+      $(".counter").addClass("counter-negative"); // turns counter red if over character count | don't need . if not a selector
       $("#tweet-button").attr("disabled", true);
     } else {
       $(".counter").removeClass("counter-negative");
       $("#error, #errormessage").slideUp()
       $("#tweet-button").attr("disabled", false);
     }
-  });
+    if (overCharacterCount) {
+      $("#error, #errormessage").slideDown(400, function() {
+        $("#errormessage").text("too many characters!");
+      })
+    }
+  })
 });
 
 // } else if($(".text-area").val().length > 140){
@@ -32,4 +38,4 @@ $(document).ready(function() {
     //   })
     // }
       
-    
+

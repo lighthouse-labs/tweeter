@@ -12,8 +12,8 @@ main.container {
 .new-tweet {
   width: 85%;
   background-color: #eeeeee;
-  border: 1px solid darkgrey;
-  border-radius: 5px;
+  border: .3rem solid black;
+  border-radius: .8rem;
   display: flex;
   flex-direction: column;
 }
@@ -22,7 +22,8 @@ main.container {
   margin: 1rem;
   border-bottom: solid;
   border-bottom-width: 1.5px;
-  border-bottom-color: #535454;
+  border-bottom-color: black;
+  font-family: 'Londrina Solid';
 }
 
 .text-area {
@@ -53,126 +54,4 @@ main.container {
 
 
 
-
-#all-tweets {
-  width: 100%;
-}
-
-.tweet-container {
-  margin: 2rem;
-  width: 85%;
-  border-width: 1px;
-  border-style: solid;
-  border-color: lightgray; 
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-}
-
-.tweet-container:hover {
-  border-color: rgb(51, 50, 50);
-}
-
-.tweet-container .tweet-header {
-  display: flex;
-  flex-direction: row;
-  background-color: #eeeeee;
-  border-radius: 5px 5px 0 0;
-  opacity: .6;
-}
-
-.tweet-container:hover .tweet-header {
-  opacity: 1;
-}
-
-.tweet-container .avatar {
-  width: 80px;
-  height: 80px;
-  padding: 12px;
-  border-radius: 1rem;
-  opacity: .6;
-}
-
-.tweet-container:hover .avatar {
-  opacity: 1;
-}
-
-.tweet-container .full-name {
-  color: #627E84;
-  opacity: .6;
-}
-
-.tweet-container:hover .full-name {
-  opacity: 1;
-}
-
-.tweet-container .handle {
-  margin-left: auto;
-  color: #6D6E71;
-  padding: .75rem;
-  opacity: .6;
-}
-
-.tweet-container:hover .handle {
-  opacity: 1;
-}
-
-.tweet-container .middle {
-  margin: .5rem 1rem;
-  margin-bottom: 0;
-  width: 91%;
-  max-width: 91%;
-  min-height: 5rem;
-  color: #627E84;
- 
-}
-
-.tweet-container:hoover .middle {
-  opacity: 1;
-}
-
-.tweet-container .tweet-footer {
-  padding: .75rem;
-  border-width: 1px;
-  border-top-style: solid;
-  border-top-color: lightgrey;
-  color: #627E84;
-}
-
-.tweet-container:hover .tweet-footer {
-  border-top-color: rgb(51, 50, 50);
-}
-
-.footer-icons {
-  float: right;
-  width: 20px;
-  margin: 0 .2rem;
-  opacity: 0;
-}
-
-.tweet-container:hover .footer-icons {
-  opacity: 1;
-}
-
-.tweet-container .date-stamp {
-  color: #244751;
-}
-
-#error {
-  display: none;
-  position: relative;
-  background-color: rgba(30, 30, 30, 0.4);
-}
-
-.error-message {
-  background-color: #f44277;
-  color: white;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -40px;
-  border: solid #f44277 thin;
-  border-radius: 5px;
-}
 
