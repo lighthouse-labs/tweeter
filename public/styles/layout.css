@@ -13,7 +13,9 @@ html {
 /*
  * Global layout stuff
  */
-
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
 body {
   margin: 0;
   color: #244751;
@@ -23,3 +25,12 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  display: block;
+  float: left;
+  width: 450px;
+  height: 200px;
+  background-color: #fafafa;
+  margin: 140px 20%;
+ }
