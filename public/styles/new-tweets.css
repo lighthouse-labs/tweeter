@@ -1,0 +1,37 @@
+.container {
+  background-color: white;
+  width: 600px;
+  height: 700px;
+  padding-top: 100px;
+}
+.new-tweet hr {
+  border-color: black;
+}
+
+.new-tweet h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.new-tweet textarea {
+  margin-top: 15px;
+  margin-right: 0;
+  padding: 8px;
+  width: 436px;
+}
+
+.new-tweet span.counter{
+  float:right;
+}
+
+.new-tweet {
+  margin top: 100px;
+  margin-bottom: 90px;
+  margin: 30px;
+  background-color: #eee;
+  margin: 2em;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 3%;
+  padding: 15px;
+}

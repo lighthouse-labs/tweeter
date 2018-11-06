@@ -18,8 +18,16 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto', sans-serif;
+  font-size: 200%;
+  line-height: center;
 }
 
+main {
+  margin: auto;
+  width: 450px;
+  background-color: white;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
