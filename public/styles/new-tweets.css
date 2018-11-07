@@ -8,6 +8,10 @@
   border-color: black;
 }
 
+div.tweet {
+  height: 200px
+}
+
 .new-tweet h2{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -22,6 +26,10 @@
 
 .new-tweet span.counter{
   float:right;
+}
+
+.wrongText{
+  color: red;
 }
 
 .new-tweet {
