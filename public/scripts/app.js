@@ -17,11 +17,19 @@ const tweetData = {
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
   $tweet.text(data.content.text);
+  $('$tweet').append($("<header>").addClass("tweet"));
+$('$tweet').append($("<div>").addClass("tweet"));
+$('$tweet').append($("<footer>").addClass("tweet"));
   return $tweet;
 }
 
 let $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
+
+ // to see what it looks like
 $('#tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+// $('$tweet').append($("<header>"))
+// $('article').append($("<header>").addClass("tweet"));
+// $('article').append($("<div>").addClass("tweet"));
+// $('article').append($("<footer>").addClass("tweet"));
