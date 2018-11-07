@@ -1,10 +1,16 @@
 $(document).ready(function() {
-  $('.tweet-text').on('keyup', function(event) {
-    console.log(event.target.value.length);
-    const count = 140 - event.target.value.length;
+  $('.tweet-text').on('keyup', function() {
+    const count = 140 - this.value.length;
     // console.log($('span.counter').text());
+
     $('span.counter').text(count);
+
+    if(count < 0){
+      $('span.counter').css('color', 'red');
+    }
     // $('span.counter').text(count);
+
   })
+
 });
 
