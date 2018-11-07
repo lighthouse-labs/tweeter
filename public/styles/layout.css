@@ -26,11 +26,16 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-  display: block;
-  float: left;
+ main.container {
+  /*position: relative;*/
+  /*display: block;*/
+  padding: 1em 0em;
   width: 450px;
-  height: 200px;
+  height: 100%;
   background-color: #fafafa;
-  margin: 140px 20%;
+  margin: 80px auto;
  }
+
+ main.tweet-container {
+
+}

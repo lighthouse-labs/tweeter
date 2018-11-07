@@ -35,12 +35,25 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-          <form action= "/tweets" method="POST">
+          <form id="new-tweet-form" action= "/tweets" method="POST">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
           </form>
+
       </section>
+      <article class="tweet">
+        <header class="tweet-header">
+          <img id="avatar" src="https://pbs.twimg.com/profile_images/3543879283/1509e34005183da5ea4eb29150f341e5_400x400.jpeg">
+          <h2>Steve Brule</h2>
+          <span class="handle">@LittleStevie</span>
+        </header>
+        <p class="tweet-body">For your health!</p>
+        <!-- <span class="tweet-body">For your health. today i get to go on a broat with jan and wayne skylar.</span> -->
+        <footer class="tweet-footer"><p>10 days ago</p>
+          <span></span>
+        </footer>
+      </article>
     </main>
 
   </body>
