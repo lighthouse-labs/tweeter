@@ -23,3 +23,28 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+  width: 450px;
+  height: 200px;
+  position: fixed;
+  left: 50%;
+  margin-left: -225px;
+  background-color: #c0c0c0;
+  border-radius: 20px;
+}
+
+
+textarea {
+  width: 100%;
+}
+
+span.counter {
+  float: right;
+  padding-right: 10px;
+}
+
