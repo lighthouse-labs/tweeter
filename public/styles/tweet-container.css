@@ -1,27 +1,31 @@
-.tweet-container {
+#tweet-container {
  margin top: 100px;
   margin-bottom: 90px;
   margin: 30px;
   background-color: white;
   margin: 2em;
+
+  /*padding: 15px*/
+}
+
+article.tweet{
+  /*padding: 15px;*/
   border-style: solid;
   border-color: gray;
   border-radius: 6px;
-  padding: 15px
+  margin: 15px 0;
 }
 
-section.tweet-container{
-  padding: 0;
-  opacity: 0.5;
-}
-
-section.tweet-container:hover{
+article#tweet:hover .tweethover{
   border-color: blue;
   border-width: 5px;
   opacity: 1;
 }
 
 
+textarea.tweet-text{
+  margin: 0;
+}
 
 header.tweet {
   height: 80px;
@@ -29,6 +33,7 @@ header.tweet {
   padding: 3px;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
+  opacity: 0.5;
 }
 
 header.tweet h1 {
@@ -53,7 +58,13 @@ header.tweet span{
 
 div.tweet{
   display: flex;
-  align-items: center
+  align-items: center;
+  margin: 8px 8px;
+  height: 160px;
+}
+
+footer.tweet {
+  margin: 8px 8px;
 }
 /*  margin: auto;
   height: 300px;

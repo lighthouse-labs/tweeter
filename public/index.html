@@ -22,7 +22,7 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+
 
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -33,7 +33,6 @@
   </head>
 
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
@@ -43,31 +42,31 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-  <h2>Compose Tweet</h2>
-  <hr>
-  <form method="POST" action="/tweets">
-    <textarea class='tweet-text' name="text" placeholder="What are you humming about?"></textarea>
-    <input type="submit" value="Tweet">
-    <span class="counter">140</span>
-  </form>
-</section>
-<section class='tweet-container'>
-  <article class='tweet'>
-    <header class='tweet'>
-      <span>@MrFields</span>
-      <img src="https://sites.psu.edu/siowfa16/files/2016/10/YeDYzSR-10apkm4.png">
-      <h1>Bill Fields</h1>
-    </header>
-    <div class="tweet">Little Tweet here</div>
-    <footer class='tweet'>
-      <span>10 days ago</span>
-    </footer>
-  </article>
+        <h2>Compose Tweet</h2>
+        <hr/>
+        <form method="POST" action="/tweets">
+          <textarea class='tweet-text' name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
 
-  </form>
-</section>
+      <section id='tweet-container'>
+        <article class='tweet'>
+          <header class='tweet tweethover' >
+            <span>@MrFields</span>
+            <img src="https://sites.psu.edu/siowfa16/files/2016/10/YeDYzSR-10apkm4.png">
+            <h1>Bill Fields</h1>
+          </header>
+          <div class="tweet">Little Tweet here</div>
+          <footer class='tweet'>
+            <span>10 days ago</span>
+          </footer>
+        </article>
+      </section>
     </main>
 
-<script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
   </body>
 </html>
