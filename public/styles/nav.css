@@ -4,6 +4,7 @@
   height: 80px;
   background-color: #00a087;
   top: 0;
+  z-index: 1
 }
 
 #nav-bar .logo {

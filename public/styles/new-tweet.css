@@ -32,7 +32,7 @@
 
 article.tweet {
   width: 86%;
-  margin: auto;
+  margin: auto auto 1em auto;
   border: 2px solid #c3c3c3;
   border-radius: 5px;
   font-size: 1rem;
