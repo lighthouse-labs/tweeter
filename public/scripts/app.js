@@ -46,27 +46,33 @@ const tweetData = [
 ];
 
 function renderTweets(tweets) {
-  tweets.forEach(function (element, index){
-    console.log(element.content.text)
-    return element.content.text;
+  // const $container = $('#tweet-container')
+  tweets.forEach(function (tweet, index){
+    let $tweet = createTweetElement(tweet);
+    $('#tweet-container').append($tweet);
   })
+  // return $container;
+}
+
+function getUserId(user){
+
 }
 
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
   // $tweet.text(data.content.text);
   $tweet.append($("<header>").addClass("tweet"));
-  $tweet.append($("<div>").addClass("tweet").text(renderTweets(tweetData)));
+  $tweet.append($("<div>").addClass("tweet").text(data.content.text))
+  // $tweet.append($("<div>").addClass("tweet").text(renderTweets(tweetData)));
   $tweet.append($("<footer>").addClass("tweet"));
   return $tweet;
 }
 
-let $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
 
  // to see what it looks like
-$('#tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+// $('#tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 // $('$tweet').append($("<header>"))
 // $('article').append($("<header>").addClass("tweet"));
 // $('article').append($("<div>").addClass("tweet"));
