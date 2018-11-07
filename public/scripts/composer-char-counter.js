@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('span.counter').text(count);
 
     if(count < 0){
-      $('span.counter').css('color', 'red');
+      $('span.counter').addClass('wrongText');
     }
     // $('span.counter').text(count);
 
