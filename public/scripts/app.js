@@ -16,10 +16,10 @@ const tweetData = {
 
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
-  $tweet.text(data.content.text);
-  $('$tweet').append($("<header>").addClass("tweet"));
-$('$tweet').append($("<div>").addClass("tweet"));
-$('$tweet').append($("<footer>").addClass("tweet"));
+  // $tweet.text(data.content.text);
+$tweet.append($("<header>").addClass("tweet"));
+$tweet.append($("<div>").addClass("tweet").text(data.content.text));
+$tweet.append($("<footer>").addClass("tweet"));
   return $tweet;
 }
 
