@@ -61,7 +61,10 @@ function getUserId(user){
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
   // $tweet.text(data.content.text);
-  $tweet.append($("<header>").addClass("tweet"));
+  let $h1 = $("<h1>").addClass("tweet");
+  $h1.append(data.user.name);
+  $tweet.append($("<header>").addClass("tweet").append($h1));
+
   $tweet.append($("<div>").addClass("tweet").text(data.content.text))
   // $tweet.append($("<div>").addClass("tweet").text(renderTweets(tweetData)));
   $tweet.append($("<footer>").addClass("tweet"));
