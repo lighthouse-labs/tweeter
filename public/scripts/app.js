@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+
+
 const tweetData = [
   {
     "user": {
@@ -45,6 +48,7 @@ const tweetData = [
   }
 ];
 
+
 function renderTweets(tweets) {
   // const $container = $('#tweet-container')
   tweets.forEach(function (tweet, index){
@@ -83,30 +87,6 @@ function createTweetElement (data) {
   $tweet.append($spanFooter);
 
 
-  // let $tweet = $("<article>").addClass("tweet");
-  // // $tweet.text(data.content.text);
-  // let $header =$("<header>").addClass("tweet").appendTo($tweet);
-  // // let $img = $("<img>").prop('src').append(data.user.avatars.regular).appendTo($header);
-  // let $h1 = $("<h1>").addClass("tweet").append(data.user.name).appendTo($header);
-  // let $span = $("<span>").addClass("tweet").append(data.handle).appendTo($header);
-
-  // // let $h1 = $("<h1>").addClass("tweet");
-  // $h1.append(data.user.name);
-  // let $img = $("<img>");
-  // $img.append(data.user.avatars.regular);
-  // let $header = $("<header>").addClass("tweet");
-  // let $span = $("<span>").addClass("tweet");
-  // $span.text(data.handle);
-  // console.log($span)
-
-  // // let $header = $tweet.append($("<header>").addClass("tweet"));
-  // $header.append($img);
-  // $header.append($h1);
-  // $header.append($span);
-  // $tweet.append($header);
-  // $tweet.append($("<div>").addClass("tweet").text(data.content.text))
-  // // $tweet.append($("<div>").addClass("tweet").text(renderTweets(tweetData)));
-  // $tweet.append($("<footer>").addClass("tweet"));
   return $tweet;
 }
 
@@ -120,6 +100,15 @@ function createTweetElement (data) {
 // $('article').append($("<div>").addClass("tweet"));
 // $('article').append($("<footer>").addClass("tweet"));
 renderTweets(tweetData);
+
+const loadTweets = () => {
+  $.ajax('/tweets', { method: 'GET' })
+  .then(function (tweetData) {
+    console.log('TWEETSDATA: ', tweetData);
+  });
+}
+
+loadTweets();
 
 function formSubmission (){
   $('form').on('submit', function (event){
@@ -135,3 +124,4 @@ function formSubmission (){
 formSubmission();
 
 
+});
