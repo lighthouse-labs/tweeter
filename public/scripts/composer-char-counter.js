@@ -8,6 +8,9 @@ $(document).ready(function() {
     if(count < 0){
       $('span.counter').addClass('wrongText');
     }
+    if(count >= 0){
+      $('span.counter').removeClass('wrongText');
+    }
     // $('span.counter').text(count);
 
   })

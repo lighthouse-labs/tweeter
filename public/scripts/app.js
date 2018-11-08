@@ -87,8 +87,8 @@ function formSubmission (){
     const $formSerialized = $('form').serialize();
     // console.log($formSerialized);
     console.log($('textarea.tweet-text').val());
-    if($('textarea.tweet-text').val() === ""){
-      alert('please create a tweet')
+    if($('textarea.tweet-text').val() === "" || $('textarea.tweet-text').val().length > 140 ){
+      alert('tweets cannot be empty or over 140 characters')
     } else {
       $.ajax( "/tweets", {
         method:"POST",
