@@ -6,7 +6,8 @@
 
 $(() => {
 
-
+  loadTweets();
+/*
 const data = [
   {
     "user": {
@@ -53,12 +54,12 @@ const data = [
     "created_at": 1461113796368
   }
 ];
+*/
 
-renderTweets(data);
-
-function renderTweets(tweets, cb) {
+function renderTweets(tweets) {
+  $(".tweet-container").empty();
   tweets.forEach( tweet => {
-    $(".container").append(createTweetElement(tweet));
+    $(".tweet-container").append(createTweetElement(tweet));
   })
 }
 
@@ -80,6 +81,38 @@ function createTweetElement(tweet) {
     </footer>
     </article>`
   }
+
+  function handleNewTweet(event) {
+    event.preventDefault();
+    const _data = $(this).serialize();
+    $.ajax({
+      method: 'POST',
+      url: "/tweets",
+      data: _data
+    }).then((res) => renderTweets(data), (err) => {
+      // if err response
+    })
+  }
+
+
+$('#new-tweet-form').on('submit', handleNewTweet);
+
+
+function loadTweets(tweet) {
+  event.preventDefault();
+  $.ajax({
+    method: 'GET',
+    url: "/tweets",
+    success: function(result){
+      console.log("API successfully called",result);
+      renderTweets(result);
+    },
+    error: function(err){
+      console.log("there was an error calling API",err);
+    }
+  });
+}
+
+$('#new-tweet-form').on('submit', loadTweets);
+
 });
-
-
