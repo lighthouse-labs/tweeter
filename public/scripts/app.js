@@ -67,7 +67,7 @@ function createTweetElement (data) {
   let $img = $("<img>");
   $img.attr("src", data.user.avatars.regular);
   let $h1 = $("<h1>");
-  $h1.text('watup');
+  $h1.text(data.user.name);
 
   $header.append($span);
   $header.append($img);
