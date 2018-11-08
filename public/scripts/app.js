@@ -121,7 +121,7 @@ function createTweetElement (data) {
 // $('article').append($("<footer>").addClass("tweet"));
 renderTweets(tweetData);
 
-function formSubmition (){
+function formSubmission (){
   $('form').on('submit', function (event){
     event.preventDefault();
     const $formSerialized = $('form').serialize();
@@ -132,6 +132,6 @@ function formSubmition (){
     .then(console.log("success"));
   })
 }
-formSubmition();
+formSubmission();
 
 
