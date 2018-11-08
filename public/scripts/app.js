@@ -56,10 +56,13 @@ const data = [
 ];
 */
 
+
+
 function renderTweets(tweets) {
+  console.log("this is ", tweets)
   $(".tweet-container").empty();
   tweets.forEach( tweet => {
-    $(".tweet-container").append(createTweetElement(tweet));
+    $(".tweet-container").prepend(createTweetElement(tweet));
   })
 }
 
@@ -84,11 +87,17 @@ function createTweetElement(tweet) {
 
   function handleNewTweet(event) {
     event.preventDefault();
-    const _data = $(this).serialize();
+    const data = $(this).serialize();
     $.ajax({
       method: 'POST',
       url: "/tweets",
-      data: _data
+      data: data,
+      // success: function(result) {
+      //   renderTweets(result);
+      //   },
+      //   error: function(err){
+      //     console.log("there was an error calling API",err);
+      //   }
     }).then((res) => renderTweets(data), (err) => {
       // if err response
     })
@@ -104,7 +113,7 @@ function loadTweets(tweet) {
     method: 'GET',
     url: "/tweets",
     success: function(result){
-      console.log("API successfully called",result);
+
       renderTweets(result);
     },
     error: function(err){
