@@ -35,3 +35,11 @@ body {
   background-color: #fafafa;
   margin: 80px auto;
  }
+
+
+.error-message {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  margin-right: 15px;
+}

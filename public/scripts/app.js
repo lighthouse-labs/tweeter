@@ -57,10 +57,10 @@ const data = [
 */
 
 function renderTweets(tweets) {
-  console.log("this is ", tweets)
-  $(".tweet-container").empty();
+  // $(".tweet-container").empty();
   tweets.forEach( tweet => {
     $(".tweet-container").prepend(createTweetElement(tweet));
+    $('#new-tweet-form')[0].reset()
   })
 }
 
@@ -69,7 +69,7 @@ function createTweetElement(tweet) {
   let user = tweet["user"];
   let content = tweet["content"];
   let timeStamp = tweet["created_at"];
-  console.log(user);
+
   return `<article class="tweet">
     <header class="tweet-header">
     <img id="avatar" src=${user["avatars"].small} />
@@ -87,21 +87,22 @@ function createTweetElement(tweet) {
   function handleNewTweet(event) {
     event.preventDefault();
     const data = $(this).serialize();
+    let lengthyLength = data.split("=")[1].length;
+    console.log(lengthyLength);
+    if ( (lengthyLength) && (lengthyLength <= 140) ) {
+        // console.log("data = ", data.split("=")[1].length);
     $.ajax({
       method: 'POST',
       url: "/tweets",
       data: data,
-      // success: function(result) {
-      //   renderTweets(result);
-      //   },
-      //   error: function(err){
-      //     console.log("there was an error calling API",err);
-      //   }
     }).then((res) => {
       loadTweets();
     }, (err) => {
       // if err response
     })
+  } else {
+    alert("no dice");
+  }
   }
 
 
