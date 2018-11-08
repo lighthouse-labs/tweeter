@@ -56,8 +56,6 @@ const data = [
 ];
 */
 
-
-
 function renderTweets(tweets) {
   console.log("this is ", tweets)
   $(".tweet-container").empty();
@@ -85,6 +83,7 @@ function createTweetElement(tweet) {
     </article>`
   }
 
+
   function handleNewTweet(event) {
     event.preventDefault();
     const data = $(this).serialize();
@@ -98,7 +97,9 @@ function createTweetElement(tweet) {
       //   error: function(err){
       //     console.log("there was an error calling API",err);
       //   }
-    }).then((res) => renderTweets(data), (err) => {
+    }).then((res) => {
+      loadTweets();
+    }, (err) => {
       // if err response
     })
   }
@@ -107,13 +108,12 @@ function createTweetElement(tweet) {
 $('#new-tweet-form').on('submit', handleNewTweet);
 
 
-function loadTweets(tweet) {
+function loadTweets() {
   event.preventDefault();
   $.ajax({
     method: 'GET',
     url: "/tweets",
     success: function(result){
-
       renderTweets(result);
     },
     error: function(err){
@@ -121,7 +121,5 @@ function loadTweets(tweet) {
     }
   });
 }
-
-$('#new-tweet-form').on('submit', loadTweets);
 
 });
