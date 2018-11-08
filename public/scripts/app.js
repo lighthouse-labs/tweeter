@@ -120,3 +120,18 @@ function createTweetElement (data) {
 // $('article').append($("<div>").addClass("tweet"));
 // $('article').append($("<footer>").addClass("tweet"));
 renderTweets(tweetData);
+
+function formSubmition (){
+  $('form').on('submit', function (event){
+    event.preventDefault();
+    const $formSerialized = $('form').serialize();
+    $.ajax( "/tweets", {
+      method:"POST",
+      data: $formSerialized
+    })
+    .then(console.log("success"));
+  })
+}
+formSubmition();
+
+
