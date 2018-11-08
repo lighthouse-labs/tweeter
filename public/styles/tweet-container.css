@@ -16,7 +16,7 @@ article.tweet{
   margin: 15px 0;
 }
 
-article#tweet:hover .tweethover{
+article.tweet:hover .tweethover{
   border-color: blue;
   border-width: 5px;
   opacity: 1;

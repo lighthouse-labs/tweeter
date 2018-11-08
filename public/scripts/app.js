@@ -60,7 +60,7 @@ function getUserId(user){
 
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
-  let $header = $("<header>").addClass("tweet");
+  let $header = $("<header>").addClass("tweet tweethover");
   let $span = $("<span>");
   $span.text(data.user.handle);
 
@@ -74,6 +74,13 @@ function createTweetElement (data) {
   $header.append($h1);
   $tweet.append($header);
 
+  let $div = $("<div>").addClass("tweet");
+  $div.text(data.content.text);
+  $tweet.append($div);
+
+  let $spanFooter = $("<span>");
+  $spanFooter.text(data.created_at);
+  $tweet.append($spanFooter);
 
 
   // let $tweet = $("<article>").addClass("tweet");
