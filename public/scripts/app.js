@@ -60,14 +60,46 @@ function getUserId(user){
 
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
-  // $tweet.text(data.content.text);
-  let $h1 = $("<h1>").addClass("tweet");
-  $h1.append(data.user.name);
-  $tweet.append($("<header>").addClass("tweet").append($h1));
+  let $header = $("<header>").addClass("tweet");
+  let $span = $("<span>");
+  $span.text(data.user.handle);
 
-  $tweet.append($("<div>").addClass("tweet").text(data.content.text))
-  // $tweet.append($("<div>").addClass("tweet").text(renderTweets(tweetData)));
-  $tweet.append($("<footer>").addClass("tweet"));
+  let $img = $("<img>");
+  $img.attr("src", data.user.avatars.regular);
+  let $h1 = $("<h1>");
+  $h1.text('watup');
+
+  $header.append($span);
+  $header.append($img);
+  $header.append($h1);
+  $tweet.append($header);
+
+
+
+  // let $tweet = $("<article>").addClass("tweet");
+  // // $tweet.text(data.content.text);
+  // let $header =$("<header>").addClass("tweet").appendTo($tweet);
+  // // let $img = $("<img>").prop('src').append(data.user.avatars.regular).appendTo($header);
+  // let $h1 = $("<h1>").addClass("tweet").append(data.user.name).appendTo($header);
+  // let $span = $("<span>").addClass("tweet").append(data.handle).appendTo($header);
+
+  // // let $h1 = $("<h1>").addClass("tweet");
+  // $h1.append(data.user.name);
+  // let $img = $("<img>");
+  // $img.append(data.user.avatars.regular);
+  // let $header = $("<header>").addClass("tweet");
+  // let $span = $("<span>").addClass("tweet");
+  // $span.text(data.handle);
+  // console.log($span)
+
+  // // let $header = $tweet.append($("<header>").addClass("tweet"));
+  // $header.append($img);
+  // $header.append($h1);
+  // $header.append($span);
+  // $tweet.append($header);
+  // $tweet.append($("<div>").addClass("tweet").text(data.content.text))
+  // // $tweet.append($("<div>").addClass("tweet").text(renderTweets(tweetData)));
+  // $tweet.append($("<footer>").addClass("tweet"));
   return $tweet;
 }
 
