@@ -3,13 +3,17 @@ $( document ).ready(function() {
 
 
 function renderTweets(tweets) {
+  console.log(tweets);
   // const $container = $('#tweet-container')
   tweets.forEach(function (tweet, index){
+
     let $tweet = createTweetElement(tweet);
     $('#tweet-container').append($tweet);
-  })
+
+})
   // return $container;
 }
+
 
 
 function createTweetElement (data) {
@@ -62,10 +66,14 @@ loadTweets(renderTweets)
 function loadTweets (cb) {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (tweetData) {
-    console.log('TWEETSDATA: ', tweetData);
+    console.log('TWEETDATA: ', tweetData);
     cb(tweetData)
-  });
-}
+
+
+    // console.log(tweetData)
+    });
+  };
+
 
 
 
@@ -73,15 +81,21 @@ function formSubmission (){
   $('form').on('submit', function (event){
     event.preventDefault();
     let $form = $('form');
-    if($form === null){
+    console.log($form.content)
+
+    // console.log($form);
+    const $formSerialized = $('form').serialize();
+    // console.log($formSerialized);
+    console.log($('textarea.tweet-text').val());
+    if($('textarea.tweet-text').val() === ""){
       alert('please create a tweet')
     } else {
-    const $formSerialized = $('form').serialize();
-    $.ajax( "/tweets", {
-      method:"POST",
-      data: $formSerialized
-    })
-    .then(console.log("success"));
+      $.ajax( "/tweets", {
+        method:"POST",
+        data: $formSerialized
+      })
+      .then(console.log("success"));
+    // console.log($form);
     }
   })
 }
