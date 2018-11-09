@@ -8,19 +8,13 @@ button.nav {
   margin-left: auto;
 }
 
-div.error {
-    height: 0;
-    opacity: 0;
+.error {
+   /*visibility: hidden;*/
+   color:red;
+   font-size: large;
 }
 
-#errorOn {
-  padding: 5px;
-  height:; 20px;
-  opacity: 1;
-  color: red;
-  font-size: 60%;
 
-}
 
 button.nav:hover {
   color: black;
