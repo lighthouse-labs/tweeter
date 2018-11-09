@@ -87,8 +87,9 @@ function formSubmission (){
     // console.log($formSerialized);
     console.log($('textarea.tweet-text').val());
     if($('textarea.tweet-text').val() === "" || $('textarea.tweet-text').val().length > 140 ){
-      alert('tweets cannot be empty or over 140 characters')
+      $('div.error').prop('id', 'errorOn');
     } else {
+      $('div.error').remove('#errorOn');
       $.ajax( "/tweets", {
         method:"POST",
         data: $formSerialized

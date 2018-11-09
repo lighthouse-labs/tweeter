@@ -14,9 +14,12 @@ div.error {
 }
 
 #errorOn {
-  height: 300px;
+  padding: 5px;
+  height:; 20px;
   opacity: 1;
-  background-color: red;
+  color: red;
+  font-size: 60%;
+
 }
 
 button.nav:hover {
