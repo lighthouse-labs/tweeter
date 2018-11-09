@@ -1,3 +1,28 @@
+button.nav {
+  background-color: #f7ffff;
+  padding: 13px 5px;
+  float: right;
+  border-radius: 5%;
+  border-color: black;
+  color: #66d1d1;
+  margin-left: auto;
+}
+
+div.error {
+    height: 0;
+    opacity: 0;
+}
+
+#errorOn {
+  height: 300px;
+  opacity: 1;
+  background-color: red;
+}
+
+button.nav:hover {
+  color: black;
+  background-color: white;
+}
 
 #nav-bar{
   background-color: #00a087;
@@ -24,3 +49,4 @@
   line-height: 80px;*/
   font-size: 1em;
 }
+
