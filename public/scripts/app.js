@@ -7,54 +7,10 @@
 $(() => {
 
   loadTweets();
-/*
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
-*/
+
+//   (() => {
+//   $('.error-message').hide()
+// })
 
 function renderTweets(tweets) {
   // $(".tweet-container").empty();
@@ -64,6 +20,14 @@ function renderTweets(tweets) {
   })
 }
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+// const safeHTML = `<p>${escape(textFromUser)}</p>`;
+
 
 function createTweetElement(tweet) {
   let user = tweet["user"];
@@ -72,25 +36,22 @@ function createTweetElement(tweet) {
 
   return `<article class="tweet">
     <header class="tweet-header">
-    <img id="avatar" src=${user["avatars"].small} />
-    <h2>${user["name"]}</h2>
-    <span class="handle">${user["handle"]}</span>
+    <img id="avatar" src="${escape(user["avatars"].small)}" />
+    <h2>${escape(user["name"])}</h2>
+    <span class="handle">${escape(user["handle"])}</span>
     </header>
-    <p class="tweet-body">${content["text"]}</p>
+    <p class="tweet-body">${escape(content["text"])}</p>
     <footer class="tweet-footer"><p>${timeStamp}</p>
     <span></span>
     </footer>
     </article>`
   }
 
-
   function handleNewTweet(event) {
     event.preventDefault();
     const data = $(this).serialize();
     let lengthyLength = data.split("=")[1].length;
-    console.log(lengthyLength);
     if ( (lengthyLength) && (lengthyLength <= 140) ) {
-        // console.log("data = ", data.split("=")[1].length);
     $.ajax({
       method: 'POST',
       url: "/tweets",
@@ -98,12 +59,26 @@ function createTweetElement(tweet) {
     }).then((res) => {
       loadTweets();
     }, (err) => {
-      // if err response
     })
   } else {
-    alert("no dice");
+    errorAlert();
+    };
   }
-  }
+
+function errorAlert() {
+  $( ".logo" ).click(function() {
+  $(".error-message").show()
+});
+}
+
+/*
+
+if <0 or >140, disable the input button
+
+*/
+
+
+
 
 
 $('#new-tweet-form').on('submit', handleNewTweet);
@@ -122,5 +97,10 @@ function loadTweets() {
     }
   });
 }
+
+function errorAlert() {
+  $(".error-message").slideToggle(1000)
+}
+
 
 });

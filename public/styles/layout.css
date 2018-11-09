@@ -37,9 +37,10 @@ body {
  }
 
 
-.error-message {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-  margin-right: 15px;
+div.error-message {
+  color: #ff0000;
+  font-style: italic;
+  display: inline;
+  margin: 2px 2px 2px 20px;
+  font-size: .8em;
 }
