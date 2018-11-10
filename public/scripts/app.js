@@ -1,10 +1,11 @@
+$(() => {
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(() => {
+
 
   loadTweets();
 
@@ -65,20 +66,12 @@ function createTweetElement(tweet) {
     };
   }
 
+
 function errorAlert() {
   $( ".logo" ).click(function() {
   $(".error-message").show()
 });
 }
-
-/*
-
-if <0 or >140, disable the input button
-
-*/
-
-
-
 
 
 $('#new-tweet-form').on('submit', handleNewTweet);

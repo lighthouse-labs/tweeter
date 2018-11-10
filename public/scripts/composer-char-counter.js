@@ -10,29 +10,21 @@ $(document).ready(function() {
 
     characterCounter.html(count);
 
-
     if ( (count <= 0) || (count > 140) ){
       characterCounter.css("color", "red");
     } else {
       characterCounter.css("color", "#334853")
     }
-    console.log("count = ", count);
 
       // $('.tweet-button').attr('disabled', 'disabled');
       // $('.tweet-button').attr('enabled', 'enabled');
 
     if (count <= 0) {
-      console.log("countX = ", count);
       $('.tweet-button').attr('disabled', 'monkeys');
     } else if (count >= 140) {
-      console.log("second zerod");
       $('.tweet-button').attr('disabled', 'monkeys');
     } else if ((count > 0) && (count < 140)) {
-      console.log("not zerod");
       $('.tweet-button').removeAttr("disabled");
     }
-
   })
-
-
 });
