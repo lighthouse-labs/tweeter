@@ -18,6 +18,7 @@ function renderTweets(tweets) {
 
 
 
+
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet");
   let $header = $("<header>").addClass("tweet tweethover");
