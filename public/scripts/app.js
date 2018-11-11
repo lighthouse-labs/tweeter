@@ -85,8 +85,6 @@ function formSubmission (){
     event.preventDefault();
     let $form = $('form');
     console.log($form.content)
-
-    // console.log($form);
     const $formSerialized = $('form').serialize();
     // console.log($formSerialized);
     console.log($('textarea.tweet-text').val());
