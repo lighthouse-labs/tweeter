@@ -8,11 +8,16 @@ const tweetsRoutes  = express.Router();
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
+    console.log('im heree')
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.json(tweets);
+        console.log("Logging each tweet:", tweets);
+        res.json(tweets)
+    // for (let tweet of tweets) {
+    //   console.log(tweet);
+    // }
       }
     });
   });
