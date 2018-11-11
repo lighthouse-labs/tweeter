@@ -15,3 +15,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screen Shots
+!["Composing a tweet"](https://github.com/mBarlescu/tweeter/blob/master/docs/ComposeTweet.png?raw=true)
+!["List of tweets that were composed"](https://github.com/mBarlescu/tweeter/blob/master/docs/tweets.png?raw=true)
