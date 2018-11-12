@@ -5,8 +5,6 @@ $(() => {
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
   loadTweets();
 
 //   (() => {
@@ -27,13 +25,14 @@ function escape(str) {
   return div.innerHTML;
 }
 
-// const safeHTML = `<p>${escape(textFromUser)}</p>`;
-
-
 function createTweetElement(tweet) {
   let user = tweet["user"];
   let content = tweet["content"];
   let timeStamp = tweet["created_at"];
+  let date = new Date(timeStamp * 1000).toDateString();
+  console.log("date = ", date );
+  console.log("timeStamp = ", timeStamp)
+  // let day = date.toDateString();
 
   return `<article class="tweet">
     <header class="tweet-header">
@@ -42,7 +41,7 @@ function createTweetElement(tweet) {
     <span class="handle">${escape(user["handle"])}</span>
     </header>
     <p class="tweet-body">${escape(content["text"])}</p>
-    <footer class="tweet-footer"><p>${timeStamp}</p>
+    <footer class="tweet-footer"><p>${date}</p>
     <span></span>
     </footer>
     </article>`
@@ -51,31 +50,28 @@ function createTweetElement(tweet) {
   function handleNewTweet(event) {
     event.preventDefault();
     const data = $(this).serialize();
-    let lengthyLength = data.split("=")[1].length;
-    if ( (lengthyLength) && (lengthyLength <= 140) ) {
-    $.ajax({
-      method: 'POST',
-      url: "/tweets",
-      data: data,
-    }).then((res) => {
-      loadTweets();
-    }, (err) => {
+    let splitData = data.split("=")[1].length;
+    if ( (splitData) && (splitData <= 140) ) {
+      $.ajax({
+        method: 'POST',
+        url: "/tweets",
+        data: data,
+      }).then((res) => {
+        loadTweets();
+      }, (err) => {
     })
   } else {
     errorAlert();
     };
   }
 
-
 function errorAlert() {
   $( ".logo" ).click(function() {
   $(".error-message").show()
-});
+  });
 }
 
-
 $('#new-tweet-form').on('submit', handleNewTweet);
-
 
 function loadTweets() {
   event.preventDefault();
@@ -91,9 +87,8 @@ function loadTweets() {
   });
 }
 
-function errorAlert() {
-  $(".error-message").slideToggle(1000)
-}
-
+// function errorAlert() {
+//   $(".error-message").slideToggle(1000)
+// }
 
 });
