@@ -19,7 +19,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     console.error(`Failed to connect: ${MONGODB_URI}`);
     throw err;
   }
-  console.log(`Tooootally connected to mongodb: ${MONGODB_URI}`);
 
   const DataHelpers = require('./lib/data-helpers.js')(db);
 

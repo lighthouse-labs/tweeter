@@ -6,16 +6,41 @@ $('section.new-tweet').hide();
 
 
 function renderTweets(tweets) {
+    $('#tweet-container').empty();
   tweets.forEach(function (tweet, index){
-
     let $tweet = createTweetElement(tweet);
     $('#tweet-container').prepend($tweet);
 })
 }
 
+function timeSince(date) {
+    var seconds = Math.floor((new Date() - date) / 1000);
+    var interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+      return interval + " years ago";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+      return interval + " months ago";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+      return interval + " days ago";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+      return interval + " hours ago";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+      return interval + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
+  }
 
 function createTweetElement (data) {
-  let $tweet = $("<article>").addClass("tweet");
+  let $tweet = $("<article>").addClass("tweet tweethover");
   let $header = $("<header>").addClass("tweet tweethover");
   let $span = $("<span>");
   $span.text(data.user.handle);
@@ -34,9 +59,20 @@ function createTweetElement (data) {
   $div.text(data.content.text);
   $tweet.append($div);
 
-  let $spanFooter = $("<span>");
-  $spanFooter.text(data.created_at);
-  $tweet.append($spanFooter);
+
+  let $footer = $("<div>").addClass("footer")
+  let $spanFooter = $("<span>").addClass("tweet");
+  let $footerImgFlag = $("<span>").addClass("fas fa-flag");
+  let $footerImgLike = $("<span>").addClass("fas fa-thumbs-up");
+  let $footerImgRetweet = $("<span>").addClass("fas fa-retweet");
+  let $footerSpanForFloat = $("<span>").addClass("floatRight")
+  $spanFooter.text(timeSince(data.created_at));
+  $footerSpanForFloat.append($spanFooter);
+  $footerSpanForFloat.append($footerImgFlag);
+  $footerSpanForFloat.append($footerImgLike);
+  $footerSpanForFloat.append($footerImgRetweet);
+  $footer.append($footerSpanForFloat);
+  $tweet.append($footer);
 
 
   return $tweet;
