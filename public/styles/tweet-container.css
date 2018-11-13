@@ -30,7 +30,7 @@ div.floatRight {
   justify-content: flex-end;
   float: right;
   opacity: 0;
-  width: 300px;
+  width: 200px;
 }
 
 span.fas {
@@ -61,6 +61,16 @@ textarea.tweet-text{
   margin: 0;
 }
 
+.img {
+  border-radius: 10px;
+  padding: auto;
+}
+
+header.tweet span.headerSpan {
+  padding-top: 20px;
+  font-size: 30px;
+}
+
 header.tweet {
   height: 80px;
   background-color: #eee;
@@ -68,12 +78,13 @@ header.tweet {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   opacity: 0.5;
+  font-size: 2em;
 }
 
 header.tweet h1 {
     font-size: 1em;
     margin: 0.67em 0;
-    margin-top: 0;
+    margin-top: 1px;
   }
 
 header.tweet img {
@@ -87,7 +98,7 @@ header.tweet img {
 header.tweet span{
     height: 80px;
     float: right;
-    font-size: 1em;
+    font-size: 7px;
 }
 
 div.tweet{
@@ -95,6 +106,7 @@ div.tweet{
   align-items: center;
   margin: 8px 8px;
   height: 160px;
+  font-size: 1.5em;
 
 }
 
@@ -109,6 +121,6 @@ footer.tweet {
   width: 300px;
   background-color: pink;*/
 
-
+=
 
 

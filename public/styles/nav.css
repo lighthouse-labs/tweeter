@@ -6,6 +6,7 @@ button.nav {
   border-color: black;
   color: #66d1d1;
   margin-left: auto;
+  font-size: 2em;
 }
 
 .error {
@@ -44,6 +45,6 @@ button.nav:hover {
 #nav-bar .header{
  /* height: 80px;
   line-height: 80px;*/
-  font-size: 1em;
+  font-size: 2em;
 }
 

@@ -42,10 +42,10 @@ function timeSince(date) {
 function createTweetElement (data) {
   let $tweet = $("<article>").addClass("tweet tweethover");
   let $header = $("<header>").addClass("tweet tweethover");
-  let $span = $("<span>");
+  let $span = $("<span>").addClass("headerSpan");
   $span.text(data.user.handle);
 
-  let $img = $("<img>");
+  let $img = $("<img>").addClass("img");
   $img.attr("src", data.user.avatars.regular);
   let $h1 = $("<h1>");
   $h1.text(data.user.name);

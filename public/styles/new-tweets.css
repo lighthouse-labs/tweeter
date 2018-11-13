@@ -5,6 +5,7 @@
   width: 650px;
   height: max;
   padding-top: 100px;
+
 }
 .new-tweet hr {
   border-color: black;
@@ -19,11 +20,16 @@ div.tweet {
   margin-bottom: 0px;
 }
 
+form {
+  margin-top: 12px;
+}
+
 .new-tweet textarea {
-  margin-top: 15px;
   margin-right: 0;
   padding: 8px;
-  width: 436px;
+  width: 400px;
+  height: 140px;
+  margin-bottom: 10px
 }
 
 .new-tweet span.counter{
@@ -36,12 +42,20 @@ div.tweet {
 
 .new-tweet {
   margin top: 100px;
-  margin-bottom: 90px;
-  margin: 30px;
+  margin-bottom: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
   background-color: #eee;
-  margin: 2em;
+  height: 250px;
   border-style: solid;
   border-color: gray;
   border-radius: 1px;
   padding: 15px;
+  width: 450px
+}
+
+
+span.counter {
+  margin-right: 10px;
+  margin-top: 10px;
 }
