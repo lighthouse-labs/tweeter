@@ -8,12 +8,20 @@
  /* padding: 15px*/*/
 }
 
+span.tweet {
+  font-size: 25px;
+}
 
+hr {
+  margin: auto;
+}
 
 div.footer{
   padding: 2px 5px;
+  border-color: gray;
+
 }
-div.footer:hover .floatRight{
+article.tweet:hover .floatRight{
   opacity: 1;
 }
 
@@ -22,17 +30,12 @@ div.floatRight {
   justify-content: flex-end;
   float: right;
   opacity: 0;
+  width: 300px;
 }
 
-/*span.fas fa-flag {
-  float: right;
+span.fas {
+  padding: 5px 5px 3px ;
 }
-span.fas fa-retweet {
-  float: right;
-}
-span.fas fa-thumbs-up {
-  float: right;
-}*/
 
 article.tweet:hover{
   border-color: black;
