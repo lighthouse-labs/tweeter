@@ -8,6 +8,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  overflow-y: auto;
 }
 
 /*
@@ -28,13 +29,15 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.container {
+.spacer {
+  height: 80px;
+}
+
+.type-new {
   width: 450px;
-  height: 200px;
-  position: fixed;
-  left: 50%;
-  margin-left: -225px;
+  height: 165px;
   background-color: #c0c0c0;
+  border-style: solid;
   border-radius: 20px;
 }
 
@@ -45,6 +48,90 @@ textarea {
 
 span.counter {
   float: right;
-  padding-right: 10px;
 }
 
+.buttonCount {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.tweetTextbox {
+  padding-left:5px;
+  padding-right: 5px;
+  margin: auto;
+}
+
+.tweetContainer {
+  height: 100%;
+  width: 450px;
+  border-radius: 20px;
+  margin: auto;
+  color: #7e7e7e;
+}
+
+
+/* tweets */
+
+article {
+  background-color: #fdfdfd;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+.propic {
+  width: 80px;
+  height: 80px;
+  float: left;
+  padding: 10px;
+}
+
+.name {
+  display: inline;
+  float: left;
+  width: 40%;
+}
+
+main .container {
+  width: 450px;
+  margin: auto;
+  padding: 15px;
+}
+
+.type-new {
+  margin: 0 auto;
+}
+
+
+.handle {
+  float: right;
+  margin-right: 10px;
+}
+
+.name {
+  float: left;
+  margin-left: 10px;
+}
+
+.tweetp {
+  margin: 10px;
+  color: #000000
+}
+
+footer {
+  background-color: #dadada;
+}
+
+.submitted {
+  float:left;
+  margin-left: 10px;
+}
+
+article .tweet {
+  background-color: #dadada;
+}
+
+article:hover {
+  border-color: #000000;
+  color: #000000;
+  background-color: #eeeeee
+}

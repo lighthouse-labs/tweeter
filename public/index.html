@@ -17,8 +17,24 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
+    <script>
+    
+      $('.type-new').submit(function(event) {
+        $.ajax('index.html', {method: "POST"})
+        event.preventDefault();
+      });
+
+    </script>
+
+
   </head>
 
   <body>
@@ -31,17 +47,64 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"><section class="new-tweet">
-      <form>
+    <section class="spacer"></section>
+    <main class="container">
+      <section class="new-tweet">
+      <form class='type-new'>
         <h2>Compose Tweet</h2>
-        <section>
-        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <section class= 'tweetTextbox'>
+        <textarea class="tweetTextarea" name="text" placeholder="What are you humming about?"></textarea>
         </section>
-        <section>
+        <section class='buttonCount'>
         <input type="submit" value="Tweet">
         <span class="counter">140</span>
         </section>
       </form>
+      </section>
+      <section class="tweetContainer">
+        <article>
+          <header class='tweet'>
+              <img class="propic" src="/images/in.png">
+              <h2 class="name">Isaac Newton</h2><h3 class="handle">@SirIsaac</h3>
+          </header>
+          <p class="tweetp">
+            If I have seen further than others, it is by standing upon the shoulders of giants.
+              Tact is the knack of making a point without making an enemy.
+              I can calculate the motion of heavenly bodies, but not the madness of people.
+            </p>
+          <footer>
+            <h6 class ="submitted">10 days ago</h6>
+          </footer>
+        </article>
+
+        <article>
+          <header class='tweet'>
+              <img class="propic" src="/images/rd.png">
+            <h2 class="name">Rene Descartes</h2><h3 class="handle">@rd</h3>
+          </header>
+          <p class="tweetp">
+            It is not enough to have a good mind; the main thing is to use it well.
+              Divide each difficulty into as many parts as is feasible and necessary to resolve it.
+              The greatest minds are capable of the greatest vices as well as of the greatest virtues.
+            </p>
+          <footer>
+            <h6 class="submitted">11 days ago</h6>
+          </footer>
+        </article>
+        <article>
+          <header class='tweet'>
+              <img class="propic" src="/images/wg.png">
+            <h2 class="name">Johann Wolfgang von Goethe</h2><h3 class="handle">@wolfgang</h3>
+          </header>
+          <p class="tweetp">
+            Knowing is not enough; we must apply. Willing is not enough; we must do.
+              Whatever you can do or dream you can, begin it. Boldness has genius, power, and magic in it.
+              The soul that sees beauty may sometimes walk alone.
+            </p>
+          <footer><h6 class="submitted">12 days ago</h6></footer>
+        </article>
+        </section>
+
     </main>
 
   </body>
