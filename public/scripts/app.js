@@ -43,135 +43,76 @@ const tweetData = {
 </article>
           */
 
+$(document).ready(function() {
+
+  let createTweetElement = function(twt) {
+    let $tweet = $("<article>");
+
+    let $header = $('<header>').addClass('tweet');
+    let $img = $('<img>').addClass('propic');
+
+    let $h2 = $('<h2>').addClass('name');
+    let $h3 = $('<h3>').addClass('handle');
 
 
-let createTweetElement = function(twt) {
-  let $tweet = $("<article>");
+    let $p = $('<p>').addClass('tweetp');
 
-  let $header = $('<header>').addClass('tweet');
-  let $img = $('<img>').addClass('propic');
+    let $footer = $('<footer>');
+    let $h6 = $('<h6>').addClass('submitted');
 
-  let $h2 = $('<h2>').addClass('name');
-  let $h3 = $('<h3>').addClass('handle');
+    $tweet.append($header);
+    $header.append($img);
+    $img.attr("src",twt.user.avatars.regular)
+    $header.append($h2);
+    $header.append($h3);
+    $h2.text(twt.user.name);
+    $h3.text(twt.user.handle);
+    $tweet.append($p);
+    $p.text(twt.content.text);
+    $tweet.append($footer);
+    $footer.append($h6)
+    $h6.text(twt.created_at);
 
-
-  let $p = $('<p>').addClass('tweetp');
-
-  let $footer = $('<footer>');
-  let $h6 = $('<h6>').addClass('submitted');
-
-  $tweet.append($header);
-  $header.append($img);
-  console.log('twt',twt);
-  $img.attr("src",twt.user.avatars.regular)
-  $header.append($h2);
-  $header.append($h3);
-  $h2.text(twt.user.name);
-  $h3.text(twt.user.handle);
-  $tweet.append($p);
-  $p.text(twt.content.text);
-  $tweet.append($footer);
-  $footer.append($h6)
-  $h6.text(twt.created_at);
-
-  return $tweet;
-  
-};
+    return $tweet;
+    
+  };
 
 
+  const $tweetContainer = $('.tweetContainer');
 
-// --------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
-
-const $tweetContainer = $('.tweetContainer');
-
-let renderTweets = function(tweets) {
-  $(document).ready(function() {
+  let renderTweets = function(tweets) {
+    $tweetContainer.empty()
     for (var ea in tweets) {
       var $tweet = createTweetElement(tweets[ea])
-      $tweetContainer.append($tweet);
+      $tweetContainer.prepend($tweet);
     }
-  }
-)};
-// renderTweets(data);
+  };
 
-let submitHandler = function(event) {
-  $(document).ready(function() {
-    event.preventDefault();
-    $.ajax({data: $(this).serialize() ,url:'/tweets', method: "POST"})
-    .success(function(data){
-      console.log(data);
-    
-    })
-    .done(function() {
-      $('textarea').val('');
-      $('.counter').text(140);
-    })
-  });
-  const $form = $('form')
-  $form.submit(submitHandler);
-};
-
-let loadTweets = function() {
-  $(document).ready(function() {
-    $.ajax({url:'/tweets',
-      method: "GET",
-      success: (function(result){
-        console.log(result)
-        renderTweets(result);
+  let submitHandler = function(event) {
+      event.preventDefault();
+      $.ajax({data: $(this).serialize(), url:'/tweets', method: "POST"})
+      .success(function(data){
+        loadTweets();
       })
-    })
-  }
-)};
+      .done(function() {
+        $('textarea').val('');
+        $('.counter').text(140);
+      })
+    };
 
-loadTweets()
+  let loadTweets = function() {
+      $.ajax({url:'/tweets',
+        method: "GET",
+        success: (function(result){
+
+          renderTweets(result);
+        })
+      })
+  };
+
+  const $tweetTextbox = $('#tweetTextbox')
+  $tweetTextbox.on('submit', submitHandler);
+
+  loadTweets()
+
+});
