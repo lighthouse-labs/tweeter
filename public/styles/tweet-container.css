@@ -1,11 +1,11 @@
 #tweet-container {
- margin top: 100px;
-  margin-bottom: 90px;
-  margin: 30px;
+  /*margin-height: : 100px;*/
+  margin: 20px 100px;
+  /*margin: 30px 300px;*/
   background-color: white;
-  margin: 2em;
-
-  padding: 15px*/
+  /*margin: 2em;*/
+  /*margin-left: 100PX;*/
+ /* padding: 15px*/*/
 }
 
 
@@ -13,11 +13,15 @@
 div.footer{
   padding: 2px 5px;
 }
+div.footer:hover .floatRight{
+  opacity: 1;
+}
 
 div.floatRight {
   display: flex;
   justify-content: flex-end;
   float: right;
+  opacity: 0;
 }
 
 /*span.fas fa-flag {

@@ -2,8 +2,8 @@
 
 .container {
   background-color: white;
-  width: 600px;
-  height: 700px;
+  width: 650px;
+  height: max;
   padding-top: 100px;
 }
 .new-tweet hr {
