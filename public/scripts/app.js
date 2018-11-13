@@ -65,9 +65,9 @@ function createTweetElement (data) {
   let $footerImgFlag = $("<span>").addClass("fas fa-flag");
   let $footerImgLike = $("<span>").addClass("fas fa-thumbs-up");
   let $footerImgRetweet = $("<span>").addClass("fas fa-retweet");
-  let $footerSpanForFloat = $("<span>").addClass("floatRight")
+  let $footerSpanForFloat = $("<div>").addClass("floatRight")
   $spanFooter.text(timeSince(data.created_at));
-  $footerSpanForFloat.append($spanFooter);
+  $footer.append($spanFooter);
   $footerSpanForFloat.append($footerImgFlag);
   $footerSpanForFloat.append($footerImgLike);
   $footerSpanForFloat.append($footerImgRetweet);

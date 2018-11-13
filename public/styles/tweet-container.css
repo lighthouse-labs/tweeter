@@ -5,14 +5,22 @@
   background-color: white;
   margin: 2em;
 
-  /*padding: 15px*/
+  padding: 15px*/
 }
 
-span.FloatRight {
-  float: right
+
+
+div.footer{
+  padding: 2px 5px;
 }
 
-span.fas fa-flag {
+div.floatRight {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+
+/*span.fas fa-flag {
   float: right;
 }
 span.fas fa-retweet {
@@ -20,7 +28,7 @@ span.fas fa-retweet {
 }
 span.fas fa-thumbs-up {
   float: right;
-}
+}*/
 
 article.tweet:hover{
   border-color: black;
