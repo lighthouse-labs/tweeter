@@ -10,7 +10,7 @@
 .new-tweet textarea {
   display: block;
   margin: auto;
-  width: 100%
+  width: 100%;
 }
 
 .new-tweet input {
@@ -36,6 +36,7 @@ article.tweet {
   border: 2px solid #c3c3c3;
   border-radius: 5px;
   font-size: 1rem;
+  /*word-break: break-all;*/
 }
 
 header.tweet-header {
@@ -58,6 +59,7 @@ span.handle {
   padding: .5em;
   font-size: 1.5rem;
   color: #334853;
+  word-break: break-all;
 }
 
 .tweet-footer {
