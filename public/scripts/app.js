@@ -6,17 +6,12 @@ $('section.new-tweet').hide();
 
 
 function renderTweets(tweets) {
-  console.log(tweets);
-  // const $container = $('#tweet-container')
   tweets.forEach(function (tweet, index){
 
     let $tweet = createTweetElement(tweet);
     $('#tweet-container').prepend($tweet);
 })
-  // return $container;
 }
-
-
 
 
 function createTweetElement (data) {
@@ -47,33 +42,11 @@ function createTweetElement (data) {
   return $tweet;
 }
 
-
-// Test / driver code (temporary)
-
- // to see what it looks like
-// $('#tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-// $('$tweet').append($("<header>"))
-// $('article').append($("<header>").addClass("tweet"));
-// $('article').append($("<div>").addClass("tweet"));
-// $('article').append($("<footer>").addClass("tweet"));
-// function loadTweets (cb) {
-//   $.ajax('/tweets', { method: 'GET' })
-//   .then(function (tweetData) {
-//     console.log('TWEETSDATA: ', tweetData);
-//     cb(tweetData)
-//   });
-// }
-
-// loadTweets(renderTweets)
-
 function loadTweets (cb) {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (tweetData) {
     console.log('TWEETDATA: ', tweetData);
     cb(tweetData)
-
-
-    // console.log(tweetData)
     });
   };
 loadTweets(renderTweets);
@@ -84,14 +57,9 @@ function formSubmission (){
   $('form').on('submit', function (event){
     event.preventDefault();
     let $form = $('form');
-    console.log($form.content)
     const $formSerialized = $('form').serialize();
-    // console.log($formSerialized);
-    console.log($('textarea.tweet-text').val());
     if($('textarea.tweet-text').val() === "" || $('textarea.tweet-text').val().length > 140 ){
-       //$(".error").attr('visibility',"visible");
        $(".error").slideDown();
-      //$('.error').animate({left: '250px'});
     } else {
       $('.error').slideUp();
       $.ajax( "/tweets", {
@@ -101,7 +69,6 @@ function formSubmission (){
       .then(function () {
         loadTweets(renderTweets)
       });
-    // console.log($form);
     $form[0].reset();
     }
   })
