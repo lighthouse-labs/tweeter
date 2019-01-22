@@ -1,0 +1,34 @@
+.counter {
+  float:right;
+  padding-right: 10px;
+  padding-top:5px;
+}
+
+section .newtweet{
+  width:350px;
+}
+
+.new-tweet {
+  width:400px;
+  margin:20px 25px 20px 25px;
+  background-color: lightgrey;
+  padding-left:20px;
+  border-radius: 10px;
+  height:160px;
+}
+
+.new-tweet h2 {
+   border-bottom:1px solid;
+   width:350px;
+   padding-bottom: 5px;
+   padding-top:5px;
+}
+
+textarea {
+  white-space: nowrap;
+  padding-top: 10px;
+  width:350px;
+  margin: 50;
+  border-radius: 20px;
+}
+
