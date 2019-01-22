@@ -1,0 +1,35 @@
+button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+    position: relative;
+    bottom: 10px; left: 20px; width: 80%;
+}
+
+
+input, button, select {
+   position: relative;
+    bottom: 10px; left: 20px; width: 20%;
+
+}
+
+span.counter {
+       position: relative;
+    bottom: 10px; left: 215px; width: 20%;
+
+}
+
+u {
+  position: relative;
+    bottom: 0px; left: 20px; width: 0%;
+
+}
+
+section.new-tweet {
+  border: thick double #32a1ce;
+  border-radius: 30px;
+
+ padding-top: 0em;
+    padding-right: 2em;
+    padding-bottom: 0em;
+    padding-left: 2em;
+}
