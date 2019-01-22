@@ -1,0 +1,49 @@
+html {
+  box-sizing: border-box;
+
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/*
+ * Global layout stuff
+ */
+
+
+  img.logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  #nav-bar span.header {
+    padding-top: 0em;
+    padding-right: 10px;
+    padding-bottom: 2em;
+    padding-left: 10px;
+    line-height: 2;
+    font-size: 2em;
+    position: relative;
+    bottom: 30px; left: 0px;
+
+
+  }
+
+
+img[Attributes Style] {
+    width: 80px;
+    height: 80px;
+}
+
+nav#nav-bar {
+    padding-top: 0em;
+    padding-right: 2em;
+    padding-bottom: 0px;
+    padding-left: 2em;
+    height: 80px;
+    background-color: #00a087;
+    color: #e8fdff;
+  }
+
+

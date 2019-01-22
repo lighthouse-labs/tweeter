@@ -17,6 +17,10 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  tweetsRoutes.get('/test2', function(req, res){
+      return res.send("Test");
+  })
+
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
@@ -44,3 +48,5 @@ module.exports = function(DataHelpers) {
   return tweetsRoutes;
 
 }
+
+// tweetsRoutes.post("/tweets"
