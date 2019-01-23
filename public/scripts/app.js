@@ -5,52 +5,7 @@
  */
 
  // Test / driver code (temporary). Eventually will get this from the server.
- const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "How did the hipster burn his tongue? He drank his coffee before it was cool"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "This is a random tweet."
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "This is a random tweet."
-    },
-    "created_at": 1461113796368
-  }
-];
+
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -97,14 +52,40 @@ document.addEventListener('DOMContentLoaded', function(event) {
   let $text = $(this).serialize();
 
 
-    $.ajax({
+     if (validateForm($text)) {
+      $.ajax({
         type: "POST",
         url: '/tweets',
         data: $text
-    });
+      });
+      $('.new-tweet textarea').val('');
 
+      // Clear timeline and load all tweets
+      $('#timeline').empty();
+      loadTweets();
+    }
 
   });
+
+  // Validate Form
+  function validateForm(input) {
+    let formText = input.split('=')[0];
+    if (formText.length <= 0) {
+      alert('You must enter a tweet to send');
+
+      return;
+
+    } else if (formText.length > 140 ) {
+      alert('Tweet too long - max 140 characters')
+
+      return;
+    }
+
+    return true;
+
+  };
+
+
 
   // Get The Tweet
   function loadTweets() {
@@ -118,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
   loadTweets();
+
+
 
 
 });
