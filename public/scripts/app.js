@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         url: '/tweets',
         data: $text
       });
+
       $('.new-tweet textarea').val('');
 
       // Clear timeline and load all tweets
@@ -69,14 +70,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   // Validate Form
   function validateForm(input) {
-    let formText = input.split('=')[0];
+
+    let formText = input.split('=')[1].trim();
     if (formText.length <= 0) {
-      alert('You must enter a tweet to send');
+       alert("Tweets can't be empty");
 
       return;
 
     } else if (formText.length > 140 ) {
-      alert('Tweet too long - max 140 characters')
+       alert("Too many characters");
 
       return;
     }
