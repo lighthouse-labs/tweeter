@@ -31,7 +31,7 @@
       },
       "handle": "@rd" },
     "content": {
-      "text": "What did the mom coffee bean say to the kid coffee bean? You're grounded."
+      "text": "This is a random tweet."
     },
     "created_at": 1461113959088
   },
@@ -46,7 +46,7 @@
       "handle": "@johann49"
     },
     "content": {
-      "text": "Hey, wanna hear a joke about ghosts?<br/><br/> That's the spirit"
+      "text": "This is a random tweet."
     },
     "created_at": 1461113796368
   }
@@ -56,7 +56,7 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
   function createTweetElement(data) {
-    let date = new Date(data.created_at * 1000);
+    let date = new Date(data.created_at);
     let $article = $('<article>').addClass('tweet');
 
     $article.html(`
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         <p>${data.content.text}</p>
       </div>
       <footer>
-        <p>${date.toLocaleDateString("en-US")}</p>
+        <p>${date}</p>
         <div class="footer-icons">
           <img src="https://png.icons8.com/windows/64/000000/flag.png" alt="flag">
           <img src="https://png.icons8.com/windows/64/000000/available-updates.png">
@@ -88,6 +88,46 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
   };
 
-  renderTweets(data);
+  // renderTweets(data);
+
+
+  // Post New Tweet
+  $(".new-tweet form").on("submit", function (event) {
+  event.preventDefault();
+  let $text = $(this).serialize();
+
+
+    $.ajax({
+        type: "POST",
+        url: '/tweets',
+        data: $text
+    });
+
+
+  });
+
+  // Get The Tweet
+  function loadTweets() {
+    $.ajax('/tweets', { method:
+      'GET'})
+    .then(function (tweets) {
+      console.log("Success Tweets: ", tweets);
+      renderTweets(tweets);
+    });
+  }
+
+
+  loadTweets();
+
+
 });
+
+
+// Example function for reference
+// $( "form" ).on( "submit", function( event ) {
+//   event.preventDefault();
+//   console.log( $( this ).serialize() );
+// });
+
+
 
