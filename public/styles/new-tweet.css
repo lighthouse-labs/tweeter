@@ -25,10 +25,77 @@ section .newtweet{
 }
 
 textarea {
-  white-space: nowrap;
+  overflow: auto;
   padding-top: 10px;
   width:350px;
   margin: 50;
-  border-radius: 20px;
+  border-radius: 10px;
 }
+
+/* =====================
+    Tweeter Cards
+=======================*/
+
+article.tweet {
+  width: 95%;
+  border: 1px solid #969696;
+  border-radius: 5px;
+  margin: 0 auto 1em;
+}
+
+article.tweet header {
+  display: flex;
+  background-color: #f3f3f3;
+  padding: 0.5em 0.8em;
+}
+
+article.tweet > header > img {
+  height: 50px;
+  width: 50px;
+}
+
+article.tweet > header > p {
+   margin: 0.4em 0 0 auto;
+   font-size: 0.9em;
+}
+
+article.tweet > header > h2 {
+   margin: 0 0.5em;
+}
+
+article.tweet .tweet-body {
+  padding: 0 0.6em;
+}
+
+article.tweet footer {
+  display: flex;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.7em;
+  padding: 0 0.7em;
+}
+
+article.tweet footer div.footer-icons {
+  margin: 0.7em 0 0 auto;
+}
+
+article.tweet footer div.footer-icons img {
+  height: 20px;
+  opacity: 0.5;
+}
+
+
+article.tweet:hover {
+  box-shadow: 5px 5px 10px 5px #848080;
+}
+
+article.tweet:hover header {
+  background-color: #eeeeee;
+}
+
+article.tweet:hover footer div.footer-icons img {
+  opacity: 0.8;
+}
+
+
+
 
