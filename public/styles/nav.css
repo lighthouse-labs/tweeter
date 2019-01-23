@@ -29,6 +29,29 @@
 
 }
 
+#nav-bar button{
+  float: right;
+  width: 100px
+  height:100px;
+  background-color: white
+  color:#00ffff;
+  padding-right: 2em;
+  padding-bottom:2em;
+  padding-left: 2em;
+  padding-bottom: 2em;
+  vertical-align: middle;
+  text-align: center;
+  border-style: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#nav-bar button:hover {
+
+
+}
+
+
 
 
 /*.logo{

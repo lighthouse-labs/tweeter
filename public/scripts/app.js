@@ -61,11 +61,23 @@ const data = [
 
 function createTweetElement(tweet) {
 
-  const renderedTweet = `
-    <article>
-      <p>${tweet.content.text}</p>
-    </article>
-  `
+  const renderedTweet =
+  `<article class="article-tweet">
+          <header>
+
+            <div class= "img">
+              <img src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png" alt="av" />
+            </div>
+
+            <h2>Bill Fields</h2>
+            <span> @Mr.Fields </span>
+          </header>
+          <p>${tweet.content.text}</p>
+              <hr>
+          <footer class= "b">
+                10 days ago
+          </footer>
+        </article>`
 
   return renderedTweet
 
@@ -83,12 +95,13 @@ function renderTweets(tweets) {
 
 }
 
-renderTweets(data);
+// renderTweets(data);
 
 // form submission assignment found below
 
 
 $("form").submit(function( event ) {
+   event.preventDefault();
   var form = $(this);
     var url = form.attr('action');
 
@@ -98,11 +111,11 @@ $("form").submit(function( event ) {
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {
-               alert(data); // show response from the script.
+               loadTweets(); // show response from the script.
            }
          });
 
-    event.preventDefault();
+
 
 
 });
@@ -110,15 +123,25 @@ $("form").submit(function( event ) {
 // AJAX GET Request
 
 function loadTweets(){
-  .ajax({
-    url:localhost:8080/tweets
+  $.ajax({
+    url:'/tweets',
     type: 'GET',
-    dataType: json,
-    success: function(renderTweets){
-      alert(renderTweets);
+    dataType: 'json',
+    success: function(tweets){
+      (renderTweets(tweets));
     }
   })
 }
+
+
+// function for the toggle button below:
+$('#nav-bar button').click(function() {
+  $('.new-tweet').slideToggle(150), function() {
+    $('.new-tweet textarea').focus();
+  };
+
+});
+
 
 
 
