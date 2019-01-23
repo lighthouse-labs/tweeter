@@ -85,7 +85,7 @@ article.tweet footer div.footer-icons img {
 
 
 article.tweet:hover {
-  box-shadow: 5px 5px 10px 5px #848080;
+  box-shadow: 2px 2px 5px 2px #848080;
 }
 
 article.tweet:hover header {
