@@ -1,0 +1,60 @@
+#nav-bar{
+  height: 80px;
+  background-color:#00a087;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #e8fdff;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 5px;
+  font-size: 2x;
+
+}
+
+
+
+
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border: 1px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  float: left;
+
+
+}
+
+
+
+/*.logo{
+  height: 80px;
+  width: 80px;
+
+}
+*//*
+#nav-bar .logo {
+  float: left;
+
+  width: 80px;
+
+
+  top: 0;
+  ;
+  background-color: #00a087;
+
+
+#nav-bar .header{
+  float: left;
+  font-size: 2x;
+  line-height: 250;
+
+}*/
+
+
+
+

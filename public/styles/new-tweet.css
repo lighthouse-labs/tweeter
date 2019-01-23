@@ -1,0 +1,76 @@
+header {
+  background-color:  #eee;
+}
+.container {
+  margin: 80px auto 0px;
+  width: 500px;
+  background-color: white;
+  display:flex;
+flex-direction: column;
+}
+#tweet-container{
+padding: 100px 2em;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/*
+ * Global layout stuff
+ */
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+  /*border: 5px solid black;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*#tweet-container{
+  margin: 0px auto;
+  width: 500px;
+  text-align: center;
+  padding-top: 40px:
+  min-height: 400px;
+  position: relative;
+
+
+}
+article.tweet header{
+  height: 80px;
+  background-color:#efeff5;
+
+  top: 0;
+  width: 100%;
+  color: #e8fdff;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 5px;
+  font-size: 2x;
+  height:
+  width:;
+
+
+}
+article.tweet footer {
+    border-top: 1px solid #e0e0eb;
+}
+
+article.tweet {
+    border: 1px solid #e0e0eb;
+    border-radius: 5px;
+}
+*/

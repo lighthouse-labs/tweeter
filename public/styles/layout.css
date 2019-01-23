@@ -1,8 +1,22 @@
-/*
+h/*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
+
+
+
+
+
  */
+
+ ./*container{
+  margin: 80px auto;
+  width: 450px;
+  text-align: center;
+  background-color: white;
+  padding-top: 140px
+
+}*/
 html {
   box-sizing: border-box;
 }
@@ -13,13 +27,72 @@ html {
 /*
  * Global layout stuff
  */
+.container{
+  margin: 80px auto;
+  width: 500px;
+  text-align: center;
+  background-color: white;
+  padding-top: 60px;
+  position:absolute;
+  min-height: 400px;
+
+
+}
+.new-tweet{
+  margin: 3rem 1.5rem;
+  background-color: #e6e6e6;
+  padding-top: 0.5rem;
+  border-radius: 5px;
+  min-height: 150px;
+
+}
+.new-tweet h2{
+  border-bottom: 1px solid black;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: left;
+  margin-top: 1.0rem;
+
+}
+.new-tweet textarea{
+  width: 90%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+
+}
 
 body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+ /* height: 100%;*/
 }
 
+section form input{
+  float: left;
+  margin-left: 13px;
+}
+section form span{
+  float: right;
+  margin-right: 13px;
+}
+/*.container{
+  margin: 80px auto;
+  width: 450px;
+  text-align: center;
+  background-color: white;
+  padding-top: 140px
+
+}*/
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ p {
+  font-family: "Roboto Condensed",
+ }
+
+.warning {
+  color: red;
+}
