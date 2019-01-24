@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-// Function To Prevent XXS
+  // Function To Prevent XXS
   function escape(text) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(text));
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-function validateForm(input) {
+  function validateForm(input) {
 
     let formText = input.split('=')[1].trim();
     //console.log(formText);
@@ -115,6 +115,7 @@ function validateForm(input) {
 
   loadTweets();
 
+
  // Compose Button
   $('#nav-bar .nav-right .compose-btn').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 'slow');
@@ -125,11 +126,4 @@ function validateForm(input) {
 
 
 });
-
-
-// Example function for reference
-// $( "form" ).on( "submit", function( event ) {
-//   event.preventDefault();
-//   console.log( $( this ).serialize() );
-// });
 
