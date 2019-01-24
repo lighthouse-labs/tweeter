@@ -1,8 +1,8 @@
 $(document).ready(function() {
-
+    $(".max-length").hide();
     /*
      * Client-side JS logic goes here
-     * jQuery is already loaded
+     * jQuery ialready loaded
      * Reminder: Use (and do all your DOM work in) jQuery's document ready function
      */
 
@@ -102,20 +102,29 @@ $(document).ready(function() {
 
     $("form").submit(function(event) {
         event.preventDefault();
-        var form = $(this);
-        var url = form.attr('action');
+        $(".max-length").hide();
 
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: form.serialize(), // serializes the form's elements.
-            success: function(data) {
-                loadTweets(); // show response from the script.
-            }
-        });
+        var max = 140;
+        var len = $('textarea').val().length;
+        // var char = max - len
+        if (len >= max) {
+            $(".max-length").slideDown();
+        } else {
+
+            var form = $(this);
+            var url = form.attr('action');
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(), // serializes the form's elements.
+                success: function(data) {
+                    loadTweets(); // show response from the script.
+                }
+            });
 
 
-
+        }
 
     });
 
@@ -145,45 +154,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-    // $("#submit").validate({
-    //    rules: {
-    //        sender: {
-    //            required: true,
-    //            minlength: 3,
-    //          lettersonly: true
-    //        },
-    //        receiver: {
-    //            required: true,
-    //            minlength: 3,
-    //            lettersonly: true
-    //        },
-    //        message: {
-    //          required: true,
-    //          minlength: 5,
-    //          maxlength: 30,
-    //          lettersonly: true
-    //        },
-    //      },
-    //     messages: {
-    //                sender: {required:"Please enter your name"},
-    //                receiver: { required: "Please enter receiver name up to 3 characters" },
-    //                message: {required: "Enter your message 3-20 characters"},
-    //          },
-    // });
-    // jQuery("#forms).validate({
-    //       rules: {
-    //          firstname: 'required',
-    //          lastname: 'required',
-    //          u_email: {
-    //             required: true,
-    //             email: true,//add an email rule that will ensure the value entered is valid email id.
-    //             maxlength: 255,
-    //          },
-    //       }
-    //    });
 
 
 });
