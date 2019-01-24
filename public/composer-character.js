@@ -6,7 +6,7 @@ $(document).ready(function() {
     if (len >= max) {
       $('.counter').text(char).addClass("warning");
     } else {
-      $(".counter").text(char + "characters left").removeClass("warning");
+      $(".counter").text(char).removeClass("warning");
     }
   });
 

@@ -142,11 +142,49 @@ $('#nav-bar button').click(function() {
 
 });
 
+$('textarea')
 
 
 
 
 
+$("textarea").keyup(function() {
+    var max = 140;
+    var len = $(this).val().length;
+    var char = max - len
+    if (len >= max) {
+      $('.counter').text(char).addClass("warning");
+    } else {
+      $(".counter").text(char).removeClass("warning");
+    }
+  });
+
+
+ // $("#submit").validate({
+ //    rules: {
+ //        sender: {
+ //            required: true,
+ //            minlength: 3,
+ //          lettersonly: true
+ //        },
+ //        receiver: {
+ //            required: true,
+ //            minlength: 3,
+ //            lettersonly: true
+ //        },
+ //        message: {
+ //          required: true,
+ //          minlength: 5,
+ //          maxlength: 30,
+ //          lettersonly: true
+ //        },
+ //      },
+ //     messages: {
+ //                sender: {required:"Please enter your name"},
+ //                receiver: { required: "Please enter receiver name up to 3 characters" },
+//                message: {required: "Enter your message 3-20 characters"},
+//          },
+// });
 // jQuery("#forms).validate({
 //       rules: {
 //          firstname: 'required',
