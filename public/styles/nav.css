@@ -12,10 +12,6 @@ html {
  */
 
 
-  img.logo {
-    width: 80px;
-    height: 80px;
-  }
 
   #nav-bar span.header {
     padding-top: 0em;
@@ -31,7 +27,7 @@ html {
   }
 
 
-img[Attributes Style] {
+img.logo {
     width: 80px;
     height: 80px;
 }
@@ -46,4 +42,27 @@ nav#nav-bar {
     color: #e8fdff;
   }
 
+  .header-button {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    border: solid;
+    background-color: #e8fdff;
+    border-radius: 30px;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: -45px;
+
+
+  }
+
+.header-button:hover {
+  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: black;
+  color: white;
+
+
+
+
+}
 

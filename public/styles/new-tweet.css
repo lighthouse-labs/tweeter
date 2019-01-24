@@ -25,11 +25,18 @@ u {
 }
 
 section.new-tweet {
-  border: thick double #32a1ce;
-  border-radius: 30px;
+       border: thick double #32a1ce;
+      border-radius: 30px;
+      position: fixed;
+      left: 20px;
 
  padding-top: 0em;
     padding-right: 2em;
     padding-bottom: 0em;
     padding-left: 2em;
 }
+
+.tweet-logo {
+    width: 80px;
+    height: 80px;
+  }
