@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       <header>
         <img src=${data.user.avatars.small} alt=${data.user.name}>
         <h2>${data.user.name}</h2>
-        <p>${data.user.handle}</p>
+        <p>${escape(data.user.handle)}</p>
       </header>
       <div class="tweet-body">
         <p>${data.content.text}</p>
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-// ESCAPE FUNCTION TO PREVENT XSS
+// Function To Prevent XXS
   function escape(text) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(text));
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-    // POST NEW TWEET
+    // Post New Tweet
   $('.new-tweet form').on('submit', function(event){
     event.preventDefault();
     let $text = $(this).serialize();
@@ -102,7 +102,7 @@ function validateForm(input) {
   }
 
 
-//GET TWEETS
+  //Get Tweets
   function loadTweets() {
     $.ajax({
       method: 'GET',
@@ -113,11 +113,10 @@ function validateForm(input) {
     });
   }
 
-
   loadTweets();
 
  // Compose Button
-  $('#nav-bar .compose').click(function(){
+  $('#nav-bar .nav-right .compose-btn').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 'slow');
     $('section.new-tweet').slideToggle( 'fast', function() {
       $('section.new-tweet textarea').select();
