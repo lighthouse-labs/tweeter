@@ -29,10 +29,20 @@
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png">
-      <span class="header">Tweeter</span>
+     <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+
+    <div class="nav-left">
+      <a href="/"><span class="header">Tweeter</span></a>
+    </div>
+    <div class="nav-center">
+      <a href="/"><img class="logo" src="/images/bird.png"></a>
+    </div>
+    <div class="nav-right">
+      <button class="compose-btn"><i class="fas fa-plus"></i></button>
+    </div>
+
+
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -42,6 +52,7 @@
       <form method="POST" action="/tweets/">
         <textarea name="text" placeholder="What are you humming about?"></textarea>
         <input type="submit" value="Tweet">
+        <span class="error-msg"></span>
         <span class="counter">140</span>
         </form>
       </section>

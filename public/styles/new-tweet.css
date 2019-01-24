@@ -96,6 +96,15 @@ article.tweet:hover footer div.footer-icons img {
   opacity: 0.8;
 }
 
+.new-tweet .error-msg {
+  font-size: 0.9em;
+  line-height: 0.9em;
+  margin-left: 0.5em;
+}
 
+span.counter {
+  float: right;
+  line-height: 1.5em;
+}
 
 

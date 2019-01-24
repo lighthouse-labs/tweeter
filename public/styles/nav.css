@@ -1,24 +1,65 @@
 #nav-bar {
   position: fixed;
-  top: 0;
+  min-width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   left: 0;
-  background-color: #00a087;
-  width: 100%;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0px;
-  padding-top: 0px;
+  right: 0;
+  top: 0;
+  background-color: #FC6600;
+  color:  #fff;
+  padding: 0 1em;
+  height: 80px;
+  z-index: 1;
+  border-bottom-left-radius:30%;
+  border-bottom-right-radius:30%;
 }
 
 #nav-bar .logo {
-  width: 80px;
-  height: 80px;
-  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 30px;
 }
 
 #nav-bar .header {
-  font-size: 30px;
-  line-height: 300%;
-  color: #e8fdff;
-  float: left;
+  font-family: 'Chela One', cursive;
+  letter-spacing: 1.5px;
+  font-size: 3em;
+}
+
+#nav-bar .nav-left {
+  padding-bottom: 25px;
+  padding-left: 80px;
+}
+
+#nav-bar .nav-center {
+  margin: 0;
+}
+
+#nav-bar .nav-right {
+  padding-bottom: 25px;
+  padding-right: 80px;
+}
+
+#nav-bar .nav-right .compose-btn {
+  border-width: 0;
+  outline: none;
+  border-radius: 20%;
+  background-color: #000000;
+  color: #ecf0f1;
+  font-size: 5em;
+  width: 50px;
+  height: 50px;
+  margin: 0.4em 2em 0 0;
+
+}
+
+#nav-bar .nav-right .compose-btn:hover {
+  background-color: #bf5f5e;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  color: #fff;
 }
