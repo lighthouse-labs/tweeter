@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // Validate tweet length
     $('.new-tweet .error-msg').slideUp('fast');
-    if (validateForm($text)) {
+     if (validateForm($text)) {
       // fade form and disable submit button until post complete
       $('section.new-tweet').fadeTo(200 , 0.5);
       $('section.new-tweet form input[type=submit]').attr('disabled', 'disabled');

@@ -15,6 +15,7 @@ section .newtweet{
   padding-left:20px;
   border-radius: 10px;
   height:160px;
+  display: none; 
 }
 
 .new-tweet h2 {
