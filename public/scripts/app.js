@@ -144,10 +144,11 @@ $(document).ready(function() {
 
     // function for the toggle button below:
     $('#nav-bar button').click(function() {
-        $('.new-tweet').slideToggle(150),
-            function() {
-                $('.new-tweet textarea').focus();
-            };
+        $('.new-tweet').slideToggle(slow)
+
+
+        $('.new-tweet textarea').focus();
+
 
     });
 
