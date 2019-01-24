@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     for (let tweets in data) {
       let tweet = data[tweets];
       let $tweet = createTweetElement(tweet);
-      $('#timeline').append($tweet);
+      $('#timeline').prepend($tweet);
     }
   };
 
@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-
-    // Post New Tweet
+  // Post New Tweet
   $('.new-tweet form').on('submit', function(event){
     event.preventDefault();
     let $text = $(this).serialize();
@@ -126,4 +125,5 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 });
+
 
