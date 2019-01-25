@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
       <header>
         <img src=${data.user.avatars.small} alt=${data.user.name}>
         <h2>${data.user.name}</h2>
-        <p>${escape(data.user.handle)}</p>
+        <p>${data.user.handle}</p>
       </header>
       <div class="tweet-body">
-        <p>${data.content.text}</p>
+        <p>${escape(data.content.text)}</p>
       </div>
       <footer>
         <p>${date}</p>

@@ -11,7 +11,7 @@ section .newtweet{
 .new-tweet {
   width:400px;
   margin:20px 25px 20px 25px;
-  background-color: lightgrey;
+  background-color: #69CF81;
   padding-left:20px;
   border-radius: 10px;
   height:160px;

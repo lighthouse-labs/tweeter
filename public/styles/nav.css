@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   top: 0;
-  background-color: #FC6600;
+  background-color: #2F2F2F;
   color:  #fff;
   padding: 0 1em;
   height: 90px;
@@ -17,8 +17,8 @@
 }
 
 #nav-bar .logo {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   margin-right: 30px;
 }
 
@@ -46,7 +46,7 @@
   border-width: 0;
   outline: none;
   border-radius: 20%;
-  background-color: #000000;
+  background-color: #69CF81;
   color: #ecf0f1;
   font-size: 1em;
   width: 70px;
@@ -56,10 +56,10 @@
 }
 
 #nav-bar .nav-right .compose-btn:hover {
-  background-color: #8c1aff;
+  background-color: #FF7573;
 }
 
 #nav-bar a {
   text-decoration: none;
-  color: #fff;
+  color: #69CF81;
 }
