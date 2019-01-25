@@ -29,10 +29,11 @@ body {
 
 main.container {
     margin: auto;
+    border-top: 50px;
     width: 450px;
     background-color: #e8fdff;
     position: relative;
-    top: -16px; left: 0px;
+    top: 0px; left: 0px;
 
 }
 

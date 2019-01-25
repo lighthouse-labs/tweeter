@@ -2,38 +2,54 @@ button, input, select, textarea {
     font: inherit;
     margin: 0;
     position: relative;
-    bottom: 10px; left: 20px; width: 80%;
+    bottom: 10px; left: 0px; width: 100%;
 }
 
 
 input, button, select {
-   position: relative;
-    bottom: 10px; left: 20px; width: 20%;
+    position: relative;
+    bottom: 10px; left: 0px; width: 20%;
 
 }
 
 span.counter {
-       position: relative;
-    bottom: 10px; left: 215px; width: 20%;
-
+    float: right;
 }
 
 u {
-  position: relative;
+    position: relative;
     bottom: 0px; left: 20px; width: 0%;
 
 }
 
 section.new-tweet {
-       border: thick double #32a1ce;
-      border-radius: 30px;
-      position: fixed;
-      left: 20px; top: 120px;
 
- padding-top: 2em;
+
+
+    width: 385px;
+    border: thick double #32a1ce;
+    border-radius: 30px;
+
+
+
+    padding-top: 2em;
     padding-right: 2em;
     padding-bottom: 2em;
     padding-left: 2em;
+
+    background-clip: padding-box;
+
+    margin-top: 50px;
+    margin-right: 2em;
+    margin-bottom: 50px;
+    margin-left: 2em;
+
+    position: relative;
+    top: 5px; bottom: 5px;
+
+    float: centre;
+
+
 }
 
 .tweet-logo {
@@ -42,10 +58,15 @@ section.new-tweet {
   }
 
 
-  .alert {
-  padding: 20px;
-  background-color: #f44336; /* Red */
-  color: white;
-  margin-bottom: 15px;
-  text-align: center;
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+
+    border-bottom: solid;
 }

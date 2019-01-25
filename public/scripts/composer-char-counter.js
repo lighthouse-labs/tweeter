@@ -14,10 +14,10 @@
 
 $(function () {
  $("section.new-tweet textarea").on("input", function (count) {
-   var txt = $("textarea").val();
-   var txtCount = txt.length;
-   var txtCounter = $(".counter").text(140 - txtCount);
-   if (txtCount > txtCounter) {
+   var txtLength = $("textarea").val().length;
+   var maxLength = 140;
+   var txtCounter = $(".counter").text(140 - txtLength);
+   if (txtLength > maxLength ) {
      $(".counter").css("color", "tomato");
    }
 

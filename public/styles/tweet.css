@@ -8,10 +8,12 @@ html {
 
 
   section.all-tweets {
+
+
     background-color: white;
     color: black;
     position:; relaive;
-    right: 20px;
+    right: 0px; top: 0px;
 
 
   }
@@ -107,9 +109,10 @@ html {
 
   .tweet-handle {
     float: bottom;
+    float: right;
 
     position: relative;
-    left: 0px;
+    right: 15px; top: 10px;
 
 
 
