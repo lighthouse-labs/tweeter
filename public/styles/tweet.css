@@ -106,9 +106,10 @@ html {
   }
 
   .tweet-handle {
+    float: bottom;
 
     position: relative;
-    right: 0px;
+    left: 0px;
 
 
 

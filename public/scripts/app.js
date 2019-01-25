@@ -78,17 +78,32 @@ const data = [
 
 /* Validation -
 
-*/
+*/$('.alert').hide()
 
-  $('new-tweet').hide();
+  $('.new-tweet').hide();
+
+   $("button.header-button").click( function()
+           {
+             // alert('button clicked');
+             $('.new-tweet').slideToggle();
+             $('textarea').select();
+           }
+        );
+
+  // if( $('.header-button').()) {
+  //   $('.new-tweet').show();
+  // }
 
 
   $('form').submit(function(e) {
     e.preventDefault();
 
   if ($('span.counter').text() < 0 || $('span.counter').text == 140) {
-    alert("ERROR! WRONG AMOUNT OF TEXT!");
+    $('.alert').slideDown();
   } else {
+
+     $('.alert').slideUp();
+
 
 
     var form = $(this);
