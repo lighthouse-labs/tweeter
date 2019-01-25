@@ -9,7 +9,7 @@ html {
 
   section.all-tweets {
 
-
+    padding-top: 0px;
     background-color: white;
     color: black;
     position:; relaive;
@@ -120,7 +120,7 @@ html {
 
   .tweet {
 
-    margin-top: 2em;
+    margin-top: 0em;
     margin-right: 2em;
     margin-bottom: 2em;
     margin-left: 2em;

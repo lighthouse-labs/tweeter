@@ -32,14 +32,14 @@ section.new-tweet {
 
 
 
-    padding-top: 2em;
+    padding-top: 0em;
     padding-right: 2em;
     padding-bottom: 2em;
     padding-left: 2em;
 
     background-clip: padding-box;
 
-    margin-top: 50px;
+    margin-top: 0px;
     margin-right: 2em;
     margin-bottom: 50px;
     margin-left: 2em;
