@@ -59,11 +59,17 @@ section.new-tweet {
 
 
 .alert {
-    padding: 20px;
+    padding: 0px;
+    padding-left: 45px;
+    padding-bottom: 30px;
     background-color: #f44336; /* Red */
     color: white;
-    margin-bottom: 15px;
-    text-align: center;
+    margin-bottom: 10px;
+    text-align: middle;
+
+
+
+
 }
 
 h2 {

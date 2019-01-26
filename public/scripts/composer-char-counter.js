@@ -19,8 +19,9 @@ $(function () {
    var txtCounter = $(".counter").text(140 - txtLength);
    if (txtLength > maxLength ) {
      $(".counter").css("color", "tomato");
+   } else {
+    $(".counter").css("color", "black");
    }
-
  })
 });
 

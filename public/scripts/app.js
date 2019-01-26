@@ -98,11 +98,26 @@ const data = [
   $('form').submit(function(e) {
     e.preventDefault();
 
-  if ($('span.counter').text() < 0 || $('span.counter').text == 140) {
+  if ($('span.counter').text() < 0) {
+
+
+
     $('.alert').slideDown();
+    $('textarea').val("");
+    $('span.counter').text("140").css("color", "black");
+
+  } else if ($('span.counter').text() > 139) {
+
+    $('.alert').slideDown();
+    $('textarea').val("");
+    $('span.counter').text("140").css("color", "black");
+
+
   } else {
 
      $('.alert').slideUp();
+     $('.alert').slideUp();
+
 
 
 
@@ -114,11 +129,15 @@ const data = [
       data: form.serialize(),
       success: function(responseFromServer) {
 
+        $('textarea').val("");
+        $('span.counter').text("140");
+
         console.log(responseFromServer);
         loadTweets();
       }
 
     })
+
   }
   })
 
