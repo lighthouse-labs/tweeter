@@ -12,6 +12,10 @@ input, button, select {
 
 }
 
+h2 {
+  border-bottom: solid;
+}
+
 span.counter {
     float: right;
 }
@@ -23,14 +27,9 @@ u {
 }
 
 section.new-tweet {
-
-
-
     width: 385px;
     border: thick double #32a1ce;
     border-radius: 30px;
-
-
 
     padding-top: 0em;
     padding-right: 2em;
@@ -48,8 +47,6 @@ section.new-tweet {
     top: 5px; bottom: 5px;
 
     float: centre;
-
-
 }
 
 .tweet-logo {
@@ -57,22 +54,12 @@ section.new-tweet {
     height: 80px;
   }
 
-
 .alert {
     padding: 0px;
     padding-left: 45px;
     padding-bottom: 30px;
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
     color: white;
     margin-bottom: 10px;
     text-align: middle;
-
-
-
-
-}
-
-h2 {
-
-    border-bottom: solid;
 }

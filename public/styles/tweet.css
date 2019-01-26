@@ -1,130 +1,132 @@
 html {
   box-sizing: border-box;
-
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+section.all-tweets {
+  padding-top: 0px;
+  background-color: white;
+  color: black;
+  position:; relaive;
+  right: 0px; top: 0px;
+}
 
-  section.all-tweets {
+header {
+  border-bottom: 1px solid;
+  width: 375px;
+  height: 90px;
+  background-color: #eee;
+  border-radius: 30px;
+}
 
-    padding-top: 0px;
-    background-color: white;
-    color: black;
-    position:; relaive;
-    right: 0px; top: 0px;
+article {
+  border: thick double #32a1ce;
+  border-radius: 30px;
+}
 
+.all-tweets {
+  position: relative;
+  top: -20px; left: 0px;
+}
 
-  }
+span.time {
+  position: relative;
+  left: 20px;
+}
 
-  header {
-    border-bottom: 1px solid;
-    width: 375px;
-    height: 90px;
-    background-color: #eee;
-    border-radius: 30px;
-  }
+.header-logo {
+  width: 80px;
+  height: 80px;
+}
 
-  footer {
-
-
-  }
-
-
-
-
-
-  article {
-  /*  border: 1rem solid;
-    border-radius: 30px;*/
-     border: thick double #32a1ce;
-      border-radius: 30px;
-  }
-
-  .all-tweets {
-    position: relative;
-    top: -20px; left: 0px;
-
-  }
-
-  .tweet:hover {
-    background-color: gold;
-  }
-
+.tweet-username {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+  font-size: 120%;
+  position: relative;
+  top:  30px; left: 20px;
+}
 
 
-  span.time {
+.tweet-body {
+  width: 375px;
+  height: 100px;
+  border-bottom: 1px solid;
+  border-radius: 30px;
+}
 
-    position: relative;
-    left: 20px;
-  }
+.tweet-logo {
+  position: relative;
+  left: 5px;
+  top:5px;
+  border-radius: 30px;
+}
 
-  .header-logo {
-    width: 80px;
-    height: 80px;
+.tweet-message {
+  width: 2em;
+  vertical-align: top;
+  position: relative;
+  top: 20px; left: 10px;
+}
 
-  }
+.fas.fa-heart:before {
+  opacity: 1;
+  float: right;
+  position: relative;
+  top: 0px; left: 190px;
+}
 
-  .tweet-username {
-    display: inline-block;
-    vertical-align: top;
-    font-weight: bold;
-    font-size: 120%;
-    position: relative;
-    top:  25px; left: 20px;
-  }
+.fas.fa-flag:before {
+  opacity: 1;
+  float: right;
+  position: relative;
+  top: 0px; left: 200px;
+}
 
+.fas.fa-retweet:before {
+  opacity: 1;
+  float: right;
+  position: relative;
+  top: 0px; left: 130px;
+}
 
-  .tweet-body {
-    width: 375px;
-    height: 100px;
-    border-bottom: 1px solid;
-    border-radius: 30px;
+.fas.fa-heart:hover {
+  opacity: 0.1;
+}
 
-  }
+.fas.fa-flag:hover {
+  opacity: 0.1;
+}
 
-  .tweet-logo {
-    position: relative;
-    left: 5px;
-    top:5px;
-    border-radius: 30px;
+.fas.fa-retweet:hover {
+  opacity: 0.1;
+}
 
+.tweet-timestamp {
+  position: relative;
+  left: 20px;
+}
 
+.tweet-handle {
+  float: bottom;
+  float: right;
+  position: relative;
+  right: 15px; top: 5px;
+}
 
-  }
+.tweet:hover {
+  background-color: #e8fdff;
+}
 
-  .tweet-message {
-    width: 2em;
-    vertical-align: top;
-    position: relative;
-    top: 30px; left: 10px;
-  }
-
-  .tweet-timestamp {
-    position: relative;
-    left: 20px;
-
-  }
-
-  .tweet-handle {
-    float: bottom;
-    float: right;
-
-    position: relative;
-    right: 15px; top: 10px;
-
-
-
-  }
-
-  .tweet {
-
-    margin-top: 0em;
-    margin-right: 2em;
-    margin-bottom: 2em;
-    margin-left: 2em;
-  }
+.tweet {
+  margin-top: 0em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
 
 
 
