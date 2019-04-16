@@ -15,10 +15,24 @@ html {
  */
 
 body {
+  font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
   color: #244751;
   background-color: #eee;
 }
+
+main {
+  width: 450px;
+  background-color: white;
+  margin: 80px auto 0 auto;
+  color: black;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
