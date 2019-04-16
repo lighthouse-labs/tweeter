@@ -16,7 +16,6 @@ section.new-tweet{
 textarea{
    width: 100%;
    margin-top: 15px; 
-   position: absolute;
 }
 
 .container{
@@ -25,6 +24,56 @@ textarea{
 }
 
 .text{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end; 
    padding-top: 0.5px;
    padding-left: 0.5px;
+   height: 50px;
+   
+}
+
+section.tweet-container {
+   margin: 30px 5px 0px 5px;
+    border: 2px solid #00A;
+    background-color: rgb(122, 214, 142);
+    border-radius: 5px; 
+    /* height: 8rem; */
+
+}
+
+section.tweet-container {
+   opacity: 0.5;
+}
+
+section.tweet-container:hover {
+   opacity: 1;
+}
+
+footer { 
+   background-color: pink;
+   height: 2rem; 
+   padding: .5rem;
+   font-size: .75rem;
+   flex-grow:1;
+   padding-left:5px;
+   height: 40px;
+}
+
+header {
+   background-color: pink;
+   height: 3rem;
+   font-style: bold;  
+   font-size: 1rem; 
+}
+
+.header img { 
+   height: 3rem; 
+   width: auto; 
+   border-radius: 50%;
+   background-color: pink;
+}
+
+.tweet-area {
+   height: 2.5rem; 
 }
