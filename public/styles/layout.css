@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -18,20 +19,52 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background-color: rgb(240, 215, 230);
 }
 
 main {
   width: 450px;
-  background-color: white;
+  background: url("https://www.colourbox.com/preview/26464852-cute-circle-seamless-pattern-on-white-background.jpg");
   margin: 80px auto 0 auto;
-  color: black;
+  color: rgb(1, 7, 1);
   padding-top: 1em;
   padding-bottom: 2em;
 }
 
+h2 {
+   border-bottom: 1.5px solid rgb(1, 5, 2);
+   margin: 0px;
+}
 
+#counter{
+   float: right;
+}
 
+section.new-tweet{
+   border-radius: 5px;
+   padding: 10px 10px;
+   background-color: lightgray;
+   margin-bottom: 2em;
+}
+
+textarea {
+   max-width: 100%;
+   min-width: 100%;
+   margin-top: 15px; 
+}
+
+.container{
+   background-color: rgba(219, 215, 215, 0.397);
+   padding: 60px 20px;
+}
+
+section.tweet-container .tweet {
+   opacity: 0.78;
+}
+
+section.tweet-container .tweet:hover {
+   opacity: 1;
+}
 
 
 /*

@@ -1,13 +1,16 @@
 $(document).ready(function () {
     var maxLength = 140;
-    $("#text").keyup(function () {
+    $("#text").on("input", function () {
         var length = $(this).val().length;
-        var length = maxLength-length;
+        var length = maxLength - length;
         if (length < 0) {
-            $('#counter').text(length).css('color', 'red');
-        } else { 
-            $('#counter').text(length).css('color', 'black');
-    }
-});
+            $('#counter').text(length).addClass("negativeCounter")
+            
+        } else {
+            $('#counter').text(length).removeClass("negativeCounter")
+        
+        }
+    });
+        
+    })
 
-});

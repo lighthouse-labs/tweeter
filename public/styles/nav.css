@@ -1,27 +1,41 @@
 #nav-bar {
-        position: fixed;
-        height: 80px; 
-        width: 100%;
-        background-color: #00a087;
+        background-color: #6bad69;
         color: #e8fdff;
+        height: 80px; 
         padding-left: 2em; 
         padding-right: 2em;
+        position: fixed;
         top: 0; 
-       
+        width: 100%;
+        z-index: 666;
 } 
 
 #nav-bar .logo {
-          width: 80px;
-          height: 80px;
-          float: left;
-          margin-right: 10px;
-          left: 10px; 
-          }
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin-right: 10px;
+        left: 10px; 
+}
 
 #nav-bar .header {
-          line-height: 80px;
-          font-size: 200%;
-          font-weight: lighter;
-          right: 2em;
+        line-height: 80px;
+        font-size: 200%;
+        font-weight: lighter;
+        right: 2em;
+}
+
+button {
+          background-color: grey;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 1em;
+        margin-right: 14em;
+        float: right;
+        font-size: 16px;
+        border-radius : 5%;
 }
 
