@@ -23,10 +23,10 @@ $(function () {
     $('#send-tweet').submit(function (event) {
         event.preventDefault();
         if (!$("#text").val()) {
-            alert("Please enter a tweet");
+            $('#compose-tweet').text("Please Enter Tweet").addClass("negativeCounter")
             return
         } else if ($("#text").val().length > 140) {
-            alert("Tweet exceeds 140 characters");
+            $('#compose-tweet').text("Tweet exceeds character limit").addClass("negativeCounter")
             return
         }
         var tweet = $(this).serialize();

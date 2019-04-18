@@ -42,7 +42,7 @@
    width: auto; 
 }
 
-.counter.negativeCounter {
+.negativeCounter {
    color: red;
 }
 
