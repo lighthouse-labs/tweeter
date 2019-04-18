@@ -25,17 +25,29 @@
         right: 2em;
 }
 
-button {
-          background-color: grey;
-        border: none;
+#nav-button {
+        background-color: grey;
         color: white;
+        font-weight: bold; 
         padding: 15px 32px;
-        text-align: center;
+        text-align: left;
         text-decoration: none;
         margin-top: 1em;
         margin-right: 14em;
         float: right;
         font-size: 16px;
-        border-radius : 5%;
+        border-radius: 5px; 
+        border: 2px solid rgb(244, 245, 244);
 }
 
+#bear-emoji {
+        float: right; 
+        padding: 0 0 0 1rem; 
+        margin: 0; 
+}
+
+#nav-button:hover {
+  background-color: rgb(240, 215, 230);
+  color: grey;
+  border: 2px solid grey; 
+}
