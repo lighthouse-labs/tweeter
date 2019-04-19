@@ -11,62 +11,53 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
+  background-color: rgb(240, 215, 230);
+  color: #244751;
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
-  color: #244751;
-  background-color: rgb(240, 215, 230);
 }
 
 main {
-  width: 450px;
   background: url("https://www.colourbox.com/preview/26464852-cute-circle-seamless-pattern-on-white-background.jpg");
-  margin: 80px auto 0 auto;
   color: rgb(1, 7, 1);
-  padding-top: 1em;
+  margin: 80px auto 0 auto;
   padding-bottom: 2em;
+  padding-top: 1em;
+  width: 450px;
 }
 
 h2 {
-   border-bottom: 1.5px solid rgb(1, 5, 2);
-   margin: 0px;
+  border-bottom: 1.5px solid rgb(1, 5, 2);
+  margin: 0px;
 }
 
 #counter{
-   float: right;
+  float: right;
 }
 
 section.new-tweet{
-   border-radius: 5px;
-   padding: 10px 10px;
-   background-color: lightgray;
-   margin-bottom: 2em;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding: 10px 10px;
 }
 
 textarea {
-   max-width: 100%;
-   min-width: 100%;
-   margin-top: 15px; 
+  min-width: 100%;
+  margin-top: 15px; 
+  max-width: 100%;
 }
 
 .container{
-   background-color: rgba(219, 215, 215, 0.397);
-   padding: 60px 20px;
+  background-color: rgba(219, 215, 215, 0.397);
+  padding: 60px 20px;
 }
 
 section.tweet-container .tweet {
-   opacity: 0.78;
+  opacity: 0.85;
 }
 
 section.tweet-container .tweet:hover {
-   opacity: 1;
+  opacity: 1;
 }
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

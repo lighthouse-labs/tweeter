@@ -8,7 +8,7 @@
         top: 0; 
         width: 100%;
         z-index: 666;
-} 
+}
 
 #nav-bar .logo {
         width: 80px;
@@ -26,28 +26,29 @@
 }
 
 #nav-button {
-        background-color: grey;
+        background-color: rgb(167, 150, 150);
+        border-radius: 5px; 
+        border: 2px solid rgb(244, 245, 244);
         color: white;
         font-weight: bold; 
+        float: right;
+        font-size: 20px;
+        margin-top: .5em;
+        margin-right: 2em;
         padding: 15px 32px;
         text-align: left;
         text-decoration: none;
-        margin-top: 1em;
-        margin-right: 14em;
-        float: right;
-        font-size: 16px;
-        border-radius: 5px; 
-        border: 2px solid rgb(244, 245, 244);
 }
 
 #bear-emoji {
         float: right; 
-        padding: 0 0 0 1rem; 
         margin: 0; 
+        padding: 0 0 0 1rem; 
 }
 
 #nav-button:hover {
-  background-color: rgb(240, 215, 230);
-  color: grey;
-  border: 2px solid grey; 
+        background-color: rgb(240, 215, 230);
+        color: grey;
+        border: 2px solid grey; 
 }
+
