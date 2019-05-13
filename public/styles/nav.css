@@ -1,0 +1,6 @@
+nav#nav-bar {padding-left: 2em;padding-right: 2em;width: 100%;background-color: #00a087;height: 80px;color: #e8fdff;}
+span.header {
+  line-height: 2.5em;
+  font-size: 2em;
+  float:left;
+}
