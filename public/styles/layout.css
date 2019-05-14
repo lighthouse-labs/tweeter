@@ -35,7 +35,8 @@ main{
   width: 450px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  align-content: center;
+  text-align: left;
   background-color: #ffffff;
   padding-top: 140px;
 }

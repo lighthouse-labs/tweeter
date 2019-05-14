@@ -10,6 +10,9 @@
     <!--Nav CSS-->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+    <!--TweetForm CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- Font CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
 
@@ -21,6 +24,10 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!--CharCounter JS-->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
@@ -30,10 +37,17 @@
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Hi im ken</h1>
+
+      <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
     </main>
 
   </body>
