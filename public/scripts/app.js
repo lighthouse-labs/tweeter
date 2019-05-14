@@ -14,16 +14,15 @@ function createTweetElement(tweetObj){
   $article.append($header);
   //$('<article>' + tweetObj.content.text + '</article>').appendTo('section.tweets');
   const $temptTweet=
-  `<div>
-      <article>
-        <header name="tweet">
-          <img class="userPic" src="" align="bottom">
-            <h3>${tweetObj.user.name}<a>${tweetObj.user.handle}</a></h3>
-        </header>
-            ${tweetObj.content.text}
-        <footer>1 day ago</footer>
-      </article>
-  </div>
+  `<article class="tweet">
+      <header>
+        <img class="userPic" src="" align="bottom">
+          <h3>${tweetObj.user.name}</h3>
+          <p>${tweetObj.user.handle}</p>
+      </header>
+      <div class="content">${tweetObj.content.text}</div>
+      <footer>1 day ago</footer>
+    </article>
   `;
   $('.tweets').append($temptTweet);
   console.log($userName);

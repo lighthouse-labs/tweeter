@@ -49,33 +49,49 @@ main{
   padding-top: 10px;
 }
 
-.tweets{
-  height: 120px;
+.tweet{
+  /*height: 120px;*/
   border: 1px black solid;
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 1em;
   border-radius: 10px;
-  padding-right: 1em;
+  /*padding-right: 1em;
   padding-left: 1em;
-  background: linear-gradient(to top, white 50%, lightgrey 50%)
+  background: linear-gradient(to top, white 50%, lightgrey 50%)*/
 }
 
 
-footer{
-
+.tweet footer{
   border-top: 0.5px black solid;
   width: 100%;
+  padding: 0.5em 1em;
 }
 
-a{
+.tweet header{
+  height: 70px;
+  background: lightgrey;
+  padding: 1em 1em 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tweet header h3{
+  float:left;
+  margin: 0 8px;
+}
+.tweet header p{
   float:right;
+  margin: 0;
 }
 
-div{
+.content {
+  padding: 1em;
+}
+
+.tweet{
   opacity: 0.7;
 }
 
-div:hover{
+.tweet:hover{
   opacity: 1;
 }

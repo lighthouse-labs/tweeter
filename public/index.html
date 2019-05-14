@@ -40,7 +40,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+        <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <textarea id="txt" name="text" placeholder="What are you humming about?"></textarea>
           <input id="twit" type="submit" value="Tweet">
@@ -48,16 +48,15 @@
         </form>
       </section>
       <section class="tweets">
-        <div>
-        <article>
-          <header name="tweet">
+        <article class="tweet">
+          <header>
             <img class="userPic" src="/images/puppy.jpg" align="bottom">
-            <h3>Name<a>@tweet</a></h3>
+            <h3>Name</h3>
+            <p>@tweet</p>
           </header>
-            Your tweets here
+          <div class="content">Your tweets here</div>
           <footer>1 day ago</footer>
         </article>
-      </div>
       </section>
 
     </main>
