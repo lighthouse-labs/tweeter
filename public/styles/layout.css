@@ -25,11 +25,19 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-img {
+img.logo {
   height: 80px;
   width: 80px;
   float: left;
   }
+
+img.userPic{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  float: left;
+  margin-bottom: 1px;
+}
 
 main{
   width: 450px;
@@ -38,5 +46,35 @@ main{
   align-content: center;
   text-align: left;
   background-color: #ffffff;
-  padding-top: 140px;
+  padding-top: 10px;
+}
+
+.tweets{
+  height: 120px;
+  border: 1px black solid;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 10px;
+  padding-right: 1em;
+  padding-left: 1em;
+  background: linear-gradient(to top, white 50%, lightgrey 50%)
+}
+
+
+footer{
+  margin-top: 20px;
+  border-top: 0.5px black solid;
+  width: 100%;
+}
+
+a{
+  float:right;
+}
+
+div{
+  opacity: 0.5;
+}
+
+div:hover{
+  opacity: 1;
 }
