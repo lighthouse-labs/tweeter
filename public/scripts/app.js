@@ -8,7 +8,11 @@ $(document).ready(function(){
 
 $("button.compose").on('click', function(){
   $("section.new-tweet").slideToggle("slow");
+  var textInput = document.getElementById("txt");
+  textInput.focus();
 })
+
+
 
 function escape(str){//helper function to present users putting js in the form
   var div = document.createElement('div');
