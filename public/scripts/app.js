@@ -6,6 +6,10 @@
 
 $(document).ready(function(){
 
+$("button.compose").on('click', function(){
+  $("section.new-tweet").slideToggle("slow");
+})
+
 function escape(str){//helper function to present users putting js in the form
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
