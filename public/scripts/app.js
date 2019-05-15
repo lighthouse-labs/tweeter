@@ -28,18 +28,6 @@ function renderTweets(arrTweets){
   });
 }
 
-$("form").on('submit', function(e){
-  e.preventDefault();//stops the button from redirecting
-  $.ajax({
-    url: $(this).attr("action"),//gets the /tweet link
-    type: $(this).attr("method"),//gets the method which is "POST"
-    data: $(this).serialize()//converts the code into urlencoded
-  }).done(function(){
-    console.log("AJAX POST request completed");
-  });
-
-});
-
 function loadTweets(){
   $.ajax({
     url:'/tweets'
@@ -50,6 +38,26 @@ function loadTweets(){
 }
 
 loadTweets();
+
+$("form").on('submit', function(e){
+  e.preventDefault();//stops the button from redirecting
+  var $textLen = $('#txt').val().length;
+  if($textLen === 0){
+    alert("You have to enter something before tweeting!");
+  } else if($textLen > 140){
+    alert("Your tweet is too long!");
+  } else {
+    $.ajax({
+      url: $(this).attr("action"),//gets the /tweet link
+      type: $(this).attr("method"),//gets the method which is "POST"
+      data: $(this).serialize()//converts the data into urlencoded
+    }).done(function(){
+      $('#txt').empty();//how do i clear this text box?
+      loadTweets();
+    });
+  }
+});
+
 
 //renderTweets(data);
 });
