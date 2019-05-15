@@ -6,6 +6,12 @@
 
 $(document).ready(function(){
 
+function escape(str){//helper function to present users putting js in the form
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 function createTweetElement(tweet){//helper function
   const $tempTweet=//creates a template for each tweet
   `<article class="tweet">
@@ -14,7 +20,7 @@ function createTweetElement(tweet){//helper function
           <h3>${tweet.user.name}</h3>
           <p>${tweet.user.handle}</p>
       </header>
-      <div class="content">${tweet.content.text}</div>
+      <div class="content">${escape(tweet.content.text)}</div>
       <footer>1 day ago</footer>
     </article>
   `;
