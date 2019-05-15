@@ -6,10 +6,10 @@
 
 $(document).ready(function(){
 
-$("button.compose").on('click', function(){
+$("button.compose").on('click', function(){//toggle for the compose slide
   $("section.new-tweet").slideToggle("slow");
   var textInput = document.getElementById("txt");
-  textInput.focus();
+  textInput.focus();//auto select the text field
 })
 
 
@@ -44,7 +44,7 @@ function renderTweets(arrTweets){
 
 function loadTweets(){
   $.ajax({
-    url:'/tweets'
+    url:"/tweets"
   })
   .done(data => {
     renderTweets(data);
@@ -53,20 +53,26 @@ function loadTweets(){
 
 loadTweets();
 
-$("form").on('submit', function(e){
+$("form").on("submit", function(e){
   e.preventDefault();//stops the button from redirecting
   var $textLen = $('#txt').val().length;
   if($textLen === 0){
-    alert("You have to enter something before tweeting!");
+    $("div.nullError").slideToggle("slow");//if the text is empty
+    $('#txt').on('input',function(){
+      $("div.nullError").slideUp();//the error slides up on input
+    });
   } else if($textLen > 140){
-    alert("Your tweet is too long!");
+    $("div.longError").slideToggle("slow");
+    $('#txt').on('input',function(){
+      $("div.longError").slideUp();
+    });
   } else {
     $.ajax({
       url: $(this).attr("action"),//gets the /tweet link
       type: $(this).attr("method"),//gets the method which is "POST"
       data: $(this).serialize()//converts the data into urlencoded
     }).done(function(){
-      $('#txt').empty();//how do i clear this text box?
+      $("#txt").val("");//clears the textbox after submit
       loadTweets();
     });
   }
