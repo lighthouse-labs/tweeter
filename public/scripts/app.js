@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
+/*const data = [
   {
     "user": {
       "name": "Newton",
@@ -49,24 +49,19 @@ const data = [
     },
     "created_at": 1461113796368
   }
-];
+];*/
 
 $(document).ready(function(){
 
-function createTweetElement(tweetObj){
-  const $article = $('<article>');
-  const $header = $('<header>');
-  const $userName = $('<h3>').text(tweetObj.user.name);
-  $header.append($userName);
-  $article.append($header);
-  const $tempTweet=
+function createTweetElement(tweet){//helper function
+  const $tempTweet=//creates a template for each tweet
   `<article class="tweet">
       <header>
         <img class="userPic" src="" align="bottom">
-          <h3>${tweetObj.user.name}</h3>
-          <p>${tweetObj.user.handle}</p>
+          <h3>${tweet.user.name}</h3>
+          <p>${tweet.user.handle}</p>
       </header>
-      <div class="content">${tweetObj.content.text}</div>
+      <div class="content">${tweet.content.text}</div>
       <footer>1 day ago</footer>
     </article>
   `;
@@ -75,10 +70,33 @@ function createTweetElement(tweetObj){
 }
 
 function renderTweets(arrTweets){
-  arrTweets.forEach(function(e){
-    $('.tweets').append(createTweetElement(e));
+  arrTweets.forEach(function(tweet){//calls the other function and loops it through the array of objects
+    $('.tweets').append(createTweetElement(tweet));
   });
 }
 
-renderTweets(data);
+$("form").on('submit', function(e){
+  e.preventDefault();//stops the button from redirecting
+  $.ajax({
+    url: $(this).attr("action"),//gets the /tweet link
+    type: $(this).attr("method"),//gets the method which is "POST"
+    data: $(this).serialize()//converts the code into urlencoded
+  }).done(function(){
+    console.log("AJAX POST request completed");
+  });
+
+});
+
+function loadTweets(){
+  $.ajax({
+    url:'/tweets'
+  })
+  .done(data => {
+    renderTweets(data);
+  });
+}
+
+loadTweets();
+
+//renderTweets(data);
 });
