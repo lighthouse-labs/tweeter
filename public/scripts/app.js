@@ -37,7 +37,7 @@ function createTweetElement(tweet){//helper function
 
 function renderTweets(arrTweets){
   arrTweets.forEach(function(tweet){//calls the other function and loops it through the array of objects
-    $('.tweets').append(createTweetElement(tweet));
+    $('.tweets').prepend(createTweetElement(tweet));
   });
 }
 
