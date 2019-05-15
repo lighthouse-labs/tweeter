@@ -33,7 +33,6 @@ function createTweetElement(tweet){//helper function
     </article>
   `;
   return $tempTweet;
-
 }
 
 function renderTweets(arrTweets){
@@ -44,10 +43,10 @@ function renderTweets(arrTweets){
 
 function loadTweets(){
   $.ajax({
-    url:"/tweets"
+    url:"/tweets"//the get request with AJAX
   })
   .done(data => {
-    renderTweets(data);
+    renderTweets(data);//calls the function to the data
   });
 }
 
@@ -78,6 +77,4 @@ $("form").on("submit", function(e){
   }
 });
 
-
-//renderTweets(data);
 });
