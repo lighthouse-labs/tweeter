@@ -26,6 +26,12 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+        <form method="GET" action="/urls/<%= url %>">
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+        <form method="POST" action="/urls/<%= url %>/delete">
+        <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
     </main>
 
   </body>
