@@ -1,0 +1,44 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+ html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+
+header {
+  color: #ffffff;
+  font-family: inherit;
+  position: absolute;
+  top: 121px;
+  height: 400px;
+  width: 100%;
+  background-color: #cfbf10;
+  background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  margin: 0 auto;
+}
+
+header img {
+  top: 72px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h2 {
+  display: block;
+  top: 27px;
+  position: relative;
+  text-align: center;
+}
