@@ -29,6 +29,7 @@ body {
    position: relative;
    top: 520px;
    max-width: 90%;
+   width: 90%;
    background-color: inherit;
    display: block;
    margin-left: auto;
