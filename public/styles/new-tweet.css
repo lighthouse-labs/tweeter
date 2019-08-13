@@ -1,0 +1,29 @@
+/*
+ * Global layout stuff
+ */
+
+.new-tweet textarea {
+  border-style: hidden hidden solid hidden;
+  border-width: medium;
+  width: 100%;
+  height: auto;
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  font-family: 'Bungee', cursive;
+  display: block;
+}
+
+.new-tweet input {
+  background-color: #4056A1;
+  color: #ffffff;
+  font-family: 'Bungee', cursive;
+  position: relative;
+}
+
+.new-tweet span {
+  font-family: 'Bungee', cursive;
+  display: inline;
+  float: right;
+}
+
