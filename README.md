@@ -46,3 +46,11 @@ Body-Oarser v1.15.2
 Chance 1.0.2
 md5 2.1.0
 NOdemon 1.9.2
+
+##Credit
+The following images from font awesome <https://fontawesome.com> were used under the Creative Commons Attribution 4.0 International license
+retweet image <https://fontawesome.com/icons/retweet?style=solid>
+flag image <https://fontawesome.com/icons/flag?style=solid>
+heart image <https://fontawesome.com/icons/heart?style=solid>
+angle double arrow down image <https://fontawesome.com/icons/angle-double-down?style=solid>
+
