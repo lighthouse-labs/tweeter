@@ -2,23 +2,24 @@
  * Global layout stuff
  */
 
-#tweet_container {
+.tweet {
   position: relative;
   border-style: solid solid solid solid;
   border-width: medium;
   position: relative;
   top: 50px;
+  margin: 20px auto 20px auto;
 }
 
-#tweet_container:hover {
+.tweet:hover {
   box-shadow: 5px 5px 2px 2px #4056A1;
 }
 
-#tweet_container:hover > header h6 {
+.tweet:hover > header h6 {
   display: inline-block;
 }
 
-#tweet_container header {
+.tweet header {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
@@ -28,13 +29,13 @@
   overflow: auto;
 }
 
-#tweet_container header img {
+.tweet header img {
   float: left;
   position: initial;
   margin: 1% 1% 1% 1%;
 }
 
-#tweet_container header div {
+.tweet header div {
   position: relative;
   float: left;
   height: auto;
@@ -42,7 +43,7 @@
   margin: 1% 1% 1% 1%;
 }
 
-#tweet_container header h6 {
+.tweet header h6 {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
@@ -52,7 +53,7 @@
   margin: 1% 1% 1% 1%;
 }
 
-#tweet_container article {
+.tweet h5 {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
@@ -64,7 +65,7 @@
   margin-right: auto;
 }
 
-#tweet_container article p {
+.tweet h5 p {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
@@ -73,7 +74,7 @@
 }
 
 
-#tweet_container footer {
+.tweet footer {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
@@ -83,7 +84,7 @@
   margin: 0 auto 0 auto;
 }
 
-#tweet_container footer div {
+.tweet footer div {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
@@ -92,7 +93,7 @@
   display: inline-block;
 }
 
-#tweet_container footer img {
+.tweet footer img {
   color: inherit;
   font-family: inherit;
   background-color: inherit;
