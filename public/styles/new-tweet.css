@@ -5,12 +5,12 @@
 .new-tweet textarea {
   border-style: hidden hidden solid hidden;
   border-width: medium;
+  position: relative;
   width: 100%;
   height: auto;
   color: inherit;
   font-family: inherit;
   background-color: inherit;
-  font-family: 'Bungee', cursive;
   display: block;
 }
 
@@ -23,7 +23,14 @@
 
 .new-tweet span {
   font-family: 'Bungee', cursive;
-  display: inline;
+  display: inline-block;
   float: right;
+ }
+
+.counter {
+  color: inherit;
 }
 
+.counter_red {
+  color: #ff0000;
+}
