@@ -1,0 +1,97 @@
+/*
+ * Global layout stuff
+ */
+
+#tweet_container {
+  position: relative;
+  border-style: solid solid solid solid;
+  border-width: medium;
+  position: relative;
+  top: 50px;
+}
+
+#tweet_container:hover {
+  box-shadow: 5px 5px 2px 2px #4056A1;
+}
+
+#tweet_container:hover > header h6 {
+  color: inherit;
+  float: center;
+}
+
+#tweet_container header {
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  height: 60px;
+  position: relative;
+  top: 0;
+}
+
+#tweet_container header img {
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 2px;
+  position: initial;
+  margin: 1% 1% 1% 1%;
+}
+
+#tweet_container header h6 {
+  color: #f4f1ec;
+  font-family: inherit;
+  background-color: inherit;
+  height: inherit;
+  display: inline-block;
+  float: right;
+  margin: 1% 1% 1% 1%;
+}
+
+#tweet_container article {
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  position: relative;
+  border-style: hidden hidden solid hidden;
+  border-width: medium;
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tweet_container article p {
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  position: initial;  border-style: hidden hidden solid hidden;
+  border-style: hidden hidden hidden hidden;
+}
+
+
+#tweet_container footer {
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  position: relative;
+  display: block;
+}
+
+#tweet_container footer div {
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  position: relative;
+  width: 50%;
+  margin: 2px 1% 1% 1%;
+  display: inline-block;
+}
+
+#tweet_container footer img {
+  color: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  height: 2%;
+  width: 2%;
+  margin: 2px 1% 1% 1%;
+  display: inline-block;
+  float: right;
+}

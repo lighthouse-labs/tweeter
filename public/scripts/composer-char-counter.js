@@ -3,11 +3,9 @@ $(document).ready(function() {
 
   $('textarea').keydown(function() {
     if ($(this).val().length >= maxLen) {
-      console.log("Exceed length", $('#span_counter'));
       $('#span_counter').removeClass('counter');
       $('#span_counter').addClass('counter_red');
     } else {
-      console.log("Under length");
       $('#span_counter').addClass('counter');
       $('#span_counter').removeClass('counter_red');
     } 
