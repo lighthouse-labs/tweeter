@@ -115,7 +115,8 @@ $(document).ready(() => {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   const renderTweets = (tweets) => {
-    for (const item of tweets) {
+    let sortedTweets = tweets.sort((newer, older) => (newer.created < older.created) ? 1 : -1)
+    for (const item of sortedTweets) {
       const $tweet = createTweetElement(item);
       $('#tweets-container').append($tweet);
     }

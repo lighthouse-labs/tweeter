@@ -13,22 +13,30 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   margin: 0 auto;
+  align-items: center;
+}
+
+header div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 header img {
-  top: 72px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  height: 15%;
-  width: 15%;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  height: auto;
 }
 
 header h2 {
   display: block;
-  top: 27px;
+  top: 7ch;
+  margin: 0 0 0 0;
   position: relative;
   text-align: center;
 }
