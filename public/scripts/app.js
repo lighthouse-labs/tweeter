@@ -10,10 +10,14 @@ $(document).ready(() => {
     event.preventDefault();
     const maxLen = 140;
 
+    $('h3').slideUp();
+
     if ($('textarea').val().length === 0) {
-      alert("Your tweet is empty");
+      $('h3').text("Your tweet is empty");
+      $('h3').slideDown();
     } else if ($('textarea').val().length > maxLen) {
-      alert(`Your tweet is too long, reduce it by: ${$('textarea').val().length - maxLen - 1}, characters.`);
+      $('h3').text(`Your tweet is too long, reduce it by: ${$('textarea').val().length - maxLen - 1}, characters.`);
+      $('h3').slideDown();
     } else {
       $.ajax({
         url: '/tweets/',
@@ -25,7 +29,8 @@ $(document).ready(() => {
         loadtweets(); 
       })
       .fail(function(err) {
-        alert("Something happened.  Tweeter cannot accept your tweeter at the moment.");
+        $('h3').text("Something happened.  Tweeter cannot accept your tweeter at the moment.");
+        $('h3').slideDown();
       });
     }
   });
@@ -114,6 +119,7 @@ $(document).ready(() => {
       const $tweet = createTweetElement(item);
       $('#tweets-container').append($tweet);
     }
+    $('h3').addClass('no-show-status');
   };
 
   const loadtweets = () => {
@@ -125,7 +131,8 @@ $(document).ready(() => {
         renderTweets(jsonTweets);
       })
     .fail((err) => {
-      alert('Cannot load data from Tweeter database');
+      $('h3').text("Something happened.  Tweeter cannot load your tweeters at the moment.");
+      $('h3').slideDown();
     });
   };
 

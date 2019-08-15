@@ -1,8 +1,14 @@
 /*
  * Global layout stuff
  */
-.tweet-bar-status {
+.no-show-status {
   display: none;
+}
+
+.new-tweet h3 {
+  color: #ff0000;
+  border-style: solid solid solid solid;
+  text-align: center;
 }
 
 .new-tweet textarea {
