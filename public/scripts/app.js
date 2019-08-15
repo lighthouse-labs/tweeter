@@ -53,7 +53,7 @@ $(document).ready(() => {
   const createContent = (articleObj) => {
     return `
     <h5>
-    ${articleObj.text}
+    ${escape(articleObj.text)}
     </h5>
     `;
   };
@@ -70,6 +70,13 @@ $(document).ready(() => {
   </footer>
     `;
   };
+
+  //escapre function to ensure text is not vulnerable to cross-site script from the LHL exercise
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   //returns the quotient of a number
   const quotient = (num, divisor) => Math.floor(num / divisor);
