@@ -7,17 +7,47 @@
 // const tweetsDB = require('../../server/data-files/initial-tweets.json');
 
 //const $tweet = $("<article>").addClass("tweet");
-$( document ).ready(function() {
-const createTweetElement = function(tweetObj) {
+$(document).ready(function() {
+
+  const loadtweets = () => {
+    $.ajax({
+      url: '/tweets/',
+      method: 'GET'
+    })
+    .then(function(jsonTweets) {
+      renderTweets(jsonTweets);
+    })
+    .catch(function(err){
+      alert('Cannot load data from Tweeter database');
+    });
+  };
+
+  loadtweets();
+
+// $('form').submit((event) => {
+//   event.preventDefault();
+//      console.log("Prevented event", $(this));
+  
+//       $.ajax({
+//         url: '/tweets/',
+//         method: 'POST',
+//         data: $(this).serialize()
+//       })
+//       .then(function() {
+//         console.log("Successfully senbt form submission");
+//       });
+//     });
+
+
+const createTweetElement = (tweetObj) => {
   let $tweet = $('<article>').addClass('tweet')
     .append(createHeader(tweetObj.user))
     .append(createContent(tweetObj.content))
     .append(createFooter(tweetObj.created_at));
-  console.log("Output from tweet element", $tweet);
   return $tweet;
 };
-
-const createHeader = function(headerObj) {
+// 
+const createHeader = (headerObj) => {
   return `
   <header>
     <img src=${headerObj.avatars}>
@@ -26,16 +56,16 @@ const createHeader = function(headerObj) {
   </header>
   `;
 };
-
-const createContent = function(articleObj) {
+// 
+const createContent = (articleObj) => {
   return `
   <h5>
   ${articleObj.text}
   </h5>
   `;
 };
-
-const createFooter = function(footerObj) {
+// 
+const createFooter = (footerObj) => {
   return `
   <footer>
   <div>
@@ -47,12 +77,12 @@ const createFooter = function(footerObj) {
 </footer>
   `;
 };
-
+// 
 // return the period posted from today
 const periodAgo = function(dateCreated) {
   const secsLapsed = Math.round((Date.now() - dateCreated) / 1000);
   let msg = '';
-  
+  // 
   if (quotient(secsLapsed, 60 * 60 * 24 * 365) > 1) {
     // from a year ago
     msg = 'Over a year ago';
@@ -72,51 +102,23 @@ const periodAgo = function(dateCreated) {
     // just posted
     msg = 'Posted moments ago';
   }
-
+// 
   return msg;
 };
-
+// 
 //returns the quotient of a number
 const quotient = (num, divisor) => Math.floor(num / divisor);
-
-//END of code
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
+// 
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 const renderTweets = function(tweets) {
-  console.log("in Render:", tweets);
   for (const item of tweets) {
     const $tweet = createTweetElement(item);
-    console.log("Looping through:", item, $tweet);
     $('#tweets-container').append($tweet); 
   }
 }
-
-renderTweets(data);
+//END of code
+// 
 });
+//end of document.ready()
