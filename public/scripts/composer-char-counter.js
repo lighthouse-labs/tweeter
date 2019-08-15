@@ -14,4 +14,7 @@ $(document).ready(function() {
 
     $('#span_counter').text(maxLen - $(this).val().length);
   });
+
+// END of codes
 });
+//end of document.ready()
