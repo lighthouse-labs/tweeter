@@ -26,7 +26,7 @@ $(document).ready(() => {
       })
       .then(function() {
         $('textarea').val('');
-        loadtweets(); 
+        loadtweets();
       })
       .fail(function(err) {
         $('h3').text("Something happened.  Tweeter cannot accept your tweeter at the moment.");
@@ -79,7 +79,7 @@ $(document).ready(() => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   //returns the quotient of a number
   const quotient = (num, divisor) => Math.floor(num / divisor);
