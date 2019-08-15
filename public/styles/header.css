@@ -1,19 +1,6 @@
 /*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
- html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/*
  * Global layout stuff
  */
-
 
 header {
   color: #ffffff;
@@ -33,6 +20,8 @@ header img {
   position: relative;
   display: flex;
   flex-direction: row;
+  height: 15%;
+  width: 15%;
   margin-left: auto;
   margin-right: auto;
 }

@@ -1,6 +1,9 @@
 /*
  * Global layout stuff
  */
+.tweet-bar-status {
+  display: none;
+}
 
 .new-tweet textarea {
   border-style: hidden hidden solid hidden;
@@ -23,7 +26,6 @@
 
 .new-tweet span {
   font-family: 'Bungee', cursive;
-  display: inline-block;
   float: right;
  }
 
@@ -33,4 +35,4 @@
 
 .counter_red {
   color: #ff0000;
-}
+}cd

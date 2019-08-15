@@ -8,7 +8,6 @@ $(document).ready(() => {
 
   $('form').submit((event) => {
     event.preventDefault();
-    console.log("Prevented event", $('textarea').val().length);
     const maxLen = 140;
 
     if ($('textarea').val().length === 0) {
@@ -22,7 +21,6 @@ $(document).ready(() => {
         data: $('textarea').serialize()
       })
       .then(function() {
-        console.log("Successfully sent new tweets");
         $('textarea').val('');
         loadtweets(); 
       })

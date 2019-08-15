@@ -23,6 +23,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/tweet-bar-status.js"></script>
 
   </head>
   <body>
@@ -30,11 +31,12 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div>
+      <div> <strong>Write</strong><small>a new Tweet</small>
         <script>
           
         </script>
       </div>
+      <img id="tweet-bar-toggle" src="/images/angle-double-down-solid.svg">
     </nav>
 
     <!-- Header between nav bar and body -->
@@ -50,7 +52,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
+        <section id="toggle-status" class="new-tweet">
             <h2>Compose Tweet</h2>
             <form method="POST" action="/tweets/">
               <textarea name="text" placeholder="What are you humming about?"></textarea>
