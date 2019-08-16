@@ -138,8 +138,12 @@ $(document).ready(() => {
       method: 'GET'
     })
       .then((jsonTweets) => {
+        // define on load behaviour including reset container, tweet counter, and hide compose
+        // and error bars
         $('#tweets-container').empty();
         $('#span_counter').val(140);
+        $('#toggle-status').hide();
+        $('h3').hide();
         renderTweets(jsonTweets);
       })
     .fail((err) => {
