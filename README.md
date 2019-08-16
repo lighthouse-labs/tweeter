@@ -16,14 +16,14 @@ We were also challenged to adapt different CSS methods to visualize and build th
 
 ## Final Product
 
-![Desktop view of Tweeter](insert image)
-![Tablet view of Tweeter](insert image)
-![Mobile view of Tweeter](insert image)
-![Demonstration of the error message slide up and down feature](insert image)
-![Demonstration of the hover effect on Tweets](insert image)
-![Demonstration of compose Tweet function](insert image)
+![Desktop view of Tweeter](<https://github.com/mikel-k-khui/tweeter/blob/master/docs/01%20desktop_view.png>)
+![Tablet view of Tweeter](<https://github.com/mikel-k-khui/tweeter/blob/master/docs/02%20tablet_view.png>)
+![Mobile view of Tweeter](<https://github.com/mikel-k-khui/tweeter/blob/master/docs/03%20mobile_view.png>)
+![Demonstration of the error message slide up and down feature](<https://github.com/mikel-k-khui/tweeter/blob/master/docs/04%20input_error.png>)
+![Demonstration of the hover effect on Tweets](<https://github.com/mikel-k-khui/tweeter/blob/master/docs/05%20hover_effect_on_tweet.png>)
+![Demonstration of compose Tweet function](<https://github.com/mikel-k-khui/tweeter/blob/master/docs/06%20compose_tweet.png>)
 
-Major features:
+Key features:
 1) Tweets are presented newest to oldest
 2) Counter for maximum characters allowed with visual aides on any overage during composition and submission
 3) Toggle button on the upper right corner for Compose Tweet box
