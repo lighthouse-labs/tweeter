@@ -5,34 +5,42 @@
   display: none;
 }
 
-.new-tweet h3 {
+.new-tweet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+form {
+  display: float;
+  flex-direction: column;
+}
+
+form h3 {
   color: #ff0000;
   border-style: solid solid solid solid;
   text-align: center;
 }
 
-.new-tweet textarea {
+form textarea {
   border-style: hidden hidden solid hidden;
   border-width: medium;
-  position: relative;
   width: 100%;
   height: auto;
-  color: inherit;
-  font-family: inherit;
-  background-color: inherit;
-  display: block;
-  resize: none;  
+  resize: none;
+  overflow: hidden;
 }
 
-.new-tweet input {
+form input {
   background-color: #4056A1;
   color: #ffffff;
   font-family: 'Bungee', cursive;
-  position: relative;
+  flex-basis: content;
 }
 
-.new-tweet span {
+form span {
   font-family: 'Bungee', cursive;
+  align-self: flex-end;
   float: right;
  }
 
@@ -42,4 +50,22 @@
 
 .counter_red {
   color: #ff0000;
+}
+
+/* desktop styles */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 66.7%;
+    float: right;
+    margin: 0 aut0;
+  }
+}
+
+/* tablet styles */
+@media only screen and (min-width: 760px) and (max-width: 1023px)  {
+  .new-tweet {
+    max-width: 1023px;
+    width: 66.7%;
+    float: right;
+  }
 }

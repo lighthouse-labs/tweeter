@@ -13,6 +13,7 @@ nav {
   top:0;
   z-index: 99999999;
   padding: 1.5em;
+  resize: none;
 }
 
 nav div {
@@ -37,4 +38,12 @@ nav img {
   position: absolute;
   right: 2em;
   bottom: 0.50em;
+}
+
+
+/* mobile styles */
+@media only screen and (max-width: 759px) {
+  nav {
+    background-color: #cfbf10;
+  }
 }

@@ -2,41 +2,71 @@
  * Global layout stuff
  */
 
-header {
+.header-bar {
+  display: flex;
+  flex-direction: column;
   color: #ffffff;
   font-family: inherit;
-  position: absolute;
-  top: 121px;
   height: 400px;
   width: 100%;
   background-color: #cfbf10;
   background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   margin: 0 auto;
-  align-items: center;
+  justify-content: center;
 }
 
-header div {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
+.header-bar img {
+  height: 25vw;
+  width:  25vw;
+  order: 1;
+  align-self: center;
 }
 
-header img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  height: auto;
-}
-
-header h2 {
-  display: block;
-  top: 7ch;
+.header-bar h2 {
   margin: 0 0 0 0;
-  position: relative;
-  text-align: center;
+  order: 2;
+  align-self: center;
+}
+
+/* desktop styles */
+@media only screen and (min-width: 1024px) {
+  .header-bar {
+    width: 33.3%;
+    height: 100vh;
+    float: left;
+    margin: 0 auto;
+    justify-content: flex-start;
+  }
+}
+
+/* tablet styles */
+@media only screen and (min-width: 760px) and (max-width: 1023px)  {
+  .header-bar {
+    max-width: 1024px;
+    width: 33.3%;
+    height: 100vh;
+    float: left;
+    margin: 0 auto;
+    justify-content: flex-start;
+  }
+}
+
+/* mobile styles */
+@media only screen and (max-width: 759px) {
+  .header-bar {
+    height: 100px;
+  }
+
+  .header-bar img {
+    height: 10vw;
+    width:  10vw;
+  }
+
+  .header-bar h2 {
+    margin: 0 0 0 0;
+    order: 2;
+    align-self: center;
+    font-size: 75%;
+  }
 }
