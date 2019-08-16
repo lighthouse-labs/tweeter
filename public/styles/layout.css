@@ -11,7 +11,7 @@ html {
 }
 
 /*
- * Global layout stuff
+ * Minor body updates with no Flex container in body
  */
 
 body {
@@ -25,7 +25,7 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
+ * no Flex container of the main body
  */
 
  .container {

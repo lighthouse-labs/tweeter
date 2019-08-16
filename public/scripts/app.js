@@ -5,7 +5,7 @@
  */
 
 $(document).ready(() => {
-
+  // listen for the submit function and override the default to validate user input
   $('form').submit((event) => {
     event.preventDefault();
     const maxLen = 140;
@@ -16,7 +16,7 @@ $(document).ready(() => {
       $('h3').text("Your tweet is empty");
       $('h3').slideDown();
     } else if ($('textarea').val().length > maxLen) {
-      $('h3').text(`Your tweet is too long, reduce it by: ${$('textarea').val().length - maxLen - 1}, characters.`);
+      $('h3').text(`Your tweet is too long, reduce it by: ${$('textarea').val().length - maxLen} characters.`);
       $('h3').slideDown();
     } else {
       $.ajax({
@@ -25,6 +25,7 @@ $(document).ready(() => {
         data: $('textarea').serialize()
       })
       .then(function() {
+        // tweet submitted successfully, reload all tweets from back-end server
         $('textarea').val('');
         loadtweets();
       })
@@ -35,6 +36,7 @@ $(document).ready(() => {
     }
   });
 
+  // create tweet element into a string instead of using string literals for better security
   const createTweetElement = (tweetObj) => {
     let $tweet = $('<article>').addClass('tweet')
       .append(createHeader(tweetObj.user))
@@ -43,6 +45,7 @@ $(document).ready(() => {
     return $tweet;
   };
 
+  // create header of tweet element into a string instead of using string literals for better security
   const createHeader = (headerObj) => {
     return `
     <header>
@@ -54,7 +57,7 @@ $(document).ready(() => {
     </header>
     `;
   };
-
+  // create body of tweet element into a string instead of using string literals for better security
   const createContent = (articleObj) => {
     return `
     <h5>
@@ -63,6 +66,7 @@ $(document).ready(() => {
     `;
   };
 
+   // create footerer of tweet element into a string instead of using string literals for better security
   const createFooter = (footerObj) => {
     return `
     <footer>
@@ -127,6 +131,7 @@ $(document).ready(() => {
     $('h3').addClass('no-show-status');
   };
 
+  // call to load tweets; also used when a tweet is successfully submitted to refresh
   const loadtweets = () => {
     $.ajax({
       url: '/tweets/',

@@ -1,5 +1,5 @@
 /*
- * Global layout stuff
+ * no nav bar Flex container as this was set as fixed
  */
 
 
@@ -34,7 +34,7 @@ nav img {
   height: 30px;
   width: 40px;
   margin: 2px 1% 1% 1%;
-  display: inline;
+  display: inline-block;
   position: absolute;
   right: 2em;
   bottom: 0.50em;
@@ -42,6 +42,7 @@ nav img {
 
 
 /* mobile styles */
+/* change colour to header bar when switched to single column view */
 @media only screen and (max-width: 759px) {
   nav {
     background-color: #cfbf10;

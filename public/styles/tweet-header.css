@@ -3,7 +3,7 @@
  */
 
  /*
- * tweet with 3 children header, h5, footer
+ * tweet with 3 children header, h5, footer and behaviour changes for hover
  */
 .tweet {
   border-style: solid solid solid solid;
@@ -60,6 +60,7 @@ header h6 {
   justify-self: flex-end;
   margin: 0 0;
 }
+
 /*
 * Container for the avatar and name to be placed to the right align
 */
@@ -99,6 +100,9 @@ footer div {
   margin: 2px 1% 1% 1%;
 }
 
+ /*
+ * images class container for the flag, retweet, and heart images
+ */
 .images {
   display: flex;
   justify-content: flex-end;
@@ -106,8 +110,8 @@ footer div {
 
 .images img {
   opacity: 0;
-  height: 3vw;
-  width: 3vw;
+  height: 2vw;
+  width: 2vw;
   margin: 2px 1% 1% 1%;
 }
 
