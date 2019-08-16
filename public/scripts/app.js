@@ -46,8 +46,10 @@ $(document).ready(() => {
   const createHeader = (headerObj) => {
     return `
     <header>
-      <img src=${headerObj.avatars}>
-      <div>${headerObj.name}</div>
+      <div>
+        <img src=${headerObj.avatars}>
+        <p>${headerObj.name}</p>
+      </div>
       <h6>${headerObj.handle}</h6>
     </header>
     `;
@@ -67,9 +69,11 @@ $(document).ready(() => {
     <div>
       ${periodAgo(footerObj)}
     </div>
-    <img src="/images/heart-solid.svg">
-    <img src="/images/retweet-solid.svg">
-    <img src="/images/flag-solid.svg">
+    <div class="images">
+      <img src="/images/heart-solid.svg">
+      <img src="/images/retweet-solid.svg">
+      <img src="/images/flag-solid.svg">
+    </div>
   </footer>
     `;
   };
@@ -129,6 +133,8 @@ $(document).ready(() => {
       method: 'GET'
     })
       .then((jsonTweets) => {
+        $('#tweets-container').empty();
+        $('#span_counter').val(140);
         renderTweets(jsonTweets);
       })
     .fail((err) => {
