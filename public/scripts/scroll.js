@@ -1,11 +1,16 @@
 $(document).ready(function() {
   
   $(window).scroll(function() {
-    console.log("in scroll loop", $(window).scrollTop());
-    if ($(window).scrollTop() > 100) {
+    if ($(window).width() > 759 && $(window).scrollTop() > 100) {
+      // toggle pops up for tablet and desktop
+      $('#toggleTop').removeClass('no-show-status');
+      $('#tweet-bar-toggle').addClass('no-show-status');
+    } else if ($(window).width() <= 759 && $(window).scrollTop() > 50) {
+      // toggle pops up for mobile
       $('#toggleTop').removeClass('no-show-status');
       $('#tweet-bar-toggle').addClass('no-show-status');
     } else {
+      // toggle at setup      
       $('#toggleTop').addClass('no-show-status');
       $('#tweet-bar-toggle').removeClass('no-show-status');
     }

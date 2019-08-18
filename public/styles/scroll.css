@@ -8,9 +8,9 @@
 #toggleTop {
   position: fixed;
   bottom: 2vw;
-  right: 2vw;
+  right: -0.5vw;
   z-index: 9999;
-  font-size: 2vw;
+  font-size: 1.5vw;
   border: none;
   outline: none;
   background-color: transparent;
@@ -18,4 +18,12 @@
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
+}
+
+/* mobile styles */
+/* change colour to header bar when switched to single column view */
+@media only screen and (max-width: 759px) {
+  #toggleTop {
+    font-size: 3vw;
+  }
 }
