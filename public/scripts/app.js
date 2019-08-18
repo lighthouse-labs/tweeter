@@ -140,6 +140,7 @@ $(document).ready(() => {
       .then((jsonTweets) => {
         // define on load behaviour including reset container, tweet counter, and hide compose
         // and error bars
+        $(window).scrollTop(0);
         $('#tweets-container').empty();
         $('#span_counter').val(140);
         $('#toggle-status').hide();

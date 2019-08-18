@@ -35,9 +35,9 @@ nav img {
   width: 40px;
   margin: 2px 1% 1% 1%;
   display: inline-block;
-  position: absolute;
-  right: 2em;
-  bottom: 0.50em;
+  position: relative;
+  top: 1vw;
+  left: 5vw;
 }
 
 

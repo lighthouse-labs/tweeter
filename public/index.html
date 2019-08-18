@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/scroll.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -25,6 +26,7 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/tweet-bar-status.js"></script>
+    <script type="text/javascript" src="/scripts/scroll.js"></script>
 
   </head>
   <body>
@@ -32,8 +34,9 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div> <strong>Write</strong><small>a new Tweet</small></div>
-      <img id="tweet-bar-toggle" src="/images/angle-double-down-solid.svg">
+      <div id="tweet-bar-toggle"> <strong>Write</strong><small>a new Tweet</small>
+        <img src="/images/angle-double-down-solid.svg">
+      </div>
     </nav>
 
     <!-- Header between nav bar and body -->
@@ -53,8 +56,10 @@
               <span class="counter" id="span_counter">140</span>
             </form>
           </section>
+          <button id="toggleTop" title="Toggle to top">Top</button>
           <section id="tweets-container">
           </section>
+          
       </main>
   </body>
 </html>

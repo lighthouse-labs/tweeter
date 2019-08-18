@@ -1,0 +1,21 @@
+/*
+ * class to turn display off 
+ */
+.no-show-status {
+  display: none;
+}
+
+#toggleTop {
+  position: fixed;
+  bottom: 2vw;
+  right: 2vw;
+  z-index: 9999;
+  font-size: 2vw;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #4056A1;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
