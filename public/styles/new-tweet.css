@@ -69,7 +69,8 @@ button {
 }
 
 .tweet-profile-picture {
-  height: 60px;
+  height: 30px;
+  margin-right: 0.5em;
 }
 
 .tweet-info-group {
@@ -88,10 +89,11 @@ article.tweet {
   justify-content: flex-start;
   background-color: #f4f1ec;
   padding: 0.5em;
+  margin-bottom: 1em;
 }
 article.tweet:hover {
   box-shadow: 0.5em 0.5em grey;
-  text-shadow: 0.3px 0.3px;
+  text-shadow: 0.2px 0.2px;
 }
 
 article.tweet header {
