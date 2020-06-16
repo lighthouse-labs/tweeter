@@ -7,23 +7,87 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- Custom fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav id="tweeter-header">
       <span>tweeter</span>
+      <h6 class="write-text"><strong>Write</strong> a new tweet</h2>
     </nav>
 
+    <header class="header-background">
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2>Your Name</h2>
+      </div>
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <P>Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake.</P>
+      
+      <section class="new-tweet">
+        <h2 id="compose">Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="tweet-deets">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <section class="tweet-list">
+        <article class="tweet">
+          <header>
+            <div class="tweet-info-group">
+              <img class="tweet-profile-picture" src="images/profile-hex.png">
+              <span>Alex</span>
+            </div>
+            <div class="tweetinfo-group tweet-username">
+              <span class="username">@rexx92</span>
+            </div>
+          </header>
+
+          <section>
+            <span>Here is an image to use as a reference. Aim to make your tweet look like the one in the image. </span>
+          </section>
+
+          <footer>
+            <div class="tweet-info-group">
+              <span>10 days ago</span>
+            </div>
+            <div class="tweetinfo-group">
+              <span class="symbols">❤︎ ⚐ ♺</span>
+
+          </footer>
+        </article>
+
+
+      </section>
+
+    </main>
   </body>
+
+
 </html>

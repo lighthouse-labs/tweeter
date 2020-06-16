@@ -1,0 +1,135 @@
+.new-tweet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-left: 2em;
+  padding-right: 2em; */
+  padding: 2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.neg-counter {
+  color: red;
+}
+
+#tweet-text {
+  width: 100%;
+  align-self: start;
+  border: 0px;
+  border-bottom: 4px solid #545149;
+  background-color: #f4f1ec;
+  /* padding-bottom: 2em; */
+  margin-bottom: 0.5em;
+  resize: none;
+
+}
+
+#compose {
+  align-self: start;
+
+}
+
+.tweet-deets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  font-family: 'Bungee', cursive; 
+  font-size: 0.75em;
+  background-color: #4056A1;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #FFFFFF;
+  border: 0em;
+}
+
+.counter {
+  font-size: 0.75em;
+  font-family: 'Bungee', cursive;  
+}
+
+.tweet-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  margin: 1em;
+}
+
+.tweet-profile-picture {
+  height: 60px;
+}
+
+.tweet-info-group {
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+article.tweet {
+  border: solid 4px #545149;
+  width: 100%;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #f4f1ec;
+  padding: 0.5em;
+}
+article.tweet:hover {
+  box-shadow: 0.5em 0.5em grey;
+  text-shadow: 0.3px 0.3px;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #837f75;
+}
+
+div.tweet-username{
+  display: none;
+}
+
+span.username {
+  color: #837f75;
+  padding-right: 1em;
+  /* display: none; */
+}
+
+article.tweet section {
+  display: flex;
+  width: 100%;
+  padding: 1.0em;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #545149;
+  padding: 0.5em;
+  border-top: 3px solid #545149;
+  font-size: 0.7em;
+}
+
+span.symbols {
+  color: #4056A1;
+
+}

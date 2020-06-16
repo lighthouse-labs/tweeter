@@ -17,7 +17,7 @@ module.exports = {
     if (Math.random() > 0.5) {
       let prefix    = chance.prefix({gender: gender});
       prefix = prefix.replace(".", "");
-      userHandle += prefix
+      userHandle += prefix;
     }
 
     userHandle += lastName;
