@@ -3,9 +3,6 @@
 const Chance      = require("chance"),
       chance      = new Chance();
 
-const md5 = require('md5');
-
-
 module.exports = {
   generateRandomUser: () => {
     const gender    = chance.gender();
@@ -36,7 +33,6 @@ module.exports = {
     
     const avatarArray = avatars[gender]
     const userAvatar = avatarArray[Math.floor(Math.random()*avatarArray.length)]
-  
 
     return {
       name: userName,
