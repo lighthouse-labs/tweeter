@@ -20,6 +20,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
   
 }
 /* to use for nav logo */
@@ -28,3 +29,6 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+main{
+  width:50%;
+}
