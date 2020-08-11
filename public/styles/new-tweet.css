@@ -28,6 +28,9 @@
   color:white;
   border-style: none;
 }
+.new-tweet form div button:hover{
+  color:yellow;
+}
 .new-tweet div .counter{
  font-weight: bold;
 }
@@ -36,8 +39,41 @@ form label{
   font-weight: bold;
 }
 
-/* .new-tweet form textarea{
-  white-space:nowrap;
-  background: transparent;
-  border:none;
-} */
+/* for each tweet created: */
+
+
+#tweet-container{
+  /* border: 3px solid green; */
+}
+
+#tweet-container article {
+  margin:auto;
+  width:98%;
+  height:200px;
+  border: 3px solid black;
+  display:flex; 
+  flex-direction: column;
+  
+}
+
+#tweet-container article #div1{
+  margin:5px;
+}
+
+
+#tweet-container article #div2{
+  margin-top:10px;
+  margin-left:16px;
+}
+#tweet-container article footer{
+  font-size: 16px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+hr{
+  width:98%;
+  text-align: right;
+  margin:30px 0px;
+  background-color: black;
+  height:3px;
+}
