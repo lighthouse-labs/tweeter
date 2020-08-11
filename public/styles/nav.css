@@ -4,6 +4,11 @@ nav{
   color:#FFFFFF;
   display:flex;
   justify-content: space-between;
+  position:fixed;
+  top:0; 
+  width:100%;
+  overflow:hidden;
+
 }
 nav span{
   /* border: 3px solid black; */
