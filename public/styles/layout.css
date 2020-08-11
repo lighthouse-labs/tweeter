@@ -21,7 +21,7 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-  
+  /* border: 3px solid black; */
 }
 /* to use for nav logo */
 /* font-family: 'Bungee', cursive;  */
@@ -30,5 +30,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 main{
-  width:50%;
+  /* border: 3px solid black; */
+  width:90%;
+  margin: 0px auto;
 }
