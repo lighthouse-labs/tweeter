@@ -2,10 +2,11 @@ nav{
   height:120px;
   background-color: #4056A1;
   color:#FFFFFF;
+  display:flex;
+  justify-content: space-between;
 }
 nav span{
   /* border: 3px solid black; */
   font-family: 'Bungee', cursive; 
   padding:1.5em;
-  display:inline-block;
 }
