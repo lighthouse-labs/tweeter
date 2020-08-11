@@ -21,7 +21,7 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-  /* border: 3px solid black; */
+  padding-top: 120px;
 }
 /* to use for nav logo */
 /* font-family: 'Bungee', cursive;  */
