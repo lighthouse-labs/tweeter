@@ -15,10 +15,10 @@
   font-family: 'Bungee', cursive;
 }
 
-.new-tweet form input{
+.new-tweet form textarea{
+  white-space:nowrap;
   background: transparent;
   border:none;
-  border-bottom: 3px solid #000;
 }
 
 .new-tweet form div button{
@@ -35,3 +35,9 @@
 form label{
   font-weight: bold;
 }
+
+/* .new-tweet form textarea{
+  white-space:nowrap;
+  background: transparent;
+  border:none;
+} */
