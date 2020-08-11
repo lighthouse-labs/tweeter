@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.new-tweet form textarea').on('keydown', function (e) {
+  $('.new-tweet form textarea').on('keyup', function (e) {
 
     ($(this).val().length > 140) ?
       $('.new-tweet div .counter').css('color', 'red') : $('.new-tweet div .counter').css('color', '#545149');
