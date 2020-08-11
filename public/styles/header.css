@@ -1,5 +1,4 @@
 .header{
-  /* border: 3px solid black; */
   height:400px;
   width:100%;
   display:flex;
@@ -8,18 +7,3 @@
   flex-direction: column;
 }
 
-
-
-/* header div img{
-  /* border:3px solid black; */
-  /* display:flex;
-  margin-left:auto;
-  margin-right:auto; */
-  
-/* }
-header div h2{
-  /* border: 3px solid black; */
-  /* display:flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-/* } */ 
