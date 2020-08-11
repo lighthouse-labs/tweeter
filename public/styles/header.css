@@ -1,10 +1,7 @@
-header{
+.header{
   /* border: 3px solid black; */
   height:400px;
   width:100%;
-}
-
-.header{
   display:flex;
   justify-content:center;
   align-items:center;
