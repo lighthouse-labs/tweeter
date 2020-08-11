@@ -39,41 +39,48 @@ form label{
   font-weight: bold;
 }
 
+
+
 /* for each tweet created: */
 
-
-#tweet-container{
-  /* border: 3px solid green; */
-}
 
 #tweet-container article {
   margin:auto;
   width:98%;
   height:200px;
-  border: 3px solid black;
+  border: 3px solid rgb(61, 57, 57);
   display:flex; 
   flex-direction: column;
-  
 }
 
-#tweet-container article #div1{
+#tweet-container article header{
   margin:5px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+#tweet-container article header .avator{
+  display:flex;
+  align-items:center;
+}
+#tweet-container article header .handle{
+  margin:10px;
+}
+#tweet-container article header img{
+  width:40px;
+  height:40px;
 }
 
-
-#tweet-container article #div2{
+#tweet-container article .content{
   margin-top:10px;
   margin-left:16px;
+  padding-bottom:25px;
+  border-bottom:2px solid black;
 }
 #tweet-container article footer{
   font-size: 16px;
+  margin-top:40px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
-hr{
-  width:98%;
-  text-align: right;
-  margin:30px 0px;
-  background-color: black;
-  height:3px;
-}
+
