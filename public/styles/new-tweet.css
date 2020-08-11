@@ -1,0 +1,37 @@
+
+/* .new-tweet{
+  border: 3px solid black;
+   width:100%;
+} */
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+.new-tweet form div{
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+.new-tweet form input{
+  background: transparent;
+  border:none;
+  border-bottom: 3px solid #000;
+}
+
+.new-tweet form div button{
+  justify-content: flex-start;
+  background-color: blue;
+  font-weight: bolder;
+  color:white;
+  border-style: none;
+}
+.new-tweet div .counter{
+ font-weight: bold;
+}
+
+form label{
+  font-weight: bold;
+}
