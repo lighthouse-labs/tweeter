@@ -75,24 +75,28 @@ $(document).ready(function(){
     }
   ];
   
-  renderTweets(data);
+  // renderTweets(data);
 
   const $form = $('.container .new-tweet form');
   $form.on('submit', (event)=>{
     event.preventDefault();
     const serialized = $form.serialize();
     console.log(serialized);
-    // $.post('localhost:8080',{})
+    
      $.post('/tweets', serialized)
       .then(()=>{
         console.log('successful!!!')
+        loadtweets();
       })
   })
 
   const loadtweets = function(){
-    $.getJSON('/tweets', data)
-    .then(()=>{
-      console.log('this is successful');
+    $.getJSON('/tweets')
+    .then((responseData)=>{
+      console.log('the fetching is successful');
+      // $('#tweet-container').html();
+      renderTweets(responseData);
+
     })
   }
   loadtweets();
