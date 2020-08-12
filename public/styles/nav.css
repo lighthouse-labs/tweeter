@@ -8,7 +8,7 @@ nav{
   top:0; 
   width:100%;
   overflow:hidden;
-
+  z-index:99;
 }
 nav span {
   /* border: 3px solid black; */
