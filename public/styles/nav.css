@@ -10,8 +10,13 @@ nav{
   overflow:hidden;
 
 }
-nav span{
+nav span {
   /* border: 3px solid black; */
   font-family: 'Bungee', cursive; 
   padding:1.5em;
+}
+
+nav div{
+  font-family: 'Source Sans Pro','sans-serif';
+  padding: 1.5em;
 }
