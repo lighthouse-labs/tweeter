@@ -5,6 +5,7 @@
  */
 
 $(document).ready(function(){
+  
   const calculateTimeElapsed = function(time){
     const oneDay = 24 * 60 * 60 *1000;
     const timeDiffInmili = Date.now() - time;
@@ -48,7 +49,7 @@ $(document).ready(function(){
      $('#tweet-container').append(`<br>`)
    }
   }
-
+  
   const data = [
     {
       "user": {
@@ -73,7 +74,28 @@ $(document).ready(function(){
       "created_at": 1461113959088
     }
   ];
-
+  
   renderTweets(data);
+
+  const $form = $('.container .new-tweet form');
+  $form.on('submit', (event)=>{
+    event.preventDefault();
+    const serialized = $form.serialize();
+    console.log(serialized);
+    // $.post('localhost:8080',{})
+     $.post('/tweets', serialized)
+      .then(()=>{
+        console.log('successful!!!')
+      })
+  })
+
+  const loadtweets = function(){
+    $.getJSON('/tweets', data)
+    .then(()=>{
+      console.log('this is successful');
+    })
+  }
+  loadtweets();
+
 });
 
