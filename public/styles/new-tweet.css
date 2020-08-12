@@ -27,6 +27,7 @@
   font-weight: bolder;
   color:white;
   border-style: none;
+  border-radius: 10px;
 }
 .new-tweet form div button:hover{
   color:yellow;
@@ -85,10 +86,28 @@ form label{
   padding-bottom:25px;
   border-bottom:2px solid black;
 }
+
 #tweet-container article footer{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#tweet-container article footer span{
   font-size: 16px;
   margin-top:40px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
+#tweet-container article footer .symbol{
+  display:flex;
+  flex-direction: row;
+  margin-right:20px;
+  margin-top:15px;
+}
+
+#tweet-container article footer .symbol div{
+  margin:7px;
+}
