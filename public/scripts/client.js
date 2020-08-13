@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     if ($('.new-tweet form textarea').val().length > 140) {
       $('.error').html(`&#9888;Too long, please respect our arbitray length limit of 140 please &#9888;`);
-      $('.error').css('display','block');
+      $('.error').slideDown();
 
     }
     if ($('.new-tweet form textarea').val().length === 0) {
