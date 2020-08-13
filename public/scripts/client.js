@@ -73,7 +73,7 @@ $(document).ready(function () {
     event.preventDefault();
 
     if ($('.new-tweet form textarea').val().length > 140) {
-      $('.error').html(`&#9888;Too long, please respect our arbitray length limit of 140 please &#9888;`);
+      $('.error').html(`&#9888; The tweet message is exceeded by ${$('.new-tweet form textarea').val().length - 140} words, please respect our length limit of 140 &#9888;`);
       $('.error').slideDown();
 
     }
