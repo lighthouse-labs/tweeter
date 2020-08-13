@@ -24,7 +24,7 @@ const createTweetElement = function (tweet) {
                     </span>
                     <span class='handle'>${tweet['user']['handle']}</span>
                   </header>
-                  <div class='content'>${tweet['content']['text']}</div>
+                  <div class='content'>${escape(tweet['content']['text'])}</div>
                   <footer>
                     <span> ${calculateTimeElapsed(tweet["created_at"])} days ago</span>
                     <div class="symbol">
@@ -48,6 +48,11 @@ const renderTweets = function (tweets) {
   }
 }
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 $(document).ready(function () {
 
