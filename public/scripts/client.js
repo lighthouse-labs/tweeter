@@ -48,7 +48,7 @@ const renderTweets = function (tweets) {
   }
 }
 
-const escape =  function(str) {
+const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -72,11 +72,18 @@ $(document).ready(function () {
   $form.submit((event) => {
     event.preventDefault();
 
-    if ($('.new-tweet form textarea').val().length > 140 || $('.new-tweet form textarea').val().length === 0) {
-      // alert('Error: your tweet cannot pass validation');
-      $('.error').slideDown();
+    if ($('.new-tweet form textarea').val().length > 140) {
+      $('.error').html(`&#9888;Too long, please respect our arbitray length limit of 140 please &#9888;`);
+      $('.error').css('display','block');
+
     }
-    else {
+    if ($('.new-tweet form textarea').val().length === 0) {
+      $('.error').html(`&#9888;You cannot submit a tweet without anything written &#9888;`);
+      $('.error').slideDown();
+      
+    }
+    if($('.new-tweet form textarea').val().length < 140 && $('.new-tweet form textarea').val().length > 0) {
+       $('.error').slideToggle();
       const serialized = $form.serialize();
       $.post('/tweets', serialized)
         .then(() => {
