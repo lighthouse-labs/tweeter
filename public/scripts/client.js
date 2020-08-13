@@ -83,7 +83,7 @@ $(document).ready(function () {
       
     }
     if($('.new-tweet form textarea').val().length < 140 && $('.new-tweet form textarea').val().length > 0) {
-       $('.error').slideToggle();
+       $('.error').slideUp();
       const serialized = $form.serialize();
       $.post('/tweets', serialized)
         .then(() => {
