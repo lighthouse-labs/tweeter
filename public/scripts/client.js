@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//  calculate the time passed since tweet is posted:
 const calculateTimeElapsed = function (time) {
   const oneDay = 24 * 60 * 60 * 1000;
   const timeDiffInmili = Date.now() - time;
@@ -15,7 +16,7 @@ const calculateTimeElapsed = function (time) {
   // }
   return timeDiffInDay.toFixed(0);
 };
-
+//  render each tweet through data sent from server:
 const createTweetElement = function (tweet) {
   let $tweet = $(`<article class="tweet">
                   <header>
@@ -37,7 +38,7 @@ const createTweetElement = function (tweet) {
                  <br/>`);
   return $tweet;
 }
-
+// used to render all the tweets including the previously typed ones:
 const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -47,13 +48,13 @@ const renderTweets = function (tweets) {
     $('#tweet-container').prepend(renderedElem);
   }
 }
-
+// used to prevent cross- site programming:
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
-
+//when page is opened, two tweets are already rendered:
 $(document).ready(function () {
 
   const $form = $('.container .new-tweet form');
@@ -68,7 +69,7 @@ $(document).ready(function () {
   }
 
   loadtweets();
-
+//when tweet is submitted, it stays on the same page, it respond different based on length of text input:
   $form.submit((event) => {
     event.preventDefault();
 
@@ -95,9 +96,6 @@ $(document).ready(function () {
         $('.new-tweet div .counter').val('140');
     }
   })
-
-
-  //  loadtweets();
 
 });
 
