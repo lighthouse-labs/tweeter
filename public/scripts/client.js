@@ -28,7 +28,7 @@ const createTweetElement = function (tweet) {
                   <footer>
                     <span> ${calculateTimeElapsed(tweet["created_at"])} days ago</span>
                     <div class="symbol">
-                      <div class="icon star">&starf;</div>
+                      <div class="icon star">&#x1F3F4;</div>
                       <div class="icon arrow">&#8633;</div>
                       <div class="icon heart">&#9829;</div>
                     </div>
