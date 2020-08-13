@@ -20,3 +20,13 @@ nav div{
   font-family: 'Source Sans Pro','sans-serif';
   padding: 1.5em;
 }
+
+nav div button{
+  background:transparent;
+  color:white;
+  border:none;
+  
+}
+nav div button:hover{
+  cursor: pointer;
+}
