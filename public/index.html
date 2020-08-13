@@ -31,7 +31,7 @@
 
   <!-- Internal JS for char-counter-->
   <script src='scripts/composer-char-counter.js'></script>
-  
+
   <!-- Internal JS for hover effects -->
   <script src='scripts/hover-effect.js'></script>
 
@@ -43,48 +43,39 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <div><button><strong>Write</strong>  a new tweet</button></div>
+    <div><button><strong>Write</strong> a new tweet</button></div>
   </nav>
-<div class='wrapper'>
-  <header class='header'>
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <!-- <br> -->
-    <div>
-      <h2>Jeffrey Shao</h2>
-    </div>
-  </header>
- <br>
- <br>
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <div class= 'error'> &#9888;Too long, please respect our arbitray length limit of 140 please &#9888;</div>
-    <section class="new-tweet">
-      <form action='/tweets' method='post'>
-        <label for="tweet-text">What are you humming about?</label>
+  <div class='wrapper'>
+    <header class='header'>
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <div>
+        <h2>Jeffrey Shao</h2>
+      </div>
+    </header>
+    <br>
+    <br>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <div class='error'> &#9888;Too long, please respect our arbitray length limit of 140 please &#9888;</div>
+      <section class="new-tweet">
+        <form action='/tweets' method='post'>
+          <label for="tweet-text">What are you humming about?</label>
+          <br>
+
+          <textarea name="text" id="tweet-text" placeholder='Fell free to tweet something here' rows='3'></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+     <!--container for all tweets-->
+      <section id='tweet-container'>
         <br>
-        
-        <textarea name="text" id="tweet-text" placeholder='Fell free to tweet something here' rows='3'></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
-    <section id='tweet-container'>
-      
-      <br>
-    </section>
-    
-  </main>
-
-</div>
-
-
-
-
+      </section>
+    </main>
+  </div>
 </body>
-
 </html>
