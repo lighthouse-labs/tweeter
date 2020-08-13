@@ -73,7 +73,8 @@ $(document).ready(function () {
     event.preventDefault();
 
     if ($('.new-tweet form textarea').val().length > 140 || $('.new-tweet form textarea').val().length === 0) {
-      alert('Error: your tweet cannot pass validation');
+      // alert('Error: your tweet cannot pass validation');
+      $('.error').slideDown();
     }
     else {
       const serialized = $form.serialize();

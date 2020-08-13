@@ -4,6 +4,11 @@
    width:100%;
 } */
 
+.error{
+  font-size:50px;
+  display:none;
+}
+
 .new-tweet form {
   display: flex;
   flex-direction: column;
