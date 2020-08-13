@@ -84,12 +84,15 @@ $(document).ready(function () {
     }
     if($('.new-tweet form textarea').val().length < 140 && $('.new-tweet form textarea').val().length > 0) {
        $('.error').slideUp();
+      //  $('.new-tweet form textarea').val() = '';
       const serialized = $form.serialize();
       $.post('/tweets', serialized)
         .then(() => {
           console.log('successfully serizlized and sent to server')
           loadtweets();
         })
+        $('.new-tweet form textarea').val('');
+        $('.new-tweet div .counter').val('140');
     }
   })
 
