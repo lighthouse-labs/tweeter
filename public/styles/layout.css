@@ -23,14 +23,12 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
   padding-top: 120px;
 }
-/* to use for nav logo */
-/* font-family: 'Bungee', cursive;  */
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 main{
-  /* border: 3px solid black; */
   width:90%;
   margin: 0px auto;
 }
