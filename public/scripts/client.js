@@ -5,7 +5,7 @@
  */
 
 //  calculate the time passed since tweet is posted:
-const calculateTimeElapsed = function (time) {
+const calculateTimeElapsed = function(time) {
   const oneDay = 24 * 60 * 60 * 1000;
   const timeDiffInmili = Date.now() - time;
   const timeDiffInDay = timeDiffInmili / oneDay;
@@ -17,7 +17,7 @@ const calculateTimeElapsed = function (time) {
   return timeDiffInDay.toFixed(0);
 };
 //  render each tweet through data sent from server:
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   let $tweet = $(`<article class="tweet">
                   <header>
                     <span class='avator'><img src= ${tweet['user']["avatars"]}>
@@ -37,9 +37,9 @@ const createTweetElement = function (tweet) {
                  </article>
                  <br/>`);
   return $tweet;
-}
+};
 // used to render all the tweets including the previously typed ones:
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -47,29 +47,29 @@ const renderTweets = function (tweets) {
     let renderedElem = createTweetElement(tweet);
     $('#tweet-container').prepend(renderedElem);
   }
-}
+};
 // used to prevent cross- site programming:
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 //when page is opened, two tweets are already rendered:
-$(document).ready(function () {
+$(document).ready(function() {
 
   const $form = $('.container .new-tweet form');
 
-  const loadtweets = function () {
+  const loadtweets = function() {
     $.getJSON('/tweets')
       .then((responseData) => {
         console.log('the fetching is successful');
         $('#tweet-container').empty();
         renderTweets(responseData);
-      })
-  }
+      });
+  };
 
   loadtweets();
-//when tweet is submitted, it stays on the same page, it respond different based on length of text input:
+  //when tweet is submitted, it stays on the same page, it respond different based on length of text input:
   $form.submit((event) => {
     event.preventDefault();
 
@@ -83,19 +83,19 @@ $(document).ready(function () {
       $('.error').slideDown();
       
     }
-    if($('.new-tweet form textarea').val().length < 140 && $('.new-tweet form textarea').val().length > 0) {
-       $('.error').slideUp();
+    if ($('.new-tweet form textarea').val().length < 140 && $('.new-tweet form  textarea').val().length > 0) {
+      $('.error').slideUp();
       //  $('.new-tweet form textarea').val() = '';
       const serialized = $form.serialize();
       $.post('/tweets', serialized)
         .then(() => {
-          console.log('successfully serizlized and sent to server')
+          console.log('successfully serizlized and sent to server');
           loadtweets();
-        })
-        $('.new-tweet form textarea').val('');
-        $('.new-tweet div .counter').val('140');
+        });
+      $('.new-tweet form textarea').val('');
+      $('.new-tweet div .counter').val('140');
     }
-  })
+  });
 
 });
 
