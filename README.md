@@ -25,3 +25,7 @@ This repository is the finished project of Tweeter: the project is focused on pr
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Chance
+- md5
+- nodemon
