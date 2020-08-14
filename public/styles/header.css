@@ -1,3 +1,4 @@
+/* this is for header */
 .header{
   height:400px;
   width:100%;
@@ -6,26 +7,19 @@
   align-items:center;
   flex-direction: column;
   background-color: #00c8d6;
-  /* width:25%; */
 }
 
-/* @media only screen and (max-width:768px){
-   .wrapp{
-     width:40%;
-   };
-} */
-
+/* the parent element for both header and main */
 .wrapper{
   display:flex;
 }
 
+/* when screen width is changed: */
 @media only screen and (max-width: 610px){
   .wrapper{
     flex-direction: column;
   }
-
 }
-
 @media only screen and (min-width: 610px){
   .header{
     width:40%;
@@ -45,7 +39,4 @@
  .new-tweet{
    margin-right:30px;
  } 
- /* #tweet-container{
-   margin-right:30px;
- }  */
 }
