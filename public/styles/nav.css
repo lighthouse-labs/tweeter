@@ -1,3 +1,5 @@
+/* these are for navigator and elements of navigator */
+
 nav{
   height:120px;
   background-color: #4056A1;
@@ -25,7 +27,6 @@ nav div button{
   background:transparent;
   color:white;
   border:none;
-  
 }
 nav div button:hover{
   cursor: pointer;
