@@ -1,9 +1,5 @@
 
-/* .new-tweet{
-  border: 3px solid black;
-   width:100%;
-} */
-
+/* for compose tweets field including error message and textarea and button*/
 .error{
   font-size:25px;
   font-weight: bold;
@@ -55,10 +51,9 @@ form label{
 
 
 
-/* for each tweet created: */
+/* for each tweet created and rendered: */
 .change{
   box-shadow:10px 10px grey;
-
 }
 
 
