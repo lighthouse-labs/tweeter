@@ -3,13 +3,13 @@
 const fs = require("fs");
 
 // Set a variable for the current epoch date
-let dayBefore = Date.now();
+let adjustedDate = Date.now();
 
 // Decrement by one day (86400000 milliseconds), per tweet
 // to ensure the tweets remain in order
 function dayDecrement() {
-  dayBefore -= 86400000;
-  return dayBefore;
+  adjustedDate -= 86400000;
+  return adjustedDate;
 }
 
 // Write recent dates to initial-tweets.json
