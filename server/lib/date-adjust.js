@@ -19,7 +19,7 @@ module.exports = () => {
   const tweetsPath = "./server/data-files/initial-tweets.json";
   // Read the tweets synchronously
   const tweetsRead = JSON.parse(fs.readFileSync(tweetsPath, { encoding: "utf8" }));
-  // Iterate tweets and convert the previous time to now() - 1-3 days
+  // Iterate tweets and convert the previous time to now() - 1, 2 days
   tweetsRead.map((tweet) => tweet.created_at = dayDecrement());
   // Re-write the tweets with the new date values.
   fs.writeFileSync(tweetsPath, JSON.stringify(tweetsRead, null, 2), { encoding: "utf8" });
