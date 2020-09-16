@@ -8,7 +8,8 @@ let dayBefore = Date.now();
 // Decrement by one day (86400000 milliseconds), per tweet
 // to ensure the tweets remain in order
 function dayDecrement() {
-  return dayBefore -= 86400000;
+  dayBefore -= 86400000;
+  return dayBefore;
 }
 
 // Write recent dates to initial-tweets.json
