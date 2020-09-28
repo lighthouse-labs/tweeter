@@ -22,9 +22,9 @@ const db = require("./lib/in-memory-db");
 // require it and pass the `db` parameter immediately:
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
-// Update the tweets in data-files/initial-tweets.json.
-// This is a self invoking function, it will call itself upon runtime.
-const dateAdjust = require("./lib/date-adjust")();
+// This import is an immediately invoked function expression
+// which will update the dates for the initial tweets (data-files/initial-tweets.json).
+require("./lib/date-adjust")();
 
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
