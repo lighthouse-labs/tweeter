@@ -6,16 +6,16 @@
 
 // momentjs
 
-const escape = function(str) {
+const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-const createTweetElement = function (data, retweeter) {
+const createTweetElement = function(data) {
   const date = new Date(data.created_at);
   const displayDate = moment(date).fromNow();
- let $tweet =
+  let $tweet =
     `<article class="tweet" id="${data.id}"> 
      <header>
      <div class="user">
@@ -29,64 +29,64 @@ const createTweetElement = function (data, retweeter) {
       <div>Posted ${displayDate}</div>
       <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span class="likes"></span><i class="fas fa-heart"></i></button><button class="retweetPost tweet-button-unclicked"><span class="retweets"></span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
     </footer>
-  </article>`
+  </article>`;
 
   return $tweet;
-}
+};
 
 
-const renderButtons = function () {
+const renderButtons = function() {
   $('.likePost').click(function (event) {
     const divId = event.currentTarget.closest('.tweet').id;
-  
-    $.ajax(`/tweets/${divId}/like`, {method: 'POST'}).then((liked) => {
-   
-      let tweet = $('#' + divId).find('.likes')
-     if (liked === true) {
-    
-      $(this).addClass('tweet-button-clicked')
-      tweet.text('Liked')
-     } else if (liked === false) {
-      $(this).removeClass('tweet-button-clicked')
-      tweet.text('')
-     }
+
+    $.ajax(`/tweets/${divId}/like`, { method: 'POST' }).then((liked) => {
+
+      let tweet = $('#' + divId).find('.likes');
+      if (liked === true) {
+
+        $(this).addClass('tweet-button-clicked');
+        tweet.text('Liked');
+      } else if (liked === false) {
+        $(this).removeClass('tweet-button-clicked');
+        tweet.text('');
+      }
     });
-    
+
   });
 
   // Tweet hover: show box-shadow and user @handle
   $('.tweet').on('mouseover', (event) => {
-    console.log('hover')
+    console.log('hover');
     $(event.target).find('.handle').removeClass('hidden');
   });
   $('.tweet').on('mouseleave', (event) => {
     $(event.target).find('.handle').addClass('hidden');
   });
 
-}
+};
 
-const renderElements = function (array) {
+const renderElements = function(array) {
   for (const tweet of array) {
     $('.tweets-container').prepend(createTweetElement(tweet, tweet.retweeter, tweet.retweets));
   }
 };
 
 const loadTweets = function () {
-  $.ajax('/tweets', {method: 'GET'}).then((tweets) => {
+  $.ajax('/tweets', { method: 'GET' }).then((tweets) => {
     renderElements(tweets);
   }).then(() => {
     renderButtons();
-  })
+  });
 };
 
 
 $(document).ready(() => {
 
-loadTweets();
+  loadTweets();
 
   $('#submit-tweet').submit(event => {
     event.preventDefault();
-    let text = $(event.currentTarget).find('textarea').val()
+    let text = $(event.currentTarget).find('textarea').val();
 
     if (text.length === 0) {
       $('.error').html('<i class="fas fa-exclamation-triangle" style="color: red"></i><span>Tweet is empty. Please enter some more characters.</span><i class="fas fa-exclamation-triangle" style="color: red"></i>');
@@ -99,19 +99,19 @@ loadTweets();
 
       $('.error').slideUp();
 
-      let textarea = $(event.currentTarget).serialize()
+      let textarea = $(event.currentTarget).serialize();
 
       $.post('/tweets', textarea).then((tweet) => {
-        console.log(`this is the tweet I got back: ${JSON.stringify(tweet)}`)
+        console.log(`this is the tweet I got back: ${JSON.stringify(tweet)}`);
         $('.tweets-container').prepend(createTweetElement(tweet));
-        $(event.currentTarget).find('textarea').val('')
+        $(event.currentTarget).find('textarea').val('');
       }).then(() => {
         renderButtons();
-      })
+      });
     }
-    
-  })
+
+  });
 
 
-})
+});
 
