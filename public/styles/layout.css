@@ -15,11 +15,37 @@ html {
  */
 
 body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .tweetsContainer {
+   width: 50%;
+   margin-right: 5%;
+   margin-bottom: 10px;
+   margin-top: 200px;
+ }
+
+ @media only screen and (max-width: 1024px) {
+  .tweetsContainer {
+    width: 100%;
+    margin: 1.5em;
+  }
+}
+
+ footer {
+   margin-top: 1em;
+   text-align: center;
+   width: 100%;
+ }

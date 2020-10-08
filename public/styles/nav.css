@@ -1,0 +1,52 @@
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #4056A1;
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF;
+  padding: 1.5em;
+}
+nav span:first-child {
+  font-family: "Bungee";
+}
+nav button {
+  background-color: inherit;
+  border: none;
+  color: #FFFFFF;
+  align-self: flex-end;
+}
+nav button:focus {
+  outline: 0;
+}
+
+.arrowToTop {
+  display: none;
+  position: fixed;
+  font-size: 2.5em;
+  right: 1.5em;
+  bottom: 1.5em;
+  color: #C60F7B;
+  transition: color 0.1s;
+}
+.arrowToTop:hover {
+  color: #FF3C38;
+}
+
+.fa-angle-double-down {
+  color: #C60F7B;
+  animation: bounce 1s infinite;
+  transition: color 0.1s;
+}
+.fa-angle-double-down:hover {
+  color: #FF3C38;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0px)}
+  50% {transform: translateY(3px)}
+  100% {transform: translateY(0px);}
+}

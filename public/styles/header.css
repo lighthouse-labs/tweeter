@@ -1,0 +1,22 @@
+header {
+  height: 400px;
+  width: 30%;
+  margin-left: 5%;
+  margin-top: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFD133;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+
+}
+
+@media only screen and (max-width: 1024px) {
+  header {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 120px;
+  }
+}
+
