@@ -17,13 +17,10 @@ const createTweetElement = function (data, retweeter) {
   const displayDate = moment(date).fromNow();
  let $tweet =
     `<article class="tweet" id="${data.id}"> 
-     <header>`
-
-     
- $tweet += `<div class="user">
+     <header>
+     <div class="user">
       <img src='${data.user.avatars}' alt="${data.user.name}'s avatar">
         <span>${data.user.name}</span>
-       
       </div>
       <div class="handle hidden">${data.user.handle}</div>
     </header>
@@ -37,23 +34,16 @@ const createTweetElement = function (data, retweeter) {
   return $tweet;
 }
 
-const renderRetweets = function (tweets, num) {
-  for (const tweet of tweets) {
-
-    $('#' + tweet).find('.retweets').text(num);
-  }
-  
-}
 
 const renderButtons = function () {
   $('.likePost').click(function (event) {
     const divId = event.currentTarget.closest('.tweet').id;
   
     $.ajax(`/tweets/${divId}/like`, {method: 'POST'}).then((liked) => {
-      console.log('answer back')
+   
       let tweet = $('#' + divId).find('.likes')
      if (liked === true) {
-       console.log(liked);
+    
       $(this).addClass('tweet-button-clicked')
       tweet.text('Liked')
      } else if (liked === false) {
@@ -62,6 +52,15 @@ const renderButtons = function () {
      }
     });
     
+  });
+
+  // Tweet hover: show box-shadow and user @handle
+  $('.tweet').on('mouseover', (event) => {
+    console.log('hover')
+    $(event.target).find('.handle').removeClass('hidden');
+  });
+  $('.tweet').on('mouseleave', (event) => {
+    $(event.target).find('.handle').addClass('hidden');
   });
 
 }
@@ -77,8 +76,6 @@ const loadTweets = function () {
     renderElements(tweets);
   }).then(() => {
     renderButtons();
-  }).then(() => {
-
   })
 };
 

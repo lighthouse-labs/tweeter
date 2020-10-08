@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
   // Tweet hover: show box-shadow and user @handle
-  $('.tweet').on('mouseover', (event) => {
+  $('.tweet').on('click', (event) => {
+    console.log('hover')
     $(event.target).find('.handle').removeClass('hidden');
   });
   $('.tweet').on('mouseleave', (event) => {
@@ -15,6 +16,7 @@ $(document).ready(function () {
     }
   })
   $('.exitTweet').click(() => {
+
     $('.new-tweet').slideUp();
   })
 

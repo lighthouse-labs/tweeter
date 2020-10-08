@@ -30,9 +30,9 @@ module.exports = function makeDataHelpers(db) {
       simulateDelay(() => {
 
         for (const tweet of db.tweets) {
-          console.log(tweet.id, id)
-          if (tweet.id === Number(id)) {
-            
+          
+          if (tweet.id == id) {
+          
             if (tweet.liked === true) {
               tweet.liked = false;
               callback(null, tweet.liked)

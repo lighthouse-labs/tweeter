@@ -57,7 +57,7 @@ module.exports = function (DataHelpers) {
   });
 
   tweetsRoutes.post("/:id/like", function (req, res) {
-    console.log('requested...')
+   
     DataHelpers.likeTweet(req.params.id, (err, liked) => {
       if (err) {
 

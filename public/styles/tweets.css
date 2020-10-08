@@ -6,14 +6,16 @@ article.tweet {
 article.tweet header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   margin-top: 0;
-  justify-content: space-between;
+ justify-content: space-between;
   height: 100px;
   background-image: none;
   background-color: #f4f1ec;
   font-size: 1.5em;
   color: gray;
+  width: 100%;
+
+  margin-left: 0;
 }
 
 
@@ -43,6 +45,7 @@ article.tweet footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 50%;
 }
 .user > span {
   margin-left: 0.5em;
@@ -50,6 +53,7 @@ article.tweet footer {
 }
 .handle {
   color: #c5cae3;
+  margin-right: 0.5em;
 }
 
 article.tweet footer > div {
