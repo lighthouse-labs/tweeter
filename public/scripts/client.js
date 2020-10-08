@@ -19,9 +19,6 @@ const createTweetElement = function (data, retweeter) {
     `<article class="tweet" id="${data.id}"> 
      <header>`
 
-     if (retweeter) {
-       $tweet += `<div class="retweetText"><i class="fas fa-retweet" style="margin-right: 0.3em"></i>${retweeter} retweeted</div>`
-     }
      
  $tweet += `<div class="user">
       <img src='${data.user.avatars}' alt="${data.user.name}'s avatar">
@@ -33,7 +30,7 @@ const createTweetElement = function (data, retweeter) {
     <p>${escape(data.content.text)}</p>
     <footer>
       <div>Posted ${displayDate}</div>
-      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span class="likes"></span><i class="fas fa-heart"></i></button><button class="retweetPost tweet-button-unclicked"><span class="retweets">${data.retweets}</span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
+      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span class="likes"></span><i class="fas fa-heart"></i></button><button class="retweetPost tweet-button-unclicked"><span class="retweets"></span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
     </footer>
   </article>`
 
@@ -50,13 +47,13 @@ const renderRetweets = function (tweets, num) {
 
 const renderButtons = function () {
   $('.likePost').click(function (event) {
-    console.log('LIK')
-    
     const divId = event.currentTarget.closest('.tweet').id;
-
+  
     $.ajax(`/tweets/${divId}/like`, {method: 'POST'}).then((liked) => {
+      console.log('answer back')
       let tweet = $('#' + divId).find('.likes')
      if (liked === true) {
+       console.log(liked);
       $(this).addClass('tweet-button-clicked')
       tweet.text('Liked')
      } else if (liked === false) {
@@ -66,19 +63,6 @@ const renderButtons = function () {
     });
     
   });
-
-  $('.retweetPost').click(function (event) {
-    const id = event.currentTarget.closest('.tweet').id;
-    $.ajax(`/tweets/${id}/retweet`, {method: 'POST'}).then(tweet => {
-     
-      $('.tweets-container').prepend(createTweetElement(tweet, tweet.retweeter));
-      return tweet;
-    }).then((tweet) => {
-      renderRetweets(tweet.retweet_array, tweet.retweets)
-    }).then(() => {
-      renderButtons();
-    })
-  })
 
 }
 
@@ -115,11 +99,16 @@ loadTweets();
       $('.error').html('<i class="fas fa-exclamation-triangle" style="color: red"></i><span>Tweet is too long. Please check urself before u wreck urself</span><i class="fas fa-exclamation-triangle" style="color: red"></i>');
       $('.error').slideDown();
     } else {
+
       $('.error').slideUp();
+
       let textarea = $(event.currentTarget).serialize()
+
       $.post('/tweets', textarea).then((tweet) => {
+        console.log(`this is the tweet I got back: ${JSON.stringify(tweet)}`)
         $('.tweets-container').prepend(createTweetElement(tweet));
         $(event.currentTarget).find('textarea').val('')
+      }).then(() => {
         renderButtons();
       })
     }

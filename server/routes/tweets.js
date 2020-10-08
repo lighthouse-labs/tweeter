@@ -37,11 +37,11 @@ module.exports = function (DataHelpers) {
         text: req.body.text
       },
       id: id,
+      original: null,
       created_at: Date.now(),
       liked: false,
       retweets: 0,
-      retweet_array: [id],
-      retweeter: ""
+      
     };
 
 
@@ -57,6 +57,7 @@ module.exports = function (DataHelpers) {
   });
 
   tweetsRoutes.post("/:id/like", function (req, res) {
+    console.log('requested...')
     DataHelpers.likeTweet(req.params.id, (err, liked) => {
       if (err) {
 
@@ -67,26 +68,7 @@ module.exports = function (DataHelpers) {
       }
     });
   });
-  tweetsRoutes.post("/:id/retweet", function (req, res) {
-     
-    DataHelpers.retweet(req.params.id, (err, tweet) => {
-     
-      if (err) {
-        res.status(500).json({ error: err.message });
-      }
-      DataHelpers.saveTweet(tweet, (err) => {
-       
-        if (err) {
-          res.status(500).json({ error: err.message });
-        } else {
-          
-          
-          res.status(201).send(tweet);
-        }
-      });
 
-    });
-});
 
 return tweetsRoutes;
 

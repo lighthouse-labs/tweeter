@@ -11,10 +11,10 @@
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
     "id": "1",
+    "original": "2",
     "created_at": 1461116232227,
-    "liked": false,
-    "retweets": 0,
-    "retweet_array": ["1"]
+    "liked": false
+   
 
   },
   {
@@ -27,9 +27,9 @@
       "text": "Je pense , donc je suis"
     },
     "id": "2",
+    "original": "2",
     "created_at": 1461113959088,
-    "liked": false,
-    "retweets": 0,
-    "retweet_array": ["2"]
+    "liked": false
+   
   }
 ]
