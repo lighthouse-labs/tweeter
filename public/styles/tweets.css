@@ -23,6 +23,7 @@ article.tweet p {
   margin-bottom: 0.3em;
   border-bottom: 5px solid #545149;
   padding: 0.5em;
+  overflow-wrap: break-word;
 }
 
 article.tweet:hover {
