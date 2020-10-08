@@ -1,18 +1,12 @@
 $(document).ready(function () {
 
-  // Tweet hover: show box-shadow and user @handle
-  $('.tweet').on('click', (event) => {
-    console.log('hover')
-    $(event.target).find('.handle').removeClass('hidden');
-  });
-  $('.tweet').on('mouseleave', (event) => {
-    $(event.target).find('.handle').addClass('hidden');
-  });
+  
 
   $('.newTweetButton').click(() => {
     $('.new-tweet').slideDown();
+    $('.new-tweet').find('textarea').focus();
     if (document.scrollingElement.scrollTop > 600) {
-      $('html, body').animate({scrollTop: 0}, '300');
+      $('html, body').animate({scrollTop: 0}, '500');
     }
   })
   $('.exitTweet').click(() => {
@@ -41,6 +35,7 @@ $(document).ready(function () {
     event.preventDefault();
     $('html, body').animate({scrollTop: 0}, '300');
     $('.new-tweet').slideDown();
+    $('.new-tweet').find('textarea').focus();
   });
 
   
