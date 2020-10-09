@@ -1,0 +1,56 @@
+@import 'colors';
+
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: $tweeter-blue;
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF;
+  padding: 1.5em;
+
+  button {
+    background-color: black;
+    border: none;
+    color: #FFFFFF;
+    align-self: flex-end;
+  }
+}
+nav span:first-child {
+  font-family: "Bungee";
+}
+
+nav button:focus {
+  outline: 0;
+}
+
+.arrowToTop {
+  display: none;
+  position: fixed;
+  font-size: 2.5em;
+  right: 1.5em;
+  bottom: 1.5em;
+  color: $tweeter-purple;
+  transition: color 0.1s;
+}
+.arrowToTop:hover {
+  color: $tweeter-orange;
+}
+
+.fa-angle-double-down {
+  color: $tweeter-purple;
+  animation: bounce 1s infinite;
+  transition: color 0.1s;
+}
+.fa-angle-double-down:hover {
+  color: $tweeter-orange;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0px)}
+  50% {transform: translateY(3px)}
+  100% {transform: translateY(0px);}
+}

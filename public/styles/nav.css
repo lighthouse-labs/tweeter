@@ -1,23 +1,31 @@
 nav {
   position: fixed;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #4056A1;
   height: 120px;
   width: 100%;
   color: #FFFFFF;
   padding: 1.5em;
 }
+
+nav button {
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 nav span:first-child {
   font-family: "Bungee";
 }
-nav button {
-  background-color: inherit;
-  border: none;
-  color: #FFFFFF;
-  align-self: flex-end;
-}
+
 nav button:focus {
   outline: 0;
 }
@@ -29,24 +37,55 @@ nav button:focus {
   right: 1.5em;
   bottom: 1.5em;
   color: #C60F7B;
+  -webkit-transition: color 0.1s;
   transition: color 0.1s;
 }
+
 .arrowToTop:hover {
   color: #FF3C38;
 }
 
 .fa-angle-double-down {
   color: #C60F7B;
-  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+  -webkit-transition: color 0.1s;
   transition: color 0.1s;
 }
+
 .fa-angle-double-down:hover {
   color: #FF3C38;
-  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 @keyframes bounce {
-  0% {transform: translateY(0px)}
-  50% {transform: translateY(3px)}
-  100% {transform: translateY(0px);}
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
+/*# sourceMappingURL=nav.css.map */
