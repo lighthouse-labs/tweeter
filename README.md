@@ -44,6 +44,10 @@ Tweeter is built using HTML, CSS, SASS, JavaScript, jQuery and AJAX for front-en
 !["likes"](https://github.com/erikleisinger/tweeter/raw/master/samples/likes.gif
 )
 
+**Retweet** Signal boost your favorite tweets
+!["retweet example"](samples/retweet.gif
+)
+
 **Dynamic Error Messages**
 !["errors"](https://github.com/erikleisinger/tweeter/raw/master/samples/errors.gif
 )
