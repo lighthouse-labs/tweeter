@@ -1,9 +1,8 @@
 "use strict";
 
-const userHelper = require("../lib/util/user-helper")
+const userHelper = require("../lib/util/user-helper");
 
 const express = require('express');
-const { generateRandomUser } = require("../lib/util/user-helper");
 const tweetsRoutes = express.Router();
 
 module.exports = function (DataHelpers) {
@@ -41,7 +40,7 @@ module.exports = function (DataHelpers) {
       created_at: Date.now(),
       liked: false,
       retweets: 0,
-      
+
     };
 
 
@@ -57,19 +56,19 @@ module.exports = function (DataHelpers) {
   });
 
   tweetsRoutes.post("/:id/like", function (req, res) {
-   
+
     DataHelpers.likeTweet(req.params.id, (err, liked) => {
       if (err) {
 
         res.status(500).json({ error: err.message });
       } else {
-        
+
         res.status(201).send(liked);
       }
     });
   });
 
 
-return tweetsRoutes;
+  return tweetsRoutes;
 
-}
+};

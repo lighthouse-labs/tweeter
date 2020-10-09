@@ -49,5 +49,8 @@ Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Exp
 )
 
 **Finishing Touches**: Look around Tweeter for little bits of flare and pazaaz (notice the bouncing purple arrows?)
-!["arrowbounce"](./samples/errors.gif
+
+!["arrowbounce"](./samples/arrowbounce.gif
 )
+
+
