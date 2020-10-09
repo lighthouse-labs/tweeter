@@ -30,18 +30,18 @@ Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Exp
 
 **"Back To Top" arrow** returns users to the top the page with the click of a button
 
-!["arrow to top - small format"](https://github.com/erikleisinger/tweeter/blob/master/samples/arrow-to-top-small.gif
+!["arrow to top - small format"](https://github.com/erikleisinger/tweeter/raw/master/samples/arrow-to-top-small.gif
 )
 
 
 
 **Hide and Collapse the draft window**
-!["hide and show draft box"](https://github.com/erikleisinger/tweeter/raw/master/samples/hideandshow.gif
+!["hide and show draft box"](samples/hideandshow.gif
 )
 
 **Likes**! Users can show a tweet some love by pressing the heart beneath it
 
-!["likes"](https://github.com/erikleisinger/tweeter/blob/master/samples/likes.gif
+!["likes"](samples/likes.gif
 )
 
 **Dynamic Error Messages**
