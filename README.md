@@ -1,8 +1,8 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. It demonstrates my ability to design a social media page (a la Twitter).
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Express, JSON) skills were required for this project to be user-friendly, visually dynamic, and responsive. 
 
 ## Getting Started
 
@@ -15,3 +15,39 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- md5
+
+## Features:
+
+### **Responsive Design**
+ Tweeter's mostly-fluid visual design automatically scales to any size computer, tablet or smartphone screen. 
+!["responsive design"](./samples/responsive-design.gif
+)
+
+### **Ease-of-Use**
+ Tweeter is user-focused, and includes many features that make the user experience more convenient:
+
+**"Back To Top" arrow** returns users to the top the page with the click of a button
+
+!["arrow to top - small format"](./samples/arrow-to-top-small.gif
+)
+
+
+
+**Hide and Collapse the draft window**
+!["hide and show draft box"](./samples/hideandshow.gif
+)
+
+**Likes**! Users can show a tweet some love by pressing the heart beneath it
+
+!["likes"](./samples/likes.gif
+)
+
+**Dynamic Error Messages**
+!["errors"](./samples/errors.gif
+)
+
+**Finishing Touches**: Look around Tweeter for little bits of flare and pazaaz (notice the bouncing purple arrows?)
+!["arrowbounce"](./samples/errors.gif
+)
