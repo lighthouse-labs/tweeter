@@ -22,7 +22,7 @@ Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Exp
 
 ### **Responsive Design**
  Tweeter's mostly-fluid visual design automatically scales to any size computer, tablet or smartphone screen. 
-!["responsive design"](./samples/responsive-design.gif
+!["responsive design"](https://github.com/erikleisinger/tweeter/blob/master/samples/responsive-design.gif
 )
 
 ### **Ease-of-Use**
@@ -30,27 +30,27 @@ Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Exp
 
 **"Back To Top" arrow** returns users to the top the page with the click of a button
 
-!["arrow to top - small format"](./samples/arrow-to-top-small.gif
+!["arrow to top - small format"](https://github.com/erikleisinger/tweeter/blob/master/samples/arrow-to-top-small.gif
 )
 
 
 
 **Hide and Collapse the draft window**
-!["hide and show draft box"](./samples/hideandshow.gif
+!["hide and show draft box"](https://github.com/erikleisinger/tweeter/raw/master/samples/hideandshow.gif
 )
 
 **Likes**! Users can show a tweet some love by pressing the heart beneath it
 
-!["likes"](./samples/likes.gif
+!["likes"](https://github.com/erikleisinger/tweeter/blob/master/samples/likes.gif
 )
 
 **Dynamic Error Messages**
-!["errors"](./samples/errors.gif
+!["errors"](https://github.com/erikleisinger/tweeter/raw/master/samples/errors.gif
 )
 
 **Finishing Touches**: Look around Tweeter for little bits of flare and pazaaz (notice the bouncing purple arrows?)
 
-!["arrowbounce"](./samples/arrowbounce.gif
+!["arrowbounce"](https://github.com/erikleisinger/tweeter/blob/master/samples/arrowbounce.gif
 )
 
 
