@@ -27,7 +27,7 @@ const createTweetElement = function(data) {
     <p>${escape(data.content.text)}</p>
     <footer>
       <div>Posted ${displayDate}</div>
-      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span class="likes"></span><i class="fas fa-heart"></i></button><button class="retweetPost tweet-button-unclicked"><span class="retweets"></span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
+      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span></span><i class="fas fa-heart"></i></button><button class="tweet-button-unclicked" ><span class="retweets"></span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
     </footer>
   </article>`;
 
@@ -35,20 +35,26 @@ const createTweetElement = function(data) {
 };
 
 
-const renderButtons = function() {
-  $('.likePost').click(function (event) {
+const renderButtons = function(tweet) {
+  $('#' + tweet.id).find('.likePost').click(function (event) {
     const divId = event.currentTarget.closest('.tweet').id;
 
     $.ajax(`/tweets/${divId}/like`, { method: 'POST' }).then((liked) => {
-
-      let tweet = $('#' + divId).find('.likes');
+  
       if (liked === true) {
-
-        $(this).addClass('tweet-button-clicked');
-        tweet.text('Liked');
+        
+        console.log('its liked');
+       
+        
+        $(this).removeClass('tweet-button-unclicked');
+       $(this).addClass('tweet-button-clicked');
+        $(this).find('span').text('Liked');
       } else if (liked === false) {
+        console.log('not liked')
+        
         $(this).removeClass('tweet-button-clicked');
-        tweet.text('');
+        $(this).addClass('tweet-button-unclicked');
+        $(this).find('span').text('');
       }
     });
 
@@ -56,7 +62,7 @@ const renderButtons = function() {
 
   // Tweet hover: show box-shadow and user @handle
   $('.tweet').on('mouseover', (event) => {
-    console.log('hover');
+   
     $(event.target).find('.handle').removeClass('hidden');
   });
   $('.tweet').on('mouseleave', (event) => {
@@ -67,15 +73,19 @@ const renderButtons = function() {
 
 const renderElements = function(array) {
   for (const tweet of array) {
-    $('.tweets-container').prepend(createTweetElement(tweet, tweet.retweeter, tweet.retweets));
+    $('.tweets-container').prepend(createTweetElement(tweet));
   }
 };
 
 const loadTweets = function () {
   $.ajax('/tweets', { method: 'GET' }).then((tweets) => {
     renderElements(tweets);
-  }).then(() => {
-    renderButtons();
+    return tweets
+  }).then((tweets) => {
+    for (const tweet of tweets) {
+      renderButtons(tweet);
+    }
+    
   });
 };
 
@@ -102,11 +112,12 @@ $(document).ready(() => {
       let textarea = $(event.currentTarget).serialize();
 
       $.post('/tweets', textarea).then((tweet) => {
-        console.log(`this is the tweet I got back: ${JSON.stringify(tweet)}`);
+        
         $('.tweets-container').prepend(createTweetElement(tweet));
         $(event.currentTarget).find('textarea').val('');
-      }).then(() => {
-        renderButtons();
+        return tweet;
+      }).then((tweet) => {
+        renderButtons(tweet);
       });
     }
 
