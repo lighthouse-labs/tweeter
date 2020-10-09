@@ -39,7 +39,6 @@ body {
 
  @media only screen and (max-width: 1024px) {
   .tweetsContainer {
-    
     width: 95%;
     margin: auto;
   }

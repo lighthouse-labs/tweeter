@@ -50,10 +50,23 @@ article.tweet {
   align-items: center;
   justify-content: space-between;
   max-width: 50%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+ 
 
   span {
     margin-left: 0.5em;
     color: $tweeter-border;
+  }
+  .retweeter {
+    width: 95%;
+    margin-left: 1em;
+    margin-bottom: 0.3em;
+    font-size: 0.5em;
+    i {
+      color: $tweeter-purple;
+      margin-right: 0.5em;
+    }
   }
 }
 
@@ -64,19 +77,26 @@ article.tweet {
 
 .tweet-buttons {
   margin-right: 1em;
-
+  .retweets {
+    color: $tweeter-blue;
+  }
   button {
     border: none;
     outline: none;
-    i{
-      margin-left: 0.5em;
+    background-color: none;
+    
+    i {
+      margin-left: 0.7em;
       color: inherit;
+      background-color: none;
+      
+
       &:hover {
         color: $tweeter-orange;
       }
+
       }
-  
-      
+
       span {
         color: $tweeter-orange;
       }

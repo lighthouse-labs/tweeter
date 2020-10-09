@@ -48,7 +48,8 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <span><button type="button" class="newTweetButton"><b>Write</b> a new tweet <br> <i class="fas fa-angle-double-down" style="margin-top: 0.3em"></i></button></span>
+    <span><button type="button" class="newTweetButton"><b>Write</b> a new tweet <br> <i class="fas fa-angle-double-down"
+          style="margin-top: 0.3em"></i></button></span>
   </nav>
   <header>
     <div>
@@ -63,11 +64,11 @@
   <main class="tweetsContainer">
     <section class="new-tweet">
       <div class="error"></div>
-      <div class="tweetHeader"><span>
+      <header><span>
           <h2>Compose Tweet</h2>
         </span><span class="exitTweet">
           <h3>x</h3>
-        </span></div>
+        </span></header>
       <form action="/tweets" method="POST" id="submit-tweet">
         <!-- <label for="tweet-text">What are you humming about?</label> -->
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>

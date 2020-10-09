@@ -3,11 +3,12 @@
 const userHelper = require("../lib/util/user-helper");
 
 const express = require('express');
+const { generateRandomUser } = require("../lib/util/user-helper");
 const tweetsRoutes = express.Router();
 
-module.exports = function (DataHelpers) {
+module.exports = function(DataHelpers) {
 
-  tweetsRoutes.get("/", function (req, res) {
+  tweetsRoutes.get("/", function(req, res) {
 
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
@@ -28,7 +29,7 @@ module.exports = function (DataHelpers) {
 
 
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
-    const id = Math.floor(Math.random() * 1000000);
+    const id = Math.floor(Math.random() * 1000000).toString();
 
     const tweet = {
       user: user,
@@ -36,7 +37,7 @@ module.exports = function (DataHelpers) {
         text: req.body.text
       },
       id: id,
-      original: null,
+      original: id,
       created_at: Date.now(),
       liked: false,
       retweets: 0,
@@ -62,10 +63,20 @@ module.exports = function (DataHelpers) {
 
         res.status(500).json({ error: err.message });
       } else {
-
         res.status(201).send(liked);
       }
     });
+  });
+
+  tweetsRoutes.post("/:id/retweet", function (req, res) {
+    DataHelpers.retweet(req.params.id, (err, data) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send(data);
+      }
+    }) 
+    
   });
 
 

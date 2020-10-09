@@ -1,8 +1,8 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone. It demonstrates my ability to design a social media page (a la Twitter).
+Tweeter is a simple, single-page Twitter clone that's user-friendly, visually dynamic, and responsive. 
 
-Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Express, JSON) skills were required for this project to be user-friendly, visually dynamic, and responsive. 
+Tweeter is built using HTML, CSS, SASS, JavaScript, jQuery and AJAX for front-end, and Node, Express, and MongoDB for the back-end. 
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Exp
 
 ### **Responsive Design**
  Tweeter's mostly-fluid visual design automatically scales to any size computer, tablet or smartphone screen. 
-!["responsive design"](https://github.com/erikleisinger/tweeter/blob/master/samples/responsive-design.gif
+!["responsive design"](https://github.com/erikleisinger/tweeter/raw/master/samples/responsive-design.gif
 )
 
 ### **Ease-of-Use**

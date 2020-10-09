@@ -12,14 +12,18 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-const createTweetElement = function(data) {
+const createTweetElement = function (data) {
   const date = new Date(data.created_at);
   const displayDate = moment(date).fromNow();
   let $tweet =
     `<article class="tweet" id="${data.id}"> 
      <header>
-     <div class="user">
-      <img src='${data.user.avatars}' alt="${data.user.name}'s avatar">
+    
+     <div class="user">`
+     if (data.retweeter) {
+     $tweet += `<div class="retweeter"> <i class="fas fa-retweet"></i>  retweeted by ${data.retweeter.name}</div>`
+     }
+      $tweet += `<img src='${data.user.avatars}' alt="${data.user.name}'s avatar">
         <span>${data.user.name}</span>
       </div>
       <div class="handle hidden">${data.user.handle}</div>
@@ -27,7 +31,7 @@ const createTweetElement = function(data) {
     <p>${escape(data.content.text)}</p>
     <footer>
       <div>Posted ${displayDate}</div>
-      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span></span><i class="fas fa-heart"></i></button><button class="tweet-button-unclicked" ><span class="retweets"></span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
+      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span></span><i class="fas fa-heart"></i></button><button class="retweetPost tweet-button-unclicked" ><span class="retweets">${data.retweets}</span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
     </footer>
   </article>`;
 
@@ -35,34 +39,57 @@ const createTweetElement = function(data) {
 };
 
 
-const renderButtons = function(tweet) {
+const renderButtons = function (tweet) {
   $('#' + tweet.id).find('.likePost').click(function (event) {
     const divId = event.currentTarget.closest('.tweet').id;
-
+    console.log('like')
     $.ajax(`/tweets/${divId}/like`, { method: 'POST' }).then((liked) => {
-  
+
       if (liked === true) {
-        
-        console.log('its liked');
-       
-        
+
         $(this).removeClass('tweet-button-unclicked');
-       $(this).addClass('tweet-button-clicked');
+        $(this).addClass('tweet-button-clicked');
         $(this).find('span').text('Liked');
       } else if (liked === false) {
-        console.log('not liked')
-        
+
+
         $(this).removeClass('tweet-button-clicked');
         $(this).addClass('tweet-button-unclicked');
         $(this).find('span').text('');
       }
     });
+    
+  });
+
+  $('#' + tweet.id).find('.retweetPost').click(function (event) {
+    const divId = event.currentTarget.closest('.tweet').id;
+    $.ajax(`/tweets/${divId}/retweet`, { method: 'POST' }).then((data) => {
+      const retweet = data.retweet;
+      
+      $('.tweets-container').prepend(createTweetElement(retweet));
+
+      const tweetArray = data.tweetArray;
+      const retweets = data.retweetCount;
+    
+      
+      for (const tweet of tweetArray) {
+        $('#' + tweet).find('.retweets').text(retweets);
+      }
+
+      return retweet;
+
+    }).then((retweet) => {
+      renderButtons(retweet)
+    });
+
+      
+
 
   });
 
   // Tweet hover: show box-shadow and user @handle
   $('.tweet').on('mouseover', (event) => {
-   
+
     $(event.target).find('.handle').removeClass('hidden');
   });
   $('.tweet').on('mouseleave', (event) => {
@@ -71,7 +98,7 @@ const renderButtons = function(tweet) {
 
 };
 
-const renderElements = function(array) {
+const renderElements = function (array) {
   for (const tweet of array) {
     $('.tweets-container').prepend(createTweetElement(tweet));
   }
@@ -85,7 +112,7 @@ const loadTweets = function () {
     for (const tweet of tweets) {
       renderButtons(tweet);
     }
-    
+
   });
 };
 
@@ -112,7 +139,7 @@ $(document).ready(() => {
       let textarea = $(event.currentTarget).serialize();
 
       $.post('/tweets', textarea).then((tweet) => {
-        
+
         $('.tweets-container').prepend(createTweetElement(tweet));
         $(event.currentTarget).find('textarea').val('');
         return tweet;
