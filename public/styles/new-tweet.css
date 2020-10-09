@@ -1,25 +1,37 @@
 .new-tweet {
-  display:none;
+  display: none;
 }
 
-.exitTweet {
-  margin-right: 2em;
+.new-tweet header {
+  background-color: inherit;
+  background-image: unset;
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.new-tweet header .exitTweet {
+  margin-right: 1.5em;
   font-size: 1em;
   opacity: 0.5;
   line-height: unset;
 }
 
-.tweetHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-form {
-  width: 100%
+.new-tweet form {
+  width: 100%;
 }
 
-form textarea#tweet-text {
-  width: inherit;
+.new-tweet form textarea {
   border: none;
   background-color: inherit;
   border-bottom: 3px solid black;
@@ -28,25 +40,33 @@ form textarea#tweet-text {
 }
 
 form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 form div button {
   background-color: #4056A1;
-  border-image: none;
+  -o-border-image: none;
+     border-image: none;
   border: none;
   font-family: "bungee";
   color: #FFFFFF;
   padding: 0.2em;
 }
+
 form div output {
   font-family: "bungee";
 }
 
 .lower-bar > div {
   dispay: flex;
-  justify-content: flex-end
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .counter-red {
@@ -56,8 +76,8 @@ form div output {
 #charactersExceeded {
   margin-right: 1em;
   color: red;
-  
 }
+
 .error {
   display: none;
   margin-top: 0.5em;
@@ -68,9 +88,11 @@ form div output {
   border: 4px solid red;
   padding: 5px;
 }
+
 .error span {
   margin: 0em 1em;
 }
+
 .hidden {
   display: none;
 }
@@ -78,3 +100,4 @@ form div output {
 .backgroundError {
   background-color: #ffcccb;
 }
+/*# sourceMappingURL=new-tweet.css.map */

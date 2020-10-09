@@ -1,0 +1,99 @@
+@import 'colors', 'mixins';
+
+article.tweet {
+  border: 5px solid #545149;
+  margin-top: 1em;
+  padding: 1em;
+
+  &:hover {
+    box-shadow: 0.5em 0.5em #c5cae3;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+   justify-content: space-between;
+    height: 100px;
+    background-image: none;
+    background-color: $tweeter-background;
+    font-size: 1.5em;
+    color: gray;
+    width: 100%;
+  
+    margin-left: 0;
+  }
+
+  p {
+    margin-bottom: 0.3em;
+    border-bottom: 5px solid #545149;
+    padding: 0.5em;
+    overflow-wrap: break-word;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.75em;
+    height: 20px;
+
+    div {
+      margin-left: 1em;
+      font-style: italic;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 50%;
+
+  span {
+    margin-left: 0.5em;
+    color: $tweeter-border;
+  }
+}
+
+.handle {
+  color: $tweeter-shadow;
+  margin-right: 0.5em;
+}
+
+.tweet-buttons {
+  margin-right: 1em;
+
+  button {
+    border: none;
+    outline: none;
+    i{
+      margin-left: 0.5em;
+      color: inherit;
+      &:hover {
+        color: $tweeter-orange;
+      }
+      }
+  
+      
+      span {
+        color: $tweeter-orange;
+      }
+    
+  }
+  
+}
+.tweet-button-clicked {
+  color: $tweeter-orange;
+  animation: click 1s;
+}
+.tweet-button-unclicked {
+  color: $tweeter-blue;
+}
+
+@keyframes click {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.3)}
+  100% {transform: scale(1)}
+}

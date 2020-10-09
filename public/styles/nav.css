@@ -15,19 +15,19 @@ nav {
 }
 
 nav button {
-  background-color: black;
-  border: none;
+  border: 0;
+  background-color: #4056A1;
   color: #FFFFFF;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-nav span:first-child {
-  font-family: "Bungee";
+nav button:focus {
+  outline: none;
 }
 
-nav button:focus {
-  outline: 0;
+nav span:first-child {
+  font-family: "Bungee";
 }
 
 .arrowToTop {

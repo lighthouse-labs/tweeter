@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,EAAE;EACf,UAAU,EAAE,KAAK;EACjB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,gBAAgB,ECXD,OAAO;EDYtB,gBAAgB,EAAE,8DAA8D;CAEjF;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EACvC,AAAA,MAAM,CAAC;IACL,KAAK,EAAE,IAAI;IACX,WAAW,EAAE,CAAC;IACd,UAAU,EAAE,KAAK;GAClB",
+    "sources": [
+        "../../server/sass/header.scss",
+        "../../server/sass/_colors.scss"
+    ],
+    "names": [],
+    "file": "header.css"
+}

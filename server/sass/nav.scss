@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'colors', 'mixins';
 
 nav {
   position: fixed;
@@ -12,18 +12,13 @@ nav {
   padding: 1.5em;
 
   button {
-    background-color: black;
-    border: none;
-    color: #FFFFFF;
+    @include button;
     align-self: flex-end;
   }
-}
-nav span:first-child {
-  font-family: "Bungee";
-}
 
-nav button:focus {
-  outline: 0;
+  span:first-child {
+    font-family: "Bungee";
+  }
 }
 
 .arrowToTop {
@@ -34,21 +29,22 @@ nav button:focus {
   bottom: 1.5em;
   color: $tweeter-purple;
   transition: color 0.1s;
-}
-.arrowToTop:hover {
-  color: $tweeter-orange;
+
+  &:hover {
+    color: $tweeter-orange;
+  }
 }
 
 .fa-angle-double-down {
   color: $tweeter-purple;
   animation: bounce 1s infinite;
   transition: color 0.1s;
-}
-.fa-angle-double-down:hover {
-  color: $tweeter-orange;
-  animation: bounce 1s infinite;
-}
 
+  &:hover {
+    color: $tweeter-orange;
+    animation: bounce 1s infinite;
+  }
+}
 @keyframes bounce {
   0% {transform: translateY(0px)}
   50% {transform: translateY(3px)}

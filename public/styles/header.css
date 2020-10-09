@@ -3,13 +3,21 @@ header {
   width: 30%;
   margin-left: 5%;
   margin-top: 225px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #FFD133;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-
 }
 
 @media only screen and (max-width: 1024px) {
@@ -19,4 +27,4 @@ header {
     margin-top: 120px;
   }
 }
-
+/*# sourceMappingURL=header.css.map */
