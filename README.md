@@ -36,12 +36,12 @@ Both front-end (HTML, CSS, JavaScript, jQuery and AJAX) and back-end  (Node, Exp
 
 
 **Hide and Collapse the draft window**
-!["hide and show draft box"](samples/hideandshow.gif
+!["hide and show draft box"](https://github.com/erikleisinger/tweeter/raw/master/samples/hideandshow.gif
 )
 
 **Likes**! Users can show a tweet some love by pressing the heart beneath it
 
-!["likes"](samples/likes.gif
+!["likes"](https://github.com/erikleisinger/tweeter/raw/master/samples/likes.gif
 )
 
 **Dynamic Error Messages**
