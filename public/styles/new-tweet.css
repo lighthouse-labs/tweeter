@@ -1,0 +1,25 @@
+.new-tweet {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%
+}
+
+button {
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: #ffffff;
+}
+
+textarea {
+  border-bottom: #4056A1;
+  border-bottom-style: solid;
+  width: 100%;
+}
+
+.submit-tweet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
