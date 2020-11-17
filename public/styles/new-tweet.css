@@ -1,8 +1,9 @@
-.new-tweet {
+.new-tweet, .all-tweets {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 90%
+  width: 90%;
+  padding-bottom: 2%;
 }
 
 button {
@@ -21,4 +22,30 @@ button {
   justify-content: space-between;
 }
 
+.all-tweets header, .all-tweets footer {
+  display: flex;
+  justify-content: space-between;
+}
 
+.all-tweets {
+  border: 5px solid black;
+  padding: 2%;
+}
+
+.all-tweets footer p {
+  font-size: medium;
+}
+
+.tweet-user {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tweet-user img {
+  width: 75px;
+}
+
+.username {
+  color: #4056A1;
+  opacity: 30%;
+}
