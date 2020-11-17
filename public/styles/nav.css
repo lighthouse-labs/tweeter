@@ -8,20 +8,17 @@ nav {
   padding: 1.5em;
  }
 
- nav span {
-  display: flex;
+.logo {
   font-family: 'Bungee', cursive;
  }
 
- .double-down {
-   display: flex;
-   align-items: center;
-   font-size:48px;
-   color:red;
+ .fa {
+  font-size: 48px;
+  color: red
  }
 
- .right-nav {
+ .write-a-tweet {
    display: flex;
-   justify-content: center;
-   align-self: center;
+   flex-direction: column;
+   align-items: center;
  }
