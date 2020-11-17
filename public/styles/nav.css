@@ -6,6 +6,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
  }
 
 .logo {
