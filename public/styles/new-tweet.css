@@ -12,8 +12,6 @@ button {
 }
 
 textarea {
-  border-bottom: #4056A1;
-  border-bottom-style: solid;
   width: 100%;
 }
 
@@ -22,4 +20,3 @@ textarea {
   align-items: center;
   justify-content: space-between;
 }
-
