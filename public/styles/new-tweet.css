@@ -27,9 +27,10 @@ button {
   justify-content: space-between;
 }
 
-.all-tweets {
+.all-tweets article{
   border: 5px solid black;
   padding: 2%;
+  margin-bottom: 2%;
 }
 
 .all-tweets footer p {
@@ -55,11 +56,11 @@ i {
   display: none;
 }
 
-.all-tweets:hover {
+.all-tweets article:hover {
   box-shadow: 5px 10px rgba(64, 86, 161, .7);
 }
 
-.all-tweets:hover article .username{
+.all-tweets article:hover .username{
   display: block;
   color: #4056A1;
   opacity: 70%;
