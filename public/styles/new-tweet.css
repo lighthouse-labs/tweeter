@@ -42,7 +42,9 @@ button {
 }
 
 .tweet-user img {
-  width: 75px;
+  width: 26px;
+  height: 26px;
+  align-self: center;
 }
 
 i {
@@ -52,7 +54,6 @@ i {
 .username {
   display: none;
 }
-
 
 .all-tweets:hover {
   box-shadow: 5px 10px rgba(64, 86, 161, .7);
