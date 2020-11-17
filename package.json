@@ -1,22 +1,39 @@
 {
   "name": "tweeter",
   "version": "1.0.0",
-  "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz",
+  "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skills",
   "main": "server/index.js",
+  "engines": {
+    "node": "12.18.4",
+    "npm": "6.14.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lighthouse-labs/tweeter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lighthouse-labs/tweeter/issues"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
+    "server": "nodemon --inspect server/index.js",
+    "client": "browser-sync start -s public -w --no-open",
+    "local": "npm-run-all --parallel client server",
+    "docker:init": "docker-compose up --build --force-recreate",
+    "docker:start": "docker-compose start",
+    "docker:halt": "docker-compose stop",
+    "docker:destroy": "docker-compose down -v"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "chance": "^1.0.2",
-    "express": "^4.13.4",
-    "md5": "^2.1.0"
+    "chance": "^1.1.7",
+    "express": "^4.17.1",
+    "md5": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "browser-sync": "^2.26.12",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
   }
 }
