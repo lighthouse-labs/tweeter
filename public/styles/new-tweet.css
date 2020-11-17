@@ -45,7 +45,21 @@ button {
   width: 75px;
 }
 
-.username {
+i {
   color: #4056A1;
-  opacity: 30%;
+}
+
+.username {
+  display: none;
+}
+
+
+.all-tweets:hover {
+  box-shadow: 5px 10px rgba(64, 86, 161, .7);
+}
+
+.all-tweets:hover .username{
+  display: block;
+  color: #4056A1;
+  opacity: 70%;
 }
