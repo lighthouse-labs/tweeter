@@ -59,8 +59,13 @@ i {
   box-shadow: 5px 10px rgba(64, 86, 161, .7);
 }
 
-.all-tweets:hover .username{
+.all-tweets:hover article .username{
   display: block;
   color: #4056A1;
   opacity: 70%;
+}
+
+textarea {
+  background-color: transparent;
+  border: none;
 }
