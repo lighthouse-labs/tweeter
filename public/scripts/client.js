@@ -32,10 +32,22 @@ $(document).ready(function() {
     }
   ]
 
+  // Prevent default of form & set up request
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    $
+      .ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $('form').serialize()
+      })
+
+  });
+
   // Render tweet
   const renderTweets = function(tweets) {
-    const $addTweet = 
-    `${tweets.map(tweet => createTweetElement(tweet)).join("")}`;
+    const $addTweet = `${tweets.map(tweet => createTweetElement(tweet)).join("")}`;
     $('.all-tweets').append($addTweet);
   }
 
