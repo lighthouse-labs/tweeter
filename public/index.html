@@ -29,6 +29,9 @@
     <!-- Tweet Icons Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
+    <!-- Moment to convert Unix to Time -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -65,6 +68,16 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error-140">
+          <i class="fas fa-exclamation"></i>
+          <p>Too Long! Words are powerful, choose them wisely</p>
+          <i class="fas fa-exclamation"></i>
+        </div>
+        <div class="error-0">
+          <i class="fas fa-exclamation"></i>
+          <p>Too Short! Tweet Again</p>
+          <i class="fas fa-exclamation"></i>
+        </div>
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <!-- <label for="tweet-text">What are you humming about?</label> -->
@@ -76,11 +89,8 @@
           </div>
         </form>
       </section>
-
-      <section class="all-tweets">
-      </section>
+      <section class="all-tweets"></section>
     </main>
-
     <!-- Counter JS -->
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
   </body>
