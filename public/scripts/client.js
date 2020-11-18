@@ -14,7 +14,7 @@ $(document).ready(function() {
           <p>${tweet.user.name}</p>
         </div>
         <div>
-          <p class="username">${tweet.handle}</p>
+          <p class="username">${tweet.user.handle}</p>
         </div>
       </header>
   
