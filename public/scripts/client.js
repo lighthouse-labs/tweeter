@@ -1,14 +1,20 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function() {
 
   // Prevent default of form & set up request
   $("form").submit(function(event) {
     event.preventDefault();
+
+    // Error handling
+    if ($("#tweet-text").val().length === 0 || $("#tweet-text").val() === null) {
+      alert("Please enter a valid tweet");
+      return;
+    }
+  
+    if ($("#tweet-text").val().length > 140) {
+      alert("Character limit exceeded");
+      return;
+    } 
+
     $
       .ajax({
         url: "/tweets",
