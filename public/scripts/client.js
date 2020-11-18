@@ -1,10 +1,16 @@
 $(document).ready(function() {
+  // escape function for Cross-Site Scripting
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   // Render tweet
   const renderTweets = function(tweets) {
     $('.all-tweets').empty();
     const $addTweet = `${tweets.map(tweet => createTweetElement(tweet)).join("")}`;
-    $('.all-tweets').prepend($addTweet);
+    $('.all-tweets').append($addTweet);
   }
 
   // Fetch tweets from http://localhost:8080/tweets
@@ -23,22 +29,22 @@ $(document).ready(function() {
     `<article>
       <header>
         <div class="tweet-user">
-          <img src= ${tweet.user.avatars}> 
-          <p>${tweet.user.name}</p>
+          <img src= ${escape(tweet.user.avatars)}> 
+          <p>${escape(tweet.user.name)}</p>
         </div>
         <div>
-          <p class="username">${tweet.user.handle}</p>
+          <p class="username">${escape(tweet.user.handle)}</p>
         </div>
       </header>
   
       <span>
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
         <hr>
       </span>
   
       <footer>
         <div>
-          <p>${tweet.created_at}</p>
+          <p>${moment(tweet.created_at).fromNow()}</p>
         </div>
         <div>
           <!-- This is a flag -->
@@ -76,6 +82,7 @@ $(document).ready(function() {
         data: $('form').serialize(),
       }).then(res => {
         $("#tweet-text").val('');
+        $(".counter").val(140);
         loadTweets();
       });
   });
