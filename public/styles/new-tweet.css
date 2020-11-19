@@ -14,6 +14,7 @@ button {
 
 #tweet-text {
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 .submit-tweet {
@@ -85,6 +86,7 @@ textarea {
   background-color: transparent;
   border: none;
 }
+
 
 .overCharLimit {
   color: red;
