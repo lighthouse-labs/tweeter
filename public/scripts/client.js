@@ -1,17 +1,27 @@
-$(document).ready(function() {
-  // escape function for Cross-Site Scripting
-  const escape =  function(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
+// Escape Function for Cross-Site Scripting
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
-  // Render tweet
-  const renderTweets = function(tweets) {
-    $('.all-tweets').empty();
-    const $addTweet = `${tweets.map(tweet => createTweetElement(tweet)).join("")}`;
-    $('.all-tweets').append($addTweet);
+// Render Tweets - newest first
+const renderTweets = function(tweets) {
+  $('.all-tweets').empty();
+  for (let tweet of tweets) {
+    $('.all-tweets').prepend(createTweetElement(tweet));
   }
+}
+
+// Slide down error message handler
+const slideDown = function(cls, tag, errMessage) {
+  $(cls).slideDown("slow", function() {
+    $(this).css('display', 'flex');
+    $(`${cls} ${tag}`).text(errMessage);
+  });
+}
+
+$(document).ready(function() {
 
   // Fetch tweets from http://localhost:8080/tweets
   const loadTweets = function() {
@@ -60,20 +70,22 @@ $(document).ready(function() {
     return newTweet;
   }
 
-   // Prevent default of form & set up request
-   $("form").submit(function(event) {
+    // Prevent default of form & set up request
+    $("form").submit(function(event) {
     event.preventDefault();
+    const tweet = $("#tweet-text").val();
 
-    // Error handling
-    if ($("#tweet-text").val().length === 0 || $("#tweet-text").val() === null) {
-      alert("Please enter a valid tweet");
+    //remove error message
+    $(".error").slideUp("slow");
+
+    // Error handling using slideDown function and slideDown jQuery
+    if (!tweet) {
+      slideDown(".error", "p", "Invalid Tweet! Please Tweet Again");
+      return;
+    } else if (tweet.length > 140){
+      slideDown(".error", "p", "Too Long! Words are Important, Choose Them Wisely");
       return;
     }
-  
-    if ($("#tweet-text").val().length > 140) {
-      alert("Character limit exceeded");
-      return;
-    } 
 
     $
       .ajax({
@@ -86,4 +98,4 @@ $(document).ready(function() {
         loadTweets();
       });
   });
-});        
+});           
