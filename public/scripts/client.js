@@ -20,58 +20,61 @@ const showError = function(cls, tag, errMessage) {
   });
 }
 
+// Create tweet using template literal
+createTweetElement = function(tweet) {
+  const newTweet = 
+  `<article>
+    <header>
+      <div class="tweet-user">
+        <img src= ${escape(tweet.user.avatars)}> 
+        <p>${escape(tweet.user.name)}</p>
+      </div>
+      <div>
+        <p class="username">${escape(tweet.user.handle)}</p>
+      </div>
+    </header>
+
+    <span>
+      <p>${escape(tweet.content.text)}</p>
+      <hr>
+    </span>
+
+    <footer>
+      <div>
+        <p>${moment(tweet.created_at).fromNow()}</p>
+      </div>
+      <div>
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+      </div>
+    </footer>
+  </article> `;
+
+  return newTweet;
+}
+
+// Fetch tweets from http://localhost:8080/tweets
+const loadTweets = function() {
+  $
+    .ajax({
+      url: "/tweets",
+      method: "GET",
+    })
+    .then(res => renderTweets(res));
+};
+
+
 $(document).ready(function() {
+    // Load default tweets
+    loadTweets();
 
-  // Toggle tweet form on click of nav button
-  $("#pointer").click(function() {
-    $(".new-tweet form").slideToggle( "slow", function() {
-      $(".new-tweet").css('display', 'flex');
-    });;
-  });
-
-  // Fetch tweets from http://localhost:8080/tweets - move this out
-  const loadTweets = function() {
-    $
-      .ajax({
-        url: "/tweets",
-        method: "GET",
-      })
-      .then(res => renderTweets(res));
-  };
-
-  // Create tweet using template literal - move outside
-  createTweetElement = function(tweet) {
-    const newTweet = 
-    `<article>
-      <header>
-        <div class="tweet-user">
-          <img src= ${escape(tweet.user.avatars)}> 
-          <p>${escape(tweet.user.name)}</p>
-        </div>
-        <div>
-          <p class="username">${escape(tweet.user.handle)}</p>
-        </div>
-      </header>
-  
-      <span>
-        <p>${escape(tweet.content.text)}</p>
-        <hr>
-      </span>
-  
-      <footer>
-        <div>
-          <p>${moment(tweet.created_at).fromNow()}</p>
-        </div>
-        <div>
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
-        </div>
-      </footer>
-    </article> `;
-  
-    return newTweet;
-  }
+    // Toggle tweet form on click of nav button
+    $("#pointer").click(function() {
+      $(".new-tweet form").slideToggle( "slow", function() {
+        $(".new-tweet").css('display', 'flex');
+      });;
+    });
 
     // Prevent default of form & set up request
     $("form").submit(function(event) {
@@ -102,5 +105,6 @@ $(document).ready(function() {
         $(".counter").val(140);
         loadTweets();
       });
+
   });
 });
