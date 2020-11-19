@@ -29,13 +29,23 @@ nav {
  #pointer {
    border: none;
    background: transparent;
+   padding-right: 1em;
+   padding-left: 1em;
  }
 
  #pointer:hover {
    padding-top: .5em;
  }
 
- @media only screen and (min-width: 768px) and (max-width: 1024px){
+ #pointer:focus {
+   outline: 0;
+ }
+
+ .hide-form {
+   display: none;
+ }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
   nav {
     background-color: #A18B40;
   }
