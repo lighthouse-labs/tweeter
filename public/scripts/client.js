@@ -25,15 +25,15 @@ $(document).ready(function() {
 
   // Fetch tweets from http://localhost:8080/tweets
   const loadTweets = function() {
-      $
-        .ajax({
-          url: "/tweets",
-          method: "GET",
-        })
-        .then(res => renderTweets(res));
+    $
+      .ajax({
+        url: "/tweets",
+        method: "GET",
+      })
+      .then(res => renderTweets(res));
   };
 
-  // Create tweet
+  // Create tweet using template literal
   createTweetElement = function(tweet) {
     let newTweet = 
     `<article>
@@ -72,10 +72,12 @@ $(document).ready(function() {
 
     // Prevent default of form & set up request
     $("form").submit(function(event) {
+
     event.preventDefault();
+
     const tweet = $("#tweet-text").val();
 
-    //remove error message
+    // Remove previous error message on submit
     $(".error").slideUp("slow");
 
     // Error handling using slideDown function and slideDown jQuery
@@ -98,4 +100,4 @@ $(document).ready(function() {
         loadTweets();
       });
   });
-});           
+});
