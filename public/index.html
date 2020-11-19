@@ -32,12 +32,6 @@
     <!-- Moment to convert Unix to Time -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="scripts/client.js"></script>
-
     <!-- Disable  Viewport Viewing -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
@@ -47,7 +41,6 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <!-- <span><strong>Write</strong> a new tweet</span> -->
       <div class="write-a-tweet">
         <span>
           <p><strong>Write</strong> a new tweet</p>
@@ -59,7 +52,6 @@
         </span>
       </div>
     </nav>
-
     <header class="main-header">
       <div>
           <img class="icon" src="images/profile-hex.png"> 
@@ -69,17 +61,17 @@
           <p><strong>Your</strong> Name</p>
       </div>
   </header>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <div class="error">
-          <i class="fas fa-exclamation"></i>
-          <p id="#bad-tweet"></p>
-          <i class="fas fa-exclamation"></i>
+          <div class="flex">
+            <i class="fas fa-exclamation"></i>
+            <p id="#bad-tweet"></p>
+            <i class="fas fa-exclamation"></i>
+          </div>
         </div>
-        <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
+        <form action="/tweets" method="POST" class="hide-form">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <hr>
           <div class="submit-tweet">
@@ -92,5 +84,11 @@
     </main>
     <!-- Counter JS -->
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="scripts/client.js"></script>
   </body>
 </html>
