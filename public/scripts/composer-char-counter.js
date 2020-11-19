@@ -6,7 +6,10 @@ $(document).ready(function() {
     $(counter).val(text);
     
     if (text < 0) {
-      $(counter).css("color", "red");
+      $(counter).addClass("overCharLimit");
+      return;
+    } else {
+      $(counter).removeClass("overCharLimit");
     }
   });
 });
