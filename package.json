@@ -8,7 +8,7 @@
     "start": "node server/index.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },
-  "author": "Lighthouse Labs",
+  "author": "Laura Tannahill at Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
