@@ -3,11 +3,12 @@
   justify-content: center;
   flex-direction: column;
   width: 90%;
-  padding-bottom: 2%;
+  padding-top: 5%;
+  padding-bottom: 4%;
   overflow-wrap: break-word;
 }
 
-button {
+.submit-tweet button {
   font-family: 'Bungee', cursive;
   background-color: #4056A1;
   color: #ffffff;
@@ -93,4 +94,10 @@ textarea {
 
 .name {
   color: #f4f1ec;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
