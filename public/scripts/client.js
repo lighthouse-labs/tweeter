@@ -5,7 +5,7 @@ const escape =  function(str) {
   return div.innerHTML;
 }
 
-// Render Tweets - newest first
+// Render tweets - display newest first
 const renderTweets = function(tweets) {
   $('.all-tweets').empty();
   for (let tweet of tweets) {
@@ -13,8 +13,8 @@ const renderTweets = function(tweets) {
   }
 }
 
-// Slide down error message handler
-const slideDown = function(cls, tag, errMessage) {
+// Error message handler (jQuery slideDown transformation)
+const showError = function(cls, tag, errMessage) {
   $(cls).slideDown("slow", function() {
     $(this).css('display', 'flex');
     $(`${cls} ${tag}`).text(errMessage);
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
   // Create tweet using template literal
   createTweetElement = function(tweet) {
-    let newTweet = 
+    const newTweet = 
     `<article>
       <header>
         <div class="tweet-user">
@@ -57,11 +57,8 @@ $(document).ready(function() {
           <p>${moment(tweet.created_at).fromNow()}</p>
         </div>
         <div>
-          <!-- This is a flag -->
           <i class="fas fa-flag"></i>
-          <!-- This is a retweet -->
           <i class="fas fa-retweet"></i>
-          <!-- This is a heart -->
           <i class="fas fa-heart"></i>
         </div>
       </footer>
@@ -77,15 +74,15 @@ $(document).ready(function() {
 
     const tweet = $("#tweet-text").val();
 
-    // Remove previous error message on submit
+    // Remove previous error message on submission of new tweet
     $(".error").slideUp("slow");
 
-    // Error handling using slideDown function and slideDown jQuery
+    // Error handling with showError function
     if (!tweet) {
-      slideDown(".error", "p", "Invalid Tweet! Please Tweet Again");
+      showError(".error", "p", "Invalid Tweet! Please Tweet Again");
       return;
     } else if (tweet.length > 140){
-      slideDown(".error", "p", "Too Long! Words are Important, Choose Them Wisely");
+      showError(".error", "p", "Too Long! Words are Important, Choose Them Wisely");
       return;
     }
 

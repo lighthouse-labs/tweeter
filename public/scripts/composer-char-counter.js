@@ -7,7 +7,6 @@ $(document).ready(function() {
     
     if (text < 0) {
       $(counter).addClass("overCharLimit");
-      return;
     } else {
       $(counter).removeClass("overCharLimit");
     }
