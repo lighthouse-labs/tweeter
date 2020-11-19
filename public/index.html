@@ -68,14 +68,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <div class="error-140">
+        <div class="error">
           <i class="fas fa-exclamation"></i>
-          <p>Too Long! Words are powerful, choose them wisely</p>
-          <i class="fas fa-exclamation"></i>
-        </div>
-        <div class="error-0">
-          <i class="fas fa-exclamation"></i>
-          <p>Too Short! Tweet Again</p>
+          <p id="#bad-tweet"></p>
           <i class="fas fa-exclamation"></i>
         </div>
         <h2>Compose Tweet</h2>
@@ -83,7 +78,7 @@
           <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <hr>
-          <div class = "submit-tweet">
+          <div class="submit-tweet">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
