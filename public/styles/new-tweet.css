@@ -52,6 +52,21 @@ i {
   color: #4056A1;
 }
 
+.fa-exclamation{
+  color: red;
+}
+
+.error {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px solid red;
+  color: red;
+  display: none;
+}
+
 .username {
   display: none;
 }
