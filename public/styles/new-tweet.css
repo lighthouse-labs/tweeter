@@ -101,3 +101,9 @@ textarea {
   justify-content: space-around;
   align-items: center;
 }
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    padding-top: 130px;
+  }
+}
