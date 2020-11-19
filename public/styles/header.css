@@ -18,3 +18,16 @@
   padding-top: 15%;
 }
 
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    margin-left: 2em;
+    margin-right: 2em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 130px;
+  }
+}
