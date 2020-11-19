@@ -15,15 +15,21 @@ const renderTweets = function(tweets) {
 
 // Error message handler (jQuery slideDown transformation)
 const showError = function(cls, tag, errMessage) {
+  $(`${cls} ${tag}`).text(errMessage);
   $(cls).slideDown("slow", function() {
-    $(this).css('display', 'flex');
-    $(`${cls} ${tag}`).text(errMessage);
   });
 }
 
 $(document).ready(function() {
 
-  // Fetch tweets from http://localhost:8080/tweets
+  // Toggle tweet form on click of nav button
+  $("#pointer").click(function() {
+    $(".new-tweet form").slideToggle( "slow", function() {
+      $(".new-tweet").css('display', 'flex');
+    });;
+  });
+
+  // Fetch tweets from http://localhost:8080/tweets - move this out
   const loadTweets = function() {
     $
       .ajax({
@@ -33,7 +39,7 @@ $(document).ready(function() {
       .then(res => renderTweets(res));
   };
 
-  // Create tweet using template literal
+  // Create tweet using template literal - move outside
   createTweetElement = function(tweet) {
     const newTweet = 
     `<article>
