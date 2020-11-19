@@ -85,3 +85,7 @@ textarea {
   background-color: transparent;
   border: none;
 }
+
+.overCharLimit {
+  color: red;
+}
