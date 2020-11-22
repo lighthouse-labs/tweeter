@@ -15,9 +15,8 @@ form {
   flex-direction: column;
 }
 
-form h3 {
+form error-box {
   color: #ff0000;
-  border-style: solid solid solid solid;
   text-align: center;
 }
 

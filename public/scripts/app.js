@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const maxLen = 140;
 
 $(document).ready(() => {
   loadtweets();
@@ -15,16 +16,15 @@ $(document).ready(() => {
 const listenForSubmit = function() {
   $('form').submit((event) => {
     event.preventDefault();
-    const maxLen = 140;
 
-    $('h3').slideUp();
+    $('error-box').slideUp();
 
     if ($('textarea').val().length === 0) {
-      $('h3').text("Your tweet is empty");
-      $('h3').slideDown();
+      $('error-box').text("Your tweet is empty");
+      $('error-box').slideDown();
     } else if ($('textarea').val().length > maxLen) {
-      $('h3').text(`Your tweet is too long, reduce it by: ${$('textarea').val().length - maxLen} characters.`);
-      $('h3').slideDown();
+      $('error-box').text(`Your tweet is too long, reduce it by: ${$('textarea').val().length - maxLen} characters.`);
+      $('error-box').slideDown();
     } else {
       $.ajax({
         url: '/tweets/',
@@ -34,11 +34,12 @@ const listenForSubmit = function() {
       .then(newTweet => {
         // tweet submitted successfully prepend new tweet to container
         $('#tweets-container').prepend(createTweetElement(newTweet));
+        $('#span_counter').text(maxLen);
         $('textarea').val('');
       })
       .fail(function(err) {
-        $('h3').text("Something happened.  Tweeter cannot accept your tweeter at the moment.");
-        $('h3').slideDown();
+        $('error-box').text("Something happened.  Tweeter cannot accept your tweeter at the moment.");
+        $('error-box').slideDown();
       });
     }
   });
@@ -94,15 +95,15 @@ const createFooter = function(footerObj) {
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 const renderTweets = function(tweets) {
-  let sortedTweets = tweets.sort((newer, older) => (newer.created < older.created) ? 1 : -1)
+  const sortedTweets = tweets.sort((newer, older) => (newer.created < older.created) ? 1 : -1)
   for (const item of sortedTweets) {
     const $tweet = createTweetElement(item);
     $('#tweets-container').prepend($tweet);
   }
-  $('h3').addClass('no-show-status');
+  $('error-box').addClass('no-show-status');
 };
 
-// call to load tweets; also used when a tweet is successfully submitted to refresh
+// call to load tweets on load
 const loadtweets = function() {
   $.ajax({
     url: '/tweets/',
@@ -113,14 +114,14 @@ const loadtweets = function() {
       // and error bars
       $(window).scrollTop(0);
       $('#tweets-container').empty();
-      $('#span_counter').val(140);
+      $('#span_counter').text(maxLen);
       $('#toggle-status').hide();
-      $('h3').hide();
+      $('error-box').hide();
       renderTweets(jsonTweets);
     })
   .fail((err) => {
-    $('h3').text("Something happened.  Tweeter cannot load your tweeters at the moment.");
-    $('h3').slideDown();
+    $('error-box').text("Something happened.  Tweeter cannot load your tweeters at the moment.");
+    $('error-box').slideDown();
   });
 };
 
