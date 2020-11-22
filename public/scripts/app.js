@@ -27,7 +27,7 @@ $(document).ready(() => {
       .then(function() {
         // tweet submitted successfully, reload all tweets from back-end server
         $('textarea').val('');
-        loadtweets();
+        // loadtweets();
       })
       .fail(function(err) {
         $('h3').text("Something happened.  Tweeter cannot accept your tweeter at the moment.");
