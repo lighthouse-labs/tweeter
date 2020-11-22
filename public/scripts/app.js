@@ -24,8 +24,9 @@ $(document).ready(() => {
         method: 'POST',
         data: $('textarea').serialize()
       })
-      .then(function() {
+      .then(newTweet => {
         // tweet submitted successfully, reload all tweets from back-end server
+        $('#tweets-container').prepend(createTweetElement(newTweet));
         $('textarea').val('');
         // loadtweets();
       })
@@ -126,7 +127,7 @@ $(document).ready(() => {
     let sortedTweets = tweets.sort((newer, older) => (newer.created < older.created) ? 1 : -1)
     for (const item of sortedTweets) {
       const $tweet = createTweetElement(item);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
     $('h3').addClass('no-show-status');
   };
