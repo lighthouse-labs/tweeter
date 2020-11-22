@@ -17,8 +17,6 @@ const listenForSubmit = function() {
   $('form').submit((event) => {
     event.preventDefault();
 
-    $('error-box').slideUp();
-
     if ($('textarea').val().length === 0) {
       $('error-box').text("Your tweet is empty");
       $('error-box').slideDown();
@@ -33,12 +31,13 @@ const listenForSubmit = function() {
       })
       .then(newTweet => {
         // tweet submitted successfully prepend new tweet to container
+        $('error-box').slideUp();
         $('#tweets-container').prepend(createTweetElement(newTweet));
         $('#span_counter').text(maxLen);
         $('textarea').val('');
       })
       .fail(function(err) {
-        $('error-box').text("Something happened.  Tweeter cannot accept your tweeter at the moment.");
+        $('error-box').text("Something happened. Tweeter cannot accept your tweeter at the moment.");
         $('error-box').slideDown();
       });
     }
