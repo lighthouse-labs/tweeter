@@ -36,8 +36,9 @@ const listenForSubmit = function() {
         $('#span_counter').text(maxLen);
         $('textarea').val('');
       })
-      .fail(function(err) {
+      .fail(error => {
         $('error-box').text("Something happened. Tweeter cannot accept your tweeter at the moment.");
+        console.log({ error });
         $('error-box').slideDown();
       });
     }
@@ -108,7 +109,7 @@ const loadtweets = function() {
     url: '/tweets/',
     method: 'GET'
   })
-    .then((jsonTweets) => {
+    .then(jsonTweets => {
       // define on load behaviour including reset container, tweet counter, and hide compose
       // and error bars
       $(window).scrollTop(0);
@@ -118,8 +119,9 @@ const loadtweets = function() {
       $('error-box').hide();
       renderTweets(jsonTweets);
     })
-  .fail((err) => {
-    $('error-box').text("Something happened.  Tweeter cannot load your tweeters at the moment.");
+  .fail(error => {
+    $('error-box').text(`Something happened. Tweeter cannot load your tweeters at the moment.`);
+    console.log({error});
     $('error-box').slideDown();
   });
 };
