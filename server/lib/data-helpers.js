@@ -4,6 +4,7 @@
 const simulateDelay = require("./util/simulate-delay");
 const { generateRandomUser } = require('./util/user-helper');
 
+
 // Defines helper functions for saving and getting tweets, using the database `db`
 module.exports = function makeDataHelpers(db) {
   return {
@@ -18,11 +19,26 @@ module.exports = function makeDataHelpers(db) {
     },
 
     // Get all tweets in `db`, sorted by newest first
-    getTweets: function (callback) {
+    getTweets: async function (callback) {
+      
+      
+        const tweets = await db.query(`
+        SELECT tweets.id, tweets.text, tweets.created_at, COUNT(likes.*) AS likes, COUNT(retweets.*) AS retweets, users.name, users.handle
+        FROM tweets
+        JOIN likes ON likes.tweet_id = tweets.id
+        JOIN retweets ON retweets.tweet_id = tweets.id
+        JOIN users ON users.id = tweets.user_id
+        GROUP BY tweets.id, users.name, users.handle;
+        `)
+        .then((res) => {
+          return res.rows;
+        }).catch((err) => {
+          console.log(err)
+        })
 
       simulateDelay(() => {
         const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
+        callback(null, tweets.sort(sortNewestFirst));
       });
     },
 

@@ -7,13 +7,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+const database = require('./pool');
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 
 // The in-memory database of tweets. It's a basic object with an array in it.
-const db = require("./lib/in-memory-db");
+const db = require("./pool");
 
 
 

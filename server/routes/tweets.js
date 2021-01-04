@@ -6,7 +6,15 @@ const express = require('express');
 const { generateRandomUser } = require("../lib/util/user-helper");
 const tweetsRoutes = express.Router();
 
+const database = require('../pool');
+
 module.exports = function(DataHelpers) {
+
+  tweetsRoutes.get('/test', function(req, res) {
+    database.query('SELECT NOW()', (err, res) => {
+      console.log(err, res) 
+    })
+  })
 
   tweetsRoutes.get("/", function(req, res) {
 
@@ -14,9 +22,7 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-
-        res.json(tweets);
-
+        res.send(tweets)
       }
     });
   });
