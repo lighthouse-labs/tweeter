@@ -3,19 +3,10 @@ header {
   width: 30%;
   margin-left: 5%;
   margin-top: 225px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #FFD133;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
@@ -24,7 +15,8 @@ header {
   header {
     width: 100%;
     margin-left: 0;
-    margin-top: 120px;
+    margin-top: 100px;
   }
 }
+
 /*# sourceMappingURL=header.css.map */

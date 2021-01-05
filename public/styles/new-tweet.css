@@ -1,36 +1,25 @@
 .new-tweet {
   display: none;
 }
-
 .new-tweet header {
   background-color: inherit;
   background-image: unset;
   height: 100px;
   width: 100%;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
 .new-tweet header .exitTweet {
   margin-right: 1.5em;
   font-size: 1em;
   opacity: 0.5;
   line-height: unset;
 }
-
 .new-tweet form {
   width: 100%;
 }
-
 .new-tweet form textarea {
   border: none;
   background-color: inherit;
@@ -40,18 +29,13 @@
 }
 
 form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 form div button {
   background-color: #4056A1;
-  -o-border-image: none;
-     border-image: none;
+  border-image: none;
   border: none;
   font-family: "bungee";
   color: #FFFFFF;
@@ -64,9 +48,7 @@ form div output {
 
 .lower-bar > div {
   dispay: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .counter-red {
@@ -100,4 +82,5 @@ form div output {
 .backgroundError {
   background-color: #ffcccb;
 }
+
 /*# sourceMappingURL=new-tweet.css.map */

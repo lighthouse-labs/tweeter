@@ -14,11 +14,8 @@ const escape = function (str) {
 
 const createTweetElement = function (data) {
   const date = new Date(data.created_at);
-  console.log(date)
   const displayDate = moment(date).fromNow();
-
-  console.log(data)
-
+  
   let $tweet = `
   <article class="tweet" id="${data.id}"> 
     <header>
