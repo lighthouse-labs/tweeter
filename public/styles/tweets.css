@@ -112,7 +112,7 @@ article.tweet footer div {
 }
 
 .tweet-buttons button i {
-  margin-left: 0.7em;
+  margin-left: 0.2em;
   color: inherit;
   background-color: none;
 }
@@ -121,9 +121,9 @@ article.tweet footer div {
   color: #FF3C38;
 }
 
-.tweet-buttons button span {
+/* .tweet-buttons button span {
   color: #FF3C38;
-}
+} */
 
 .tweet-button-clicked {
   color: #FF3C38;

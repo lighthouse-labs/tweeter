@@ -13,15 +13,8 @@ module.exports = {
     const lastName  = chance.last();
     const userName  = firstName + " " + lastName;
     
-    let userHandle = "@";
-    if (Math.random() > 0.5) {
-      let prefix    = chance.prefix({gender: gender});
-      prefix = prefix.replace(".", "");
-      userHandle += prefix
-    }
-
-    userHandle += lastName;
-
+    let userHandle = firstName + lastName;
+    
     if (Math.random() > 0.5) {
       const suffix = Math.round(Math.random() * 100);
       userHandle += suffix;
@@ -41,7 +34,7 @@ module.exports = {
     return {
       name: userName,
       handle: userHandle,
-      avatars: userAvatar
+      avatar: userAvatar
     };
   }
 };

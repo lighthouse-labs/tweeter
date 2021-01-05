@@ -14,26 +14,39 @@ const escape = function (str) {
 
 const createTweetElement = function (data) {
   const date = new Date(data.created_at);
+  console.log(date)
   const displayDate = moment(date).fromNow();
+
+  console.log(data)
 
   let $tweet = `
   <article class="tweet" id="${data.id}"> 
     <header>
      <div class="user">`;
-  if (data.retweeter) {
-    $tweet += `<div class="retweeter"> <i class="fas fa-retweet"></i>  retweeted by ${data.retweeter.name}</div>`;
-  }
-  $tweet += `<img src='${data.user.avatars}' alt="${data.user.name}'s avatar">
-        <span>${data.user.name}</span>
+  // if (data.retweeter) {
+  //   $tweet += `<div class="retweeter"> <i class="fas fa-retweet"></i>  retweeted by ${data.retweeter.name}</div>`;
+  // }
+  $tweet += `<img src='${data.avatar}' alt="${data.handle}'s avatar">
+        <span>${data.name}</span>
       </div>
-      <div class="handle hidden">${data.user.handle}</div>
+      <div class="handle hidden">@${data.handle}</div>
     </header>
-    <p>${escape(data.content.text)}</p>
+    <p>${escape(data.text)}</p>
     <footer>
       <div>Posted ${displayDate}</div>
-      <div class="tweet-buttons"><button class="likePost tweet-button-unclicked"><span></span><i class="fas fa-heart"></i></button><button class="retweetPost tweet-button-unclicked" ><span class="retweets">${
-        data.retweets
-      }</span><i class="fas fa-retweet"></i></button><button class="reportPost tweet-button-unclicked"><i class="fas fa-flag"></i></button></div>
+      <div class="tweet-buttons">
+        <button class="likePost tweet-button-unclicked">
+          <span>${data.likes}</span>
+          <i class="fas fa-heart"></i>
+        </button>
+        <button class="retweetPost tweet-button-unclicked" >
+          <span class="retweets">${data.retweets}</span>
+          <i class="fas fa-retweet"></i>
+        </button>
+        <button class="reportPost tweet-button-unclicked">
+          <i class="fas fa-flag"></i>
+        </button>
+      </div>
     </footer>
   </article>`;
 
@@ -44,19 +57,23 @@ const renderButtons = function (tweet) {
   $("#" + tweet.id)
     .find(".likePost")
     .click(function (event) {
-      const divId = event.currentTarget.closest(".tweet").id;
-      // const divId = tweet.id
-      console.log(divId);
-      console.log(tweet)
+      // const divId = event.currentTarget.closest(".tweet").id;
+      const divId = tweet.id
       $.ajax(`/tweets/${divId}/like`, { method: "POST" }).then((liked) => {
         if (liked === true) {
           $(this).removeClass("tweet-button-unclicked");
           $(this).addClass("tweet-button-clicked");
-          $(this).find("span").text("Liked");
+          let likes = Number($(this).find("span")[0].innerText)
+
+          likes += 1;
+
+          $(this).find("span")[0].innerText = likes;
         } else if (liked === false) {
           $(this).removeClass("tweet-button-clicked");
           $(this).addClass("tweet-button-unclicked");
-          $(this).find("span").text("");
+          let likes = Number($(this).find("span")[0].innerText)
+          likes -= 1;
+          $(this).find("span")[0].innerText = likes;
         }
       });
     });
@@ -105,6 +122,7 @@ const renderElements = function (array) {
 const loadTweets = function () {
   $.ajax("/tweets", { method: "GET" })
     .then((tweets) => {
+      console.log(tweets)
       renderElements(tweets);
       return tweets;
     })
@@ -138,10 +156,12 @@ $(document).ready(() => {
       let textarea = $(event.currentTarget).serialize();
 
       $.post("/tweets", textarea)
-        .then((tweet) => {
-          $(".tweets-container").prepend(createTweetElement(tweet));
-          $(event.currentTarget).find("textarea").val("");
-          return tweet;
+        .then(() => {
+          console.log('reloading...')
+          location.reload();
+          // $(".tweets-container").prepend(createTweetElement(tweet));
+          // $(event.currentTarget).find("textarea").val("");
+          // return tweet;
         })
         .then((tweet) => {
           renderButtons(tweet);

@@ -10,10 +10,14 @@ module.exports = function makeDataHelpers(db) {
   return {
 
     // Saves a tweet to `db`
-    saveTweet: function (newTweet, callback) {
+    saveTweet: async function (newTweet, callback) {
 
-      db.tweets.push(newTweet);
-      console.log(db);
+      const tweetId = await db.query(`
+        INSERT INTO tweets(user_id, text, created_at)
+        VALUES(1, $1, CURRENT_TIMESTAMP)
+        RETURNING id, user_id
+      `, [newTweet.content.text]);
+
       callback(null, true);
 
     },
@@ -21,14 +25,14 @@ module.exports = function makeDataHelpers(db) {
     // Get all tweets in `db`, sorted by newest first
     getTweets: async function (callback) {
       
-      
         const tweets = await db.query(`
-        SELECT tweets.id, tweets.text, tweets.created_at, COUNT(likes.*) AS likes, COUNT(retweets.*) AS retweets, users.name, users.handle
+        SELECT tweets.id, tweets.text, tweets.created_at, COUNT(likes.*) AS likes, COUNT(retweets.*) AS retweets, users.name, users.handle, users.avatar
         FROM tweets
-        JOIN likes ON likes.tweet_id = tweets.id
-        JOIN retweets ON retweets.tweet_id = tweets.id
+        LEFT JOIN likes ON likes.tweet_id = tweets.id
+        LEFT JOIN retweets ON retweets.tweet_id = tweets.id
         JOIN users ON users.id = tweets.user_id
-        GROUP BY tweets.id, users.name, users.handle;
+        GROUP BY tweets.id, users.name, users.handle, users.avatar
+        ORDER BY tweets.created_at;
         `)
         .then((res) => {
           return res.rows;
@@ -37,36 +41,37 @@ module.exports = function makeDataHelpers(db) {
         })
 
       simulateDelay(() => {
-        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, tweets.sort(sortNewestFirst));
+        callback(null, tweets);
       });
     },
 
-    likeTweet: function (id, callback) {
-      simulateDelay(() => {
+    likeTweet: async function (id, callback) {
+      let alreadyLiked = await db.query(`
+        SELECT COUNT(*) 
+        FROM likes
+        WHERE user_id = 3
+        AND tweet_id = $1
+      `, [id]);
 
-        for (const tweet of db.tweets) {
+      alreadyLiked = Number(alreadyLiked.rows[0].count)
 
-          if (tweet.id == id) {
-
-            if (tweet.liked === true) {
-
-              tweet.liked = false;
-
-              callback(null, tweet.liked);
-            } else if (tweet.liked === false) {
-
-              tweet.liked = true;
-              callback(null, tweet.liked);
-            }
-          }
-        }
-
-      });
+      if (alreadyLiked === 0) {
+       await db.query(`
+        INSERT INTO likes (tweet_id, user_id) 
+        VALUES($1, 3);
+       `, [id])
+       callback(null, true)
+      } else {
+        await db.query(`
+          DELETE FROM likes
+          WHERE tweet_id = $1
+          AND user_id = 3;
+        `, [id])
+        callback(null, false)
+      }
     },
 
     retweet: function (id, callback) {
-
       //increases retweet count by +1 for all tweets in DB with original matching the id
       let tweetArray = [];
       let retweet;
