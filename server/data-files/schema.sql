@@ -23,11 +23,13 @@ CREATE TABLE retweets(
   id SERIAL PRIMARY KEY NOT NULL, 
   tweet_id INTEGER REFERENCES tweets(id) ON DELETE CASCADE,
   retweeter_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  created_at TIMESTAMPTZ
+  created_at TIMESTAMPTZ,
+  unique(retweeter_id, tweet_id)
 );
 
 CREATE TABLE likes(
   id SERIAL PRIMARY KEY NOT NULL, 
   tweet_id INTEGER REFERENCES tweets(id) ON DELETE CASCADE,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  unique (tweet_id, user_id)
 );

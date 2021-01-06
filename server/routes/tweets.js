@@ -79,11 +79,13 @@ module.exports = function (DataHelpers) {
   });
 
   tweetsRoutes.post("/:id/retweet", function (req, res) {
-    DataHelpers.retweet(req.params.id, (err, data) => {
+    console.log('retweet')
+    DataHelpers.retweet(req.params.id, (err) => {
+      console.log(id)
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.status(201).send(data);
+        res.status(201).send('done');
       }
     });
   });

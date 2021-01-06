@@ -67,81 +67,65 @@ module.exports = function makeDataHelpers(db) {
 
     },
 
-    likeTweet: async function (id, callback) {
-      let alreadyLiked = await db.query(`
-        SELECT COUNT(*) 
-        FROM likes
-        WHERE user_id = 3
-        AND tweet_id = $1
-      `, [id]);
+    likeTweet: async function (tweet_id, callback) {
+      // let alreadyLiked = await db.query(`
+      //   SELECT COUNT(*) 
+      //   FROM likes
+      //   WHERE user_id = 3
+      //   AND tweet_id = $1
+      // `, [id]);
 
-      alreadyLiked = Number(alreadyLiked.rows[0].count)
+      // alreadyLiked = Number(alreadyLiked.rows[0].count)
 
-      if (alreadyLiked === 0) {
-       await db.query(`
-        INSERT INTO likes (tweet_id, user_id) 
-        VALUES($1, 3);
-       `, [id])
-       callback(null, true)
-      } else {
-        await db.query(`
-          DELETE FROM likes
-          WHERE tweet_id = $1
-          AND user_id = 3;
-        `, [id])
-        callback(null, false)
-      }
+      // if (alreadyLiked === 0) {
+      //  await db.query(`
+      //   INSERT INTO likes (tweet_id, user_id) 
+      //   VALUES($1, 3);
+      //  `, [id])
+      //  callback(null, true)
+      // } else {
+      //   await db.query(`
+      //     DELETE FROM likes
+      //     WHERE tweet_id = $1
+      //     AND user_id = 3;
+      //   `, [id])
+      //   callback(null, false)
+      // }
+
+      const liked = await db.query(`
+      INSERT INTO retweets(tweet_id, retweeter_id, created_at)
+      VALUES(
+        $1, 
+        3,
+        CURRENT_TIMESTAMP
+      )
+      ON CONFLICT(tweet_id, retweeter_id)
+      DO NOTHING;
+    `, [tweet_id]).then((result) => {
+      return result
+    })
+    
+    callback(null, liked)
+
     },
 
-    retweet: function (id, callback) {
+    retweet: async function (tweet_id, callback) {
       
-      let tweetArray = [];
-      let retweet;
-      let retweetCount;
-      let original;
-
-      for (let item of db.tweets) {
-        if (item.id === id) {
-          original = item.original;
-          
-        }
-      }
-
-      for (let item of db.tweets) {
-        if (item.id === original) {
-          item.retweets++;
-          retweetCount = item.retweets;
-          retweet = {
-            user: item.user,
-            content: item.content,
-            id: Math.floor(Math.random() * 100000).toString(),
-            original: item.original,
-            retweets: 0,
-            retweeter: generateRandomUser(),
-            created_at: Date.now(),
-            liked: item.liked
-          }
-        }
-      }
-      db.tweets.push(retweet);
-      // tweetArray.push(retweet.id);
-
+      await db.query(`
+        INSERT INTO retweets(tweet_id, retweeter_id, created_at)
+        VALUES(
+          $1, 
+          3,
+          CURRENT_TIMESTAMP
+        )
+        ON CONFLICT(tweet_id, retweeter_id)
+        DO NOTHING
+        RETURNING (SELECT tweets.created_at FROM tweets WHERE tweets.id = 2)
+      `, [tweet_id]).then((result) => {
+        return result
+      })
       
-      for (let item of db.tweets) {
-        if (item.original === original) {
-          item.retweets = retweetCount;
-          tweetArray.push(item.id);
-        }
-      
-      }
-
-      const returnOutput = {
-        tweetArray,
-        retweet,
-        retweetCount
-      };
-      
-      callback(null, returnOutput)
+      callback(null)
     }
 
 

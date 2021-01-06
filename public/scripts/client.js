@@ -78,25 +78,7 @@ const renderButtons = function (tweet) {
     .click(function (event) {
       const divId = event.currentTarget.closest(".tweet").id;
       $.ajax(`/tweets/${divId}/retweet`, { method: "POST" })
-        .then((data) => {
-          const retweet = data.retweet;
-
-          $(".tweets-container").prepend(createTweetElement(retweet));
-
-          const tweetArray = data.tweetArray;
-          const retweets = data.retweetCount;
-
-          for (const tweet of tweetArray) {
-            $("#" + tweet)
-              .find(".retweets")
-              .text(retweets);
-          }
-
-          return retweet;
-        })
-        .then((retweet) => {
-          renderButtons(retweet);
-        });
+        location.reload();
     });
 
   // Tweet hover: show box-shadow and user @handle
@@ -117,7 +99,6 @@ const renderElements = function (array) {
 const loadTweets = function () {
   $.ajax("/tweets", { method: "GET" })
     .then((tweets) => {
-      console.log(tweets)
       renderElements(tweets);
       return tweets;
     })
