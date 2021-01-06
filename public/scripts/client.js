@@ -6,6 +6,7 @@
 
 // momentjs
 
+// Input sanitization
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -20,9 +21,9 @@ const createTweetElement = function (data) {
   <article class="tweet" id="${data.id}"> 
     <header>
      <div class="user">`;
-  // if (data.retweeter) {
-  //   $tweet += `<div class="retweeter"> <i class="fas fa-retweet"></i>  retweeted by ${data.retweeter.name}</div>`;
-  // }
+  if (data.retweeter_name) {
+    $tweet += `<div class="retweeter"> <i class="fas fa-retweet"></i>  retweeted by ${data.retweeter_name}</div>`;
+  }
   $tweet += `<img src='${data.avatar}' alt="${data.handle}'s avatar">
         <span>${data.name}</span>
       </div>
@@ -50,22 +51,19 @@ const createTweetElement = function (data) {
   return $tweet;
 };
 
+// Adds like and retweet functionality to tweet buttons after the tweet is rendered
 const renderButtons = function (tweet) {
   $("#" + tweet.id)
     .find(".likePost")
     .click(function (event) {
-      // const divId = event.currentTarget.closest(".tweet").id;
-      const divId = tweet.id
-      $.ajax(`/tweets/${divId}/like`, { method: "POST" }).then((liked) => {
-        if (liked === true) {
+      $.ajax(`/tweets/${tweet.id}/like`, { method: "POST" }).then((liked) => {
+        if (liked) {
           $(this).removeClass("tweet-button-unclicked");
           $(this).addClass("tweet-button-clicked");
           let likes = Number($(this).find("span")[0].innerText)
-
           likes += 1;
-
           $(this).find("span")[0].innerText = likes;
-        } else if (liked === false) {
+        } else {
           $(this).removeClass("tweet-button-clicked");
           $(this).addClass("tweet-button-unclicked");
           let likes = Number($(this).find("span")[0].innerText)

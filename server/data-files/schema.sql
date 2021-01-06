@@ -14,13 +14,16 @@ CREATE TABLE tweets(
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   text VARCHAR(255),
-  created_at TIMESTAMPTZ
+  created_at TIMESTAMPTZ,
+  retweeter_id INTEGER REFERENCES users(id),
+  original_id INTEGER REFERENCES tweets(id)
 );
 
 CREATE TABLE retweets(
   id SERIAL PRIMARY KEY NOT NULL, 
   tweet_id INTEGER REFERENCES tweets(id) ON DELETE CASCADE,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  retweeter_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ
 );
 
 CREATE TABLE likes(

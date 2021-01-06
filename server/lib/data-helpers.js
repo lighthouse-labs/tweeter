@@ -26,12 +26,14 @@ module.exports = function makeDataHelpers(db) {
     getTweets: async function (callback) {
       
         const tweets = await db.query(`
-        SELECT tweets.id, tweets.text, tweets.created_at, COUNT(likes.*) AS likes, COUNT(retweets.*) AS retweets, users.name, users.handle, users.avatar
+        SELECT tweets.id, tweets.text, tweets.created_at, tweets.retweeter_id, COUNT(likes.*) AS likes, COUNT(retweets.*) AS retweets, users.handle, users.avatar, tweeter.name AS name, retweeter.name AS retweeter
         FROM tweets
         LEFT JOIN likes ON likes.tweet_id = tweets.id
         LEFT JOIN retweets ON retweets.tweet_id = tweets.id
         JOIN users ON users.id = tweets.user_id
-        GROUP BY tweets.id, users.name, users.handle, users.avatar
+        JOIN users tweeter ON tweeter.id = tweets.user_id
+        LEFT JOIN users retweeter ON retweeter.id = tweets.retweeter_id
+        GROUP BY tweets.id, users.name, users.handle, users.avatar, tweeter.name, retweeter.name
         ORDER BY tweets.created_at;
         `)
         .then((res) => {
@@ -40,9 +42,29 @@ module.exports = function makeDataHelpers(db) {
           console.log(err)
         })
 
-      simulateDelay(() => {
-        callback(null, tweets);
-      });
+        return callback(null, tweets);
+    },
+
+    getRetweets: async function (callback) {
+
+      const retweets = await db.query(`
+      SELECT original_tweeter.id AS id, original_tweeter.name AS name, original_tweeter.handle AS handle, original_tweeter.avatar AS avatar, retweeter.name AS retweeter_name, retweeter.handle AS retweeter_handle, retweeter.avatar AS retweeter_avatar, tweets.text AS text, retweets.created_at, 
+      COUNT(retweets.*) AS retweets, COUNT(likes.*) AS likes
+      FROM tweets
+      LEFT JOIN retweets ON retweets.tweet_id = tweets.id
+      LEFT JOIN likes ON likes.tweet_id = tweets.id
+      JOIN users retweeter ON retweeter.id = retweets.retweeter_id
+      JOIN users original_tweeter ON original_tweeter.id = tweets.user_id
+      GROUP BY original_tweeter.id, original_tweeter.name, original_tweeter.handle, original_tweeter.avatar, retweeter.name, retweeter.handle, retweeter.avatar, tweets.text, retweets.created_at
+      `)
+      .then((res) => {
+        return res.rows;
+      }).catch((err) => {
+        console.log(err)
+      })
+
+      return callback(null, retweets);
+
     },
 
     likeTweet: async function (id, callback) {
@@ -72,7 +94,7 @@ module.exports = function makeDataHelpers(db) {
     },
 
     retweet: function (id, callback) {
-      //increases retweet count by +1 for all tweets in DB with original matching the id
+      
       let tweetArray = [];
       let retweet;
       let retweetCount;

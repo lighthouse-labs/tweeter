@@ -9,14 +9,31 @@ const tweetsRoutes = express.Router();
 const database = require("../pool");
 
 module.exports = function (DataHelpers) {
-  tweetsRoutes.get("/", function (req, res) {
-    DataHelpers.getTweets((err, tweets) => {
+  tweetsRoutes.get("/", async function (req, res) {
+    const data = [];
+
+    const tweets_db = DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.send(tweets);
+        return tweets;
+      }
+    })
+
+    const retweets_db = DataHelpers.getRetweets((err, retweets) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        return retweets
       }
     });
+
+    Promise.all([tweets_db, retweets_db]).then((data) => {
+
+      const allTweets = data[0].concat(data[1])
+      res.send(allTweets)
+    })
+
   });
 
   tweetsRoutes.post("/", function (req, res) {

@@ -1,19 +1,7 @@
+// The small purple arrow in the bottom right corner of the screen allows the user
+// to return easily back to the top of the page. 
+
 $(document).ready(function () {
-
-
-
-  $('.newTweetButton').click(() => {
-    $('.new-tweet').slideDown();
-    $('.new-tweet').find('textarea').focus();
-    if (document.scrollingElement.scrollTop > 600) {
-      $('html, body').animate({ scrollTop: 0 }, '500');
-    }
-  })
-  $('.exitTweet').click(() => {
-
-    $('.new-tweet').slideUp();
-  })
-
   $(document).on('scroll', () => {
 
     if ($(window).width() >= 1024) {
@@ -31,14 +19,11 @@ $(document).ready(function () {
       }
     }
   });
+
   $('.arrowToTop').click((event) => {
     event.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, '300');
     $('.new-tweet').slideDown();
     $('.new-tweet').find('textarea').focus();
   });
-
-
-
-
 });

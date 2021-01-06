@@ -1,7 +1,7 @@
 .new-tweet {
   display:none;
 
-  header {
+  & header {
     background-color: inherit;
     background-image: unset;
     height: 100px;
