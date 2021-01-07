@@ -48,14 +48,12 @@ module.exports = function makeDataHelpers(db) {
     getRetweets: async function (callback) {
 
       const retweets = await db.query(`
-      SELECT original_tweeter.id AS id, original_tweeter.name AS name, original_tweeter.handle AS handle, original_tweeter.avatar AS avatar, retweeter.name AS retweeter_name, retweeter.handle AS retweeter_handle, retweeter.avatar AS retweeter_avatar, tweets.text AS text, retweets.created_at, 
-      COUNT(retweets.*) AS retweets, COUNT(likes.*) AS likes
-      FROM tweets
-      LEFT JOIN retweets ON retweets.tweet_id = tweets.id
-      LEFT JOIN likes ON likes.tweet_id = tweets.id
+      SELECT retweeter.name AS retweeter_name, retweeter.handle AS retweeter_handle, tweets.id, original.name, original.avatar, original.handle, COUNT(retweets.*) OVER (partition by tweets.id) AS retweets, COUNT(likes.*) OVER (partition by tweets.id) AS likes, tweets.text, retweets.created_at
+      FROM retweets
       JOIN users retweeter ON retweeter.id = retweets.retweeter_id
-      JOIN users original_tweeter ON original_tweeter.id = tweets.user_id
-      GROUP BY original_tweeter.id, original_tweeter.name, original_tweeter.handle, original_tweeter.avatar, retweeter.name, retweeter.handle, retweeter.avatar, tweets.text, retweets.created_at
+      JOIN tweets ON tweets.id = retweets.tweet_id
+      JOIN users original ON original.id = tweets.user_id
+      JOIN likes ON likes.tweet_id = tweets.id;
       `)
       .then((res) => {
         return res.rows;
