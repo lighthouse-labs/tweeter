@@ -65,15 +65,46 @@ module.exports = function makeDataHelpers(db) {
 
     },
 
+    getLikes: async function (callback) {
+
+      const myLikes = await db.query(`
+        SELECT tweet_id FROM likes WHERE user_id = 3;
+      `)
+      .then(((res) => {
+        return res.rows
+      }))
+      .catch((err) => {
+        console.log(err)
+      })
+
+      return callback(null, myLikes)
+    },
+
+    getUserRetweets: async function (callback) {
+
+      const myRetweets = await db.query(`
+        SELECT tweet_id FROM retweets WHERE retweeter_id = 3;
+      `)
+      .then(((res) => {
+        return res.rows
+      }))
+      .catch((err) => {
+        console.log(err)
+      })
+
+
+
+      return callback(null, myRetweets)
+    },
+
     likeTweet: async function (tweet_id, callback) {
       const liked = await db.query(`
-      INSERT INTO retweets(tweet_id, retweeter_id, created_at)
+      INSERT INTO likes(tweet_id, user_id)
       VALUES(
         $1, 
-        3,
-        CURRENT_TIMESTAMP
+        3
       )
-      ON CONFLICT(tweet_id, retweeter_id)
+      ON CONFLICT(tweet_id, user_id)
       DO NOTHING;
     `, [tweet_id]).then((result) => {
       return result

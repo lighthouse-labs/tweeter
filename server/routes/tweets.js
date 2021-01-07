@@ -28,12 +28,43 @@ module.exports = function (DataHelpers) {
       }
     });
 
-    Promise.all([tweets_db, retweets_db]).then((data) => {
+    const user_likes = DataHelpers.getLikes((err, likes) => {
 
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        return likes
+      }
+    })
+
+    const user_retweets = DataHelpers.getUserRetweets((err, retweets) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        return retweets
+      }
+    })
+
+    Promise.all([tweets_db, retweets_db, user_likes, user_retweets]).then((data) => {
       const allTweets = data[0].concat(data[1]).sort((a, b) => a.created_at - b.created_at)
-      console.log(allTweets)
+
+      const likes = data[2].reduce((acc, current) => {
+        return [...acc, current.tweet_id]
+      }, [])
+      console.log('data 3:', data[3])
+      const retweets = data[3].reduce((acc, current) => {
+        return [...acc, current.tweet_id]
+      }, [])
+
+      console.log(retweets)
+
+      const user_data = {
+        tweets: allTweets,
+        likes,
+        retweets
+      }
       
-      res.send(allTweets)
+      res.send(user_data)
     })
 
   });
@@ -72,6 +103,7 @@ module.exports = function (DataHelpers) {
 
   tweetsRoutes.post("/:id/like", function (req, res) {
     DataHelpers.likeTweet(req.params.id, (err, liked) => {
+      console.log(liked)
       if (err) {
         res.status(500).json({ error: err.message });
       } else {

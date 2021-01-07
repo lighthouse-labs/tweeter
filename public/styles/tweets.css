@@ -68,9 +68,6 @@ article.tweet footer div {
 .tweet-buttons {
   margin-right: 1em;
 }
-.tweet-buttons .retweets {
-  color: #4056A1;
-}
 .tweet-buttons button {
   border: none;
   outline: none;

@@ -18,7 +18,7 @@ const createTweetElement = function (data) {
   const displayDate = moment(date).fromNow();
   
   let $tweet = `
-  <article class="tweet" id="${data.id}"> 
+  <article class="tweet" data-id="${data.id}"> 
     <header>
      <div class="user">`;
   if (data.retweeter_name) {
@@ -52,17 +52,23 @@ const createTweetElement = function (data) {
 };
 
 // Adds like and retweet functionality to tweet buttons after the tweet is rendered
-const renderButtons = function (tweet) {
-  $("#" + tweet.id)
-    .find(".likePost")
-    .click(function (event) {
+const renderButtons = function (tweet, likes, retweets) {
+
+  const heart = $(`[data-id=${tweet.id}]`).find(".likePost");
+    if (likes.some(ele => ele = tweet.id)) {
+      $(heart).removeClass("tweet-button-unclicked");
+      $(heart).addClass("tweet-button-clicked");
+    } 
+
+    heart.click(function (event) {
       $.ajax(`/tweets/${tweet.id}/like`, { method: "POST" }).then((liked) => {
+        console.log(liked)
         if (liked) {
           $(this).removeClass("tweet-button-unclicked");
           $(this).addClass("tweet-button-clicked");
-          let likes = Number($(this).find("span")[0].innerText)
-          likes += 1;
-          $(this).find("span")[0].innerText = likes;
+          // let likes = Number($(this).find("span")[0].innerText)
+          // likes += 1;
+          // $(this).find("span")[0].innerText = likes;
         } else {
           $(this).removeClass("tweet-button-clicked");
           $(this).addClass("tweet-button-unclicked");
@@ -73,9 +79,15 @@ const renderButtons = function (tweet) {
       });
     });
 
-  $("#" + tweet.id)
-    .find(".retweetPost")
-    .click(function (event) {
+    const retweet_button = $(`[data-id=${tweet.id}]`).find(".retweetPost");
+
+    if (retweets.some(ele => ele = tweet.id)) {
+      $(retweet_button).removeClass("tweet-button-unclicked");
+      $(retweet_button).addClass("tweet-button-clicked");
+    } 
+
+
+    retweet_button.click(function (event) {
       const divId = event.currentTarget.closest(".tweet").id;
       $.ajax(`/tweets/${divId}/retweet`, { method: "POST" })
         location.reload();
@@ -96,18 +108,24 @@ const renderElements = function (array) {
   }
 };
 
+const renderLikes = function (tweet, likes) {
+  console.log(tweet)
+}
+
 const loadTweets = function () {
   $.ajax("/tweets", { method: "GET" })
-    .then((tweets) => {
-      console.log(tweets)
-      renderElements(tweets);
-      return tweets;
+    .then((data) => {
+      renderElements(data.tweets);
+      renderLikes(data.likes)
+      return data;
     })
-    .then((tweets) => {
-      for (const tweet of tweets) {
-        renderButtons(tweet);
+    .then((data) => {
+      for (const tweet of data.tweets) {
+        renderButtons(tweet, data.likes, data.retweets);
       }
-    });
+      return data
+    })
+
 };
 
 $(document).ready(() => {
