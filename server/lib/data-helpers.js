@@ -68,30 +68,6 @@ module.exports = function makeDataHelpers(db) {
     },
 
     likeTweet: async function (tweet_id, callback) {
-      // let alreadyLiked = await db.query(`
-      //   SELECT COUNT(*) 
-      //   FROM likes
-      //   WHERE user_id = 3
-      //   AND tweet_id = $1
-      // `, [id]);
-
-      // alreadyLiked = Number(alreadyLiked.rows[0].count)
-
-      // if (alreadyLiked === 0) {
-      //  await db.query(`
-      //   INSERT INTO likes (tweet_id, user_id) 
-      //   VALUES($1, 3);
-      //  `, [id])
-      //  callback(null, true)
-      // } else {
-      //   await db.query(`
-      //     DELETE FROM likes
-      //     WHERE tweet_id = $1
-      //     AND user_id = 3;
-      //   `, [id])
-      //   callback(null, false)
-      // }
-
       const liked = await db.query(`
       INSERT INTO retweets(tweet_id, retweeter_id, created_at)
       VALUES(

@@ -30,7 +30,9 @@ module.exports = function (DataHelpers) {
 
     Promise.all([tweets_db, retweets_db]).then((data) => {
 
-      const allTweets = data[0].concat(data[1])
+      const allTweets = data[0].concat(data[1]).sort((a, b) => a.created_at - b.created_at)
+      console.log(allTweets)
+      
       res.send(allTweets)
     })
 
@@ -79,9 +81,7 @@ module.exports = function (DataHelpers) {
   });
 
   tweetsRoutes.post("/:id/retweet", function (req, res) {
-    console.log('retweet')
     DataHelpers.retweet(req.params.id, (err) => {
-      console.log(id)
       if (err) {
         res.status(500).json({ error: err.message });
       } else {

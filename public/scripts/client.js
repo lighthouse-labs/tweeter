@@ -99,6 +99,7 @@ const renderElements = function (array) {
 const loadTweets = function () {
   $.ajax("/tweets", { method: "GET" })
     .then((tweets) => {
+      console.log(tweets)
       renderElements(tweets);
       return tweets;
     })
