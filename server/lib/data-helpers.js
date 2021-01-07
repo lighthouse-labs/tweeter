@@ -26,15 +26,12 @@ module.exports = function makeDataHelpers(db) {
     getTweets: async function (callback) {
       
         const tweets = await db.query(`
-        SELECT tweets.id, tweets.text, tweets.created_at, tweets.retweeter_id, COUNT(likes.*) AS likes, COUNT(retweets.*) AS retweets, users.handle, users.avatar, tweeter.name AS name, retweeter.name AS retweeter
-        FROM tweets
-        LEFT JOIN likes ON likes.tweet_id = tweets.id
-        LEFT JOIN retweets ON retweets.tweet_id = tweets.id
-        JOIN users ON users.id = tweets.user_id
-        JOIN users tweeter ON tweeter.id = tweets.user_id
-        LEFT JOIN users retweeter ON retweeter.id = tweets.retweeter_id
-        GROUP BY tweets.id, users.name, users.handle, users.avatar, tweeter.name, retweeter.name
-        ORDER BY tweets.created_at;
+            SELECT DISTINCT tweets.id, COUNT(likes.id) OVER (partition by tweets.id) AS likes, COUNT(retweets.id) OVER (partition by tweets.id) AS retweets,
+            original.name, original.avatar, original.handle, tweets.text, tweets.created_at
+            FROM tweets
+            JOIN users original ON original.id = tweets.user_id
+            JOIN likes ON likes.tweet_id = tweets.id
+            JOIN retweets ON retweets.tweet_id = tweets.id
         `)
         .then((res) => {
           return res.rows;
@@ -48,7 +45,7 @@ module.exports = function makeDataHelpers(db) {
     getRetweets: async function (callback) {
 
       const retweets = await db.query(`
-      SELECT retweeter.name AS retweeter_name, retweeter.handle AS retweeter_handle, tweets.id, original.name, original.avatar, original.handle, COUNT(retweets.*) OVER (partition by tweets.id) AS retweets, COUNT(likes.*) OVER (partition by tweets.id) AS likes, tweets.text, retweets.created_at
+      SELECT DISTINCT tweets.id, retweeter.name AS retweeter_name, retweeter.handle AS retweeter_handle, tweets.id, original.name, original.avatar, original.handle, COUNT(retweets.*) OVER (partition by tweets.id) AS retweets, COUNT(likes.*) OVER (partition by tweets.id) AS likes, tweets.text, retweets.created_at
       FROM retweets
       JOIN users retweeter ON retweeter.id = retweets.retweeter_id
       JOIN tweets ON tweets.id = retweets.tweet_id
