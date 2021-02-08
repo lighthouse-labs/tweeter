@@ -13,6 +13,16 @@ This repository is the finished project of Tweeter: the project is focused on pr
 
 ## Some ScreenShots:
 
+User can tweet in textbox area, and text will show below:
+![](https://github.com/97-Jeffrey/tweeter/blob/master/docs/Screen%20Shot%202021-02-07%20at%209.17.45%20PM.png?raw=true)
+
+![](https://github.com/97-Jeffrey/tweeter/blob/master/docs/Screen%20Shot%202021-02-07%20at%209.18.32%20PM.png?raw=true)
+
+User can not send empty tweet or super long tweet:
+![](https://github.com/97-Jeffrey/tweeter/blob/master/docs/Screen%20Shot%202021-02-07%20at%209.14.55%20PM.png?raw=true)
+
+![](https://github.com/97-Jeffrey/tweeter/blob/master/docs/Screen%20Shot%202021-02-07%20at%209.16.09%20PM.png?raw=true)
+
 ## Some Code Snippets:
 
 !["this is part of client side functionality"](https://github.com/97-Jeffrey/tweeter/blob/master/docs/client.png?raw=true)
