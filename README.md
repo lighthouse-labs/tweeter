@@ -4,6 +4,8 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the finished project of Tweeter: the project is focused on practicing HTML, CSS, JS, jQuery and AJAX front-end skills, with Node, Express and MongoDB back-end skills already written.
 
+To view this app, navigate to [heroku](https://small-simple-chatter.herokuapp.com/) or follow `Getting Started` section.
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
