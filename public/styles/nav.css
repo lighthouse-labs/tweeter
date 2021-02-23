@@ -1,6 +1,7 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 1.5em;
   align-items: center;
   flex-wrap: wrap;
   background-color: #4056A1;
@@ -12,4 +13,8 @@ nav {
   display: inline-block;
   font-family: 'Bungee', sans-serif;
   font-size: 36px;
+}
+
+.write-new {
+  text-align: center;
 }
