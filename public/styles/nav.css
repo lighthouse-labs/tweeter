@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #4056A1;
+  height: 120px;
+  color: white;
+}
+
+.title-case {
+  display: inline-block;
+  font-family: 'Bungee', sans-serif;
+  font-size: 36px;
+}
