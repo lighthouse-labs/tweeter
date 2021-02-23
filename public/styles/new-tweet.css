@@ -23,6 +23,7 @@
 
 .text-area {
   width: 100%;
-  align-self: center;
   background: transparent;
+  border: transparent;
+  border-bottom: 5px solid #545149;
 }
