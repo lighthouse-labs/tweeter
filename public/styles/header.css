@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8d4f8f;
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+  height: 400px;
+  justify-content: center;
+}
+
+.display-name {
+  color: white;
+}
