@@ -34,4 +34,5 @@ body {
   display: flex;
   width: 90%;
   align-self: center;
+  flex-direction: column;
  }
