@@ -1,0 +1,44 @@
+.tweets {
+  background-color: f4f1ec;
+  padding: 1.5em;
+  width: 90%;
+  align-self: center;
+}
+
+.tweet-container {
+  border: 5px solid #545149;
+  padding: 1.5em;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-name {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+}
+
+.handle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  color: rgb(133, 133, 219);
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-weight: bold;
+  border-bottom: 5px solid #545149;
+}
+
+footer {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-icons {
+  color: rgb(95, 95, 231);
+  font-size: 90%;
+}

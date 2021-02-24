@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
 
 
     <!-- External JS -->
@@ -37,28 +39,43 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header class="main-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-      <div class="display-name">
+      <div class="main-display-name">
           <h2>Your Name</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <form action="/tweets" method="post">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?" class="text-area"></textarea>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text" class="text-area"></textarea>
           <div class="footer"> 
             <button type="submit" class="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+
+      <section class="tweets">
+        <article class="tweet-container">
+          <header class="tweet-header"><div class="display-name"><img src="/newton.png"> &nbsp;Newton</div>
+            <div class="handle">@SirIsaac</div></header>
+            <p>If I have seen further...</p>
+            <footer><div class="tweet-date">10 days ago</div>
+              <div class="action-icons">
+                <i class="fa fa-flag"></i> &nbsp;
+                <i class="fa fa-retweet"></i> &nbsp;
+                <i class="fa fa-heart"></i>
+              </div></footer>
+        </article>
+      </section>
+
     </main>
   </body>
 </html>

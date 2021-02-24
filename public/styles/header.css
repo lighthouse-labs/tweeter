@@ -1,4 +1,4 @@
-header {
+.main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,6 @@ header {
   justify-content: center;
 }
 
-.display-name {
+.main-display-name {
   color: white;
 }
