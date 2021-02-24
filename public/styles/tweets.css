@@ -8,27 +8,34 @@
 .tweet-container {
   border: 5px solid #545149;
   padding: 1.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
 }
 
-.tweet-header {
+.tweet-container:hover {
+  box-shadow: 5px 10px #a6aad8;
+  font-weight: 400;
+}
+
+header {
   display: flex;
   justify-content: space-between;
 }
 
-.display-name {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;
-}
-
 .handle {
+  display: none;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
+  font-weight: 300;
   color: rgb(133, 133, 219);
 }
 
-p {
+.tweet-container:hover .handle {
+  display: block;
+}
+
+.tweet-body {
   font-family: 'Source Sans Pro', sans-serif; 
-  font-weight: bold;
   border-bottom: 5px solid #545149;
 }
 
@@ -41,4 +48,8 @@ footer {
 .action-icons {
   color: rgb(95, 95, 231);
   font-size: 90%;
+}
+
+.tweet-container:hover .action-icons {
+  font-size: 100%;
 }
