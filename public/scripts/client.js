@@ -49,7 +49,7 @@ $(document).ready(function() {
     let serializedData = $(this).serialize();
     if (serializedData === "text=") {
       $('.error').append("No tweet is present!").slideDown();
-    } else if (serializedData.length > 140) {
+    } else if ($('.counter').val() < 0) {
       $('.error').append("Your tweet is too long!").slideDown();
     } else {
       $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
