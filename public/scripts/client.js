@@ -1,4 +1,4 @@
-let DateTime = luxon.DateTime;
+const DateTime = luxon.DateTime;
 
 const escape = function(str) {
   let div = document.createElement('div');

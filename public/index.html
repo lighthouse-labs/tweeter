@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
-
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
@@ -29,6 +27,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
+
 
   <body>
     <!-- Top nav bar (fixed) -->
@@ -52,6 +51,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       
+      <!-- Compose Tweet box -->
       <section class="new-tweet">
         <div class="error"></div>
         <form action="/tweets" id="send-tweet" method="post">
@@ -64,6 +64,7 @@
         </form>
       </section>
 
+      <!-- List of Tweets -->
       <section class="tweets">
         <article class="tweet-container">
           <header><div class="display-user"></div>
