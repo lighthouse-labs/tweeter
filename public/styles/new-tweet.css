@@ -36,3 +36,13 @@
   font-family: 'Bungee', sans-serif;
   color: black;
 }
+
+
+ /* Desktop styles */
+ @media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 66.6%;
+    float: right;
+    margin-top: 180px;
+  }
+}

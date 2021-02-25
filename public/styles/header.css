@@ -20,3 +20,14 @@
 .last-name {
   font-weight: 300;
 }
+
+
+ /* Desktop styles */
+ @media only screen and (min-width: 1024px) {
+  .main-header {
+    width: 30%;
+    align-self: flex-start;
+    margin-top: 220px;
+    margin-left: 3em;
+  }
+}

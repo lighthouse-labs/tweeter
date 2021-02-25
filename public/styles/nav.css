@@ -7,7 +7,8 @@ nav {
   padding: 1.5em;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #4056A1;
+  background-color: #8d4f8f;
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   height: 120px;
   color: white;
 }
@@ -25,4 +26,12 @@ nav {
 
 .write {
   font-weight: 700;
+}
+
+
+ /* Desktop styles */
+ @media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
 }

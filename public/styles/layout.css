@@ -1,8 +1,3 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
@@ -10,10 +5,8 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
+/* Global layout */
 body {
   color: #545149;
   display: flex;
@@ -24,10 +17,6 @@ body {
   flex-direction: column;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
  main {
   color: #545149;
   background-color: #f4f1ec;
@@ -36,3 +25,16 @@ body {
   align-self: center;
   flex-direction: column;
  }
+
+
+ /* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    width: 66.6%;
+    float: right;
+  }
+}
