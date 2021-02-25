@@ -49,13 +49,25 @@ const createTweetElement = function(data) {
 }
 
 const renderTweets = function(tweets) {
-  for (const tw of data) {
-    let $tweet = createTweetElement(tw);
+  for (const singleTweet of data) {
+    let $tweet = createTweetElement(singleTweet);
     $('.tweets').append($tweet);
   }
 }
 
 
 renderTweets(data);
+
+
+$('#send-tweet').on('submit', function(event) {
+  event.preventDefault();
+  let serializedData = $(this).serialize();
+  $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
+  .then(function (submittedTweet) {
+    console.log(submittedTweet); // just a test
+  })
+})
+
+
 
 });
