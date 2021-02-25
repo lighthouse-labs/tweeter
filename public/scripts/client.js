@@ -1,3 +1,5 @@
+let DateTime = luxon.DateTime;
+
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -9,7 +11,7 @@ const createTweetElement = function(data) {
   <div><img src=${data["user"]["avatars"]}> &nbsp;${data["user"]["name"]}</div>
   <div class="handle">${data["user"]["handle"]}</div></header>
   <p class="tweet-body">${escape(data["content"]["text"])}</p>
-  <footer><div class="tweet-date">${data["created_at"]}</div>
+  <footer><div class="tweet-date">${DateTime.fromMillis(data["created_at"]).toRelative()}</div>
   <div class="action-icons">
   <i class="fa fa-flag"></i> &nbsp;
   <i class="fa fa-retweet"></i> &nbsp;
