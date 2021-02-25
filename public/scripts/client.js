@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -26,42 +20,39 @@ const createTweetElement = function(data) {
 };
 
 const renderTweets = function(data) {
-  console.log('about to renderTweets');
   $('.tweets').empty();
-  console.log('tweets just emptied, data length: ', data.length);
   for (const singleTweet of data) {
     let $tweet = createTweetElement(singleTweet);
     $('.tweets').prepend($tweet);
   }
 };
 
-
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
-  .then(function(data) {
-  renderTweets(data);
-  });
+    .then(function(data) {
+      renderTweets(data);
+    });
 };
 
 
 
 $(document).ready(function() {
-
   loadTweets();
 
   $('#send-tweet').on('submit', function(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  let serializedData = $(this).serialize();
+    let serializedData = $(this).serialize();
     if (serializedData === "text=") {
       alert("No tweet is present");
     } else if (serializedData.length > 140) {
       alert("Your tweet is too long");
     } else {
       $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
-       .then((result) => {console.log('ajax then'); 
-       loadTweets();
-       $('.text-area').val('')});
+        .then((result) => {
+          loadTweets();
+          $('.text-area').val('');
+        });
     }
   });
 });
