@@ -28,3 +28,9 @@
   border: transparent;
   border-bottom: 5px solid #545149;
 }
+
+.error {
+  display: none;
+  border: red;
+  color: red;
+}
