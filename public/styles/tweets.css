@@ -37,6 +37,7 @@ header {
 .tweet-body {
   font-family: 'Source Sans Pro', sans-serif; 
   border-bottom: 5px solid #545149;
+  word-wrap: break-word;
 }
 
 footer {
