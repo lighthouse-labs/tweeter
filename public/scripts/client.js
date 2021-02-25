@@ -4,12 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function(data) {
   let $tweet = $(`<article class="tweet-container"><header>
   <div><img src=${data["user"]["avatars"]}> &nbsp;${data["user"]["name"]}</div>
   <div class="handle">${data["user"]["handle"]}</div></header>
-  <p class="tweet-body">${data["content"]["text"]}</p>
+  <p class="tweet-body">${escape(data["content"]["text"])}</p>
   <footer><div class="tweet-date">${data["created_at"]}</div>
   <div class="action-icons">
   <i class="fa fa-flag"></i> &nbsp;
@@ -18,7 +23,7 @@ const createTweetElement = function(data) {
   </div></footer>
   </article>`);
   return $tweet;
-}
+};
 
 const renderTweets = function(data) {
   console.log('about to renderTweets');
@@ -31,25 +36,20 @@ const renderTweets = function(data) {
 };
 
 
-const loadTweets = function () {
-  console.log('entering loadTweets');
+const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
-  .then(function (data) {
-    console.log('then... data length here: ', data.length);
-    renderTweets(data)
-  })
+  .then(function(data) {
+  renderTweets(data);
+  });
 };
 
 
 
 $(document).ready(function() {
 
+  loadTweets();
 
-loadTweets();
-
-
-
-$('#send-tweet').on('submit', function(event) {
+  $('#send-tweet').on('submit', function(event) {
   event.preventDefault();
 
   let serializedData = $(this).serialize();
@@ -58,12 +58,10 @@ $('#send-tweet').on('submit', function(event) {
     } else if (serializedData.length > 140) {
       alert("Your tweet is too long");
     } else {
-    $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
-    .then((result) => {console.log('ajax then'); 
-    loadTweets();
-    $('.text-area').val('')});
+      $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
+       .then((result) => {console.log('ajax then'); 
+       loadTweets();
+       $('.text-area').val('')});
     }
-});
-
-
+  });
 });
