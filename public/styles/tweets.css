@@ -17,9 +17,17 @@
   font-weight: 400;
 }
 
+
+
+/* header */
 header {
   display: flex;
   justify-content: space-between;
+}
+
+.display-user {
+  display: flex;
+  align-items: center;
 }
 
 .handle {
@@ -31,15 +39,22 @@ header {
 }
 
 .tweet-container:hover .handle {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
+
+
+/* body */
 .tweet-body {
   font-family: 'Source Sans Pro', sans-serif; 
   border-bottom: 5px solid #545149;
   word-wrap: break-word;
 }
 
+
+
+/* footer */
 footer {
   font-size: 17px;
   display: flex;

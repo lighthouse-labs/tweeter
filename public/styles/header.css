@@ -11,4 +11,13 @@
 
 .main-display-name {
   color: white;
+  font-weight: 300;
+}
+
+.first-name {
+  font-weight: 700;
+}
+
+.last-name {
+  font-weight: 300;
 }

@@ -5,21 +5,10 @@
   padding: 1.5em;
 }
 
-.tweet-button {
-  font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
-  color: white;
-  font-size: 24px;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.counter {
-  font-family: 'Bungee', sans-serif;
-  color: black;
+.error {
+  display: none;
+  border: 3px solid red;
+  color: red;
 }
 
 .text-area {
@@ -29,8 +18,21 @@
   border-bottom: 5px solid #545149;
 }
 
-.error {
-  display: none;
-  border: red;
-  color: red;
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-button {
+  font-family: 'Bungee', sans-serif;
+  background-color: #4056A1;
+  color: white;
+  font-size: 24px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+  color: black;
 }

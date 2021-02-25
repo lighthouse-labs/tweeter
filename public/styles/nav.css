@@ -20,4 +20,9 @@ nav {
 
 .write-new {
   text-align: center;
+  font-weight: 300;
+}
+
+.write {
+  font-weight: 700;
 }

@@ -8,7 +8,7 @@ const escape = function(str) {
 
 const createTweetElement = function(data) {
   let $tweet = $(`<article class="tweet-container"><header>
-  <div><img src=${data["user"]["avatars"]}> &nbsp;${data["user"]["name"]}</div>
+  <div class="display-user"><img src=${data["user"]["avatars"]}> &nbsp;&nbsp;${data["user"]["name"]}</div>
   <div class="handle">${data["user"]["handle"]}</div></header>
   <p class="tweet-body">${escape(data["content"]["text"])}</p>
   <footer><div class="tweet-date">${DateTime.fromMillis(data["created_at"]).toRelative()}</div>
