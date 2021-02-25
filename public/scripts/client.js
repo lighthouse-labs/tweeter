@@ -61,11 +61,16 @@ const renderTweets = function(data) {
 
 $('#send-tweet').on('submit', function(event) {
   event.preventDefault();
+
   let serializedData = $(this).serialize();
-  $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
-  .then(function (submittedTweet) {
-    console.log(submittedTweet); // just a test
-  })
+  // console.log(serializedData);
+    if (serializedData === "text=") {
+      alert("No tweet is present");
+    } else if (serializedData.length > 140) {
+      alert("Your tweet is too long");
+    } else {
+    $.ajax({ data: serializedData, method: 'POST', url: '/tweets' })
+    }
 });
 
 
