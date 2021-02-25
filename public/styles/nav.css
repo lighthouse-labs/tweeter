@@ -22,6 +22,10 @@ nav {
 .write-new {
   text-align: center;
   font-weight: 300;
+  color: white;
+  background-color: #8d4f8f;
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+  border: transparent;
 }
 
 .write {
@@ -34,4 +38,9 @@ nav {
   nav {
     background-color: #4056A1;
   }
+
+  .write-new {
+    background-color: #4056A1;
+  }
+
 }

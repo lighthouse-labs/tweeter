@@ -15,7 +15,13 @@
   width: 100%;
   background: transparent;
   border: transparent;
+  outline: none;
   border-bottom: 5px solid #545149;
+  font-weight: 400;
+}
+
+label {
+  font-weight: 300;
 }
 
 
@@ -29,7 +35,7 @@
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: white;
-  font-size: 24px;
+  font-size: 90%;
 }
 
 .counter {
