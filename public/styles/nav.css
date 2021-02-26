@@ -10,7 +10,7 @@ nav {
   height: 120px;
   color: white;
   background-color: #8d4f8f;
-  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+  background-image: url("../images/bedge-grunge.png");
 }
 
 .title-case {
@@ -24,7 +24,7 @@ nav {
   font-weight: 300;
   color: white;
   background-color: #8d4f8f;
-  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+  background-image: url("../images/bedge-grunge.png");
   border: transparent;
 }
 
