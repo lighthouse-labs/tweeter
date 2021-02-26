@@ -1,14 +1,14 @@
 .tweets {
-  background-color: f4f1ec;
+  align-self: center;
   padding: 1.5em;
   width: 90%;
-  align-self: center;
+  background-color: f4f1ec;
 }
 
 .tweet-container {
-  border: 5px solid #545149;
   padding: 1.5em;
-  font-family: 'Source Sans Pro', sans-serif;
+  border: 5px solid #545149;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
 }
 
@@ -17,9 +17,6 @@
   font-weight: 400;
 }
 
-
-
-/* header */
 header {
   display: flex;
   justify-content: space-between;
@@ -32,7 +29,7 @@ header {
 
 .handle {
   display: none;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   font-weight: 300;
   color: rgb(133, 133, 219);
@@ -43,22 +40,16 @@ header {
   align-items: center;
 }
 
-
-
-/* body */
 .tweet-body {
-  font-family: 'Source Sans Pro', sans-serif; 
+  font-family: "Source Sans Pro", sans-serif;
   border-bottom: 5px solid #545149;
   word-wrap: break-word;
 }
 
-
-
-/* footer */
 footer {
-  font-size: 17px;
   display: flex;
   justify-content: space-between;
+  font-size: 17px;
 }
 
 .action-icons {
@@ -71,14 +62,10 @@ footer {
 }
 
 
-
-
-
-
- /* Desktop styles */
- @media only screen and (min-width: 1024px) {
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
   .tweets {
-    width: 66.6%;
     float: right;
+    width: 66.6%;
   }
 }

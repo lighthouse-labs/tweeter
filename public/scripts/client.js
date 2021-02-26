@@ -1,5 +1,4 @@
 // General helper functions:
-
 const DateTime = luxon.DateTime; // set milliseconds as relative time
 
 const escape = function (str) {
@@ -9,8 +8,8 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-// Tweet helper functions:
 
+// Tweet helper functions:
 const createTweetElement = function (data) {
   let $tweet = $(`<article class="tweet-container"><header>
   <div class="display-user"><img src=${data["user"]["avatars"]}> &nbsp;&nbsp;${
@@ -44,8 +43,8 @@ const loadTweets = function () {
   });
 };
 
-// From page load onwards...
 
+// From page load onwards...
 $(document).ready(function () {
   loadTweets();
 

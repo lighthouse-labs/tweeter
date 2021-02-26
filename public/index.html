@@ -1,90 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
-    
-    <!-- Disable Viewport Zooming -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- Disable Viewport Zooming -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/helpers.js"></script> 
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
 
 
-  <body>
-    <!-- Navigation bar -->
-    <nav>
-      <div><span class="title-case">TWEETER</span></div>
-      <button class="write-new">
-        <span class="write">Write </span>a new tweet<br/><i class="fa fa-angle-double-down"></i>
-      </button>
-    </nav>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div><span class="title-case">TWEETER</span></div>
+    <button class="write-new">
+      <span class="write-emphasis">Write </span>a new tweet<br /><i class="fa fa-angle-double-down"></i>
+    </button>
+  </nav>
 
-    <!-- Header -->
-    <header class="main-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div class="main-display-name">
-          <h2><span class="first-name">Your </span><span class="last-name">Name</span></h2>
-      </div>
-    </header>
+  <!-- Header -->
+  <header class="main-header">
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <div class="main-display-name">
+      <h2><span class="first-name">Your </span><span class="last-name">Name</span></h2>
+    </div>
+  </header>
 
-    <!-- Main content -->
-    <main class="container">
-      
-      <!-- Compose Tweet box -->
-      <section class="new-tweet">
-        <div class="error"></div>
-        <form action="/tweets" id="send-tweet" method="post">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" class="text-area"></textarea>
-          <div class="footer"> 
-            <button type="submit" class="tweet-button">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Compose Tweet box -->
+    <section class="new-tweet">
+      <div class="error"></div>
+      <form action="/tweets" id="send-tweet" method="post">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" class="text-area"></textarea>
+        <div class="footer">
+          <button type="submit" class="tweet-button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
+    <!-- List of Tweets -->
+    <section class="tweets">
+      <article class="tweet-container">
+        <header>
+          <div class="display-user"></div>
+          <div class="handle"></div>
+        </header>
+        <p class="tweet-body"></p>
+        <footer>
+          <div class="tweet-date"></div>
+          <div class="action-icons">
+            <i class="fa fa-flag"></i> &nbsp;
+            <i class="fa fa-retweet"></i> &nbsp;
+            <i class="fa fa-heart"></i>
           </div>
-        </form>
-      </section>
+        </footer>
+      </article>
+    </section>
 
-      <!-- List of Tweets -->
-      <section class="tweets">
-        <article class="tweet-container">
-          <header><div class="display-user"></div>
-            <div class="handle"></div></header>
-            <p class="tweet-body"></p>
-            <footer><div class="tweet-date"></div>
-              <div class="action-icons">
-                <i class="fa fa-flag"></i> &nbsp;
-                <i class="fa fa-retweet"></i> &nbsp;
-                <i class="fa fa-heart"></i>
-              </div></footer>
-        </article>
-      </section>
+  </main>
+</body>
 
-    </main>
-  </body>
 </html>
-
-

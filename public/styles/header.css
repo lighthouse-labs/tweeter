@@ -1,12 +1,12 @@
 .main-header {
-  margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  height: 400px;
   background-color: #8d4f8f;
   background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
-  height: 400px;
-  justify-content: center;
 }
 
 .main-display-name {
@@ -22,12 +22,12 @@
 }
 
 
- /* Desktop styles */
- @media only screen and (min-width: 1024px) {
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
   .main-header {
-    width: 30%;
     align-self: flex-start;
     margin-top: 220px;
     margin-left: 3em;
+    width: 30%;
   }
 }

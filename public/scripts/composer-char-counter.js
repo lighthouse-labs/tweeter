@@ -1,6 +1,5 @@
-$(document).ready(function() {
-
-  $("#tweet-text").on('keyup', function() {
+$(document).ready(function () {
+  $("#tweet-text").on("keyup", function () {
     let numOfCharacters = $("#tweet-text").val().length;
     const tweetCounter = $(this).parent().find(".counter");
     $(tweetCounter).html(140 - numOfCharacters);
@@ -10,6 +9,5 @@ $(document).ready(function() {
     if (numOfCharacters <= 140) {
       $(tweetCounter).css("color", "black");
     }
-  })
+  });
 });
-

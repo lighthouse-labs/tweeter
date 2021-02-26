@@ -1,14 +1,12 @@
 .new-tweet {
   align-self: center;
   width: 90%;
-  background-color: f4f1ec;
   padding: 1.5em;
+  background-color: f4f1ec;
 }
 
-.error {
-  display: none;
-  border: 3px solid red;
-  color: red;
+label {
+  font-weight: 300;
 }
 
 .text-area {
@@ -20,35 +18,35 @@
   font-weight: 400;
 }
 
-label {
-  font-weight: 300;
-}
-
-
-
 .footer {
   display: flex;
   justify-content: space-between;
 }
 
 .tweet-button {
-  font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
-  color: white;
+  font-family: "Bungee", sans-serif;
   font-size: 90%;
+  color: white;
+  background-color: #4056a1;
 }
 
 .counter {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   color: black;
 }
 
+.error {
+  display: none;
+  color: red;
+  border: 3px solid red;
+}
 
- /* Desktop styles */
- @media only screen and (min-width: 1024px) {
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
   .new-tweet {
-    width: 66.6%;
     float: right;
+    width: 66.6%;
     margin-top: 180px;
   }
 }

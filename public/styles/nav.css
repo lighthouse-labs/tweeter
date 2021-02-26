@@ -1,21 +1,21 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5em;
   position: fixed;
   top: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5em;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #8d4f8f;
-  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   height: 120px;
   color: white;
+  background-color: #8d4f8f;
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
 }
 
 .title-case {
   display: inline-block;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   font-size: 36px;
 }
 
@@ -28,19 +28,18 @@ nav {
   border: transparent;
 }
 
-.write {
+.write-emphasis {
   font-weight: 700;
 }
 
 
- /* Desktop styles */
- @media only screen and (min-width: 1024px) {
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
   nav {
-    background-color: #4056A1;
+    background-color: #4056a1;
   }
 
   .write-new {
-    background-color: #4056A1;
+    background-color: #4056a1;
   }
-
 }
