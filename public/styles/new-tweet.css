@@ -1,14 +1,13 @@
-
 /* for compose tweets field including error message and textarea and button*/
-.error{
-  font-size:25px;
+.error {
+  font-size: 25px;
   font-weight: bold;
-  display:none;
-  color:red;
+  display: none;
+  color: red;
   border: 5px solid red;
-  text-align:center;
-  padding:10px 0px;
-  margin-bottom:40px;
+  text-align: center;
+  padding: 10px 0px;
+  margin-bottom: 40px;
   justify-content: center;
 }
 
@@ -16,108 +15,110 @@
   display: flex;
   flex-direction: column;
 }
-.new-tweet form div{
+.new-tweet form div {
   padding: 25px;
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
-.new-tweet form textarea{
-  white-space:nowrap;
+.new-tweet form textarea {
+  white-space: nowrap;
   background: transparent;
   box-shadow: 10px 10px grey;
-  
-}
-
-.new-tweet form div button{
-  justify-content: flex-start;
-  background-color: blue;
-  font-weight: bolder;
-  color:white;
-  border-style: none;
   border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.678);
 }
-.new-tweet form div button:hover{
-  color:yellow;
-}
-.new-tweet div .counter{
- font-weight: bold;
+.new-tweet form textarea:focus {
+  outline: none;
 }
 
-form label{
+.new-tweet form div button {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  justify-content: flex-start;
+  background-color: rgb(49, 79, 247);
+  font-weight: bolder;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+}
+.new-tweet form div button:hover {
+  cursor: pointer;
+}
+
+.new-tweet div .counter {
   font-weight: bold;
 }
 
-
+form label {
+  font-weight: bold;
+}
 
 /* for each tweet created and rendered: */
-.change{
-  box-shadow:10px 10px grey;
+.change {
+  box-shadow: 10px 10px grey;
 }
-
 
 #tweet-container article {
-  margin:auto;
-  width:98%;
-  min-height:200px;
+  margin: auto;
+  width: 98%;
+  min-height: 200px;
   border: 3px solid rgb(104, 101, 101);
-  display:flex; 
+  border-radius: 10px;
+  display: flex;
   flex-direction: column;
-  opacity:70%;
+  opacity: 70%;
 }
 
-
-#tweet-container article header{
-  margin:5px;
-  display:flex;
+#tweet-container article header {
+  margin: 5px;
+  display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
-#tweet-container article header .avator{
-  display:flex;
-  align-items:center;
+#tweet-container article header .avator {
+  display: flex;
+  align-items: center;
 }
-#tweet-container article header .handle{
-  margin:10px;
-  display:none; 
-}
-
-#tweet-container article header img{
-  width:40px;
-  height:40px;
+#tweet-container article header .handle {
+  margin: 10px;
+  display: none;
 }
 
-#tweet-container article .content{
-  margin-top:10px;
-  margin-left:16px;
-  padding-bottom:25px;
-  border-bottom:2px solid black;
+#tweet-container article header img {
+  width: 40px;
+  height: 40px;
+}
+
+#tweet-container article .content {
+  margin-top: 10px;
+  margin-left: 16px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid black;
   word-wrap: break-word;
 }
 
-#tweet-container article footer{
-  display:flex;
+#tweet-container article footer {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-#tweet-container article footer span{
+#tweet-container article footer span {
   font-size: 16px;
-  margin-top:40px;
+  margin-top: 40px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
-#tweet-container article footer .symbol{
-  display:flex;
+#tweet-container article footer .symbol {
+  display: flex;
   flex-direction: row;
-  margin-right:20px;
-  margin-top:15px;
+  margin-right: 20px;
+  margin-top: 15px;
 }
 
-#tweet-container article footer .symbol div{
-  margin:7px;
+#tweet-container article footer .symbol div {
+  margin: 7px;
 }
-
