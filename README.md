@@ -1,8 +1,8 @@
-# Tweeter Project
+# About the project:
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, SPA Twitter clone that allows user to write a post and view the written posts.
 
-This repository is the finished project of Tweeter: the project is focused on practicing HTML, CSS, JS, jQuery and AJAX front-end skills, with Node, Express and MongoDB back-end skills already written.
+This frontend project aims to practice HTML, CSS, JS, jQuery and AJAX, with Node, Express and MongoDB back-end skills already written.
 
 To view this app, navigate to [heroku](https://small-simple-chatter.herokuapp.com/) or follow `Getting Started` section.
 
