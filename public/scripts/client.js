@@ -3,7 +3,7 @@ const DateTime = luxon.DateTime; // set milliseconds as relative time
 
 const escape = function (str) {
   // prevent cross-site scripting
-  let div = document.createElement("div");
+  constdiv = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
@@ -11,7 +11,7 @@ const escape = function (str) {
 
 // Tweet helper functions:
 const createTweetElement = function (data) {
-  let $tweet = $(`<article class="tweet-container"><header>
+  const$tweet = $(`<article class="tweet-container"><header>
   <div class="display-user"><img src=${data["user"]["avatars"]}> &nbsp;&nbsp;${
     data["user"]["name"]
   }</div>
@@ -32,7 +32,7 @@ const createTweetElement = function (data) {
 const renderTweets = function (data) {
   $(".tweets").empty();
   for (const singleTweet of data) {
-    let $tweet = createTweetElement(singleTweet);
+    const$tweet = createTweetElement(singleTweet);
     $(".tweets").prepend($tweet);
   }
 };
@@ -56,7 +56,7 @@ $(document).ready(function () {
       $(".error").slideUp().empty();
     }
 
-    let serializedData = $(this).serialize();
+    constserializedData = $(this).serialize();
     if (serializedData === "text=") {
       $(".error").append("No tweet is present!").slideDown();
     } else if ($(".counter").val() < 0) {
