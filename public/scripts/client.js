@@ -11,21 +11,25 @@ const escape = function (str) {
 
 // Tweet helper functions:
 const createTweetElement = function (data) {
-  const$tweet = $(`<article class="tweet-container"><header>
-  <div class="display-user"><img src=${data["user"]["avatars"]}> &nbsp;&nbsp;${
-    data["user"]["name"]
-  }</div>
-  <div class="handle">${data["user"]["handle"]}</div></header>
+  const$tweet = $(`<article class="tweet-container">
+  <header>
+    <div class="display-user"><img src=${data["user"]["avatars"]}> &nbsp;&nbsp;${
+      data["user"]["name"]
+      }</div>
+    <div class="handle">${data["user"]["handle"]}</div>
+  </header>
   <p class="tweet-body">${escape(data["content"]["text"])}</p>
-  <footer><div class="tweet-date">${DateTime.fromMillis(
-    data["created_at"]
-  ).toRelative()}</div>
-  <div class="action-icons">
-  <i class="fa fa-flag"></i> &nbsp;
-  <i class="fa fa-retweet"></i> &nbsp;
-  <i class="fa fa-heart"></i>
-  </div></footer>
-  </article>`);
+  <footer>
+    <div class="tweet-date">${DateTime.fromMillis(
+      data["created_at"]
+      ).toRelative()}</div>
+    <div class="action-icons">
+      <i class="fa fa-flag"></i> &nbsp;
+      <i class="fa fa-retweet"></i> &nbsp;
+      <i class="fa fa-heart"></i>
+    </div>
+  </footer>
+</article>`);
   return $tweet;
 };
 
