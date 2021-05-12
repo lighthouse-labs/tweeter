@@ -65,7 +65,7 @@ footer {
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   .tweets {
-    float: right;
+    align-self: right;
     width: 66.6%;
   }
 }

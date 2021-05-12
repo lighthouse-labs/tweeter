@@ -32,7 +32,8 @@ body {
   }
 
   main {
-    float: right;
+    display: flex;
+    align-self: right;
     width: 66.6%;
   }
 }
