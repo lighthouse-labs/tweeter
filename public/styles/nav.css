@@ -7,7 +7,8 @@
   gap: 0% 0%;
   grid-auto-flow: row;
   grid-template-areas:
-    "span compose";
+    "span compose"
+    "header header"
 }
 
 .span { 
@@ -15,7 +16,9 @@
   grid-area: span; 
   color: #ffff;
   font-family: 'Bungee', cursive;
-  text-indent: 1.5em;
+  text-indent: 1.5em; 
+  padding-bottom: 20px;
+  align-items: flex-end
 }
 
 .compose { 
@@ -24,10 +27,36 @@
   color: #ffff;
   font-family: 'Source Sans Pro', sans-serif;
   justify-content: flex-end;
+  padding-left: 20em;
+
   padding-right: 1.5em;
+  align-items: center;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
 
-
-
+.header { 
+  display: flex;
+  grid-area: header;  
+  flex-direction: column;
+  align-items: center;
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #4a40a1;
 }
 
 
+
+#name {
+  
+  flex-direction: row;
+    justify-content: center;
+    font-family: 'Source Sans Pro', sans-serif;
+
+display: flex;
+
+  height: 400px;
+  width: 100%;
+  color: #ffff;
+}

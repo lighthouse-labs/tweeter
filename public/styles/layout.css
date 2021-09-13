@@ -15,9 +15,11 @@ html {
  */
 
 body {
+  font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #A18B40;
   font-size: 24px;
+  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
 }
 
 /*
