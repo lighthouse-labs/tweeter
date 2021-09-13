@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -16,12 +16,22 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #545149;
-  background-color: #A18B40;
-  font-size: 24px;
-  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+  background-color: #a18b40;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  font-size: 24px;  
+  width: 100%;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .container {
+  display: flex;
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #a18b40;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  align-items: center;
+  flex-direction: column;  
+ }
