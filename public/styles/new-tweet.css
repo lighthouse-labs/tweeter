@@ -34,3 +34,8 @@ button {
 textarea {
   outline: none;
 }
+
+.counter {
+  font-family: "Bungee", sans-serif;
+
+}
