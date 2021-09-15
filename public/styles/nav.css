@@ -1,63 +1,34 @@
-.nav {
-  display: grid;
+
+nav {
+  border-radius: 10px;
+  display: flex; 
   background-color: #4056A1;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 120px;
-  grid-auto-columns: 1fr;
-  gap: 0% 0%;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "span compose"
-    "header header"
-}
-
-.span { 
-  display: flex;
-  grid-area: span; 
-  color: #ffff;
-  font-family: 'Bungee', cursive;
-  text-indent: 1.5em; 
-  padding-bottom: 20px;
-  align-items: flex-end
-}
-
-.compose { 
-  display: flex;
-  grid-area: compose;
-  color: #ffff;
-  font-family: 'Source Sans Pro', sans-serif;
-  justify-content: flex-end;
-  padding-left: 20em;
-
+  height: 120px;
+  width: 100%;
   padding-right: 1.5em;
-  align-items: center;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-}
-
-.header { 
-  display: flex;
-  grid-area: header;  
-  flex-direction: column;
-  align-items: center;
-  
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #4a40a1;
-}
-
-
-
-#name {
-  
+  padding-left: 1.5em;
   flex-direction: row;
-    justify-content: center;
-    font-family: 'Source Sans Pro', sans-serif;
+  align-items: flex-end;
+  justify-content: space-between
+  
 
-display: flex;
+}
 
 
+span {
   color: #ffff;
+  display: flex;
+  font-family: "Bungee", sans-serif;
+  padding-bottom: .9em;
+}
 
+#doubledown {  
+  color: red;
+}
 
+#compose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }

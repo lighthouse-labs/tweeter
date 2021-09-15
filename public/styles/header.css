@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #A14056;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}

@@ -15,23 +15,25 @@
  */
 
 body {
+  color: white;
+  background-color: #56A140;
+  font-size: 24px;
+  display: grid;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #a18b40;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  font-size: 24px;  
-  width: 100%;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .container {
-  display: flex;
+
+ main {
   
+  color: white;
+  background-color: #56A140;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #a18b40;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  align-items: center;
-  flex-direction: column;  
+  flex-direction: row;
+  justify-content: center;
+
+
  }
