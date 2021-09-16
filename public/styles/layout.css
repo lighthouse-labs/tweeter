@@ -18,8 +18,12 @@ body {
   color: white;
   background-color: #56A140;
   font-size: 24px;
-  display: grid;
+  display: flex;
   font-family: 'Source Sans Pro', sans-serif;
+  
+  flex-direction: column;
+  align-content: center;
+
 }
 
 /*
@@ -28,12 +32,14 @@ body {
 
 
  main {
-  
   color: white;
   background-color: #56A140;
   font-family: 'Source Sans Pro', sans-serif;
   flex-direction: row;
   justify-content: center;
-
-
+  height: 1500px;
+  padding-left: 5%;
+    padding-right: 5%;
+  
+  
  }
