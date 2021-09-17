@@ -2,22 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
 }
 
 #divID {
 display: flex;
 flex-direction: row;
-justify-content: space-between
+justify-content: space-between;
+
 }
 
 #tweet-text {
   color: white;
   background-color: #56A140;
   margin: 0px; 
-  width: 533px; 
-  height: 67px;
-  outline: 0;
-  
+  width: 800px; 
+  height: 40px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;  
+  border-width: medium;
+  resize: none;  
 
 }
 
@@ -37,6 +42,7 @@ textarea {
 }
 
 .counter {
+ 
   font-family: "Bungee", sans-serif;
 
 }
