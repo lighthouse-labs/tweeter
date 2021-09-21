@@ -35,13 +35,14 @@ $(document).ready(function () {
 
 
   function createTweetElement(tweet) {
-    // timeago.format(new Date());
+    console.log("hellow", tweet)
 
     const name = tweet.user.name;
     const avatars = tweet.user.avatars;
     const handle = tweet.user.handle;
     const content = tweet.content.text;
-    const created = tweet.created_at.created
+    // const created = timeago.format(tweet.created_at);
+    const created = moment(tweet.created_at).fromNow();
     const html = 
     `<section>
     <header id="tweetHeader">
