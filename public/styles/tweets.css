@@ -9,10 +9,12 @@
   width: 800px;
 
 } */
-#tweets-container {
+
+
+.kuro {
   margin-top: 1em;
   border-color: #131313;
-  display: flex;
+  /*display: flex;*/
 
   border-width: thin;
   border-style: solid;
@@ -29,11 +31,11 @@
   display: flex;
 }
 
-#article {
+/* #article {
   display: flex;
-}
+} */
 
-#tweet-container:hover {
+.kuro:hover {
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
