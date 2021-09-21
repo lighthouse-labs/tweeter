@@ -43,15 +43,15 @@ $(document).ready(function () {
     const content = tweet.content.text;
     const created = tweet.created_at.created
     const html = 
-    `<section id="tweet-container">
-    <header>
-    <div>
+    `<section>
+    <header id="tweetHeader">
+    <div id="avatarName">
     <img src="${avatars}"/> 
     <p>${name}</p>
-    </div> 
-    <div><p>${handle}</p></div>
+    </div>  
+    <p id="handle">${handle}</p>    
     </header>
-    <article>
+    <article id="article">
       ${content}  
     </article> 
     <footer class='footer'>
