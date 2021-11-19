@@ -19,18 +19,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-- Register page allow new user to register.
-!["Register"](docs/register.png)
+- Main page that displays user, a tweet form and past tweets 
+!["Main"](docs/main.png)
 
-- Login Page which allow user to login if registerd.
-!["Login"](docs/login.png)
+- User can create new tweet of upto 140 characters.
+!["New-Tweet"](docs/new-tweet.png)
 
-- Displays short URLs corresponding to Long URLs alonwith options to Delete and Edit URLs.
-!["Short-urls"](docs/short-URLs.png)
+- Displays error if user does not enter text or input>140 characters
+!["Error"](docs/error.png)
 
-- Allows user to edit longURL for a given shortURL.
-!["Edit"](docs/edit.png)
-
-- There are many validation checks also that displays errors when unauthenticated user tries to make changes.
+- Provides view on mobile device.
+!["Mobile"](docs/mobile.png)
 
 
