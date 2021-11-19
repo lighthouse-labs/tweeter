@@ -16,3 +16,21 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+
+- Register page allow new user to register.
+!["Register"](docs/register.png)
+
+- Login Page which allow user to login if registerd.
+!["Login"](docs/login.png)
+
+- Displays short URLs corresponding to Long URLs alonwith options to Delete and Edit URLs.
+!["Short-urls"](docs/short-URLs.png)
+
+- Allows user to edit longURL for a given shortURL.
+!["Edit"](docs/edit.png)
+
+- There are many validation checks also that displays errors when unauthenticated user tries to make changes.
+
+

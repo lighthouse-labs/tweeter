@@ -1,0 +1,110 @@
+.new-tweet {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: papayawhip;
+}
+
+#textarea {
+    display: flex;
+    width: 100%;
+    border: none;
+    border-bottom: black 2px solid;
+    background: none;
+    text-align: left;
+    background-color: papayawhip;
+    margin-bottom: 0.75em;
+    outline: none;
+}
+
+#counter,
+#icons,
+#at-rate {
+    float: right;
+}
+
+#submit {
+    float: left;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    font-family: Impact, Haettenschweiler, 'Arial Bold', sans-serif;
+}
+
+.new-tweet form {
+    width: 100%;
+}
+
+
+/* warning class for counter */
+
+form .warning {
+    color: red;
+}
+
+#error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1 px solid red;
+}
+
+
+/* tweet data */
+
+.tweetContainer {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    text-align: left;
+    margin-top: 10px;
+    background-color: papayawhip;
+}
+
+
+/* article class for displaying tweets */
+
+.art-tweet {
+    width: 100%;
+    margin: 10px;
+    border: 2px solid;
+}
+
+.art-tweet:hover {
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+.art-tweet footer {
+    border-top: 2px solid black;
+}
+
+
+/* twitter handle */
+
+#at-rate {
+    color: gray;
+}
+
+
+/* icons  */
+
+.fa-flag,
+.fa-retweet,
+.fa-heart {
+    color: blue;
+}
+
+.fa-retweet:hover,
+.fa-heart:hover,
+.fa-flag:hover {
+    color: yellow;
+}
+
+
+/* icon for writing new tweet */
+
+.fa-angle-double-down {
+    color: red;
+}

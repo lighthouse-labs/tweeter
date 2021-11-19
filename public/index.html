@@ -1,29 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- external font bungee, sorce sans pro-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/styles/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/new-tweet.css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+
+
+</head>
+
+<body>
+    <p></p>
     <nav>
-      <span>tweeter</span>
+        <span class="tweeter">
+        Tweeter
+      </span>
+        <span class="new"> <b>Write</b> a new Tweet
+        <p><i class="fas fa-angle-double-down"></i></p>
+      </span>
     </nav>
+    <section class="header-tweet-container">
+        <header class="header">
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+            <img src="/images/profile-hex.png" />
+            <h2>Baani D</h2>
+
+        </header>
+
+        <!-- Page-specific (main) content here -->
+
+        <main class="form-tweet-container">
+            <section class="new-tweet">
+
+                <form id="tweetform" method="POST" action="/tweets/">
+                    <div id="error"></div>
+                    <textarea name="text" id="textarea" placeholder="What are you humming about?"></textarea>
+                    <div>
+                        <button type="submit" id="submit">Tweet</button>
+                        <output name="counter" id="counter" for="tweet-text">140</output>
+                    </div>
+                </form>
+            </section>
+            <section class="tweetContainer">
+                <p></p>
+                <article class="art-tweet">
+
+                    <header>
+                        <i class="far fa-user"></i>
+                        <span> Andy</span>
+                        <span id="at-rate"> @Newton</span>
+                    </header>
+                    <div>
+                        <p>Simplicity is the ultimate sophistication.</p>
+                    </div>
+                    <footer>
+                        10 days ago
+                        <span id="icons">
+          <i class="far fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="far fa-heart"></i>
+        </span>
+                    </footer>
+                </article>
+            </section>
+        </main>
+
+    </section>
+    <script src="/scripts/composer-char-counter.js"></script>
+</body>
+
 </html>

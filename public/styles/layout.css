@@ -3,23 +3,71 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
+
 
 /*
  * Global layout stuff
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: papayawhip;
 }
+
+.header-tweet-container {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.form-tweet-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: papayawhip;
+    margin-top: 200px;
+}
+
+
+/* responsive design for devices*/
+
+@media only screen and (max-width: 768px) {
+    .header-tweet-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .header {
+        margin-top: 50px;
+        width: 100%
+    }
+    .form-tweet-container {
+        width: 90%;
+        margin-top: 50px;
+    }
+    nav {
+        background-color: burlywood;
+    }
+}
