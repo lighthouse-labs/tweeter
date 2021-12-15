@@ -1,0 +1,138 @@
+.tweets {
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  width: 100%;
+  flex-direction: column;
+  background-color: papayawhip;
+  padding: 3em;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+  padding: 2px 1px 20px 2px;
+  
+}
+
+.tweets:hover {
+  box-shadow: 10px 5px 5px skyblue;
+}
+
+.tweet-name {
+  font-size:1.5em;
+  font-weight:600;
+  text-align: left;
+}
+
+.username {
+  display:flex;
+  font-size:1.1em;
+  font-weight:600;
+  padding: 0px 5px;
+  float:right;
+  text-align: right;
+}
+
+.avatar {
+  height:90px;
+  width:90px;
+  float:left;
+  padding: 5px;
+} 
+
+.userContainer {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.date {
+  margin: 0px;
+}
+
+.likes {
+  font-size: 17px;
+  /* display: flex; */
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: right;
+  cursor: pointer;
+}
+.likes:hover{
+  color: aqua;
+}
+
+
+.flag {
+  font-size: 17px;
+  /* display: flex; */
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  /* text-align: right; */
+}
+
+.flag:hover{
+  color: aqua;
+}
+
+.retweet {
+  font-size: 17px;
+  /* display: flex; */
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+
+  /* text-align: right; */
+}
+.retweet:hover{
+  color: aqua;
+}
+
+.tags {
+  display: flex;
+}
+
+.foot {
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 0.5px;
+}
+
+.tweetarea {
+  margin: 0px;
+}
+
+.bottom-line {
+  border-bottom: 4px solid #333333; 
+  margin-left:  10px;
+  margin-right: 10px;
+}
+
+.hello-world {
+  margin-left: 10px;
+}
+
+.angry {
+  height:60px;
+  width:60px;
+  float:left;
+  padding: 5px;
+}
+
+/* .shadow {
+  height: 8px;
+  margin-left: 16px;
+  margin-bottom: 32px;
+  background-color: skyblue;
+  visibility: hidden;
+} */
+
+.tweet-name {
+  margin: 10;
+}
+

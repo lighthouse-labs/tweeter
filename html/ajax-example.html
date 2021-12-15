@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Ajax Example</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(function() {
+  const $button = $('#load-more-posts');
+  $button.on('click', function () {
+    console.log('Button clicked, performing ajax call...');
+    $.ajax('more-posts.html', { method: 'GET' })
+    .then(function (morePostsHtml) {
+      console.log('Success: ', morePostsHtml);
+      $button.replaceWith(morePostsHtml);
+    });
+  });
+});
+</script>
+</head>
+<body>
+  <section>
+    <h1>Recent Posts</h1>
+    <article>
+      <h2>Post 1</h2>
+      <p>This is post 1.</p>
+    </article>
+    <article>
+      <h2>Post 2</h2>
+      <p>This is post 2.</p>
+    </article>
+    <article>
+      <h2>Post 3</h2>
+      <p>This is post 3.</p>
+    </article>
+    <button id="load-more-posts">Load more posts</button>
+  </section>
+</body>
+</html>

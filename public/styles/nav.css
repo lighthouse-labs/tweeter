@@ -1,0 +1,38 @@
+
+.nv {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: "bungee", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5em 0 1.5em;
+  position: fixed;
+}
+
+.write-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.write-tweet p {
+  padding: 0;
+  padding: 0;
+}
+
+nav-bar .header {
+  float: left;
+  margin-left: 10px;
+  font-size: 2em;
+  line-height: 2.5;
+}
+
+.header {
+  float: left;
+  height: 2px;
+}
+
