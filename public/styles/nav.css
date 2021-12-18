@@ -1,17 +1,19 @@
 
-.nv {
+.nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #6aa6e6;
   color: #FFFFFF;
   font-family: "bungee", cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5em 0 1.5em;
-  position: fixed;
+  position: relative;
+  top: 0;
 }
 
+/* this is the new tweet section */
 .write-tweet {
   display: flex;
   flex-direction: column;
@@ -19,20 +21,20 @@
 }
 
 
+/* this is the paragram section for the new tweet */
 .write-tweet p {
   padding: 0;
   padding: 0;
 }
 
-nav-bar .header {
-  float: left;
-  margin-left: 10px;
-  font-size: 2em;
-  line-height: 2.5;
-}
-
+/* the header section */
 .header {
   float: left;
   height: 2px;
 }
 
+@media only screen and (min-width: 1200px) {
+  .nav {
+    background-color: #4056A1;
+  }
+}

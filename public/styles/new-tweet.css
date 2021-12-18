@@ -6,6 +6,7 @@
   margin-bottom: 0.5em;
 }
 
+/* the form for the tweets */
 form {
   display: flex;
   align-content: center;
@@ -20,7 +21,7 @@ form {
 label {
   font-weight: 600;
 }
-
+/* the tweet section */
 #tweet-text {
   width: 100%;
   background: transparent;
@@ -34,6 +35,15 @@ label {
   color: #333333;
 }
 
+/* the user-name area */
+.user-name {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
 /* button and counter*/
 .tweet-btn {
   display: flex;
@@ -41,6 +51,7 @@ label {
   font-family: 'Bungee';
 }
 
+/* the tweet button to submit */
 button {
   padding-left: .8em;
   padding-right: .8em;
@@ -52,12 +63,20 @@ button {
   font-size: 80%;
 }
 
+
 .counter {
   color: #333333;
   margin-right: .5em;
 }
 
-.error{
+/* this is the counter */
+.Counter2 {
+  display: flex;
+  justify-content: space-between;
+  font-family: bungee;
+}
+
+/* .error{
   color: #ff392e;
   margin-top: 6px;
   border: 4px solid red;
@@ -66,4 +85,22 @@ button {
   font-family: 'Source Sans Pro';
   font-size: 80%;
   font-weight: 400;
+} */
+
+
+.error-line {
+  box-sizing: border-box;
+  border: 3px solid crimson;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  padding: 0;
+  margin-bottom: 1rem;
+  display: none;
+  text-align: center;
+}
+
+.error-message {
+  justify-content: center;
+  margin: 10px 0 10px 0;
 }
