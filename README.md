@@ -16,4 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
-hkhhjk
+
+
+## Screenshots
+!["Landing page"](landing-page.png)
+!["mobile response"](mobile-response.png)
+!["empty page, tweet something"](empty-page.png)
+!["tweeted to long page"](to-long-tweet.png)
+!["posted tweets page"](posted-tweet.png)
