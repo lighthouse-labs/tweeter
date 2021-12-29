@@ -16,3 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Screenshots
+!["Landing page"](https://github.com/ahmedMoussa2020/tweeter/blob/tweeter/docs/empty-page.png)
+!["mobile response"](https://github.com/ahmedMoussa2020/tweeter/blob/tweeter/docs/landing-page.png)
+!["empty page, tweet something"](https://github.com/ahmedMoussa2020/tweeter/blob/tweeter/docs/mobile-response.png)
+!["tweeted to long page"](https://github.com/ahmedMoussa2020/tweeter/blob/tweeter/docs/posted-tweet.png)
+!["posted tweets page"](https://github.com/ahmedMoussa2020/tweeter/blob/tweeter/docs/to%20-long-tweet.png)

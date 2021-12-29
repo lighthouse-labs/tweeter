@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*, 
+*:before, 
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,11 +17,57 @@ html {
  */
 
 body {
+  
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: papayawhip;
   font-size: 24px;
+  font-family: 'Bungee', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+main {
+  width: 90%;
+  background-color: papayawhip;
+  margin: auto;
+  
+}
+
+/* this is the alert that shows when the client types to long */
+.longErr {
+  margin-top: 5%;
+  display: none;
+  border-style: solid;
+  border-color: red;
+  text-align: center;
+  font-weight: bold;
+  color:red;
+  height: 100px;
+  line-height: 80px;
+ }
+
+ /* this is the alert that shows up when the client didnt type anything */
+ .emptyErr {
+  margin-top: 5%;
+  display: none;
+  border-style: solid;
+  border-color: red;
+  text-align: center;
+  font-weight: bold;
+  color:red;
+  height: 100px;
+  line-height: 80px;
+ }
+ 
+ @media only screen and (min-width: 1024px) {
+  .container {
+    display: inline-block;
+    width: 45%;
+    position: absolute;
+    margin-left: 10%;
+   }
+ }

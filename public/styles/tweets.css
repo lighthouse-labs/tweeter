@@ -1,0 +1,163 @@
+/* the tweet box */
+.tweet {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  background-color: papayawhip;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+}
+
+/* the tweet hover section */
+.tweet:hover {
+  box-shadow: 10px 5px 5px skyblue;
+}
+
+/* the tweet name */
+.tweet-name {
+  font-size:1.5em;
+  font-weight:600;
+  text-align: left;
+  margin: 10px;
+}
+
+/* the usernames tweet */
+.username {
+  display:flex;
+  font-size:1.1em;
+  font-weight:600;
+  padding: 0px 5px;
+  justify-content: flex-end;
+}
+
+/* the tweets avatar */
+.avatar {
+  height:90px;
+  width:90px;
+  float:left;
+  padding: 5px;
+} 
+
+/* the  user container for the tweets */
+.userContainer {
+  display: flex;
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* the tweet date */
+.date {
+  margin: 0px;
+}
+
+/* the like symbol of the tweets */
+.likes {
+  font-size: 17px;
+  /* display: flex; */
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: right;
+  cursor: pointer;
+}
+/* the likes symbol turn to blue hover with the mouse */
+.likes:hover{
+  color: aqua;
+}
+
+/* the flag symbol of the tweet */
+.flag {
+  font-size: 17px;
+  /* display: flex; */
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  /* text-align: right; */
+}
+/* the flag symbol turn to blue hover with the mouse */
+.flag:hover{
+  color: aqua;
+}
+
+/* the retweet symbol */
+.retweet {
+  font-size: 17px;
+  /* display: flex; */
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+
+  /* text-align: right; */
+}
+/* the retweet symbol turn to blue hover with the mouse */
+.retweet:hover{
+  color: aqua;
+}
+
+/* the three symbols space between */
+.tags {
+  display: flex;
+}
+
+/* the footer section */
+.foot {
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 0.5px;
+}
+
+/* the text area */
+.tweetarea {
+  margin: 0px;
+}
+/* the bottom line */
+.bottom-line {
+  border-bottom: 4px solid #333333; 
+  margin-left:  10px;
+  margin-right: 10px;
+}
+
+/* the section that keep the text in the container */
+.hello-world {
+  word-wrap: break-word;
+  width: 90%;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+/* the user name os the tweets */
+.tweetusername {
+    font-size:1.5em;
+    font-weight:600;
+    text-align: left;
+    height: 100px;
+}
+
+
+/* .angry {
+  height:60px;
+  width:60px;
+  float:left;
+  padding: 5px;
+} */
+
+
+/* .shadow {
+  height: 8px;
+  margin-left: 16px;
+  margin-bottom: 32px;
+  background-color: skyblue;
+  visibility: hidden;
+} */
+
+/* .tweet-name {
+  margin: 10;
+} */
