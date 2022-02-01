@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  
+<head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
@@ -20,16 +20,20 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
-    
-  <!-- font Bungee weight 400; Source Sans pro 300, 300 italic, 600, and 600 italic-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
-    <!-- font awesome for animated arrow in nav -->
-    <!-- original link from compass instructions did not work. Working link found by mentor Nathan -->
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-  </head>
+  <!-- font Bungee weight 400; Source Sans pro 300, 300 italic, 600, and 600 italic-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- font awesome for animated arrow in nav -->
+  <!-- original link from compass instructions did not work. Working link found by mentor Nathan -->
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+    integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
+</head>
 
 <body>
   <!-- Top nav bar (fixed) -->
@@ -37,31 +41,32 @@
     <span>tweeter</span>
     <div class="nav_write_arrow">
       <div><strong>Write</strong> a Tweet</div>
-      <span class="fas fa-angle-double-down" class="arrow" ></span>
+      <span class="fas fa-angle-double-down" class="arrow"></span>
     </div>
   </nav>
   <!-- Header element -->
   <header>
     <div>
-        <img src="/images/profile-hex.png"> 
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-        <h2>Your Name</h2>
+      <h2>Your Name</h2>
     </div>
-</header>
-
+  </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <h2>This is the main area for tweets</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
     <!-- Submission Tweet box -->
     <section>
       <form class="form-tweet" method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="tweet-char">
+        <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
+        <div id="tweet-char">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
@@ -71,4 +76,3 @@
 </body>
 
 </html>
-
