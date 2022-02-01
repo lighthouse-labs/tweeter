@@ -1,0 +1,43 @@
+
+.form-tweet {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  padding: 2.0em;
+}
+
+.tweet-char {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-tweet label{
+  font-weight: bolder;
+}
+
+.form-tweet textarea{
+  font-weight: bold;
+  line-height: 12px;
+  padding: 12px;
+  background-color: transparent;
+  border-width: 0.2em;
+  border-color: black;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  margin-bottom: 1em;
+
+}
+
+.form-tweet button{
+background-color: #001bcc;
+color: white;
+border-radius: 0.2em;
+font-family: "Bungee", cursive, sans-serif;
+background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+}
+
+.form-tweet output{
+  font-weight: 300;
+  font-family: "Bungee", cursive, sans-serif;
+}
