@@ -1,0 +1,26 @@
+nav {
+  height: 120px;
+  display: flex;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav span {
+  font-family: 'Bungee', cursive, sans-serif;
+}
+
+.nav_write_arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* for the nav arrow */
+.svg-inline--fa.fa-w-10 {
+  color: crimson;
+  display: flex;
+}
