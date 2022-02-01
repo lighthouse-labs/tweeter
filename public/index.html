@@ -20,6 +20,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   <!-- font Bungee weight 400; Source Sans pro 300, 300 italic, 600, and 600 italic-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,13 +63,13 @@
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
     <!-- Submission Tweet box -->
-    <section>
+    <section class="new-tweet">
       <form class="form-tweet" method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
         <div id="tweet-char">
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <output name="counter" class="counter" min="0" max="140" for="tweet-text">140</output>
         </div>
       </form>
     </section>

@@ -38,7 +38,13 @@ font-family: "Bungee", cursive, sans-serif;
 background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
 }
 
-.form-tweet output{
+/* Character counter */
+.counter {
   font-weight: 300;
   font-family: "Bungee", cursive, sans-serif;
+  color: black;
+}
+
+.red {
+  color: red;
 }
