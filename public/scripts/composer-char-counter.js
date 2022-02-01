@@ -11,7 +11,6 @@ $(() => {
     $textarea.val().length > 140 
     ? $count.addClass("red")
     : $count.removeClass("red");
-
   });
 
 });
