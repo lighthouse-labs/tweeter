@@ -27,3 +27,16 @@ body {
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.container {
+max-width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+background-color: orange;
+background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+
+
+display: flex;
+align-items: center;
+flex-direction: column;
+}

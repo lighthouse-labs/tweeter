@@ -8,7 +8,7 @@ header {
  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
  
- position: absolute;
- z-index: 0;
+ /* position: absolute; */
+ /* z-index: 0; */
 }
 
