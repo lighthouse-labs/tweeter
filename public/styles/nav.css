@@ -7,10 +7,17 @@ nav {
   padding-right: 1.5em;
   justify-content: space-between;
   align-items: center;
+  background-color: #001bcc;
+  background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+
+
+  position: relative;
+  z-index: 5;
 }
 
 nav span {
   font-family: 'Bungee', cursive, sans-serif;
+  font-size: 2em;
 }
 
 .nav_write_arrow {
