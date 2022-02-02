@@ -23,15 +23,14 @@
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-  <!-- font Bungee weight 400; Source Sans pro 300, 300 italic, 600, and 600 italic-->
+  <!-- External links to Font-Families: Bungee weight 400; Source Sans pro 300, 300 italic, 600, and 600 italic-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
 
-  <!-- font awesome for animated arrow in nav -->
-  <!-- original link from compass instructions did not work. Working link found by mentor Nathan -->
+  <!-- Font Awesome (icons), working link found by mentor Nathan -->
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
     integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
     crossorigin="anonymous"></script>
@@ -41,19 +40,19 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <div class="nav_write_arrow">
+    <div class="right-nav">
       <div><strong>Write</strong> a Tweet</div>
-      <span class="fas fa-angle-double-down" class="arrow"></span>
+      <span class="fas fa-angle-double-down"></span>
     </div>
   </nav>
   <!-- Header element -->
   <header>
-    <div class="avatar">
+    <div>
       <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-      <h2>Your Name</h2>
+      <h2>Count Turnip Von Picklemore Sr.</h2>
     </div>
   </header>
   <!-- Page-specific (main) content here -->
@@ -71,26 +70,27 @@
         <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
         <div id="tweet-char">
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" min="0" max="140" for="tweet-text">140</output>
+          <output name="counter" class="form-counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
 
     <!-- tweeter container for all tweets submitted -->
     <section>
-      <article class="tweet-article">
-        <section class="article-header">
-          <div  class="user-thumbnail">
-            <img class="mini-avatar" src="https://64.media.tumblr.com/4474c38e70283c6ddee7012673df8e99/tumblr_ol3f997jSL1vni15go1_400.gifv">
-            <figure class="main-font, bold">This is the user name</figure>
+      <article class="feed-article">
+        <section class="feed-header">
+          <div class="feed-user">
+            <img class="feed-thumbnail"
+              src="https://64.media.tumblr.com/4474c38e70283c6ddee7012673df8e99/tumblr_ol3f997jSL1vni15go1_400.gifv">
+            <figure class="bold">Gudey Tamahgawd</figure>
           </div>
-          <p class="main-font, bold">@This-is-the-user-handle</p>
+          <p class="bold">@GudT_888888</p>
         </section>
-        <section class="article-body">
-          <p>This the content of the tweet</p>
-        </section>  
+        <section class="feed-body ">
+          <div>What is an egg if void of a yolk? Existential crisis here...Crises..which is singular? Somebody give me an answer before I crack.</div>
+        </section>
         <footer>
-          <p>  
+          <p>
             <time>10 days ago</time>
           </p>
           <div class="icons">

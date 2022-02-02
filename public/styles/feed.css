@@ -1,36 +1,57 @@
-.tweet-article {
+
+
+/* Entire Container Article */
+.feed-article {
   width: 90%;
-  border-style: solid;
+  height: 390px;
+  padding: 1.5em;
+  margin: 1.5em;
   border-radius: 1.5em;
-  padding: 1em;
-  margin: 1em;
-  height: 500 px;
-  font-family: "Source Sans Pro";
+  border-style: solid;
   box-shadow: 5px 5px grey;
+  font-family: "Source Sans Pro";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.user-thumbnail {
-  display: flex;
-  width: 30%;
-  justify-content: space-around;
-}
-.main-font {
-  font-family: "Source Sans Pro", sans-serif;
-}
-.bold {
-font-weight: 600;
-}
-.mini-avatar {
-  max-width: 20%;
-  height: auto;
-}
-.article-header {
+
+/* Top Section of Feed: Header */
+.feed-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 150 px;
 }
 
+.feed-header p {
+  opacity: 85%;
+  font-size: 1.5em;
+}
+
+.feed-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+}
+
+.feed-thumbnail {
+  max-width: 20%;
+  height: auto;
+}
+
+
+/* Mid Section of Feed: Body */
+.feed-body {
+  padding: 0.2em;
+  height: 70px;
+  font-size: 150%;
+  border: mediumblue;
+}
+
+
+/* Bottom Section of Feed: Footer */
 footer {
   border-top-style: solid;
   height: 50px;
@@ -39,11 +60,20 @@ footer {
   align-items: center;
 }
 
-.icons{
+.icons {
   width: 10%;
   display: flex;
   justify-content: space-evenly;
 }
-.icons > div:hover{
+
+.icons div:hover{
   color: blue;
 }
+
+
+/* General */
+.bold {
+  font-weight: 600;
+}
+  
+  

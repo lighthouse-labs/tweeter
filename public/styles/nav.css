@@ -1,20 +1,27 @@
+/* Entire navigation bar */
 nav {
   height: 120px;
-  display: flex;
-  background-color: #4056a1;
-  color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #4056a1;
+  color: #FFFFFF;
   background-color: #001bcc;
   background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
-
-
+  /* Sticky Nav Bar */
   position: fixed;
   top: 0%;
   width: 100%;
   z-index: 9999;
+}
+
+/* Nav Section on the Right Side */
+.right-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav span {
@@ -22,14 +29,7 @@ nav span {
   font-size: 2em;
 }
 
-.nav_write_arrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* for the nav arrow */
+/* Nav arrow icon custom look*/
 .svg-inline--fa.fa-w-10 {
   color: crimson;
-  display: flex;
 }

@@ -4,7 +4,7 @@ $(() => {
   // counts number of chars in form
   const $textarea = $('#tweet-text');
   $textarea.on('keydown', () => {
-    const $count = $('.counter');
+    const $count = $('.form-counter');
     $count.text(140 - $textarea.val().length);
 
     // changes counter to red when negative
