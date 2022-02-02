@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -62,6 +63,33 @@
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
+    <!-- tweeter container for all tweets submitted -->
+    <section>
+      <article class="tweet-article">
+        <section class="article-header">
+          <div  class="user-thumbnail">
+            <img class="mini-avatar" src="https://64.media.tumblr.com/4474c38e70283c6ddee7012673df8e99/tumblr_ol3f997jSL1vni15go1_400.gifv">
+            <figure class="main-font, bold">This is the user name</figure>
+          </div>
+          <p class="main-font, bold">@This-is-the-user-handle</p>
+        </section>
+        <section class="article-body">
+          <p>This the content of the tweet</p>
+        </section>  
+        <footer>
+          <p>  
+            <time>10 days ago</time>
+          </p>
+
+          <div class="icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-compass"></i>
+          </div>
+        </footer>
+      </article>
+    </section>
+
     <!-- Submission Tweet box -->
     <section class="new-tweet">
       <form class="form-tweet" method="POST" action="/tweets">

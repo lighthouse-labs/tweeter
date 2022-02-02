@@ -1,0 +1,46 @@
+.tweet-article {
+  width: 90%;
+  border-style: solid;
+  border-radius: 1.5em;
+  padding: 1em;
+  margin: 1em;
+  height: 500 px;
+  font-family: "Source Sans Pro";
+  box-shadow: 20px, 20px, black;
+}
+
+.user-thumbnail {
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+}
+.main-font {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.bold {
+font-weight: 600;
+}
+.mini-avatar {
+  max-width: 20%;
+  height: auto;
+}
+.article-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 150 px;
+}
+
+footer {
+  border-top-style: solid;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons{
+  width: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
