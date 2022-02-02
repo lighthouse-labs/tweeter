@@ -34,19 +34,23 @@
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
     integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
     crossorigin="anonymous"></script>
+
+  <!-- Timeago for displaying time passed of tweets -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
-  <nav>
+  <!-- Top navbar (fixed) -->
+  <nav class="navbar-top">
     <span>tweeter</span>
-    <div class="right-nav">
-      <div><strong>Write</strong> a Tweet</div>
-      <span class="fas fa-angle-double-down"></span>
+    <div class="navbar-menu">
+      <p><strong>Write</strong> a Tweet</p>
+      <i class="fas fa-angle-double-down navbar-icon"></i>
     </div>
   </nav>
+
   <!-- Header element -->
-  <header>
+  <header class="main-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -55,14 +59,9 @@
       <h2>Count Turnip Von Picklemore Sr.</h2>
     </div>
   </header>
+
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h2>This is the main area for tweets</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-
     <!-- Submission Tweet box -->
     <section class="new-tweet">
       <form class="form-tweet" method="POST" action="/tweets">
@@ -76,31 +75,7 @@
     </section>
 
     <!-- Tweeter container for all tweets submitted -->
-    <section id="tweets-container">
-      <article class="feed-article">
-        <section class="feed-header">
-          <div class="feed-user">
-            <img class="feed-avatar"
-              src="https://64.media.tumblr.com/4474c38e70283c6ddee7012673df8e99/tumblr_ol3f997jSL1vni15go1_400.gifv">
-            <figure class="feed-name bold">Gudey Tamahgawd</figure>
-          </div>
-          <p class="feed-handle bold">@GudT_888888</p>
-        </section>
-        <section class="feed-body ">
-          <div>What is an egg if void of a yolk? Existential crisis here...Crises..which is singular? Somebody give me an answer before I crack.</div>
-        </section>
-        <footer>
-          <p>
-            <time>10 days ago</time>
-          </p>
-          <div class="icons">
-            <div><i class="fas fa-flag"></i></div>
-            <div><i class="fas fa-retweet"></i></div>
-            <div><i class="fas fa-compass"></i></div>
-          </div>
-        </footer>
-      </article>
-    </section>
+    <section id="tweets-container"></section>
   </main>
 </body>
 

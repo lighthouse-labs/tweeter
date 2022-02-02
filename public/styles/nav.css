@@ -18,18 +18,20 @@ nav {
 }
 
 /* Nav Section on the Right Side */
-.right-nav {
+.navbar-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-nav span {
+.navbar-top span {
   font-family: 'Bungee', cursive, sans-serif;
   font-size: 2em;
 }
 
 /* Nav arrow icon custom look*/
-.svg-inline--fa.fa-w-10 {
+.navbar-icon {
   color: crimson;
+  margin-top: -20px;
 }
+

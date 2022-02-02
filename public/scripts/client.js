@@ -4,68 +4,100 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Temporary hardcoding
+const data = "http://localhost:8080/tweets"
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ];
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+// // Temporary hardcoding
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+// }
 
 $( () => {
   console.log("client.js");
-  //define input button 
-  const $inputButton = $('#new-submit');
-  // define input field
-  const $inputField = $('#tweet-text');
-  // grab value from input field
-  const $inputValue = $inputField.val();
-  console.log($inputValue);
-  //create new article with input field value
 
-
-  const createtweetElement = function (e) {
-  // $inputButton.on('click', function () {
-      console.log("CreateTweetElement Called");
-      console.log("e", e.user.avatars);
-      console.log("e", e.user.name);
-      console.log("e", e.user.handle);
-      console.log("e", e.content.text);
-      console.log("e", e.created_at);
-      const $tweet = $(`
+  // Create a new tweet based on submitted information
+  const createTweetElement = function (element) {
+    const { user, content, created_at } = element;
+    const { avatars, name, handle } = user;
+    const { text } = content;
+    const $tweet = `
       <article class="feed-article">
-        <section class="feed-header">
-          <div class="feed-user">
-            <img class="feed-avatar"
-              src="${e.user.avatars}">
-            <figure class="feed-name bold>${e.user.name}</figure>
+        <header class="feed-header">
+          <div class="feed-header-user">
+            <img src="${avatars}" alt="user avatar">
+            <p class="bold">${name}</p>
           </div>
-          <p class="feed-handle bold">${e.user.handle}</p>
-        </section>
-        <section class="feed-body ">
-          <div>${e.content.text}</div>
-        </section>
-        <footer>
-          <p>
-            <time>${e.created_at}</time>
-          </p>
-          <div class="icons">
-            <div><i class="fas fa-flag"></i></div>
-            <div><i class="fas fa-retweet"></i></div>
-            <div><i class="fas fa-compass"></i></div>
+          <p class="feed-handle bold">${handle}</p>
+        </header>
+        <main class="feed-body">
+          <p>${text}</p>
+        </main>
+        <footer class="feed-footer">
+          <p>${timeago.format(created_at)}</p>
+          <div class="feed-footer-icons">
+            <i class="fas fa-flag feed-icon"></i>
+            <i class="fas fa-retweet feed-icon"></i>
+            <i class="fas fa-compass feed-icon"></i>
           </div>
         </footer>
-      </article>`);
-      console.log("input tweet", $tweet);
+      </article>`;
       return $tweet;
-    // });
   };
 
-    const $tweet = createtweetElement(tweetData);
-$('#tweets-container').append($tweet);  
+  // what is the purpose of this function? takes the info, creates the tweet, and renders them into container.
+  const renderTweets = function(tweets) {
+    console.log("renderTweets called");
+    console.log("argument tweets", tweets);
+
+    $('#tweets-container').empty();
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('#tweets-container').prepend($tweet);  
+    }
+    // console.log('#tweets-container', $('#tweets-container'));
+    return true;
+  };
+
+  // $.ajax({
+  // url: data,
+  // }).then( (response) => {
+  //   console.log('response', response);
+  //   renderTweets(response);
+  // });
+
+  $.get( data, function(response) {
+    renderTweets(response);
+  });
 });
