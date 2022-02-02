@@ -6,7 +6,7 @@
   margin: 1em;
   height: 500 px;
   font-family: "Source Sans Pro";
-  box-shadow: 20px, 20px, black;
+  /* box-shadow: 20px, 20px, black; */
 }
 
 .user-thumbnail {
@@ -43,4 +43,7 @@ footer {
   width: 10%;
   display: flex;
   justify-content: space-evenly;
+}
+.icons > div:hover{
+  color: blue;
 }
