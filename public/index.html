@@ -69,22 +69,22 @@
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
         <div id="tweet-char">
-          <button type="submit">Tweet</button>
+          <button type="submit" id="new-submit">Tweet</button>
           <output name="counter" class="form-counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
 
-    <!-- tweeter container for all tweets submitted -->
-    <section>
+    <!-- Tweeter container for all tweets submitted -->
+    <section id="tweets-container">
       <article class="feed-article">
         <section class="feed-header">
           <div class="feed-user">
-            <img class="feed-thumbnail"
+            <img class="feed-avatar"
               src="https://64.media.tumblr.com/4474c38e70283c6ddee7012673df8e99/tumblr_ol3f997jSL1vni15go1_400.gifv">
-            <figure class="bold">Gudey Tamahgawd</figure>
+            <figure class="feed-name bold">Gudey Tamahgawd</figure>
           </div>
-          <p class="bold">@GudT_888888</p>
+          <p class="feed-handle bold">@GudT_888888</p>
         </section>
         <section class="feed-body ">
           <div>What is an egg if void of a yolk? Existential crisis here...Crises..which is singular? Somebody give me an answer before I crack.</div>
