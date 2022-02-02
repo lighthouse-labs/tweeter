@@ -48,7 +48,7 @@
   </nav>
   <!-- Header element -->
   <header>
-    <div>
+    <div class="avatar">
       <img src="/images/profile-hex.png">
     </div>
     <br>
@@ -63,6 +63,19 @@
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
+
+    <!-- Submission Tweet box -->
+    <section class="new-tweet">
+      <form class="form-tweet" method="POST" action="/tweets">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
+        <div id="tweet-char">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" min="0" max="140" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
     <!-- tweeter container for all tweets submitted -->
     <section>
       <article class="tweet-article">
@@ -80,7 +93,6 @@
           <p>  
             <time>10 days ago</time>
           </p>
-
           <div class="icons">
             <div><i class="fas fa-flag"></i></div>
             <div><i class="fas fa-retweet"></i></div>
@@ -88,18 +100,6 @@
           </div>
         </footer>
       </article>
-    </section>
-
-    <!-- Submission Tweet box -->
-    <section class="new-tweet">
-      <form class="form-tweet" method="POST" action="/tweets">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
-        <div id="tweet-char">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" min="0" max="140" for="tweet-text">140</output>
-        </div>
-      </form>
     </section>
   </main>
 </body>

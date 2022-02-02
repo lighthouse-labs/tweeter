@@ -11,8 +11,10 @@ nav {
   background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
 
 
-  position: relative;
-  z-index: 5;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 9999;
 }
 
 nav span {

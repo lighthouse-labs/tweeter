@@ -6,7 +6,7 @@
   margin: 1em;
   height: 500 px;
   font-family: "Source Sans Pro";
-  /* box-shadow: 20px, 20px, black; */
+  box-shadow: 5px 5px grey;
 }
 
 .user-thumbnail {
