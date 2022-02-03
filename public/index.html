@@ -66,7 +66,8 @@
     <!-- Submission Tweet box -->
     <section class="new-tweet">
       <form class="form-tweet" method="POST" action="/tweets">
-        <p class="alert invisible"><i class="fas fa-exclamation-circle"></i></p>
+        <span class="tweet-fail alert violet-red invisible"><i class="fas fa-exclamation-circle"></i></span>
+        <span class="tweet-success alert green invisible"><i class="fas fa-check-circle"></i></span>
         <p class="alert-border invisible"></p>
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>

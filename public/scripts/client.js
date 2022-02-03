@@ -74,18 +74,24 @@ $(() => {
     event.preventDefault();
     const errorMessage = validateTweet($('#tweet-text').val());
     if (errorMessage) {
-      // Alerts appear "!" and border, with error below divider, removing invisibility
-      $('.alert').hide().slideDown("100")
-      $('.alert-border').hide().slideDown("0")
-      $('.alert').removeClass("invisible")
+      // Alerts When Error
+      $('.tweet-fail').hide().slideDown("100") // for failed tweets
+      $('.tweet-fail').removeClass("invisible")
+
+      $('.tweet-success').addClass("invisible") // for successful tweets
+
+      $('.alert-border').hide().slideDown("0") // for failed tweets border
       $('.alert-border').removeClass("invisible")
-      $('.form-error').hide().delay("0").fadeIn().text(errorMessage);
+      
+      $('.form-error').hide().delay("0").fadeIn().text(errorMessage); // failed tweets error message
       return;
     }
-    // Alerts become hidden and textarea clear when submit button clicked
-      $('.alert').addClass("invisible")
+    // Alerts When Success
+      $('.tweet-fail').addClass("invisible")
       $('.alert-border').addClass("invisible")
-      $('#tweet-text').val("");
+      $('.tweet-success').hide().slideDown("100") 
+      $('.tweet-success').removeClass("invisible")
+      $('#tweet-text').val(""); // to empty field
 
     const serializedData = $('#tweet-text').serialize();
     $.ajax('/tweets', {
