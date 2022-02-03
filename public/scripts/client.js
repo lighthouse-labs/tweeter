@@ -78,26 +78,22 @@ $( () => {
 
   // what is the purpose of this function? takes the info, creates the tweet, and renders them into container.
   const renderTweets = function(tweets) {
-    console.log("renderTweets called");
-    console.log("argument tweets", tweets);
-
     $('#tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);  
     }
-    // console.log('#tweets-container', $('#tweets-container'));
     return true;
   };
 
-  // $.ajax({
-  // url: data,
-  // }).then( (response) => {
-  //   console.log('response', response);
-  //   renderTweets(response);
-  // });
-
-  $.get( data, function(response) {
-    renderTweets(response);
+  // get the button working...
+  $('.form-tweet').on('submit', (event)=> {
+    event.preventDefault(); 
+    const data = $('#tweet-text').serialize();
+    $.ajax('/tweets', {
+      method: 'POST',
+      data: data
+    });
   });
+  
 });
