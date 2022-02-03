@@ -91,10 +91,11 @@ $(() => {
     $('.alert-border').addClass("invisible")
     $('.tweet-success').hide().slideDown("100") 
     $('.tweet-success').removeClass("invisible")
+    $('.form-error').hide().delay("0").fadeIn().text("Tweet success!"); // failed tweets error message
     
     const serializedData = $('#tweet-text').serialize();
     $('#tweet-text').val(""); // to empty field must come AFTER const seralizeData!
-    
+
     $.ajax('/tweets', {
       method: 'POST',
       data: serializedData
