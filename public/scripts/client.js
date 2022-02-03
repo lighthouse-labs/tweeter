@@ -87,13 +87,14 @@ $(() => {
       return;
     }
     // Alerts When Success
-      $('.tweet-fail').addClass("invisible")
-      $('.alert-border').addClass("invisible")
-      $('.tweet-success').hide().slideDown("100") 
-      $('.tweet-success').removeClass("invisible")
-      $('#tweet-text').val(""); // to empty field
-
+    $('.tweet-fail').addClass("invisible")
+    $('.alert-border').addClass("invisible")
+    $('.tweet-success').hide().slideDown("100") 
+    $('.tweet-success').removeClass("invisible")
+    
     const serializedData = $('#tweet-text').serialize();
+    $('#tweet-text').val(""); // to empty field must come AFTER const seralizeData!
+    
     $.ajax('/tweets', {
       method: 'POST',
       data: serializedData
