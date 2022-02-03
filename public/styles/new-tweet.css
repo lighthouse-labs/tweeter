@@ -1,42 +1,94 @@
 /* Container for Form */
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Complete Form  */
 .form-tweet {
   display: flex;
   flex-direction: column;
-  z-index: 3;
+  /* z-index: 8000; */
   padding: 2.0em;
 }
 
-
 /* Prompt for Tweet */
-.form-tweet label{
+.form-tweet label {
   font-weight: bolder;
+  font-style: italic;
 }
 
 
 /* Input Tweet Area */
-.form-tweet textarea{
-  font-weight:200;
+.form-tweet textarea {
+  font-weight: 700;
+  font-size: 1.2em;
   line-height: 12px;
-  padding-top: 30px;
+  padding: 30px 0 0 0;
+  overflow-wrap: normal;
+  text-indent: 1em;
+  letter-spacing: 1.5px;
+  word-spacing: 4px;
   background-color: transparent;
   border-bottom: 4px solid black;
+  border-radius: 0.2em;
   border-top: none;
   border-left: none;
   border-right: none;
-  margin-bottom: 1em;
+  z-index: 9000;
 }
 .form-tweet textarea:focus {
-  background-color: rgb(216, 187, 112);
+  background-color: lightsteelblue;
+  opacity: 90%;
+}
+
+/* Alert Above Form */
+.alert {
+  display: flex;
+  justify-content: center;
+  opacity: 95%;
+  font-size: 10rem;
+  height: auto;
+  margin: -100px;
+  padding-bottom: 0px;
+  color: mediumvioletred;
+}
+.alert-border {
+  border: 5px mediumvioletred dotted;
+  opacity: 80%;
+  border-radius: 2em;
+  height: 9em;
+  margin-bottom: -8em;
+  margin-top: 35px;
+  margin-right: -6em;
+  margin-left: -6em;
+
+}
+.invisible {
+  visibility: hidden;
 }
 
 
+/* Error Alert Area */
+.form-error {
+/* border: solid 1px red; */
+height: 1em;
+color: red;
+font-weight: bolder;
+font-style: italic;
+margin: 0em 0 0.5em 0;
+}
+
 /* Submit Button */
-.form-tweet button{
+.form-tweet button {
 background-color: #001bcc;
 color: white;
 border-radius: 0.2em;
 font-family: "Bungee", cursive, sans-serif;
 background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+z-index: 8000;
+
 }
 
 /* Footer of Tweet Form */

@@ -12,13 +12,13 @@ $(() => {
 
   const validateTweet = function (input) {
     if (input.length === 0) {
-      return "Tweet cannot be empty";
+      return "⚠︎ Your Tweet cannot be empty. ⚠︎";
     }
     if (input.length > 140) {
-      return "tweet too long";
+      return "⚠︎ Your Tweet is too long. Try staying within 140 characters. ⚠︎";
     }
     if (input === null) {
-      return "please try again";
+      return "⚠︎ Error. Please try again ⚠︎";
     }
     return false;
   };
@@ -74,9 +74,19 @@ $(() => {
     event.preventDefault();
     const errorMessage = validateTweet($('#tweet-text').val());
     if (errorMessage) {
-      alert(errorMessage);
+      // Alerts appear "!" and border, with error below divider, removing invisibility
+      $('.alert').hide().slideDown("100")
+      $('.alert-border').hide().slideDown("0")
+      $('.alert').removeClass("invisible")
+      $('.alert-border').removeClass("invisible")
+      $('.form-error').hide().delay("0").fadeIn().text(errorMessage);
       return;
     }
+    // Alerts become hidden and textarea clear when submit button clicked
+      $('.alert').addClass("invisible")
+      $('.alert-border').addClass("invisible")
+      $('#tweet-text').val("");
+
     const serializedData = $('#tweet-text').serialize();
     $.ajax('/tweets', {
       method: 'POST',

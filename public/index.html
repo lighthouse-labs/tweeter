@@ -56,19 +56,23 @@
     </div>
     <br>
     <div>
-      <h2>Count Turnip Von Picklemore Sr.</h2>
+      <h2>Count Turnip Von Picklemore Sr.</h2>   
     </div>
   </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
     <!-- Submission Tweet box -->
     <section class="new-tweet">
       <form class="form-tweet" method="POST" action="/tweets">
+        <p class="alert invisible"><i class="fas fa-exclamation-circle"></i></p>
+        <p class="alert-border invisible"></p>
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
+        <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
+        <p class="form-error"></p>
         <div id="tweet-char">
-          <button type="submit" id="new-subm    it">Tweet</button>
+          <button type="submit" id="new-submit">Tweet</button>
           <output name="counter" class="form-counter" for="tweet-text">140</output>
         </div>
       </form>
