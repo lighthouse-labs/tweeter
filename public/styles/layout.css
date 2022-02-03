@@ -24,17 +24,27 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-body {
+.body {
   font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Mobile Layout */
+@media (max-width: 1270px) {
+  .body {
+    width: 130%;
+  }
 }
 
 .container {
 max-width: 90%;
 margin: 1em auto;
-/* margin-top: 25px; */
 /* background-color: orange; */
 /* background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"); */
-
 display: flex;
 flex-direction: column;
 }

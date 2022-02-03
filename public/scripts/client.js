@@ -10,6 +10,7 @@ const data = "http://localhost:8080/tweets";
 $(() => {
   console.log("client.js");
 
+  // Validate Tweet Input to Prevent Code Improper Messages
   const validateTweet = function (input) {
     if (input.length === 0) {
       return "⚠︎ Your Tweet cannot be empty. ⚠︎";
@@ -23,15 +24,24 @@ $(() => {
     return false;
   };
 
-  // escape function
+
+  // Escape Function Against Cross-Site Script Attacks. Code directly from Compass
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Enter key = Submit Tweet
+  $('#tweet-text').on('keypress', function (event) {
+    const keycode = parseInt(event.keyCode);
+    if (keycode === 13) {
+      $('#new-submit').click();
+    }
+  });
 
-  // Create a new tweet based on submitted information
+
+  // Generate New Tweet Input
   const createTweetElement = function (tweet) {
     const { user, content, created_at } = tweet;
     const { avatars, name, handle } = user;
@@ -60,7 +70,8 @@ $(() => {
     return $tweet;
   };
 
-  // Adds tweets to the container
+
+  // Feeds Each Tweet to The Tweet Container
   const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -69,42 +80,46 @@ $(() => {
     return true;
   };
 
-  // Serializes the data from form and adds to /tweets
-  $('.form-tweet').on('submit', (event) => {
-    event.preventDefault();
-    const errorMessage = validateTweet($('#tweet-text').val());
-    if (errorMessage) {
-      // Alerts When Error
-      $('.tweet-fail').hide().slideDown("100") // for failed tweets
-      $('.tweet-fail').removeClass("invisible")
 
-      $('.tweet-success').addClass("invisible") // for successful tweets
+  // Serializes The Data from Form and adds to '/tweets'
+  const submitTweets = function () {
+    $('.form-tweet').on('submit', (event) => {
+      event.preventDefault();
+      const errorMessage = validateTweet($('#tweet-text').val());
+      if (errorMessage) {
+        // Alerts Jquery Animation When Error
+        $('.tweet-fail').hide().slideDown("100"); // Reveals these for failed tweets
+        $('.tweet-fail').removeClass("invisible");
+        $('.alert-border').hide().slideDown("0");
+        $('.alert-border').removeClass("invisible");
+        $('.form-error').hide().delay("0").fadeIn().text(errorMessage);
+        $('.tweet-success').addClass("invisible"); // Hides success message when failed tweets
+        return;
+      }
+      // Alerts Jquery Animation When Success
+      $('.tweet-fail').addClass("invisible"); // Hides failed messages when successful tweets
+      $('.alert-border').addClass("invisible");
+      $('.tweet-success').hide().slideDown("100"); // Reveals these for successful tweets
+      $('.tweet-success').removeClass("invisible");
+      $('.form-error').hide().delay("0").fadeIn().text("Tweet success!"); // Displays success message
 
-      $('.alert-border').hide().slideDown("0") // for failed tweets border
-      $('.alert-border').removeClass("invisible")
-      
-      $('.form-error').hide().delay("0").fadeIn().text(errorMessage); // failed tweets error message
-      return;
-    }
-    // Alerts When Success
-    $('.tweet-fail').addClass("invisible")
-    $('.alert-border').addClass("invisible")
-    $('.tweet-success').hide().slideDown("100") 
-    $('.tweet-success').removeClass("invisible")
-    $('.form-error').hide().delay("0").fadeIn().text("Tweet success!"); // failed tweets error message
-    
-    const serializedData = $('#tweet-text').serialize();
-    $('#tweet-text').val(""); // to empty field must come AFTER const seralizeData!
+      const serializedData = $('#tweet-text').serialize();
+      $('#tweet-text').val(""); // Empties input field: ^ must come AFTER seralizeData! ^
 
-    $.ajax('/tweets', {
-      method: 'POST',
-      data: serializedData
-    }).then(() => {
-      loadTweets();
+      // Updates Database
+      $.ajax('/tweets', {
+        method: 'POST',
+        data: serializedData
+      }).then(() => {
+        // Auto-refreshes
+        loadTweets();
+      });
     });
-  });
+  };
+  submitTweets()
 
-  // Makes a request to /tweets and receives the array of tweets as JSON
+
+  // Fetches Database (receives the array of tweets as JSON)
   const loadTweets = () => {
     $.ajax('/tweets', {
       method: "GET",
