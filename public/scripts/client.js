@@ -32,6 +32,7 @@ $(() => {
     return div.innerHTML;
   };
 
+
   // Enter key = Submit Tweet
   $('#tweet-text').on('keypress', function (event) {
     const keycode = parseInt(event.keyCode);
