@@ -10,6 +10,19 @@ const data = "http://localhost:8080/tweets";
 $(() => {
   console.log("client.js");
 
+  const validateTweet = function (input) {
+    if (input.length === 0) {
+      return "Tweet cannot be empty";
+    }
+    if (input.length > 140) {
+      return "tweet too long";
+    }
+    if (input === null) {
+      return "please try again";
+    }
+    return false;
+  };
+
   // Create a new tweet based on submitted information
   const createTweetElement = function (tweet) {
     const { user, content, created_at } = tweet;
@@ -51,10 +64,17 @@ $(() => {
   // Serializes the data from form and adds to /tweets
   $('.form-tweet').on('submit', (event) => {
     event.preventDefault();
-    const data = $('#tweet-text').serialize();
+    const errorMessage = validateTweet($('#tweet-text').val());
+    if (errorMessage) {
+      alert(errorMessage);
+      return;
+    }
+    const serializedData = $('#tweet-text').serialize();
     $.ajax('/tweets', {
       method: 'POST',
-      data: data
+      data: serializedData
+    }).then(() => {
+      loadTweets();
     });
   });
 
