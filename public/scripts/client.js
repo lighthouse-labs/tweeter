@@ -23,6 +23,14 @@ $(() => {
     return false;
   };
 
+  // escape function
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
   // Create a new tweet based on submitted information
   const createTweetElement = function (tweet) {
     const { user, content, created_at } = tweet;
@@ -38,7 +46,7 @@ $(() => {
           <p class="feed-handle bold">${handle}</p>
         </header>
         <main class="feed-body">
-          <p>${text}</p>
+          <p>${escape(text)}</p>
         </main>
         <footer class="feed-footer">
           <p>${timeago.format(created_at)}</p>
