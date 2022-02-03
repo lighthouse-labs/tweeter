@@ -5,51 +5,14 @@
  */
 
 // Temporary hardcoding
-const data = "http://localhost:8080/tweets"
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ];
+const data = "http://localhost:8080/tweets";
 
-// // Temporary hardcoding
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//   "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//   "created_at": 1461116232227
-// }
-
-$( () => {
+$(() => {
   console.log("client.js");
 
   // Create a new tweet based on submitted information
-  const createTweetElement = function (element) {
-    const { user, content, created_at } = element;
+  const createTweetElement = function (tweet) {
+    const { user, content, created_at } = tweet;
     const { avatars, name, handle } = user;
     const { text } = content;
     const $tweet = `
@@ -73,27 +36,37 @@ $( () => {
           </div>
         </footer>
       </article>`;
-      return $tweet;
+    return $tweet;
   };
 
-  // what is the purpose of this function? takes the info, creates the tweet, and renders them into container.
-  const renderTweets = function(tweets) {
-    $('#tweets-container').empty();
+  // Adds tweets to the container
+  const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet);  
+      $('#tweets-container').prepend($tweet);
     }
     return true;
   };
 
-  // get the button working...
-  $('.form-tweet').on('submit', (event)=> {
-    event.preventDefault(); 
+  // Serializes the data from form and adds to /tweets
+  $('.form-tweet').on('submit', (event) => {
+    event.preventDefault();
     const data = $('#tweet-text').serialize();
     $.ajax('/tweets', {
       method: 'POST',
       data: data
     });
   });
-  
+
+  // Makes a request to /tweets and receives the array of tweets as JSON
+  const loadTweets = () => {
+    $.ajax('/tweets', {
+      method: "GET",
+    }).then((data) => {
+      $('#tweets-container').empty();
+      return renderTweets(data);
+    })
+  };
+  loadTweets();
+
 });
