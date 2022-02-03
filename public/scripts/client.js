@@ -62,9 +62,9 @@ $(() => {
         <footer class="feed-footer">
           <p>${timeago.format(created_at)}</p>
           <div class="feed-footer-icons">
-            <i class="fas fa-flag feed-icon"></i>
-            <i class="fas fa-retweet feed-icon"></i>
-            <i class="fas fa-compass feed-icon"></i>
+          <i class="fas fa-flag feed-icon"></i>
+          <i class="fas fa-retweet feed-icon"></i>
+          <i class="fas fa-ice-cream feed-icon"></i>
           </div>
         </footer>
       </article>`;

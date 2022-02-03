@@ -3,6 +3,7 @@
 /* Entire Container Article */
 .feed-article {
   width: 90%;
+  min-width: 500px;
   height: 390px;
   padding: 1.5em;
   margin: 1.5em;
@@ -44,7 +45,6 @@
 /* Mid Section of Feed: Body */
 .feed-body {
   padding: 0.2em;
-  height: 70px;
   font-size: 150%;
   border: mediumblue;
 }
@@ -60,9 +60,10 @@
 }
 
 .feed-footer-icons {
-  width: 10%;
+  width: 15%;
   display: flex;
   justify-content: space-evenly;
+  min-width: 10%;
 }
 .feed-icon:hover{
   color: blue;

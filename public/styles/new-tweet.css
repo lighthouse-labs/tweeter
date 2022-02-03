@@ -9,6 +9,9 @@
 .form-tweet {
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  min-width: 460px;
+
   /* z-index: 8000; */
   padding: 2.0em;
 }

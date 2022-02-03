@@ -32,10 +32,8 @@
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
 
-  <!-- Font Awesome (icons), working link found by mentor Nathan -->
-  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-    integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-    crossorigin="anonymous"></script>
+  <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Timeago for displaying time passed of tweets -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -44,9 +42,9 @@
 <body class="body">
   <!-- Top navbar (fixed) -->
   <nav class="navbar-top">
-    <span>tweeter</span>
+    <span>Sweetr</span>
     <div class="navbar-menu">
-      <p><strong>Write</strong> a Tweet</p>
+      <p><strong>Write</strong> a sWeet</p>
       <i class="fas fa-angle-double-down navbar-icon"></i>
     </div>
   </nav>
@@ -71,11 +69,11 @@
         <span class="tweet-fail alert violet-red invisible"><i class="fas fa-exclamation-circle"></i></span>
         <span class="tweet-success alert green invisible"><i class="fas fa-check-circle"></i></span>
         <p class="alert-border invisible"></p>
-        <label for="tweet-text">What are you humming about?</label>
+        <label for="tweet-text">Share some sugar, or spice...</label>
         <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
         <p class="form-error"></p>
         <div id="tweet-char">
-          <button type="submit" value="submit" id="new-submit">Tweet</button>
+          <button type="submit" value="submit" id="new-submit">Sweet</button>
           <output name="counter" class="form-counter" for="tweet-text">140</output>
         </div>
       </form>
