@@ -16,6 +16,16 @@ nav {
   z-index: 9999;
 }
 
+.nav-logo {
+  text-decoration: none;
+}
+.nav-logo:link {
+  text-decoration: none;
+}
+.nav-logo:visited {
+  text-decoration: none;
+  color: brown;
+}
 /* Nav Section on the Right Side */
 .navbar-menu {
   display: flex;
