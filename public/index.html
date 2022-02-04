@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <!-- Layout  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <!-- Meta Information -->
@@ -20,7 +21,7 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+  
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -39,18 +40,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
+<!-- 
+  Reference: Layout of Main Classes/ID:
+  1 "body"
+    2 "header"
+    2 "main"
+      3 "navbar"
+      3 "form"
+      3 "#container"
+ -->
+
 <body class="body">
   <!-- Top navbar (fixed) -->
-  <nav class="navbar-top">
+  <nav class="navbar">
     <span>Sweetr</span>
     <div class="navbar-menu">
-      <p><strong>Write</strong> a sWeet</p>
+      <p><strong>Write</strong> a Shtweet</p>
       <i class="fas fa-angle-double-down navbar-icon"></i>
     </div>
   </nav>
 
   <!-- Header element -->
-  <header class="main-header">
+  <header class="header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -61,26 +72,24 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <main class="main">
 
     <!-- Submission FORM Tweet box -->
-    <section class="new-tweet">
-      <form class="form-tweet" method="POST" action="/tweets">
-        <span class="tweet-fail alert violet-red invisible"><i class="fas fa-exclamation-circle"></i></span>
-        <span class="tweet-success alert green invisible"><i class="fas fa-check-circle"></i></span>
-        <p class="alert-border invisible"></p>
-        <label for="tweet-text">Share some sugar, or spice...</label>
-        <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
-        <p class="form-error"></p>
-        <div id="tweet-char">
-          <button type="submit" value="submit" id="new-submit">Sweet</button>
-          <output name="counter" class="form-counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+    <form class="form" method="POST" action="/tweets">
+      <span class="tweet-fail alert violet-red invisible"><i class="fas fa-exclamation-circle"></i></span>
+      <span class="tweet-success alert green invisible"><i class="fas fa-check-circle"></i></span>
+      <p class="alert-border invisible"></p>
+      <label for="tweet-text">Share some sugar, or spice...</label>
+      <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
+      <p class="form-error"></p>
+      <div id="tweet-char">
+        <button type="submit" value="submit" id="new-submit">Sweet</button>
+        <output name="counter" class="form-counter" for="tweet-text">140</output>
+      </div>
+    </form>
 
     <!-- Tweeter container for all tweets submitted -->
-    <section id="tweets-container"></section>
+    <section id="container"></section>
   </main>
 </body>
 

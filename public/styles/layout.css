@@ -25,37 +25,20 @@ body {
  */
 
 .body {
-  font-family: 'Source Sans Pro', sans-serif;
-  width: 100%;
-  margin: 0vw;
   display: flex;
   flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  height: auto;
+  margin: 0vw;
 }
 
-/* Mobile Layout */
-@media (max-width: 1270px) {
-  .body {
-    width: 130vw;
-  }
-}
 
-@media (max-width: 485px) {
-  .body {
-    width: 170vw;
-  }
-}
-
-@media (max-width: 360px) {
-  .body {
-    width: 190vw;
-  }
-}
-
-.container {
-max-width: 100vw;
+.main {
 margin: auto;
 /* background-color: orange; */
 /* background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"); */
 display: flex;
 flex-direction: column;
+justify-content: center;
 }

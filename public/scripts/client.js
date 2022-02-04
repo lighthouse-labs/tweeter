@@ -76,7 +76,7 @@ $(() => {
   const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet);
+      $('#container').prepend($tweet);
     }
     return true;
   };
@@ -84,7 +84,7 @@ $(() => {
 
   // Serializes The Data from Form and adds to '/tweets'
   const submitTweets = function () {
-    $('.form-tweet').on('submit', (event) => {
+    $('.form').on('submit', (event) => {
       event.preventDefault();
       const errorMessage = validateTweet($('#tweet-text').val());
       if (errorMessage) {
@@ -125,7 +125,7 @@ $(() => {
     $.ajax('/tweets', {
       method: "GET",
     }).then((data) => {
-      $('#tweets-container').empty();
+      $('#container').empty();
       return renderTweets(data);
     })
   };

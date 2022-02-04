@@ -1,47 +1,49 @@
-/* Container for Form */
-#tweets-container {
+/* Complete Form */
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-/* Complete Form  */
-.form-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
   min-width: 460px;
-
-  /* z-index: 8000; */
   padding: 2.0em;
 }
 
+@media (max-width: 800px) {
+  .form {
+    width: auto;
+  }
+}
+
+
 /* Prompt for Tweet */
-.form-tweet label {
+.form label {
   font-weight: bolder;
   font-style: italic;
 }
 
 
-/* Input Tweet Area */
-.form-tweet textarea {
+/* Input Area */
+.form textarea {
+  /* text style */
   font-weight: 700;
   font-size: 1.2em;
-  line-height: 12px;
-  padding: 30px 0 0 0;
-  overflow-wrap: normal;
   text-indent: 1em;
   letter-spacing: 1.5px;
   word-spacing: 4px;
+  overflow-wrap: normal;
+
+  /* field style */
+  line-height: 12px;
   background-color: transparent;
   border-bottom: 4px solid black;
+  padding: 30px 0 0 0;
   border-radius: 0.2em;
   border-top: none;
   border-left: none;
   border-right: none;
+
   z-index: 9000;
 }
-.form-tweet textarea:focus {
+
+.form textarea:focus {
   background-color: lightsteelblue;
   opacity: 90%;
 }
@@ -86,7 +88,7 @@ margin: 0em 0 0.5em 0;
 }
 
 /* Submit Button */
-.form-tweet button {
+.form button {
 background-color: #001bcc;
 color: white;
 border-radius: 0.2em;
@@ -94,9 +96,10 @@ font-family: "Bungee", cursive, sans-serif;
 background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
 z-index: 8000;
 }
-.form-tweet button:hover {
+.form button:hover {
   box-shadow: 0px 0px 20px 15px mediumturquoise ;
 }
+
 /* Footer of Tweet Form */
 #tweet-char {
   display: flex;
@@ -110,6 +113,14 @@ z-index: 8000;
   color: black;
 }
 
+/* Container for Form */
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Colors */
 .red {
   color: red;
 }
