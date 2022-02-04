@@ -1,0 +1,81 @@
+@media only screen and (min-width: 1250px) {
+  .nav {
+    background-color: burlywood;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    color: #FFFFFF;
+  }
+  .form {
+    position: unset;
+    bottom: 0%;
+    width: 100% !important;
+    min-width: inherit !important;
+    padding: 4.0em 2.0em 2.0em 2.0em;
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 120px !important;
+  }
+  .body {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+  }
+  .header {
+    width: 30vw;
+    height:initial;
+    padding: 20vw;
+  }
+  .main {
+    flex-direction: column;
+    align-items: space-evenly;
+    justify-content: initial;
+    width: 70vw;
+  }
+  .header-avatar {
+    opacity: initial;
+    display: initial;
+    width: initial;
+    max-height: initial;
+    transition: initial;
+    backface-visibility: initial;
+    transition: transform 1s;
+  }
+  .header-username {
+    display: initial;
+    white-space: nowrap;
+  }
+  .header-hidden-text {
+    display: none;
+  }
+  .header-div1:hover .header-avatar {
+    opacity: initial;
+    transform: translateY(50px);
+  }
+  .tweet-fail {
+    margin: -0px -0px -0px -0px;  
+    position:initial;
+  }
+  .tweet-success {
+    margin: -0px -0px -0px -0px;
+    position: initial;
+  }
+  .alert-border {
+    border: 5px; 
+    border-color: red;
+    opacity: 80%;
+    border-radius: 2em;
+    height: 9em;
+    margin-bottom: initial;
+    margin-top: initial;
+    margin-right: initial;
+    margin-left: initial;
+  }
+  .fa-check-circle {
+    transform: translateY(30%);
+    transition: transform 100ms
+  }
+  .fa-exclamation-circle{
+    transform: translateY(5%);
+    transition: transform 100ms
+  }
+} 
