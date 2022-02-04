@@ -1,11 +1,11 @@
 
 /* Entire Container Article */
 .feed-article {
-  width: 90%;
-  min-width: 500px;
+  width: 100% !important;  
+  min-width: inherit !important;
+  margin: 1.5em 0 !important;
+  padding: 1.5em !important;
   height: 390px;
-  padding: 1.5em;
-  margin: 1.5em;
   border-radius: 1.5em;
   border-style: solid;
   box-shadow: 5px 5px grey;
@@ -14,7 +14,6 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-
 
 /* Top Section of Feed: Header */
 .feed-header {
@@ -59,7 +58,7 @@
 }
 
 .feed-footer-icons {
-  width: 15%;
+  width: 127px !important;
   display: flex;
   justify-content: space-evenly;
   min-width: 10%;

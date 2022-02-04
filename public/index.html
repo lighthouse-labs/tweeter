@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-  
   <!-- Layout  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+  <title>Sweetr - Home Page</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -42,12 +41,12 @@
 
 <!-- 
   Reference: Layout of Main Classes/ID:
-  1 "body"
-    2 "header"
-    2 "main"
-      3 "navbar"
-      3 "form"
-      3 "#container"
+  1 "body" ....................(layout.css)
+    2 "header".................(header.css)
+    2 "main" ....................(main.css)
+      3 "navbar" .................(nav.css)
+      3 "form" .............(new-tweet.css)
+      3 ID "#container".....(new-tweet.css)
  -->
 
 <body class="body">
@@ -55,7 +54,7 @@
   <nav class="navbar">
     <span>Sweetr</span>
     <div class="navbar-menu">
-      <p><strong>Write</strong> a Shtweet</p>
+      <p><strong>Write</strong> a Shweet</p>
       <i class="fas fa-angle-double-down navbar-icon"></i>
     </div>
   </nav>
@@ -83,7 +82,7 @@
       <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
       <p class="form-error"></p>
       <div id="tweet-char">
-        <button type="submit" value="submit" id="new-submit">Sweet</button>
+        <button type="submit" value="submit" id="new-submit">Shweet</button>
         <output name="counter" class="form-counter" for="tweet-text">140</output>
       </div>
     </form>

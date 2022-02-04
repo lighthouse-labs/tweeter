@@ -24,7 +24,9 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+
 .body {
+  overflow-x: hidden !important;
   display: flex;
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
@@ -33,12 +35,11 @@ body {
   margin: 0vw;
 }
 
-
 .main {
-margin: auto;
-/* background-color: orange; */
-/* background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"); */
-display: flex;
-flex-direction: column;
-justify-content: center;
+  /* margin: 0 auto !important; */
+  /* max-width: 1000px !important; */
+  /* width: 100% !important; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
 }
