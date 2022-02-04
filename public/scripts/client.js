@@ -32,6 +32,10 @@ $(() => {
     return div.innerHTML;
   };
 
+  // Click on Nav Button = Focus Text Field
+  $('.nav-button').on('click', function (event) {
+    $('#tweet-text').focus()
+  });
 
   // Enter key = Submit Tweet
   $('#tweet-text').on('keypress', function (event) {
