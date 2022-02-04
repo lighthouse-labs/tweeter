@@ -3,7 +3,8 @@
 
 <head>
   <!-- Layout  -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Meta Information -->
   <title>Goombr - The App for Goombas</title>
 
@@ -20,7 +21,7 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
+
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -33,17 +34,21 @@
     rel="stylesheet">
 
   <!-- Font Awesome (icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Timeago for displaying time passed of tweets -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <!-- 
   Reference: Layout of Main Classes/ID:
   1 "body" ....................(layout.css)
     2 "header".................(header.css)
-    2 "main" ....................(main.css)
+    2 "main" ..................(layout.css)
       3 "navbar" .................(nav.css)
       3 "form" .............(new-tweet.css)
       3 ID "#container".....(new-tweet.css)
@@ -63,13 +68,11 @@
   <header class="header">
     <div class="header-div1">
       <img class="header-avatar" src="/images/goomba-avatar.png">
-      <div class="middle">
-        <div class="header-hidden-text">Count Turnip Von Picklemore Sr.</div>
-      </div>
+      <div class="header-hidden-text middle">Count Turnip Von Picklemore Sr.</div>
     </div>
     <br>
     <div class="header-div2">
-      <h2 class="header-username">Count Turnip Von Picklemore Sr.</h2>   
+      <h2 class="header-username">Count Turnip Von Picklemore Sr.</h2>
     </div>
   </header>
 
@@ -82,7 +85,7 @@
       <div class="tweet-success alert goldenrod invisible"><i class="fas fa-check-circle"></i></div>
       <p class="alert-border red invisible"></p>
       <label for="tweet-text" class="beige prompt">Have a thought about M**io or B***er?</label>
-      <textarea name="text" id="tweet-text"  placeholder="✏️"></textarea>
+      <textarea name="text" id="tweet-text" placeholder="✏️"></textarea>
       <p class="form-error beige"></p>
       <div id="tweet-char">
         <button type="submit" value="submit" id="new-submit">oom-ba!</button>

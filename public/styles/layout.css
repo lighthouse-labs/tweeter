@@ -27,19 +27,15 @@ body {
 
 .body {
   overflow-x: hidden !important;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Source Sans Pro', sans-serif;
   width: 100%;
   height: auto;
   margin: 0vw;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .main {
-  /* margin: 0 auto !important; */
-  /* max-width: 1000px !important; */
-  /* width: 100% !important; */
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
 }

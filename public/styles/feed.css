@@ -1,18 +1,19 @@
+/******************** Tweet Feed Section *******************/
 
 /* Entire Container Article */
 .feed-article {
   width: 100% !important;  
   min-width: inherit !important;
-  margin: 1.5em 0 !important;
-  padding: 1.5em !important;
   height: 390px;
-  border-radius: 1.5em;
-  border-style: solid;
-  box-shadow: 5px 5px grey;
-  font-family: "Source Sans Pro";
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 1.5em 0 !important;
+  padding: 1.5em !important;
+  border-radius: 1.5em;
+  border-style: solid;
+  font-family: "Source Sans Pro";
+  box-shadow: 5px 5px grey;
 }
 .feed-article:hover {
   transition: box-shadow 500ms;
@@ -20,10 +21,10 @@
 }
 /* Top Section of Feed: Header */
 .feed-header {
+  height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
 }
 
 .feed-header-user {
@@ -53,18 +54,18 @@
 
 /* Bottom Section of Feed: Footer */
 .feed-footer {
-  border-top-style: solid;
   height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top-style: solid;
 }
 
 .feed-footer-icons {
   width: 127px !important;
+  min-width: 10%;
   display: flex;
   justify-content: space-evenly;
-  min-width: 10%;
 }
 .feed-icon:hover{
   color: blue;
@@ -75,5 +76,5 @@
 .bold {
   font-weight: 600;
 }
-  
+
   
