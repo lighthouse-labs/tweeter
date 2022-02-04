@@ -14,7 +14,10 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-
+.feed-article:hover {
+  transition: box-shadow 500ms;
+  box-shadow: 15px 15px grey;
+}
 /* Top Section of Feed: Header */
 .feed-header {
   display: flex;
