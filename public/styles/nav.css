@@ -6,11 +6,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4056a1;
-  color: #FFFFFF;
-  background-color: #001bcc;
-  background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
-  /* Sticky Nav Bar */
+  color: brown;
+  background-color: white;
+  opacity: 90%;
+
   position: fixed;
   top: 0%;
   width: 100%;

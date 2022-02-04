@@ -5,7 +5,7 @@
   <!-- Layout  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <!-- Meta Information -->
-  <title>Sweetr - Home Page</title>
+  <title>Goombr - The Social App for Goombas</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -52,21 +52,24 @@
 <body class="body">
   <!-- Top navbar (fixed) -->
   <nav class="navbar">
-    <span>Sweetr</span>
+    <span>Goombr</span>
     <div class="navbar-menu">
-      <p><strong>Write</strong> a Shweet</p>
+      <p><strong>Write</strong> a Goom</p>
       <i class="fas fa-angle-double-down navbar-icon"></i>
     </div>
   </nav>
 
   <!-- Header element -->
   <header class="header">
-    <div>
-      <img src="/images/profile-hex.png">
+    <div class="header-div1">
+      <img class="header-avatar" src="/images/goomba-avatar.png">
+      <div class="middle">
+        <div class="header-hidden-text">Count Turnip Von Picklemore Sr.</div>
+      </div>
     </div>
     <br>
-    <div>
-      <h2>Count Turnip Von Picklemore Sr.</h2>   
+    <div class="header-div2">
+      <h2 class="header-username">Count Turnip Von Picklemore Sr.</h2>   
     </div>
   </header>
 
@@ -78,11 +81,11 @@
       <span class="tweet-fail alert violet-red invisible"><i class="fas fa-exclamation-circle"></i></span>
       <span class="tweet-success alert green invisible"><i class="fas fa-check-circle"></i></span>
       <p class="alert-border invisible"></p>
-      <label for="tweet-text">Share some sugar, or spice...</label>
+      <label for="tweet-text">Have a thought about M**io or B***er?</label>
       <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
       <p class="form-error"></p>
       <div id="tweet-char">
-        <button type="submit" value="submit" id="new-submit">Shweet</button>
+        <button type="submit" value="submit" id="new-submit">oomba!</button>
         <output name="counter" class="form-counter" for="tweet-text">140</output>
       </div>
     </form>
