@@ -8,6 +8,7 @@
   bottom: 0%;
   position: fixed;
   background-color: brown;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 @media only screen and (min-width: 1250px) {
   .nav {
@@ -17,7 +18,7 @@
   }
   .form {
     position: unset;
-    padding: 2.0em;
+    padding: 4.0em 2.0em 2.0em 2.0em;
     margin-top: 120px !important;
   }
   .body {
@@ -34,6 +35,7 @@
     flex-direction: column;
     align-items: space-evenly;
     justify-content: initial;
+    width: 70vw;
   }
   .header-avatar {
     opacity: initial;
@@ -54,6 +56,33 @@
   .header-div1:hover .header-avatar {
     opacity: initial;
     transform: translateY(50px);
+  }
+  .tweet-fail {
+    margin: -0px -0px -0px -0px;  
+    position:initial;
+  }
+  .tweet-success {
+    margin: -0px -0px -0px -0px;
+    position: initial;
+  }
+  .alert-border {
+    border: 5px; 
+    border-color: red;
+    opacity: 80%;
+    border-radius: 2em;
+    height: 9em;
+    margin-bottom: initial;
+    margin-top: initial;
+    margin-right: initial;
+    margin-left: initial;
+  }
+  .fa-check-circle {
+    transform: translateY(30%);
+    transition: transform 100ms
+  }
+  .fa-exclamation-circle{
+    transform: translateY(5%);
+    transition: transform 100ms
   }
 } 
 
@@ -87,27 +116,35 @@
 }
 
 .form textarea:focus {
-  background-color: lightsteelblue;
+  background-color: whitesmoke;
   opacity: 90%;
 }
 
-/* Alert Above Form */
+/* Alerts */
 .alert {
   display: flex;
   justify-content: center;
   opacity: 99%;
   font-size: 8rem;
   height: auto;
-  z-index: 4000;
+  z-index: 2000;
+  transition: transform 0.5s;
+  transform: translateY(-50px);
+  background-color: transparent;
 }
 .tweet-fail {
   margin: -50px -0px -160px -0px;  
+  background-color: transparent;
+  position:static;
 }
 .tweet-success {
   margin: -0px -0px -90px -0px;
+  background-color: transparent;
+  position: static;
+  z-index: 2000;
 }
 .alert-border {
-  border: 5px white dotted;
+  border: 10px dotted;
   opacity: 80%;
   border-radius: 2em;
   height: 9em;
@@ -115,25 +152,31 @@
   margin-top: 35px;
   margin-right: -6em;
   margin-left: -6em;
-
 }
 .invisible {
   visibility: hidden;
 }
 
-
+.prompt {
+  font-size: 1em;
+  margin: 0.2em;
+}
 /* Error Alert Area */
 .form-error {
-height: 1em;
-color: red;
+height: 1.5em;
 font-weight: bolder;
 font-style: italic;
+font-size: 1.5em;
 margin: 0em 0 0.5em 0;
+white-space: nowrap;
 }
 
 /* Submit Button */
 .form button {
 background-color: burlywood;
+width: 20%;
+font-size: 1.5em;
+height: auto;
 color: brown;
 border-radius: 0.2em;
 font-family: "Bungee", cursive, sans-serif;
@@ -154,8 +197,10 @@ z-index: 8000;
 /* Character counter */
 .form-counter {
   font-weight: 300;
+  font-size: 2em;
   font-family: "Bungee", cursive, sans-serif;
   color: black;
+  z-index: 9000;
 }
 
 #container {
@@ -168,9 +213,9 @@ z-index: 8000;
 .red {
   color: red;
 }
-.violet-red {
-  color: red;
+.goldenrod {
+  color: goldenrod;
 }
-.green {
-  color: yellow;
+.beige {
+  color: beige;
 }

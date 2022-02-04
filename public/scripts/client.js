@@ -13,10 +13,10 @@ $(() => {
   // Validate Tweet Input to Prevent Code Improper Messages
   const validateTweet = function (input) {
     if (input.length === 0) {
-      return "⚠︎ Your Tweet cannot be empty. ⚠︎";
+      return "⚠︎ Your Goom cannot be empty like your life strategy. ⚠︎";
     }
     if (input.length > 140) {
-      return "⚠︎ Your Tweet is too long. Try staying within 140 characters. ⚠︎";
+      return "⚠︎ Your Goom is too long. Try staying within 140 characters. Else, Mario. ⚠︎";
     }
     if (input === null) {
       return "⚠︎ Error. Please try again ⚠︎";
@@ -102,7 +102,7 @@ $(() => {
       $('.alert-border').addClass("invisible");
       $('.tweet-success').hide().slideDown("100"); // Reveals these for successful tweets
       $('.tweet-success').removeClass("invisible");
-      $('.form-error').hide().delay("0").fadeIn().text("Tweet success!"); // Displays success message
+      $('.form-error').hide().delay("0").fadeIn().text("Goom success!"); // Displays success message
 
       const serializedData = $('#tweet-text').serialize();
       $('#tweet-text').val(""); // Empties input field: ^ must come AFTER seralizeData! ^

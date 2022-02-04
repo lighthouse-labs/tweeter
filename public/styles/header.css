@@ -27,7 +27,7 @@
   justify-content: center;
 }
 
-/* fade to name image */
+/* fade to name image. Code modified from W3 website */
 .header-div1 {
   position: relative;
   width: 50%;

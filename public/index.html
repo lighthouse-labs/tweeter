@@ -78,12 +78,12 @@
 
     <!-- Submission FORM Tweet box -->
     <form class="form" method="POST" action="/tweets">
-      <span class="tweet-fail alert violet-red invisible"><i class="fas fa-exclamation-circle"></i></span>
-      <span class="tweet-success alert green invisible"><i class="fas fa-check-circle"></i></span>
-      <p class="alert-border invisible"></p>
-      <label for="tweet-text">Have a thought about M**io or B***er?</label>
+      <div class="tweet-fail alert red invisible"><i class="fas fa-exclamation-circle"></i></div>
+      <div class="tweet-success alert goldenrod invisible"><i class="fas fa-check-circle"></i></div>
+      <p class="alert-border red invisible"></p>
+      <label for="tweet-text" class="beige prompt">Have a thought about M**io or B***er?</label>
       <textarea name="text" id="tweet-text" autofocus placeholder="✏️"></textarea>
-      <p class="form-error"></p>
+      <p class="form-error beige"></p>
       <div id="tweet-char">
         <button type="submit" value="submit" id="new-submit">oomba!</button>
         <output name="counter" class="form-counter" for="tweet-text">140</output>
