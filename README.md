@@ -20,3 +20,9 @@ Tweeter...err Goombr is a simple, single-page Twitter clone, but for Goombas exc
 - Body-Parser
 
 Enjoy!
+
+## Screenshots
+
+!["Mbile view of the Goombr App"](https://github.com/glitjch/tweeter/blob/master/docs/goombr-mobile-view.png?raw=true)
+
+!["Tablet view of the Goombr App"](https://github.com/glitjch/tweeter/blob/master/docs/goombr-tablet-view.png?raw=true)
