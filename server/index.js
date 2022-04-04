@@ -2,7 +2,12 @@
 
 // Basic express setup:
 
-const PORT          = 8080;
+const port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
+
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
@@ -32,6 +37,6 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
 
-app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+app.listen(port, () => {
+  console.log("Goombr app listening on port " + port);
 });
