@@ -14,7 +14,12 @@ nav {
   color: brown;
   background-color: white;
 }
-
+@media only screen and (min-width: 428px) {
+  nav {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
 /* Logo */
 .nav-logo {
   text-decoration: none;

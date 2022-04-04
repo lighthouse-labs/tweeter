@@ -12,11 +12,11 @@ $(() => {
 
   // Validate Tweet Input to Prevent Code Improper Messages
   const validateTweet = function (input) {
-    if (input.length === 0) {
-      return "⚠︎ Your Goom cannot be empty like your life strategy. ⚠︎";
+    if (input.trim().length === 0) {
+      return "⚠︎ Your Goom cannot be empty ⚠︎";
     }
     if (input.length > 140) {
-      return "⚠︎ Your Goom is too long. Try staying within 140 characters. Else, Mario. ⚠︎";
+      return "⚠︎ Stay within 140 characters. Else, Mario. ⚠︎";
     }
     if (input === null) {
       return "⚠︎ Error. Please try again ⚠︎";

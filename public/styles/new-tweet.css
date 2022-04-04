@@ -105,42 +105,6 @@
 } 
 /********** End of Media Query ************/
 
-@media only screen and (min-width: 428px) {
-  .body {
-    width: 100vw;
-  }
-  /* Navbar */
-  .nav {
-    width: 100vw;
-  }
-/* .main {
-  width: 100vw;
-} */
-
-  /* Header */
-  .header {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .header-avatar {
-    width: 30vw;
-  }
-  .header-username {
-    white-space: normal;
-    overflow: hidden;
-  }
-  .header-hidden-text {
-    /* display: none; */
-    font-size: 1.0em;
-    width: fit-content;
-  }
-  .header-div1:hover .header-avatar {
-    opacity: initial;
-    transform: translateY(50px);
-  }
-}
 
 /********** Form / Submit Bar ************/
 /* Prompt for Tweet */
@@ -259,6 +223,123 @@ font-size: 1.5em;
   overflow-y: scroll;
   max-height: 70vw;
 }
+
+
+/********** Start of Media Query SMALL ************/
+
+@media only screen and (min-width: 428px) {
+  .body {
+    width: 100vw;
+  }
+  /* Navbar */
+  .nav {
+    width: 100vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  /* Header */
+  .header {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .header-avatar {
+    width: 30vw;
+  }
+  .header-username {
+    white-space: normal;
+    overflow: hidden;
+  }
+  .header-hidden-text {
+    /* display: none; */
+    font-size: 1.0em;
+    width: fit-content;
+  }
+  .header-div1:hover .header-avatar {
+    opacity: initial;
+    transform: translateY(50px);
+  }
+  /* Prompt for Tweet */
+  .form label {
+    font-size: 0.7em;
+  }
+  .prompt {
+    font-size: 1em;
+    margin: 0.2em;
+  }
+
+  /* Form Container */
+  .form {
+    height: auto;
+  }
+  /* Input Area */
+  .form textarea {
+    /* text style */
+    font-weight: 600;
+    font-size: 1.2em;
+    text-indent: 0.5em;
+    letter-spacing: 0.05em;
+    word-spacing: 0.8em;
+    overflow-wrap: normal;
+    height: auto;
+
+    /* field style */
+    z-index: 3000;
+    white-space: nowrap;
+    line-height: 10px;
+    border-bottom: 4px solid black;
+    padding: 1.0em 0 0 0;
+    border-radius: 0.2em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: papayawhip;
+  }
+  .form textarea:focus {
+    background-color: antiquewhite;
+    opacity: 90%;
+  }
+  /* Submit Button */
+  .form button {
+    z-index: 8000;
+    width: auto;
+    height: auto;
+    border-radius: 0.2em;
+    font-size: 1.0em;
+    white-space: nowrap;
+    color: brown;
+    background-color: burlywood;
+    font-family: "Bungee", cursive, sans-serif;
+    background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+    }
+    .form button:hover {
+      box-shadow: 0px 0px 20px 15px papayawhip ;
+    }
+    /* Footer of Tweet Form */
+  #tweet-char {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Character counter */
+  .form-counter {
+    z-index: 9000;
+    font-weight: 300;
+    font-size: 1.0em;
+    font-family: "Bungee", cursive, sans-serif;
+    color: silver;
+  }
+  /* Error Alert Area */
+  .form-error {
+    height: 1.0em;
+    margin: 0.2em 0 0.5em 0;
+    white-space: normal;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 0.8em;
+  }
+}
+/********** End of Media Query SMALL ************/
 
 
 /**************** General ************/
