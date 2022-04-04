@@ -77,4 +77,85 @@
   font-weight: 600;
 }
 
-  
+@media only screen and (min-width: 428px) {
+  /* Entire Container Article */
+  .feed-article {
+    width: 100%;  
+    height: auto;
+    margin: 1.0em 0 !important;
+    padding: 0.9em !important;
+  }
+  /* Top Section of Feed: Header */
+  .feed-header {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* User Container */
+  .feed-header-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* User Avatar */
+  .feed-header-user img {
+    max-width: 10vw;
+    height: auto;
+    margin: 0.5em;
+  }
+
+  /* Username */
+  .feed-header-user p {
+    opacity: 85%;
+    font-size: 0.8em;
+    z-index: -1;
+  }
+
+  .feed-handle {
+    font-size: 0.8em;
+    white-space: normal;
+    overflow:visible;
+
+  }
+  /* Mid Section of Feed: Body */
+  .feed-body {
+    padding: 0.0em;
+    line-height: normal;
+    height: fit-content;
+    font-size: 1.0em;
+  }
+  .feed-body p {
+    margin: 0;
+  }
+
+
+  /* Bottom Section of Feed: Footer */
+  .feed-footer {
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-style: solid;
+    padding: 0 0.5em 0 0.5em;
+  }
+
+  .feed-footer p {
+    font-size: 0.5em;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Footer Container NOT icons themselves */
+  .feed-footer-icons {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .feed-icon:hover{
+    color: blue;
+  }
+}
