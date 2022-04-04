@@ -92,6 +92,7 @@ $(() => {
       event.preventDefault();
       const errorMessage = validateTweet($('#tweet-text').val());
       if (errorMessage) {
+        $('#tweet-text').val("");
         // Alerts Jquery Animation When Error
         $('.tweet-fail').hide().slideDown("100"); // Reveals these for failed tweets
         $('.tweet-fail').removeClass("invisible");
@@ -99,6 +100,7 @@ $(() => {
         $('.alert-border').removeClass("invisible");
         $('.form-error').hide().delay("0").fadeIn().text(errorMessage);
         $('.tweet-success').addClass("invisible"); // Hides success message when failed tweets
+
         return;
       }
       // Alerts Jquery Animation When Success
