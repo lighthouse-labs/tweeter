@@ -18,9 +18,13 @@ nav {
 /* Logo */
 .nav-logo {
   text-decoration: none;
+  color: brown;
+
 }
 .nav-logo:link {
   text-decoration: none;
+  color: brown;
+
 }
 .nav-logo:visited {
   text-decoration: none;
@@ -37,6 +41,8 @@ nav {
 .navbar span {
   font-family: 'Bungee', cursive, sans-serif;
   font-size: 2em;
+  color: brown;
+
 }
 
 /* Write a Tweet Button */
