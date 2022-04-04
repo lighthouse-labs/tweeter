@@ -23,6 +23,7 @@
     background-color: burlywood;
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     color: #FFFFFF;
+    /* width: 100vw; */
   }
   /* Header */
   .header {
@@ -46,6 +47,10 @@
   .header-hidden-text {
     display: none;
     font-size: 1.0em;
+    width: fit-content;
+    white-space: normal;
+    overflow: hidden;
+
   }
   .header-div1:hover .header-avatar {
     opacity: initial;
@@ -100,6 +105,42 @@
 } 
 /********** End of Media Query ************/
 
+@media only screen and (min-width: 428px) {
+  .body {
+    width: 100vw;
+  }
+  /* Navbar */
+  .nav {
+    width: 100vw;
+  }
+/* .main {
+  width: 100vw;
+} */
+
+  /* Header */
+  .header {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .header-avatar {
+    width: 30vw;
+  }
+  .header-username {
+    white-space: normal;
+    overflow: hidden;
+  }
+  .header-hidden-text {
+    /* display: none; */
+    font-size: 1.0em;
+    width: fit-content;
+  }
+  .header-div1:hover .header-avatar {
+    opacity: initial;
+    transform: translateY(50px);
+  }
+}
 
 /********** Form / Submit Bar ************/
 /* Prompt for Tweet */

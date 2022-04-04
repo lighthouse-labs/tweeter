@@ -5,7 +5,7 @@
   justify-content:flex-start;
   align-items: center;
   height: 20vh;
-  width: 100%;
+  width: auto;
   margin-top: 120px !important;
   background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
@@ -53,12 +53,12 @@
 /* fade to name image. Code modified from W3 website */
 .header-div1 {
   position: relative;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .header-avatar {
   display: block;
-  width: 60%;
+  width: 40vw;
   max-height: auto;
   opacity: 1;
   transition: .5s ease;
