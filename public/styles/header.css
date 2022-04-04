@@ -18,9 +18,15 @@
 .header-hidden-text {
   padding: 16px 32px;
   white-space: nowrap;
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
   background-color: brown;
+}
+@media only screen and (max-width: 500px) {
+  .header-hidden-text {
+    font-size: 1.2em;
+    width: 100%;
+  }
 }
 .middle {
   position: absolute;

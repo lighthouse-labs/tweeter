@@ -45,6 +45,7 @@
   }
   .header-hidden-text {
     display: none;
+    font-size: 1.0em;
   }
   .header-div1:hover .header-avatar {
     opacity: initial;
@@ -139,10 +140,11 @@
 /* Submit Button */
 .form button {
   z-index: 8000;
-  width: 20%;
+  width: auto;
   height: auto;
   border-radius: 0.2em;
   font-size: 1.5em;
+  white-space: nowrap;
   color: brown;
   background-color: burlywood;
   font-family: "Bungee", cursive, sans-serif;
