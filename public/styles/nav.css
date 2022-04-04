@@ -62,17 +62,12 @@ nav {
   background-color: papayawhip;
 }
 
+
+/* ************VIEW PORT STARTS************* */
 @media only screen and (max-width: 500px) {
-.nav-button {
-  font-size: 1.2em;
-}
-
-}
-
-/* Nav arrow icon custom look*/
-.navbar-icon {
-  margin-top: -20px;
-  color: crimson;
+  .nav-button {
+    font-size: 1.2em;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -127,3 +122,4 @@ nav {
     background-color: papayawhip;
   }
 }
+/* ************VIEW PORT ENDS************* */

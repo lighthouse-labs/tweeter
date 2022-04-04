@@ -22,7 +22,11 @@
   color: white;
   background-color: brown;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1200px) {
+  .header {
+  margin-top: 40px !important;
+
+  }
   .header-hidden-text {
     font-size: 1.2em;
     width: 100%;

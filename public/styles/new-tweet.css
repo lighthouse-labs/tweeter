@@ -72,6 +72,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 120px !important;
+    height: auto;
   }
   .tweet-fail {
     margin: -0px -0px -0px -0px;  
@@ -179,8 +180,8 @@
   justify-content: center;
   height: auto;
   font-size: 8rem;
-  transition: transform 0.5s;
-  transform: translateY(-50px);
+  /* transition: transform 0.5s;
+  transform: translateY(-50px); */
   opacity: 99%;
   background-color: transparent;
 }
@@ -192,16 +193,10 @@
 .tweet-success {
   z-index: 2000;
   position: static;
-  margin: -0px -0px -90px -0px;
+  margin: -0px -0px -0px -0px;
   background-color: transparent;
 }
-.alert-border {
-  border: 10px dotted;
-  opacity: 60%;
-  border-radius: 2em;
-  height: 9em;
-  margin: 35px -1.5em -8em -1.5em;
-}
+
 .invisible {
   visibility: hidden;
 }
@@ -337,6 +332,15 @@ font-size: 1.5em;
     font-style: italic;
     font-size: 0.8em;
   }
+  .tweet-fail .fas {
+    margin: -0px -0px -0px -0px;  
+    transform: translateY(-30px);
+  }
+  .tweet-success .fas {
+    margin: -0px -0px -0px -0px;  
+    transform: translateY(-30px);
+  }
+  
 }
 /********** End of Media Query SMALL ************/
 
