@@ -23,11 +23,10 @@
     background-color: burlywood;
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     color: #FFFFFF;
-    /* width: 100vw; */
   }
   /* Header */
   .header {
-    width: 30vw;
+    width: 30%;
     height:initial;
     padding: 20vw;
   }
@@ -227,7 +226,7 @@ font-size: 1.5em;
 
 /********** Start of Media Query SMALL ************/
 
-@media only screen and (min-width: 428px) {
+@media only screen and (max-width: 1249px) {
   .body {
     width: 100vw;
   }
@@ -245,7 +244,7 @@ font-size: 1.5em;
     flex-direction: column;
   }
   .header-avatar {
-    width: 30vw;
+    width: 15vw;
   }
   .header-username {
     white-space: normal;
@@ -277,7 +276,7 @@ font-size: 1.5em;
   .form textarea {
     /* text style */
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.0em;
     text-indent: 0.5em;
     letter-spacing: 0.05em;
     word-spacing: 0.8em;

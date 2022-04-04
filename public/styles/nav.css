@@ -1,4 +1,6 @@
 /******************** Entire navigation bar *******************/
+
+
 nav {
   z-index: 9999;
   top: 0%;
@@ -14,12 +16,8 @@ nav {
   color: brown;
   background-color: white;
 }
-@media only screen and (min-width: 428px) {
-  nav {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-}
+
+
 /* Logo */
 .nav-logo {
   text-decoration: none;
@@ -77,3 +75,55 @@ nav {
   color: crimson;
 }
 
+@media only screen and (max-width: 1200px) {
+  nav {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    height: fit-content;
+  }
+
+  /* Logo */
+  .nav-logo {
+    text-decoration: none;
+    color: brown;
+    font-size: 0.6em;
+    margin: 0.2em;
+  }
+  .nav-logo:link {
+    text-decoration: none;
+    color: brown;
+    font-size: 0.6em;
+    
+  }
+  .nav-logo:visited {
+    text-decoration: none;
+    color: brown;
+  }
+  
+  /* Nav Section on the Right Side */
+  .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.6em;
+    height: auto;
+  }
+  .navbar span {
+    font-family: 'Bungee', cursive, sans-serif;
+    color: brown;
+  }
+  
+  /* Write a Tweet Button */
+  .nav-button {
+    margin-bottom: 0.4em;
+    border: none;
+    font-size: 1.0em;
+    background-color: transparent;
+    height: fit-content;
+  }
+  .nav-button:hover {
+    margin-bottom: 0.4em;
+    border: none;
+    box-shadow: 0px 0px 20px 15px papayawhip ;
+    background-color: papayawhip;
+  }
+}

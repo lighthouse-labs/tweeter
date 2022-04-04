@@ -5,7 +5,7 @@
   justify-content:flex-start;
   align-items: center;
   height: 20vh;
-  width: auto;
+  width: 10vw;
   margin-top: 120px !important;
   background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
@@ -28,6 +28,7 @@
     width: 100%;
   }
 }
+
 .middle {
   position: absolute;
   top: 50%;
@@ -56,9 +57,19 @@
   /* width: 50%; */
 }
 
+@media only screen and (max-width: 500px) {
+  .header-avatar {
+    display: block;
+    width: 20vw;
+    max-height: auto;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+}
 .header-avatar {
   display: block;
-  width: 40vw;
+  width: 30vw;
   max-height: auto;
   opacity: 1;
   transition: .5s ease;
