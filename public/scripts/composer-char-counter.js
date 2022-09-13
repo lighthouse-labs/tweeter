@@ -6,14 +6,20 @@ $(document).ready(() => {
 
   const $textarea = $('#tweet-text') 
 
-  $textarea.on("keypress", (event) => {
-    console.log(event);
+  // $textarea.on("input", (event) => {
+  //   console.log(event.originalEvent);
+  // })
+
+  $textarea.on("input", function() {
+
+    // find letter counter
+    const $counter = $textarea.parent().siblings().find('output.counter')
+  
+    let charNum = $textarea.val().length
+    console.log(charNum)
+    let charCount = 140 - charNum
+    console.log(charCount)
   })
-
-  // find letter counter
-  const $counter = $textarea.parent().siblings().find('output.counter')
-
-
 
 });
 
