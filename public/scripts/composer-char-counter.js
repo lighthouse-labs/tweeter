@@ -1,26 +1,23 @@
 // call document when page loaded
-console.log('before document')
 $(document).ready(() => {
-  console.log('hello')
-
-
-  const $textarea = $('#tweet-text') 
-
-  // $textarea.on("input", (event) => {
-  //   console.log(event.originalEvent);
-  // })
+  const $textarea = $('#tweet-text');
 
   $textarea.on("input", function() {
-
     // find letter counter
-    const $counter = $textarea.parent().siblings().find('output.counter')
-  
-    let charNum = $textarea.val().length
-    console.log(charNum)
-    let charCount = 140 - charNum
-    console.log(charCount)
-  })
+    const $counter = $textarea.parent().siblings().find('output.counter');
 
+    let charNum = $textarea.val().length;
+    // console.log(charNum);
+    let charCount = 140 - charNum;
+    // console.log(charCount);
+
+    // black count if > 0, red count is <= 0
+    if (charCount > 0) {
+      $counter.val(charCount).css({ 'color': 'black' });
+    } else if (charCount <= 0) {
+      $counter.val(charCount).css({ 'color': 'red' });
+    }
+  });
 });
 
 
