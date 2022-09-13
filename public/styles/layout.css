@@ -23,6 +23,16 @@ body {
   background-color: #5c5b52;
 }
 
+.container {
+  display: flex;
+  margin: 0 auto;
+  top: 100px;
+  padding: 120px;
+  position: relative;
+  width: 90%;
+  justify-content: center;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
