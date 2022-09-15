@@ -9,7 +9,7 @@ $(document).ready(() => {
   const loadTweets = function() {
     $.get('/tweets')
       .then((tweets) => {
-        $('#tweets-container').empty()
+        $('#tweets-container').empty();
         renderTweets(tweets);
       });
   };
@@ -20,7 +20,7 @@ $(document).ready(() => {
     let username = tweet.user.name;
     let handle = tweet.user.handle;
     let content = tweet.content.text;
-    let date = tweet['created_at']
+    let date = tweet['created_at'];
 
     let $tweet = $(`
   <article class="tweet-container">
@@ -46,7 +46,19 @@ $(document).ready(() => {
   //add event listener and prevent default behaviour(refresh)
   $('#new-tweet').on('submit', function(event) {
     event.preventDefault();
-    // form handling
+    // edge case for form submission
+    const input = $('#tweet-text').val();
+
+    if (input.length > 140) {
+      alert('Maximum length has been reached!');
+      return;
+    }
+    
+    if (input === '' || input === null) {
+      alert('Please enter a tweet!');
+      return;
+    }
+
     const serializedData = $(this).serialize();
     // submit post request of serializedData
     $.post('/tweets', serializedData)
