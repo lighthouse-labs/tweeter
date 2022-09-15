@@ -37,6 +37,16 @@ body {
   flex-direction: column;
 }
 
+/* error message during input */
+#error {
+  display: flex;
+  justify-content: space-around;
+  font-size: xx-large;
+  padding: 15px;
+  color: red;
+  border: solid 0.1em red
+}
+
 .tweet-container {
   display: flex;
   border: 0.2em solid black;
