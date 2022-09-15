@@ -5,21 +5,22 @@
  */
 $(document).ready(() => {
 
-  // refactor 
+  // refactor. add .empty() to clear the repeat during new tweet
   const loadTweets = function() {
     $.get('/tweets')
-      .then(function(tweets) {
+      .then((tweets) => {
+        $('#tweets-container').empty()
         renderTweets(tweets);
       });
   };
 
   loadTweets();
 
-
   const createTweetElement = function(tweet) {
     let username = tweet.user.name;
     let handle = tweet.user.handle;
     let content = tweet.content.text;
+    let date = tweet['created_at']
 
     let $tweet = $(`
   <article class="tweet-container">
@@ -30,7 +31,7 @@ $(document).ready(() => {
   </header>
   <p>${content}</p>
   <footer>
-    <div class="date-ago">10 days ago</div>
+    <div class="date-ago">${timeago.format(date)}</div>
     <div class="tweet-icon">
       <i class="fa-solid fa-flag tweet-icon-single"></i>
       <i class="fa-solid fa-retweet tweet-icon-single"></i>
@@ -39,7 +40,6 @@ $(document).ready(() => {
   </footer>
   </article>
   `);
-
     return $tweet;
   };
 
@@ -49,14 +49,11 @@ $(document).ready(() => {
     // form handling
     const serializedData = $(this).serialize();
     // submit post request of serializedData
-
     $.post('/tweets', serializedData)
       .then(() => {
         loadTweets();
       });
   });
-
-
 
   const renderTweets = function(tweets) {
     // loops through tweets
