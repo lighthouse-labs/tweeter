@@ -55,9 +55,9 @@ body {
   height: 100px;
 }
 
+ /* tweet body */
 .tweet-container p {
-  display: flex;
-  flex-wrap: wrap;
+  word-wrap: break-word; 
   width: 98%;
   margin: 0 auto;
   padding: 0 15px 25px 15px;
