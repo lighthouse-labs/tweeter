@@ -10,6 +10,7 @@ $(document).ready(() => {
     $.get('/tweets')
       .then((tweets) => {
         $('#tweets-container').empty();
+        $('#tweet-text').val()
         renderTweets(tweets);
       });
   };
@@ -30,7 +31,7 @@ $(document).ready(() => {
     <div class="userhandle">${handle}</div>
   </header>
   <p>${content}</p>
-  <footer>
+  <footer
     <div class="date-ago">${timeago.format(date)}</div>
     <div class="tweet-icon">
       <i class="fa-solid fa-flag tweet-icon-single"></i>
@@ -53,7 +54,7 @@ $(document).ready(() => {
       alert('Maximum length has been reached!');
       return;
     }
-    
+
     if (input === '' || input === null) {
       alert('Please enter a tweet!');
       return;
@@ -63,6 +64,8 @@ $(document).ready(() => {
     // submit post request of serializedData
     $.post('/tweets', serializedData)
       .then(() => {
+        $('#tweet-text').val('')
+        $('output.counter').text(140)
         loadTweets();
       });
   });
