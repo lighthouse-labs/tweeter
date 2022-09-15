@@ -17,6 +17,13 @@ $(document).ready(() => {
 
   loadTweets();
 
+  // Method 2: Use an escape function. Preventing XSS
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
     let username = tweet.user.name;
     let handle = tweet.user.handle;
@@ -30,7 +37,7 @@ $(document).ready(() => {
       <i class="fa-solid fa-user-astronaut fa-2xl"></i>${username}</div>
     <div class="userhandle">${handle}</div>
   </header>
-  <p>${content}</p>
+  <p>${escape(content)}</p>
   <footer
     <div class="date-ago">${timeago.format(date)}</div>
     <div class="tweet-icon">
