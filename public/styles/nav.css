@@ -7,7 +7,7 @@ nav {
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
-  padding: 2.5em 1.5em 0 1.5em;
+  padding: 2em 1.5em 0 1.5em;
   justify-content: space-between;
 }
 
@@ -16,7 +16,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.8em;
+  font-size: 1 em;
   line-height: 2.3em;
 }
 
@@ -24,4 +24,46 @@ nav {
 nav span {
   font-family: 'Bungee', cursive;
   font-size: 1.5em;
+}
+
+#scroll-nav {
+  display: flex;
+  color: red;
+  animation: updown 2s ease infinite;
+  cursor: pointer;
+}
+
+#scroll-nav:active {
+  color: lightcoral;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+#scroll-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#scroll-top:active {
+  background-color: lightcoral;
 }
