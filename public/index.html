@@ -36,6 +36,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/form-toggle.js"></script>
 </head>
 
 <body>
@@ -44,7 +45,9 @@
     <span>tweeter</span>
     <div class="nav-message">
       <a><b>Write</b> a new tweet</a>
-      <i style=color:red; class="fa-solid fa-angles-down fa-sm"></i>
+      <div id="scroll-nav">
+        <i class="fa-solid fa-angles-down fa-sm"></i>
+      </div>
     </div>
   </nav>
 
@@ -81,6 +84,10 @@
     <section id="tweets-container">
 
     </section>
+    <!-- new button for the bottom of page -->
+    <button id="scroll-top"> 
+      <i class="fa-solid fa-angles-up"></i>
+    </button>
   </main>
 </body>
 
