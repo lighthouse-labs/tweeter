@@ -8,6 +8,23 @@ This app was created to practice with HTML, CSS, JS, jQuery, AJAX, and front-end
 
 ### Sending a Tweet!
 
+!["Sending a Tweet"](https://github.com/originallykevin/tweeter/blob/master/docs/sending-tweet.gif)
+
+### Browser View
+
+!["Browser View"](https://github.com/originallykevin/tweeter/blob/master/docs/browser-view.gif)
+
+### Tablet View
+
+!["Tablet View"](https://github.com/originallykevin/tweeter/blob/master/docs/tablet-view.gif)
+
+### Page Scrolling
+
+!["Page Scrolling"](https://github.com/originallykevin/tweeter/blob/master/docs/page-scrolling.gif)
+
+### Word Counter
+
+!["Word Counter"](https://github.com/originallykevin/tweeter/blob/master/docs/error-message.gif)
 
 
 ## Getting Started
