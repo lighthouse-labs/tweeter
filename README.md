@@ -8,17 +8,9 @@ This app was created to practice with HTML, CSS, JS, jQuery, AJAX, and front-end
 
 ### Sending a Tweet!
 
-### Browser View
-
-### Tablet View
-
-### Page Scrolling
-
-### Word Counter
 
 
 ## Getting Started
-
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
 2. Clone your repository onto your local device.
