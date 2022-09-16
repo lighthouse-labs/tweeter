@@ -8,13 +8,13 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 0.2em solid rgb(0, 0, 0);
-  padding-bottom: 0.25em;
+  border-bottom: 4px solid rgb(0, 0, 0);
+  padding-bottom: 4px;
   font-family: "Source Sans Pro";
 }
 
 #tweet-text {
-  font-size: 1em;
+  font-size: 25px;
   background-color: transparent;
   border: none;
   resize: none;
@@ -27,14 +27,14 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding-top: 0.25em;
+  padding-top: 5px;
 }
 
 .button {
   font-family: "Bungee", sans-serif;
   color: white;
   background-color: #4056A1;
-  padding: 0.2em;
+  padding: 4px;
 }
 
 .counter {

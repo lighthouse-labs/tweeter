@@ -48,12 +48,12 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  //add event listener and prevent default behaviour(refresh)
+  // add event listener and prevent default behaviour(refresh)
   $('#new-tweet').on('submit', function(event) {
     event.preventDefault();
     // edge case for form submission
     const input = $('#tweet-text').val();
-    const icon = `<i class="fa-solid fa-triangle-exclamation"></i>`
+    const icon = `<i class="fa-solid fa-triangle-exclamation"></i>`;
 
     // hiding error message
     $('#error').slideUp();
@@ -71,7 +71,7 @@ $(document).ready(() => {
     }
 
     const serializedData = $(this).serialize();
-    // submit post request of serializedData
+    // submit post request of serializedData. clear form and reset counter to 140.
     $.post('/tweets', serializedData)
       .then(() => {
         $('#tweet-text').val('');
@@ -81,11 +81,8 @@ $(document).ready(() => {
   });
 
   const renderTweets = function(tweets) {
-    // loops through tweets
     for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
       const newTweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
       $('#tweets-container').prepend(newTweet);
     }
   };

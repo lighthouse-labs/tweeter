@@ -5,24 +5,25 @@ $(document).ready(() => {
   // hide bottom button when at top of page
   bottomButton.hide();
 
-  // activation by scroll
+  // activation by scroll. 5px down will active button to appear.
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 5) { // scroll down 5px from top of page
+    if ($(this).scrollTop() > 5) {
       $(bottomButton).fadeIn();
     } else {
-      $(bottomButton).fadeOut(); //
+      $(bottomButton).fadeOut();
     }
   });
 
   // active on clicking it
+  // enable text area automatically after scroll up
   topButton.on("click", function() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
-    $('#tweet-text').focus(); // enable text area automatically after scroll up
+    $('#tweet-text').focus();
   });
 
   bottomButton.on("click", function() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
-    $('#tweet-text').focus(); // enable text area automatically after scroll up
+    $('#tweet-text').focus();
   });
 
 });
