@@ -1,12 +1,10 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +16,121 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: url(https://www.transparenttextures.com/patterns/binding-light.png);
+  background-color: #eae8e8;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.container {
+  display: flex;
+  margin: 0 auto;
+  top: 100px;
+  padding: 0px 0 0 0;
+  position: relative;
+  width: 90%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* error message during input */
+#error {
+  display: flex;
+  justify-content: space-around;
+  font-size: xx-large;
+  padding: 15px;
+  margin-bottom: 25px;
+  color: red;
+  border: solid 3px red
+}
+
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  border: 3px solid black;
+  margin: 50px 0 70px 0;
+}
+
+.tweet-container:hover {
+  box-shadow: 5px 10px grey;
+}
+
+.tweet-container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: large;
+  padding: 25px 25px 50px 25px;
+  height: 100px;
+}
+
+/* tweet body */
+.tweet-container p {
+  word-wrap: break-word;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0 15px 25px 15px;
+  border-bottom: 3px solid black
+}
+
+.tweet-container footer {
+  font-size: smaller;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.tweet-icon-single:hover {
+  color: rgba(237, 216, 101, 0.737);
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 3px 3px;
+  color: lightcoral;
+}
+
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+  .profile {
+    /* background-color: #4056A1; */
+    background-color: #5F6F94;
+    height: 475px;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width:1024px) {
+
+  .container {
+    padding: 50px;
+    width: 50%;
+    float: right;
+  }
+
+  .tweet-container header {
+    font-size: x-large;
+  }
+
+  .tweet-container {
+    font-size: x-large;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    height: 400px;
+    width: 40%;
+    float: left;
+    margin: 150px 25px 25px 50px;
+    padding: 30px;
+    background-color: #5F6F94;
+  }
+}

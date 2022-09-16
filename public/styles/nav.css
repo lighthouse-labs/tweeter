@@ -1,0 +1,78 @@
+nav {
+  display: flex;
+  z-index: 1;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  background-color: #25316D;
+  color: #FFFFFF;
+  padding: 45px 35px 0 35px;
+  justify-content: space-between;
+}
+
+/* top right */
+.nav-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+/* top left */
+nav span {
+  font-family: 'Bungee', cursive;
+  font-size: 35px;
+}
+
+/* button shortcut to writing a tweet */
+#scroll-nav {
+  display: flex;
+  color: red;
+  animation: updown 2s ease infinite;
+  cursor: pointer;
+}
+
+#scroll-nav:active {
+  color: lightcoral;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* button for bottom right of page */
+#scroll-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#scroll-top:active {
+  background-color: lightcoral;
+}
+
+/* Tablet Styles */
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: #5F6F94;
+  }
+}
