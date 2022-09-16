@@ -67,3 +67,9 @@ nav span {
 #scroll-top:active {
   background-color: lightcoral;
 }
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: lightblue;
+  }
+}

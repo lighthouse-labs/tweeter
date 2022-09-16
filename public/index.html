@@ -39,7 +39,8 @@
   <script type="text/javascript" src="/scripts/composer.js"></script>
 
   <!-- Viewport -->
-  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
 </head>
 
 <body>
@@ -53,9 +54,8 @@
       </div>
     </div>
   </nav>
-
-  <div class="profile">
-    <header>
+  <div >
+    <header class="profile">
       <div class="avatar">
         <img src="/images/Image.png">
       </div>
@@ -67,31 +67,33 @@
   </div>
 
   <!-- Page-specific (main) content here -->
-
+ 
   <main class="container">
     <!-- Displaying Validation Errors With jQuery -->
     <div id="error"></div>
+    
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <!-- <h2>Compose Tweet</h2> -->
       <form id="new-tweet">
         <div class="tweet-form">
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea class="input" name="text" id="tweet-text"></textarea>
         </div>
-        <div class="tweet-bar">
-          <button class="button" type="submit">Tweet</button>
-          <output class="counter" name="counter" for="tweet-text">140</output>
-        </div>
+          <div class="tweet-bar">
+            <button class="button" type="submit">Tweet</button>
+            <output class="counter" name="counter" for="tweet-text">140</output>
+          </div>
       </form>
     </section>
     <section id="tweets-container">
-
     </section>
+    
     <!-- new button for the bottom of page -->
-    <button id="scroll-top"> 
+    <button id="scroll-top">
       <i class="fa-solid fa-angles-up"></i>
     </button>
   </main>
+
 </body>
 
 </html>

@@ -30,7 +30,7 @@ body {
   display: flex;
   margin: 0 auto;
   top: 100px;
-  padding: 10px 0 0 0;
+  padding: 0px 0 0 0;
   position: relative;
   width: 90%;
   justify-content: center;
@@ -43,6 +43,7 @@ body {
   justify-content: space-around;
   font-size: xx-large;
   padding: 15px;
+  margin-bottom: 25px;
   color: red;
   border: solid 0.1em red
 }
@@ -53,6 +54,7 @@ body {
   margin: 50px 0 70px 0;
   flex-direction: column;
 }
+
 .tweet-container:hover {
   box-shadow: 5px 10px grey;
 }
@@ -65,9 +67,9 @@ body {
   height: 100px;
 }
 
- /* tweet body */
+/* tweet body */
 .tweet-container p {
-  word-wrap: break-word; 
+  word-wrap: break-word;
   width: 98%;
   margin: 0 auto;
   padding: 0 15px 25px 15px;
@@ -86,6 +88,38 @@ body {
   color: rgba(237, 216, 101, 0.737);
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+  .profile {
+    /* background-color: #4056A1; */
+    background-color: lightblue;
+    height: 475px;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width:1024px) {
+  body {
+    width: 95%;
+  }
+
+  .container {
+    padding: 50px;
+    width: 50%;
+    float: right;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    height: 400px;
+    width: 40%;
+    float: left;
+    margin: 150px 25px 25px 50px;
+    padding: 30px;
+    background-color: lightblue;
+  }
+}
