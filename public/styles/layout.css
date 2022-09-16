@@ -50,9 +50,10 @@ body {
 
 .tweet-container {
   display: flex;
+  flex-direction: column;
+  font-size: large;
   border: 0.2em solid black;
   margin: 50px 0 70px 0;
-  flex-direction: column;
 }
 
 .tweet-container:hover {
@@ -63,6 +64,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: large;
   padding: 25px 25px 50px 25px;
   height: 100px;
 }
@@ -88,26 +90,40 @@ body {
   color: rgba(237, 216, 101, 0.737);
 }
 
+.button {
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 3px 3px;
+  color: lightcoral;
+}
+
 
 /* Tablet Styles */
 @media screen and (max-width: 1024px) {
   .profile {
     /* background-color: #4056A1; */
-    background-color: lightblue;
+    background-color: #5F6F94;
     height: 475px;
   }
 }
 
 /* Desktop styles */
 @media only screen and (min-width:1024px) {
-  body {
-    width: 95%;
-  }
 
   .container {
     padding: 50px;
     width: 50%;
     float: right;
+  }
+
+  .tweet-container header {
+    font-size: x-large;
+  }
+
+  .tweet-container {
+    font-size: x-large;
   }
 
   .profile {
@@ -120,6 +136,6 @@ body {
     float: left;
     margin: 150px 25px 25px 50px;
     padding: 30px;
-    background-color: lightblue;
+    background-color: #5F6F94;
   }
 }
