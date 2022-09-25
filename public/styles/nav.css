@@ -1,0 +1,17 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  background: #4056A1;
+  color: white;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-stripes.png");
+}
+nav span {
+  font-family: 'Bungee', cursive;
+  align-self: center;
+}
