@@ -18,8 +18,16 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: Source Sans Pro, sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+ main {
+  width: 90vw; 
+  margin: 1em auto;
+  background-color: #f4f1ec;
+ }

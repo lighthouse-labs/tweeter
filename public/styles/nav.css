@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  height: 120px;
+  width: 100vw;
+  background-color: #8c8e97;
+  color: #FFFFFF;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+}
+
+.navbar-logo {
+  font-family: Bungee;
+  font-size: 1.8em;
+}
+
+.navbar-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  font-size: 1em;
+
+}
+
+.navbar-menu i {
+  color: red;
+  margin-top: -15px;
+}
