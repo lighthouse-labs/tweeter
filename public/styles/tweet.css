@@ -1,5 +1,6 @@
-.tweet-container {
+#tweets-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: transparent;
   margin-top: 35px;
