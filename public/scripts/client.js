@@ -48,14 +48,13 @@ $(document).ready(function () {
     event.preventDefault();
 
     const maxCharCount = 140;
-    const inputLength = event.target.text.value;
+    const inputLength = $(this).find('#tweet-text').val().length;
 
-    if (inputLength === '') {
+    if (!inputLength) {
       return alert("Empty Tweet")
-    }
-    if (inputLength > maxCharCount) {
+    } else if (inputLength > maxCharCount) {
       return alert("Tweet is too long!")
-    }
+    } else{
 
     const tweet = $("#request").serialize();
     $.ajax({
@@ -66,7 +65,7 @@ $(document).ready(function () {
       console.log(res);
       loadtweets();
     });
-  
+    }
   });
 
   //load tweet with GET
@@ -76,4 +75,5 @@ $(document).ready(function () {
     });
   };
   loadtweets();
+  
 });
