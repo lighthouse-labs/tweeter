@@ -4,85 +4,76 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 // Raw data taken from initial-tweets.json
 
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
-const renderTweets = (tweets) => {
+$(document).ready(function () {
+  const renderTweets = (tweets) => {
     // loops through tweets
-  // calls createTweetElement for each tweet
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+    for (let index of tweets) {
+      const render = createTweetElement(index);
+      $("#tweets-container").append(render);
+    }
+  };
 
-  for (let index of tweets) {
-    const render = createTweetElement(index);
-    $("#tweets-container").append(render);   // takes return value and appends it to the tweets container
-
-  }
-}
-
-
-
-
-const createTweetElement = (data) => {
-
-  let $tweet = $(`<article>
+  const createTweetElement = (tweetData) => {
+    let $tweet = $(`<article>
   <header class="tweet-header">
        
-  <span style="padding: 2%"><img src="${data.user.avatars}">${data.user.name}</span> 
-  <span class="user-id">${data.user.handle}</span>
+  <span style="padding: 2%"><img src="${tweetData.user.avatars}">${
+      tweetData.user.name
+    }</span> 
+  <span class="user-id">${tweetData.user.handle}</span>
 
 </header>
-<p class="user-text">${data.content.text}</p>
+<p class="user-text">${tweetData.content.text}</p>
 <hr style="width: 95%">
 
 <div>
   </div>
 <footer>
-<time>${data.created_at}</time>
+<time>${timeago.format(tweetData.created_at)}</time>
   <div class="footer-icons"><i class="fa-solid fa-flag"></i>
   <i class="fa-solid fa-retweet"></i>
   <i class="fa-solid fa-heart"></i> </div>
 </footer>
 
-</article>`)
-  return $tweet;
-};
+</article>`);
+    return $tweet;
+  };
 
-$(document).ready(function() {
-  renderTweets(data);
+  //create Ajax POST request
   $("#request").submit(function (event) {
     event.preventDefault();
 
-    const tweet = $(this).serialize() ;
+    const maxCharCount = 140;
+    const inputLength = event.target.text.value;
+
+    if (inputLength === '') {
+      return alert("Empty Tweet")
+    }
+    if (inputLength > maxCharCount) {
+      return alert("Tweet is too long!")
+    }
+
+    const tweet = $("#request").serialize();
     $.ajax({
-      url: "/tweets/", 
+      url: "/tweets/",
       method: "post",
-      data: tweet
-    }).then(function(res) {
-      console.log(res)
+      data: tweet,
+    }).then(function (res) {
+      console.log(res);
+      loadtweets();
     });
-  })
-})
+  
+  });
+
+  //load tweet with GET
+  const loadtweets = () => {
+    $.ajax("/tweets", { method: "GET" }).then((tweets) => {
+      renderTweets(tweets);
+    });
+  };
+  loadtweets();
+});
