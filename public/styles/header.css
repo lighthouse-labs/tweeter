@@ -6,4 +6,5 @@ main > header {
   display: flex;
   flex-direction: column;
   background-color: #8a005e;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
