@@ -13,7 +13,7 @@ $(document).ready(function () {
     // takes return value and appends it to the tweets container
     for (let index of tweets) {
       const render = createTweetElement(index);
-      $("#tweets-container").append(render);
+      $("#tweets-container").prepend(render);
     }
   };
 
