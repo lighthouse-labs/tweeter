@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 // Raw data taken from initial-tweets.json
 
 const data = [
@@ -71,5 +72,17 @@ const createTweetElement = (data) => {
 };
 
 $(document).ready(function() {
-  renderTweets(data)
+  renderTweets(data);
+  $("#request").submit(function (event) {
+    event.preventDefault();
+
+    const tweet = $(this).serialize() ;
+    $.ajax({
+      url: "/tweets/", 
+      method: "post",
+      data: tweet
+    }).then(function(res) {
+      console.log(res)
+    });
+  })
 })
