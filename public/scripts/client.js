@@ -6,6 +6,7 @@
 
 // Raw data taken from initial-tweets.json
 
+
 $(document).ready(function () {
   const renderTweets = (tweets) => {
     // loops through tweets
@@ -21,13 +22,13 @@ $(document).ready(function () {
     let $tweet = $(`<article>
   <header class="tweet-header">
        
-  <span style="padding: 2%"><img src="${tweetData.user.avatars}">${
-      tweetData.user.name
+  <span style="padding: 2%"><img src="${escape(tweetData.user.avatars)}">${
+      escape(tweetData.user.name)
     }</span> 
-  <span class="user-id">${tweetData.user.handle}</span>
+  <span class="user-id">${escape(tweetData.user.handle)}</span>
 
 </header>
-<p class="user-text">${tweetData.content.text}</p>
+<p class="user-text">${escape(tweetData.content.text)}</p>
 <hr style="width: 95%">
 
 <div>
@@ -76,4 +77,11 @@ $(document).ready(function () {
   };
   loadtweets();
   
+  //Prevent XSS attack with escape functoin
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 });
+
