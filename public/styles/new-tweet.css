@@ -1,3 +1,11 @@
 .new-tweet {
   margin-bottom: 3rem;
 }
+
+.tweet-error {
+  border: 2px solid rgb(51, 7, 7);
+  color: rgb(150, 82, 82);
+  display: none;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
