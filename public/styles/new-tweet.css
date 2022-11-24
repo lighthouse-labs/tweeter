@@ -1,6 +1,9 @@
 .new-tweet {
   margin-bottom: 3rem;
 }
+.new-tweet form {
+  text-align: center;
+}
 
 .tweet-error {
   border: 2px solid rgb(51, 7, 7);
