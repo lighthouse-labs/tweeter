@@ -4,6 +4,12 @@
 .new-tweet form {
   text-align: center;
 }
+.new-tweet form div {
+  display: flex;
+  font-family: "Bungee", cursive;
+  margin: 0.5rem;
+  justify-content: space-between;
+}
 
 .tweet-error {
   border: 2px solid rgb(51, 7, 7);
