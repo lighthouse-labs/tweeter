@@ -10,7 +10,7 @@ $(document).ready(function() {
     let chars = $(this).val().length;
     counter.text(`${maxLength - chars}`);
 
-    if (maxLength < char) {
+    if (maxLength < chars) {
       counter.css('color', 'red');
     } else {
       counter.css('color', 'blue');
