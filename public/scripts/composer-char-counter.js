@@ -6,5 +6,14 @@ $(document).ready(function() {
   counter.text(`${maxLength}`);
 
   //user change input
- 
+  $($textBox).on('input', function() {
+    let chars = $(this).val().length;
+    counter.text(`${maxLength - chars}`);
+
+    if (maxLength < char) {
+      counter.css('color', 'red');
+    } else {
+      counter.css('color', 'blue');
+    }
+  });
 });
