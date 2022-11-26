@@ -1,21 +1,13 @@
 .new-tweet {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: transparent;
-  margin-top: 35px;
+
 }
-.new-tweet form { 
-align-items: center;
-}
+
 .new-tweet label {
-  margin: 0 auto; 
+  margin: 10px; 
 }
-.counter {
+.counter {  
   justify-content: flex-end;
   font-family: Bungee;
 }
@@ -51,7 +43,7 @@ align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 35px;
-  width: 60vh;
+  width: 100%;
   background-color: transparent;
 }
 .new-tweet button {

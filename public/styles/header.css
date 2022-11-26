@@ -1,10 +1,10 @@
 #site-header {
-  width: 100vw;
   display: flex;
   justify-content:flex-start;
   align-items: center;
-  /* flex-direction: column; */
+  flex-direction: column;
   padding-top: 120px;
+  background-color: bisque;
  
 }
 

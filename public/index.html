@@ -50,6 +50,8 @@
     </span>
   </nav>
 
+  <div class="main-area">
+  <div class="site-header-container">
   <header id="site-header">
       <img src="/images/hacker-2.png" width="128px" height="128px">
       <!-- //<a href="https://www.flaticon.com/free-icons/hacker" title="hacker icons">Hacker icons created by Freepik - Flaticon</a>    // -->
@@ -57,7 +59,7 @@
       <h3>Joon Lee</h3>
       
   </header>
-
+</div>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
@@ -68,17 +70,17 @@
           You have too many characters!
       </div>
       <form id="request" method="POST" action="/tweets">
-        <div class="first-part">
+        <!-- <div class="first-part"> -->
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
-      </div>
+      <!-- </div> -->
 
-        <div class="second-part">
-
+        <!-- <div class="second-part"> -->
+          <div class="wrapup">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
-          
-        </div>
+          </div>
+        <!-- </div> -->
       </form>
     </section>
 
@@ -89,8 +91,9 @@
 
 
 
-
+    
   </main>
+  </div>
 </body>
 
 </html>

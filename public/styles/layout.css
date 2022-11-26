@@ -25,15 +25,17 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-
- main.container {
+#request {
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: flex-end;
-  width: 90%; 
-  margin: 1em auto;
- }
+  flex-direction: column;
+  width: 100%
+}
+
+.wrapup {
+  display: flex;
+  justify-content: space-between;
+  width: 100%
+}
 
 .first-part {
   display: flex;
@@ -48,36 +50,48 @@ body {
   flex-direction: column;
 }
 
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 /* --DESKTOP Display-- */
  @media only screen and (min-width: 1024px) {
+
   main.container {
-    display: flex;
-    width: 70%;
+    width: 100%;
     margin: 4em 2em 3em 1.5em;
   }
   
-  body {
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-  }
+  .main-area {
+  display: flex;
+  flex-direction: row;
+  width: 100%; 
+  margin: 1em auto;
+ }  
+
   section.new-tweet {
     display: flex;
-    flex-direction: row;
-    width: 80%;
+    flex-direction: column;
+    width: 100%;
     margin-top: 50px
   }
   #tweets-container {
     display: flex;
     flex-direction: row;
-    width: 80%
   }
  
+ 
+
+ .site-header-container {
+  width: 50%;
  }
 
   #site-header {
-    display: flex;
-    position: fixed ;
+    width: 70%;
+    padding: 5px;
   }
-  
+}
 
