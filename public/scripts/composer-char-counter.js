@@ -3,4 +3,8 @@ $(document).ready(function() {
   const counter = $('.counter');
   const maxLength = 140;
 
+  counter.text(`${maxLength}`);
+
+  //user change input
+ 
 });
