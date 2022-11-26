@@ -26,8 +26,58 @@ body {
  */
 
 
- main {
-  width: 90vw; 
+ main.container {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: flex-end;
+  width: 90%; 
   margin: 1em auto;
-  /* background-color: #f4f1ec; */
  }
+
+.first-part {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+.second-part {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* --DESKTOP Display-- */
+ @media only screen and (min-width: 1024px) {
+  main.container {
+    display: flex;
+    width: 70%;
+    margin: 4em 2em 3em 1.5em;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+  }
+  section.new-tweet {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-top: 50px
+  }
+  #tweets-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%
+  }
+ 
+ }
+
+  #site-header {
+    display: flex;
+    position: fixed ;
+  }
+  
+

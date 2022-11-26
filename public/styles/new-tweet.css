@@ -1,9 +1,15 @@
 .new-tweet {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  margin-top: 35px;
 }
-.new-tweet form {
+.new-tweet form { 
 align-items: center;
 }
 .new-tweet label {
@@ -18,6 +24,24 @@ align-items: center;
   justify-content: space-between;
   align-items: center;
 }
+
+.new-tweet #error-short {
+  color: red;
+  border: solid 3px red;
+  padding: 10px;
+  display: none;
+  text-align: center;
+}
+
+#error-over {
+  color: red;
+  border: solid 3px red;
+  padding: 10px;
+  display: none;
+  text-align: center;
+}
+
+
 .new-tweet textarea {
   display: flex;
   border-top: none;
@@ -27,7 +51,7 @@ align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 35px;
-  width: 800px;
+  width: 60vh;
   background-color: transparent;
 }
 .new-tweet button {

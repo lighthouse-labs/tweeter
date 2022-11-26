@@ -51,24 +51,33 @@
   </nav>
 
   <header id="site-header">
-    <div>
       <img src="/images/hacker-2.png" width="128px" height="128px">
       <!-- //<a href="https://www.flaticon.com/free-icons/hacker" title="hacker icons">Hacker icons created by Freepik - Flaticon</a>    // -->
-    </div>
-    <div>
+      
       <h3>Joon Lee</h3>
-    </div>
+      
   </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div id="error-short">
+          Tweet is empty!
+      </div>
+      <div id="error-over">
+          You have too many characters!
+      </div>
       <form id="request" method="POST" action="/tweets">
+        <div class="first-part">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
-        <div>
+      </div>
+
+        <div class="second-part">
+
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
+          
         </div>
       </form>
     </section>

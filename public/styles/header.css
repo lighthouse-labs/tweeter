@@ -1,11 +1,10 @@
 #site-header {
   width: 100vw;
   display: flex;
-  justify-content:center;
+  justify-content:flex-start;
   align-items: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   padding-top: 120px;
-  background-color: #b700ff;
-  background-image: url("https://www.transparenttextures.com/patterns/greyzz.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+ 
 }
+

@@ -52,10 +52,16 @@ $(document).ready(function () {
     const inputLength = $(this).find('#tweet-text').val().length;
 
     if (!inputLength) {
-      return alert("Empty Tweet")
+      $("#error-short").slideDown("slow");
+      $("#error-over").hide("fast");
+      return;
     } else if (inputLength > maxCharCount) {
-      return alert("Tweet is too long!")
+      $("#error-over").slideDown("slow");
+      $("#error-short").hide("fast");
+      return;
     } else{
+      $("#error-short").hide();
+      $("#error-over").hide();
 
     const tweet = $("#request").serialize();
     $.ajax({
