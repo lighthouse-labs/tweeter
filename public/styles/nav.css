@@ -15,3 +15,20 @@ nav span {
   font-family: 'Bungee', cursive;
   align-self: center;
 }
+
+@keyframes move {
+  0% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+
+  75% {
+    transform: translateY(7px);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
+}
