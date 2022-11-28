@@ -29,6 +29,6 @@ nav span {
   }
 
   100% {
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
 }
