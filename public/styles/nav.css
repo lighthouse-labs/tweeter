@@ -21,7 +21,7 @@ nav span {
     transform: translateY(1px);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
 
   75% {
