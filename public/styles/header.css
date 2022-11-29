@@ -8,3 +8,7 @@ main > header {
   background-color: #8a005e;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
+
+@media only screen and (min-width: 1024px) {
+  
+}
