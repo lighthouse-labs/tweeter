@@ -34,5 +34,10 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-
+  main {
+    justify-content: space-evenly;
+    padding-top: 50px;
+    display: flex;
+  }
+ 
 }
