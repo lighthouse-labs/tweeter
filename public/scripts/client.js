@@ -5,7 +5,7 @@
  */
 
 const renderTweets = (tweets) => {
- // Initialized tweets-container
+  $('.tweets-container').empty(); // Initialized tweets-container
 // sort by created_at desc
   
 };
