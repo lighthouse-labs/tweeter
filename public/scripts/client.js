@@ -5,6 +5,8 @@
  */
 
 const renderTweets = (tweets) => {
-
+ // Initialized tweets-container
+// sort by created_at desc
+  
 };
 
