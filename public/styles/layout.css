@@ -39,5 +39,7 @@ body {
     padding-top: 50px;
     display: flex;
   }
- 
+  .container {
+    width: 40%;
+  }
 }
