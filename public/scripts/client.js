@@ -16,7 +16,26 @@ const renderTweets = (tweets) => {
 const createTweetElement = (data) => {
   const tweet = data.content.text.split('\r\n');
   const tweetWithBR = tweet.map(str => tweetEscape(str)).join('<br>');
- 
+ `
+    <article>
+      <header>
+        <div class="tweet-info">
+          <img src="${data.user.avatars}" alt="profile picture" />
+          <div class="name">${data.user.name}</div>
+        </div>
+        <div class="tweet-account">${data.user.handle}</div>
+      </header>
+      <div class="tweet">${tweetWithBR}</div>
+      <footer>
+        <div class="created-at">${timeago.format(data.created_at)}</div>
+        <div class="tweet-icons">
+          <i class="fas fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+    </article>
+  `;
 };
 
 const loadTweets = () => {
