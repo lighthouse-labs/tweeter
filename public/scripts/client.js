@@ -43,3 +43,7 @@ const loadTweets = () => {
     renderTweets(data);
   });
 };
+
+const submitTweet = () => {
+  
+};
