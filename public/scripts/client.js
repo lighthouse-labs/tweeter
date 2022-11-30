@@ -13,3 +13,12 @@ const renderTweets = (tweets) => {
   }
 };
 
+
+
+const loadTweets = () => {
+  $.get('/tweets').done(function(data) {
+    renderTweets(data);
+  });
+};
+
+
