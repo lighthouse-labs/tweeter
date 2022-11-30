@@ -13,12 +13,12 @@ const renderTweets = (tweets) => {
   }
 };
 
+const createTweetElement = (data) => {
 
+};
 
 const loadTweets = () => {
   $.get('/tweets').done(function(data) {
     renderTweets(data);
   });
 };
-
-
