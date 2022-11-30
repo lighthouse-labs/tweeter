@@ -45,5 +45,7 @@ const loadTweets = () => {
 };
 
 const submitTweet = () => {
-  
+  $('#tweet-form').submit(function(e) {
+   
+  });
 };
