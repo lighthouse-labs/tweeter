@@ -46,6 +46,14 @@ const loadTweets = () => {
 
 const submitTweet = () => {
   $('#tweet-form').submit(function(e) {
-   
+    e.preventDefault();
+
+    const data = $(this).serializeArray();
+
+    if (data.length === 0) {
+      return;
+    }
+
+    
   });
 };
