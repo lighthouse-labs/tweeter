@@ -14,7 +14,9 @@ const renderTweets = (tweets) => {
 };
 
 const createTweetElement = (data) => {
-
+  const tweet = data.content.text.split('\r\n');
+  const tweetWithBR = tweet.map(str => tweetEscape(str)).join('<br>');
+ 
 };
 
 const loadTweets = () => {
