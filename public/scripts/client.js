@@ -64,6 +64,11 @@ const submitTweet = () => {
       return;
     }
 
- 
+    $.post('/tweets', data).done(function() {
+      $('.tweet-error').hide(400); // hide the error when an error is displayed
+      $('#tweet-text').val(''); // Clear tweet form when post is success
+      $('.counter').val(140); // reset counter
+      loadTweets();
+    });
   });
 };
