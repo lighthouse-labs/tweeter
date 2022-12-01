@@ -54,7 +54,14 @@ const submitTweet = () => {
       return;
     }
 
-    
+    const text = data[0].value.replace(/\r?\n/g, ''); // not count \r\n or \n;
+    if (!text || text === ' '.repeat(text.length)) { // text must not be an empty string, null and space
+      $(this).prev()
+        .empty()
+        .append('<i class="fa-solid fa-triangle-exclamation"></i> Tweet must NOT be empty!')
+        .slideDown(400);
+      return;
+    }
 
     if (text.length > 140) {
       $(this).prev()
