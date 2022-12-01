@@ -1,11 +1,12 @@
 main > header {
-  height: 400px;
-  width: 100vw;
-  justify-content: center;
-  color: #b3d8d5;
+  background-color: #ffc05c;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  background-color: #8a005e;
+  align-items: center;
+  color: #b3d8d5;
+  height: 700px;
+  width: 100vw;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
 
