@@ -10,8 +10,7 @@ main > header {
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
 
-@media only screen and (min-width: 1024px) {
+/* @media only screen and (min-width: 1024px) {
   main > header {
     width: 35%;
-  }
-}
+  } */
