@@ -3,20 +3,20 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+$(document).ready(function () {
+  const renderTweets = (tweets) => {
+    $('.tweets-container').empty(); // Initialized tweets-container
+    tweets.sort((a, b) => b.created_at - a.created_at); // sort by created_at desc
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('.tweets-container').append($tweet);
+    }
+  };
 
-const renderTweets = (tweets) => {
-  $('.tweets-container').empty(); // Initialized tweets-container
-  tweets.sort((a, b) => b.created_at - a.created_at); // sort by created_at desc
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-    $('.tweets-container').append($tweet);
-  }
-};
-
-const createTweetElement = (data) => {
-  const tweet = data.content.text.split('\r\n');
-  const tweetWithBR = tweet.map(str => tweetEscape(str)).join('<br>');
-  return `
+  const createTweetElement = (data) => {
+    const tweet = data.content.text.split('\r\n');
+    const tweetWithBR = tweet.map(str => tweetEscape(str)).join('<br>');
+    return `
     <article>
       <header>
         <div class="tweet-info">
@@ -36,17 +36,17 @@ const createTweetElement = (data) => {
       </footer>
     </article>
   `;
-};
+  };
 
-const loadTweets = () => {
-  $.get('/tweets').done(function(data) {
-    renderTweets(data);
-  });
-};
+  const loadTweets = () => {
+    $.get('/tweets').done(function (data) {
+      renderTweets(data);
+    });
+  };
 
-const submitTweet = () => {
-  $('#tweet-form').submit(function(e) {
-    e.preventDefault();
+  $('#tweet-form').submit(function (ek) {
+    console.log('hi')
+    ek.preventDefault();
 
     const data = $(this).serializeArray();
 
@@ -54,13 +54,13 @@ const submitTweet = () => {
       return;
     }
 
-    const text = data[0].value.replace(/\r?\n/g, ''); // not count \r\n or \n;
-    if (!text || text === ' '.repeat(text.length)) { // text must not be an empty string, null and space
+    const text = data[0].value.replace(/\r?\n/g, '');
+    if (!text || text === ' '.repeat(text.length)) {
       $(this).prev()
         .empty()
         .append('<i class="fa-solid fa-triangle-exclamation"></i> Tweet must NOT be empty!')
         .slideDown(400);
-      return;
+      return;``
     }
 
     if (text.length > 140) {
@@ -71,11 +71,13 @@ const submitTweet = () => {
       return;
     }
 
-    $.post('/tweets', data).done(function() {
+    $.post('/tweets', data).done(function () {
       $('.tweet-error').hide(400); // hide the error when an error is displayed
       $('#tweet-text').val(''); // Clear tweet form when post is success
       $('.counter').val(140); // reset counter
       loadTweets();
     });
   });
-};
+
+  loadTweets();
+})
