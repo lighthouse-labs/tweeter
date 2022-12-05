@@ -25,18 +25,20 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  main {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   background-color: #ffc05c;
   width: 100%;
-  
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .nav-newtweet {
   text-align: center;
 }
+
 
 @media only screen and (min-width: 1024px) {
   main {
@@ -48,4 +50,4 @@ body {
   .container {
     width: 40%;
   }
-}
+} 
