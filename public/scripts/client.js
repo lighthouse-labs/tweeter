@@ -13,6 +13,12 @@ $(document).ready(function () {
     }
   };
 
+  const tweetEscape = (str) => {
+    const div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (data) => {
     const tweet = data.content.text.split('\r\n');
     const tweetWithBR = tweet.map(str => tweetEscape(str)).join('<br>');
