@@ -38,6 +38,19 @@ body {
 .nav-newtweet {
   text-align: center;
 }
+@media only screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 200px;
+    
+  }
+  .container {
+    width: 100%;
+  }
+}
+
 
 
 /* @media only screen and (min-width: 1024px) {
