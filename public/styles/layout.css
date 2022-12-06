@@ -51,7 +51,14 @@ body {
   }
 }
 
-
+@media only screen and (max-width: 420px) {
+  nav span {
+    font-size: 1.5rem;
+  }
+  .nav-new-tweet {
+    font-size: 1rem;
+  }
+}
 
 /* @media only screen and (min-width: 1024px) {
   main {
