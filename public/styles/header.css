@@ -6,7 +6,7 @@ main > header {
   align-items: center;
   color: #b3d8d5;
   height: 700px;
-  width: 100vw;
+  width: 100%;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
 
