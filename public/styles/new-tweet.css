@@ -1,0 +1,39 @@
+
+.new-tweet {
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  height: 120px;
+}
+.newTweetTop {
+  display: flex;
+  flex-direction: column;
+  border-bottom:3px solid rgb(22, 22, 22);
+  font-weight: 200;
+  width: 700px;
+  justify-content: flex-end;
+}
+textarea {
+  background: transparent;
+  display: flex;
+  color: #fff;
+  resize: none;
+  border: 0 none;
+  width: 100%;
+  font-size: 0.8em;
+  outline: none;
+  height: 70px;
+}
+.newTweetBottom{
+  font-family: "Bungee";
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.redText {
+  color: red;
+}

@@ -15,11 +15,26 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  background-color: #006161;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
+.container {
+  margin-left: 5%;
+  width: 90%;
+  background-color: #cecece;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: "Source Sans Pro", "sans-serif";
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
