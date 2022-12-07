@@ -48,6 +48,9 @@
 }
 
 
+article:hover {
+  box-shadow: 4px 4px #c38585;
+}
 
 article {
   margin-bottom: 2rem;
