@@ -73,3 +73,11 @@ article header .tweet-info {
   display: flex;
 }
 
+
+article .tweet {
+  margin: 0 2%;
+  word-wrap: break-word;
+  border-bottom: 2px solid black;
+  padding: 1rem 1rem 2rem;
+}
+
