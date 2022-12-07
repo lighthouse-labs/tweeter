@@ -31,14 +31,18 @@
   padding: 1rem;
   margin-bottom: 1rem;
 }
+ #scroll-button {
+  position:sticky;
+  bottom: 0;
+ }
 
 #tweet-text {
-  width: 100%;
-  resize: none;
-  outline: none;
-  background-color: transparent;
-  border-bottom: 2px solid rgb(22, 2, 2);
   border-right: none;
+  width: 100%;
+  background-color: transparent;
+  resize: none;
   border-top: none;
   border-left: none;
+  border-bottom: 2px solid rgb(22, 2, 2);
+  outline: none;
 }
