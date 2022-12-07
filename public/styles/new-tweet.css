@@ -46,3 +46,10 @@
   border-bottom: 2px solid rgb(22, 2, 2);
   outline: none;
 }
+
+
+
+article {
+  margin-bottom: 2rem;
+  border: 2px solid black;
+}
