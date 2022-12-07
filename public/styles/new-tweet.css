@@ -64,7 +64,9 @@ article header {
   padding: 1rem 0;
 }
 
-
+article header .tweet-info .name {
+  margin-left: 1rem;
+}
 
 article header .tweet-info {
   align-items: center;
