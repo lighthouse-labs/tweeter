@@ -74,6 +74,12 @@ article header .tweet-info {
 }
 
 
+article header .tweet-account {
+  align-items: center;
+  display: flex;
+  color: #be6565;
+}
+
 article .tweet {
   margin: 0 2%;
   word-wrap: break-word;
