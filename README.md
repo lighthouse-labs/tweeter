@@ -15,4 +15,7 @@ npm start to start the server
 - body-parser
 - chance
 
+## Sceenshots
+["Screenshot of desktop page"](https://github.com/Vuvvy1/tweeter/blob/73a5125faef96edb1ee8c91a8694b1db593f1451/Doc/tweeterlarge.JPG)
+["Screenshot of moblie with error"](https://github.com/Vuvvy1/tweeter/blob/73a5125faef96edb1ee8c91a8694b1db593f1451/Doc/tweetersmall.JPG)
 ## Created by Hadley Sutherland
