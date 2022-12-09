@@ -8,4 +8,5 @@ header {
   align-self: flex-start;
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  border:2px solid rgb(133, 133, 133); 
 }

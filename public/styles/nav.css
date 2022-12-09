@@ -10,10 +10,9 @@ nav {
   color: #ffffff;
   background-color: #008c8c;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
-
   font-size: 2em;
   font-family: "Bungee", "sans-serif";
-  border-bottom:3px solid rgb(0, 0, 0);
+  border-bottom:3px solid rgb(0, 0, 0); 
 }
 .bar{
   display: flex;
@@ -30,8 +29,7 @@ nav {
   justify-content: center;
   align-content: center;
   font-family: "Source Sans Pro", "sans-serif";
-  /*font-family:*/
-  font-size: 0.5em;
+  
 }
 nav > header {
   display: flex;

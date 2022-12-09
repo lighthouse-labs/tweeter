@@ -43,7 +43,7 @@ article.tweet > .art{
   margin-bottom: 10px;
 
   font-weight: 600;
-  color: rgba(153, 115, 0, 0.7);
+  color: #2a5858;
   max-width: 23em;
 }
 
@@ -74,5 +74,5 @@ article.tweet:hover {
   padding: 2px;
 }
 .info> p > *:hover{
-  color: yellow;
+  color: rgb(202, 202, 202);
 }

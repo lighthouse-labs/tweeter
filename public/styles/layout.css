@@ -27,12 +27,11 @@ body {
   justify-content: center;
   align-content: center;
   font-family: "Source Sans Pro", "sans-serif";
+  border:2px solid rgb(63, 63, 63); 
 }
 
  @media (min-width: 1024px) {
-  .container {
-    background-color: pink;
-  }
+
   body {
     flex-direction: row;
     justify-content: space-between;
@@ -44,14 +43,14 @@ body {
     padding: 1em;
     margin: 200px 3rem 3rem 3rem;
   }
+  .writeTweet{
+    border:2px solid rgb(133, 133, 133); 
+    font-size: 60%;
+   }
  }
 
 
  @media (max-width: 1024px) {
-  .container {
-  background-color: blue;
-  
-  }
 header {
   max-height: 12em;
 }
@@ -64,19 +63,24 @@ header {
 .art{
   font-size: 1.2rem;
 }
+.writeTweet{
+  border:2px solid rgb(133, 133, 133); 
+  font-size: 40%;
+ }
 
 }
 
 
  @media (max-width: 570px) {
-  .container {
-    background-color: goldenrod;
-   
-  }
+
   header {
     max-height: 12em;
   }
   .art{
     font-size: 1rem;
   }
+  .writeTweet{
+    border:2px solid rgb(133, 133, 133); 
+    font-size: 30%;
+   }
  }
