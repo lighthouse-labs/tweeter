@@ -32,7 +32,6 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
         <div class="writeTweet">
@@ -52,14 +51,14 @@
           <h2>Vuvvy</h2>
       </div>
   </header>
-    <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet" >
       <form action="/tweets" method="POST" class="tweetSubmit">
-        <div class='errorBox'></div>
+        <div class='errorBox'>
+        </div>
         <div class="newTweetTop">
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-      </div>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        </div>
         <div class="newTweetBottom">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
