@@ -1,5 +1,5 @@
-$(document).ready(function (el) {
-  console.log("document).ready.working")
+$(document).ready(function(el) {
+  console.log("document).ready.working");
 
   /*
    * Client-side JS logic goes here
@@ -9,7 +9,7 @@ $(document).ready(function (el) {
   // Test / driver code (temporary). Eventually will get this from the server.
   console.log("test");
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -52,7 +52,7 @@ $(document).ready(function (el) {
     }
   };
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     let $tweet = $(`
   <article class ="tweet">
   <head>
@@ -76,22 +76,22 @@ $(document).ready(function (el) {
       </article>
       `);
     return $tweet;
-  }
+  };
 
 
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
       .then((tweets) => {
         console.log("2 ➤", 2);
         renderTweets(tweets);
-      })
+      });
     $('.errorText').slideUp(400).text('');
-  }
+  };
 
 
 
-  const postTweet = function (event) {
+  const postTweet = function(event) {
     event.preventDefault();
 
     $('.errorText').slideUp(400).text('');
@@ -101,7 +101,7 @@ $(document).ready(function (el) {
       return $('.errorBox').text('Your Tweet has no characters').slideDown();
     }
     if ($(this).serialize().length > 145) {
-      alert('Your Tweet exceeds the maximum characters')
+      alert('Your Tweet exceeds the maximum characters');
       return $('.errorBox').text('Your Tweet exceeds the maximum characters').slideDown();
     }
     console.log('tweet submitted');
@@ -109,7 +109,9 @@ $(document).ready(function (el) {
       method: 'POST',
       data: $(this).serialize()
     })
-      .then(() => { loadTweets(); })
+      .then(() => {
+        loadTweets();
+      });
 
 
   };

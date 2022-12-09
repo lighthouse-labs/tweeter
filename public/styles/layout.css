@@ -44,7 +44,6 @@ body {
     margin: 200px 3rem 3rem 3rem;
   }
   .writeTweet{
-    border:2px solid rgb(133, 133, 133); 
     font-size: 60%;
    }
  }
@@ -64,10 +63,11 @@ header {
   font-size: 1.2rem;
 }
 .writeTweet{
-  border:2px solid rgb(133, 133, 133); 
   font-size: 40%;
  }
-
+ .container {
+  border-top: 0px;
+ }
 }
 
 
@@ -80,7 +80,9 @@ header {
     font-size: 1rem;
   }
   .writeTweet{
-    border:2px solid rgb(133, 133, 133); 
     font-size: 30%;
+   }
+   .container {
+    border-top: 0px;
    }
  }

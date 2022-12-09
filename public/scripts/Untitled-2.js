@@ -1,14 +1,16 @@
 
-const transpose = function (array) {
+const transpose = function(array) {
   let result = [];
 
   for (let c = 0; c  < array[0].length; c++) {
     let temp = [];
 
     for (let r = 0; r < array.length; r++) {
-      if (array[r][c]) { temp.push(array[r][c]) };
+      if (array[r][c]) {
+        temp.push(array[r][c]);
+      }
     }
-    result.push(temp)
+    result.push(temp);
   }
   return result;
 };

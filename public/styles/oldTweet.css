@@ -66,9 +66,8 @@ article.tweet > .art{
 
 article.tweet:hover {
   opacity: 1;
-  padding-bottom: 2px;
-  text-shadow: 0.1px 0.1px #5f5c53;
-  box-shadow: 7px 7px #99a9e0;
+  text-shadow: 0.1px 0.1px #000000;
+  box-shadow: 7px 7px #111111;
 }
 .info> p > *{
   padding: 2px;
