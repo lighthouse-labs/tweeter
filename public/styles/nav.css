@@ -1,0 +1,37 @@
+nav {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  height: 120px;
+  width: 100%;
+  top: 0%;
+  color: #ffffff;
+  background-color: #008c8c;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  font-size: 2em;
+  font-family: "Bungee", "sans-serif";
+  border-bottom:3px solid rgb(0, 0, 0); 
+}
+.bar{
+  display: flex;
+  position: fixed;
+  top: 150px;
+  width: 100%;
+  background-color: #006161;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+}
+.writeTweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: "Source Sans Pro", "sans-serif";
+  
+}
+nav > header {
+  display: flex;
+  height: 400px;
+}

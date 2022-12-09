@@ -1,8 +1,4 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+
 html {
   box-sizing: border-box;
 }
@@ -10,16 +6,83 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  background-color: #006161;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.container {
+  margin-left: 5%;
+  width: 90%;
+  background-color: #cecece;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: "Source Sans Pro", "sans-serif";
+  border:2px solid rgb(63, 63, 63); 
+}
+
+ @media (min-width: 1024px) {
+
+  body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header {
+    flex-direction: column;
+  }
+  .container {
+    padding: 1em;
+    margin: 200px 3rem 3rem 3rem;
+  }
+  .writeTweet{
+    font-size: 60%;
+   }
+ }
+
+
+ @media (max-width: 1024px) {
+header {
+  max-height: 12em;
+}
+#tweets-container{
+
+  min-width: fit-content;
+   margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+.art{
+  font-size: 1.2rem;
+}
+.writeTweet{
+  font-size: 40%;
+ }
+ .container {
+  border-top: 0px;
+ }
+}
+
+
+ @media (max-width: 570px) {
+
+  header {
+    max-height: 12em;
+  }
+  .art{
+    font-size: 1rem;
+  }
+  .writeTweet{
+    font-size: 30%;
+   }
+   .container {
+    border-top: 0px;
+   }
+ }
