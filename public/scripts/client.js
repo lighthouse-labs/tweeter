@@ -8,6 +8,7 @@ $(document).ready(function(el) {
 
   const renderTweets = (tweets) => {
     $('#tweets-container').empty();
+    //renders each tweet
     for (let tweet of tweets) {
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
@@ -67,19 +68,20 @@ $(document).ready(function(el) {
       method: 'POST',
       data: $(this).serialize()
     })
+    //reload all tweets after submit
       .then(() => {
         loadTweets();
       })
       .catch((err) => {
         console.log('There was an error', err);
       });
-      
+//clears text area and counter
       $(this).children().find('textarea').val('');
       $('.counter').text(140);
 
 
   };
-
+//load tweets on page load
   loadTweets();
 
   $('form.tweetSubmit').on('submit', postTweet);
