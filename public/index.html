@@ -7,6 +7,9 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- timeago -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -52,7 +55,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet" >
-      <form action="/tweets" method="POST">
+      <form action="/tweets" method="POST" class="tweetSubmit">
+        <div class='errorBox'></div>
         <div class="newTweetTop">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
       </div>
@@ -64,26 +68,6 @@
     </section>
 
 <section id = "tweets-container">
-  <article class ="tweet">
-    <head>
-      <div class="nameTag">
-        <i class="fa-solid fa-user-secret"></i>
-      <p class="inName">title of poop</p>
-      <p class = "ating">@SirIsacc</p>
-      </div>
-    </head>
-    <div class="art">
-      test poop tweet
-    </div>
-    <footer class="info">
-      10 days ago
-      <p>
-        <i class="fa-regular fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
-        <i class="fa-solid fa-heart"></i>
-      </p>
-    </footer>
-  </article>
   </section>
   </main>
   </body>

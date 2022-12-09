@@ -1,8 +1,7 @@
 #tweets-container{
   display: flex;
   flex-direction: column;
-  font-weight: 200;
-  width: 700px;
+  font-weight: 100;
 }
 
 article.tweet {
@@ -18,7 +17,9 @@ article.tweet {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  overflow-wrap: break-word;
   flex-grow: 1;
+
 }
 
 .nameTag > * {
@@ -28,20 +29,22 @@ article.tweet {
 
 .inName{
   margin-left: 5px;
-flex-grow: 1;
+  flex-grow: 1;
 }
 
-.art{
-  display: flex;
+article.tweet > .art{
+  word-wrap: break-word;
   overflow-wrap: break-word;
-  min-height: 70px;
-  font-size: 20px;
-  margin-top: 10px;
-  
-  border-bottom:3px solid rgb(22, 22, 22);
-  align-items: center;
-  padding-left: 5px;
-  padding-right: 5px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #5f5c53;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 1em;
+  margin-bottom: 10px;
+
+  font-weight: 600;
+  color: rgba(153, 115, 0, 0.7);
+  max-width: 23em;
 }
 
 .info{

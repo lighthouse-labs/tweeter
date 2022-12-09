@@ -3,7 +3,6 @@ header {
   display: flex;
   height: 450px;
   width: 100%;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-self: flex-start;
