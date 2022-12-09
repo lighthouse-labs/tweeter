@@ -69,7 +69,13 @@ $(document).ready(function(el) {
     })
       .then(() => {
         loadTweets();
+      })
+      .catch((err) => {
+        console.log('There was an error', err);
       });
+      
+      $(this).children().find('textarea').val('');
+      $('.counter').text(140);
 
 
   };
