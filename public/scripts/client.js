@@ -81,7 +81,8 @@ const renderTweets = (tweets) => {
  * The HTML format is the indiviaul article element that displays the username, avatar, handle,
  * tweet content, and the time passed since user uploaded the tweet.
  *
- * @param {object} tweetData Milliseconds since epoch time the tweeter post was created.
+ * @param {object} data A single tweet data from the array of tweet data that contains
+ * user information, content, and created time.
  * @return {string} A HTML template literal that renders tweet data inside the article element.
  */
 const createTweetElement = (data) => {
@@ -117,7 +118,6 @@ $(function () {
   $form.on("submit", function (event) {
     event.preventDefault();
     const $error = $(this).children("div.error-container");
-    // $error.addClass("hidden");
     const $errorMsg = $error.find(".error-message");
     const $textarea = $(this).children("textarea");
     const $data = $textarea.serialize();
@@ -170,11 +170,9 @@ $(function () {
   });
 
   const $newTweetButton = $("button#new-tweet");
-  $newTweetButton.on("click", function (event) {
-    // event.preventDefault();
+  $newTweetButton.on("click", function () {
     const $form = $("main").children(".new-tweet").children("form");
-    console.log($form);
-    if ($form.first().is(":hidden")) {
+    if ($form.is(":hidden")) {
       $form.slideDown("slow");
     } else {
       $form.slideUp("slow");
