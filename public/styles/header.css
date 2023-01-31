@@ -1,4 +1,4 @@
-header {
+.page-header {
   padding-top: 120px;
   height: 520px;
   width: 100%;
@@ -11,4 +11,8 @@ header {
   background-color: #2c3531;
   /* background-color: #116466; */
   background-image: url("/images/stardust.png");
+}
+
+#new-tweet i {
+  margin-top: 10px;
 }
