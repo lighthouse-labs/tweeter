@@ -104,7 +104,7 @@ const createTweetElement = (data) => {
         </div>
       </footer>
     </article>`;
-  console.log($tweet);
+
   return $tweet;
 };
 
@@ -119,9 +119,18 @@ jQuery(function () {
       event.preventDefault();
       const $textarea = $(this).children("textarea");
       const $data = $textarea.serialize();
-      console.log($data);
+
+      if (!$textarea.val().trim()) {
+        return alert("Input text.");
+      }
+      if ($textarea.val().length > 140) {
+        return alert("Maximum input exceeded.");
+      }
+
+      $textarea.val("");
+
       console.log("Form submitted, performing ajax call...");
-      $.post("/tweets/", $data).then((data) => console.log(data));
+      $.post("/tweets/", $data).then(loadTweets);
     });
   });
 
