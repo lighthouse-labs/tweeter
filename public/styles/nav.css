@@ -17,14 +17,48 @@ nav.navbar-top > span {
   align-self: center;
 }
 
-#new-tweet {
+button#new-tweet {
+  background: none;
+  outline: none;
+  border: none;
+  color: #d9b08c;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-size: 20px;
+  height: 100%;
+  padding: 20px;
+
+  cursor: pointer;
+}
+
+#arrow-icon {
+  position: relative;
+  height: 30px;
+  width: 100%;
 }
 
 i.arrow-icon {
+  position: absolute;
   font-size: 15px;
   color: #d1e8ec;
+  margin: 0;
+
+  animation: 1.5s infinite linear moveUpDown;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

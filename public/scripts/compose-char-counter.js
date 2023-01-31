@@ -9,7 +9,6 @@ $(function () {
       .siblings("#tweet-text-bottom")
       .children(".counter");
     $counter.html(counter);
-    console.log($counter);
     if (counter < 0) {
       $counter.addClass("error");
     }

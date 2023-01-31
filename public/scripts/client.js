@@ -169,5 +169,17 @@ $(function () {
     }
   });
 
+  const $newTweetButton = $("button#new-tweet");
+  $newTweetButton.on("click", function (event) {
+    // event.preventDefault();
+    const $form = $("main").children(".new-tweet").children("form");
+    console.log($form);
+    if ($form.first().is(":hidden")) {
+      $form.slideDown("slow");
+    } else {
+      $form.slideUp("slow");
+    }
+  });
+
   loadTweets();
 });

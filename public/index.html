@@ -56,10 +56,12 @@
     <!-- Top nav bar (fixed) -->
     <nav class="navbar-top">
       <span>tweeter</span>
-      <div id="new-tweet">
+      <button id="new-tweet">
         <span><strong>Write</strong> a new tweet</span>
-        <i class="fa-solid fa-angles-down arrow-icon"></i>
-      </div>
+        <span id="arrow-icon"
+          ><i class="fa-solid fa-angles-down arrow-icon"></i
+        ></span>
+      </but>
     </nav>
     <!-- Header with avatar and name -->
     <header class="page-header">
@@ -68,16 +70,15 @@
       </div>
       <br />
       <div>
-        <h2>Your Name</h2>
+        <h2>Esther Choi</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
+          <label for="tweet-text">Compose Tweet</label>
           <textarea
             name="text"
             id="tweet-text"

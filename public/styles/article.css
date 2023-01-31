@@ -1,3 +1,7 @@
+#tweets-container {
+  padding: 26px 0;
+}
+
 article.tweet {
   background-color: #ffcb9a;
   color: #2c3531;

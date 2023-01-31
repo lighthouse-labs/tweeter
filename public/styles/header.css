@@ -1,5 +1,6 @@
 .page-header {
   padding-top: 120px;
+  margin-bottom: 50px;
   height: 520px;
   width: 100%;
 
@@ -9,7 +10,6 @@
   align-items: center;
 
   background-color: #2c3531;
-  /* background-color: #116466; */
   background-image: url("/images/stardust.png");
 }
 
