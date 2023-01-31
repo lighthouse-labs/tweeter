@@ -29,6 +29,7 @@ article.tweet header .handle {
 
 article.tweet p {
   padding: 10px;
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {

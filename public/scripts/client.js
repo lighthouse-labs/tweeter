@@ -68,8 +68,10 @@ const displayTimePassed = (createdTime) => {
  * @return {undefined} This function does not return any value.
  */
 const renderTweets = (tweets) => {
+  $("#tweets-container").empty();
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
+
     $("#tweets-container").append($tweet);
   }
 };
@@ -85,25 +87,23 @@ const renderTweets = (tweets) => {
 const createTweetElement = (data) => {
   const { user, content, created_at } = data;
 
-  let $tweet = `<article class="tweet">
-      <header>
-        <img src="${user.avatars}" alt="${user.name}'s avatar" />
-        <h3>${user.name}</h3>
-        <div class="handle">${user.handle}</div>
-      </header>
-      <p>${content.text}</p>
-      <footer>
-        <h6>${
-          displayTimePassed(created_at)
-          // timeago.format(created_at)
-        }</h6>
-        <div class="footer-icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </footer>
-    </article>`;
+  let $tweet = $('<article class="tweet"></article>');
+  const header = $(`<header>
+    <img src="${user.avatars}" alt="${user.name}'s avatar" />
+    <h3>${user.name}</h3>
+    <div class="handle">${user.handle}</div>
+  </header>`);
+  const paragraph = $("<p></p>");
+  const footer = $(`<footer>
+    <h6>${displayTimePassed(created_at)}</h6>
+    <div class="footer-icons">
+      <i class="fa-solid fa-flag"></i>
+      <i class="fa-solid fa-retweet"></i>
+      <i class="fa-solid fa-heart"></i>
+  </div>
+  </footer>`);
+  paragraph.text(content.text);
+  $tweet.append(header).append(paragraph).append(footer);
 
   return $tweet;
 };
@@ -112,26 +112,25 @@ const loadTweets = () => {
   $.getJSON("/tweets/").then((tweetDataArr) => renderTweets(tweetDataArr));
 };
 
-jQuery(function () {
-  $(function () {
-    const $form = $(".new-tweet").children("form");
-    $form.on("submit", function (event) {
-      event.preventDefault();
-      const $textarea = $(this).children("textarea");
-      const $data = $textarea.serialize();
+$(function () {
+  const $form = $(".new-tweet").children("form");
+  $form.on("submit", function (event) {
+    event.preventDefault();
+    const $textarea = $(this).children("textarea");
+    const $data = $textarea.serialize();
 
-      if (!$textarea.val().trim()) {
-        return alert("Input text.");
-      }
-      if ($textarea.val().length > 140) {
-        return alert("Maximum input exceeded.");
-      }
+    if (!$textarea.val().trim()) {
+      return alert("Input text.");
+    }
+    if ($textarea.val().length > 140) {
+      return alert("Maximum input exceeded.");
+    }
 
-      $textarea.val("");
-
-      console.log("Form submitted, performing ajax call...");
-      $.post("/tweets/", $data).then(loadTweets);
-    });
+    $textarea.val("");
+    const $counter = $(this).children("#tweet-text-bottom").children("output");
+    $counter.val(140);
+    console.log("Form submitted, performing ajax call...");
+    $.post("/tweets/", $data).then(loadTweets);
   });
 
   loadTweets();
