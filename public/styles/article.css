@@ -15,7 +15,8 @@ article.tweet header {
   align-items: center;
   padding: 0 10px;
 }
-d article.tweet header h3 {
+
+article.tweet header h3 {
   margin-left: 10px;
   font-weight: 300;
 }
