@@ -147,6 +147,12 @@ $(function () {
       .closest("div.error-container")
       .siblings("textarea");
     $textarea.val("");
+    const $counter = $(this)
+      .closest(".error-container")
+      .next("#tweet-text-bottom")
+      .children("output");
+    $counter.val(140);
+    $counter.removeClass("error");
   });
 
   const $modalBackdrop = $(".new-tweet").find("div.error-container");
@@ -157,6 +163,9 @@ $(function () {
       $error.addClass("hidden");
       const $textarea = $(this).siblings("textarea");
       $textarea.val("");
+      const $counter = $(this).next("#tweet-text-bottom").children("output");
+      $counter.val(140);
+      $counter.removeClass("error");
     }
   });
 
