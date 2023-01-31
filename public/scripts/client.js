@@ -117,8 +117,7 @@ $(function () {
   $form.on("submit", function (event) {
     event.preventDefault();
     const $error = $(this).children("div.error-container");
-    console.log($error);
-    $error.addClass("hidden");
+    // $error.addClass("hidden");
     const $errorMsg = $error.find(".error-message");
     const $textarea = $(this).children("textarea");
     const $data = $textarea.serialize();
