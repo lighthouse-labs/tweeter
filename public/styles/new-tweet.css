@@ -63,11 +63,12 @@ output.counter.error {
   width: 30%;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.error-modal > .close-button {
+.error-modal > .close-button.icon {
   background: none;
   outline: none;
   border: none;
@@ -83,8 +84,20 @@ output.counter.error {
   align-items: center;
 }
 
-.error-modal > .close-button:hover {
+.error-modal > .close-button.icon:hover {
   font-size: 1.2em;
+}
+
+.error-modal > .close-button.main {
+  background-color: #2c3531;
+  outline: none;
+  border: none;
+  color: #d1e8ec;
+  cursor: pointer;
+  padding: 0.3em;
+  width: 40%;
+  margin-top: 0.5em;
+  font-family: "Bungee", cursive;
 }
 
 .error-modal > p {

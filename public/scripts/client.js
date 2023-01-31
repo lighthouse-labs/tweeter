@@ -117,6 +117,7 @@ $(function () {
   $form.on("submit", function (event) {
     event.preventDefault();
     const $error = $(this).children("div.error-container");
+    console.log($error);
     $error.addClass("hidden");
     const $errorMsg = $error.find(".error-message");
     const $textarea = $(this).children("textarea");
@@ -138,10 +139,27 @@ $(function () {
     $.post("/tweets/", $data).then(loadTweets);
   });
 
-  const $closeButton = $(".new-tweet").find(".close-button")
-  $closeButton.on('click', function (event) => {
-    f
-  })
+  const $closeButton = $(".new-tweet").find(".close-button");
+  $closeButton.on("click", function (event) {
+    event.preventDefault();
+    const $error = $(this).closest("div.error-container");
+    $error.addClass("hidden");
+    const $textarea = $(this)
+      .closest("div.error-container")
+      .siblings("textarea");
+    $textarea.val("");
+  });
+
+  const $modalBackdrop = $(".new-tweet").find("div.error-container");
+  $modalBackdrop.on("click", function (event) {
+    if (event.target === this) {
+      event.preventDefault();
+      const $error = $(this).closest("div.error-container");
+      $error.addClass("hidden");
+      const $textarea = $(this).siblings("textarea");
+      $textarea.val("");
+    }
+  });
 
   loadTweets();
 });
