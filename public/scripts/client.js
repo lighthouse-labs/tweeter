@@ -94,8 +94,8 @@ const createTweetElement = (data) => {
       <p>${content.text}</p>
       <footer>
         <h6>${
-          // displayTimePassed(created_at)
-          timeago.format(created_at)
+          displayTimePassed(created_at)
+          // timeago.format(created_at)
         }</h6>
         <div class="footer-icons">
           <i class="fa-solid fa-flag"></i>
