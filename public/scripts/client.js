@@ -116,14 +116,19 @@ $(function () {
   const $form = $(".new-tweet").children("form");
   $form.on("submit", function (event) {
     event.preventDefault();
+    const $error = $(this).children("div.error-container");
+    $error.addClass("hidden");
+    const $errorMsg = $error.find(".error-message");
     const $textarea = $(this).children("textarea");
     const $data = $textarea.serialize();
 
     if (!$textarea.val().trim()) {
-      return alert("Input text.");
+      $errorMsg.html("You cannot upload a blank tweet.");
+      return $error.removeClass("hidden");
     }
     if ($textarea.val().length > 140) {
-      return alert("Maximum input exceeded.");
+      $errorMsg.html("Exceeded the maximum character limit of 140.");
+      return $error.removeClass("hidden");
     }
 
     $textarea.val("");
@@ -132,6 +137,11 @@ $(function () {
     console.log("Form submitted, performing ajax call...");
     $.post("/tweets/", $data).then(loadTweets);
   });
+
+  const $closeButton = $(".new-tweet").find(".close-button")
+  $closeButton.on('click', function (event) => {
+    f
+  })
 
   loadTweets();
 });

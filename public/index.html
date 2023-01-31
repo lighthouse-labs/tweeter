@@ -83,6 +83,14 @@
             id="tweet-text"
             placeholder="What are you humming about?"
           ></textarea>
+          <div class="error-container hidden">
+            <div class="error-modal">
+              <button class="close-button">
+                <i class="fa-solid fa-close"></i>
+              </button>
+              <p class="error-message"></p>
+            </div>
+          </div>
           <div id="tweet-text-bottom">
             <button class="button new-tweet" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
