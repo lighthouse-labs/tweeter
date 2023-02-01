@@ -57,5 +57,9 @@ main {
   box-shadow: 5px 2px 3px #0000008f;
 }
 
+#new-tweet-bottom.hide {
+  display: none;
+}
+
 /* Tablet Styles */
 /* Desktop styles */

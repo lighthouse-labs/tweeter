@@ -13,6 +13,7 @@ nav.navbar-top > span {
   font-family: "Bungee", cursive;
   font-size: 1.5em;
   align-self: center;
+  -webkit-text-stroke: 3px black;
 }
 
 button#new-tweet {
@@ -27,6 +28,10 @@ button#new-tweet {
   font-size: 20px;
   height: 100%;
   cursor: pointer;
+}
+
+button#new-tweet.hide {
+  display: none;
 }
 
 #arrow-icon {
