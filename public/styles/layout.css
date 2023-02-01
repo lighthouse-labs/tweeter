@@ -35,5 +35,27 @@ main {
   margin: 0 auto;
 }
 
+#new-tweet-bottom {
+  position: fixed;
+  top: 90%;
+  right: 2vw;
+  background-color: #a40000;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#new-tweet-bottom:hover {
+  box-shadow: 5px 2px 3px #0000008f;
+}
+
 /* Tablet Styles */
 /* Desktop styles */
