@@ -9,23 +9,20 @@ article.tweet {
   margin: 1em 0;
   padding: 1em;
 }
-
 article.tweet:hover {
   box-shadow: 5px 5px rgba(44, 53, 49, 0.5647058824);
 }
-
 article.tweet header {
   display: flex;
   align-items: center;
   padding: 0 10px;
 }
-
 article.tweet header h3 {
   margin-left: 10px;
   font-weight: 300;
 }
 
-article.tweet header .handle {
+.handle {
   margin-left: auto;
   font-weight: 600;
   color: #49b5b7;

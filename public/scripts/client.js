@@ -1,28 +1,3 @@
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
 /**
  * This function calculates the year/month/day/hour/minute/seconds passed since createdTime and returns it as a string. If the time is greater than 1, add 's' to show that it is plural.
  *
@@ -134,7 +109,6 @@ $(function () {
     $textarea.val("");
     const $counter = $(this).children("#tweet-text-bottom").children("output");
     $counter.val(140);
-    console.log("Form submitted, performing ajax call...");
     $.post("/tweets/", $data).then(loadTweets);
   });
 

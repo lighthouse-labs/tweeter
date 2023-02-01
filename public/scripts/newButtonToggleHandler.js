@@ -1,4 +1,4 @@
-$(function () {
+$(() => {
   $(window).on("scroll", function () {
     const $newTweetButton = $("#new-tweet");
     const $newTweetButtonBottom = $("#new-tweet-bottom");
