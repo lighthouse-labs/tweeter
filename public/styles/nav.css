@@ -1,0 +1,55 @@
+nav.navbar-top {
+  height: 120px;
+  width: 100vw;
+  color: #d9b08c;
+  padding: 0 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+nav.navbar-top .logo {
+  font-family: "Bungee", cursive;
+  font-size: 1.5em;
+  align-self: center;
+  -webkit-text-stroke: 3px black;
+}
+nav.navbar-top button#new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  border: none;
+  color: #d9b08c;
+  font-size: 20px;
+  height: 100%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#arrow-icon {
+  position: relative;
+  height: 30px;
+  width: 100%;
+}
+#arrow-icon i.arrow-icon {
+  position: absolute;
+  font-size: 15px;
+  color: #d1e8ec;
+  margin: 0;
+  animation: 1.5s infinite linear moveUpDown;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

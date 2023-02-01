@@ -1,0 +1,111 @@
+form > label {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #d9b086;
+}
+
+#tweet-text {
+  width: 100%;
+  max-height: 100px;
+  resize: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid #d9b086;
+  outline: none;
+  margin: 15px 0;
+  padding: 15px;
+  color: #d1e8ec;
+}
+
+#tweet-text:focus {
+  border-color: #f6dabd;
+}
+
+textarea::placeholder {
+  color: #d1e8ec;
+}
+
+#tweet-text-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+
+.button {
+  background-color: #2c3531;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  color: #d1e8ec;
+  cursor: pointer;
+}
+
+output.counter.error {
+  color: red;
+}
+
+.error-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5725490196);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container > .error-modal {
+  background-color: #015558;
+  box-shadow: 5px 5px #000000;
+  border: 2px solid #d1e8ec;
+  height: 30%;
+  max-width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-modal > .close-button.icon {
+  background: none;
+  outline: none;
+  border: none;
+  color: #f6dabd;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-modal > .close-button.icon:hover {
+  font-size: 1.2em;
+}
+
+.error-modal > .close-button.main {
+  background-color: #2c3531;
+  outline: none;
+  border: none;
+  color: #d1e8ec;
+  cursor: pointer;
+  padding: 0.3em;
+  width: 40%;
+  margin-top: 0.5em;
+  font-family: "Bungee", cursive;
+}
+
+.error-modal > p {
+  text-align: center;
+  margin: 30px 50px;
+}
+
+.hidden {
+  display: none;
+}
