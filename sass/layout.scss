@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -16,6 +15,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   /* color: #d1e8ec; */
   color: #ffcb9a;
@@ -36,4 +36,9 @@ main {
 }
 
 /* Tablet Styles */
+@media only screen and (min-width: 768px) {
+}
+
 /* Desktop styles */
+@media only screen and (min-width: 1024px) {
+}

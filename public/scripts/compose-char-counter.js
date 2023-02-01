@@ -1,7 +1,7 @@
 $(function () {
   let counter = 140;
   $("#tweet-text").on("keyup", function () {
-    counter = 140 - $(this).val().trim().length;
+    counter = 140 - $(this).val().replace(/\s/g, "").length;
 
     // Although using a unqiue ID would be my personal choice,
     // the assignment required us to use a combination of selectors

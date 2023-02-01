@@ -3,9 +3,12 @@ nav.navbar-top {
   width: 100vw;
   color: #d9b08c;
   padding: 0 1.5em;
+  background-color: blue;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   position: fixed;
 }
 
@@ -20,6 +23,7 @@ button#new-tweet {
   outline: none;
   border: none;
   color: #d9b08c;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,6 +31,7 @@ button#new-tweet {
   font-size: 20px;
   height: 100%;
   padding: 20px;
+
   cursor: pointer;
 }
 
@@ -41,6 +46,7 @@ i.arrow-icon {
   font-size: 15px;
   color: #d1e8ec;
   margin: 0;
+
   animation: 1.5s infinite linear moveUpDown;
 }
 
@@ -48,9 +54,11 @@ i.arrow-icon {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(5px);
   }
+
   100% {
     transform: translateY(0);
   }
