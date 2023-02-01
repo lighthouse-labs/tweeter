@@ -1,3 +1,10 @@
+@mixin verticalAlignCenter() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 nav.navbar-top {
   height: 120px;
   width: 100vw;
@@ -9,44 +16,42 @@ nav.navbar-top {
   align-items: center;
 
   position: fixed;
-}
 
-nav.navbar-top > span {
-  font-family: "Bungee", cursive;
-  font-size: 1.5em;
-  align-self: center;
-}
+  .logo {
+    font-family: "Bungee", cursive;
+    font-size: 1.5em;
+    align-self: center;
+    -webkit-text-stroke: 3px black;
+  }
 
-button#new-tweet {
-  background: none;
-  outline: none;
-  border: none;
-  color: #d9b08c;
+  button#new-tweet {
+    @include verticalAlignCenter;
+    background: none;
+    outline: none;
+    border: none;
+    color: #d9b08c;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  height: 100%;
-  padding: 20px;
+    font-size: 20px;
+    height: 100%;
+    padding: 20px;
 
-  cursor: pointer;
+    cursor: pointer;
+  }
 }
 
 #arrow-icon {
   position: relative;
   height: 30px;
   width: 100%;
-}
 
-i.arrow-icon {
-  position: absolute;
-  font-size: 15px;
-  color: #d1e8ec;
-  margin: 0;
+  i.arrow-icon {
+    position: absolute;
+    font-size: 15px;
+    color: #d1e8ec;
+    margin: 0;
 
-  animation: 1.5s infinite linear moveUpDown;
+    animation: 1.5s infinite linear moveUpDown;
+  }
 }
 
 @keyframes moveUpDown {
